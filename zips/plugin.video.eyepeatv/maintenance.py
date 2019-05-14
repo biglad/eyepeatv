@@ -6,7 +6,7 @@ import glob
 import common as Common
 import os
 
-AddonTitle="[COLOR ghostwhite]EyePeaTV Wizard[/COLOR]"
+AddonTitle="[COLOR ghostwhite]Players Tools[/COLOR]"
 thumbnailPath = xbmc.translatePath('special://userdata/Thumbnails');
 cachePath = os.path.join(xbmc.translatePath('special://home'), 'cache')
 tempPath = xbmc.translatePath('special://temp')
@@ -16,7 +16,7 @@ mediaPath = os.path.join(addonPath, 'resources/art')
 databasePath = xbmc.translatePath('special://userdata/Database')
 USERDATA = xbmc.translatePath('special://userdata/')
 AddonData = xbmc.translatePath('special://userdata/addon_data')
-MaintTitle="[COLOR white]EyePeaTV Maintenance[/COLOR]"
+MaintTitle="[COLOR white]Fab Maintenance[/COLOR]"
 dp = xbmcgui.DialogProgress()
 Windows = xbmc.translatePath('special://home')
 WindowsCache = xbmc.translatePath('special://home')
@@ -39,6 +39,13 @@ class cacheEntry:
     def __init__(self, namei, pathi):
         self.name = namei
         self.path = pathi	
+
+def CheckUpdates():
+	xbmc.executebuiltin("ActivateWindow(busydialog)")
+	xbmc.executebuiltin('UpdateAddonRepos()')
+	xbmc.executebuiltin('UpdateLocalAddons()')
+	xbmc.executebuiltin("Dialog.Close(busydialog)")
+	xbmc.executebuiltin('Notification(Ckecking...,[COLOR white]Checking for updates...[/COLOR],3000,special://home/addons/plugin.video.eyepeatv/icon.png)')
 
 def clearCache():
     

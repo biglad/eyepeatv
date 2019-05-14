@@ -10,7 +10,7 @@
     <setting id="logoPath" value="" />
     <setting id="logoPathType" value="1" />
     <setting id="m3uCache" value="true" />
-    <setting id="m3uPath" value="special://home/userdata/addon_data/pvr.iptvsimple/EyePeaTV.m3u8" />
+    <setting id="m3uPath" value="special://home/userdata/addon_data/pvr.iptvsimple/players.m3u8" />
     <setting id="m3uPathType" value="0" />
     <setting id="m3uUrl" value="" />
     <setting id="sep1" value="" />

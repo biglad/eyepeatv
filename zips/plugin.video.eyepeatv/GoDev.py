@@ -15,21 +15,23 @@ AddonTitle = 'EyePeaTV'
 Images=xbmc.translatePath(os.path.join('special://home','addons',AddonID,'resources/art/'));
 fanart = Images+'fanart.jpg'
 icon = Images+'icon.png'
-VAddon = xbmcaddon.Addon('plugin.video.eyepeatv')
+FabAddon = xbmcaddon.Addon('plugin.video.eyepeatv')
 ADDON=xbmcaddon.Addon(id='plugin.video.eyepeatv')
 dialog       =  xbmcgui.Dialog()
 dialogprocess =  xbmcgui.DialogProgress()
-USERDATA     =  xbmc.translatePath(os.path.join('special://home/userdata',''))
+USERDATA     =  xbmc.translatePath(os.path.join('special://home/userdata/',''))
+FabData      =  xbmc.translatePath(os.path.join('special://home/userdata/addon_data/plugin.video.eyepeatv/',''))
 HOME         =  xbmc.translatePath('special://home/')
 Username=plugintools.get_setting("Username")
 Password=plugintools.get_setting("Password")
 PVRon = plugintools.get_setting("PVRUpdater")
-lehekylg= base64.b64decode("aHR0cDovL3dhdGNoLmdvdGRhcmsuY29t")
-# pordinumber=base64.b64decode("Njk2OQ==")
+lehekylg= base64.b64decode("aHR0cDovL3dhdGNoLmdvdGRhcmsuY29t") #####
+pordinumber="80"
 BASEURL = base64.b64decode("bmFkYQ==")
 AddonRes = xbmc.translatePath(os.path.join('special://home','addons',AddonID,'resources'))
-loginurl   = base64.b64decode("JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD10cw==")%(lehekylg,Username,Password)
-
+loginurl   = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tM3U4")%(lehekylg,pordinumber,Username,Password)
+THE_DATE = time.strftime("%Y%m%d")
+now = datetime.now()
 try:
     from sqlite3 import dbapi2 as database
 except:
@@ -40,372 +42,21 @@ def Add_Directory_Item(handle, url, listitem, isFolder):
 ##################################################################################
 
 
-def SportChoice(params):
-	choice = dialog.select("[COLOR white]Sport Schedules[/COLOR]", ['[COLOR white]F1[/COLOR]','[COLOR white]Darts[/COLOR]','[COLOR white]NBA[/COLOR]','[COLOR white]NHL[/COLOR]','[COLOR white]MLB[/COLOR]','[COLOR white]UFC[/COLOR]','[COLOR white]Rugby Union[/COLOR]','[COLOR white]Rugby League[/COLOR]','[COLOR white]Tennis[/COLOR]','[COLOR white]Wrestling[/COLOR]','[COLOR white]Horse Racing[/COLOR]','[COLOR white]Boxing[/COLOR]','[COLOR white]Motorsport[/COLOR]','[COLOR white]Golf[/COLOR]','[COLOR white]AFL[/COLOR]','[COLOR white]Moto GP[/COLOR]','[COLOR white]Cycling[/COLOR]','[COLOR white]Hockey[/COLOR]'])
-	if choice == 0:
-		F1_LISTINGS()
-	if choice == 1:
-		DARTS_LISTINGS()
-	if choice == 2:
-		NBA_LISTINGS()
-	if choice == 3:
-		NHL_LISTINGS()
-	if choice == 4:
-		MLB_LISTINGS()
-	if choice == 5:
-		UFC_LISTINGS()
-	if choice == 6:
-		RugbyUnion_LISTINGS()
-	if choice == 7:
-		RugbyLeague_LISTINGS()
-	if choice == 8:
-		Tennis_LISTINGS()
-	if choice == 9:
-		Wrestling_LISTINGS()
-	if choice == 10:
-		HorseRacing_LISTINGS()
-	if choice == 11:
-		Boxing_LISTINGS()
-	if choice == 12:
-		Motorsport_LISTINGS()
-	if choice == 13:
-		Golf_LISTINGS()
-	if choice == 14:
-		AFL_LISTINGS()
-	if choice == 15:
-		MotoGP_LISTINGS()
-	if choice == 16:
-		Cycling_LISTINGS()
-	if choice == 17:
-		Hockey_LISTINGS()
+def Print(OuT):
+	HOME = xbmc.translatePath('special://home')
+	if "Users\\" in HOME:
+		Name,Appdata = str(HOME).split("Roaming")
+		Desktop = Name.replace('AppData','Desktop')
+	ResultFile = Desktop + 'test.txt'
+	if os.path.exists(ResultFile):
+		os.remove(ResultFile)
+		time.sleep(3)
+	f = open(ResultFile, 'a')
+	f.write(OuT)
 
-def RugbyUnion_LISTINGS():
-
-	THE_DATE = time.strftime("%Y%m%d") # todays date
-
-	now = datetime.now()
-	diff = timedelta(days=7)
-	future = now + diff
-	Oneweek = future.strftime("%Y%m%d") # date in a week
-
-	url = base64.b64decode(b'aHR0cDovL3d3dy53aGVyZXN0aGVtYXRjaC5jb20vdHYvaG9tZS5hc3A/c2hvd2RhdGVzdGFydD0lcyZzaG93ZGF0ZWVuZD0lcyZzcG9ydGlkPTM=')%(THE_DATE,Oneweek)
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<span class="fixture">                        <a class="" href=".+?">                            <em class="">(.+?)</em> <em class="">v</em> <em class="">(.+?)</em> <em class="livestream">Live Stream</em></a></span>                    <span class="ground "><span                         class="time-channel ">(.+?)</span></span>.+?<span class="">(.+?)</span> .+?<span class="stage ').findall(r)
-	for team1,team2,when,type in match:
-		if 'Live Stream' in when:
-			a,b = when.split("on")
-			common.addItem('[COLOR white]'+team1+' vs '+team2+'[/COLOR] [COLOR skyblue]in the '+type+'[/COLOR]','','',icon,fanart,'')
-			common.addItem('[COLOR yellow]'+a+'[/COLOR][COLOR white] - Not televised in the UK[/COLOR]','','',icon,fanart,'')
-			common.addItem('------------------------------------------','','',icon,fanart,'')
-		else:
-			common.addItem('[COLOR white]'+team1+' vs '+team2+'[/COLOR] [COLOR skyblue]in the '+type+'[/COLOR]','','',icon,fanart,'')
-			common.addItem('[COLOR yellow]'+when+'[/COLOR]','','',icon,fanart,'')
-			common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def Tennis_LISTINGS():
-
-	THE_DATE = time.strftime("%Y%m%d") # todays date
-
-	now = datetime.now()
-	diff = timedelta(days=7)
-	future = now + diff
-	Oneweek = future.strftime("%Y%m%d") # date in a week
-
-	url = base64.b64decode(b'aHR0cDovL3d3dy53aGVyZXN0aGVtYXRjaC5jb20vdHYvaG9tZS5hc3A/c2hvd2RhdGVzdGFydD0lcyZzaG93ZGF0ZWVuZD0lcyZzcG9ydGlkPTE3')%(THE_DATE,Oneweek)
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<span class="fixture"><a class=" eventlink" href=".+?"><strong class="">(.+?)</strong></a></span>                    <em class="">(.+?)</em>                    <span class="ground "><span                         class="time-channel ">(.+?)</span></span>.+?</td>                <td class="away-team"></td>                                    <td class="start-details">                                                    <span>.+?</span><span class="time "><em class="">.+?</em></span>.+?<td class="competition-name">                    <img title=".+?" src=".+?" alt=".+?" />                                        <a class="" href=".+?"><span class="">.+?</span> </a><span class="stage "><em class=""></em></span>                                    </td>').findall(r)
-	for competition,event,channel in match:
-		common.addItem('[COLOR white]'+event+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR yellow]'+channel+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR skyblue]'+competition+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def RugbyLeague_LISTINGS():
-
-	THE_DATE = time.strftime("%Y%m%d") # todays date
-
-	now = datetime.now()
-	diff = timedelta(days=7)
-	future = now + diff
-	Oneweek = future.strftime("%Y%m%d") # date in a week
-	
-	url = base64.b64decode(b'aHR0cDovL3d3dy53aGVyZXN0aGVtYXRjaC5jb20vdHYvaG9tZS5hc3A/c2hvd2RhdGVzdGFydD0lcyZzaG93ZGF0ZWVuZD0lcyZzcG9ydGlkPTI=')%(THE_DATE,Oneweek)
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<span class="fixture">                        <a class="" href=".+?">                            <em class="">(.+?)</em> <em class="">v</em> <em class="">(.+?)</em> <em class="livestream">Live Stream</em></a></span>                    <span class="ground "><span                         class="time-channel ">(.+?)</span></span>.+?<span class="">(.+?)</span> .+?<span class="stage ">').findall(r)
-	for team1,team2,when,type in match:
-		if 'Live Stream' in when:
-			a,b = when.split("on")
-			common.addItem('[COLOR white]'+team1+' vs '+team2+'[/COLOR]','','',icon,fanart,'')
-			common.addItem('[COLOR skyblue]'+type+'[/COLOR]','','',icon,fanart,'')
-			common.addItem('[COLOR yellow]'+a+'[/COLOR][COLOR white] - Not televised in the UK[/COLOR]','','',icon,fanart,'')
-			common.addItem('------------------------------------------','','',icon,fanart,'')
-		else:
-			common.addItem('[COLOR white]'+team1+' vs '+team2+'[/COLOR]','','',icon,fanart,'')
-			common.addItem('[COLOR skyblue]'+type+'[/COLOR]','','',icon,fanart,'')
-			common.addItem('[COLOR yellow]'+when+'[/COLOR]','','',icon,fanart,'')
-			common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def F1_LISTINGS():
-
-	url = base64.b64decode(b'aHR0cDovL2ZhYmlwdHYuY29tL3Nwb3J0cy9mMS50eHQ=')
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<h2 class="f1-races__race-name">(.+?)</h2>.+?<p class="f1-races__race-date">(.+?)</p>.+?<td class="standing-table__cell">(.+?)</td>.+?<td class="standing-table__cell standing-table__cell--name">              (.+?)            </td>.+?<td class="standing-table__cell">(.+?)</td>.+?<td class="standing-table__cell">(.+?)</td>.+?<td class="standing-table__cell is-invisible">(.+?)</td>.+?<td class="standing-table__cell standing-table__cell--name">              (.+?)            </td>.+?<td class="standing-table__cell">(.+?)</td>.+?<td class="standing-table__cell">(.+?)</td>.+?<td class="standing-table__cell">(.+?)</td>.+?<td class="standing-table__cell standing-table__cell--name">              (.+?)            </td>.+?<td class="standing-table__cell">(.+?)</td>.+?<td class="standing-table__cell">(.+?)</td>.+?<td class="standing-table__cell is-invisible">(.+?)</td>.+?<td class="standing-table__cell standing-table__cell--name">              (.+?)            </td>.+?<td class="standing-table__cell">(.+?)</td>.+?<td class="standing-table__cell">(.+?)</td>.+?<td class="standing-table__cell">(.+?)</td>.+?<td class="standing-table__cell standing-table__cell--name">              (.+?)            </td>.+?<td class="standing-table__cell">(.+?)</td>.+?<td class="standing-table__cell">(.+?)</td>').findall(r)
-	for location,daterange,date,eventtype,start,finish,date2,eventtype2,start2,finish2,date3,eventtype3,start3,finish3,date4,eventtype4,start4,finish4,date5,eventtype5,start5,finish5 in match:
-		common.addItem('[COLOR white]'+location+' taking place '+daterange+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR skyblue]'+date+'[/COLOR] - [COLOR white]'+eventtype+' - On Air: [COLOR skyblue]'+start+'[/COLOR] and Starts: [COLOR skyblue]'+finish+'[/COLOR][/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR skyblue]'+date2+'[/COLOR] - [COLOR white]'+eventtype2+' - On Air: [COLOR skyblue]'+start2+'[/COLOR] and Starts: [COLOR skyblue]'+finish2+'[/COLOR][/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR skyblue]'+date3+'[/COLOR] - [COLOR white]'+eventtype3+' - On Air: [COLOR skyblue]'+start3+'[/COLOR] and Starts: [COLOR skyblue]'+finish3+'[/COLOR][/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR skyblue]'+date4+'[/COLOR] - [COLOR white]'+eventtype4+' - On Air: [COLOR skyblue]'+start4+'[/COLOR] and Starts: [COLOR skyblue]'+finish4+'[/COLOR][/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR skyblue]'+date5+'[/COLOR] - [COLOR white]'+eventtype5+' - On Air: [COLOR skyblue]'+start5+'[/COLOR] and Starts: [COLOR skyblue]'+finish5+'[/COLOR][/COLOR]','','',icon,fanart,'')
-		common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def DARTS_LISTINGS():
-
-	url = base64.b64decode(b'aHR0cDovL3d3dy5za3lzcG9ydHMuY29tL2RhcnRzL3NjaGVkdWxl')
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<div class="score-sub" style="width:56px">        (.+?)    </div>    <div class="score-comp">(.+?)</div>        <div class="score-side" style="width:360px">        (.+?)                    </div>        <ul class="score-sublinks">                        <li class="score-tv"><img src=".+?" title="(.+?)"></li>').findall(r)
-	for date,location,type,channel in match:
-		if not '&nbsp;' in location:
-			common.addItem('[COLOR white]'+date+' [COLOR white]taking place at '+location+'[/COLOR]','','',icon,fanart,'')
-		else:	
-			common.addItem('[COLOR white]'+date+'[/COLOR][COLOR white] - No location found[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR skyblue]'+type+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR yellow] '+channel+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def NBA_LISTINGS():
-
-	THE_DATE = time.strftime("%Y%m%d") # todays date
-
-	now = datetime.now()
-	diff = timedelta(days=7)
-	future = now + diff
-	Oneweek = future.strftime("%Y%m%d") # date in a week
-	url = base64.b64decode(b'aHR0cDovL3d3dy53aGVyZXN0aGVtYXRjaC5jb20vdHYvaG9tZS5hc3A/c2hvd2RhdGVzdGFydD0lcyZzaG93ZGF0ZWVuZD0lcyZzcG9ydGlkPTIz')%(THE_DATE,Oneweek)
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<span class="fixture">                        <a class="" href=".+?">                            <em class="">(.+?)</em> <em class="">v</em> <em class="">(.+?)</em> <em class="livestream">Live Stream</em></a></span>                    <span class="ground "><span                         class="time-channel ">(.+?)</span></span>').findall(r)
-	common.addItem('[COLOR white]Check out the Live NBA Section for all games[/COLOR]','','',icon,fanart,'')
-	common.addItem('------------------------------------------','','',icon,fanart,'')
-	for away,home,channel in match:
-		common.addItem('[COLOR white]'+away+' vs '+home+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR yellow]'+channel+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def NHL_LISTINGS():
-
-	THE_DATE = time.strftime("%Y%m%d") # todays date
-
-	now = datetime.now()
-	diff = timedelta(days=7)
-	future = now + diff
-	Oneweek = future.strftime("%Y%m%d") # date in a week
-	url = base64.b64decode(b'aHR0cDovL3d3dy53aGVyZXN0aGVtYXRjaC5jb20vdHYvaG9tZS5hc3A/c2hvd2RhdGVzdGFydD0lcyZzaG93ZGF0ZWVuZD0lcyZzcG9ydGlkPTE5')%(THE_DATE,Oneweek)
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<span class="fixture">                        <a class="" href=".+?">                            <em class="">(.+?)</em> <em class="">v</em> <em class="">(.+?)</em> <em class="livestream">Live Stream</em></a></span>                    <span class="ground "><span                         class="time-channel ">(.+?)</span></span>.+?<td class="competition-name">                    <img title=".+?" src=".+?" alt=".+?" />                                        <span class="">(.+?)</span> <span class="stage ">').findall(r)
-	common.addItem('[COLOR white]Check out the Live NHL Section for all games[/COLOR]','','',icon,fanart,'')
-	common.addItem('------------------------------------------','','',icon,fanart,'')
-	for away,home,channel,competition in match:
-		common.addItem('[COLOR white]'+away+' vs '+home+'[/COLOR] [COLOR skyblue]in the '+competition+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR yellow]'+channel+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def MLB_LISTINGS():
-
-	THE_DATE = time.strftime("%Y%m%d") # todays date
-
-	now = datetime.now()
-	diff = timedelta(days=7)
-	future = now + diff
-	Oneweek = future.strftime("%Y%m%d") # date in a week
-	url = base64.b64decode(b'aHR0cDovL3d3dy53aGVyZXN0aGVtYXRjaC5jb20vdHYvaG9tZS5hc3A/c2hvd2RhdGVzdGFydD0lcyZzaG93ZGF0ZWVuZD0lcyZzcG9ydGlkPTg=')%(THE_DATE,Oneweek)
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<span class="fixture">                        <a class="" href=".+?">                            <em class="">(.+?)</em> <em class="">v</em> <em class="">(.+?)</em> <em class="livestream">Live Stream</em></a></span>                    <span class="ground "><span                         class="time-channel ">(.+?)</span></span>').findall(r)
-	common.addItem('[COLOR white]Check out the Live MLB Section for all games[/COLOR]','','',icon,fanart,'')
-	common.addItem('------------------------------------------','','',icon,fanart,'')
-	for team1,team2,channel in match:
-		common.addItem('[COLOR white]'+team1+' vs '+team2+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR yellow]'+channel+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def UFC_LISTINGS():
-
-	url = base64.b64decode(b'aHR0cDovL20udWsudWZjLmNvbS9zY2hlZHVsZQ==')
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<li class="touch-row-bg" data-event_id=".+?"><a href=".+?" title="Fight Card"><h5 class="upper ufc-red">(.+?)</h5><strong>(.+?)</strong><br />(.+?)<br />(.+?)</a></li>').findall(r)
-	common.addItem('[COLOR white]Use Fight Pass for Prelims & BT Sport for matches[/COLOR]','','',icon,fanart,'')
-	common.addItem('------------------------------------------','','',icon,fanart,'')
-	for channel,event,date,location in match:
-		common.addItem('[COLOR skyblue]'+event+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR white]Location: '+location+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR yellow]'+date+' '+channel+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def Wrestling_LISTINGS():
-
-	THE_DATE = time.strftime("%Y%m%d") # todays date
-
-	now = datetime.now()
-	diff = timedelta(days=7)
-	future = now + diff
-	Oneweek = future.strftime("%Y%m%d") # date in a week
-	url = base64.b64decode(b'aHR0cDovL3d3dy53aGVyZXN0aGVtYXRjaC5jb20vdHYvaG9tZS5hc3A/c2hvd2RhdGVzdGFydD0lcyZzaG93ZGF0ZWVuZD0lcyZzcG9ydGlkPTM1')%(THE_DATE,Oneweek)
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<td class="fixture-details">                    <span class="fixture"><a class=" eventlink" href=".+?"><strong class="">.+?</strong></a></span>                    <em class="">(.+?)</em>                    <span class="ground "><span                         class="time-channel ">(.+?)</span></span>').findall(r)
-	for when,event in match:
-		common.addItem('[COLOR white]'+when+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR yellow]'+event+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def HorseRacing_LISTINGS():
-
-	THE_DATE = time.strftime("%Y%m%d") # todays date
-
-	now = datetime.now()
-	diff = timedelta(days=7)
-	future = now + diff
-	Oneweek = future.strftime("%Y%m%d") # date in a week
-	url = base64.b64decode(b'aHR0cDovL3d3dy53aGVyZXN0aGVtYXRjaC5jb20vdHYvaG9tZS5hc3A/c2hvd2RhdGVzdGFydD0lcyZzaG93ZGF0ZWVuZD0lcyZzcG9ydGlkPTI1')%(THE_DATE,Oneweek)
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<a class=" eventlink" href=".+?"><strong class="">.+?</strong></a></span>                    <em class="">(.+?)</em>                    <span class="ground "><span                         class="time-channel ">(.+?)</span></span>.+?</td>                <td class="away-team"></td>                                    <td class="start-details">                                                    <span>.+?</span><span class="time "><em class="">.+?</em></span>.+?<td class="competition-name">                    <img title=".+?" src=".+?" alt=".+?" />                                        <span class="">(.+?)</span>').findall(r)
-	for event,when,type in match:
-		a,b = event.split("Live Racing from ")
-		common.addItem('[COLOR white]'+type+' at[/COLOR] [COLOR skyblue]'+b+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR yellow]'+when+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def Hockey_LISTINGS():
-
-	THE_DATE = time.strftime("%Y%m%d") # todays date
-
-	now = datetime.now()
-	diff = timedelta(days=7)
-	future = now + diff
-	Oneweek = future.strftime("%Y%m%d") # date in a week
-	url = base64.b64decode(b'aHR0cDovL3d3dy53aGVyZXN0aGVtYXRjaC5jb20vdHYvaG9tZS5hc3A/c2hvd2RhdGVzdGFydD0lcyZzaG93ZGF0ZWVuZD0lcyZzcG9ydGlkPTE5')%(THE_DATE,Oneweek)
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<span class="fixture">                        <a class="" href=".+?">                            <em class="">(.+?)</em> <em class="">v</em> <em class="">(.+?)</em> <em class="livestream">Live Stream</em></a></span>                    <span class="ground "><span                         class="time-channel ">(.+?)</span></span>                                    </td>                <td class="away-team"><a title=".+?" href=".+?">                    <img src=".+?" alt=".+?"                        class="badge " /></a></td>                                    <td class="start-details">                                                    <span>.+?</span><span class="time "><em class="">.+?</em></span>.+?<span class="">(.+?)</span> <span class="stage ">').findall(r)
-	for away,home,when,comp in match:
-		common.addItem('[COLOR white]'+away+' vs '+home+'[/COLOR] [COLOR skyblue]in the '+comp+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR yellow]'+when+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def Boxing_LISTINGS():
-
-	THE_DATE = time.strftime("%Y%m%d") # todays date
-
-	now = datetime.now()
-	diff = timedelta(days=31)
-	future = now + diff
-	Oneweek = future.strftime("%Y%m%d") # date in a week
-	url = base64.b64decode(b'aHR0cDovL3d3dy53aGVyZXN0aGVtYXRjaC5jb20vdHYvaG9tZS5hc3A/c2hvd2RhdGVzdGFydD0lcyZzaG93ZGF0ZWVuZD0lcyZzcG9ydGlkPTk=')%(THE_DATE,Oneweek)
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<span class="fixture"><a class=".+?eventlink" href=".+?"><strong class=".+?>.+?</strong></a></span>                    <em class=".+?>(.+?)</em>                    <span class="ground.+?><span                         class="time-channel.+?>(.+?)</span></span>.+?<td class="start-details">                                                    <span>(.+?)</span><span class="time.+?><em class=".+?>.+?</em></span>.+?<td class="competition-name">                    <img title=".+?" src=".+?" alt=".+?" />                                        <span class=".+?>(.+?)</span>').findall(r)
-	for event,channel,date,competition in match:
-		a,b = channel.split(" at ")
-		common.addItem('[COLOR white]'+event+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR skyblue]'+competition+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR yellow]'+date+' at '+b+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def Motorsport_LISTINGS():
-
-	THE_DATE = time.strftime("%Y%m%d") # todays date
-
-	now = datetime.now()
-	diff = timedelta(days=7)
-	future = now + diff
-	Oneweek = future.strftime("%Y%m%d") # date in a week
-	url = base64.b64decode(b'aHR0cDovL3d3dy53aGVyZXN0aGVtYXRjaC5jb20vdHYvaG9tZS5hc3A/c2hvd2RhdGVzdGFydD0lcyZzaG93ZGF0ZWVuZD0lcyZzcG9ydGlkPTIw')%(THE_DATE,Oneweek)
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<span class="fixture"><a class=".+?eventlink" href=".+?"><strong class=".+?>(.+?)</strong></a></span>                    <em class=".+?>(.+?)</em>                    <span class="ground.+?><span                         class="time-channel.+?>(.+?)</span></span>.+?<td class="competition-name">                    <img title=".+?" src=".+?" alt=".+?" />                                        <span class=".+?>(.+?)</span>').findall(r)
-	for title,event,when,competition in match:
-		common.addItem('[COLOR white]'+title+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR white]'+event+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR yellow]'+when+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR skyblue]'+competition+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def Golf_LISTINGS():
-
-	THE_DATE = time.strftime("%Y%m%d") # todays date
-
-	now = datetime.now()
-	diff = timedelta(days=31)
-	future = now + diff
-	Oneweek = future.strftime("%Y%m%d") # date in a week
-	url = base64.b64decode(b'aHR0cDovL3d3dy53aGVyZXN0aGVtYXRjaC5jb20vdHYvaG9tZS5hc3A/c2hvd2RhdGVzdGFydD0lcyZzaG93ZGF0ZWVuZD0lcyZzcG9ydGlkPTEz')%(THE_DATE,Oneweek)
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<span class="fixture"><a class=".+?eventlink" href=".+?"><strong class=".+?>(.+?)</strong></a></span>                    <em class=".+?>(.+?)</em>                    <span class="ground.+?><span                         class="time-channel.+?>(.+?)</span></span>.+?<td class="start-details">                                                    <span>(.+?)</span><span class="time.+?><em class=".+?>.+?</em></span>.+?<td class="competition-name">.+?<a class=".+?" href=".+?"><span class=".+?>(.+?)</span> </a><span class="stage.+?>').findall(r)
-	for title,event,when,date,competition in match:
-		a,b = when.split(" at ")
-		common.addItem('[COLOR white]'+event+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR skyblue]'+competition+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR yellow]'+date+' at '+b+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def AFL_LISTINGS():
-
-	THE_DATE = time.strftime("%Y%m%d") # todays date
-
-	now = datetime.now()
-	diff = timedelta(days=7)
-	future = now + diff
-	Oneweek = future.strftime("%Y%m%d") # date in a week
-	url = base64.b64decode(b'aHR0cDovL3d3dy53aGVyZXN0aGVtYXRjaC5jb20vdHYvaG9tZS5hc3A/c2hvd2RhdGVzdGFydD0lcyZzaG93ZGF0ZWVuZD0lcyZzcG9ydGlkPTIx')%(THE_DATE,Oneweek)
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<span class="fixture">                        <a class="" href=".+?">                            <em class="">(.+?)</em> <em class="">v</em> <em class="">(.+?)</em> <em class="livestream">Live Stream</em></a></span>                    <span class="ground "><span                         class="time-channel ">(.+?)</span></span>.+?<span class="">(.+?)</span> .+?<span class="stage ">').findall(r)
-	for team1,team2,when,type in match:
-		if 'Live Stream' in when:
-			a,b = when.split("on")
-			common.addItem('[COLOR white]'+team1+' vs '+team2+'[/COLOR] [COLOR skyblue]in the '+type+'[/COLOR]','','',icon,fanart,'')
-			common.addItem('[COLOR yellow]'+a+'[/COLOR][COLOR white] - Not televised in the UK[/COLOR]','','',icon,fanart,'')
-			common.addItem('------------------------------------------','','',icon,fanart,'')
-		else:
-			common.addItem('[COLOR white]'+team1+' vs '+team2+'[/COLOR] [COLOR skyblue]in the '+type+'[/COLOR]','','',icon,fanart,'')
-			common.addItem('[COLOR yellow]'+when+'[/COLOR]','','',icon,fanart,'')
-			common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def MotoGP_LISTINGS():
-
-	THE_DATE = time.strftime("%Y%m%d") # todays date
-
-	now = datetime.now()
-	diff = timedelta(days=31)
-	future = now + diff
-	Oneweek = future.strftime("%Y%m%d") # date in a week
-	url = base64.b64decode(b'aHR0cDovL3d3dy53aGVyZXN0aGVtYXRjaC5jb20vdHYvaG9tZS5hc3A/c2hvd2RhdGVzdGFydD0lcyZzaG93ZGF0ZWVuZD0lcyZzcG9ydGlkPTE1')%(THE_DATE,Oneweek)
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<span class="fixture"><a class=".+?eventlink" href=".+?"><strong class=".+?>(.+?)</strong></a></span>                    <em class=".+?>(.+?)</em>                    <span class="ground.+?><span                         class="time-channel.+?>(.+?)</span></span>.+?<td class="away-team"></td>                                    <td class="start-details">                                                    <span>(.+?)</span><span class="time.+?><em class=".+?>.+?</em></span>.+?<td class="competition-name">                    <img title=".+?" src=".+?" alt=".+?" />                                        <span class=".+?>(.+?)</span>').findall(r)
-	for title,event,channel,date,season in match:
-		a,b = channel.split(" at ")
-		common.addItem('[COLOR white]'+event+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR skyblue]'+title+' - '+season+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR yellow]'+date+' at '+b+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('------------------------------------------','','',icon,fanart,'')
-
-def Cycling_LISTINGS():
-
-	THE_DATE = time.strftime("%Y%m%d") # todays date
-
-	now = datetime.now()
-	diff = timedelta(days=7)
-	future = now + diff
-	Oneweek = future.strftime("%Y%m%d") # date in a week
-	url = base64.b64decode(b'aHR0cDovL3d3dy53aGVyZXN0aGVtYXRjaC5jb20vdHYvaG9tZS5hc3A/c2hvd2RhdGVzdGFydD0lcyZzaG93ZGF0ZWVuZD0lcyZzcG9ydGlkPTEw')%(THE_DATE,Oneweek)
-	r = common.OPEN_URL_NORMAL(url).replace('\r','').replace('\n','').replace('\t','')
-	match = re.compile('<span class="fixture"><a class=" eventlink" href=".+?"><strong class="">(.+?)</strong></a></span>                    <em class="">(.+?)</em>                    <span class="ground "><span                         class="time-channel ">(.+?)</span></span>                                        ').findall(r)
-	for title,event,when in match:
-		common.addItem('[COLOR white]'+event+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('[COLOR skyblue]'+title+':[/COLOR] [COLOR yellow]'+when+'[/COLOR]','','',icon,fanart,'')
-		common.addItem('------------------------------------------','','',icon,fanart,'')
-
-
-##################################################################################
-
-
-def PVRbeta():
+def PVRbeta(self):
 	PVRSimple = xbmc.translatePath('special://home/userdata/addon_data/pvr.iptvsimple/')
-
+	xbmc.executebuiltin("ActivateWindow(busydialog)")
 	if os.path.exists(PVRSimple):
 		shutil.rmtree(PVRSimple)
 	nullPVR   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":false},"id":1}'
@@ -413,12 +64,13 @@ def PVRbeta():
 	jsonSetPVR = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":true},"id":1}'
 	IPTVon 	   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":true},"id":1}'
 	nulldemo   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.demo","enabled":false},"id":1}'
-	EPGurl   = base64.b64decode("JXM6JXMveG1sdHYucGhwP3VzZXJuYW1lPSVzJnBhc3N3b3JkPSVz")%(lehekylg,Username,Password)
+	EPGurl   = base64.b64decode("JXM6JXMveG1sdHYucGhwP3VzZXJuYW1lPSVzJnBhc3N3b3JkPSVz")%(lehekylg,pordinumber,Username,Password)
 	
 	xbmc.executeJSONRPC(nullLiveTV)
 	xbmc.executeJSONRPC(nulldemo)
 	xbmc.executeJSONRPC(nullPVR)
-
+	time.sleep(2)
+	
 	if not os.path.exists(PVRSimple):
 		os.makedirs(PVRSimple)
 	shutil.copyfile(AddonRes+'/PVRset.xml', PVRSimple+'settings.xml')
@@ -426,39 +78,35 @@ def PVRbeta():
 	time.sleep(1)
 
 	f = open(BetaPVR, 'a')
-	f.write('#EXTM3U\n')
 
-	xbmc.executebuiltin("ActivateWindow(busydialog)")
-	UserList = base64.b64decode("JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD10cw==")%(lehekylg,Username,Password)
-	link = open_url(UserList).replace('\r','').replace(',',' Channel="').replace('\nhttp','", Link=http')
-	match = re.compile('#EXTINF:-1 tvg-id="(.+?)" tvg-name="(.+?)" tvg-logo="(.+?)" group-title="(.+?)" Channel="(.+?)", Link=(.+?).ts').findall(link)
-	for EPGid, ChannelName, ChanLogo, GroupTitle, StreamTitle, StreamLink in match:
-		OutpuT = '#EXTINF:-1 tvg-id="'+EPGid+'" tvg-name="'+ChannelName+'" tvg-logo="'+ChanLogo+'" group-title="'+GroupTitle+'",'+StreamTitle+'\n'+StreamLink+'.ts\n'
-		OutpuT = OutpuT.replace(',,','\n')
-		f = open(BetaPVR, 'a')
-		f.write(OutpuT)
-		if PVRon == 'false':
-			VAddon.setSetting(id='PVRUpdater', value='true')
+	UserList = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tM3U4")%(lehekylg,pordinumber,Username,Password)
+	link = open_url(UserList).replace('\n','').replace('\r','&split&')
+	a,b = link.split('&split&#EXTINF:-1 tvg-id="" tvg-name="Absolute 80')
+	OutpuT = a.replace("&split&","\n").replace("#EXTM3U","#EXTM3U\n")
+	f = open(BetaPVR, 'a')
+	f.write(OutpuT)
 
 	time.sleep(1)
 	xbmc.executeJSONRPC(IPTVon)
 	
 	moist = xbmcaddon.Addon('pvr.iptvsimple')
 	moist.setSetting(id='epgUrl', value=EPGurl)
-	moist.setSetting(id='m3uPath', value='special://home/userdata/addon_data/pvr.iptvsimple/VStreams.m3u8')
-	time.sleep(1)
+	moist.setSetting(id='m3uPath', value='special://home/userdata/addon_data/pvr.iptvsimple/EyePeaTV.m3u8')
+	time.sleep(3)
 	xbmc.executeJSONRPC(jsonSetPVR)
+	time.sleep(3)
 	xbmc.executeJSONRPC(IPTVon)
+	if PVRon == 'false':
+		FabAddon.setSetting(id='PVRUpdater', value='true')
 	xbmc.executebuiltin("Dialog.Close(busydialog)")
 	xbmc.executebuiltin('Notification(PVR Setup,[COLOR white]PVR is now setup allow loading to finish[/COLOR],3000,special://home/addons/'+AddonID+'/icon.png)')
+	time.sleep(5)
 	xbmc.executebuiltin("Container.Refresh")
 
-
-def correctPVR():
+def correctPVR(self):
 
 	try:
-		req = urllib2.Request(loginurl,headers={"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36"})
-		connection = urllib2.urlopen(req)
+		connection = urllib2.urlopen(loginurl)
 		print connection.getcode()
 		connection.close()
 		#playlist found, user active & login correct, proceed to addon
@@ -486,11 +134,11 @@ def correctPVR():
 	jsonSetPVR = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":true},"id":1}'
 	IPTVon 	   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":true},"id":1}'
 	nulldemo   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.demo","enabled":false},"id":1}'
-	EPGurl   = base64.b64decode("JXM6JXMveG1sdHYucGhwP3VzZXJuYW1lPSVzJnBhc3N3b3JkPSVz")%(lehekylg,Username,Password)
+	EPGurl   = base64.b64decode("JXM6JXMveG1sdHYucGhwP3VzZXJuYW1lPSVzJnBhc3N3b3JkPSVz")%(lehekylg,pordinumber,Username,Password)
 
 	xbmc.executeJSONRPC(nullPVR)
 	xbmc.executeJSONRPC(nullLiveTV)
-	time.sleep(5)
+	time.sleep(10)
 	xbmc.executeJSONRPC(jsonSetPVR)
 	xbmc.executeJSONRPC(IPTVon)
 	xbmc.executeJSONRPC(nulldemo)
@@ -500,76 +148,239 @@ def correctPVR():
 	moist.setSetting(id='epgUrl', value=EPGurl)
 	moist.setSetting(id='m3uCache', value="false")
 	moist.setSetting(id='epgCache', value="false")
+	time.sleep(25)
 	xbmc.executebuiltin("Dialog.Close(busydialog)")
 	dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]We\'ve copied your logins to the PVR Guide[/COLOR]',' ','[COLOR white]You [B]MUST[/B] allow time to load the EPG to avoid issues.[/COLOR]')
+	xbmc.executebuiltin("Container.Refresh")
+	exit()
 
-def disablePVR():
+def disablePVR(self):
 	xbmc.executebuiltin("ActivateWindow(busydialog)")
 	nullPVR   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":false},"id":1}'
 	nullLiveTV = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":false},"id":1}'
 	PVRdata   =  xbmc.translatePath(os.path.join('special://home/userdata/addon_data/','pvr.iptvsimple'))
-	xbmc.executeJSONRPC(nullPVR)
+	if PVRon == 'false':
+		FabAddon.setSetting(id='PVRUpdater', value='true')
 	xbmc.executeJSONRPC(nullLiveTV)
+	time.sleep(2)
+	xbmc.executeJSONRPC(nullPVR)
 	shutil.rmtree(PVRdata)
 	xbmc.executebuiltin("Dialog.Close(busydialog)")
-	dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]PVR Guide is now disabled[/COLOR]',' ','[COLOR white]You may set this up again any time[/COLOR]')
-	time.sleep(1)
+	xbmc.executebuiltin('Notification(PVR Disabled,[COLOR white]PVR Guide is now disabled[/COLOR],2000,special://home/addons/'+AddonID+'/icon.png)')
 	xbmc.executebuiltin("Container.Refresh")
 
 def SpeedChoice():
 	choice = dialog.select("[COLOR white]" + AddonTitle + " Speedtest[/COLOR]", ['[COLOR white]Ookla Speedtest[/COLOR]','[COLOR white]Fast.com Speedtest by Netflix[/COLOR]'])
 	if choice == 0:
-		xbmc.executebuiltin('Runscript("special://home/addons/plugin.video.eyepeatv/speedtest.py")') ###############
+		xbmc.executebuiltin('Runscript("special://home/addons/plugin.video.eyepeatv/speedtest.py")')
 	if choice == 1:
-		xbmc.executebuiltin('Runscript("special://home/addons/plugin.video.eyepeatv/fastload.py")')  ###############
+		xbmc.executebuiltin('Runscript("special://home/addons/plugin.video.eyepeatv/fastload.py")')
 
-def iVueInt():
+##########################################################################
 
-	try:
-		req = urllib2.Request(loginurl,headers={"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36"})
-		connection = urllib2.urlopen(req)
-		print connection.getcode()
-		connection.close()
-		#playlist found, user active & login correct, proceed to addon
-		pass
-		
-	except urllib2.HTTPError, e:
-		print e.getcode()
-		dialog.ok("[COLOR white]Error[/COLOR]",'[COLOR white]This process will not run as your account has expired[/COLOR]',' ','[COLOR white]Please check your account information[/COLOR]')
-		sys.exit(1)
-		xbmc.executebuiltin("Dialog.Close(busydialog)")
+AMS10 = "http://ams.download.10gbps.io/10mb.bin"
+AMS100 = "http://ams.download.10gbps.io/100mb.bin"
+CHI10 = "http://chi.download.10gbps.io/10mb.bin"
+CHI100 = "http://chi.download.10gbps.io/100mb.bin"
+LA10 = "http://lax.download.10gbps.io/10mb.bin"
+LA100 = "http://lax.download.10gbps.io/100mb.bin"
+FRA10 = "http://rbx.proof.ovh.net/files/10Mio.dat"
+FRA100 = "http://rbx.proof.ovh.net/files/100Mio.dat"
+CA10 = "http://bhs.proof.ovh.net/files/10Mio.dat"
+CA100 = "http://bhs.proof.ovh.net/files/100Mio.dat"
+LON10 = "http://lon.download.10gbps.io/10mb.bin"
+LON100 = "http://lon.download.10gbps.io/100mb.bin"
+NY10 = "http://nyc.download.10gbps.io/10mb.bin"
+NY100 = "http://nyc.download.10gbps.io/100mb.bin"
+SYD10 = "http://speedtest.syd01.softlayer.com/downloads/test10.zip"
+SYD100 = "http://speedtest.syd01.softlayer.com/downloads/test100.zip"
 
-	xbmc.executebuiltin("ActivateWindow(busydialog)")
-	iVue_SETTINGS = xbmc.translatePath(os.path.join('special://home/userdata/addon_data/script.ivueguide','settings.xml'))
-	UseriVueSets = xbmc.translatePath(os.path.join('special://home/userdata/addon_data/script.ivueguide','oldsettings.xml'))
-	AddoniVueSet = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.eyepeatv/resources','ivueset.xml')) ###############
-	iVue_DATA = xbmc.translatePath(os.path.join('special://home/userdata/addon_data/script.ivueguide/'))
-	if not xbmc.getCondVisibility('System.HasAddon(script.ivueguide)'):
-		install('iVue','https://raw.githubusercontent.com/totaltec2014/ivue2/master/script.ivueguide/script.ivueguide-3.0.9.zip')
-		xbmc.executebuiltin("UpdateAddonRepos")
-		xbmc.executebuiltin("UpdateLocalAddons")
-		time.sleep(5)
+##########################################################################
 
-	if not os.path.isfile(iVue_SETTINGS):
-		if not os.path.exists(iVue_DATA):
-			os.makedirs(iVue_DATA)
-		shutil.copyfile(AddoniVueSet, iVue_SETTINGS)
-	else:
-		os.remove(iVue_SETTINGS)
-		xbmc.log('Old iVue settings deleted')
-		if not os.path.exists(iVue_DATA):
-			os.makedirs(iVue_DATA)
-		shutil.copyfile(AddoniVueSet, iVue_SETTINGS)
+def DCtest(params):
+	addItem('[COLOR white]Canada[/COLOR]','',101,icon,fanart,'')
+	addItem('[COLOR white]Chicago[/COLOR]','',102,icon,fanart,'')
+	addItem('[COLOR white]France[/COLOR]','',103,icon,fanart,'')
+	addItem('[COLOR white]LA[/COLOR]','',104,icon,fanart,'')
+	addItem('[COLOR white]London[/COLOR]','',105,icon,fanart,'')
+	addItem('[COLOR white]Netherlands[/COLOR]','',106,icon,fanart,'')
+	addItem('[COLOR white]New York[/COLOR]','',107,icon,fanart,'')
+	addItem('[COLOR white]Sydney[/COLOR]','',108,icon,fanart,'')
+	addItem('[COLOR white]------------------------------[/COLOR]','',99999,icon,fanart,'')
+	addItem('[COLOR white]**Disclaimer**[/COLOR]','',109,icon,fanart,'')
 
-	iVueEnable 	   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"script.ivueguide","enabled":true},"id":1}'
-	xbmc.executeJSONRPC(iVueEnable)
-	
-	FullDB = os.path.join(AddonRes, 'fullivue.zip')
-	dp = xbmcgui.DialogProgress()
-	dp.create(AddonTitle,"Copying DB",'', 'Please Wait')
-	unzip(FullDB,iVue_DATA,dp)
-	xbmc.log("Full iVue Master DB Copied")
-	xbmc.executebuiltin('Runscript("special://home/addons/plugin.video.eyepeatv/fullivue.py")') ###############
+def Disclaimer():
+	common.TxtBox('\n\nPlease note these speedtest files are not hosted by us or our servers, they are hosted in common global datacenters which should provide a guide on your best server location\n\nWe advise you test these thoroughly to ensure you have an accurate result in these tests, the results can be provided to the Fab team to assist with connection issues\n\nWe will update this feature soon once we see the results from our users, this is currently just a rough guide')
+
+def CAN():
+	choice = dialog.select("[COLOR white]Canada[/COLOR]", ['[COLOR white]10Mb Test[/COLOR]','[COLOR white]100Mb Test[/COLOR]'])
+	if choice == 0:
+		runtest(CA10)
+	if choice == 1:
+		runtest(CA100)
+
+def CHI():
+	choice = dialog.select("[COLOR white]Chicago[/COLOR]", ['[COLOR white]10Mb Test[/COLOR]','[COLOR white]100Mb Test[/COLOR]'])
+	if choice == 0:
+		runtest(CHI10)
+	if choice == 1:
+		runtest(CHI100)
+
+def FRA():
+	choice = dialog.select("[COLOR white]France[/COLOR]", ['[COLOR white]10Mb Test[/COLOR]','[COLOR white]100Mb Test[/COLOR]'])
+	if choice == 0:
+		runtest(FRA10)
+	if choice == 1:
+		runtest(FRA100)
+
+def LA():
+	choice = dialog.select("[COLOR white]LA[/COLOR]", ['[COLOR white]10Mb Test[/COLOR]','[COLOR white]100Mb Test[/COLOR]'])
+	if choice == 0:
+		runtest(LA10)
+	if choice == 1:
+		runtest(LA100)
+
+def LON():
+	choice = dialog.select("[COLOR white]London[/COLOR]", ['[COLOR white]10Mb Test[/COLOR]','[COLOR white]100Mb Test[/COLOR]'])
+	if choice == 0:
+		runtest(LON10)
+	if choice == 1:
+		runtest(LON100)
+
+def AMS():
+	choice = dialog.select("[COLOR white]Netherlands[/COLOR]", ['[COLOR white]10Mb Test[/COLOR]','[COLOR white]100Mb Test[/COLOR]'])
+	if choice == 0:
+		runtest(AMS10)
+	if choice == 1:
+		runtest(AMS100)
+
+def NY():
+	choice = dialog.select("[COLOR white]New York[/COLOR]", ['[COLOR white]10Mb Test[/COLOR]','[COLOR white]100Mb Test[/COLOR]'])
+	if choice == 0:
+		runtest(NY10)
+	if choice == 1:
+		runtest(NY100)
+
+def SYD():
+	choice = dialog.select("[COLOR white]Sydney[/COLOR]", ['[COLOR white]10Mb Test[/COLOR]','[COLOR white]100Mb Test[/COLOR]'])
+	if choice == 0:
+		runtest(SYD10)
+	if choice == 1:
+		runtest(SYD100)
+
+max_Bps = 0.0
+currently_downloaded_bytes = 0.0
+
+#-----------------------------------------------------------------------------------------------------------------
+def download(url, dest, dp = None):
+    if not dp:
+        dp = xbmcgui.DialogProgress()
+        dp.create(AddonTitle,"Connecting to server",'[COLOR lime][I]Testing your internet speed...[/I][/COLOR]', 'Please wait...')
+    dp.update(0)
+    start_time=time.time()
+    try:
+        urllib.urlretrieve(url, dest, lambda nb, bs, fs: _pbhook(nb, bs, fs, dp, start_time))
+    except:
+        pass    
+    return ( time.time() - start_time )
+#-----------------------------------------------------------------------------------------------------------------
+def _pbhook(numblocks, blocksize, filesize, dp, start_time):
+        global max_Bps
+        global currently_downloaded_bytes
+        
+        try:
+            percent = min(numblocks * blocksize * 100 / filesize, 100) 
+            currently_downloaded_bytes = float(numblocks) * blocksize
+            currently_downloaded = currently_downloaded_bytes / (1024 * 1024) 
+            Bps_speed = currently_downloaded_bytes / (time.time() - start_time) 
+            if Bps_speed > 0:                                                 
+                eta = (filesize - numblocks * blocksize) / Bps_speed 
+                if Bps_speed > max_Bps: max_Bps = Bps_speed
+            else: 
+                eta = 0 
+            kbps_speed = Bps_speed * 8 / 1024 
+            mbps_speed = kbps_speed / 1024 
+            total = float(filesize) / (1024 * 1024) 
+            mbs = '%.02f MB of %.02f MB' % (currently_downloaded, total) 
+            dp.update(percent)
+        except: 
+            currently_downloaded_bytes = float(filesize)
+            percent = 100 
+            dp.update(percent) 
+        if dp.iscanceled(): 
+            dp.close() 
+            raise Exception("Cancelled")
+#-----------------------------------------------------------------------------------------------------------------
+def make_dir(mypath, dirname):
+    import xbmcvfs
+    
+    if not xbmcvfs.exists(mypath): 
+        try:
+            xbmcvfs.mkdirs(mypath)
+        except:
+            xbmcvfs.mkdir(mypath)
+    
+    subpath = os.path.join(mypath, dirname)
+    
+    if not xbmcvfs.exists(subpath): 
+        try:
+            xbmcvfs.mkdirs(subpath)
+        except:
+            xbmcvfs.mkdir(subpath)
+            
+    return subpath
+#-----------------------------------------------------------------------------------------------------------------
+def GetEpochStr():
+    time_now  = datetime.now()
+    epoch     = time.mktime(time_now.timetuple())+(time_now.microsecond/1000000.)
+    epoch_str = str('%f' % epoch)
+    epoch_str = epoch_str.replace('.','')
+    epoch_str = epoch_str[:-3]
+    return epoch_str
+#-----------------------------------------------------------------------------------------------------------------
+def runtest(url):
+    addon_profile_path = xbmc.translatePath(ADDON.getAddonInfo('profile'))
+    speed_test_files_dir = make_dir(addon_profile_path, 'speedtestfiles')
+    speed_test_download_file = os.path.join(speed_test_files_dir, GetEpochStr() + '.speedtest')
+    timetaken = download(url, speed_test_download_file)
+    os.remove(speed_test_download_file)
+    avgspeed = ((currently_downloaded_bytes / timetaken) * 8 / ( 1024 * 1024 ))
+    maxspeed = (max_Bps * 8/(1024*1024))
+    if avgspeed < 2:
+        livestreams = 'Not likely to play at all'
+        onlinevids = 'Expect HEAVY buffering'
+        rating = '[COLOR white][B] Verdict: Very Poor   | Score: [COLOR white]1/10[/B][/COLOR]'
+    elif avgspeed < 5:
+        livestreams = 'You might be ok for SD content.'
+        onlinevids = 'SD/DVD quality should be ok, HD probably not.'
+        rating = '[COLOR white][B]Poor   | Score: [COLOR white]2/10[/B][/COLOR]'
+    elif avgspeed < 10:
+        livestreams = 'Some HD streams may struggle, SD should be fine.'
+        onlinevids = '720 should be fine but some 1080 may struggle.'
+        rating = '[COLOR white][B]OK   | Score: [COLOR white]4/10[/B][/COLOR]'
+    elif avgspeed < 15:
+        livestreams = 'All streams including HD should stream fine.'
+        onlinevids = '720 & 1080 should stream fine'
+        rating = '[COLOR white][B]Good   | Score: [COLOR white]6/10[/B][/COLOR]'
+    elif avgspeed < 20:
+        livestreams = 'All streams should play fine'
+        onlinevids = 'All VoD should play fine'
+        rating = '[COLOR white][B][I]Very good[/I]   | Score: [COLOR white]8/10[/B][/COLOR]'
+    else:
+        livestreams = 'All streams should play smooth'
+        onlinevids = 'All VoD should play smooth'
+        rating = '[COLOR white][B]Excellent   | Score: [COLOR white]10/10[/B][/COLOR]'
+    print "Average Speed: " + str(avgspeed)
+    print "Max. Speed: " + str(maxspeed)
+    dialog = xbmcgui.Dialog()
+    ok = dialog.ok(
+    '[COLOR white][B]Your Result:[/COLOR][/B] ' + rating,
+    #'[COLOR blue]Duration:[/COLOR] %.02f secs' % timetaken,
+    '[COLOR white][B]Live Streams:[/COLOR][/B] ' + livestreams,
+    '[COLOR white][B]Movie Streams:[/COLOR][/B] ' + onlinevids,
+	'[COLOR white][B]Duration:[/COLOR][/B] %.02f secs ' % timetaken + '[COLOR white][B]Average Speed:[/B][/COLOR] %.02f Mb/s ' % avgspeed + '[COLOR white][B]Max Speed:[/B][/COLOR] %.02f Mb/s ' % maxspeed,
+	#'[COLOR blue]Maximum Speed:[/COLOR] %.02f Mb/s ' % maxspeed,
+	)
 
 def install(name,url):
     path = xbmc.translatePath(os.path.join('special://home/addons','packages'))
@@ -648,6 +459,15 @@ def addItem(name,url,mode,iconimage,fanart,description):
 	ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=False)
 	return ok
 
+def addItem2(name,url,mode,iconimage,fanart,description):
+	u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&fanart="+urllib.quote_plus(fanart)
+	ok=True
+	liz=xbmcgui.ListItem(name, iconImage="DefaultFolder.png", thumbnailImage=iconimage)
+	liz.setInfo( type="Video", infoLabels={ "Title": name } )
+	liz.setProperty( "Fanart_Image", fanart )
+	ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=True)
+	return ok
+
 def addDir(name,url,mode,iconimage,fanart,description):
         u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&iconimage="+urllib.quote_plus(iconimage)+"&fanart="+urllib.quote_plus(fanart)+"&description="+urllib.quote_plus(description)
         ok=True
@@ -676,7 +496,7 @@ def OPEN_URL(url):
     link=response.read()
     response.close()
     return link
-
+	
 def open_url(url):
     try:
         req = urllib2.Request(url,headers={"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36"})
@@ -691,17 +511,11 @@ def OPEN_URL_NORMAL(url):
 	if "https://" in url:
 		url = url.replace("https://","http://")
 	req = urllib2.Request(url)
-	req.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.73 Safari/537.36')
+	req.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36')
 	response = urllib2.Request(req)
 	link=response.read()
 	response.close()
 	return link
-
-"""def ExtraMenuu():
-    link = OPEN_URL('http://futurestreams.tk/Backup/Downloads/ExtrasList2.xml').replace('\n','').replace('\r','')  #Spaf
-    match = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?escription="(.+?)"').findall(link)
-    for name,url,iconimage,FanArt,description in match:
-        addXMLMenu(name,url,6,iconimage,FanArt,description)"""
 
 def Buildlist(url):
     list = common.m3u2list(url)
@@ -757,8 +571,6 @@ except:pass
 
 if mode == 7:
 	quit
-if mode == 6:
-	FootballSchedule()
 elif mode == 8:
 	iVuemenu()
 elif mode == 12:
@@ -773,10 +585,10 @@ elif mode == 10:
 	correctPVR()
 elif mode == 11:
 	xbmc.executebuiltin('ActivateWindow(TVGuide)')
-elif mode == 13:
-	iVueInt()
-elif mode == 14:
-    xbmc.executebuiltin('RunAddon(script.ivueguide)')
+	exit()
+elif mode == 6001:
+	xbmc.executebuiltin('ActivateWindow(TVChannels)')
+	exit()
 elif mode == 15:
 	installer.INSTALLAPK(name,url,description)
 elif mode == 16:
@@ -800,38 +612,28 @@ elif mode==24:
 elif mode==25:
 		maintenance.viewErrors()
 elif mode==26:
-        F1_LISTINGS()
-elif mode==25:
-        DARTS_LISTINGS()
-elif mode==24:
-		NBA_LISTINGS()
-elif mode==23:
-		NHL_LISTINGS()
-elif mode==22:
-		MLB_LISTINGS()
-elif mode==211:
-		UFC_LISTINGS()
-elif mode==212:
-		RugbyUnion_LISTINGS()
-elif mode==213:
-		RugbyLeague_LISTINGS()
-elif mode==215:
-		Tennis_LISTINGS()
-elif mode==216:
-		Wrestling_LISTINGS()
-elif mode==217:
-		HorseRacing_LISTINGS()
-elif mode==218:
-		Hockey_LISTINGS()
-elif mode==219:
-		Boxing_LISTINGS()
-elif mode==220:
-		Motorsport_LISTINGS()
-elif mode==221:
-		Golf_LISTINGS()
-elif mode==222:
-		AFL_LISTINGS()
-elif mode==223:
-		MotoGP_LISTINGS()
-elif mode==224:
-		Cycling_LISTINGS()
+		maintenance.CheckUpdates()
+elif mode == 100:
+		DCtest()
+elif mode == 101:
+		CAN()
+elif mode == 102:
+		CHI()
+elif mode == 103:
+		FRA()
+elif mode == 104:
+		LA()
+elif mode == 105:
+		LON()
+elif mode == 106:
+		AMS()
+elif mode == 107:
+		NY()
+elif mode == 108:
+		SYD()
+elif mode == 109:
+		Disclaimer()
+		
+elif mode == 7001:
+	xbmc.executebuiltin('RunAddon(plugin.video.iptv.recorder)')
+		

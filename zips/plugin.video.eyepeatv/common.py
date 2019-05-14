@@ -13,7 +13,7 @@ def OpenURL(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64
 	else:
 		req = urllib2.Request(url)
 	
-	req.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; rv:11.0) Gecko/20100101 Firefox/11.0')
+	req.add_header('User-Agent', ' Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
 	for k, v in headers.items():
 		req.add_header(k, v)
 	
@@ -52,49 +52,10 @@ def KODI_VERSION():
 	
 	return codename
 
-def TextBoxesPlain(announce):
-	class TextBox():
-		WINDOW=10147
-		CONTROL_LABEL=1
-		CONTROL_TEXTBOX=5
-		def __init__(self,*args,**kwargs):
-			xbmc.executebuiltin("ActivateWindow(%d)" % (self.WINDOW, )) # activate the text viewer window
-			self.win=xbmcgui.Window(self.WINDOW) # get window
-			xbmc.sleep(500) # give window time to initialize
-			self.setControls()
-		def setControls(self):
-			self.win.getControl(self.CONTROL_LABEL).setLabel('[COLOR powderblue]EyePeaTV[/COLOR]') # set heading
-			try: f=open(announce); text=f.read()
-			except: text=announce
-			self.win.getControl(self.CONTROL_TEXTBOX).setText(str(text))
-			return
-	TextBox()
-	while xbmc.getCondVisibility('Window.IsVisible(10147)'):
-		time.sleep(.5)
-
-def TextBoxes(announce):
-	class TextBox():
-		WINDOW=10147
-		CONTROL_LABEL=1
-		CONTROL_TEXTBOX=5
-		def __init__(self,*args,**kwargs):
-			xbmc.executebuiltin("ActivateWindow(%d)" % (self.WINDOW, )) # activate the text viewer window
-			self.win=xbmcgui.Window(self.WINDOW) # get window
-			xbmc.sleep(500) # give window time to initialize
-			self.setControls()
-		def setControls(self):
-			self.win.getControl(self.CONTROL_LABEL).setLabel('EyePeaTV Log Viewer') # set heading
-			try: f=open(announce); text=f.read()
-			except: text=announce
-			self.win.getControl(self.CONTROL_TEXTBOX).setText(str(text))
-			return
-	TextBox()
-	while xbmc.getCondVisibility('Window.IsVisible(10147)'):
-		time.sleep(.5)
 
 def OPEN_XML(url):
     req = urllib2.Request(url)
-    req.add_header('User-Agent', '')
+    req.add_header('User-Agent', ' Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
     response = urllib2.urlopen(req)
     link=response.read()
     response.close()
@@ -102,7 +63,7 @@ def OPEN_XML(url):
 
 def OPEN_URL_NORMAL(url):
     req = urllib2.Request(url)
-    req.add_header('User-Agent', 'python-requests/2.9.1')
+    req.add_header('User-Agent', ' Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
     response = urllib2.urlopen(req)
     link=response.read()
     response.close()
@@ -115,6 +76,16 @@ def addItem(name,url,mode,iconimage,fanart,description):
 	liz.setInfo( type="Video", infoLabels={ "Title": name } )
 	liz.setProperty( "Fanart_Image", fanart )
 	ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=False)
+	return ok
+
+def addItem2(name,url,mode,iconimage,fanart,description):
+	#xbmc.log("its here: "+str(len(sys.argv)))
+	u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&fanart="+urllib.quote_plus(fanart)
+	ok=True
+	liz=xbmcgui.ListItem(name, iconImage="DefaultFolder.png", thumbnailImage=iconimage)
+	liz.setInfo( type="Video", infoLabels={ "Title": name } )
+	liz.setProperty( "Fanart_Image", fanart )
+	ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=True)
 	return ok
 
 def ReadFile(fileName):

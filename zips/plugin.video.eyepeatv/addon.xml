@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.eyepeatv" version="3.0a" name="EyePeaTV" provider-name="EyePeaTV">
+<addon id="plugin.video.eyepeatv" version="5.6" name="[COLOR gold]EyePeaTV[/COLOR]" provider-name="EyePeaTV">
     <requires>
-        <import addon="xbmc.python" version="2.1.0"/>        
+        <import addon="xbmc.python" version="2.1.0"/>
+		<import addon="script.module.addon.common" optional="true" />
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
@@ -10,8 +11,8 @@
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary>EyePeaTV</summary>
-        <description>EyePeaTV</description>
-        <disclaimer>The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content providers.</disclaimer>
+        <description>EyePeaTV - Live TV / PPV / Sports / Kids / Movies / Entertainment at an affordable price for all.</description>
+        <disclaimer></disclaimer>
         <language>en</language>
         <platform>all</platform>
     </extension>

@@ -2762,7 +2762,7 @@ class oO0ooOO(xbmcgui.WindowXMLDialog):
 if __name__ == '__main__':
     if 27 - 27: II1Ii1iI1i - O0 % i111I * o0ooo.I11iii11IIi % iIii1I11I1II1
     if 37 - 37: OoooooooOO + O0 - i1IIi % OOO0O
-    oO0o00ooO = oO0ooOO("main.xml", o0OOO.getAddonInfo('path'), "Default")
+    oO0o00ooO = oO0ooOO("main.xml", o0OOO.getAddonInfo('path'), "Speed")
     if 24 - 24: OoOoOO00
     del oO0o00ooO
 # dd678faae9ac167bc83abf78e5cb2f3f0688d3a3

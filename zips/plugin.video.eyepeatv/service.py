@@ -1,15 +1,19 @@
-import xbmc,xbmcplugin,xbmcgui,re,os,xbmcaddon,sys,base64,plugintools,time,urllib2,string,logging,array,shutil
+import xbmc,xbmcplugin,xbmcgui,re,os,xbmcaddon,sys,base64,time,urllib2,string,logging,array,news,shutil
 AddonID = 'plugin.video.eyepeatv'
-Username = plugintools.get_setting("Username")
-Password = plugintools.get_setting("Password")
-PVRon = plugintools.get_setting("PVRUpdater")
-lehekylg = base64.b64decode("aHR0cDovL3dhdGNoLmdvdGRhcmsuY29t")
-#pordinumber = base64.b64decode("Njk2OQ==")
-EPGurl = base64.b64decode("JXMveG1sdHYucGhwP3VzZXJuYW1lPSVzJnBhc3N3b3JkPSVz")%(lehekylg,Username,Password)
-NewPVR = xbmc.translatePath('special://home/userdata/addon_data/pvr.iptvsimple/EyePeaTV.m3u8')
-dialog = xbmcgui.Dialog()
-VAddon = xbmcaddon.Addon('plugin.video.eyepeatv')
+FabAddon = xbmcaddon.Addon('plugin.video.eyepeatv')
+Username = FabAddon.getSetting("Username")
+Password = FabAddon.getSetting("Password")
+PVRon = FabAddon.getSetting("PVRUpdater")
+lehekylg = base64.b64decode("aHR0cDovL3RoZXBrLmNv")
+pordinumber = base64.b64decode("MjA4Ng==")
+EPGurl = base64.b64decode("JXM6JXMveG1sdHYucGhwP3VzZXJuYW1lPSVzJnBhc3N3b3JkPSVz")%(lehekylg,pordinumber,Username,Password)
+NewPVR = xbmc.translatePath('special://home/userdata/addon_data/pvr.iptvsimple/players.m3u8')
 iVueRepo = xbmc.translatePath('special://home/addons/xbmc.repo.ivueguide')
+dialog = xbmcgui.Dialog()
+Duration=FabAddon.getSetting("FinalDuration")
+if Duration == '':
+	FabAddon.setSetting(id='FinalDuration', value='Off')
+
 if os.path.exists(iVueRepo):
 	shutil.rmtree(iVueRepo)
 
@@ -19,20 +23,21 @@ def Check():
 		if os.path.exists(NewPVR):
 			os.remove(NewPVR)
 		time.sleep(1)
-		f = open(NewPVR, 'a')
-		f.write('#EXTM3U\n')
-		UserList = base64.b64decode("JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD10cw==")%(lehekylg,Username,Password)
-		link = open_url(UserList).replace('\r','').replace(',',' Channel="').replace('\nhttp','", Link=http')
-		match = re.compile('#EXTINF:-1 tvg-id="(.+?)" tvg-name="(.+?)" tvg-logo="(.+?)" group-title="(.+?)" Channel="(.+?)", Link=(.+?).ts').findall(link)
-		for EPGid, ChannelName, ChanLogo, GroupTitle, StreamTitle, StreamLink in match:
-				OutpuT = '#EXTINF:-1 tvg-id="'+EPGid+'" tvg-name="'+ChannelName+'" tvg-logo="'+ChanLogo+'" group-title="'+GroupTitle+'",'+StreamTitle+'\n'+StreamLink+'.ts\n'
-				OutpuT = OutpuT.replace(',,','\n')
-				f = open(NewPVR, 'a')
-				f.write(OutpuT)
-		if PVRon == 'false':
-			VAddon.setSetting(id='PVRUpdater', value='true')
-		
-		xbmc.executebuiltin('Notification(PVR Updated,[COLOR white]PVR Playlist Updated[/COLOR],3000,special://home/addons/'+AddonID+'/icon.png)')
+		try:
+			f = open(NewPVR, 'a')
+			UserList = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tM3U4")%(lehekylg,pordinumber,Username,Password)
+			link = open_url(UserList).replace('\n','').replace('\r','&split&')
+			a,b = newlink = link.split('&split&#EXTINF:-1 tvg-id="" tvg-name="Absolute 80')
+			OutpuT = a.replace("&split&","\n").replace("#EXTM3U","#EXTM3U\n")
+			f = open(NewPVR, 'a')
+			f.write(OutpuT)
+			if PVRon == 'false':
+				FabAddon.setSetting(id='PVRUpdater', value='true')
+			xbmc.executebuiltin('Notification(PVR Updated,[COLOR white]PVR Playlist Updated[/COLOR],3000,special://home/addons/'+AddonID+'/icon.png)')
+		except:
+			if PVRon == 'true':
+				FabAddon.setSetting(id='PVRUpdater', value='false')
+				xbmc.executebuiltin('Notification(PVR Update Failed,[COLOR white]PVR failed - now turned off[/COLOR],3000,special://home/addons/'+AddonID+'/icon.png)')
 
 def open_url(url):
     try:
@@ -42,5 +47,7 @@ def open_url(url):
         response.close()
         return link
     except:quit()
-	
+
+TypeOfMessage="t"; (NewImage,NewMessage)=news.FetchNews();
+news.CheckNews(TypeOfMessage,NewImage,NewMessage,True);
 Check()

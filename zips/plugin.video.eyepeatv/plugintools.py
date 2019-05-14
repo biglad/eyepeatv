@@ -103,7 +103,7 @@ def read(url): _log("read "+url); f=urllib2.urlopen(url); data=f.read(); f.close
 def read_body_and_headers(url,post=None,headers=[],follow_redirects=False,timeout=None):
     _log("read_body_and_headers "+url)
     if post is not None: _log("read_body_and_headers post="+post)
-    if len(headers)==0: headers.append(["User-Agent","Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:18.0) Gecko/20100101 Firefox/18.0"])
+    if len(headers)==0: headers.append(["User-Agent","Players"])
     # Start cookie lib
     ficherocookies=os.path.join(get_data_path(),'cookies.dat'); _log("read_body_and_headers cookies_file="+ficherocookies); cj=None; ClientCookie=None; cookielib=None
     try: _log("read_body_and_headers importing cookielib"); import cookielib # Let's see if cookielib is available
@@ -178,9 +178,8 @@ def find_single_match(text,pattern): # Parse string and extracts first match as 
     try: matches=re.findall(pattern,text,flags=re.DOTALL); result=matches[0]
     except: result=""
     return result
-def add_item(action="",title="",plot="",url="",thumbnail="",fanart="",show="",episode="",extra="",page="",info_labels=None,isPlayable=False,folder=True):
-    contextMenuItems = []
-    _log("add_item action=["+action+"] title=["+title+"] url=["+url+"] thumbnail=["+thumbnail+"] fanart=["+fanart+"] show=["+show+"] episode=["+episode+"] extra=["+extra+"] page=["+page+"] isPlayable=["+str(isPlayable)+"] folder=["+str(folder)+"]")
+def add_item(action="",title="",plot="",url="",thumbnail="",fanart="",show="",episode="",extra="",page="",info_labels=None,isPlayable=True,folder=True):
+    _log("add_item action=["+action+"] title=[COLOR yellow][B][I]["+title+"][/I][/B][/COLOR] url=["+url+"] thumbnail=["+thumbnail+"] fanart=["+fanart+"] show=["+show+"] episode=["+episode+"] extra=["+extra+"] page=["+page+"] isPlayable=["+str(isPlayable)+"] folder=["+str(folder)+"]")
     listitem=xbmcgui.ListItem(title,iconImage="DefaultVideo.png",thumbnailImage=thumbnail)
     if info_labels is None: info_labels={"Title":title,"FileName":title,"Plot":plot}
     listitem.setInfo( "video", info_labels )
@@ -196,13 +195,7 @@ def addItem(name,url,mode,iconimage,fanart):
 	liz.setInfo( type="Video", infoLabels={ "Title": name } )
 	liz.setProperty( "Fanart_Image", fanart )
 	ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=False)
-	return ok
-
-def addDir(url, title, icon, fanart):
-	li = xbmcgui.ListItem(title, iconImage=icon)
-	li.setProperty( "Fanart_Image", fanart )
-	xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=url, listitem=li)
-
+	
 def close_item_list(): _log("close_item_list"); xbmcplugin.endOfDirectory(handle=int(sys.argv[1]),succeeded=True)
 def play_resolved_url(url):
     _log("play_resolved_url ["+url+"]"); listitem=xbmcgui.ListItem(path=url); listitem.setProperty('IsPlayable','true')
@@ -282,12 +275,3 @@ f=open(os.path.join(os.path.dirname(__file__),"addon.xml")); data=f.read(); f.cl
 addon_id=find_single_match(data,'id="([^"]+)"')
 if addon_id=="": addon_id=find_single_match(data,"id='([^']+)'")
 __settings__=xbmcaddon.Addon(id=addon_id); __language__=__settings__.getLocalizedString
-
-def addItem2(name,url,mode,iconimage,fanart):
-	u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&fanart="+urllib.quote_plus(fanart)
-	ok=True
-	liz=xbmcgui.ListItem(name, iconImage="DefaultFolder.png", thumbnailImage=iconimage)
-	liz.setInfo( type="Video", infoLabels={ "Title": name } )
-	liz.setProperty( "Fanart_Image", fanart )
-	ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=True)
-	return ok

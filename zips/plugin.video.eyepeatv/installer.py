@@ -16,7 +16,7 @@ def INSTALLAPK(name,url,description):
 		path = xbmc.translatePath(os.path.join('/storage/emulated/0/Download',''))
 		dp = xbmcgui.DialogProgress()
 		dp.create(AddonTitle,"","",'APK: ' + name)
-		lib=os.path.join(path, name+'.apk')
+		lib=os.path.join(path, 'app.apk')
 		downloader.download(url, lib, dp)
 		dialog = xbmcgui.Dialog()
 		dialog.ok(AddonTitle, "[COLOR white]Launching the installer[/COLOR]" , "[COLOR white]Follow the install process to complete.[/COLOR]")

@@ -102,12 +102,13 @@ def peamenyy(params):
             plugintools.add_item( action=vod_channels("R29EZXYuY29ycmVjdFBWUg=="),   title="[COLOR red][B]Setup Full PVR[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
             #plugintools.add_item( action=vod_channels("R29EZXYuUFZSYmV0YQ=="),   title="[COLOR green][B]Setup PVR without VoD[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
         else:
-            plugintools.addItem('[COLOR lime][B]Launch PVR Guide [/B][/COLOR]','speed',11,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
-            plugintools.addItem('[COLOR lime][B]Launch PVR Channels[/B][/COLOR]','speed',6001,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
+            plugintools.addItem('[COLOR orange][B]Launch PVR Guide [/B][/COLOR]','speed',11,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
+            plugintools.addItem('[COLOR orange][B]Launch PVR Channels[/B][/COLOR]','speed',6001,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
             plugintools.add_item( action=vod_channels("R29EZXYuZGlzYWJsZVBWUg=="),   title="[COLOR red][B]Disable PVR[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
-            plugintools.addItem('[COLOR lime][B]Open IPTV Recoder[/B][/COLOR]','speed',7001,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
-        common.addItem('[COLOR white][B]Auto Clean Device[/B][/COLOR]','url',19,ICON,FANART,'')
-        common.addItem('[COLOR white][B]Update Addons & Repos[/B][/COLOR]',BASEURL,26,ICON,FANART,'')
+            plugintools.addItem('[COLOR orange][B]Open IPTV Recoder[/B][/COLOR]','speed',7001,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
+            plugintools.addItem('[COLOR orange][B]Reload EPG Data[/B][/COLOR]','speed',4632,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
+        common.addItem('[COLOR white][B]Auto Clean Device[/B][/COLOR]','url',19,GoDev.Images + 'logo.png',FANART,'')
+        common.addItem('[COLOR white][B]Update Addons & Repos[/B][/COLOR]',BASEURL,26,GoDev.Images + 'logo.png',FANART,'')
         plugintools.add_item( action=vod_channels("bWFpbnRNZW51"),   title="[COLOR white][B]Maintenance Tools[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
         plugintools.add_item( action=vod_channels("VG9vbHM="),   title="[COLOR pink][B]Tools & Settings[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
     elif channels != 1 and GoDev.mode != 1:
@@ -214,19 +215,19 @@ def get_size(start_path):
 def convertSize(size):
    import math
    if (size == 0):
-       return '[COLOR lime]0 MB[/COLOR]'
+       return '[COLOR orange]0 MB[/COLOR]'
    size_name = ("B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB")
    i = int(math.floor(math.log(size,1024)))
    p = math.pow(1024,i)
    s = round(size/p,2)
    if size_name == "B" or "KB":
-        return '[COLOR lime]%s %s' % (s,size_name[i]) + '[/COLOR]'
+        return '[COLOR orange]%s %s' % (s,size_name[i]) + '[/COLOR]'
    if size_name == "GB" or "TB" or "PB" or "EB" or "ZB" or "YB":
         return '[COLOR red]%s %s' % (s,size_name[i]) + '[/COLOR]'
    if s >= 100:
         return '[COLOR red]%s %s' % (s,size_name[i]) + '[/COLOR]'
    if s < 50:
-        return '[COLOR lime]%s %s' % (s,size_name[i]) + '[/COLOR]'
+        return '[COLOR orange]%s %s' % (s,size_name[i]) + '[/COLOR]'
    if s >= 50:
         if i < 100:
             return '[COLOR orange]%s %s' % (s,size_name[i]) + '[/COLOR]'
@@ -256,17 +257,17 @@ def maintMenu(params):
 	if startup_clean == "false":
 		startup_onoff = "[COLOR red]OFF[/COLOR]"
 	else:
-		startup_onoff = "[COLOR lime]ON[/COLOR]"
+		startup_onoff = "[COLOR orange]ON[/COLOR]"
 	if weekly_clean == "0":
 		weekly_onoff = "[COLOR red]OFF[/COLOR]"
 	else:
-		weekly_onoff = "[COLOR lime]ON[/COLOR]"
+		weekly_onoff = "[COLOR orange]ON[/COLOR]"
 
-	common.addItem('[COLOR white][B]Auto Clean Device[/B][/COLOR]','url',19,ICON,FANART,'')
-	common.addItem("[COLOR white][B]Clear Cache[/B][/COLOR] - Current Size: " + str(CACHE_SIZE),BASEURL,20,ICON,FANART,'')
-	common.addItem("[COLOR white][B]Delete Thumbnails [/B][/COLOR] - Current Size: " + str(THUMB_SIZE),BASEURL,22,ICON,FANART,'')
-	common.addItem("[COLOR white][B]Purge Packages [/B][/COLOR] - Current Size: " + str(PACKAGES_SIZE),BASEURL,23,ICON,FANART,'')
-	common.addItem('[COLOR white][B]Update Addons & Repos[/B][/COLOR]',BASEURL,26,ICON,FANART,'')
+	common.addItem('[COLOR white][B]Auto Clean Device[/B][/COLOR]','url',19,GoDev.Images + 'logo.png',FANART,'')
+	common.addItem("[COLOR white][B]Clear Cache[/B][/COLOR] - Current Size: " + str(CACHE_SIZE),BASEURL,20,GoDev.Images + 'logo.png',FANART,'')
+	common.addItem("[COLOR white][B]Delete Thumbnails [/B][/COLOR] - Current Size: " + str(THUMB_SIZE),BASEURL,22,GoDev.Images + 'logo.png',FANART,'')
+	common.addItem("[COLOR white][B]Purge Packages [/B][/COLOR] - Current Size: " + str(PACKAGES_SIZE),BASEURL,23,GoDev.Images + 'logo.png',FANART,'')
+	common.addItem('[COLOR white][B]Update Addons & Repos[/B][/COLOR]',BASEURL,26,GoDev.Images + 'logo.png',FANART,'')
 
 def security_check(params):
 	plugintools.add_item( action=vod_channels("VFZzZWFyY2g="),   title="[COLOR red][B]Live EyePeaTV Search[/B][/COLOR] (Enter tv show or movie name)" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("U2VhcmNoLWljb24ucG5n")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )

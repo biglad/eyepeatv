@@ -636,4 +636,8 @@ elif mode == 109:
 		
 elif mode == 7001:
 	xbmc.executebuiltin('RunAddon(plugin.video.iptv.recorder)')
+	
+elif mode == 4632:
+    addon = xbmcaddon.Addon('pvr.iptvsimple')
+    addon.setSetting('anything', 'anything')
 		

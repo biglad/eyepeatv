@@ -90,7 +90,8 @@ def peamenyy(params):
     channels = kontroll()
     if channels == 1 and GoDev.mode != 5 and GoDev.mode != 1:
         plugintools.log(pnimi+vod_channels("TG9naW4gU3VjY2Vzcw=="))
-        plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="[COLOR orange][B]* EyePeaTV LIVE *[/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
+        plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="[COLOR lightblue][B] Welcome to Eye Pea TV [/B][/COLOR] www.eyepeatv.co.uk", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
+        plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="[COLOR orange][B] EyePeaTV LIVE Full List [/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
         plugintools.add_item( action=vod_channels("VFZzZWFyY2g="),   title="[COLOR gold][B]Live EyePeaTV Search[/B][/COLOR] (Enter tv show or movie name)" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("U2VhcmNoLWljb24ucG5n")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
         #plugintools.add_item( action=vod_channels("ZGV0ZWN0X21vZGlmaWNhdGlvbg=="),   title="[COLOR deepskyblue][B]MOVIES[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("dm9kLnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
         #plugintools.add_item( action=vod_channels("ZGV0ZWN0X21vZGlmaWNhdGlvbjI="),   title="[COLOR red][B]TV SHOWS[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("dm9kLnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )

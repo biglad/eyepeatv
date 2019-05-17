@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.eyepeatv" version="5.9" name="[COLOR gold]EyePeaTV[/COLOR]" provider-name="EyePeaTV">
+<addon id="plugin.video.eyepeatv" version="6.0" name="[COLOR gold]EyePeaTV[/COLOR]" provider-name="EyePeaTV">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.addon.common" optional="true" />

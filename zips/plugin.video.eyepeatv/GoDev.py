@@ -642,5 +642,8 @@ elif mode == 4632:
     addon.setSetting('anything', 'anything')
     xbmc.executebuiltin("Notification(EyePeaTV, [COLOR=green]Waiting For System To Update[/COLOR],5000,)")
     xbmc.sleep(5000)
-    xbmc.executebuiltin('XBMC.StartPVRManager')
+    #stop PVR addon
+    xbmc.executeJSONRPC('{"jsonrpc":"2.0", "method":"Addons.SetAddonEnabled", "params":{ "addonid": "pvr.iptvsimple", "enabled": false }, "id":1}')
+    #start PVR addon
+    xbmc.executeJSONRPC('{"jsonrpc":"2.0", "method":"Addons.SetAddonEnabled", "params":{ "addonid": "pvr.iptvsimple", "enabled": true }, "id":1}')
         

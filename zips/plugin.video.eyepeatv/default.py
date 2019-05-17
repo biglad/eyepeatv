@@ -91,6 +91,7 @@ def peamenyy(params):
     if channels == 1 and GoDev.mode != 5 and GoDev.mode != 1:
         plugintools.log(pnimi+vod_channels("TG9naW4gU3VjY2Vzcw=="))
         plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="[COLOR orange][B]* EyePeaTV LIVE *[/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
+        plugintools.add_item( action=vod_channels("VFZzZWFyY2g="),   title="[COLOR gold][B]Live EyePeaTV Search[/B][/COLOR] (Enter tv show or movie name)" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("U2VhcmNoLWljb24ucG5n")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
         #plugintools.add_item( action=vod_channels("ZGV0ZWN0X21vZGlmaWNhdGlvbg=="),   title="[COLOR deepskyblue][B]MOVIES[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("dm9kLnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
         #plugintools.add_item( action=vod_channels("ZGV0ZWN0X21vZGlmaWNhdGlvbjI="),   title="[COLOR red][B]TV SHOWS[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("dm9kLnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
         #plugintools.add_item( action=vod_channels("VGhlRGV2"),   title="[COLOR orange][B]CATCHUP[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("dm9kLnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) , folder=True )
@@ -104,7 +105,7 @@ def peamenyy(params):
         else:
             plugintools.addItem('[COLOR orange][B]Launch PVR Guide [/B][/COLOR]','speed',11,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
             plugintools.addItem('[COLOR orange][B]Launch PVR Channels[/B][/COLOR]','speed',6001,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
-            plugintools.add_item( action=vod_channels("R29EZXYuZGlzYWJsZVBWUg=="),   title="[COLOR red][B]Disable PVR[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
+            plugintools.add_item( action=vod_channels("R29EZXYuZGlzYWJsZVBWUg=="),   title="[COLOR gold][B]Disable PVR[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
             plugintools.addItem('[COLOR orange][B]Open IPTV Recoder[/B][/COLOR]','speed',7001,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
             plugintools.addItem('[COLOR orange][B]Reload EPG Data[/B][/COLOR]','speed',4632,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
         common.addItem('[COLOR white][B]Auto Clean Device[/B][/COLOR]','url',19,GoDev.Images + 'logo.png',FANART,'')
@@ -270,7 +271,7 @@ def maintMenu(params):
 	common.addItem('[COLOR white][B]Update Addons & Repos[/B][/COLOR]',BASEURL,26,GoDev.Images + 'logo.png',FANART,'')
 
 def security_check(params):
-	plugintools.add_item( action=vod_channels("VFZzZWFyY2g="),   title="[COLOR red][B]Live EyePeaTV Search[/B][/COLOR] (Enter tv show or movie name)" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("U2VhcmNoLWljb24ucG5n")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
+	plugintools.add_item( action=vod_channels("VFZzZWFyY2g="),   title="[COLOR orange][B]Live EyePeaTV Search[/B][/COLOR] (Enter tv show or movie name)" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("U2VhcmNoLWljb24ucG5n")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
 	plugintools.log(pnimi+sync_data("TGl2ZSBNZW51")+repr(params))
 	request = urllib2.Request(televisioonilink, headers={"Accept" : "application/xml","User-Agent": "Players"})
 	u = urllib2.urlopen(request)

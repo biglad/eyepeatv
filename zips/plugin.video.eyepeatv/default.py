@@ -37,7 +37,12 @@ F1ICON = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id, 'F
 BASEURL = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD10cw==")
 LOAD_LIVEchan = os.path.join( plugintools.get_runtime_path() , "resources" , "art/arch" )
 loginurl   = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD10cw==")%(lehekylg,pordinumber,kasutajanimi,salasona)
-xbmc.log(str(loginurl),2)
+##xbmc.log(str(loginurl),2)
+
+
+
+RAM = int(xbmc.getInfoLabel("System.Memory(total)")[:-2])
+RAMM = xbmc.getInfoLabel("System.Memory(total)")
 def run():
     global pnimi
     global televisioonilink
@@ -86,6 +91,7 @@ def peamenyy(params):
     load_channels()
     if not lehekylg:
         plugintools.open_settings_dialog()
+        exit()
 
     channels = kontroll()
     if channels == 1 and GoDev.mode != 5 and GoDev.mode != 1:
@@ -115,9 +121,10 @@ def peamenyy(params):
         plugintools.add_item( action=vod_channels("VG9vbHM="),   title="[COLOR pink][B]Tools & Settings[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
     elif channels != 1 and GoDev.mode != 1:
         plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR orange][B]Step 1. Visit:[/B][/COLOR] [COLOR gold][B]www.eyepeatv.co.uk[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False )
+        #plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR orange][B]Addon Settings[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
         plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR orange][B]Step 2. Insert Login Credentials[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False )	
         plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjazI="), title="[COLOR orange][B]Step 3. Click Once Login Is Input[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False )	
-
+        ##quit()
 
 def Tools(params):
 	plugintools.add_item( action=vod_channels("ZXhlY3V0ZV9haW5mbw=="),   title="[COLOR orange][B]Account Information[/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bXlhY2MucG5n")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
@@ -196,6 +203,7 @@ def tvarchive(extra):
 def license_check(params):
     plugintools.log(pnimi+get_live("U2V0dGluZ3MgbWVudQ==")+repr(params))
     plugintools.open_settings_dialog()
+    exit()
 
 def license_check2(params):
 	d = urllib.urlopen(loginurl)

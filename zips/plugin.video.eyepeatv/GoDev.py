@@ -10,6 +10,7 @@ import unicodedata
 from datetime import datetime
 from datetime import timedelta
 import maintenance
+import thread
 AddonID = 'plugin.video.eyepeatv'
 AddonTitle = 'EyePeaTV'
 Images=xbmc.translatePath(os.path.join('special://home','addons',AddonID,'resources/art/'));
@@ -32,6 +33,15 @@ AddonRes = xbmc.translatePath(os.path.join('special://home','addons',AddonID,'re
 loginurl   = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tM3U4")%(lehekylg,pordinumber,Username,Password)
 THE_DATE = time.strftime("%Y%m%d")
 now = datetime.now()
+
+def dialogWatch():
+    x = 0
+    while not xbmc.getCondVisibility("Window.isVisible(yesnodialog)") and x < 100:
+        x += 1
+        xbmc.sleep(100)
+    
+    if xbmc.getCondVisibility("Window.isVisible(yesnodialog)"):
+        xbmc.executebuiltin('SendClick(11)')
 try:
     from sqlite3 import dbapi2 as database
 except:
@@ -102,9 +112,10 @@ def PVRbeta(self):
     xbmc.executebuiltin('Notification(PVR Setup,[COLOR white]PVR is now setup allow loading to finish[/COLOR],3000,special://home/addons/'+AddonID+'/icon.png)')
     time.sleep(5)
     xbmc.executebuiltin("Container.Refresh")
+    exit()
 
 def correctPVR(self):
-
+    #thread.start_new_thread(self.dialogWatch, ())
     try:
         connection = urllib2.urlopen(loginurl)
         print connection.getcode()
@@ -122,12 +133,13 @@ def correctPVR(self):
     RAM = int(xbmc.getInfoLabel("System.Memory(total)")[:-2])
     RAMM = xbmc.getInfoLabel("System.Memory(total)")
     
-    if RAM < 1999:
+    if RAM < 1599:
         choice = xbmcgui.Dialog().yesno('[COLOR white]Low Power Device [COLOR lime]RAM: ' + RAMM + '[/COLOR][/COLOR]', '[COLOR white]Your device has been detected as a low end device[/COLOR]', '[COLOR white]We recommend avoiding PVR usage for this reason[/COLOR]', '[COLOR white]We cannnot support low end devices for PVR[/COLOR]', nolabel='[COLOR lime]OK, Cancel this[/COLOR]',yeslabel='[COLOR red]I know, proceed[/COLOR]')
         if choice == 0:
             sys.exit(1)
         elif choice == 1:
             pass
+    #thread.start_new_thread(dialogWatch, ())
     xbmc.executebuiltin("ActivateWindow(busydialog)")
     nullPVR   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":false},"id":1}'
     nullLiveTV = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":false},"id":1}'
@@ -142,7 +154,8 @@ def correctPVR(self):
     xbmc.executeJSONRPC(jsonSetPVR)
     xbmc.executeJSONRPC(IPTVon)
     xbmc.executeJSONRPC(nulldemo)
-    
+
+    time.sleep(10)    
     moist = xbmcaddon.Addon('pvr.iptvsimple')
     moist.setSetting(id='m3uUrl', value=loginurl)
     moist.setSetting(id='epgUrl', value=EPGurl)
@@ -150,8 +163,9 @@ def correctPVR(self):
     moist.setSetting(id='epgCache', value="false")
     time.sleep(25)
     xbmc.executebuiltin("Dialog.Close(busydialog)")
-    dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]We\'ve copied your logins to the PVR Guide[/COLOR]',' ','[COLOR white]You [B]MUST[/B] allow time to load the EPG to avoid issues.[/COLOR]')
+    dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]We\'ve copied your logins to the PVR Guide[/COLOR]',' ','[COLOR white]You [B]MUST[/B] allow time to load the EPG to avoid issues.[/COLOR]')  
     xbmc.executebuiltin("Container.Refresh")
+    #dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]We\'ve copgjhgjghjghjied your logins to the PVR Guide[/COLOR]',' ','[COLOR white]You [B]MUST[/B] allow time to load the EPG to avoid issues.[/COLOR]')
     exit()
 
 def disablePVR(self):
@@ -164,10 +178,12 @@ def disablePVR(self):
     xbmc.executeJSONRPC(nullLiveTV)
     time.sleep(2)
     xbmc.executeJSONRPC(nullPVR)
-    shutil.rmtree(PVRdata)
+    try: shutil.rmtree(PVRdata)
+    except: pass
     xbmc.executebuiltin("Dialog.Close(busydialog)")
     xbmc.executebuiltin('Notification(PVR Disabled,[COLOR white]PVR Guide is now disabled[/COLOR],2000,special://home/addons/'+AddonID+'/icon.png)')
     xbmc.executebuiltin("Container.Refresh")
+    exit()
 
 def SpeedChoice():
     choice = dialog.select("[COLOR white]" + AddonTitle + " Speedtest[/COLOR]", ['[COLOR white]Ookla Speedtest[/COLOR]','[COLOR white]Fast.com Speedtest by Netflix[/COLOR]'])

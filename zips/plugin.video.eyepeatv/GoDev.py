@@ -652,6 +652,9 @@ elif mode == 109:
         
 elif mode == 7001:
     xbmc.executebuiltin('RunAddon(plugin.video.iptv.recorder)')
+	
+elif mode == 7010:
+    xbmc.executebuiltin('ActivateWindow(10025,"plugin://plugin.video.live.streamspro/?fanart=C%3a%5cUsers%5ckhanb%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.video.live.streamspro%5cfanart.jpg&mode=1&name=24-7&url=http%3a%2f%2fftp.mgawow.co.uk%2f24-7.m3u",return)')
     
 elif mode == 4632:
     addon = xbmcaddon.Addon('pvr.iptvsimple')

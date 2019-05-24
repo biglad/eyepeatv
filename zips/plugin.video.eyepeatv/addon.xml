@@ -5,6 +5,8 @@
 		<import addon="script.module.addon.common" />
 		<import addon="pvr.iptvsimple" />
 		<import addon="plugin.video.iptv.recorder" />
+		<import addon="plugin.video.SportsDevil" />
+		<import addon="plugin.video.live.streamspro" />
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>

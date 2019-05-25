@@ -42,11 +42,11 @@ module_log_enabled=False; http_debug_log_enabled=False; LIST="list"; THUMBNAIL="
 # Suggested view codes for each type from different skins (initial list thanks to xbmcswift2 library)
 ALL_VIEW_CODES={
     'list': {
-        'skin.confluence': 50, # List
-        'skin.aeon.nox': 50, # List
-        'skin.droid': 50, # List
-        'skin.quartz': 50, # List
-        'skin.re-touched': 50, # List
+        'skin.confluence': 55, # List
+        'skin.aeon.nox': 55, # List
+        'skin.droid': 55, # List
+        'skin.quartz': 55, # List
+        'skin.re-touched': 55, # List
     },
     'thumbnail': {
         'skin.confluence': 500, # Thumbnail
@@ -70,16 +70,16 @@ ALL_VIEW_CODES={
         'skin.re-touched': 500, #Thumbnail
     },
     'seasons': {
-        'skin.confluence': 50, # List
-        'skin.aeon.nox': 50, # List
-        'skin.droid': 50, # List
+        'skin.confluence': 55, # List
+        'skin.aeon.nox': 55, # List
+        'skin.droid': 55, # List
         'skin.quartz': 52, # Media info
-        'skin.re-touched': 50, # List
+        'skin.re-touched': 55, # List
     },
     'episodes': {
         'skin.confluence': 504, # Media Info
         'skin.aeon.nox': 518, # Infopanel
-        'skin.droid': 50, # List
+        'skin.droid': 55, # List
         'skin.quartz': 52, # Media info
         'skin.re-touched': 550, # Wide
     },

@@ -1,0 +1,80 @@
+<settings>
+    <setting id="CustomAddon1" value="RunAddon(plugin.video.iplayerwww)" />
+    <setting id="CustomAddon1.image" value="special://home/addons/script.ivueguide/resources/png/bbc icon.png" />
+    <setting id="CustomAddon1.label" value="BBC iplayer" />
+    <setting id="CustomAddon10" value="RunScript(script.matchcenter)" />
+    <setting id="CustomAddon10.image" value="special://home/addons/script.ivueguide/resources/png/match icon.png" />
+    <setting id="CustomAddon10.label" value="Match center" />
+    <setting id="CustomAddon2" value="RunAddon(plugin.video.itv)" />
+    <setting id="CustomAddon2.image" value="special://home/addons/script.ivueguide/resources/png/itv icon.png" />
+    <setting id="CustomAddon2.label" value="ITV player" />
+    <setting id="CustomAddon3" value="RunAddon(plugin.video.F.T.V)" />
+    <setting id="CustomAddon3.image" value="special://home/addons/script.ivueguide/resources/png/FTV icon.png" />
+    <setting id="CustomAddon3.label" value="FTV filmon" />
+    <setting id="CustomAddon4" value="ActivateWindow(10025,plugin://plugin.video.IVUEcreator/fixtures/http%3A%2F%2Fwww.getyourfixtures.com%2Fall%2Flive%2Ftoday%2FanySport,return)" />
+    <setting id="CustomAddon4.image" value="special://home/addons/script.ivueguide/resources/png/ivuesports.jpg" />
+    <setting id="CustomAddon4.label" value="Todays sports" />
+    <setting id="CustomAddon5" value="RunAddon(plugin.video.exodus)" />
+    <setting id="CustomAddon5.image" value="special://home/addons/script.ivueguide/resources/png/exodus icon.png" />
+    <setting id="CustomAddon5.label" value="Exodus" />
+    <setting id="CustomAddon6" value="RunAddon(plugin.video.specto)" />
+    <setting id="CustomAddon6.image" value="special://home/addons/script.ivueguide/resources/png/specto icon.png" />
+    <setting id="CustomAddon6.label" value="Specto" />
+    <setting id="CustomAddon7" value="RunAddon(plugin.video.youtube)" />
+    <setting id="CustomAddon7.image" value="special://home/addons/script.ivueguide/resources/png/youtube.png" />
+    <setting id="CustomAddon7.label" value="Youtube" />
+    <setting id="CustomAddon8" value="RunAddon(plugin.video.phstreams)" />
+    <setting id="CustomAddon8.image" value="special://home/addons/script.ivueguide/resources/png/ph icon.png" />
+    <setting id="CustomAddon8.label" value="Phoenix" />
+    <setting id="CustomAddon9" value="RunAddon(plugin.video.V-Streams)" />
+    <setting id="CustomAddon9.image" value="special://home/addons/plugin.video.V-Streams/icon.png" />
+    <setting id="CustomAddon9.label" value="Fab Hosting" />
+    <setting id="addon.match" value="1" />
+    <setting id="addons.ini.file" value="special://userdata/addon_data/script.ivueguide/resources/ini/plugin.video.eyepeatv/plugin.video.eyepeatv.ini" />
+    <setting id="addons.ini.type" value="1" />
+    <setting id="alternative.playback" value="false" />
+    <setting id="autostart" value="false" />
+    <setting id="categories.ini.enabled" value="false" />
+    <setting id="categories.ini.file" value="" />
+    <setting id="categories.ini.type" value="0" />
+    <setting id="categories.ini.url" value="" />
+    <setting id="categories.launch" value="false" />
+    <setting id="channel.color" value="[COLOR ffffffff]white[/COLOR]" />
+    <setting id="channel.filter.sort" value="0" />
+    <setting id="creator.interval" value="7" />
+    <setting id="custom.xmltv.type" value="0" />
+    <setting id="customSkin.enabled" value="false" />
+    <setting id="customSkin.file" value="" />
+    <setting id="customSkin.type" value="0" />
+    <setting id="description.color" value="[COLOR ffffffff]white[/COLOR]" />
+    <setting id="download.skin" value="" />
+    <setting id="enable.osd" value="true" />
+    <setting id="focus.color" value="[COLOR ffffffff]white[/COLOR]" />
+    <setting id="font.size" value="false" />
+    <setting id="ignore.stream" value="false" />
+    <setting id="ivue-categories.ini.enabled" value="true" />
+    <setting id="ivue.addons.ini" value="false" />
+    <setting id="listing.days" value="1" />
+    <setting id="listing.hours" value="6" />
+    <setting id="listing.sort.time" value="true" />
+    <setting id="logos" value="http://raw.githubusercontent.com/totaltec2014/ivue2/master/logos/" />
+    <setting id="logos.enabled" value="true" />
+    <setting id="logos.folder" value="" />
+    <setting id="logos.source" value="0" />
+    <setting id="mainurl" value="http://ivuetvguide.com/ivueguide/" />
+    <setting id="nofocus.color" value="[COLOR ffffffff]white[/COLOR]" />
+    <setting id="notifications.enabled" value="true" />
+    <setting id="password" value="185469" />
+    <setting id="program.search.plot" value="false" />
+    <setting id="scroll.channel" value="true" />
+    <setting id="skin" value="Default" />
+    <setting id="stop-stream" value="true" />
+    <setting id="userid" value="future" />
+    <setting id="username" value="future" />
+    <setting id="userurl" value="http://ivuetvguide.com/ivueguide/" />
+    <setting id="xmltv.file" value="" />
+    <setting id="xmltv.interval" value="2" />
+    <setting id="xmltv.type" value="2" />
+    <setting id="xmltv.type_select" value="IVUE (UK USA Amys list)" />
+    <setting id="xmltv.url" value="" />
+</settings>

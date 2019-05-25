@@ -150,7 +150,7 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
-<addon id="repository.eyepeatv" name="EyePeaTV Repo" version="18.0.3" provider-name="EyePeaTV">
+<addon id="repository.eyepeatv" name="EyePeaTV Repo" version="18.0.4" provider-name="EyePeaTV">
 	<requires>
 		<!--<import addon="script.cachesystem" />-->
 	</requires>

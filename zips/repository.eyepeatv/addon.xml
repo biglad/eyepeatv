@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.eyepeatv" name="EyePeaTV Repo" version="18.0.4" provider-name="EyePeaTV">
-	<requires>
-		<!--<import addon="script.cachesystem" />-->
-	</requires>
+<addon id="repository.eyepeatv" name="EyePeaTV Repo" version="18.0.5" provider-name="EyePeaTV">
 	<extension point="xbmc.addon.repository" name="EyePeaTV Repo">
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/biglad/eyepeatv/master/addons.xml</info>

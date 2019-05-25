@@ -69,6 +69,9 @@ def PVRbeta(self):
     xbmc.executebuiltin("ActivateWindow(busydialog)")
     if os.path.exists(PVRSimple):
         shutil.rmtree(PVRSimple)
+	else:
+        xbmc.executebuiltin('RunPlugin(plugin://pvr.iptvsimple)')
+    time.sleep(2)		
     nullRTMP   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"inputstream.rtmp","enabled":false},"id":1}'
     nullPVR   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":false},"id":1}'
     nullLiveTV = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":false},"id":1}'

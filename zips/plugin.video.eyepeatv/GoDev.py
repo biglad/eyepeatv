@@ -70,7 +70,7 @@ def PVRbeta(self):
     if os.path.exists(PVRSimple):
         shutil.rmtree(PVRSimple)
     time.sleep(2)		
-    nullRTMP   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"inputstream.rtmp","enabled":false},"id":1}'
+    nullRTMP   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"inputstream.rtmp","enabled":true},"id":1}'
     nullPVR   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":false},"id":1}'
     nullLiveTV = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":false},"id":1}'
     jsonSetPVR = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":true},"id":1}'

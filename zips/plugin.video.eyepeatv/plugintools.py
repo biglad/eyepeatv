@@ -42,46 +42,46 @@ module_log_enabled=False; http_debug_log_enabled=False; LIST="list"; THUMBNAIL="
 # Suggested view codes for each type from different skins (initial list thanks to xbmcswift2 library)
 ALL_VIEW_CODES={
     'list': {
-        'skin.confluence': 55, # List
-        'skin.aeon.nox': 55, # List
-        'skin.droid': 55, # List
-        'skin.quartz': 55, # List
-        'skin.re-touched': 55, # List
+        'skin.confluence': 50, # List
+        'skin.aeon.nox': 50, # List
+        'skin.droid': 50, # List
+        'skin.quartz': 50, # List
+        'skin.re-touched': 50, # List
     },
     'thumbnail': {
-        'skin.confluence': 500, # Thumbnail
-        'skin.aeon.nox': 500, # Wall
-        'skin.droid': 51, # Big icons
-        'skin.quartz': 51, # Big icons
-        'skin.re-touched': 500, #Thumbnail
+        'skin.confluence': 50, # Thumbnail
+        'skin.aeon.nox': 50, # Wall
+        'skin.droid': 50, # Big icons
+        'skin.quartz': 50, # Big icons
+        'skin.re-touched': 50, #Thumbnail
     },
     'movies': {
-        'skin.confluence': 500, # Thumbnail 515, # Media Info 3
-        'skin.aeon.nox': 500, # Wall
-        'skin.droid': 51, # Big icons
-        'skin.quartz': 52, # Media info
-        'skin.re-touched': 500, #Thumbnail
+        'skin.confluence': 50, # Thumbnail 515, # Media Info 3
+        'skin.aeon.nox': 50, # Wall
+        'skin.droid': 50, # Big icons
+        'skin.quartz': 50, # Media info
+        'skin.re-touched': 50, #Thumbnail
     },
     'tvshows': {
-        'skin.confluence': 500, # Thumbnail 515, # Media Info 3
-        'skin.aeon.nox': 500, # Wall
-        'skin.droid': 51, # Big icons
-        'skin.quartz': 52, # Media info
-        'skin.re-touched': 500, #Thumbnail
+        'skin.confluence': 50, # Thumbnail 515, # Media Info 3
+        'skin.aeon.nox': 50, # Wall
+        'skin.droid': 50, # Big icons
+        'skin.quartz': 50, # Media info
+        'skin.re-touched': 50, #Thumbnail
     },
     'seasons': {
-        'skin.confluence': 55, # List
-        'skin.aeon.nox': 55, # List
-        'skin.droid': 55, # List
-        'skin.quartz': 52, # Media info
-        'skin.re-touched': 55, # List
+        'skin.confluence': 50, # List
+        'skin.aeon.nox': 50, # List
+        'skin.droid': 50, # List
+        'skin.quartz': 50, # Media info
+        'skin.re-touched': 50, # List
     },
     'episodes': {
-        'skin.confluence': 504, # Media Info
-        'skin.aeon.nox': 518, # Infopanel
-        'skin.droid': 55, # List
-        'skin.quartz': 52, # Media info
-        'skin.re-touched': 550, # Wide
+        'skin.confluence': 50, # Media Info
+        'skin.aeon.nox': 50, # Infopanel
+        'skin.droid': 50, # List
+        'skin.quartz': 50, # Media info
+        'skin.re-touched': 50, # Wide
     },
 }
 def log(message): xbmc.log(message) # Write something on XBMC log

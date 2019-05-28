@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.module.vistatvshowbox" name="VistaTV Requisition Scraper" version="20.0.53" provider-name="VistaTV">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0" />
+		<import addon="script.module.beautifulsoup4"/>
+		
+
+
+
+		<!-- [ORION/] -->
+		<import addon="script.module.orion" version="2.0.1" />
+		<!-- [/ORION] -->
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.python.pluginsource" library="lib/default.py">
+	<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Scrapers For VistaTV Requisition Addon</summary>
+		<description>...</description>
+		<platform>all</platform>
+	</extension>
+</addon>

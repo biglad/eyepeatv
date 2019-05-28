@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.vistatvshowbox" version="100.0.85" name="VistaTV Requisition" provider-name="VistaTV">
+	<requires>
+		<import addon="xbmc.python" version="2.26.0" />
+		<import addon="script.module.vistatvshowbox" />
+		<import addon="script.vistatvshowbox.artwork" version="1.0.0" />
+		<import addon="script.vistatvshowbox.metadata" version="1.0.0" />
+		<import addon="script.module.resolveurl" />
+		<import addon="script.module.urlresolver" />
+		<import addon="script.module.metahandler" version="1.0.0" />
+		<import addon="script.module.beautifulsoup4" />
+		<import addon="script.module.beautifulsoup" />
+		<import addon="script.module.openscrapers" />
+		<import addon="repository.bugatsinho" />
+		<!-- [ORION/] -->
+		<import addon="script.module.orion" version="2.0.1" />
+		<!-- [/ORION] -->
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="vistatv.py">
+		<provides>video</provides>
+	</extension>
+	<summary>VistaTV Requisition Addon</summary>
+	<description>Based of showboxarize.</description>
+	<extension point="xbmc.addon.metadata">
+	<platform>all</platform>
+	</extension>
+</addon>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="Providers">
+        <setting type="sep" />
+        <setting id="module.provider" label="Choose Module Scraper" type="action" option="close" action="RunPlugin(plugin://script.module.vistatvshowbox/?mode=ScraperChoice)" default=" Vistascrapers" />
+        <setting type="sep" />
+        <setting label="Disable All Providers" type="action" action="RunPlugin(plugin://script.module.vistatvshowbox/?mode=toggleAll&amp;setting=false&amp;open_id=0.1)" option="close"/>
+        <setting label="Enable All Providers (for current Module Scraper)" type="action" action="RunPlugin(plugin://script.module.vistatvshowbox/?mode=ToggleProviderAll&amp;action=EnableModuleAll)" option="close"/>
+        <setting type="sep" />
+		
+        <setting id="provider.0123putlocker" type="bool" label="0123PUTLOCKER" default="true" />
+		<setting id="provider.123fox" type="bool" label="123FOX" default="true" />
+		<setting id="provider.123hbo" type="bool" label="123HBO" default="true" />
+		<setting id="provider.123hulu" type="bool" label="123HULU" default="true" />
+		<setting id="provider.123movies4u" type="bool" label="123movies4u" default="true" />
+		<setting id="provider.123movieshubz" type="bool" label="123movieshubz" default="true" />
+        
+        <setting id="provider.300mbdownload" type="bool" label="300mbdownload" default="true" />
+        <setting id="provider.4kmovieto" type="bool" label="4kmovieto" default="true" />
+        <setting id="provider.animetoon" type="bool" label="animetoon" default="true" />
+        <setting id="provider.azmovie" type="bool" label="azmovie" default="true" />
+        <setting id="provider.bnwmovies" type="bool" label="BNWMOVIES" default="true" />
+
+        <setting id="provider.cartoonhd" type="bool" label="cartoonhd" default="true" />
+        <setting id="provider.cmovies" type="bool" label="cmovies" default="true" />
+        <setting id="provider.cmovieshd" type="bool" label="cmovieshd" default="true" />
+        <setting id="provider.cmovieshdbz" type="bool" label="cmovieshdbz" default="true" />
+        <setting id="provider.coolmoviezone" type="bool" label="coolmoviezone" default="true" />
+        <setting id="provider.cooltvseries" type="bool" label="cooltvseries" default="true" />
+        <setting id="provider.d1dldrmshow" type="bool" label="d1dldrmshow" default="true" />
+        <setting id="provider.ddlspot" type="bool" label="ddlspot" default="true" />
+        <setting id="provider.directdl" type="bool" label="directdl" default="true" />
+        <setting id="provider.dl7lavin" type="bool" label="dl7lavin" default="true" />
+        <setting id="provider.dlfarshow" type="bool" label="dlfarshow" default="true" />
+        <setting id="provider.dllavin" type="bool" label="dllavin" default="true" />
+        <setting id="provider.downflix" type="bool" label="downflix" default="true" />
+        <setting id="provider.extramovies" type="bool" label="extramovies" default="true" />
+        <setting id="provider.filepursuit" type="bool" label="filepursuit" default="true" />
+        <setting id="provider.filmxy" type="bool" label="filmxy" default="true" />
+        <setting id="provider.fmovies" type="bool" label="fmovies" default="true" />
+        <setting id="provider.freefmovies" type="bool" label="freefmovies" default="true" />
+        <setting id="provider.freeputlockers" type="bool" label="freeputlockers" default="true" />
+        <setting id="provider.furk" type="bool" label="furk" default="true" />
+        <setting id="provider.gostream" type="bool" label="gostream" default="true" />
+        <setting id="provider.gowatchseries" type="bool" label="gowatchseries" default="true" />
+        <setting id="provider.hackimdb" type="bool" label="hackimdb" default="true" />
+        <setting id="provider.hdmto" type="bool" label="hdmto" default="true" />
+        <setting id="provider.hdpopcorns" type="bool" label="hdpopcorns" default="true" />
+        <setting id="provider.icefilms" type="bool" label="icefilms" default="true" />
+        <setting id="provider.iwaatch" type="bool" label="iwaatch" default="true" />
+        <setting id="provider.kattv" type="bool" label="kattv" default="true" />
+		<setting id="provider.l23movies" type="bool" label="l23movies" default="true" />
+		<setting id="provider.library" type="bool" label="library" default="true" />
+		<setting id="provider.movie4kis" type="bool" label="movie4kis" default="true" />
+		<setting id="provider.moviesonline" type="bool" label="moviesonline" default="true" />
+		<setting id="provider.movietoken" type="bool" label="movietoken" default="true" />
+		<setting id="provider.myprojectfreetv" type="bool" label="myprojectfreetv" default="true" />
+		<setting id="provider.myvideolink" type="bool" label="myvideolink" default="true" />
+		<setting id="provider.odb" type="bool" label="odb" default="true" />
+		<setting id="provider.openloadmovie" type="bool" label="openloadmovie" default="true" />
+		<setting id="provider.ororo" type="bool" label="ororo" default="true" />
+		<setting id="provider.playmovies" type="bool" label="playmovies" default="true" />
+		<setting id="provider.plocker" type="bool" label="plocker" default="true" />
+		<setting id="provider.pokemonfire" type="bool" label="pokemonfire" default="true" />
+		<setting id="provider.primewire" type="bool" label="primewire" default="true" />
+		<setting id="provider.projectfree" type="bool" label="projectfree" default="true" />
+		<setting id="provider.pubfilmonline" type="bool" label="pubfilmonline" default="true" />
+		<setting id="provider.putlocker" type="bool" label="putlocker" default="true" />
+		<setting id="provider.reddit" type="bool" label="reddit" default="true" />
+		<setting id="provider.s1dl" type="bool" label="s1dl" default="true" />
+		<setting id="provider.scenerls" type="bool" label="scenerls" default="true" />
+		<setting id="provider.seehd" type="bool" label="seehd" default="true" />
+		<setting id="provider.series9" type="bool" label="series9" default="true" />
+		<setting id="provider.seriesfree" type="bool" label="seriesfree" default="true" />
+		<setting id="provider.seriesonline" type="bool" label="seriesonline" default="true" />
+		<setting id="provider.sezonlukdizi" type="bool" label="sezonlukdizi" default="true" />
+		<setting id="provider.solarmoviez" type="bool" label="solarmoviez" default="true" />
+		<setting id="provider.streamlord" type="bool" label="streamlord" default="true" />
+		<setting id="provider.timewatch" type="bool" label="timewatch" default="true" />
+		<setting id="provider.toonget" type="bool" label="toonget" default="true" />
+		<setting id="provider.tvbox" type="bool" label="tvbox" default="true" />
+		<setting id="provider.vdonip" type="bool" label="vdonip" default="true" />
+		<setting id="provider.videoscraper" type="bool" label="videoscraper" default="true" />
+		<setting id="provider.vidics" type="bool" label="vidics" default="true" />
+		<setting id="provider.watch32" type="bool" label="watch32" default="true" />
+		<setting id="provider.watchseries" type="bool" label="watchseries" default="true" />
+		<setting id="provider.watchseriessi" type="bool" label="watchseriessi" default="true" />
+		<setting id="provider.xwatchseries" type="bool" label="xwatchseries" default="true" />
+		<setting id="provider.ymovies" type="bool" label="ymovies" default="true" />	
+    </category>
+    
+    <category label="Debrid Only">
+        <setting label="Disable All Debrid Providers" type="action" option="close" action="RunPlugin(plugin://script.module.vistatvshowbox/?mode=toggleAllDebrid&amp;setting=false&amp;open_id='1.1')"/>
+        <setting label="Enable All Debrid Providers" type="action" option="close" action="RunPlugin(plugin://script.module.vistatvshowbox/?mode=toggleAllDebrid&amp;setting=true&amp;open_id='1.2')"/>
+        <setting type="sep" />
+        <setting id="provider.0day" type="bool" label="0day" default="true" />
+        <setting id="provider.300mbfilms" type="bool" label="300mbfilms" default="true" />
+        <setting id="provider.bestmoviez" type="bool" label="bestmoviez" default="true" />
+        <setting id="provider.ddlspot" type="bool" label="ddlspot" default="true" />
+        <setting id="provider.ddlvalley" type="bool" label="ddlvalley" default="true" />
+        <setting id="provider.directdl" type="bool" label="directdl" default="true" />
+        <setting id="provider.ganool123" type="bool" label="ganool123" default="true" />
+        <setting id="provider.gomovies" type="bool" label="gomovies" default="true" />
+		<setting id="provider.invictus" type="bool" label="invictus" default="true" />
+		<setting id="provider.iwantmyshow" type="bool" label="iwantmyshow" default="true" />
+		<setting id="provider.moviesleak" type="bool" label="moviesleak" default="true" />
+		<setting id="provider.myvideolink" type="bool" label="myvideolink" default="true" />
+		<setting id="provider.phazeddl" type="bool" label="phazeddl" default="true" />
+		<setting id="provider.playmovies" type="bool" label="playmovies" default="true" />
+		<setting id="provider.rlsbb" type="bool" label="rlsbb" default="true" />
+		<setting id="provider.rlsscn" type="bool" label="rlsscn" default="true" />
+		<setting id="provider.scenerls" type="bool" label="scenerls" default="true" />
+		<setting id="provider.scnsrc" type="bool" label="scnsrc" default="true" />
+		<setting id="provider.seriescr" type="bool" label="seriescr" default="true" />
+		<setting id="provider.tvdownload" type="bool" label="tvdownload" default="true" />
+		<setting id="provider.ultrahd" type="bool" label="ultrahd" default="true" />
+		<setting id="provider.ultrahdindir" type="bool" label="ultrahdindir" default="true" />
+		<setting id="provider.wrzcraft" type="bool" label="wrzcraft" default="true" />
+    </category>
+
+    <category label="Torrent (cached)">
+        <setting type="text" label="For some of these scrapers to work, a Premiumize PIN key is required." enable="false" />
+        <setting type="text" label="Create an account at Premiumize.me. A free one is sufficient (for now)." enable="false" />
+        <setting id="pm.pin" type="text" label="Premiumize PIN" default="" />
+        <setting type="sep" />
+        <setting label="Disable All Torrent Providers" type="action" option="close" action="RunPlugin(plugin://script.module.vistatvshowbox/?mode=toggleAllTorrent&amp;setting=false&amp;open_id='1.1')"/>
+        <setting label="Enable All Torrent Providers" type="action" option="close" action="RunPlugin(plugin://script.module.vistatvshowbox/?mode=toggleAllTorrent&amp;setting=true&amp;open_id='1.2')"/>
+        <setting type="sep" />
+        <setting id="provider.bitlord" type="bool" label="bitlord" default="true" />
+        <setting id="provider.eztv" type="bool" label="eztv" default="true" />
+        <setting id="provider.glodls" type="bool" label="glodls" default="true" />
+        <setting id="provider.kickass2" type="bool" label="kickass2" default="true" />
+		<setting id="provider.limetorrents" type="bool" label="limetorrents" default="true" />
+		<setting id="provider.magnetdl-pm" type="bool" label="magnetdl-pm" default="true" />
+		<setting id="provider.magnetdl" type="bool" label="magnetdl" default="true" />
+		<setting id="provider.piratebay" type="bool" label="piratebay" default="true" />
+		<setting id="provider.torrentapi" type="bool" label="torrentapi" default="true" />
+		<setting id="provider.torrentdownloads" type="bool" label="torrentdownloads" default="true" />
+		<setting id="provider.tpb" type="bool" label="tpb" default="true" />
+		<setting id="provider.yify" type="bool" label="yify" default="true" />
+		<setting id="provider.ytsam" type="bool" label="ytsam" default="true" />
+		<setting id="provider.zoogle" type="bool" label="zoogle" default="true" />
+    </category>
+
+<!--    <category label="Debug">\-->
+<!--        <setting id="addon_debug" type="bool" label="Enable Debug" default="false" />-->
+<!--    </category>-->
+</settings>

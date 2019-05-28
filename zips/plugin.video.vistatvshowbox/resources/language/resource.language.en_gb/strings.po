@@ -1,0 +1,1040 @@
+# Addon Name: Vista Requisition
+# Addon id: plugin.video.vistatvshowbox
+# Addon Provider: Biglad
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+msgid "[COLOR green]• [/COLOR]"
+msgstr ""
+"Project-Id-Version: Vista Requisition\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2016-08-01 02:03+0000\n"
+"Last-Translator: lambda81\n"
+"Language-Team: English (http://www.transifex.com/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+
+msgctxt "#32001"
+msgid "[COLOR red]• [/COLOR]Movies"
+msgstr ""
+
+msgctxt "#32002"
+msgid "[COLOR red]• [/COLOR]TV Shows"
+msgstr ""
+
+msgctxt "#32003"
+msgid "[COLOR red]• [/COLOR]My Movies"
+msgstr ""
+
+msgctxt "#32004"
+msgid "[COLOR red]• [/COLOR]My TV Shows"
+msgstr ""
+
+msgctxt "#32005"
+msgid "[COLOR red]• [/COLOR]New Movies"
+msgstr ""
+
+msgctxt "#32006"
+msgid "[COLOR red]• [/COLOR]New Episodes"
+msgstr ""
+
+msgctxt "#32007"
+msgid "[COLOR red]• [/COLOR]Channels"
+msgstr ""
+
+msgctxt "#32008"
+msgid "[COLOR red]• [/COLOR]Tools"
+msgstr ""
+
+msgctxt "#32009"
+msgid "[COLOR red]• [/COLOR]Downloads"
+msgstr ""
+
+msgctxt "#32010"
+msgid "[COLOR red]• [/COLOR]Search"
+msgstr ""
+
+msgctxt "#32011"
+msgid "[COLOR red]• [/COLOR]Genres"
+msgstr ""
+
+msgctxt "#32012"
+msgid "[COLOR red]• [/COLOR]Year"
+msgstr ""
+
+msgctxt "#32013"
+msgid "[COLOR red]• [/COLOR]People"
+msgstr ""
+
+msgctxt "#32014"
+msgid "[COLOR red]• [/COLOR]Languages"
+msgstr ""
+
+msgctxt "#32015"
+msgid "[COLOR red]• [/COLOR]Certificates"
+msgstr ""
+
+msgctxt "#32016"
+msgid "[COLOR red]• [/COLOR]Networks"
+msgstr ""
+
+msgctxt "#32017"
+msgid "[COLOR red]• [/COLOR]People Watching"
+msgstr ""
+
+msgctxt "#32018"
+msgid "[COLOR red]• [/COLOR]Most Popular"
+msgstr ""
+
+msgctxt "#32019"
+msgid "[COLOR red]• [/COLOR]Most Voted"
+msgstr ""
+
+msgctxt "#32020"
+msgid "[COLOR red]• [/COLOR]Box Office"
+msgstr ""
+
+msgctxt "#32021"
+msgid "[COLOR red]• [/COLOR]Oscar Winners"
+msgstr ""
+
+msgctxt "#32022"
+msgid "[COLOR red]• [/COLOR]In Theaters"
+msgstr ""
+
+msgctxt "#32023"
+msgid "[COLOR red]• [/COLOR]Highly Rated"
+msgstr ""
+
+msgctxt "#32024"
+msgid "[COLOR red]• [/COLOR]Airing today"
+msgstr ""
+
+msgctxt "#32025"
+msgid "[COLOR red]• [/COLOR]Returning TV Shows"
+msgstr ""
+
+msgctxt "#32026"
+msgid "[COLOR red]• [/COLOR]New TV Shows"
+msgstr ""
+
+msgctxt "#32027"
+msgid "[COLOR red]• [/COLOR]TV Calendar"
+msgstr ""
+
+msgctxt "#32028"
+msgid "[COLOR red]• [/COLOR]People Search"
+msgstr ""
+
+msgctxt "#32029"
+msgid "[COLOR red]• [/COLOR]People (Movies)"
+msgstr ""
+
+msgctxt "#32030"
+msgid "[COLOR red]• [/COLOR]People (TV)"
+msgstr ""
+
+msgctxt "#32031"
+msgid "[COLOR red]• [/COLOR]Discover"
+msgstr ""
+
+msgctxt "#32032"
+msgid "[COLOR red]• [/COLOR]Collection"
+msgstr ""
+
+msgctxt "#32033"
+msgid "[COLOR red]• [/COLOR]Trakt Watchlist"
+msgstr ""
+
+msgctxt "#32034"
+msgid "[COLOR red]• [/COLOR]IMDb Watchlist"
+msgstr ""
+
+msgctxt "#32035"
+msgid "[COLOR red]• [/COLOR]Trakt Recommendations"
+msgstr ""
+
+msgctxt "#32036"
+msgid "[COLOR red]• [/COLOR]History"
+msgstr ""
+
+msgctxt "#32037"
+msgid "[COLOR red]• [/COLOR]Progress"
+msgstr ""
+
+msgctxt "#32038"
+msgid "[COLOR red]• [/COLOR]Episodes"
+msgstr ""
+
+msgctxt "#32039"
+msgid "[COLOR red]• [/COLOR]Movie Lists"
+msgstr ""
+
+msgctxt "#32040"
+msgid "[COLOR red]• [/COLOR]TV Show Lists"
+msgstr ""
+
+msgctxt "#32041"
+msgid "[COLOR red]• [/COLOR]Episode Lists"
+msgstr ""
+
+msgctxt "#32042"
+msgid "[COLOR red]• [/COLOR]No Trakt or IMDb account found."
+msgstr ""
+
+msgctxt "#32043"
+msgid "[COLOR red]• [/COLOR][B]Vista Requisition[/B] : Settings"
+msgstr ""
+
+msgctxt "#32044"
+msgid "[COLOR red]• [/COLOR][B]SETTINGS[/B] : Accounts"
+msgstr ""
+
+msgctxt "#32045"
+msgid "[COLOR red]• [/COLOR][B]SETTINGS[/B] : Playback"
+msgstr ""
+
+msgctxt "#32046"
+msgid "[COLOR red]• [/COLOR][B]SETTINGS[/B] : Subtitles"
+msgstr ""
+
+msgctxt "#32047"
+msgid "[COLOR red]• [/COLOR][B]SETTINGS[/B] : Providers"
+msgstr ""
+
+msgctxt "#32048"
+msgid "[COLOR red]• [/COLOR][B]Vista Requisition[/B] : Downloads"
+msgstr ""
+
+msgctxt "#32049"
+msgid "[COLOR red]• [/COLOR][B]Vista Requisition[/B] : Viewtypes"
+msgstr ""
+
+msgctxt "#32050"
+msgid "[COLOR red]• [/COLOR][B]Vista Requisition[/B] : Clear providers..."
+msgstr ""
+
+msgctxt "#32051"
+msgid "[COLOR red]• [/COLOR][B]Vista Requisition[/B] : Clear metadata..."
+msgstr ""
+
+msgctxt "#32052"
+msgid "[COLOR red]• [/COLOR][B]Vista Requisition[/B] : Clear cache..."
+msgstr ""
+
+msgctxt "#32053"
+msgid "[COLOR red]• [/COLOR][I]Next Page[/I]"
+msgstr ""
+
+msgctxt "#32054"
+msgid "[COLOR red]• [/COLOR]Seasons"
+msgstr ""
+
+msgctxt "#32055"
+msgid "[COLOR red]• [/COLOR]Season"
+msgstr ""
+
+msgctxt "#32056"
+msgid "[COLOR red]• [/COLOR]Are you sure?"
+msgstr ""
+
+msgctxt "#32057"
+msgid "[COLOR red]• [/COLOR]Process Complete"
+msgstr ""
+
+msgctxt "#32058"
+msgid "[COLOR red]• [/COLOR]This will slow down things until they are re-cached!"
+msgstr ""
+
+msgctxt "#32059"
+msgid "[COLOR red]• [/COLOR]CLICK HERE TO SAVE VIEW"
+msgstr ""
+
+msgctxt "#32060"
+msgid "[COLOR red]• [/COLOR]January|February|March|April|May|June|July|August|September|October|November|December"
+msgstr ""
+
+msgctxt "#32061"
+msgid "[COLOR red]• [/COLOR]Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday"
+msgstr ""
+
+msgctxt "#32062"
+msgid "[COLOR red]• [/COLOR][B]%s[/B] : %s"
+msgstr ""
+
+msgctxt "#32063"
+msgid "[COLOR red]• [/COLOR]Play using..."
+msgstr ""
+
+msgctxt "#32064"
+msgid "[COLOR red]• [/COLOR]Auto Play"
+msgstr ""
+
+msgctxt "#32065"
+msgid "[COLOR red]• [/COLOR]Queue item"
+msgstr ""
+
+msgctxt "#32066"
+msgid "[COLOR red]• [/COLOR]Watched in Requisition"
+msgstr ""
+
+msgctxt "#32067"
+msgid "[COLOR red]• [/COLOR]Unwatched in Requisition"
+msgstr ""
+
+msgctxt "#32068"
+msgid "[COLOR red]• [/COLOR]Watched in Trakt"
+msgstr ""
+
+msgctxt "#32069"
+msgid "[COLOR red]• [/COLOR]Unwatched in Trakt"
+msgstr ""
+
+msgctxt "#32070"
+msgid "[COLOR red]• [/COLOR]Trakt Manager"
+msgstr ""
+
+msgctxt "#32071"
+msgid "[COLOR red]• [/COLOR]Browse Series"
+msgstr ""
+
+msgctxt "#32072"
+msgid "[COLOR red]• [/COLOR]Refresh"
+msgstr ""
+
+msgctxt "#32073"
+msgid "[COLOR red]• [/COLOR][B]TRAKT[/B] : Authorise"
+msgstr ""
+
+msgctxt "#32074"
+msgid "[COLOR red]• [/COLOR][B]HELP[/B]"
+msgstr ""
+
+msgctxt "#32075"
+msgid "[COLOR red]• [/COLOR]Utilise your own Trakt API key:"
+msgstr ""
+
+msgctxt "#32076"
+msgid "[COLOR red]• [/COLOR][B]ResolveURL[/B] : Settings"
+msgstr ""
+
+msgctxt "#32077"
+msgid "[COLOR red]• [/COLOR]Trending"
+msgstr ""
+
+msgctxt "#32078"
+msgid "[COLOR red]• [/COLOR][B]openscrapers[/B] : Settings"
+msgstr ""
+
+msgctxt "#32079"
+msgid "[COLOR red]• [/COLOR][B]VistaScrapers[/B] : Settings"
+msgstr ""
+
+msgctxt "#32080"
+msgid "[COLOR red]• [/COLOR][B]Orion[/B] : Settings"
+msgstr ""
+
+msgctxt "#32081"
+msgid "[COLOR red]• [/COLOR]Clear Providers"
+msgstr ""
+
+msgctxt "#32301"
+msgid "[COLOR red]• [/COLOR]Enabled"
+msgstr ""
+
+msgctxt "#32302"
+msgid "[COLOR red]• [/COLOR]Disabled"
+msgstr ""
+
+msgctxt "#32303"
+msgid "[COLOR red]• [/COLOR]User"
+msgstr ""
+
+msgctxt "#32304"
+msgid "[COLOR red]• [/COLOR]Email"
+msgstr ""
+
+msgctxt "#32305"
+msgid "[COLOR red]• [/COLOR]ID"
+msgstr ""
+
+msgctxt "#32306"
+msgid "[COLOR red]• [/COLOR]Authorise"
+msgstr ""
+
+msgctxt "#32307"
+msgid "[COLOR red]• [/COLOR]Password"
+msgstr ""
+
+msgctxt "#32308"
+msgid "[COLOR red]• [/COLOR]PIN"
+msgstr ""
+
+msgctxt "#32309"
+msgid "[COLOR red]• [/COLOR]API"
+msgstr ""
+
+msgctxt "#32310"
+msgid "[COLOR red]• [/COLOR]General"
+msgstr ""
+
+msgctxt "#32311"
+msgid "[COLOR red]• [/COLOR]Appearance"
+msgstr ""
+
+msgctxt "#32312"
+msgid "[COLOR red]• [/COLOR]Providers Timeout"
+msgstr ""
+
+msgctxt "#32313"
+msgid "[COLOR red]• [/COLOR]Indicators"
+msgstr ""
+
+msgctxt "#32314"
+msgid "[COLOR red]• [/COLOR]Local"
+msgstr ""
+
+msgctxt "#32315"
+msgid "[COLOR red]• [/COLOR]Trakt"
+msgstr ""
+
+msgctxt "#32316"
+msgid "[COLOR red]• [/COLOR]Info Language"
+msgstr ""
+
+msgctxt "#32317"
+msgid "[COLOR red]• [/COLOR]Flatten TV seasons"
+msgstr ""
+
+msgctxt "#32318"
+msgid "[COLOR red]• [/COLOR]Enable Fanart"
+msgstr ""
+
+msgctxt "#32319"
+msgid "[COLOR red]• [/COLOR]Menu"
+msgstr ""
+
+msgctxt "#32320"
+msgid "[COLOR red]• [/COLOR]New Movies"
+msgstr ""
+
+msgctxt "#32321"
+msgid "[COLOR red]• [/COLOR]Featured"
+msgstr ""
+
+msgctxt "#32322"
+msgid "[COLOR red]• [/COLOR]People Watching"
+msgstr ""
+
+msgctxt "#32323"
+msgid "[COLOR red]• [/COLOR]Most Popular"
+msgstr ""
+
+msgctxt "#32324"
+msgid "[COLOR red]• [/COLOR]In Theaters"
+msgstr ""
+
+msgctxt "#32325"
+msgid "[COLOR red]• [/COLOR]New Episodes"
+msgstr ""
+
+msgctxt "#32326"
+msgid "[COLOR red]• [/COLOR]Episodes"
+msgstr ""
+
+msgctxt "#32327"
+msgid "[COLOR red]• [/COLOR]Trakt Progress"
+msgstr ""
+
+msgctxt "#32328"
+msgid "[COLOR red]• [/COLOR]Trakt Episodes"
+msgstr ""
+
+msgctxt "#32329"
+msgid "[COLOR red]• [/COLOR]My Lists"
+msgstr ""
+
+msgctxt "#32330"
+msgid "[COLOR red]• [/COLOR]Playback"
+msgstr ""
+
+msgctxt "#32331"
+msgid "[COLOR red]• [/COLOR]Default action"
+msgstr ""
+
+msgctxt "#32332"
+msgid "[COLOR red]• [/COLOR]Dialog"
+msgstr ""
+
+msgctxt "#32333"
+msgid "[COLOR red]• [/COLOR]Directory"
+msgstr ""
+
+msgctxt "#32334"
+msgid "[COLOR red]• [/COLOR]Auto Play"
+msgstr ""
+
+msgctxt "#32335"
+msgid "[COLOR red]• [/COLOR]Progress Dialog"
+msgstr ""
+
+msgctxt "#32336"
+msgid "[COLOR red]• [/COLOR]Foreground"
+msgstr ""
+
+msgctxt "#32337"
+msgid "[COLOR red]• [/COLOR]Background"
+msgstr ""
+
+msgctxt "#32338"
+msgid "[COLOR red]• [/COLOR]File Hosting Filters"
+msgstr ""
+
+msgctxt "#32339"
+msgid "[COLOR red]• [/COLOR]Max Quality"
+msgstr ""
+
+msgctxt "#32340"
+msgid "[COLOR red]• [/COLOR]SD Hosters in Auto Play"
+msgstr ""
+
+msgctxt "#32341"
+msgid "[COLOR red]• [/COLOR]Hosters with captchas"
+msgstr ""
+
+msgctxt "#32342"
+msgid "[COLOR red]• [/COLOR]Sort by Provider"
+msgstr ""
+
+msgctxt "#32343"
+msgid "[COLOR red]• [/COLOR]When playback starts..."
+msgstr ""
+
+msgctxt "#32344"
+msgid "[COLOR red]• [/COLOR]Resume Playback"
+msgstr ""
+
+msgctxt "#32345"
+msgid "[COLOR red]• [/COLOR]Providers"
+msgstr ""
+
+msgctxt "#32346"
+msgid "[COLOR red]• [/COLOR]Accounts"
+msgstr ""
+
+msgctxt "#32347"
+msgid "[COLOR red]• [/COLOR]Downloads"
+msgstr ""
+
+msgctxt "#32348"
+msgid "[COLOR red]• [/COLOR]Enable downloads"
+msgstr ""
+
+msgctxt "#32349"
+msgid "[COLOR red]• [/COLOR]Movies"
+msgstr ""
+
+msgctxt "#32350"
+msgid "[COLOR red]• [/COLOR]TV"
+msgstr ""
+
+msgctxt "#32351"
+msgid "[COLOR red]• [/COLOR]Downloading features are disabled by default."
+msgstr ""
+
+msgctxt "#32352"
+msgid "[COLOR red]• [/COLOR]Set up your download folders in order to enable them."
+msgstr ""
+
+msgctxt "#32353"
+msgid "[COLOR red]• [/COLOR]Subtitles"
+msgstr ""
+
+msgctxt "#32354"
+msgid "[COLOR red]• [/COLOR]Enable subtitles"
+msgstr ""
+
+msgctxt "#32355"
+msgid "[COLOR red]• [/COLOR]Convert subtitles to UTF-8"
+msgstr ""
+
+msgctxt "#32356"
+msgid "[COLOR red]• [/COLOR]Primary Language"
+msgstr ""
+
+msgctxt "#32357"
+msgid "[COLOR red]• [/COLOR]Secondary Language"
+msgstr ""
+
+msgctxt "#32358"
+msgid "[COLOR red]• [/COLOR]Subtitles could be unavailable or out of sync."
+msgstr ""
+
+msgctxt "#32359"
+msgid "[COLOR red]• [/COLOR]In that case use your own subtitles."
+msgstr ""
+
+msgctxt "#32360"
+msgid "[COLOR red]• [/COLOR]Providers Language"
+msgstr ""
+
+msgctxt "#32363"
+msgid "[COLOR red]• [/COLOR]HEVC"
+msgstr ""
+
+msgctxt "#32372"
+msgid "[COLOR red]• [/COLOR]When playback ends..."
+msgstr ""
+
+msgctxt "#32373"
+msgid "[COLOR red]• [/COLOR]Force container refresh"
+msgstr ""
+
+msgctxt "#32401"
+msgid "[COLOR red]• [/COLOR]No stream available"
+msgstr ""
+
+msgctxt "#32402"
+msgid "[COLOR red]• [/COLOR]Playback outside Requisition is not allowed"
+msgstr ""
+
+msgctxt "#32403"
+msgid "[COLOR red]• [/COLOR]Download"
+msgstr ""
+
+msgctxt "#32404"
+msgid "[COLOR red]• [/COLOR]Time elapsed: %s seconds"
+msgstr ""
+
+msgctxt "#32405"
+msgid "[COLOR red]• [/COLOR]%s seconds"
+msgstr ""
+
+msgctxt "#32406"
+msgid "[COLOR red]• [/COLOR]Remaining providers: %s"
+msgstr ""
+
+msgctxt "#32407"
+msgid "[COLOR red]• [/COLOR]Are you sure?"
+msgstr ""
+
+msgctxt "#32408"
+msgid "[COLOR red]• [/COLOR]Process Complete"
+msgstr ""
+
+msgctxt "#32501"
+msgid "[COLOR red]• [/COLOR]Start from beginning"
+msgstr ""
+
+msgctxt "#32502"
+msgid "[COLOR red]• [/COLOR]Resume from %s"
+msgstr ""
+
+msgctxt "#32503"
+msgid "[COLOR red]• [/COLOR]Resume"
+msgstr ""
+
+msgctxt "#32511"
+msgid "[COLOR red]• [/COLOR]An account already exists."
+msgstr ""
+
+msgctxt "#32512"
+msgid "[COLOR red]• [/COLOR]Do you want to reset?"
+msgstr ""
+
+msgctxt "#32513"
+msgid "[COLOR red]• [/COLOR]1) Visit : [COLOR skyblue]%s[/COLOR]"
+msgstr ""
+
+msgctxt "#32514"
+msgid "[COLOR red]• [/COLOR]2) When prompted enter : [COLOR skyblue]%s[/COLOR]"
+msgstr ""
+
+msgctxt "#32515"
+msgid "[COLOR red]• [/COLOR]Trakt Manager"
+msgstr ""
+
+msgctxt "#32516"
+msgid "[COLOR red]• [/COLOR]Add to [B]Collection[/B]"
+msgstr ""
+
+msgctxt "#32517"
+msgid "[COLOR red]• [/COLOR]Remove from [B]Collection[/B]"
+msgstr ""
+
+msgctxt "#32518"
+msgid "[COLOR red]• [/COLOR]Add to [B]Watchlist[/B]"
+msgstr ""
+
+msgctxt "#32519"
+msgid "[COLOR red]• [/COLOR]Remove from [B]Watchlist[/B]"
+msgstr ""
+
+msgctxt "#32520"
+msgid "[COLOR red]• [/COLOR]Add to [B]new List[/B]"
+msgstr ""
+
+msgctxt "#32521"
+msgid "[COLOR red]• [/COLOR]Add to [B]%s[/B]"
+msgstr ""
+
+msgctxt "#32522"
+msgid "[COLOR red]• [/COLOR]Remove from [B]%s[/B]"
+msgstr ""
+
+msgctxt "#32531"
+msgid "[COLOR red]• [/COLOR]An account already exists."
+msgstr ""
+
+msgctxt "#32532"
+msgid "[COLOR red]• [/COLOR]Do you want to reset?"
+msgstr ""
+
+msgctxt "#32533"
+msgid "[COLOR red]• [/COLOR]1) Visit : [COLOR skyblue]%s[/COLOR]"
+msgstr ""
+
+msgctxt "#32534"
+msgid "[COLOR red]• [/COLOR]2) When prompted enter : [COLOR skyblue]%s[/COLOR]"
+msgstr ""
+
+msgctxt "#32535"
+msgid "[COLOR red]• [/COLOR]Play Random"
+msgstr ""
+
+msgctxt "#32536"
+msgid "[COLOR red]• [/COLOR]Playing"
+msgstr ""
+
+msgctxt "#32537"
+msgid "[COLOR red]• [/COLOR]Nothing found to play"
+msgstr ""
+
+msgctxt "#32538"
+msgid "[COLOR red]• [/COLOR]DEBRID-SERVICE"
+msgstr ""
+
+msgctxt "#32539"
+msgid "[COLOR red]• [/COLOR]Configure Debrid Services in ResolveURL Settings."
+msgstr ""
+
+msgctxt "#32540"
+msgid "[COLOR red]• [/COLOR]ResolveURL Settings"
+msgstr ""
+
+msgctxt "#32541"
+msgid "[COLOR red]• [/COLOR]Library"
+msgstr ""
+
+msgctxt "#32542"
+msgid "[COLOR red]• [/COLOR]Requisition folders will be imported to library if they are added to media sources."
+msgstr ""
+
+msgctxt "#32543"
+msgid "[COLOR red]• [/COLOR]Movies"
+msgstr ""
+
+msgctxt "#32544"
+msgid "[COLOR red]• [/COLOR]TV"
+msgstr ""
+
+msgctxt "#32545"
+msgid "[COLOR red]• [/COLOR]Auto update TV Shows"
+msgstr ""
+
+msgctxt "#32546"
+msgid "[COLOR red]• [/COLOR]Show notifications during update"
+msgstr ""
+
+msgctxt "#32547"
+msgid "[COLOR red]• [/COLOR]Update library after adding content"
+msgstr ""
+
+msgctxt "#32548"
+msgid "[COLOR red]• [/COLOR]Avoid creating duplicate content"
+msgstr ""
+
+msgctxt "#32549"
+msgid "[COLOR red]• [/COLOR]Check movie before adding it"
+msgstr ""
+
+msgctxt "#32550"
+msgid "[COLOR red]• [/COLOR]Check first episode of season before adding it"
+msgstr ""
+
+msgctxt "#32551"
+msgid "[COLOR red]• [/COLOR]Add to Library"
+msgstr ""
+
+msgctxt "#32552"
+msgid "[COLOR red]• [/COLOR]Adding to library..."
+msgstr ""
+
+msgctxt "#32553"
+msgid "[COLOR red]• [/COLOR]Updating TV shows..."
+msgstr ""
+
+msgctxt "#32554"
+msgid "[COLOR red]• [/COLOR]Process Complete"
+msgstr ""
+
+msgctxt "#32555"
+msgid "[COLOR red]• [/COLOR]Are you sure?"
+msgstr ""
+
+msgctxt "#32556"
+msgid "[COLOR red]• [/COLOR][B]Vista Requisition[/B] : Library"
+msgstr ""
+
+msgctxt "#32557"
+msgid "[COLOR red]• [/COLOR][B]LIBRARY[/B] : Settings"
+msgstr ""
+
+msgctxt "#32558"
+msgid "[COLOR red]• [/COLOR][B]Vista Requisition[/B] : Update library..."
+msgstr ""
+
+msgctxt "#32559"
+msgid "[COLOR red]• [/COLOR][B]Vista Requisition[/B] : Movie folder..."
+msgstr ""
+
+msgctxt "#32560"
+msgid "[COLOR red]• [/COLOR][B]Vista Requisition[/B] : TV folder..."
+msgstr ""
+
+msgctxt "#32561"
+msgid "[COLOR red]• [/COLOR][B]TRAKT[/B] : Import Collection..."
+msgstr ""
+
+msgctxt "#32562"
+msgid "[COLOR red]• [/COLOR][B]TRAKT[/B] : Import Watchlist..."
+msgstr ""
+
+msgctxt "#32563"
+msgid "[COLOR red]• [/COLOR][B]TRAKT[/B] : Import TV Collection..."
+msgstr ""
+
+msgctxt "#32564"
+msgid "[COLOR red]• [/COLOR][B]TRAKT[/B] : Import TV Watchlist..."
+msgstr ""
+
+msgctxt "#32565"
+msgid "[COLOR red]• [/COLOR]Include episodes with unknown air dates"
+msgstr ""
+
+msgctxt "#32570"
+msgid "[COLOR red]• [/COLOR]Show unaired seasons/episodes"
+msgstr ""
+
+msgctxt "#32571"
+msgid "[COLOR red]• [/COLOR]Hide movies in cinema"
+msgstr ""
+
+msgctxt "#32572"
+msgid "[COLOR red]• [/COLOR]Protected Link. Please enter account credentials in the settings."
+msgstr ""
+
+msgctxt "#32580"
+msgid "[COLOR red]• [/COLOR]Films/TV Movies"
+msgstr ""
+
+msgctxt "#32581"
+msgid "[COLOR red]• [/COLOR]Results Limit"
+msgstr ""
+
+msgctxt "#32582"
+msgid "[COLOR red]• [/COLOR]Personal API keys provide quicker API responses."
+msgstr ""
+
+msgctxt "#32583"
+msgid "[COLOR red]• [/COLOR]Become a VIP member for many benefits at: https://fanart.tv/vip"
+msgstr ""
+
+msgctxt "#32584"
+msgid "[COLOR red]• [/COLOR]Sort order for Trakt Watched Progress"
+msgstr ""
+
+msgctxt "#32585"
+msgid "[COLOR red]• [/COLOR]Recently aired"
+msgstr ""
+
+msgctxt "#32586"
+msgid "[COLOR red]• [/COLOR]Recently watched"
+msgstr ""
+
+msgctxt "#32587"
+msgid "[COLOR red]• [/COLOR]Show Extra Source Info"
+msgstr ""
+
+msgctxt "#32588"
+msgid "[COLOR red]• [/COLOR]Premium Source Identifier Color"
+msgstr ""
+
+msgctxt "#32589"
+msgid "[COLOR red]• [/COLOR]Blue"
+msgstr ""
+
+msgctxt "#32590"
+msgid "[COLOR red]• [/COLOR]Red"
+msgstr ""
+
+msgctxt "#32591"
+msgid "[COLOR red]• [/COLOR]Yellow"
+msgstr ""
+
+msgctxt "#32592"
+msgid "[COLOR red]• [/COLOR]Deep Pink"
+msgstr ""
+
+msgctxt "#32593"
+msgid "[COLOR red]• [/COLOR]Cyan"
+msgstr ""
+
+msgctxt "#32594"
+msgid "[COLOR red]• [/COLOR]Lawn Green"
+msgstr ""
+
+msgctxt "#32595"
+msgid "[COLOR red]• [/COLOR]Gold"
+msgstr ""
+
+msgctxt "#32596"
+msgid "[COLOR red]• [/COLOR]Magenta"
+msgstr ""
+
+msgctxt "#32597"
+msgid "[COLOR red]• [/COLOR]Yellow Green"
+msgstr ""
+
+msgctxt "#32598"
+msgid "[COLOR red]• [/COLOR]No Color"
+msgstr ""
+
+msgctxt "#32599"
+msgid "[COLOR red]• [/COLOR]Getting genre information from Trakt"
+msgstr ""
+
+msgctxt "#32600"
+msgid "[COLOR red]• [/COLOR]Preparing sources"
+msgstr ""
+
+msgctxt "#32601"
+msgid "[COLOR red]• [/COLOR]Total"
+msgstr ""
+
+msgctxt "#32602"
+msgid "[COLOR red]• [/COLOR]Waiting for"
+msgstr ""
+
+msgctxt "#32603"
+msgid "[COLOR red]• [/COLOR][COLOR gold]New search[/COLOR]..."
+msgstr ""
+
+msgctxt "#32604"
+msgid "[COLOR red]• [/COLOR][B]Vista Requisition[/B] : Clear search history..."
+msgstr ""
+
+msgctxt "#32605"
+msgid "[COLOR red]• [/COLOR][COLOR red]Click to clear search history[/COLOR]"
+msgstr ""
+
+msgctxt "#32606"
+msgid "[COLOR red]• [/COLOR]Paid"
+msgstr ""
+
+msgctxt "#32607"
+msgid "[COLOR red]• [/COLOR]Norm"
+msgstr ""
+
+msgctxt "#32608"
+msgid "[COLOR red]• [/COLOR]Auto Syncing Trakt Library"
+msgstr ""
+
+msgctxt "#32609"
+msgid "[COLOR red]• [/COLOR]Client ID"
+msgstr ""
+
+msgctxt "#32610"
+msgid "[COLOR red]• [/COLOR]Client Secret"
+msgstr ""
+
+msgctxt "#32611"
+msgid "[COLOR red]• [/COLOR][B]Vista Requisition[/B] : Clear all cache..."
+msgstr ""
+
+msgctxt "#32612"
+msgid "[COLOR red]• [/COLOR]24HR delay before import"
+msgstr ""
+
+msgctxt "#32613"
+msgid "[COLOR red]• [/COLOR]Include Special Episodes"
+msgstr ""
+
+msgctxt "#32614"
+msgid "[COLOR red]• [/COLOR]Auto Trakt Collections Syncing"
+msgstr ""
+
+msgctxt "#32615"
+msgid "[COLOR red]• [/COLOR]Sync on Kodi Start"
+msgstr ""
+
+msgctxt "#32616"
+msgid "[COLOR red]• [/COLOR]Schedule Updates Every _ Hour/s"
+msgstr ""
+
+msgctxt "#32617"
+msgid "[COLOR red]• [/COLOR]0 Value Disables Scheduling"
+msgstr ""
+
+msgctxt "#32618"
+msgid "[COLOR red]• [/COLOR]Pre-emptive Termination"
+msgstr ""
+
+msgctxt "#32619"
+msgid "[COLOR red]• [/COLOR]Pre-emptive Limit"
+msgstr ""
+
+msgctxt "#32620"
+msgid "[COLOR red]• [/COLOR]Autoplay SD Quality only"
+msgstr ""
+
+msgctxt "#32621"
+msgid "[COLOR red]• [/COLOR]Debrid Sources Only"
+msgstr ""
+
+msgctxt "#32622"
+msgid "[COLOR red]• [/COLOR]Trakt Bookmarks"
+msgstr ""
+
+msgctxt "#32623"
+msgid "[COLOR red]• [/COLOR]Auto Resume"
+msgstr ""
+
+msgctxt "#32624"
+msgid "[COLOR red]• [/COLOR]FANART.TV"
+msgstr ""
+
+msgctxt "#32625"
+msgid "[COLOR red]• [/COLOR]TMDb"
+msgstr ""
+
+msgctxt "#32627"
+msgid "[COLOR red]• [/COLOR]IMDb"
+msgstr ""

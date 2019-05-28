@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.vistatvshowbox" version="100.0.85" name="VistaTV Requisition" provider-name="VistaTV">
+<addon id="plugin.video.vistatvshowbox" version="100.0.86" name="VistaTV Requisition" provider-name="VistaTV">
 	<requires>
 		<import addon="xbmc.python" version="2.26.0" />
 		<import addon="script.module.vistatvshowbox" />
@@ -11,10 +11,6 @@
 		<import addon="script.module.beautifulsoup4" />
 		<import addon="script.module.beautifulsoup" />
 		<import addon="script.module.openscrapers" />
-		<import addon="repository.bugatsinho" />
-		<!-- [ORION/] -->
-		<import addon="script.module.orion" version="2.0.1" />
-		<!-- [/ORION] -->
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="vistatv.py">
 		<provides>video</provides>

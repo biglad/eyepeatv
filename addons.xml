@@ -203,6 +203,43 @@ ffmpeg simply copies the stream into a transport stream container.
 	</extension>
 </addon>
 
+<addon id="script.cerebro.pairwith"
+  name="VistaTV Pair With"
+  version="2.7"
+  provider-name="VistaTV">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.requests" />
+  </requires>
+  <extension point="xbmc.python.script" library="addon.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">VistaTV Menu System</summary>
+    <description lang="en">VistaTV Menu System</description>
+	<disclaimer>VistaTV Menu System</disclaimer>
+  </extension>
+</addon>
+
+<addon id="script.cerebro.pairwith.laucnher"
+  name="Pair ME UP"
+  version="1.3"
+  provider-name="VistaTV">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.script" library="addon.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">VistaTV Menu System</summary>
+    <description lang="en">VistaTV Menu System</description>
+	<disclaimer>VistaTV Menu System</disclaimer>
+  </extension>
+</addon>
+
 <addon id="script.module.liveresolver"
      name="LiveResolver"
      version="2.2.20"

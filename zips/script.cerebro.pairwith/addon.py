@@ -20,7 +20,7 @@ def menuoptions():
         function4
         )
         
-    call = dialog.select('[B][COLOR=yellow]CerebroTV[/COLOR][COLOR=red] Pair-ing System[/COLOR][/B]', [
+    call = dialog.select('[B][COLOR=yellow]EyePeaTV[/COLOR][COLOR=red] Pair-ing System[/COLOR][/B]', [
     '[B][COLOR=white]      Open Load[/COLOR][/B] [COLOR=red]Website[/COLOR]', 
     '[B][COLOR=white]      The Video Me[/COLOR][/B] [COLOR=red]Website[/COLOR]',
     '[B][COLOR=white]      Vid Up Me[/COLOR][/B] [COLOR=red]Website[/COLOR]',

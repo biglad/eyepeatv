@@ -44,7 +44,7 @@ queueMenu = control.lang(32065).encode('utf-8')
 class navigator:
     def root(self):
         self.addDirectoryItem('[COLOR green]Click Here to Pair[/COLOR] - (Do this once every 4 hours)', 'pair', __icon__, 'DefaultFolder.png')
-        self.addDirectoryItem('[COLOR gold]• [/COLOR]Live TV', 'LiveTV', '', 'DefaultFolder.png')
+        #self.addDirectoryItem('[COLOR gold]• [/COLOR]Live TV', 'LiveTV', '', 'DefaultFolder.png')
         self.addDirectoryItem(32001, 'movieNavigator', 'movies.png', 'DefaultMovies.png')
         self.addDirectoryItem(32002, 'tvNavigator', 'tvshows.png', 'DefaultTVShows.png')
 

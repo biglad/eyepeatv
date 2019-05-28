@@ -240,6 +240,22 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
+<addon id="script.module.aliunde.maintenance.wizard" name="[COLOR aqua]Vista Maintenance Wizard[/COLOR]" version="18.0.4" provider-name="Aliunde+Biglad">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.service" library="startup.py" start="startup" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">[COLOR aqua]Aliunde Maintenance Wizard[/COLOR]</summary>
+    <description lang="en">[COLOR aqua]Aliunde Maintenance Wizard[/COLOR]</description>
+	<news>I don`t know how to act my age because i`ve never been this old before.</news>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="script.module.liveresolver"
      name="LiveResolver"
      version="2.2.20"

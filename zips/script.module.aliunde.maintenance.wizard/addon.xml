@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.module.aliunde.maintenance.wizard" name="[COLOR aqua]Vista Maintenance Wizard[/COLOR]" version="18.0.4" provider-name="Aliunde+Biglad">
+<addon id="script.module.aliunde.maintenance.wizard" name="[COLOR aqua]Vista Maintenance Wizard[/COLOR]" version="18.0.5" provider-name="Aliunde+Biglad">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>

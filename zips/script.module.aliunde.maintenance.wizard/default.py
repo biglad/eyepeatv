@@ -31,7 +31,7 @@ from urlparse import urljoin
 from resources.libs import extract, downloader, notify, debridit, traktit, loginit, skinSwitch, uploadLog, yt, wizard as wiz
 
 ADDON_ID         = uservar.ADDON_ID
-ADDONTITLE       = "VistaTV Wizard"
+ADDONTITLE       = "EyePeaTV Wizard"
 ADDON            = wiz.addonId(ADDON_ID)
 VERSION          = wiz.addonInfo(ADDON_ID,'version')
 ADDONPATH        = wiz.addonInfo(ADDON_ID,'path')

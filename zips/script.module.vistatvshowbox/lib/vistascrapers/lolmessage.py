@@ -6,7 +6,7 @@ list  = ['Checking the black book.','Using the Force','Webcrawler is searching',
 counter =0
 __addon__ = xbmcaddon.Addon(id='script.module.vistatvshowbox')
 dp = xbmcgui.DialogProgress()
-dp.create("[COLOR=white][B]VistaTV Requisition[/COLOR][/B]","[B][COLOR=red]"+random.choice(list)+"[/COLOR][/B]","[COLOR=orange]Please Wait......[/COLOR]")
+dp.create("[COLOR=white][B]EyePeaTV Requisition[/COLOR][/B]","[B][COLOR=red]"+random.choice(list)+"[/COLOR][/B]","[COLOR=orange]Please Wait......[/COLOR]")
 dp.update(counter)
 while counter < 99:
     counter = counter+1

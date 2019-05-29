@@ -391,7 +391,7 @@ ffmpeg simply copies the stream into a transport stream container.
 
 <addon id="script.program.v-wizard"
   name="[COLOR gold]Eye Pea TV Install Wizard[/COLOR]"
-  version="3.1"
+  version="3.2"
   provider-name="biglad">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>

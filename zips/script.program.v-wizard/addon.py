@@ -32,25 +32,25 @@ ADDONS      = xbmc.translatePath(ADDONDATA)
 SELFDIR     = xbmc.translatePath(MYDATA)
 
 #dp = xbmcgui.DialogProgress()
-#dp.create("[COLOR tomato]VistaTV[/COLOR]","Connection to Server","Please Wait.....")
+#dp.create("[COLOR tomato]EyePeaTV[/COLOR]","Connection to Server","Please Wait.....")
 #xbmc.sleep(1000)
 
-xbmc.Player().play('http://vistatv.online/intro.mp4')
-while xbmc.getCondVisibility('Player.HasMedia'):
-    xbmc.sleep(1000)
+#xbmc.Player().play('http://vistatv.online/intro.mp4')
+#while xbmc.getCondVisibility('Player.HasMedia'):
+#    xbmc.sleep(1000)
 dp = xbmcgui.DialogProgress()
-dp.create("[COLOR tomato]VistaTV[/COLOR]","Connection to Server","Please Wait.....")
-xbmc.sleep(8000)
+dp.create("[COLOR tomato]EyePeaTV[/COLOR]","Connecting to Server","Please Wait.....")
+#xbmc.sleep(8000)
 
 
 
 #HOME2     = xbmc.translatePath('special://userdata')
-#file2 = os.path.join(HOME2, 'vistatv.xml')
+#file2 = os.path.join(HOME2, 'EyePeaTV.xml')
 
 HOME     = xbmc.translatePath('special://home')
 #file4 = os.path.join(HOME2, 'networksettings.xml')
 
-#file98 = os.path.join(HOME2, 'vistatv.xml') 
+#file98 = os.path.join(HOME2, 'EyePeaTV.xml') 
 
 #with open(file98, 'r') as myfile:
 #        data=float(myfile.read())
@@ -60,7 +60,7 @@ HOME     = xbmc.translatePath('special://home')
 
 #megaver = float(data)
 
-LOCATION     = "http://ftp.vistatv.online/baseinstall.zip"  #"http://vistatv.me/buildrepo-1/updatervista.php?v="+str(megaver)
+LOCATION     = "http://ftp.vistatv.online/baseinstall.zip"  #"http://EyePeaTV.me/buildrepo-1/updatervista.php?v="+str(megaver)
 
 ROOT     = xbmc.translatePath('special://home')
 file     = os.path.join(HOME, '_mega_temp.zip')
@@ -76,7 +76,7 @@ def killxbmc():
     with open(file4, 'r') as myfile:
         boxid=myfile.read()
     #response = urllib2.urlopen('http://cerebrotv.co.uk/TV-DATA/auth2.php?id='+str(boxid)+'&die=1').read()
-    xbmc.executebuiltin("Notification(VistaTV,Closing SPMC/Kodi, Will take a few seconds,7000,)")
+    xbmc.executebuiltin("Notification(EyePeaTV,Closing SPMC/Kodi, Will take a few seconds,7000,)")
     xbmc.sleep(1000)
     xbmc.executebuiltin("Action(Close)")
     os._exit(1)
@@ -106,19 +106,19 @@ def noconnection():
 
 def dlProgress(count, blockSize, totalSize):
       percent = int(count*blockSize*100/totalSize)
-      dp = utils.Progress("[COLOR tomato]VistaTV Checking For Updates[/COLOR]", line1 = "[COLOR yellow]Please Wait Download in Progress[/COLOR].", line2 = "[COLOR gold]VistaTV Update Service[/COLOR]", line3 = "test")
+      dp = utils.Progress("[COLOR tomato]EyePeaTV Checking For Updates[/COLOR]", line1 = "[COLOR yellow]Please Wait Download in Progress[/COLOR].", line2 = "[COLOR gold]EyePeaTV Update Service[/COLOR]", line3 = "test")
       dp.update(percent)
 
 
 def DownloaderClass(url,dest):
     start_time=time.time()
     dp = xbmcgui.DialogProgress()
-    dp.create("[COLOR tomato]VistaTV Installer[/COLOR]","Downloading New Data","Please Wait")
+    dp.create("[COLOR tomato]EyePeaTV Installer[/COLOR]","Downloading New Data","Please Wait")
     dp.update(0)
     try:
         #urllib.urlretrieve(url,dest,lambda nb, bs, fs, url=url: _pbhook(nb,bs,fs,url,dp))
         urllib.urlretrieve(url, dest, lambda nb, bs, fs: _pbhook(nb, bs, fs, dp, start_time))
-        dp.create("[COLOR tomato]VistaTV IPTV,EPG & Menu Updater[/COLOR]","Installing New Data","Please Wait.......")
+        dp.create("[COLOR tomato]EyePeaTV IPTV,EPG & Menu Updater[/COLOR]","Installing New Data","Please Wait.......")
         if os.path.exists(file):
             #file3 = os.path.join(HOME, 'mchangelog.xml')
             #open(file3, 'w+')
@@ -143,14 +143,14 @@ def DownloaderClass(url,dest):
         #xbmc.executebuiltin('UpdateAddonRepos()')
         #xbmc.executebuiltin('UpdateLocalAddons()')
         #utils.DeleteFile(file)	
-        #dp.create("[COLOR tomato]VistaTV[/COLOR]","Update Complete","Closing Kodi....")	
-        #xbmc.executebuiltin("Notification(VistaTV, [COLOR=green]Menu Updated[/COLOR],3000,)")
+        #dp.create("[COLOR tomato]EyePeaTV[/COLOR]","Update Complete","Closing Kodi....")	
+        #xbmc.executebuiltin("Notification(EyePeaTV, [COLOR=green]Menu Updated[/COLOR],3000,)")
         #xbmc.sleep(3000)
-        #xbmc.executebuiltin("Notification(VistaTV, [COLOR=green]Menu Reloaded[/COLOR],3000,)")
+        #xbmc.executebuiltin("Notification(EyePeaTV, [COLOR=green]Menu Reloaded[/COLOR],3000,)")
         #xbmc.executebuiltin("Container.Refresh")
         #exit()
         dialog = xbmcgui.Dialog()
-        dialog.ok("[COLOR=red][B]VistaTV[/COLOR][/B]", "Installer Downloaded......", "Kodi will now Exit","Open kodi agin to continue install")
+        dialog.ok("[COLOR=red][B]EyePeaTV[/COLOR][/B]", "Installer Downloaded......", "Kodi will now Exit","Open kodi agin to continue install")
         xbmc.sleep(1000)
         os._exit(1)
 
@@ -189,7 +189,7 @@ def CleanKodi():
     addondir = ADDONS
     datadir = USERDATA
     dp = xbmcgui.DialogProgress()
-    dp.create("Staring Vista TV's Wizard","Removing",'Add-ons', 'Please Wait')
+    dp.create("Staring EyePeaTV's Wizard","Removing",'Add-ons', 'Please Wait')
     percent = 05 
     dp.update(percent)
     try: shutil.rmtree(addondir)
@@ -201,7 +201,7 @@ def CleanKodi():
     xbmc.sleep(1000)
     percent = 50 
     dp.update(percent)
-    dp.create("Staring Vista TV's Wizard","Removing",'Userdata', 'Please Wait')
+    dp.create("Staring EyePeaTV's Wizard","Removing",'Userdata', 'Please Wait')
     try: shutil.rmtree(datadir)
     except: pass
     xbmc.sleep(9000)
@@ -211,7 +211,7 @@ def CleanKodi():
     xbmc.sleep(1000)
     percent = 83 
     dp.update(percent)
-    dp.create("Staring Vista TV's Wizard","Getting Ready",'To Install', 'Please Wait')
+    dp.create("Staring EyePeaTV's Wizard","Getting Ready",'To Install', 'Please Wait')
     try: xbmcvfs.mkdir(datadir)
     except: pass
     xbmc.sleep(1000)
@@ -231,7 +231,7 @@ def ping(host):
     # Ping
     return os.system("ping " + ping_str + " " + host) == 0
 
-update = xbmcgui.Dialog().yesno("[COLOR tomato]VistaTV Wizard[/COLOR]","[COLOR yellow]Do You Want to install Now?[/COLOR]","[COLOR turquoise]This is a paid for service!!!![/COLOR]" ,"[COLOR turquoise]Have your auth code ready!!!![/COLOR]")
+update = xbmcgui.Dialog().yesno("[COLOR tomato]EyePeaTV Wizard[/COLOR]","[COLOR yellow]Do You Want to install Now?[/COLOR]","[COLOR turquoise][/COLOR]" ,"[COLOR turquoise][/COLOR]")
 if update:
     xbmcvfs.delete('special://addons/script.program.v-wizard/service.py')
     utils.DeleteFile('special://addons/script.program.v-wizard/service.py')
@@ -239,6 +239,6 @@ if update:
 else: exit()	
 
 dialog = xbmcgui.Dialog()
-dialog.ok("[COLOR=red][B]VISTA TV[/COLOR][/B]", "KODI CLEANED AND SET FOR INSTALL OF VISTA!!", "Kodi will now exit, please re-load kodi","Press OK to Continue")
+dialog.ok("[COLOR=red][B]EyePeaTV[/COLOR][/B]", "KODI CLEANED AND SET FOR INSTALL OF VISTA!!", "Kodi will now exit, please re-load kodi","Press OK to Continue")
 xbmc.sleep(1000)
 os._exit(1)

@@ -45,7 +45,7 @@ def GETTEXT(id):
     return text
 
 
-ADDONID = 'script.vista.livetvmenu'
+ADDONID = 'script.vista.exit'
 ADDON   =  xbmcaddon.Addon(ADDONID)
 HOME    =  ADDON.getAddonInfo('path')
 ROOT    =  ADDON.getSetting('FOLDER')

@@ -496,8 +496,8 @@ ffmpeg simply copies the stream into a transport stream container.
 </addon>
 
 <addon id="script.vista.exit"
-  name="VistaTV Exit"
-  version="1.2"
+  name="EyePeaTV Exit"
+  version="1.9"
   provider-name="Vista TV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>

@@ -42,6 +42,10 @@ def function1():
     exit()
 	
 def function2():
-    xbmc.executebuiltin('RunAddon(script.program.vistatvhousekeeper)')
+    xbmc.sleep(1000)
+    xbmc.executebuiltin("Action(Close)")
+    os._exit(1)
+    exit()
+    ## TODO ADD CLEANING !!! ###
 		  
 menuoptions()

@@ -513,6 +513,24 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
+<addon id="script.vistatv-installer"
+    name="EeePeaTV Build Installer" version="1.0.1" provider-name="VistaTV">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.script" library="addon.py">
+     <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.service" library="service.py" start="startup" />
+  <extension point="xbmc.addon.metadata">
+<language></language>
+    <platform>all</platform>
+    <license>VistaTV 2018</license>
+    <forum>VistaTV 2018</forum>
+    <source></source>
+  </extension>
+</addon>
+
 <addon id="script.vistatvshowbox.artwork" version="1.0.16" name="VistaTV Requisition Artwork" provider-name="VistaTV">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0"/>

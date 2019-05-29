@@ -121,16 +121,20 @@ def peamenyy(params):
         common.addItem('[COLOR white][B]Update Addons & Repos[/B][/COLOR]',BASEURL,26,GoDev.Images + 'logo.png',FANART,'')
         plugintools.add_item( action=vod_channels("bWFpbnRNZW51"),   title="[COLOR white][B]Maintenance Tools[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
         plugintools.add_item( action=vod_channels("VG9vbHM="),   title="[COLOR pink][B]Tools & Settings[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
+        plugintools.addItem('[COLOR orange][B]Install or Re-Install EyePeaTV Build[/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
 
     elif channels != 1 and GoDev.mode != 1:
         plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR orange][B]Step 1. Visit:[/B][/COLOR] [COLOR gold][B]www.eyepeatv.co.uk[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False )
         #plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR orange][B]Addon Settings[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
         plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR orange][B]Step 2. Insert Login Credentials[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False )  
-        plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjazI="), title="[COLOR orange][B]Step 3. Click Once Login Is Input[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False ) 
+        plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjazI="), title="[COLOR orange][B]Step 3. Click Once Login Is Input[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False )
+        #plugintools.addItem('[COLOR orange][B]Install or Re-Install EyePeaTV Build[/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')		
         ##quit()
     plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="Total Ram: "+str(RAMM)+ "", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
     plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="Free Ram: "+str(RAM)+ "MB", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
     plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="Free Storage: "+str(PSACE)+ "", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
+    if channels != 1 and GoDev.mode != 1:
+        plugintools.addItem('[COLOR orange][B]Install or Re-Install EyePeaTV Build[/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
 
 
 def Tools(params):
@@ -141,6 +145,7 @@ def Tools(params):
     plugintools.addItem('[COLOR orange][B]Run Speedtest[/B][/COLOR]','speed',9,GoDev.Images + 'speed.png',GoDev.Images + 'background.png')
     plugintools.add_item( action=vod_channels("R29EZXYuREN0ZXN0"),   title="[COLOR orange][B]Datacentre Speedtest[/B][/COLOR]" , thumbnail=GoDev.Images + 'speed.png', fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
     plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR orange][B]Addon Settings[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
+    plugintools.addItem('[COLOR orange][B]Install or Re-Install EyePeaTV Build[/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
 
 
 

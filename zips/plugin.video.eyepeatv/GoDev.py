@@ -657,6 +657,7 @@ elif mode == 7001:
     xbmc.executebuiltin('RunAddon(plugin.video.iptv.recorder)')
 	
 elif mode == 7654:
+    xbmc.executebuiltin('XBMC.RunAddon(script.program.v-wizard)')
     xbmc.executebuiltin('RunAddon(script.program.v-wizard)')
 	
 elif mode == 7010:

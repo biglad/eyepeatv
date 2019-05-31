@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
+<addon id="plugin.video.bbciplayer" name="BBC iPlayer" version="0.7.2" provider-name="LittleWiz">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">BBC iPlayer</summary>
+    <description lang="en">BBC iPlayer</description>
+    <platform>all</platform>
+    <news>Fixed search</news>
+  </extension>
+</addon>
+
 <addon id="plugin.video.eyepeatv" version="7.0.9" name="[COLOR gold]EyePeaTV[/COLOR]" provider-name="EyePeaTV">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
@@ -38,6 +53,34 @@
         <description></description>
         <platform>all</platform>
     </extension>
+</addon>
+
+<addon id="plugin.video.iplayerwww" name="iPlayer WWW" version="3.0.44" provider-name="CaptainT, Cas, ihurst, primaeval">
+  <requires>
+    <import addon="xbmc.python" version="2.25.0"/>
+    <import addon="script.module.requests" version="2.7.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>audio video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">TV and Radio from BBC iPlayer</summary>
+    <description lang="en">This add-on enables playing of Live and Catchup TV (UK only) and Radio content (UK or international) from the BBC iPlayer website. It is not created, maintained or in any way affiliated with the BBC. The add-on only provides an interface to access the BBC iPlayer website from Kodi.</description>
+    <platform>all</platform>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <forum>http://forum.kodi.tv/showthread.php?tid=239378</forum>
+    <source>https://github.com/vonH/plugin.video.iplayerwww</source>
+    <disclaimer lang="en">This add-on is a front end to the BBC iPlayer website. It is not an official BBC product. A UK TV Licence is required to watch the live, catch-up, or on-demand TV content.</disclaimer>
+    <assets>
+        <icon>resources/icon.png</icon>
+        <fanart>resources/fanart.jpg</fanart>
+    </assets>
+    <news>
+v3.0.44
+Preserve all subtitle colours to indicate speaker changes.
+Fixed new JSON format for Highlights.
+   </news>
+  </extension>
 </addon>
 
 <addon id="plugin.video.iptv.recorder"
@@ -91,6 +134,22 @@ ffmpeg simply copies the stream into a transport stream container.
 </assets>
 <platform>windows-x86_64</platform>
 </extension>
+</addon>
+
+<addon id="plugin.video.itv" name="ITV" version="2.5.9" provider-name="LittleWiz">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension library="service.py" point="xbmc.service"  start="startup"/>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary>Plugin for ITV Live Tv Player</summary>
+    <description>ITV Player Front End</description>
+    <news>Fixed regex so video links are now being picked up correctly</news>
+  </extension>
 </addon>
 
 <addon id="plugin.video.live.streamspro"
@@ -187,6 +246,21 @@ ffmpeg simply copies the stream into a transport stream container.
 	<description>Based of showboxarize.</description>
 	<extension point="xbmc.addon.metadata">
 	<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="repository.catchup4kodi" name="LittleWiz Repo" version="1.4" provider-name="LittleWiz">
+	<extension point="xbmc.addon.repository" name="LittleWiz Repo">
+		<dir>
+		<info compressed="false">https://raw.githubusercontent.com/catchup4kodi/catchup4kodi/master/zips/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/catchup4kodi/catchup4kodi/master/zips/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/catchup4kodi/catchup4kodi/master/zips/</datadir>
+		</dir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Catchup and live addons for Kodi</summary>
+		<description lang="en">Some of the addons in here are geo locked so may not work in your region without a proxy/vpn. There are certainly a few UK based ones which will only work with a UK IP.</description>
+		<genre>livetv,tvshows,kids,sports</genre>
 	</extension>
 </addon>
 

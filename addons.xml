@@ -214,6 +214,28 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
+<addon id="plugin.video.livehub2" name="Neeko" version="18.0.16" provider-name="Biglad">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.requests" />
+	<import addon="script.video.F4mProxy" />
+	<import addon="script.module.resolveurl" version="2.2.0"/>
+    <import addon="script.module.moss"/>
+	<import addon="script.module.beautifulsoup4" />
+	<import addon="plugin.video.live.streamspro2" />
+	<import addon="plugin.video.streamlink-earthcam" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Neeko Kodi Addon</summary>
+    <description lang="en">IPTV and VoD Based of livehub</description>
+	<disclaimer lang="en"></disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <!--suppress ALL -->
 <addon id="plugin.video.premiumize" version="0.0.14" name="Premiumize Cloud" provider-name="https://www.premiumize.me">
     <requires>
@@ -304,6 +326,34 @@ ffmpeg simply copies the stream into a transport stream container.
     <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
     <platform>all</platform>
   </extension>
+</addon>
+
+<addon id="plugin.video.streamlink-earthcam" name="Vista CCTV+WEBCAMS" version="18.3.1" provider-name="Twilight0+Biglad">
+    <requires>
+        <import addon="xbmc.python" version="2.24.0"/>
+        <import addon="script.module.tulip" version="2.0.12"/>
+        <import addon="script.module.streamlink.base" version="2018.06.20"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en">Streamlink and MPEG-DASH Tester</summary>
+        <description lang="en_GB">This addon can play and test various video and audio content from various sources supported by Streamlink resolver library. It can also playback MPEG-DASH streams.</description>
+        <disclaimer lang="en_GB">This addon does not provide any content, its sole purpose is to resolve web urls with the help of Streamlink resolver library</disclaimer>
+        <language>en</language>
+        <license>GNU GPL, version 2</license>
+        <website>https://twitter.com/TwilightZer0</website>
+        <source>https://github.com/Twilight0/plugin.video.streamlink-earthcam</source>
+        <size>106257</size>
+        <news>[B]1.3.0[/B] - 25-11-2018
+- Added generic plugin, credits go to back-to
+- Removed vidto plugin</news>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
 </addon>
 
 <addon id="plugin.video.ustvnow.tva" name="USTVnow Plus" provider-name="mhancoc7" version="14.8.9">
@@ -469,6 +519,18 @@ ffmpeg simply copies the stream into a transport stream container.
     <summary lang="en">Resolve common live video host URL's to be playable in XBMC/Kodi + find links embeded in sites.</summary>
     <description lang="en"></description>
   </extension>
+</addon>
+
+<addon id="script.module.moss" name="Moss Module" version="1.00.005" provider-name="Biglad + Echo Coder">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0" />
+		<import addon="script.module.requests" />
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">Forked from TK Norris Shared Module. Reusable Modules used by several of Echo's addons</summary>
+	</extension>
 </addon>
 
 <addon id="script.module.openscrapers" name="OpenScrapers Module" version="0.0.1.6" provider-name="Addons4Kodi">

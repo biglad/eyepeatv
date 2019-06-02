@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.livehub2" name="Neeko" version="18.0.16" provider-name="Biglad">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.requests" />
+	<import addon="script.video.F4mProxy" />
+	<import addon="script.module.resolveurl" version="2.2.0"/>
+    <import addon="script.module.moss"/>
+	<import addon="script.module.beautifulsoup4" />
+	<import addon="plugin.video.live.streamspro2" />
+	<import addon="plugin.video.streamlink-earthcam" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Neeko Kodi Addon</summary>
+    <description lang="en">IPTV and VoD Based of livehub</description>
+	<disclaimer lang="en"></disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>

@@ -201,7 +201,7 @@ def index():
         'is_playable': False,
     }
     ad = {
-        'label': 'WTYCZKA POBRANA Z WWW.KODIWPIGULCE.PL',
+        'label': 'EyePeaTV www.eyepeatv.co.uk',
         'path': 'plugin://plugin.video.realdebrid/',
         'is_playable': False,
     }

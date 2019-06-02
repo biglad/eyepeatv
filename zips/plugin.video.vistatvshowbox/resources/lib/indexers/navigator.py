@@ -69,9 +69,9 @@ class navigator:
 
         self.addDirectoryItem(32010, 'searchNavigator', 'search.png', 'DefaultFolder.png')
 		
-        self.addDirectoryItem('[COLOR gold]• [/COLOR]My Real-Debrid', 'MyRD', '', 'DefaultFolder.png')
-        self.addDirectoryItem('[COLOR gold]• [/COLOR]My Premiumize', 'MyPrem', '', 'DefaultFolder.png')
-        self.addDirectoryItem('[COLOR gold]• [/COLOR]My Torrent/Link Player (needs RD/Prem)', 'MyPlayer', '', 'DefaultFolder.png')
+        #self.addDirectoryItem('[COLOR gold]• [/COLOR]My Real-Debrid', 'MyRD', '', 'DefaultFolder.png')
+        #self.addDirectoryItem('[COLOR gold]• [/COLOR]My Premiumize', 'MyPrem', '', 'DefaultFolder.png')
+        #self.addDirectoryItem('[COLOR gold]• [/COLOR]My Torrent/Link Player (needs RD/Prem)', 'MyPlayer', '', 'DefaultFolder.png')
 
         self.endDirectory()
 

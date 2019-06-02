@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <setting type="lsep" label="32538" />
+    <setting type="lsep" label="32539" />
+    <setting id="open_smu_settings" type="action" label="32540" enable="true" option="close" action="RunPlugin(plugin://plugin.video.realdebrid/settings/)" />
+    <setting id="reset_authorization" type="action" label="32541" action="RunPlugin(plugin://plugin.video.realdebrid/auth/reset/)"/>
+    <setting type="lsep" label="32542" />
+    <setting type="lsep" label="32543" />
+    <setting id="client_id_external" type="bool" label="32544" default="false" />
+    <setting id="client_id" type="text" label="32545" enable="eq(-1,true)" />
+</settings>

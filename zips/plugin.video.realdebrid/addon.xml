@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.realdebrid"
+       name="Real Debrid"
+       version="1.0.0"
+       provider-name="Biglad">
+  <requires>
+    <import addon="xbmc.python" version="2.24.0"/>
+    <import addon="script.module.requests" version="2.12.4"/>
+    <import addon="script.module.six" version="1.9.0"/>
+    <import addon="script.module.resolveurl" version="5.0.06"/>
+    <import addon="script.module.xbmcswift2" version="1.3.1"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+  <summary lang="en">Video plugin for Real-Debrid.com
+  Big thanks to u/p1c2u and u/Darreen
+  </summary>
+  <summary lang="pl">Wtyczka wideo do Real-Debrid.com
+  Podziękowania dla u/p1c2u i u/Darreen
+  </summary>
+   <description lang="en">Explore and stream your downloads folder on real-debrid.com 
+   --
+   works on Xbox ONE - Kodi 18
+ </description>
+  <description lang="pl">Przeglądaj i odtwarzaj swoje pliki z real-debrid.com
+  --
+  działa na XBOX ONE - Kodi 18
+ </description>
+  <disclaimer lang="en">free addon - not for sale</disclaimer>
+   <disclaimer lang="pl">darmowa wtyczka - nie na sprzedaż</disclaimer>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <source>http://kodiwpigulce.pl</source>
+    <forum></forum>
+    <website>http://kodiwpigulce.pl</website>
+	<news>v1.0.00 (02-2018)
+		- Dodanie funkcji usuwania plików oraz torrentów / Add delete option for files and torrents
+		- Wtyczka działa na Kodi 18 na Xbox ONE / Addon works on Kodi 18 on Xbox ONE
+		- Migracja z TVA URLResolver do ResolveURL od Jsergios / Moved Away from TVA URLResolver to Jsergios ResolveURL
+		- Usunięcie URLResolver z repozytorium / Removed URLResolver from Repo
+		</news>
+  </extension>
+</addon>

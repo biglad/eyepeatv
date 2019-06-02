@@ -1,0 +1,92 @@
+# XBMC Media Center language file
+# Addon Name: Mirko
+# Addon id: plugin.video.realdebrid
+# Addon version: 0.0.1
+# Addon Provider: p1c2u
+msgid ""
+msgstr ""
+"Project-Id-Version: Real Debrid\n"
+"Report-Msgid-Bugs-To: maciag.artur@gmail.com\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#32538"
+msgid "REAL DEBRID SERVICE"
+msgstr ""
+
+msgctxt "#32539"
+msgid "Configure Read Debrid Services in URLResolver Settings under Unversal Resolvers."
+msgstr ""
+
+msgctxt "#32540"
+msgid "URLResolver Settings"
+msgstr ""
+
+msgctxt "#32541"
+msgid "Reset Authorization"
+msgstr ""
+
+msgctxt "#32542"
+msgid "REAL DEBRID CLIENT ID"
+msgstr ""
+
+msgctxt "#32543"
+msgid "Set your Client ID used in authorization with Read Debrid. Reset authorization to change take effect."
+msgstr ""
+
+msgctxt "#32544"
+msgid "Use your Client ID"
+msgstr ""
+
+msgctxt "#32545"
+msgid "Client ID"
+msgstr ""
+
+msgctxt "#32303"
+msgid "User"
+msgstr ""
+
+msgctxt "#32304"
+msgid "Email"
+msgstr ""
+
+msgctxt "#32305"
+msgid "ID"
+msgstr ""
+
+msgctxt "#33340"
+msgid "Valid"
+msgstr ""
+
+msgctxt "#33343"
+msgid "Type"
+msgstr ""
+
+msgctxt "#33344"
+msgid "Information"
+msgstr ""
+
+msgctxt "#33345"
+msgid "Expiration"
+msgstr ""
+
+msgctxt "#33346"
+msgid "Date"
+msgstr ""
+
+msgctxt "#33347"
+msgid "Days"
+msgstr ""
+
+msgctxt "#33348"
+msgid "Percentage"
+msgstr ""
+
+msgctxt "#33349"
+msgid "Points"
+msgstr ""

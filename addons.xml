@@ -152,6 +152,23 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
+<!--suppress ALL -->
+<addon id="plugin.video.link__tester2" version="0.0.2" name="VistaTV ResolveURL Player" provider-name="Vista">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.resolveurl" version="2.2.0"/>
+        <import addon="script.module.echo"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Resolve URL Link Tester Addon - Forked from TK Norris</summary>
+        <description></description>
+        <platform>all</platform>
+	</extension>
+</addon>
+
 <addon id="plugin.video.live.streamspro"
        name="LiveStreamsPro"
        version="2.8.1"
@@ -195,6 +212,24 @@ ffmpeg simply copies the stream into a transport stream container.
     </description>
     <platform>all</platform>
   </extension>
+</addon>
+
+<!--suppress ALL -->
+<addon id="plugin.video.premiumize" version="0.0.14" name="Premiumize Cloud" provider-name="https://www.premiumize.me">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Browse your Premiumize.me cloud</summary>
+        <description>This addon can be used to browse and stream any videos present in your Premiumize.me cloud</description>
+        <platform>all</platform>
+        <website>https://www.premiumize.me</website>
+		<forum>https://www.premiumize.me/knowledgebase</forum>
+		<news>v0.0.14 Rolled back recent changes which resulted in hiding some video types, fixed file transfer view</news>
+	</extension>
 </addon>
 
 <addon
@@ -355,6 +390,18 @@ ffmpeg simply copies the stream into a transport stream container.
 	<news>I don`t know how to act my age because i`ve never been this old before.</news>
     <platform>all</platform>
   </extension>
+</addon>
+
+<addon id="script.module.echo" name="Echo Libraries" version="1.00.003" provider-name="Echo Coder">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0" />
+		<import addon="script.module.requests" />
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">Forked from TK Norris Shared Module. Reusable Modules used by several of Echo's addons</summary>
+	</extension>
 </addon>
 
 <addon id="script.module.liveresolver"

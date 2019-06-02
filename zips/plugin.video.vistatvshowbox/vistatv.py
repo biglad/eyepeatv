@@ -517,3 +517,12 @@ elif action == 'pair':
 	
 elif action == 'LiveTV':
     xbmc.executebuiltin('RunAddon(script.vista.livetvmenu)')
+	
+elif action == 'MyRD':
+    xbmc.executebuiltin('RunAddon(plugin.video.realdebrid)')
+	
+elif action == 'MyPrem':
+    xbmc.executebuiltin('RunAddon(plugin.video.premiumize)')
+	
+elif action == 'MyPlayer':
+    xbmc.executebuiltin('RunAddon(plugin.video.link__tester2)')

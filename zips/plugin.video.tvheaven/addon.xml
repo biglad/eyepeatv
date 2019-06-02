@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.tvheaven" name="VistaTV Heaven" version="1.0.49" provider-name="VistaTV">  
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>    
+		<import addon="script.module.resolveurl"  /> 
+		<import addon="script.cerebro.pairwith" />
+        <import addon="script.cerebro.pairwith.laucnher" />
+        <import addon="script.module.requests" />
+		<import addon="script.module.urllib3" />
+		<import addon="script.module.beautifulsoup" />
+		<import addon="script.module.beautifulsoup4" />
+	</requires>  
+	<extension point="xbmc.python.pluginsource" library="default.py">        
+		<provides>video</provides>  
+	</extension>  
+	<extension point="xbmc.addon.metadata">    
+		<summary lang="en"></summary>    
+		<description lang="en"></description>    
+		<platform>all</platform>  
+	</extension>
+</addon>

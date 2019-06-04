@@ -539,6 +539,27 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
+<addon id="script.eptv.core"
+  name="EPTV Core"
+  version="18.65"
+  provider-name="Biglad">
+  <requires>
+    <import addon="xbmc.python" version="2.19.0"/>
+    <import addon="script.module.requests" />
+  </requires>
+  <extension point="xbmc.python.script" library="addon.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.service" library="startup.py" start="startup"/>
+  <extension point="xbmc.addon.metadata">
+  <language></language>
+    <platform>all</platform>
+    <summary lang="en">EPTV Core</summary>
+    <description lang="en">EPTV Core</description>
+	<disclaimer>EPTV Core</disclaimer>
+  </extension>
+</addon>
+
 <addon id="script.module.aliunde.maintenance.wizard" name="[COLOR aqua]EyePeaTV Maintenance Wizard[/COLOR]" version="18.0.6" provider-name="Aliunde+Biglad">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>

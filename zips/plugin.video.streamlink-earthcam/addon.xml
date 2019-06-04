@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.streamlink-earthcam" name="Vista CCTV+WEBCAMS" version="18.3.1" provider-name="Twilight0+Biglad">
+    <requires>
+        <import addon="xbmc.python" version="2.24.0"/>
+        <import addon="script.module.tulip" version="2.0.12"/>
+        <import addon="script.module.streamlink.base" version="2018.06.20"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en">Streamlink and MPEG-DASH Tester</summary>
+        <description lang="en_GB">This addon can play and test various video and audio content from various sources supported by Streamlink resolver library. It can also playback MPEG-DASH streams.</description>
+        <disclaimer lang="en_GB">This addon does not provide any content, its sole purpose is to resolve web urls with the help of Streamlink resolver library</disclaimer>
+        <language>en</language>
+        <license>GNU GPL, version 2</license>
+        <website>https://twitter.com/TwilightZer0</website>
+        <source>https://github.com/Twilight0/plugin.video.streamlink-earthcam</source>
+        <size>106257</size>
+        <news>[B]1.3.0[/B] - 25-11-2018
+- Added generic plugin, credits go to back-to
+- Removed vidto plugin</news>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon>

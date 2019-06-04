@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings>
+    <category label="30001">
+        <setting id="args.append" label="30012" type="bool" default="true"/>
+        <setting id="history.size" type="slider" label="30007" default="10" range="5,1,50" option="int"/>
+        <setting id="quality.choice" type="enum" label="30006" lvalues="30002|30003" default="0"/>
+        <setting label="30008" type="action" action="RunPlugin(plugin://$ID/?action=readme)"/>
+        <setting label="30010" type="action" action="RunPlugin(plugin://$ID/?action=clear_history)"/>
+    </category>
+</settings>

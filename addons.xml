@@ -214,6 +214,72 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
+<addon id="plugin.video.live.streamspro2"
+       name="VistaTV IPTV Oracle"
+       version="2.8.5"
+       provider-name="Biglad+Shani">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" optional="true" />
+    <import addon="script.module.resolveurl" optional="true"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.module.livestreamer" optional="true"/>
+    <import addon="script.module.pyamf" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+
+
+  <extension point="xbmc.addon.metadata">
+    <summary>livestreamspro- shamelessly forked from livestreams but added many things</summary>
+    <description>
+        In addition to what livestreams allowed you to do, you can now,
+        1. call regex in regex,
+        2. multiple regex in page, regex in session, also htmlunescape responses
+        3. create session from one regex and pass onto next in line
+        4. save sessions to a file and open again later
+        5. write python code in .py file, put in the profile directory and then call from your regex.
+        6. use epoctime, guid and unpack as functions already defined.
+        7. Use it to post values to the pages to get the proper responses
+        8. support many headers, like origin, X-Requested-With
+        9. you can now append cookies in response and then read in regex using includeheaders
+        10. You can now link to another web url via your xml using externallink
+        11. support for google captcha, now you can show and then post the text
+
+    </description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.livehub2" name="Neeko" version="18.0.16" provider-name="Biglad">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.requests" />
+	<import addon="script.video.F4mProxy" />
+	<import addon="script.module.resolveurl" version="2.2.0"/>
+    <import addon="script.module.moss"/>
+	<import addon="script.module.beautifulsoup4" />
+	<import addon="plugin.video.live.streamspro2" />
+	<import addon="plugin.video.streamlink-earthcam" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Neeko Kodi Addon</summary>
+    <description lang="en">IPTV and VoD Based of livehub</description>
+	<disclaimer lang="en"></disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <!--suppress ALL -->
 <addon id="plugin.video.premiumize" version="0.0.14" name="Premiumize Cloud" provider-name="https://www.premiumize.me">
     <requires>
@@ -234,7 +300,7 @@ ffmpeg simply copies the stream into a transport stream container.
 
 <addon id="plugin.video.realdebrid"
        name="Real Debrid"
-       version="1.0.0"
+       version="1.0.1"
        provider-name="Biglad">
   <requires>
     <import addon="xbmc.python" version="2.24.0"/>
@@ -306,6 +372,55 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
+<addon id="plugin.video.streamlink-earthcam" name="Vista CCTV+WEBCAMS" version="18.3.1" provider-name="Twilight0+Biglad">
+    <requires>
+        <import addon="xbmc.python" version="2.24.0"/>
+        <import addon="script.module.tulip" version="2.0.12"/>
+        <import addon="script.module.streamlink.base" version="2018.06.20"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en">Streamlink and MPEG-DASH Tester</summary>
+        <description lang="en_GB">This addon can play and test various video and audio content from various sources supported by Streamlink resolver library. It can also playback MPEG-DASH streams.</description>
+        <disclaimer lang="en_GB">This addon does not provide any content, its sole purpose is to resolve web urls with the help of Streamlink resolver library</disclaimer>
+        <language>en</language>
+        <license>GNU GPL, version 2</license>
+        <website>https://twitter.com/TwilightZer0</website>
+        <source>https://github.com/Twilight0/plugin.video.streamlink-earthcam</source>
+        <size>106257</size>
+        <news>[B]1.3.0[/B] - 25-11-2018
+- Added generic plugin, credits go to back-to
+- Removed vidto plugin</news>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="plugin.video.tvheaven" name="VistaTV Heaven" version="1.0.49" provider-name="VistaTV">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+		<import addon="script.module.resolveurl"  />
+		<import addon="script.cerebro.pairwith" />
+        <import addon="script.cerebro.pairwith.laucnher" />
+        <import addon="script.module.requests" />
+		<import addon="script.module.urllib3" />
+		<import addon="script.module.beautifulsoup" />
+		<import addon="script.module.beautifulsoup4" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en"></summary>
+		<description lang="en"></description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
 <addon id="plugin.video.ustvnow.tva" name="USTVnow Plus" provider-name="mhancoc7" version="14.8.9">
     <requires>
         <import addon="xbmc.python" version="2.1.0" />
@@ -333,7 +448,7 @@ ffmpeg simply copies the stream into a transport stream container.
     </extension>
 </addon>
 
-<addon id="plugin.video.vistatvshowbox" version="100.0.91" name="EyePeaTV Requisition" provider-name="VistaTV">
+<addon id="plugin.video.vistatvshowbox" version="100.0.94" name="EyePeaTV Requisition" provider-name="VistaTV">
 	<requires>
 		<import addon="xbmc.python" version="2.26.0" />
 		<import addon="script.module.vistatvshowbox" />
@@ -345,6 +460,9 @@ ffmpeg simply copies the stream into a transport stream container.
 		<import addon="script.module.beautifulsoup4" />
 		<import addon="script.module.beautifulsoup" />
 		<import addon="script.module.openscrapers" />
+		<import addon="plugin.video.realdebrid" />
+		<import addon="plugin.video.premiumize" />
+		<import addon="plugin.video.link__tester2" />
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="vistatv.py">
 		<provides>video</provides>
@@ -449,6 +567,25 @@ ffmpeg simply copies the stream into a transport stream container.
 	</extension>
 </addon>
 
+<addon id="script.module.kodi-six"
+       name="Kodi Six"
+       version="0.0.2"
+       provider-name="Roman V.M.">
+  <requires>
+    <import addon="xbmc.python" version="2.14.0"/>
+  </requires>
+  <extension point="xbmc.python.module" library="libs" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Wrappers around Kodi Python API for seamless Python 2/3 compatibility</summary>
+    <description lang="en">Wrappers around Kodi Python API that normalize handling of textual and byte strings in Python 2 and 3.</description>
+    <platform>all</platform>
+    <license>GPL v.3</license>
+    <forum>https://forum.kodi.tv/showthread.php?tid=327883</forum>
+    <source>https://github.com/romanvm/kodi.six</source>
+    <news>- Do not patch class __init__ methods</news>
+  </extension>
+</addon>
+
 <addon id="script.module.liveresolver"
      name="LiveResolver"
      version="2.2.20"
@@ -466,6 +603,18 @@ ffmpeg simply copies the stream into a transport stream container.
     <summary lang="en">Resolve common live video host URL's to be playable in XBMC/Kodi + find links embeded in sites.</summary>
     <description lang="en"></description>
   </extension>
+</addon>
+
+<addon id="script.module.moss" name="Moss Module" version="1.00.005" provider-name="Biglad + Echo Coder">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0" />
+		<import addon="script.module.requests" />
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">Forked from TK Norris Shared Module. Reusable Modules used by several of Echo's addons</summary>
+	</extension>
 </addon>
 
 <addon id="script.module.openscrapers" name="OpenScrapers Module" version="0.0.1.6" provider-name="Addons4Kodi">
@@ -535,6 +684,100 @@ ffmpeg simply copies the stream into a transport stream container.
 		<description lang="en">Resolve common video host URL's to be playable in XBMC/Kodi, simplify addon development of video plugins requiring multi video hosts.</description>
 		<description lang="hr">Prilagodi najčešće URL-ove video izvora kako bi radili u XBMC/Kodiju, pojednostavnjuje razvoj priključaka za video dodatke koji zahtjevaju višestruke video izvore.</description>
 	</extension>
+</addon>
+
+<addon id="script.module.streamlink.base" name="Streamlink Library" version="2019.05.08" provider-name="Streamlink Devs, Twilight0">
+  <requires>
+      <import addon="xbmc.python" version="2.24.0"/>
+      <import addon="script.module.requests" version="2.12.4"/>
+      <import addon="script.module.futures" version="2.2.0"/>
+      <import addon="script.module.streamlink.crypto" version="1.5.2"/>
+  </requires>
+  <extension point="xbmc.python.module" library="resources/lib/"/>
+  <extension point="xbmc.addon.metadata">
+      <summary>Streamlink Library</summary>
+      <description>Streamlink Library for Kodi. Known issue: Does not work on Xbox, when trying to import something from ctypes module.</description>
+      <platform>all</platform>
+      <license>Simplified BSD</license>
+      <source>https://github.com/Twilight0/script.module.streamlink.base/</source>
+      <language>en</language>
+      <assets>
+          <icon>icon.png</icon>
+      </assets>
+      <news>+2019.05.08
+- Added vimeo plugin
+
++2019.05.03
+- Bumped to upstream commit c8ed1daff14ac03195870238b9b900c1109dd5c1
+- Include PR #2441 from upstream
+- Add exception for ctypes on namedpipe for XBOX (MemoryError). So its a known issue that streamlink does not work on this platform</news>
+  </extension>
+</addon>
+
+<addon id="script.module.streamlink.crypto" name="Streamlink Crypto" version="1.5.2" provider-name="Twilight0">
+  <requires>
+    <import addon="xbmc.python" version="2.14.0"/>
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <summary>Pure Python implementation of the cryptographic libraries required by Streamlink</summary>
+    <source>https://github.com/Twilight0/script.module.streamlink.crypto</source>
+    <platform>all</platform>
+    <license>MIT</license>
+  </extension>
+</addon>
+
+<addon id="script.module.streamlink.plugins" name="Streamlink Plugins" version="1.0.3" provider-name="Twilight0">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.requests" version="2.12.4"/>
+  </requires>
+  <extension point="xbmc.service"/>
+  <extension point="xbmc.addon.metadata">
+    <summary>Streamlink Plugins</summary>
+    <description>Copy your custom streamlink plugins in this Kodi plugin.</description>
+    <platform>all</platform>
+    <license>GNU GPL, version 2</license>
+    <source>https://github.com/Twilight0/script.module.streamlink.plugins</source>
+    <!--<website></website>-->
+    <!--<language></language>-->
+  </extension>
+</addon>
+
+<addon id="script.module.tulip" name="Tulip Routine Libraries" version="2.3.5" provider-name="Twilight0">
+    <requires>
+        <import addon="xbmc.python" version="2.24.0"/>
+        <import addon="script.module.kodi-six" version="0.0.2"/>
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Tulip Helper libraries</summary>
+        <description lang="en">Tulip Routine Libraries combines the best elements from Lambda's "lamlib" and tknorris's shared modules. Also includes various enhancements, newer and improved functions and Python 3 compatibility, though the latter is largely untested.</description>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <source>https://github.com/Twilight0/script.module.tulip</source>
+        <news>[B]2.3.X[/B]
+- Add function (directory) can now set plugin category for skins to display
+- Changed all "BaseException" into "Exception"
+- Replaced builtin eval with ast.literaleval which is more secure
+- Added the fuzzywuzzy library for fuzzy string matching
+- Moved all user agent related functions and strings into new user_agent module
+- Added datetime keys for youtube videos
+- Various other tweaks
+
+[B]2.2.X[/B]
+- Reincluded url_dispatcher module for addons that may use it in the future
+- New reload skin function
+- Log exception on client function upon failure
+- xbmc.Playlist is now callable via lambda function. Mode 1 for video (default), Mode 0 for audio
+- Add function in directory module now accepts streaminfo data (as dictionary)
+- Add function can also form a playlist instead of directory only
+- Add function can show background progress when loading items
+- Added StringIO in compat module
+- Plugin url optimization with join string method on directory module
+- m3u_maker renamed to playlist_maker
+- Added tvg-logo parameter into playlist_maker</news>
+    </extension>
 </addon>
 
 <addon id="script.module.urlresolver" name="URLResolver" version="5.0.36" provider-name="tvaddons">
@@ -730,6 +973,24 @@ ffmpeg simply copies the stream into a transport stream container.
 <addon id="script.vista.exit"
   name="EyePeaTV Exit"
   version="1.9"
+  provider-name="Vista TV">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.script" library="addon.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">VistaTV Menu System</summary>
+    <description lang="en">VistaTV Menu System</description>
+	<disclaimer>VistaTV Menu System</disclaimer>
+  </extension>
+</addon>
+
+<addon id="script.vista.ondemanmenu"
+  name="VistaTV On Demand Menu"
+  version="5.1.51"
   provider-name="Vista TV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>

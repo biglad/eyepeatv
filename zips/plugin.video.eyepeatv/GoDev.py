@@ -665,19 +665,25 @@ elif mode == 7010:
     xbmc.executebuiltin('ActivateWindow(10025,"plugin://plugin.video.live.streamspro/?fanart=C%3a%5cUsers%5ckhanb%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.video.live.streamspro%5cfanart.jpg&mode=1&name=24-7&url=http%3a%2f%2fftp.mgawow.co.uk%2f24-7.m3u",return)')
     
 elif mode == 4632:
+    dp = xbmcgui.DialogProgress()
+    dp.create("[COLOR gold]EyePeaTV House Keeper[/COLOR]","Refreshing EPG Data","Please Wait.....")
     try: os.remove(MZip)
     except: pass
     addon = xbmcaddon.Addon('pvr.iptvsimple')
     addon.setSetting('anything', 'anything')
 
     xbmc.executebuiltin("Notification(EyePeaTV, [COLOR=green]Waiting For System To Update[/COLOR],5000,)")
-    xbmc.sleep(5000)
+    xbmc.sleep(10000)
     #stop PVR addon
     xbmc.executeJSONRPC('{"jsonrpc":"2.0", "method":"Addons.SetAddonEnabled", "params":{ "addonid": "pvr.iptvsimple", "enabled": false }, "id":1}')
     xbmc.sleep(2000)
     #start PVR addon
+    
     xbmc.executeJSONRPC('{"jsonrpc":"2.0", "method":"Addons.SetAddonEnabled", "params":{ "addonid": "pvr.iptvsimple", "enabled": true }, "id":1}')
- 
+    dp = xbmcgui.DialogProgress()
+    dp.create("[COLOR gold]EyePeaTV House Keeper[/COLOR]","Closing Kodi","Please Start Kodi Again")
+    xbmc.sleep(5000)
+    os._exit(1) 
 elif mode == 1234:
     try: os.remove(MZip)
     except: pass

@@ -560,7 +560,7 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
-<addon id="script.module.aliunde.maintenance.wizard" name="[COLOR aqua]EyePeaTV Maintenance Wizard[/COLOR]" version="18.0.7" provider-name="Aliunde+Biglad">
+<addon id="script.module.aliunde.maintenance.wizard" name="[COLOR aqua]EyePeaTV Maintenance Wizard[/COLOR]" version="18.0.8" provider-name="Aliunde+Biglad">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>

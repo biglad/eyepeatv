@@ -15,7 +15,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.eyepeatv" version="7.0.14" name="[COLOR gold]EyePeaTV[/COLOR]" provider-name="EyePeaTV">
+<addon id="plugin.video.eyepeatv" version="7.0.16" name="[COLOR gold]EyePeaTV[/COLOR]" provider-name="EyePeaTV">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.addon.common" />
@@ -1093,7 +1093,7 @@ ffmpeg simply copies the stream into a transport stream container.
     </extension>
 </addon>
 
-<addon id="skin.metamorph" version="1.5" name="EPTV STB" provider-name="Biglad">
+<addon id="skin.metamorph" version="1.6" name="EPTV STB" provider-name="Biglad">
 	<requires>
 
 		<import addon="script.grab.fanart" version="0.12.8"/>

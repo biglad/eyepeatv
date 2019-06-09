@@ -43,6 +43,15 @@ def dialogWatch():
     
     if xbmc.getCondVisibility("Window.isVisible(yesnodialog)"):
         xbmc.executebuiltin('SendClick(11)')
+		
+def dialogWatch2():
+    x = 0
+    while not xbmc.getCondVisibility("Window.isVisible(okdialog)") and x < 100:
+        x += 1
+        xbmc.sleep(100)
+    
+    if xbmc.getCondVisibility("Window.isVisible(okdialog)"):
+        xbmc.executebuiltin('SendClick(11)')
 try:
     from sqlite3 import dbapi2 as database
 except:
@@ -143,7 +152,7 @@ def correctPVR(self):
             sys.exit(1)
         elif choice == 1:
             pass
-    #thread.start_new_thread(dialogWatch, ())
+    #thread.start_new_thread(dialogWatch2, ())
     xbmc.executebuiltin("ActivateWindow(busydialog)")
     nullPVR   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":false},"id":1}'
     nullLiveTV = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":false},"id":1}'
@@ -166,11 +175,12 @@ def correctPVR(self):
     moist.setSetting(id='m3uCache', value="false")
     moist.setSetting(id='epgCache', value="false")
     time.sleep(25)
-    xbmc.executebuiltin("Dialog.Close(busydialog)")
+    #xbmc.executebuiltin("Dialog.Close(busydialog)")
     dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]We\'ve copied your logins to the PVR Guide[/COLOR]',' ','[COLOR white]You [B]MUST[/B] allow time to load the EPG to avoid issues.[/COLOR]')  
     xbmc.executebuiltin("Container.Refresh")
-    #dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]We\'ve copgjhgjghjghjied your logins to the PVR Guide[/COLOR]',' ','[COLOR white]You [B]MUST[/B] allow time to load the EPG to avoid issues.[/COLOR]')
-    exit()
+    xbmc.executebuiltin("Dialog.Close(busydialog)")
+    dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]Kodi Need Restart[/COLOR]',' ','[COLOR white][B]Please Restart Kodi[/B][/COLOR]')
+    os._exit(1)
 
 def disablePVR(self):
     xbmc.executebuiltin("ActivateWindow(busydialog)")
@@ -187,7 +197,8 @@ def disablePVR(self):
     xbmc.executebuiltin("Dialog.Close(busydialog)")
     xbmc.executebuiltin('Notification(PVR Disabled,[COLOR white]PVR Guide is now disabled[/COLOR],2000,special://home/addons/'+AddonID+'/icon.png)')
     xbmc.executebuiltin("Container.Refresh")
-    exit()
+    dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]Kodi Need Restart[/COLOR]',' ','[COLOR white][B]Please Restart Kodi[/B][/COLOR]')
+    os._exit(1)
 
 def SpeedChoice():
     choice = dialog.select("[COLOR white]" + AddonTitle + " Speedtest[/COLOR]", ['[COLOR white]Ookla Speedtest[/COLOR]','[COLOR white]Fast.com Speedtest by Netflix[/COLOR]'])
@@ -683,7 +694,10 @@ elif mode == 4632:
     dp = xbmcgui.DialogProgress()
     dp.create("[COLOR gold]EyePeaTV House Keeper[/COLOR]","Closing Kodi","Please Start Kodi Again")
     xbmc.sleep(5000)
-    os._exit(1) 
+    #os._exit(1)
+    xbmc.executebuiltin('ActivateWindow(10025,"plugin://plugin.video.eyepeatv/?action=GoDev.correctPVR",return)')
+    os._exit(1)
+	
 elif mode == 1234:
     try: os.remove(MZip)
     except: pass

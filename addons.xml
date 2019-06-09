@@ -450,7 +450,7 @@ ffmpeg simply copies the stream into a transport stream container.
 
 <addon id="plugin.video.vista-iptv-scraper"
        name="Cathode Ray Tube IPTV "
-       version="1.0.10"
+       version="1.0.11"
        provider-name="VistaTV">
    <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -466,7 +466,6 @@ ffmpeg simply copies the stream into a transport stream container.
     <import addon="script.module.metahandler" version="2.5.1"/>
 	<import addon="plugin.video.f4mTester" optional="true"/>
 	<import addon="plugin.video.SportsDevil" />
-	<import addon="repository.xbmc-avigdork" />
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>video</provides>

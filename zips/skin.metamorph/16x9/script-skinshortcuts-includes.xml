@@ -414,6 +414,19 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),livetv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
+			<property name="mainmenuid">2</property>
+			<label>BBC iPlayer</label>
+			<label2>Video Add-On</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb>image://C%3a%5cUsers%5ckhanb%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.video.iplayerwww%5cresources%5cicon.png/</thumb>
+			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),livetv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">6</property>
@@ -1137,6 +1150,19 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
+			<property name="mainmenuid">2</property>
+			<label>BBC iPlayer</label>
+			<label2>Video Add-On</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb>image://C%3a%5cUsers%5ckhanb%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.video.iplayerwww%5cresources%5cicon.png/</thumb>
+			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
 	</include>
 	<include name="skinshortcuts-group-alt-livetv">
 		<item id="1">
@@ -1223,6 +1249,19 @@
 			<thumb />
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=maintMenu&amp;title=%5BCOLOR+white%5D%5BB%5DMaintenance+Tools%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cicon.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=maintMenu&amp;title=%5BCOLOR+white%5D%5BB%5DMaintenance+Tools%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cicon.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),livetv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
+			<property name="mainmenuid">2</property>
+			<label>BBC iPlayer</label>
+			<label2>Video Add-On</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb>image://C%3a%5cUsers%5ckhanb%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.video.iplayerwww%5cresources%5cicon.png/</thumb>
+			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),livetv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>

@@ -489,11 +489,11 @@ ffmpeg simply copies the stream into a transport stream container.
 	</extension>
 </addon>
 
-<addon id="repository.eyepeatv" name="EyePeaTV Repo" version="18.0.6" provider-name="EyePeaTV">
+<addon id="repository.eyepeatv" name="EyePeaTV Repo" version="18.0.7" provider-name="EyePeaTV">
 	<extension point="xbmc.addon.repository" name="EyePeaTV Repo">
 			<info compressed="false">https://raw.githubusercontent.com/biglad/eyepeatv/master/addons.xml</info>
 			<checksum>https://raw.githubusercontent.com/biglad/eyepeatv/master/addons.xml.md5</checksum>
-			<datadir zip="true">http://github.com/biglad/eyepeatv/raw/master/zips</datadir>
+			<datadir zip="true">https://github.com/biglad/eyepeatv/raw/master/zips</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary></summary>

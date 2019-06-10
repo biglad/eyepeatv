@@ -67,7 +67,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.eyepeatv" version="7.0.21" name="[COLOR gold]EyePeaTV[/COLOR]" provider-name="EyePeaTV">
+<addon id="plugin.video.eyepeatv" version="7.0.22" name="[COLOR gold]EyePeaTV[/COLOR]" provider-name="EyePeaTV">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.addon.common" />
@@ -502,7 +502,7 @@ ffmpeg simply copies the stream into a transport stream container.
 
 <addon id="plugin.video.vista-iptv-scraper"
        name="Cathode Ray Tube IPTV "
-       version="1.0.11"
+       version="1.0.12"
        provider-name="VistaTV">
    <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -572,7 +572,7 @@ ffmpeg simply copies the stream into a transport stream container.
 	</extension>
 </addon>
 
-<addon id="repository.eyepeatv" name="EyePeaTV Repo" version="18.0.7" provider-name="EyePeaTV">
+<addon id="repository.eyepeatv" name="EyePeaTV Repo" version="18.0.8" provider-name="EyePeaTV">
 	<extension point="xbmc.addon.repository" name="EyePeaTV Repo">
 			<info compressed="false">https://raw.githubusercontent.com/biglad/eyepeatv/master/addons.xml</info>
 			<checksum>https://raw.githubusercontent.com/biglad/eyepeatv/master/addons.xml.md5</checksum>
@@ -1211,6 +1211,7 @@ ffmpeg simply copies the stream into a transport stream container.
         </assets>
     </extension>
 </addon>
+
 
 
 <addon id="skin.metamorph" version="1.8" name="EPTV STB" provider-name="Biglad">

@@ -1213,7 +1213,7 @@ ffmpeg simply copies the stream into a transport stream container.
 </addon>
 
 
-<addon id="skin.metamorph" version="1.6" name="EPTV STB" provider-name="Biglad">
+<addon id="skin.metamorph" version="1.7" name="EPTV STB" provider-name="Biglad">
 
 	<requires>
 

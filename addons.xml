@@ -1,5 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
+<addon id="plugin.audio.mp3streams" name="MP3 Streams" version="2018.08.28" provider-name="Bugatsinho">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.t0mm0.common" version="1.1.0"/>
+        <import addon="script.module.mutagen"/>
+        <import addon="script.module.requests" version="1.1.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>audio</provides>
+    </extension>
+    <extension point="xbmc.service" library="playerMP3.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary>A music streaming collection</summary>
+        <description>Browse, stream or download your favourite songs and albums</description>
+        <news>Small fixes/fix artwork/next page
+        Credits to qahanik, kinkin, art by Marquerite for original code</news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="plugin.audio.tuneinradio" name="TuneIn Radio" version="3.0.2" provider-name="brianhornsby">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+		<import addon="script.module.simplejson" version="2.0.10"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>audio</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="bg">Радио TuneIn</summary>
+		<summary lang="en">TuneIn Radio</summary>
+		<summary lang="de">TuneIn Radio</summary>
+		<summary lang="es">TuneIn Radio</summary>
+		<summary lang="el">Ραδιόφωνο TuneIn</summary>
+		<description lang="bg">Радио TuneIn е безплатна услуга, която ви позволява да слушате всичко, независимо къде се намирате. Каквото желаете - музика, спорт или новини. Радио TuneIn предлага над 50 000 станции от които да избирате. Можете да намерите местните станции или да откриете нови станции от целия свят. Радио TuneIn ви отвежда точно където желаете да сте.</description>
+		<description lang="en">TuneIn Radio is a free service that lets you listen to anything in the world from wherever you are. Whether you want to hear music, sports, news or current events. TuneIn Radio offers over 50,000 stations for you to choose from. From finding local stations to discovering new stations from around the world, TuneIn Radio brings you to where you want to be.</description>
+		<description lang="de">TuneIn Radio ist ein kostenloser Service, mit dem Sie alles in der Welt, wo immer Sie sind, hören können. Ob Sie Musik, Sport, Nachrichten oder aktuelle Ereignisse hören wollen. TuneIn Radio hält über 50.000 Sender für Sie bereit. Von der Suche nach lokalen Sender, bis zum entdecken neue Sender aus der ganzen Welt. TuneIn Radio bringt Sie, wohin sie wollen.</description>
+		<description lang="es">TuneIn Radio es un servicio gratuito que te permite escuchar cualquier cosa del mundo desde donde te encuentres. Si deseas escuchar música, deportes, noticias o eventos actuales. TuneIn Radio ofrece más de 50,000 estaciones radiales para escoger, desde estaciones locales hasta descubrir nuevas estaciones alrededor del mundo, TuneIn Radio te lleva a donde tu quieras estar.</description>
+		<description lang="el">Το ραδιόφωνο TuneIn είναι μία δωρεάν υπηρεσία το οποίο σας επιτρέπει να ακούτε οποιοδήποτε σταθμό από όλο τον κόσμο, από όπου και αν βρίσκεστε. Ακόμη και αν θέλετε να ακούσετε μουσική, αθλητικά γεγονότα, ειδήσεις και άλλα γεγονότα, το ραδιόφωνο TuneIn προσφέρει πάνω από 50.000 σταθμούς για εσάς να διαλέξετε. Είτε θέλετε να ακούσετε τοπικούς σταθμούς είτε να ανακαλύψετε νέους από όλο τον κόσμο, το ραδιόφωνο TuneIn σας πηγαίνει όπου θελήσετε να βρεθείτε.</description>
+		<language></language>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<forum>http://forum.kodi.tv/showthread.php?tid=119315</forum>
+		<website>http://brianhornsby.com/kodi_addons/tuneinradio</website>
+		<source>https://github.com/brianhornsby/plugin.audio.tuneinradio</source>
+	</extension>
+</addon>
+
 <addon id="plugin.video.bbciplayer" name="BBC iPlayer" version="0.7.2" provider-name="LittleWiz">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -15,14 +67,14 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.eyepeatv" version="7.0.12" name="[COLOR gold]EyePeaTV[/COLOR]" provider-name="EyePeaTV">
+<addon id="plugin.video.eyepeatv" version="7.0.21" name="[COLOR gold]EyePeaTV[/COLOR]" provider-name="EyePeaTV">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.addon.common" />
 		<import addon="inputstream.rtmp" />
 		<import addon="inputstream.adaptive" optional="true"/>
 		<import addon="pvr.iptvsimple" />
-		<import addon="plugin.video.iptv.recorder" />
+		<import addon="plugin.video.iptv.recorder" optional="true"/>
 		<import addon="plugin.video.SportsDevil" />
 		<import addon="plugin.video.live.streamspro" />
     </requires>
@@ -448,6 +500,37 @@ ffmpeg simply copies the stream into a transport stream container.
     </extension>
 </addon>
 
+<addon id="plugin.video.vista-iptv-scraper"
+       name="Cathode Ray Tube IPTV "
+       version="1.0.11"
+       provider-name="VistaTV">
+   <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" />
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.module.metahandler" version="2.5.1"/>
+	<import addon="plugin.video.f4mTester" optional="true"/>
+	<import addon="plugin.video.SportsDevil" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Media content from the Internet</summary>
+    <description lang="en">We do not host or upload any video, films, media file, live streams (avi, mov, flv, mpg, mpeg, divx, dvd rip, mp3, mp4.
+	We have no control over the links on any site that we provide a link to. If you see any form of infringements, please contact appropriate media
+	file owners or host sites immediately.  </description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.vistatvshowbox" version="100.0.95" name="EyePeaTV Requisition" provider-name="VistaTV">
 	<requires>
 		<import addon="xbmc.python" version="2.26.0" />
@@ -489,11 +572,11 @@ ffmpeg simply copies the stream into a transport stream container.
 	</extension>
 </addon>
 
-<addon id="repository.eyepeatv" name="EyePeaTV Repo" version="18.0.6" provider-name="EyePeaTV">
+<addon id="repository.eyepeatv" name="EyePeaTV Repo" version="18.0.7" provider-name="EyePeaTV">
 	<extension point="xbmc.addon.repository" name="EyePeaTV Repo">
 			<info compressed="false">https://raw.githubusercontent.com/biglad/eyepeatv/master/addons.xml</info>
 			<checksum>https://raw.githubusercontent.com/biglad/eyepeatv/master/addons.xml.md5</checksum>
-			<datadir zip="true">http://github.com/biglad/eyepeatv/raw/master/zips</datadir>
+			<datadir zip="true">https://github.com/biglad/eyepeatv/raw/master/zips</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary></summary>
@@ -560,7 +643,7 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
-<addon id="script.module.aliunde.maintenance.wizard" name="[COLOR aqua]EyePeaTV Maintenance Wizard[/COLOR]" version="18.0.6" provider-name="Aliunde+Biglad">
+<addon id="script.module.aliunde.maintenance.wizard" name="[COLOR aqua]EyePeaTV Maintenance Wizard[/COLOR]" version="18.0.8" provider-name="Aliunde+Biglad">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
@@ -636,6 +719,27 @@ ffmpeg simply copies the stream into a transport stream container.
 		<platform>all</platform>
 		<summary lang="en">Forked from TK Norris Shared Module. Reusable Modules used by several of Echo's addons</summary>
 	</extension>
+</addon>
+
+<addon id="script.module.mutagen"
+       name="mutagen"
+       provider-name="quodlibet"
+       version="1.41.1">
+
+    <requires>
+        <import addon="xbmc.python" version="2.19.0"/>
+    </requires>
+
+    <extension library="lib" point="xbmc.python.module"/>
+
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en_GB">Mutagen is a Python module to handle audio metadata.</summary>
+        <description lang="en_GB">Mutagen is a Python module to handle audio metadata</description>
+        <license>GPLv2</license>
+        <website>https://pypi.org/project/mutagen/</website>
+        <source>https://github.com/quodlibet/mutagen</source>
+    </extension>
 </addon>
 
 <addon id="script.module.openscrapers" name="OpenScrapers Module" version="0.0.1.6" provider-name="Addons4Kodi">
@@ -762,6 +866,21 @@ ffmpeg simply copies the stream into a transport stream container.
     <source>https://github.com/Twilight0/script.module.streamlink.plugins</source>
     <!--<website></website>-->
     <!--<language></language>-->
+  </extension>
+</addon>
+
+<addon id="script.module.t0mm0.common"
+	     name="t0mm0's common stuff"
+	     version="2.1.1"
+	     provider-name="t0mm0">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0" />
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">Collection of commonly used addon routines</summary>
+    <description lang="en">Collection of commonly used addon routines to simplify addon development.</description>
   </extension>
 </addon>
 
@@ -1093,7 +1212,8 @@ ffmpeg simply copies the stream into a transport stream container.
     </extension>
 </addon>
 
-<addon id="skin.metamorph" version="1.0" name="Base Build" provider-name="SiLVO Modded by Fanriffic">
+<addon id="skin.metamorph" version="1.6" name="EPTV STB" provider-name="Biglad">
+
 	<requires>
 
 		<import addon="script.grab.fanart" version="0.12.8"/>

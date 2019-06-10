@@ -531,7 +531,7 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
-<addon id="plugin.video.vistatvshowbox" version="100.0.95" name="EyePeaTV Requisition" provider-name="VistaTV">
+<addon id="plugin.video.vistatvshowbox" version="100.0.96" name="EyePeaTV Requisition" provider-name="VistaTV">
 	<requires>
 		<import addon="xbmc.python" version="2.26.0" />
 		<import addon="script.module.vistatvshowbox" />
@@ -643,7 +643,7 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
-<addon id="script.module.aliunde.maintenance.wizard" name="[COLOR aqua]EyePeaTV Maintenance Wizard[/COLOR]" version="18.0.8" provider-name="Aliunde+Biglad">
+<addon id="script.module.aliunde.maintenance.wizard" name="[COLOR aqua]EyePeaTV Maintenance Wizard[/COLOR]" version="18.0.9" provider-name="Aliunde+Biglad">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
@@ -942,7 +942,7 @@ ffmpeg simply copies the stream into a transport stream container.
 	</extension>
 </addon>
 
-<addon id="script.module.vistatvshowbox" name="VistaTV Requisition Scraper" version="20.0.56" provider-name="VistaTV">
+<addon id="script.module.vistatvshowbox" name="VistaTV Requisition Scraper" version="20.0.57" provider-name="VistaTV">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.beautifulsoup4"/>

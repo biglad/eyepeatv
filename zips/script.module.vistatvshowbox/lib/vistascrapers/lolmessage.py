@@ -2,7 +2,7 @@ import xbmc
 import xbmcgui
 import xbmcaddon
 import random
-list  = ['Checking the black book.','Using the Force','Webcrawler is searching','Looking on the black market','Using Google, not really lol','Asking Donald Trump for advice....']
+list  = ['Checking the black book.','Using the Force','Webcrawler is searching','Looking on the black market','Using Google, not really lol','Asking Donald Trump for advice....','Connecting to the matrix......','EPTV! EPTV!! You Cant Handle the EPTV!!........']
 counter =0
 __addon__ = xbmcaddon.Addon(id='script.module.vistatvshowbox')
 dp = xbmcgui.DialogProgress()
@@ -14,4 +14,3 @@ while counter < 99:
     dp.update(counter)
 if dp:
     dp.close()
-exit()	

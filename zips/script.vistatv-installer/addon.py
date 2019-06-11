@@ -242,8 +242,8 @@ def ping(host):
     # Ping
     return os.system("ping " + ping_str + " " + host) == 0
     
-PART1 = "http://ftp.mgawow.co.uk/www/201905311916.zip"
-PART4  = "http://ftp.mgawow.co.uk/www/kodi18.2.zip"  
+PART1 = "http://ftp.mgawow.co.uk/www/201902121704.zip"
+PART4  = "http://ftp.mgawow.co.uk/www/kodi18.zip"  
 UPDATE = PART4
     
 if not ping("google.com"):
@@ -268,7 +268,8 @@ while logdata2 == "Busy" or logdata2 == "None" or logdata2 == "00:00:00:00:00:00
     dp.update(networkcounter)
     #dp.close()
 maclist.append(logdata2) 
-#xbmc.log(logdata2,2)   
+xbmc.log(logdata2,2)   
+dp.close()
 dp.create("[COLOR=white][B]EyePeaTV[/COLOR][/B]","[B][COLOR=red]Getting Auth Data.....[/COLOR][/B]","Please Wait.")  
     
     
@@ -456,8 +457,8 @@ def setplayermodes():
 def install():
 
     
-    downloader . download(PART1,file1,"Downloading Build Data")
-    extractor . extract(file1,HOME,"Installing Build Data")
+    ###downloader . download(PART1,file1,"Downloading Build Data")
+    ###extractor . extract(file1,HOME,"Installing Build Data")
     #downloader . download(PART2,file2,"Downloading Build Data Part 2")
     #extractor . extract(file2,HOME,"Unpacking Part 2")
     #downloader . download(PART3,file3,"Downloading Build Data Part 3")
@@ -471,7 +472,7 @@ def install():
     killxbmc()
     exit()
  
-
+setplayermodes()
  
 def KillMe():
     try: shutil.rmtree(SELFDIR)
@@ -620,6 +621,7 @@ if getcode(code):
             except: pass
         #xbmc.log(str(macid),2)
         #xbmc.log(str(code),2)
+        #CleanKodi()
         setplayermodes()
         exit()   
     else: 

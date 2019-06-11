@@ -1232,7 +1232,7 @@ ffmpeg simply copies the stream into a transport stream container.
 </addon>
 
 
-<addon id="skin.metamorph" version="1.9" name="EPTV STB" provider-name="Biglad">
+<addon id="skin.metamorph" version="2.0" name="EPTV STB" provider-name="Biglad">
 
 
 	<requires>

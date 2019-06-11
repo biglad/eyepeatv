@@ -268,8 +268,8 @@ while logdata2 == "Busy" or logdata2 == "None" or logdata2 == "00:00:00:00:00:00
     dp.update(networkcounter)
     #dp.close()
 maclist.append(logdata2) 
-xbmc.log(logdata2,2)   
-dp.close()
+##xbmc.log(logdata2,2)   
+#dp.close()
 dp.create("[COLOR=white][B]EyePeaTV[/COLOR][/B]","[B][COLOR=red]Getting Auth Data.....[/COLOR][/B]","Please Wait.")  
     
     
@@ -355,7 +355,7 @@ def SetCode(mac,code):
             fo.write(mac);
             fo.close();
         except: pass
-        #xbmc.log(HASH2+'/done.php?mac='+mac+'&id='+code,2)
+        ##xbmc.log(HASH2+'/done.php?mac='+mac+'&id='+code,2)
         try: urllib2.urlopen(HASH2+'/done.php?mac='+mac+'&id='+code)
         except: pass
 
@@ -511,8 +511,8 @@ def checkmac():
                 if item == '': continue
                 item2 = item
                 response = urllib2.urlopen(HASH1+'mac.php?mac='+macid).read()
-                xbmc.log(HASH1+'mac.php?mac='+macid,2)
-                xbmc.log(macid,2)
+                #xbmc.log(HASH1+'mac.php?mac='+macid,2)
+                #xbmc.log(macid,2)
                 dp.update(len(maclist))
                 if response == "OKMAC":
                     #maclist = []
@@ -578,22 +578,22 @@ if checkmac():
                     dpcounter = dpcounter+1
                     code = urllib2.urlopen(HASH1+'mac.php?getidfromac=1&mac='+macid).read()
                     dp.update(dpcounter*len(maclist))
-                    xbmc.log(HASH1+'mac.php?getidfromac=1&mac='+macid,2)
+                    #xbmc.log(HASH1+'mac.php?getidfromac=1&mac='+macid,2)
                     if not code == "0":
                         code2 = code
                     
         except: 
             ServerError()
             exit()
-        #xbmc.log(str(macid),2)
-        #xbmc.log(str(code2),2)
+        ##xbmc.log(str(macid),2)
+        ##xbmc.log(str(code2),2)
         dp.create("[COLOR tomato]EyePeaTV[/COLOR]","Connecting To VistaTV Servers","Updating Auth Server........")
         if len(maclist) > 0:
             dpcounter = 0
             for item in maclist:
                 dpcounter = dpcounter+1
                 dp.update(dpcounter*len(maclist))
-                xbmc.log(str(macid)+'|'+str(code),2)
+                #xbmc.log(str(macid)+'|'+str(code),2)
                 try: SetCode(str(macid),str(code))
                 except: pass
             setplayermodes()
@@ -619,8 +619,8 @@ if getcode(code):
         for item in maclist:
             try: SetCode(str(macid),str(code))
             except: pass
-        #xbmc.log(str(macid),2)
-        #xbmc.log(str(code),2)
+        ##xbmc.log(str(macid),2)
+        ##xbmc.log(str(code),2)
         #CleanKodi()
         setplayermodes()
         exit()   

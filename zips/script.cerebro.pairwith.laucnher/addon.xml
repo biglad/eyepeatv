@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.cerebro.pairwith.laucnher"
-  name="Pair ME UP"
-  version="1.4" 
-  provider-name="VistaTV">
+  name="EPTV Pair ME UP"
+  version="1.5" 
+  provider-name="EPTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>

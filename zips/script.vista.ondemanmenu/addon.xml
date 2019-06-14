@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.vista.ondemanmenu"
-  name="VistaTV On Demand Menu"
-  version="5.1.51" 
-  provider-name="Vista TV">
+  name="EPTV On Demand Menu"
+  version="5.1.52" 
+  provider-name="Biglad">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>

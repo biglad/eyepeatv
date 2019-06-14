@@ -205,7 +205,7 @@ ffmpeg simply copies the stream into a transport stream container.
 </addon>
 
 <!--suppress ALL -->
-<addon id="plugin.video.link__tester2" version="0.0.2" name="VistaTV ResolveURL Player" provider-name="Vista">
+<addon id="plugin.video.link__tester2" version="0.0.3" name="EPYV ResolveURL Player" provider-name="EPTV">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.resolveurl" version="2.2.0"/>
@@ -267,8 +267,8 @@ ffmpeg simply copies the stream into a transport stream container.
 </addon>
 
 <addon id="plugin.video.live.streamspro2"
-       name="VistaTV IPTV Oracle"
-       version="2.8.5"
+       name="EPTV Oracle"
+       version="2.8.7"
        provider-name="Biglad+Shani">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -424,7 +424,7 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
-<addon id="plugin.video.streamlink-earthcam" name="Vista CCTV+WEBCAMS" version="18.3.1" provider-name="Twilight0+Biglad">
+<addon id="plugin.video.streamlink-earthcam" name="EPTV CCTV+WEBCAMS" version="18.3.3" provider-name="Twilight0+Biglad">
     <requires>
         <import addon="xbmc.python" version="2.24.0"/>
         <import addon="script.module.tulip" version="2.0.12"/>
@@ -452,7 +452,7 @@ ffmpeg simply copies the stream into a transport stream container.
     </extension>
 </addon>
 
-<addon id="plugin.video.tvheaven" name="VistaTV Heaven" version="1.0.49" provider-name="VistaTV">
+<addon id="plugin.video.tvheaven" name="EP-TV Heaven" version="1.0.51" provider-name="EPTV">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.resolveurl"  />
@@ -600,7 +600,7 @@ ffmpeg simply copies the stream into a transport stream container.
 
 <addon id="script.cerebro.pairwith"
   name="EyePeaTV Pair With"
-  version="2.9"
+  version="3.0"
   provider-name="VistaTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -618,9 +618,9 @@ ffmpeg simply copies the stream into a transport stream container.
 </addon>
 
 <addon id="script.cerebro.pairwith.laucnher"
-  name="Pair ME UP"
-  version="1.4"
-  provider-name="VistaTV">
+  name="EPTV Pair ME UP"
+  version="1.5"
+  provider-name="EPTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
@@ -637,7 +637,7 @@ ffmpeg simply copies the stream into a transport stream container.
 
 <addon id="script.eptv.core"
   name="EPTV Core"
-  version="18.65"
+  version="18.66"
   provider-name="Biglad">
   <requires>
     <import addon="xbmc.python" version="2.19.0"/>
@@ -1000,8 +1000,8 @@ ffmpeg simply copies the stream into a transport stream container.
 </addon>
 
 <addon id="script.program.vistatvhousekeeper"
-  name="VistaTV House Keeper"
-  version="2.2"
+  name="EPTV House Keeper"
+  version="2.3"
   provider-name="Biglad">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1127,8 +1127,8 @@ ffmpeg simply copies the stream into a transport stream container.
 
 <addon id="script.vista.exit"
   name="EyePeaTV Exit"
-  version="2.1"
-  provider-name="Vista TV">
+  version="2.2"
+  provider-name="EPTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.eptv.core" />
@@ -1145,9 +1145,9 @@ ffmpeg simply copies the stream into a transport stream container.
 </addon>
 
 <addon id="script.vista.ondemanmenu"
-  name="VistaTV On Demand Menu"
-  version="5.1.51"
-  provider-name="Vista TV">
+  name="EPTV On Demand Menu"
+  version="5.1.52"
+  provider-name="Biglad">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>

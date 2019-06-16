@@ -28,19 +28,48 @@ ICON = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id, 'ico
 FANART = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id, 'fanart.jpg')) 
 APKS = base64.b64decode("aHR0cDovL2ZhYmlwdHYuY29tL2Fwa3MvbmV3YXBrcy50eHQ=")
 HOME =  xbmc.translatePath('special://home/')
+buildfile = "version.txt"
 lehekylg= base64.b64decode("aHR0cDovL3dhdGNoLmdvdGRhcmsuY29t")
 pordinumber="80"
 message = "VU5BVVRIT1JJWkVEIEVESVQgT0YgQURET04h"
 kasutajanimi=plugintools.get_setting("Username")
 salasona=plugintools.get_setting("Password")
+buildv = xbmc.translatePath(os.path.join('special://home/', buildfile))
 F1ICON = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id, 'F1.png'))
 BASEURL = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD10cw==") #.ts
+BUILDUPDATE = "NO"
+
 
 ##BASEURL = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tM3U4") #.m3u8
 LOAD_LIVEchan = os.path.join( plugintools.get_runtime_path() , "resources" , "art/arch" )
 loginurl   = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD10cw==")%(lehekylg,pordinumber,kasutajanimi,salasona)
+webversion = urllib2.urlopen('http://eptv.co.uk/version.txt').read()
 
 
+
+import os.path
+if os.path.exists(buildv):
+    with open(buildv, 'r') as myfile:
+        data = myfile.read()
+        buildv = float(data)
+else:
+    try:
+        fo = open("0.0", "w")
+        fo.write(buildv);
+        fo.close()
+        buildv = "0.0"
+    except:
+        buildv = "0.0"
+		
+		
+		
+webversion = float(webversion)
+buildv = float(buildv)
+
+
+
+if webversion > buildv:
+    BUILDUPDATE = "YES"
 
 
 RAM = int(xbmc.getFreeMem())
@@ -96,6 +125,11 @@ def peamenyy(params):
         plugintools.open_settings_dialog()
         exit()
 
+    if BUILDUPDATE == "YES":
+        plugintools.addItem('[COLOR orange][B]There as an EPTV Build Update![/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
+        plugintools.addItem('[COLOR orange][B]Click Here To Update now![/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
+        plugintools.addItem('[COLOR orange][B]Your Version: '+str(buildv)+'[/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
+        plugintools.addItem('[COLOR orange][B]New Version: '+str(webversion)+'[/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
     channels = kontroll()
     if channels == 1 and GoDev.mode != 5 and GoDev.mode != 1:
         plugintools.log(pnimi+vod_channels("TG9naW4gU3VjY2Vzcw=="))

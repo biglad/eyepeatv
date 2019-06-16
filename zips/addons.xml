@@ -1163,7 +1163,7 @@ ffmpeg simply copies the stream into a transport stream container.
 </addon>
 
 <addon id="script.vistatv-installer"
-    name=" !!EyePeaTV Build Installer!!" version="18.0.3" provider-name="Biglad">
+    name="EyePeaTV Build Installer" version="18.0.1" provider-name="Biglad">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
@@ -1192,7 +1192,7 @@ ffmpeg simply copies the stream into a transport stream container.
 	</extension>
 </addon>
 
-<addon id="script.vistatvshowbox.metadata" version="1.0.4" name="VistaTV Requisition Metadata" provider-name="VistaTV">
+<addon id="script.vistatvshowbox.metadata" version="1.0.5" name="Requisition Metadata" provider-name="VistaTV">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0"/>
 	</requires>

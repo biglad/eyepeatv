@@ -15,7 +15,7 @@ HOME        = xbmc.translatePath('special://home/userdata/')
 done      =  os.path.join(HOME, 'done1.xml')
 if os.path.exists(done):
     exit()
-update = xbmcgui.Dialog().yesno("[COLOR tomato]EyePeaTV Build Installer[/COLOR]","[COLOR yellow]Do You Want to install Now?[/COLOR]","[COLOR turquoise]The IPTV need paying for, rest it free[/COLOR]" ,"[COLOR turquoise]www.epyv.co.uk for the IPTV side[/COLOR]")
+update = xbmcgui.Dialog().yesno("[COLOR tomato]EyePeaTV Build Installer[/COLOR]","[COLOR yellow]Do You Want to install Now?[/COLOR]","[COLOR turquoise]Free Build!![/COLOR]" ,"[COLOR turquoise]IPTV needs to be paid for, www.eptv.co.uk[/COLOR]")
 if update:
     xbmc.executebuiltin("Notification(PLEASE WAIT, [B][COLOR=gold]SYSTEM IS STARTING UP[/COLOR] -- [COLOR=green]PLEASE WAIT[/COLOR][/B],3000,)")
     xbmc.sleep(2000)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.vistatvshowbox" version="100.0.97" name="Requisition" provider-name="VistaTV">
+<addon id="plugin.video.vistatvshowbox" version="100.0.98" name="Requisition" provider-name="VistaTV">
 	<requires>
 		<import addon="xbmc.python" version="2.26.0" />
 		<import addon="script.module.vistatvshowbox" />

@@ -70,6 +70,8 @@ file4 =  os.path.join(HOME, 'search.1.db')
 if os.path.exists(file4):
     go = "yes"
 else:
+    if not os.path.exists(HOME):
+        os.makedirs(HOME)
     with open(file4, 'a') as the_file:
         the_file.write('')
 

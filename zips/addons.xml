@@ -1309,7 +1309,7 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
   </extension>
 </addon>
 
-<addon id="script.vistatvshowbox.artwork" version="1.0.17" name="EpePeaTV Requisition Artwork" provider-name="VistaTV">
+<addon id="script.vistatvshowbox.artwork" version="1.0.18" name="Requisition Artwork" provider-name="VistaTV">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0"/>
 	</requires>

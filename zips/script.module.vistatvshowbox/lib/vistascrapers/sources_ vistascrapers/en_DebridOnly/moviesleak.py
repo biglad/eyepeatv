@@ -9,8 +9,7 @@
 #  ..#######.##.......#######.##....#..######..######.##.....#.##.....#.##.......#######.##.....#..######.
 
 '''
-    Filmnet Add-on (C) 2017
-    Credits to Exodus and Covenant; our thanks go to their creators
+    OpenScrapers Project
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,13 +25,16 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
 
-import re, urllib, urlparse
+import re
+import urllib
+import urlparse
 
+from vistascrapers.modules import cfscrape
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
-from vistascrapers.modules import source_utils
 from vistascrapers.modules import debrid
-from vistascrapers.modules import dom_parser2
+from vistascrapers.modules import dom_parser
+from vistascrapers.modules import source_utils
 from vistascrapers.modules import workers
 
 
@@ -43,6 +45,7 @@ class source:
         self.domains = ['300mbmoviesdl.com', 'moviesleak.net/', 'hevcbluray.net']
         self.base_link = 'https://moviesleak.net/'
         self.search_link = '?s=%s'
+        self.scraper = cfscrape.create_scraper()
 
     def movie(self, imdb, title, localtitle, aliases, year):
         try:
@@ -69,14 +72,15 @@ class source:
             hdlr = 'S%02dE%02d' % (int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else data['year']
 
             query = '%s S%02dE%02d' % (
-            data['tvshowtitle'], int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else '%s %s' % (
-            data['title'], data['year'])
+                data['tvshowtitle'], int(data['season']),
+                int(data['episode'])) if 'tvshowtitle' in data else '%s %s' % (
+                data['title'], data['year'])
             query = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', ' ', query)
 
             url = self.search_link % urllib.quote_plus(query)
             url = urlparse.urljoin(self.base_link, url)
 
-            r = client.request(url)
+            r = self.scraper.get(url).content
 
             posts = client.parseDOM(r, 'div', attrs={'class': 'item'})
 
@@ -120,11 +124,10 @@ class source:
         except Exception:
             return self._sources
 
-
     def _get_sources(self, item, hostDict):
         try:
             quality, info = source_utils.get_release_quality(item[0], item[1])
-            size = item[2] if item[2] != '0'else item[0]
+            size = item[2] if item[2] != '0' else item[0]
 
             try:
                 size = re.findall('((?:\d+\,\d+\.\d+|\d+\.\d+|\d+\,\d+|\d+)\s*(?:GB|GiB|MB|MiB))', size)[-1]
@@ -136,13 +139,13 @@ class source:
             except Exception:
                 pass
 
-            data = client.request(item[1])
+            data = self.scraper.get(item[1]).content
 
             try:
                 r = client.parseDOM(data, 'li', attrs={'class': 'elemento'})
-                r = [(dom_parser2.parse_dom(i, 'a', req='href')[0],
-                      dom_parser2.parse_dom(i, 'img', req='alt')[0],
-                      dom_parser2.parse_dom(i, 'span', {'class': 'd'})[0]) for i in r]
+                r = [(dom_parser.parse_dom(i, 'a', req='href')[0],
+                      dom_parser.parse_dom(i, 'img', req='alt')[0],
+                      dom_parser.parse_dom(i, 'span', {'class': 'd'})[0]) for i in r]
                 urls = [('http:' + i[0].attrs['href'] if not i[0].attrs['href'].startswith('http') else
                          i[0].attrs['href'], i[1].attrs['alt'], i[2].content) for i in r if i[0] and i[1]]
 
@@ -173,9 +176,9 @@ class source:
 
     def resolve(self, url):
         if 'hideurl' in url:
-            data = client.request(url)
+            data = self.scraper.get(url).content
             data = client.parseDOM(data, 'div', attrs={'class': 'row'})
-            url = [dom_parser2.parse_dom(i, 'a', req='href')[0] for i in data]
+            url = [dom_parser.parse_dom(i, 'a', req='href')[0] for i in data]
             url = [i.attrs['href'] for i in url if 'direct me' in i.content][0]
             return url
         else:

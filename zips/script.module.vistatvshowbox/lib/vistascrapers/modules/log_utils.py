@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 
-# Addon Name: vistascrapers Module
-# Addon id: script.module.vistascrapers
+# Addon Name: OpenScrapers Module
+# Addon id: script.module.openscrapers
 
 import StringIO
 import cProfile
@@ -10,7 +10,6 @@ import json
 import os
 import pstats
 import time
-
 from datetime import datetime
 
 from vistascrapers.modules import control
@@ -26,40 +25,36 @@ except:
     LOGDEBUG = "LOGDEBUG"
     LOGNOTICE = "LOGNOTICE"
     LOGWARNING = "LOGWARNING"
-    name = "vistascrapers"
+    name = "OPENSCRAPERS"
 
 # Using color coding, for color formatted log viewers like Assassin's Tools
-DEBUGPREFIX = '[COLOR red][ vistascrapers DEBUG ][/COLOR]'
+DEBUGPREFIX = '[COLOR red][ OPENSCRAPERS DEBUG ][/COLOR]'
 
 
 def log(msg, level=LOGNOTICE):
-    debug_enabled = control.setting('addon_debug')
-    debug_log = control.setting('debug.location')
-
+    try:
+        debug_enabled = control.setting('addon_debug')
+        debug_log = control.setting('debug.location')
+    except:
+        return
     if xbmc:
-        print DEBUGPREFIX + ' Debug Enabled?: ' + str(debug_enabled)
-        print DEBUGPREFIX + ' Debug Log?: ' + str(debug_log)
-
+        print(DEBUGPREFIX + ' Debug Enabled?: ' + str(debug_enabled))
+        print(DEBUGPREFIX + ' Debug Log?: ' + str(debug_log))
     if not control.setting('addon_debug') == 'true':
         return
-
     try:
         if isinstance(msg, unicode):
             msg = '%s (ENCODED)' % (msg.encode('utf-8'))
-
         if not control.setting('debug.location') == '0':
-
-            log_file = os.path.join(LOGPATH, 'vistascrapers.log')
-
+            log_file = os.path.join(LOGPATH, 'openscrapers.log')
             if not os.path.exists(log_file):
                 f = open(log_file, 'w')
                 f.close()
-
             with open(log_file, 'a') as f:
                 line = '[%s %s] %s: %s' % (datetime.now().date(), str(datetime.now().time())[:8], DEBUGPREFIX, msg)
-                f.write(line.rstrip('\r\n')+'\n')
+                f.write(line.rstrip('\r\n') + '\n')
         else:
-            print '%s: %s' % (DEBUGPREFIX, msg)
+            print('%s: %s' % (DEBUGPREFIX, msg))
     except Exception as e:
         try:
             xbmc.log('Logging Failure: %s' % (e), level)
@@ -68,7 +63,6 @@ def log(msg, level=LOGNOTICE):
 
 
 class Profiler(object):
-
     def __init__(self, file_path, sort_by='time', builtins=False):
         self._profiler = cProfile.Profile(builtins=builtins)
         self.file_path = file_path
@@ -113,8 +107,7 @@ def trace(method):
         result = method(*args, **kwargs)
         end = time.time()
         log('{name!r} time: {time:2.4f}s args: |{args!r}| kwargs: |{kwargs!r}|'.format(name=method.__name__,
-                                                                                       time=end - start,
-                                                                                       args=args,
+                                                                                       time=end - start, args=args,
                                                                                        kwargs=kwargs), LOGDEBUG)
         return result
 
@@ -131,11 +124,9 @@ def _is_debugging():
     command = {'jsonrpc': '2.0', 'id': 1, 'method': 'Settings.getSettings',
                'params': {'filter': {'section': 'system', 'category': 'logging'}}}
     js_data = execute_jsonrpc(command)
-
     for item in js_data.get('result', {}).get('settings', {}):
         if item['id'] == 'debug.showloginfo':
             return item['value']
-
     return False
 
 

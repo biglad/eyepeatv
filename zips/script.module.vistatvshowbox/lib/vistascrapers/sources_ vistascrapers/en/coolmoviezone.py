@@ -9,7 +9,7 @@
 #  ..#######.##.......#######.##....#..######..######.##.....#.##.....#.##.......#######.##.....#..######.
 
 '''
-    vistascrapers Project
+    OpenScrapers Project
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -26,39 +26,41 @@
 
 import re
 
-from vistascrapers.modules import cleantitle,client, source_utils
+from vistascrapers.modules import cfscrape
+from vistascrapers.modules import cleantitle
+from vistascrapers.modules import source_utils
 
 
 class source:
-	def __init__(self):
-		self.priority = 1
-		self.language = ['en']
-		self.domains = ['coolmoviezone.online']
-		self.base_link = 'https://coolmoviezone.co/'
+    def __init__(self):
+        self.priority = 1
+        self.language = ['en']
+        self.domains = ['coolmoviezone.online']
+        self.base_link = 'https://coolmoviezone.online'
+        self.scraper = cfscrape.create_scraper()
 
+    def movie(self, imdb, title, localtitle, aliases, year):
+        try:
+            title = cleantitle.geturl(title)
+            url = self.base_link + '/%s-%s' % (title, year)
+            return url
+        except:
+            return
 
-	def movie(self, imdb, title, localtitle, aliases, year):
-		try:
-			title = cleantitle.geturl(title)
-			url = self.base_link + '/%s-%s' % (title,year)
-			return url
-		except:
-			return
+    def sources(self, url, hostDict, hostprDict):
+        try:
+            sources = []
+            r = self.scraper.get(url).content
+            match = re.compile('<td align="center"><strong><a href="(.+?)"').findall(r)
+            for url in match:
+                host = url.split('//')[1].replace('www.', '')
+                host = host.split('/')[0].split('.')[0].title()
+                quality = source_utils.check_sd_url(url)
+                sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': url, 'direct': False,
+                                'debridonly': False})
+        except Exception:
+            return
+        return sources
 
-
-	def sources(self, url, hostDict, hostprDict):
-		try:
-			sources = []
-			r = client.request(url)
-			match = re.compile('<td align="center"><strong><a href="(.+?)"').findall(r)
-			for url in match: 
-				host = url.split('//')[1].replace('www.','')
-				host = host.split('/')[0].split('.')[0].title()
-				quality = source_utils.check_sd_url(url)
-				sources.append({'source': host, 'quality': quality, 'language': 'en','url': url,'direct': False,'debridonly': False})
-		except Exception:
-			return
-		return sources
-
-	def resolve(self, url):
-		return url
+    def resolve(self, url):
+        return url

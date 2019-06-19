@@ -63,6 +63,16 @@ content = params.get('content')
 windowedtrailer = params.get('windowedtrailer')
 windowedtrailer = int(windowedtrailer) if windowedtrailer in ("0","1") else 0
 
+## Create Search File ##
+import os.path
+HOME = xbmc.translatePath('special://home/userdata/addon_data/plugin.video.vistatvshowbox/')
+file4 =  os.path.join(HOME, 'search.1.db')
+if os.path.exists(file4):
+    go = "yes"
+else:
+    with open(file4, 'a') as the_file:
+        the_file.write('')
+
 
 control.execute('RunPlugin(plugin://%s)' % control.get_plugin_url({'action': 'service'}))
 

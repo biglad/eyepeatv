@@ -16,7 +16,6 @@ from vistascrapers.modules import cfscrape
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
 from vistascrapers.modules import debrid
-from vistascrapers.modules import log_utils
 from vistascrapers.modules import source_utils
 
 
@@ -95,7 +94,6 @@ class source:
                                 if html.status_code == 200:
                                     quotes = client.parseDOM(html.content, "div", attrs={"class": "entry-content "
                                                                                                   "clearfix"})
-                                    log_utils.log('best-moviez.ws - href: \n' + str(quotes))
                                     for quote in quotes:
                                         hrefs = client.parseDOM(quote, "a", ret='href')
                                         if not hrefs:

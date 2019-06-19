@@ -7,7 +7,7 @@ import xbmc
 import xbmcgui
 import xbmcaddon
 import random
-list  = ['Checking the black book.','Using the Force','Webcrawler is searching','Looking on the black market','Using Google, not really lol','Asking Donald Trump for advice....']
+list  = ['Checking the black book.','Using the Force','Webcrawler is searching','Looking on the black market','Using Google, not really lol','Asking Donald Trump for advice....','Connecting to the matrix......','EPTV! EPTV!! You Cant Handle the EPTV!!........']
 
 try:
     import xbmcaddon
@@ -19,7 +19,7 @@ except:
 def sources():
     mcounter = 0
     dp = xbmcgui.DialogProgress()
-    dp.create("[COLOR=white][B]VistaTV Requisition[/COLOR][/B]","[B][COLOR=red]"+random.choice(list)+"[/COLOR][/B]","[COLOR=orange]Please Wait......[/COLOR]")
+    dp.create("[COLOR=white][B]Requisition[/COLOR][/B]","[B][COLOR=red]"+random.choice(list)+"[/COLOR][/B]","[COLOR=orange]Please Wait......[/COLOR]")
     while mcounter < 99:
         mcounter = mcounter+1
         xbmc.sleep(30)

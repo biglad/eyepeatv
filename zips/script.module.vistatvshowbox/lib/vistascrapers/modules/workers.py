@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-    vistascrapers Module
+    OpenScrapers Module
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,8 +16,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-# Addon Name: vistascrapers Module
-# Addon id: script.module.vistascrapers
+# Addon Name: OpenScrapers Module
+# Addon id: script.module.openscrapers
 
 import threading
 
@@ -27,6 +27,6 @@ class Thread(threading.Thread):
         self._target = target
         self._args = args
         threading.Thread.__init__(self)
+
     def run(self):
         self._target(*self._args)
-

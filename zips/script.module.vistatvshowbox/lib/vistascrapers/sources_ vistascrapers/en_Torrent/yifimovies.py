@@ -21,7 +21,7 @@ import urlparse
 
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
-from vistascrapers.modules import dom_parser2
+from vistascrapers.modules import dom_parser
 from vistascrapers.modules import source_utils
 
 
@@ -90,7 +90,7 @@ class source:
 
                 elif 'mystream' in url:
                     data = client.request(url)
-                    links = dom_parser2.parse_dom(data, 'source', req=['src', 'label'])
+                    links = dom_parser.parse_dom(data, 'source', req=['src', 'label'])
                     for link in links:
                         label = link.attrs['label']
                         url = link.attrs['src'] + '|User-Agent=%s' % urllib.quote_plus(client.agent())

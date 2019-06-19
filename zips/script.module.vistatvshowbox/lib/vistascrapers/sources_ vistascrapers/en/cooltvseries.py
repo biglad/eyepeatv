@@ -1,5 +1,4 @@
 # -*- coding: UTF-8 -*-
-# -Cleaned and Checked on 03-16-2019 by JewBMX in Scrubs.
 
 #  ..#######.########.#######.##....#..######..######.########....###...########.#######.########..######.
 #  .##.....#.##.....#.##......###...#.##....#.##....#.##.....#...##.##..##.....#.##......##.....#.##....##
@@ -9,8 +8,12 @@
 #  .##.....#.##.......##......##...##.##....#.##....#.##....##.##.....#.##.......##......##....##.##....##
 #  ..#######.##.......#######.##....#..######..######.##.....#.##.....#.##.......#######.##.....#..######.
 
-import re,urllib,urlparse
-from vistascrapers.modules import client,cleantitle,proxy,source_utils
+# -Cleaned and Checked on 04-15-2019 by JewBMX in Scrubs.
+import re
+
+from vistascrapers.modules import cfscrape
+from vistascrapers.modules import cleantitle
+from vistascrapers.modules import source_utils
 
 
 class source:
@@ -20,7 +23,7 @@ class source:
         self.domains = ['cooltvseries.com']
         self.base_link = 'https://cooltvseries.com'
         self.search_link = '/%s/season-%s/'
-
+        self.scraper = cfscrape.create_scraper()
 
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
         try:
@@ -29,39 +32,36 @@ class source:
         except:
             return
 
-
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
         try:
-            if not url: return
-            http = self.base_link + self.search_link % (url,season)
+            if not url:
+                return
+            http = self.base_link + self.search_link % (url, season)
             season = '%02d' % int(season)
             episode = '%02d' % int(episode)
-            r = client.request(http)
-            match = re.compile('<a href="(.+?)-S'+season+'E'+episode+'-(.+?)">').findall(r)
-            for url1,url2 in match:
-                url = '%s-S%sE%s-%s' % (url1,season,episode,url2)
+            r = self.scraper.get(http).content
+            match = re.compile('<a href="(.+?)-S' + season + 'E' + episode + '-(.+?)">').findall(r)
+            for url1, url2 in match:
+                url = '%s-S%sE%s-%s' % (url1, season, episode, url2)
                 return url
         except:
             return
 
-
     def sources(self, url, hostDict, hostprDict):
         try:
             sources = []
-            r = client.request(url)
+            r = self.scraper.get(url).content
             try:
                 match = re.compile('<li><a href="(.+?)" rel="nofollow">(.+?)<').findall(r)
-                for url,check in match: 
-                    info = source_utils.check_url(url)
-                    quality = source_utils.check_url(url)
-                    sources.append({ 'source': 'Direct', 'quality': quality, 'language': 'en', 'info': info, 'url': url, 'direct': False, 'debridonly': False }) 
+                for url, check in match:
+                    quality, info = source_utils.get_release_quality(url)
+                    sources.append({'source': 'Direct', 'quality': quality, 'language': 'en', 'info': info, 'url': url,
+                                    'direct': False, 'debridonly': False})
             except:
                 return
         except Exception:
             return
         return sources
 
-
     def resolve(self, url):
         return url
-

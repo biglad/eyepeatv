@@ -1,35 +1,37 @@
-# -*- coding: utf-8 -*-
+# -*- coding: UTF-8 -*-
+
+#  ..#######.########.#######.##....#..######..######.########....###...########.#######.########..######.
+#  .##.....#.##.....#.##......###...#.##....#.##....#.##.....#...##.##..##.....#.##......##.....#.##....##
+#  .##.....#.##.....#.##......####..#.##......##......##.....#..##...##.##.....#.##......##.....#.##......
+#  .##.....#.########.######..##.##.#..######.##......########.##.....#.########.######..########..######.
+#  .##.....#.##.......##......##..###.......#.##......##...##..########.##.......##......##...##........##
+#  .##.....#.##.......##......##...##.##....#.##....#.##....##.##.....#.##.......##......##....##.##....##
+#  ..#######.##.......#######.##....#..######..######.##.....#.##.....#.##.......#######.##.....#..######.
 
 '''
-    Tempest Add-on
+    openloadmovie scraper for Exodus forks.
+    Nov 9 2018 - Checked
+    Oct 10 2018 - Cleaned and Checked
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    Updated and refactored by someone.
+    Originally created by others.
 '''
-
 import re
 
-from vistascrapers.modules import source_utils
+from vistascrapers.modules import cfscrape
 from vistascrapers.modules import cleantitle
-from vistascrapers.modules import client
 
+
+# openloadmovie.ws opens to openloadmovie.org always.
+# could remove it but o well it can go down first.
 
 class source:
     def __init__(self):
         self.priority = 1
         self.language = ['en']
-        self.domains = ['openloadmovie.org']
+        self.domains = ['openloadmovie.org', 'openloadmovie.ws']
         self.base_link = 'https://openloadmovie.org'
+        self.scraper = cfscrape.create_scraper()
 
     def movie(self, imdb, title, localtitle, aliases, year):
         try:
@@ -41,15 +43,12 @@ class source:
 
     def sources(self, url, hostDict, hostprDict):
         try:
-            hostDict = hostprDict + hostDict
             sources = []
-            r = client.request(url)
+            r = self.scraper.get(url).content
             match = re.compile('<iframe class="metaframe rptss" src="(.+?)"').findall(r)
             for url in match:
-                valid, host = source_utils.is_host_valid(url, hostDict)
-                if valid:
-                    sources.append({'source': host, 'quality': '720p', 'language': 'en', 'url': url, 'direct': False,
-                                    'debridonly': False})
+                sources.append({'source': 'Openload', 'quality': 'HD', 'language': 'en', 'url': url, 'direct': False,
+                                'debridonly': False})
         except Exception:
             return
         return sources

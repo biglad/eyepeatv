@@ -1,9 +1,32 @@
-# -*- coding: UTF-8 -*-
-# -Cleaned and Checked on 02-24-2019 by JewBMX in Scrubs.
-#Created by Tempest
+# -*- coding: utf-8 -*-
+
+#  ..#######.########.#######.##....#..######..######.########....###...########.#######.########..######.
+#  .##.....#.##.....#.##......###...#.##....#.##....#.##.....#...##.##..##.....#.##......##.....#.##....##
+#  .##.....#.##.....#.##......####..#.##......##......##.....#..##...##.##.....#.##......##.....#.##......
+#  .##.....#.########.######..##.##.#..######.##......########.##.....#.########.######..########..######.
+#  .##.....#.##.......##......##..###.......#.##......##...##..########.##.......##......##...##........##
+#  .##.....#.##.......##......##...##.##....#.##....#.##....##.##.....#.##.......##......##....##.##....##
+#  ..#######.##.......#######.##....#..######..######.##.....#.##.....#.##.......#######.##.....#..######.
+
+'''
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+'''
 
 import re
-from vistascrapers.modules import client,cleantitle
+
+from vistascrapers.modules import cleantitle
+from vistascrapers.modules import client
 
 
 class source:
@@ -11,9 +34,8 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['cmovieshd.net']
-        self.base_link = 'https://cmovieshd.net/'
+        self.base_link = 'https://cmovieshd.net'
         self.search_link = '/search/?q=%s'
-
 
     def movie(self, imdb, title, localtitle, aliases, year):
         try:
@@ -30,7 +52,6 @@ class source:
                     return url
         except:
             return
-
 
     def sources(self, url, hostDict, hostprDict):
         try:
@@ -55,11 +76,10 @@ class source:
                         u = re.findall('"(https.+?)"', i)
                         for url in u:
                             sources.append({'source': 'CDN', 'quality': quality, 'language': 'en', 'url': url, 'direct': False, 'debridonly': False})
+
                 return sources
         except Exception:
             return
 
-
     def resolve(self, url):
         return url
-

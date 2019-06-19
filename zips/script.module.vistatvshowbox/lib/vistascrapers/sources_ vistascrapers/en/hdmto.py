@@ -1,4 +1,13 @@
 # -*- coding: UTF-8 -*-
+
+#  ..#######.########.#######.##....#..######..######.########....###...########.#######.########..######.
+#  .##.....#.##.....#.##......###...#.##....#.##....#.##.....#...##.##..##.....#.##......##.....#.##....##
+#  .##.....#.##.....#.##......####..#.##......##......##.....#..##...##.##.....#.##......##.....#.##......
+#  .##.....#.########.######..##.##.#..######.##......########.##.....#.########.######..########..######.
+#  .##.....#.##.......##......##..###.......#.##......##...##..########.##.......##......##...##........##
+#  .##.....#.##.......##......##...##.##....#.##....#.##....##.##.....#.##.......##......##....##.##....##
+#  ..#######.##.......#######.##....#..######..######.##.....#.##.....#.##.......#######.##.....#..######.
+
 '''
     hdmto scraper for Exodus forks.
     Nov 9 2018 - Checked
@@ -7,12 +16,10 @@
     Originally created by others.
 '''
 import re
-import urllib
-import urlparse
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import client
-from vistascrapers.modules import proxy
+
 from vistascrapers.modules import cfscrape
+from vistascrapers.modules import cleantitle
+
 
 class source:
     def __init__(self):
@@ -32,12 +39,14 @@ class source:
     def sources(self, url, hostDict, hostprDict):
         try:
             sources = []
-            url = '%s/%s/' % (self.base_link,url)
+            url = '%s/%s/' % (self.base_link, url)
             r = self.scraper.get(url).content
             try:
                 match = re.compile('<iframe.+?src="(.+?)"').findall(r)
                 for url in match:
-                    sources.append({'source': 'Openload.co','quality': '1080p','language': 'en','url': url,'direct': False,'debridonly': False}) 
+                    sources.append(
+                        {'source': 'Openload.co', 'quality': '1080p', 'language': 'en', 'url': url, 'direct': False,
+                         'debridonly': False})
             except:
                 return
         except Exception:

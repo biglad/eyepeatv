@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-    vistascrapers Module
+    OpenScrapers Module
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,10 +16,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-# Addon Name: vistascrapers Module
-# Addon id: script.module.vistascrapers
+# Addon Name: OpenScrapers Module
+# Addon id: script.module.openscrapers
 
-import json, re
+import json
+import re
 
 
 def json_load_as_str(file_handle):
@@ -36,8 +37,10 @@ def byteify(data, ignore_dicts=False):
     if isinstance(data, list):
         return [byteify(item, ignore_dicts=True) for item in data]
     if isinstance(data, dict) and not ignore_dicts:
-        return dict([(byteify(key, ignore_dicts=True), byteify(value, ignore_dicts=True)) for key, value in data.iteritems()])
+        return dict(
+            [(byteify(key, ignore_dicts=True), byteify(value, ignore_dicts=True)) for key, value in data.iteritems()])
     return data
+
 
 def title_key(title):
     try:
@@ -45,13 +48,11 @@ def title_key(title):
         articles_en = ['the', 'a', 'an']
         articles_de = ['der', 'die', 'das']
         articles = articles_en + articles_de
-
         match = re.match('^((\w+)\s+)', title.lower())
         if match and match.group(2) in articles:
             offset = len(match.group(1))
         else:
             offset = 0
-
         return title[offset:]
     except:
         return title

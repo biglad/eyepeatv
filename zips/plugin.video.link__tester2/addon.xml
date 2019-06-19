@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--suppress ALL -->
-<addon id="plugin.video.link__tester2" version="0.0.3" name="EPYV ResolveURL Player" provider-name="EPTV">
+<addon id="plugin.video.link__tester2" version="0.0.4" name="EPTV ResolveURL Player" provider-name="EPTV">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.resolveurl" version="2.2.0"/>

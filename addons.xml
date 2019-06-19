@@ -1292,7 +1292,7 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 </addon>
 
 <addon id="script.vistatv-installer"
-    name="EyePeaTV Build Installer" version="18.0.1" provider-name="Biglad">
+    name="!!!![COLOR gold]EyePeaTV Build Installer[/COLOR]!!!!" version="18.0.3" provider-name="Biglad">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
@@ -1303,8 +1303,8 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
   <extension point="xbmc.addon.metadata">
 <language></language>
     <platform>all</platform>
-    <license>VistaTV 2018</license>
-    <forum>VistaTV 2018</forum>
+    <license>EPTV 2019</license>
+    <forum>EPTV 2019</forum>
     <source></source>
   </extension>
 </addon>

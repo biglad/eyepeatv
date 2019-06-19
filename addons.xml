@@ -1084,12 +1084,13 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 	</extension>
 </addon>
 
-<addon id="script.module.vistatvshowbox" name="VistaTV Requisition Scraper" version="20.0.60" provider-name="VistaTV">
+<addon id="script.module.vistatvshowbox" name="VistaTV Requisition Scraper" version="20.0.61" provider-name="VistaTV">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.beautifulsoup4"/>
 		<import addon="pvr.iptvsimple"/>
 		<import addon="repository.jsergio"/>
+		<import addon="repository.addons4kodi"/>
 
 
 

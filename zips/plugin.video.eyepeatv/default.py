@@ -124,11 +124,13 @@ def run():
 	
 def correctPVR():
     xbmc.executebuiltin("ActivateWindow(busydialog)")
-    xbmc.executebuiltin("Notification(PLEASE WAIT, [B][COLOR=gold]EPTV is Setting Up Your TV Guide[/COLOR] -- [COLOR=green]PLEASE WAIT[/COLOR][/B],,9000)")
+    dp = xbmcgui.DialogProgress()
+    dp.create("[COLOR tomato]EyePeaTV[/COLOR]","Please Wait.. This will Take a Couple of Mins","Setting Up PRV (TV GUIDE)")
     Username=plugintools.get_setting("Username")
     Password=plugintools.get_setting("Password")
     AddonTitle = 'EyePeaTV'
     #thread.start_new_thread(self.dialogWatch, ())
+    dp.update(10)
     try:
         connection = urllib2.urlopen(loginurl)
         print connection.getcode()
@@ -152,8 +154,10 @@ def correctPVR():
             sys.exit(1)
         elif choice == 1:
             pass
+    dp.update(20)
     #thread.start_new_thread(dialogWatch2, ())
     xbmc.executebuiltin("ActivateWindow(busydialog)")
+    xbmc.executebuiltin("Notification(PLEASE WAIT, [B][COLOR=gold]EPTV is Setting Up Your TV Guide[/COLOR] -- [COLOR=green]PLEASE WAIT[/COLOR][/B],,9000)")
     nullPVR   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":false},"id":1}'
     nullLiveTV = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":false},"id":1}'
     jsonSetPVR = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":true},"id":1}'
@@ -168,6 +172,7 @@ def correctPVR():
     xbmc.executeJSONRPC(IPTVon)
     xbmc.executeJSONRPC(nulldemo)
     xbmc.executebuiltin("ActivateWindow(busydialog)")
+    dp.update(50)
     time.sleep(10)    
     moist = xbmcaddon.Addon('pvr.iptvsimple')
     moist.setSetting(id='m3uUrl', value=loginurl)
@@ -175,17 +180,23 @@ def correctPVR():
     moist.setSetting(id='m3uCache', value="false")
     moist.setSetting(id='epgCache', value="false")
     time.sleep(25)
+    dp.update(60)
     #xbmc.executebuiltin("Dialog.Close(busydialog)")
     dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]We\'ve copied your logins to the PVR Guide[/COLOR]',' ','[COLOR white]You [B]MUST[/B] allow time to load the EPG to avoid issues.[/COLOR]')  
     xbmc.executebuiltin("Container.Refresh")
     xbmc.executebuiltin("Dialog.Close(busydialog)")
+    dp.update(90)
     dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]Kodi Need Restart[/COLOR]',' ','[COLOR white][B]Please Restart Kodi[/B][/COLOR]')
     xbmc.executebuiltin("ActivateWindow(busydialog)")
-    time.sleep(25)
+    time.sleep(5)
     xbmc.executebuiltin("Dialog.Close(busydialog)")
     xbmc.executebuiltin("Container.Refresh")
-    time.sleep(25)
-    sys.exit(1)
+    time.sleep(5)
+    dp.create("[COLOR tomato]EyePeaTV[/COLOR]","All Done Closing Kodi","Please Wait")
+    dp.update(100)
+    time.sleep(5)
+    dp.close()
+    os._exit(1)
 
 def peamenyy(params):
     plugintools.log(pnimi+vod_channels("TWFpbiBNZW51")+repr(params))

@@ -199,6 +199,23 @@ def disablePVR(self):
     xbmc.executebuiltin("Container.Refresh")
     dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]Kodi Need Restart[/COLOR]',' ','[COLOR white][B]Please Restart Kodi[/B][/COLOR]')
     os._exit(1)
+	
+def disablePVR2(self):
+    xbmc.executebuiltin("ActivateWindow(busydialog)")
+    nullPVR   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":false},"id":1}'
+    nullLiveTV = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":false},"id":1}'
+    PVRdata   =  xbmc.translatePath(os.path.join('special://home/userdata/addon_data/','pvr.iptvsimple'))
+    if PVRon == 'false':
+        FabAddon.setSetting(id='PVRUpdater', value='true')
+    xbmc.executeJSONRPC(nullLiveTV)
+    time.sleep(2)
+    xbmc.executeJSONRPC(nullPVR)
+    try: shutil.rmtree(PVRdata)
+    except: pass
+    xbmc.executebuiltin("Dialog.Close(busydialog)")
+    xbmc.executebuiltin('Notification(PVR Disabled,[COLOR white]PVR Guide is now disabled[/COLOR],2000,special://home/addons/'+AddonID+'/icon.png)')
+    xbmc.executebuiltin("Container.Refresh")
+
 
 def SpeedChoice():
     choice = dialog.select("[COLOR white]" + AddonTitle + " Speedtest[/COLOR]", ['[COLOR white]Ookla Speedtest[/COLOR]','[COLOR white]Fast.com Speedtest by Netflix[/COLOR]'])

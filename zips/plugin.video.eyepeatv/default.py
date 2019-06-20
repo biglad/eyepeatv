@@ -60,9 +60,9 @@ else:
         buildv = "0.0"
     except:
         buildv = "0.0"
-		
-		
-		
+        
+        
+        
 webversion = float(webversion)
 buildv = float(buildv)
 
@@ -75,6 +75,10 @@ if webversion > buildv:
 RAM = int(xbmc.getFreeMem())
 RAMM = xbmc.getInfoLabel("System.Memory(total)")
 PSACE = xbmc.getInfoLabel("System.FreeSpace")
+
+
+	
+
 def run():
     global pnimi
     global televisioonilink
@@ -117,6 +121,71 @@ def run():
         action = params.get("action")
         exec action+"(params)"
     plugintools.close_item_list()
+	
+def correctPVR():
+    xbmc.executebuiltin("ActivateWindow(busydialog)")
+    xbmc.executebuiltin("Notification(PLEASE WAIT, [B][COLOR=gold]EPTV is Setting Up Your TV Guide[/COLOR] -- [COLOR=green]PLEASE WAIT[/COLOR][/B],,9000)")
+    Username=plugintools.get_setting("Username")
+    Password=plugintools.get_setting("Password")
+    AddonTitle = 'EyePeaTV'
+    #thread.start_new_thread(self.dialogWatch, ())
+    try:
+        connection = urllib2.urlopen(loginurl)
+        print connection.getcode()
+        connection.close()
+        #playlist found, user active & login correct, proceed to addon
+        pass
+        
+    except urllib2.HTTPError, e:
+        print e.getcode()
+        dialog.ok("[COLOR white]Error[/COLOR]",'[COLOR white]This process will not run as your account has expired[/COLOR]',' ','[COLOR white]Please check your account information[/COLOR]')
+        sys.exit(1)
+        xbmc.executebuiltin("Dialog.Close(busydialog)")
+        
+
+    RAM = int(xbmc.getInfoLabel("System.Memory(total)")[:-2])
+    RAMM = xbmc.getInfoLabel("System.Memory(total)")
+    xbmc.executebuiltin("ActivateWindow(busydialog)")
+    if RAM < 1599:
+        choice = xbmcgui.Dialog().yesno('[COLOR white]Low Power Device [COLOR lime]RAM: ' + RAMM + '[/COLOR][/COLOR]', '[COLOR white]Your device has been detected as a low end device[/COLOR]', '[COLOR white]We recommend avoiding PVR usage for this reason[/COLOR]', '[COLOR white]We cannnot support low end devices for PVR[/COLOR]', nolabel='[COLOR lime]OK, Cancel this[/COLOR]',yeslabel='[COLOR red]I know, proceed[/COLOR]')
+        if choice == 0:
+            sys.exit(1)
+        elif choice == 1:
+            pass
+    #thread.start_new_thread(dialogWatch2, ())
+    xbmc.executebuiltin("ActivateWindow(busydialog)")
+    nullPVR   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":false},"id":1}'
+    nullLiveTV = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":false},"id":1}'
+    jsonSetPVR = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":true},"id":1}'
+    IPTVon     = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":true},"id":1}'
+    nulldemo   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.demo","enabled":false},"id":1}'
+    EPGurl   = base64.b64decode("JXM6JXMveG1sdHYucGhwP3VzZXJuYW1lPSVzJnBhc3N3b3JkPSVz")%(lehekylg,pordinumber,Username,Password)
+    xbmc.executebuiltin("ActivateWindow(busydialog)")
+    xbmc.executeJSONRPC(nullPVR)
+    xbmc.executeJSONRPC(nullLiveTV)
+    time.sleep(10)
+    xbmc.executeJSONRPC(jsonSetPVR)
+    xbmc.executeJSONRPC(IPTVon)
+    xbmc.executeJSONRPC(nulldemo)
+    xbmc.executebuiltin("ActivateWindow(busydialog)")
+    time.sleep(10)    
+    moist = xbmcaddon.Addon('pvr.iptvsimple')
+    moist.setSetting(id='m3uUrl', value=loginurl)
+    moist.setSetting(id='epgUrl', value=EPGurl)
+    moist.setSetting(id='m3uCache', value="false")
+    moist.setSetting(id='epgCache', value="false")
+    time.sleep(25)
+    #xbmc.executebuiltin("Dialog.Close(busydialog)")
+    dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]We\'ve copied your logins to the PVR Guide[/COLOR]',' ','[COLOR white]You [B]MUST[/B] allow time to load the EPG to avoid issues.[/COLOR]')  
+    xbmc.executebuiltin("Container.Refresh")
+    xbmc.executebuiltin("Dialog.Close(busydialog)")
+    dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]Kodi Need Restart[/COLOR]',' ','[COLOR white][B]Please Restart Kodi[/B][/COLOR]')
+    xbmc.executebuiltin("ActivateWindow(busydialog)")
+    time.sleep(25)
+    xbmc.executebuiltin("Dialog.Close(busydialog)")
+    xbmc.executebuiltin("Container.Refresh")
+    time.sleep(25)
+    sys.exit(1)
 
 def peamenyy(params):
     plugintools.log(pnimi+vod_channels("TWFpbiBNZW51")+repr(params))
@@ -144,7 +213,7 @@ def peamenyy(params):
 
 
         if not xbmc.getCondVisibility('System.HasPVRAddon'):
-            plugintools.add_item( action=vod_channels("R29EZXYuY29ycmVjdFBWUg=="),   title="[COLOR red][B]Setup Full PVR[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
+            plugintools.add_item( action=vod_channels("R29EZXYuY29ycmVjdFBWUg=="),   title="[COLOR red][B]Setup Full PVR[/B][/COLOR] (TV GUIDE)" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
             #plugintools.add_item( action=vod_channels("R29EZXYuUFZSYmV0YQ=="),   title="[COLOR green][B]Setup PVR without VoD[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
         else:
             plugintools.addItem('[COLOR orange][B]Launch PVR Guide [/B][/COLOR]','speed',11,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
@@ -264,8 +333,30 @@ def license_check2(params):
         dialog.ok('[COLOR white]Invalid Login[/COLOR]','[COLOR white]Incorrect login details found![/COLOR]','[COLOR white]Please check your spelling and case sensitivity[/COLOR]','[COLOR white]Check your password with the team otherwise[/COLOR]')
         plugintools.open_settings_dialog()
     else:
-        xbmc.executebuiltin('ActivateWindow(10025,"plugin://plugin.video.eyepeatv/?action=GoDev.correctPVR",return)')
+        FabAddon = xbmcaddon.Addon('plugin.video.eyepeatv')
+        AddonID = 'plugin.video.eyepeatv'
+        if not xbmc.getCondVisibility('System.HasPVRAddon'):
+		    xbmc.executebuiltin('RunAddon(pvr.iptvsimple)')
+        PVRon = plugintools.get_setting("PVRUpdater")
+        xbmc.executebuiltin("ActivateWindow(busydialog)")
+        nullPVR   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":false},"id":1}'
+        nullLiveTV = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":false},"id":1}'
+        PVRdata   =  xbmc.translatePath(os.path.join('special://home/userdata/addon_data/','pvr.iptvsimple'))
+        if PVRon == 'false':
+            FabAddon.setSetting(id='PVRUpdater', value='true')
+        xbmc.executeJSONRPC(nullLiveTV)
+        time.sleep(2)
+        xbmc.executeJSONRPC(nullPVR)
+        try: shutil.rmtree(PVRdata)
+        except: pass
+        xbmc.executebuiltin("Dialog.Close(busydialog)")
+        xbmc.executebuiltin('Notification(PVR Disabled,[COLOR white]PVR Guide is now disabled[/COLOR],2000,special://home/addons/'+AddonID+'/icon.png)')
+        xbmc.executebuiltin("Container.Refresh")
+        xbmc.sleep(2000)
+        correctPVR()
+        xbmc.sleep(2000)
         xbmc.executebuiltin('Container.Refresh')
+        xbmc.executebuiltin("Dialog.Close(busydialog)")
         exit()
 
 def get_size(start_path):

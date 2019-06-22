@@ -175,7 +175,7 @@ def ServerError():
         exit()
     else:
         exit()  
-		
+        
 
 def install():
 
@@ -198,13 +198,14 @@ def install():
 
 def setplayermodes():
     #dp.close()
-    xbmc.executebuiltin('ActivateWindow(10040,"addons://repository.xbmc.org/kodi.inputstream",return)')
-    dialog = xbmcgui.Dialog()
-    dialog.ok("[COLOR=red][B]INFORMATION[/COLOR][/B]", "ENABLE!!!", "[COLOR=yellow]ALL OPTIONS","These need to be on for best playback[/COLOR]")
+    if platform == "windows":
+        xbmc.executebuiltin('ActivateWindow(10040,"addons://repository.xbmc.org/kodi.inputstream",return)')
+        dialog = xbmcgui.Dialog()
+        dialog.ok("[COLOR=red][B]INFORMATION[/COLOR][/B]", "ENABLE!!!", "[COLOR=yellow]ALL OPTIONS","These need to be on for best playback[/COLOR]")
     
-    while xbmc.getCondVisibility("Window.IsActive(10040)"):
-        xbmc.sleep(1000)  		
+        while xbmc.getCondVisibility("Window.IsActive(10040)"):
+            xbmc.sleep(1000)        
     install()
-    exit()	
+    exit()  
 setplayermodes()
  

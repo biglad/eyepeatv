@@ -513,7 +513,7 @@ def record_and_play(channelname):
 
     start = utcnow - timedelta(seconds=utc_offset)
 
-    hours = xbmcgui.Dialog().input("Hours",type=xbmcgui.INPUT_NUMERIC,defaultt="4")
+    hours = xbmcgui.Dialog().input("Hours",type=xbmcgui.INPUT_NUMERIC,defaultt="2")
     #log(hours)
 
     stop = utcnow - timedelta(seconds=utc_offset) + timedelta(hours=int(hours))
@@ -524,7 +524,7 @@ def record_and_play(channelname):
     channelid = None
     threading.Thread(target=record_once_thread,args=[None, do_refresh, watch, remind, channelid, channelname, start, stop, True, None]).start()
     time.sleep(5)
-
+    xbmc.executebuiltin("Container.Refresh")
     return recordings()
 
 
@@ -2528,6 +2528,8 @@ def service_thread():
             for p in programmes:
                 uid, channel , title , sub_title , date , description , episode, categories = p
                 record_once(programmeid=uid, channelid=jchannelid.encode("utf8"), channelname=jchannelname.encode("utf8"), do_refresh=False, watch=watch, remind=remind)
+            xbmc.sleep(1000)
+            xbmc.executebuiltin("Container.Refresh")
 
         elif jtype == "DAILY":
             if jtitle:
@@ -2624,6 +2626,7 @@ def delete_recording(label, path):
     length = int(len('.' + plugin.get_setting("ffmpeg.ext")))
     xbmcvfs.delete(path[:-length]+'.json')
     refresh()
+    xbmc.executebuiltin("Container.Refresh")
 
 
 @plugin.route('/delete_all_recordings')
@@ -2644,6 +2647,7 @@ def delete_all_recordings():
 
     rmdirs(dir)
     refresh()
+    xbmc.executebuiltin("Container.Refresh")
 
 
 def find_files(root):

@@ -21,7 +21,7 @@ xbmc.executebuiltin("Notification(EyePeaTV, Checking For Updates,5000,"+__icon__
 def UpdateCheck():
     xbmc.executebuiltin('xbmc.UpdateAddonRepos')
     xbmc.executebuiltin('xbmc.UpdateLocalAddons')
-    xbmc.executebuiltin("XBMC.AlarmClock('MTVBCS',XBMC.RunAddon(script.eptv.core),60,silent)")
+    xbmc.executebuiltin("XBMC.AlarmClock('MTVBCS',XBMC.RunAddon(script.eptv.core),240,silent)")
     return
             
 

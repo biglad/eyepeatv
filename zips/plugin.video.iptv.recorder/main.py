@@ -2528,8 +2528,6 @@ def service_thread():
             for p in programmes:
                 uid, channel , title , sub_title , date , description , episode, categories = p
                 record_once(programmeid=uid, channelid=jchannelid.encode("utf8"), channelname=jchannelname.encode("utf8"), do_refresh=False, watch=watch, remind=remind)
-            xbmc.sleep(1000)
-            xbmc.executebuiltin("Container.Refresh")
 
         elif jtype == "DAILY":
             if jtitle:
@@ -3394,14 +3392,14 @@ def index():
 
 
 
-    if plugin.get_setting('show.skin',bool):
-        items.append(
-        {
-            'label': "[COLOR yellow]NEW! Create Estuary (IPTV Recorder) Skin[/COLOR]",
-            'path': plugin.url_for('estuary'),
-            'thumbnail':get_icon_path('popular'),
-            'context_menu': context_items,
-        })
+    #if plugin.get_setting('show.skin',bool):
+    #    items.append(
+    #    {
+    #        'label': "[COLOR yellow]NEW! Create Estuary (IPTV Recorder) Skin[/COLOR]",
+    #        'path': plugin.url_for('estuary'),
+    #        'thumbnail':get_icon_path('popular'),
+    #        'context_menu': context_items,
+    #    })
 
     items.append(
     {

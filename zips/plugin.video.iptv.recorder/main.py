@@ -513,7 +513,7 @@ def record_and_play(channelname):
 
     start = utcnow - timedelta(seconds=utc_offset)
 
-    hours = xbmcgui.Dialog().input("Hours",type=xbmcgui.INPUT_NUMERIC,defaultt="4")
+    hours = xbmcgui.Dialog().input("Hours",type=xbmcgui.INPUT_NUMERIC,defaultt="2")
     #log(hours)
 
     stop = utcnow - timedelta(seconds=utc_offset) + timedelta(hours=int(hours))
@@ -524,7 +524,7 @@ def record_and_play(channelname):
     channelid = None
     threading.Thread(target=record_once_thread,args=[None, do_refresh, watch, remind, channelid, channelname, start, stop, True, None]).start()
     time.sleep(5)
-
+    xbmc.executebuiltin("Container.Refresh")
     return recordings()
 
 
@@ -2624,6 +2624,7 @@ def delete_recording(label, path):
     length = int(len('.' + plugin.get_setting("ffmpeg.ext")))
     xbmcvfs.delete(path[:-length]+'.json')
     refresh()
+    xbmc.executebuiltin("Container.Refresh")
 
 
 @plugin.route('/delete_all_recordings')
@@ -2644,6 +2645,7 @@ def delete_all_recordings():
 
     rmdirs(dir)
     refresh()
+    xbmc.executebuiltin("Container.Refresh")
 
 
 def find_files(root):
@@ -3390,14 +3392,14 @@ def index():
 
 
 
-    if plugin.get_setting('show.skin',bool):
-        items.append(
-        {
-            'label': "[COLOR yellow]NEW! Create Estuary (IPTV Recorder) Skin[/COLOR]",
-            'path': plugin.url_for('estuary'),
-            'thumbnail':get_icon_path('popular'),
-            'context_menu': context_items,
-        })
+    #if plugin.get_setting('show.skin',bool):
+    #    items.append(
+    #    {
+    #        'label': "[COLOR yellow]NEW! Create Estuary (IPTV Recorder) Skin[/COLOR]",
+    #        'path': plugin.url_for('estuary'),
+    #        'thumbnail':get_icon_path('popular'),
+    #        'context_menu': context_items,
+    #    })
 
     items.append(
     {

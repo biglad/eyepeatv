@@ -37,18 +37,20 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<label> </label>
+			<label>[COLOR gold]Eye Pea TV[/COLOR]</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
 			<thumb>special://skin/extras/icons/new/eptv.png</thumb>
 			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv",return)</property>
 			<property name="widgetStyle">List</property>
 			<property name="widgetLiveTV">true</property>
+			<property name="background">C:\Users\khanb\Desktop\background11.png</property>
+			<property name="backgroundName">C:\Users\khanb\Desktop\background11.png</property>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.eyepeatv",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv",return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">plugin-video-eyepeatv</property>
-			<property name="hasSubmenu">False</property>
+			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
@@ -487,6 +489,164 @@
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=5151&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5DCCTV+%26+WebCams%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=5151&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5DCCTV+%26+WebCams%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colororange-livetv-color)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">3</property>
+			<label>24/7 Movies</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Movies%20%5b%2fCOLOR%5d%2017%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsdmovies2.xml",return)</onclick>
+			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Movies%20%5b%2fCOLOR%5d%2017%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsdmovies2.xml",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">3</property>
+			<label>24/7 TV Shows</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20TV%20Shows%20%5b%2fCOLOR%5d%2090%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd2473.xml",return)</onclick>
+			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20TV%20Shows%20%5b%2fCOLOR%5d%2090%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd2473.xml",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">3</property>
+			<label>24/7 Kids</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Kids%20Shows%20%5b%2fCOLOR%5d%2015%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd247kids.xml",return)</onclick>
+			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Kids%20Shows%20%5b%2fCOLOR%5d%2015%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd247kids.xml",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">3</property>
+			<label>Eye Pea Tv Main Menu</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.eyepeatv",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">3</property>
+			<label>Live TV Search</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=TVsearch&amp;title=%5BCOLOR+gold%5D%5BB%5DLive+EyePeaTV+Search%5B%2FB%5D%5B%2FCOLOR%5D+%28Enter+tv+show+or+movie+name%29&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5CSearch-icon.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=TVsearch&amp;title=%5BCOLOR+gold%5D%5BB%5DLive+EyePeaTV+Search%5B%2FB%5D%5B%2FCOLOR%5D+%28Enter+tv+show+or+movie+name%29&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5CSearch-icon.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">3</property>
+			<label>TV Channels</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<visible>[System.HasPVRAddon] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<onclick>ActivateWindow(TVChannels)</onclick>
+			<property name="path">ActivateWindow(TVChannels)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">3</property>
+			<label>TV Guide</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<visible>[System.HasPVRAddon] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<onclick>ActivateWindow(TVGuide)</onclick>
+			<property name="path">ActivateWindow(TVGuide)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
+			<property name="mainmenuid">3</property>
+			<label>Tools</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=maintMenu&amp;title=%5BCOLOR+white%5D%5BB%5DMaintenance+Tools%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cicon.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=maintMenu&amp;title=%5BCOLOR+white%5D%5BB%5DMaintenance+Tools%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cicon.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
+			<property name="mainmenuid">3</property>
+			<label>My Info</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=execute_ainfo&amp;title=%5BCOLOR+orange%5D%5BB%5DAccount+Information%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cmyacc.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=execute_ainfo&amp;title=%5BCOLOR+orange%5D%5BB%5DAccount+Information%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cmyacc.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="10">
+			<property name="id">$NUMBER[10]</property>
+			<property name="mainmenuid">3</property>
+			<label>TV Guide Reload</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>PlayMedia("plugin://plugin.video.eyepeatv/?url=speed&amp;mode=4632&amp;name=%5BCOLOR+orange%5D%5BB%5DReload+EPG+Data%5B%2FB%5D%5B%2FCOLOR%5D&amp;fanart=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cbackground.png",return)</onclick>
+			<property name="path">PlayMedia("plugin://plugin.video.eyepeatv/?url=speed&amp;mode=4632&amp;name=%5BCOLOR+orange%5D%5BB%5DReload+EPG+Data%5B%2FB%5D%5B%2FCOLOR%5D&amp;fanart=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cbackground.png",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="11">
+			<property name="id">$NUMBER[11]</property>
+			<property name="mainmenuid">3</property>
+			<label>IPTV Recorder</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>PlayMedia("plugin://plugin.video.eyepeatv/?url=speed&amp;mode=7001&amp;name=%5BCOLOR+orange%5D%5BB%5DOpen+IPTV+Recoder%5B%2FB%5D%5B%2FCOLOR%5D&amp;fanart=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cbackground.png",return)</onclick>
+			<property name="path">PlayMedia("plugin://plugin.video.eyepeatv/?url=speed&amp;mode=7001&amp;name=%5BCOLOR+orange%5D%5BB%5DOpen+IPTV+Recoder%5B%2FB%5D%5B%2FCOLOR%5D&amp;fanart=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cbackground.png",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="12">
+			<property name="id">$NUMBER[12]</property>
+			<property name="mainmenuid">3</property>
+			<label>Turn Off TV Guide</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>PlayMedia("plugin://plugin.video.eyepeatv/?action=GoDev.disablePVR&amp;title=%5BCOLOR+gold%5D%5BB%5DDisable+PVR%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Clivetv.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
+			<property name="path">PlayMedia("plugin://plugin.video.eyepeatv/?action=GoDev.disablePVR&amp;title=%5BCOLOR+gold%5D%5BB%5DDisable+PVR%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Clivetv.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="13">
+			<property name="id">$NUMBER[13]</property>
+			<property name="mainmenuid">3</property>
+			<label>Set Up TV Guide</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>PlayMedia("plugin://plugin.video.eyepeatv/?action=GoDev.correctPVR&amp;title=%5BCOLOR+red%5D%5BB%5DSetup+Full+PVR%5B%2FB%5D%5B%2FCOLOR%5D+%28TV+GUIDE%29&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Clivetv.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
+			<property name="path">PlayMedia("plugin://plugin.video.eyepeatv/?action=GoDev.correctPVR&amp;title=%5BCOLOR+red%5D%5BB%5DSetup+Full+PVR%5B%2FB%5D%5B%2FCOLOR%5D+%28TV+GUIDE%29&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Clivetv.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
@@ -1473,10 +1633,324 @@
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-plugin-video-eyepeatv">
-		<description>No items</description>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">3</property>
+			<label>24/7 Movies</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Movies%20%5b%2fCOLOR%5d%2017%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsdmovies2.xml",return)</onclick>
+			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Movies%20%5b%2fCOLOR%5d%2017%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsdmovies2.xml",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">3</property>
+			<label>24/7 TV Shows</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20TV%20Shows%20%5b%2fCOLOR%5d%2090%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd2473.xml",return)</onclick>
+			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20TV%20Shows%20%5b%2fCOLOR%5d%2090%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd2473.xml",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">3</property>
+			<label>24/7 Kids</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Kids%20Shows%20%5b%2fCOLOR%5d%2015%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd247kids.xml",return)</onclick>
+			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Kids%20Shows%20%5b%2fCOLOR%5d%2015%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd247kids.xml",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">3</property>
+			<label>Eye Pea Tv Main Menu</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.eyepeatv",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">3</property>
+			<label>Live TV Search</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=TVsearch&amp;title=%5BCOLOR+gold%5D%5BB%5DLive+EyePeaTV+Search%5B%2FB%5D%5B%2FCOLOR%5D+%28Enter+tv+show+or+movie+name%29&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5CSearch-icon.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=TVsearch&amp;title=%5BCOLOR+gold%5D%5BB%5DLive+EyePeaTV+Search%5B%2FB%5D%5B%2FCOLOR%5D+%28Enter+tv+show+or+movie+name%29&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5CSearch-icon.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">3</property>
+			<label>TV Channels</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<visible>System.HasPVRAddon</visible>
+			<onclick>ActivateWindow(TVChannels)</onclick>
+			<property name="path">ActivateWindow(TVChannels)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">3</property>
+			<label>TV Guide</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<visible>System.HasPVRAddon</visible>
+			<onclick>ActivateWindow(TVGuide)</onclick>
+			<property name="path">ActivateWindow(TVGuide)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
+			<property name="mainmenuid">3</property>
+			<label>Tools</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=maintMenu&amp;title=%5BCOLOR+white%5D%5BB%5DMaintenance+Tools%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cicon.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=maintMenu&amp;title=%5BCOLOR+white%5D%5BB%5DMaintenance+Tools%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cicon.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
+			<property name="mainmenuid">3</property>
+			<label>My Info</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=execute_ainfo&amp;title=%5BCOLOR+orange%5D%5BB%5DAccount+Information%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cmyacc.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=execute_ainfo&amp;title=%5BCOLOR+orange%5D%5BB%5DAccount+Information%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cmyacc.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="10">
+			<property name="id">$NUMBER[10]</property>
+			<property name="mainmenuid">3</property>
+			<label>TV Guide Reload</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>PlayMedia("plugin://plugin.video.eyepeatv/?url=speed&amp;mode=4632&amp;name=%5BCOLOR+orange%5D%5BB%5DReload+EPG+Data%5B%2FB%5D%5B%2FCOLOR%5D&amp;fanart=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cbackground.png",return)</onclick>
+			<property name="path">PlayMedia("plugin://plugin.video.eyepeatv/?url=speed&amp;mode=4632&amp;name=%5BCOLOR+orange%5D%5BB%5DReload+EPG+Data%5B%2FB%5D%5B%2FCOLOR%5D&amp;fanart=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cbackground.png",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="11">
+			<property name="id">$NUMBER[11]</property>
+			<property name="mainmenuid">3</property>
+			<label>IPTV Recorder</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>PlayMedia("plugin://plugin.video.eyepeatv/?url=speed&amp;mode=7001&amp;name=%5BCOLOR+orange%5D%5BB%5DOpen+IPTV+Recoder%5B%2FB%5D%5B%2FCOLOR%5D&amp;fanart=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cbackground.png",return)</onclick>
+			<property name="path">PlayMedia("plugin://plugin.video.eyepeatv/?url=speed&amp;mode=7001&amp;name=%5BCOLOR+orange%5D%5BB%5DOpen+IPTV+Recoder%5B%2FB%5D%5B%2FCOLOR%5D&amp;fanart=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cbackground.png",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="12">
+			<property name="id">$NUMBER[12]</property>
+			<property name="mainmenuid">3</property>
+			<label>Turn Off TV Guide</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>PlayMedia("plugin://plugin.video.eyepeatv/?action=GoDev.disablePVR&amp;title=%5BCOLOR+gold%5D%5BB%5DDisable+PVR%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Clivetv.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
+			<property name="path">PlayMedia("plugin://plugin.video.eyepeatv/?action=GoDev.disablePVR&amp;title=%5BCOLOR+gold%5D%5BB%5DDisable+PVR%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Clivetv.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="13">
+			<property name="id">$NUMBER[13]</property>
+			<property name="mainmenuid">3</property>
+			<label>Set Up TV Guide</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>PlayMedia("plugin://plugin.video.eyepeatv/?action=GoDev.correctPVR&amp;title=%5BCOLOR+red%5D%5BB%5DSetup+Full+PVR%5B%2FB%5D%5B%2FCOLOR%5D+%28TV+GUIDE%29&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Clivetv.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
+			<property name="path">PlayMedia("plugin://plugin.video.eyepeatv/?action=GoDev.correctPVR&amp;title=%5BCOLOR+red%5D%5BB%5DSetup+Full+PVR%5B%2FB%5D%5B%2FCOLOR%5D+%28TV+GUIDE%29&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Clivetv.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
 	</include>
 	<include name="skinshortcuts-group-alt-plugin-video-eyepeatv">
-		<description>No items</description>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">3</property>
+			<label>24/7 Movies</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Movies%20%5b%2fCOLOR%5d%2017%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsdmovies2.xml",return)</onclick>
+			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Movies%20%5b%2fCOLOR%5d%2017%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsdmovies2.xml",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">3</property>
+			<label>24/7 TV Shows</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20TV%20Shows%20%5b%2fCOLOR%5d%2090%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd2473.xml",return)</onclick>
+			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20TV%20Shows%20%5b%2fCOLOR%5d%2090%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd2473.xml",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">3</property>
+			<label>24/7 Kids</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Kids%20Shows%20%5b%2fCOLOR%5d%2015%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd247kids.xml",return)</onclick>
+			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Kids%20Shows%20%5b%2fCOLOR%5d%2015%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd247kids.xml",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">3</property>
+			<label>Eye Pea Tv Main Menu</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.eyepeatv",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">3</property>
+			<label>Live TV Search</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=TVsearch&amp;title=%5BCOLOR+gold%5D%5BB%5DLive+EyePeaTV+Search%5B%2FB%5D%5B%2FCOLOR%5D+%28Enter+tv+show+or+movie+name%29&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5CSearch-icon.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=TVsearch&amp;title=%5BCOLOR+gold%5D%5BB%5DLive+EyePeaTV+Search%5B%2FB%5D%5B%2FCOLOR%5D+%28Enter+tv+show+or+movie+name%29&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5CSearch-icon.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">3</property>
+			<label>TV Channels</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<visible>[System.HasPVRAddon] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<onclick>ActivateWindow(TVChannels)</onclick>
+			<property name="path">ActivateWindow(TVChannels)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">3</property>
+			<label>TV Guide</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<visible>[System.HasPVRAddon] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<onclick>ActivateWindow(TVGuide)</onclick>
+			<property name="path">ActivateWindow(TVGuide)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
+			<property name="mainmenuid">3</property>
+			<label>Tools</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=maintMenu&amp;title=%5BCOLOR+white%5D%5BB%5DMaintenance+Tools%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cicon.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=maintMenu&amp;title=%5BCOLOR+white%5D%5BB%5DMaintenance+Tools%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cicon.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
+			<property name="mainmenuid">3</property>
+			<label>My Info</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=execute_ainfo&amp;title=%5BCOLOR+orange%5D%5BB%5DAccount+Information%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cmyacc.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=execute_ainfo&amp;title=%5BCOLOR+orange%5D%5BB%5DAccount+Information%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cmyacc.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="10">
+			<property name="id">$NUMBER[10]</property>
+			<property name="mainmenuid">3</property>
+			<label>TV Guide Reload</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>PlayMedia("plugin://plugin.video.eyepeatv/?url=speed&amp;mode=4632&amp;name=%5BCOLOR+orange%5D%5BB%5DReload+EPG+Data%5B%2FB%5D%5B%2FCOLOR%5D&amp;fanart=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cbackground.png",return)</onclick>
+			<property name="path">PlayMedia("plugin://plugin.video.eyepeatv/?url=speed&amp;mode=4632&amp;name=%5BCOLOR+orange%5D%5BB%5DReload+EPG+Data%5B%2FB%5D%5B%2FCOLOR%5D&amp;fanart=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cbackground.png",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="11">
+			<property name="id">$NUMBER[11]</property>
+			<property name="mainmenuid">3</property>
+			<label>IPTV Recorder</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>PlayMedia("plugin://plugin.video.eyepeatv/?url=speed&amp;mode=7001&amp;name=%5BCOLOR+orange%5D%5BB%5DOpen+IPTV+Recoder%5B%2FB%5D%5B%2FCOLOR%5D&amp;fanart=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cbackground.png",return)</onclick>
+			<property name="path">PlayMedia("plugin://plugin.video.eyepeatv/?url=speed&amp;mode=7001&amp;name=%5BCOLOR+orange%5D%5BB%5DOpen+IPTV+Recoder%5B%2FB%5D%5B%2FCOLOR%5D&amp;fanart=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cbackground.png",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="12">
+			<property name="id">$NUMBER[12]</property>
+			<property name="mainmenuid">3</property>
+			<label>Turn Off TV Guide</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>PlayMedia("plugin://plugin.video.eyepeatv/?action=GoDev.disablePVR&amp;title=%5BCOLOR+gold%5D%5BB%5DDisable+PVR%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Clivetv.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
+			<property name="path">PlayMedia("plugin://plugin.video.eyepeatv/?action=GoDev.disablePVR&amp;title=%5BCOLOR+gold%5D%5BB%5DDisable+PVR%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Clivetv.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="13">
+			<property name="id">$NUMBER[13]</property>
+			<property name="mainmenuid">3</property>
+			<label>Set Up TV Guide</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>PlayMedia("plugin://plugin.video.eyepeatv/?action=GoDev.correctPVR&amp;title=%5BCOLOR+red%5D%5BB%5DSetup+Full+PVR%5B%2FB%5D%5B%2FCOLOR%5D+%28TV+GUIDE%29&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Clivetv.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
+			<property name="path">PlayMedia("plugin://plugin.video.eyepeatv/?action=GoDev.correctPVR&amp;title=%5BCOLOR+red%5D%5BB%5DSetup+Full+PVR%5B%2FB%5D%5B%2FCOLOR%5D+%28TV+GUIDE%29&amp;url=&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Clivetv.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
 	</include>
 	<include name="skinshortcuts-group-plugin-video-eyepeatv-1">
 		<description>No items</description>

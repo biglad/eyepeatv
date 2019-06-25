@@ -31,7 +31,7 @@ lehekylg= base64.b64decode("aHR0cHM6Ly9lcHR2LmNvLnVr") #####
 pordinumber="443"
 BASEURL = base64.b64decode("bmFkYQ==")
 AddonRes = xbmc.translatePath(os.path.join('special://home','addons',AddonID,'resources'))
-loginurl   = base64.b64decode("JXM6JXMvcGxheS5waHA/dT0lcyZwPSVzJnR5cGU9bTN1X3BsdXMmb3V0cHV0PXRz")%(lehekylg,pordinumber,Username,Password)
+loginurl   = base64.b64decode("JXM6JXMvcGxheS5waHA/dT0lcyZwPSVzJnR5cGU9bTN1X3BsdXMmb3V0cHV0PW0zdTg=")%(lehekylg,pordinumber,Username,Password)
 THE_DATE = time.strftime("%Y%m%d")
 now = datetime.now()
 
@@ -102,7 +102,7 @@ def PVRbeta(self):
 
     f = open(BetaPVR, 'a')
 
-    UserList = base64.b64decode("JXM6JXMvcGxheS5waHA/dT0lcyZwPSVzJnR5cGU9bTN1X3BsdXMmb3V0cHV0PXRz")%(lehekylg,pordinumber,Username,Password)
+    UserList = base64.b64decode("JXM6JXMvcGxheS5waHA/dT0lcyZwPSVzJnR5cGU9bTN1X3BsdXMmb3V0cHV0PW0zdTg=")%(lehekylg,pordinumber,Username,Password)
     link = open_url(UserList).replace('\n','').replace('\r','&split&')
     a,b = link.split('&split&#EXTINF:-1 tvg-id="" tvg-name="Absolute 80')
     OutpuT = a.replace("&split&","\n").replace("#EXTM3U","#EXTM3U\n")
@@ -180,7 +180,8 @@ def correctPVR(self):
     xbmc.executebuiltin("Container.Refresh")
     xbmc.executebuiltin("Dialog.Close(busydialog)")
     dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]Kodi Need Restart[/COLOR]',' ','[COLOR white][B]Please Restart Kodi[/B][/COLOR]')
-    os._exit(1)
+    exit()
+    #os._exit(1)
 
 def disablePVR(self):
     xbmc.executebuiltin("ActivateWindow(busydialog)")
@@ -198,7 +199,8 @@ def disablePVR(self):
     xbmc.executebuiltin('Notification(PVR Disabled,[COLOR white]PVR Guide is now disabled[/COLOR],2000,special://home/addons/'+AddonID+'/icon.png)')
     xbmc.executebuiltin("Container.Refresh")
     dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]Kodi Need Restart[/COLOR]',' ','[COLOR white][B]Please Restart Kodi[/B][/COLOR]')
-    os._exit(1)
+    exit()
+    #os._exit(1)
 	
 def disablePVR2(self):
     xbmc.executebuiltin("ActivateWindow(busydialog)")
@@ -215,6 +217,7 @@ def disablePVR2(self):
     xbmc.executebuiltin("Dialog.Close(busydialog)")
     xbmc.executebuiltin('Notification(PVR Disabled,[COLOR white]PVR Guide is now disabled[/COLOR],2000,special://home/addons/'+AddonID+'/icon.png)')
     xbmc.executebuiltin("Container.Refresh")
+    exit()
 
 
 def SpeedChoice():

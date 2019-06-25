@@ -29,9 +29,9 @@ FANART = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id, 'f
 APKS = base64.b64decode("aHR0cDovL2ZhYmlwdHYuY29tL2Fwa3MvbmV3YXBrcy50eHQ=")
 HOME =  xbmc.translatePath('special://home/')
 buildfile = "version.txt"
-#lehekylg= base64.b64decode("aHR0cDovL3dhdGNoLmdvdGRhcmsuY29t") #DM
-lehekylg= base64.b64decode("aHR0cHM6Ly9lcHR2LmNvLnVr") #EPTV
-pordinumber="443"
+lehekylg= base64.b64decode("aHR0cDovL3dhdGNoLmdvdGRhcmsuY29t") #DM
+#lehekylg= base64.b64decode("aHR0cDovL2VwdHYuY28udWs=") #EPTV
+pordinumber="80"
 message = "VU5BVVRIT1JJWkVEIEVESVQgT0YgQURET04h"
 kasutajanimi=plugintools.get_setting("Username")
 salasona=plugintools.get_setting("Password")
@@ -46,8 +46,9 @@ BASEURL = base64.b64decode("JXM6JXMvcGxheS5waHA/dT0lcyZwPSVzJnR5cGU9bTN1X3BsdXMm
 
 
 LOAD_LIVEchan = os.path.join( plugintools.get_runtime_path() , "resources" , "art/arch" )
-loginurl   = base64.b64decode("JXM6JXMvcGxheS5waHA/dT0lcyZwPSVzJnR5cGU9bTN1X3BsdXMmb3V0cHV0PXRz")%(lehekylg,pordinumber,kasutajanimi,salasona)
-xbmc.log(loginurl,2)
+loginurl   = base64.b64decode("JXM6JXMvcGxheS5waHA/dT0lcyZwPSVzJnR5cGU9bTN1X3BsdXMmb3V0cHV0PXRz")%(lehekylg,pordinumber,kasutajanimi,salasona) #EPTV
+#loginurl   = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD10cw==")%(lehekylg,pordinumber,kasutajanimi,salasona) #DM
+#xbmc.log(loginurl,2)
 webversion = urllib2.urlopen('http://eptv.co.uk/version.txt').read()
 
 

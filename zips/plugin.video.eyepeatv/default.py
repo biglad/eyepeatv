@@ -244,6 +244,7 @@ def peamenyy(params):
         plugintools.add_item( action=vod_channels("bWFpbnRNZW51"),   title="[COLOR white][B]Maintenance Tools[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
         plugintools.add_item( action=vod_channels("VG9vbHM="),   title="[COLOR pink][B]Tools & Settings[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
         plugintools.addItem('[COLOR orange][B]Install or Re-Install EyePeaTV Build[/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
+        #plugintools.addItem('[COLOR gold][B]EPTV News[/B][/COLOR]','speed',3372,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
 
     elif channels != 1 and GoDev.mode != 1:
         plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR orange][B]Step 1. Visit:[/B][/COLOR] [COLOR gold][B]eptv.co.uk[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False )

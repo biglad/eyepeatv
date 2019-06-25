@@ -720,3 +720,8 @@ elif mode == 4632:
 elif mode == 1234:
     try: os.remove(MZip)
     except: pass
+	
+elif mode == 3372:
+    import news
+    TypeOfMessage="t"; (NewImage,NewMessage)=news.FetchNews();
+    news.CheckNews(TypeOfMessage,NewImage,NewMessage,True);

@@ -27,11 +27,11 @@ MZip     = xbmc.translatePath('special://home/userdata/Database/Epg12.db')
 Username=plugintools.get_setting("Username")
 Password=plugintools.get_setting("Password")
 PVRon = plugintools.get_setting("PVRUpdater")
-lehekylg= base64.b64decode("aHR0cDovL3dhdGNoLmdvdGRhcmsuY29t") #####
-pordinumber="80"
+lehekylg= base64.b64decode("aHR0cHM6Ly9lcHR2LmNvLnVr") #####
+pordinumber="443"
 BASEURL = base64.b64decode("bmFkYQ==")
 AddonRes = xbmc.translatePath(os.path.join('special://home','addons',AddonID,'resources'))
-loginurl   = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tM3U4")%(lehekylg,pordinumber,Username,Password)
+loginurl   = base64.b64decode("JXM6JXMvcGxheS5waHA/dT0lcyZwPSVzJnR5cGU9bTN1X3BsdXMmb3V0cHV0PXRz")%(lehekylg,pordinumber,Username,Password)
 THE_DATE = time.strftime("%Y%m%d")
 now = datetime.now()
 
@@ -86,7 +86,7 @@ def PVRbeta(self):
     jsonSetPVR = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":true},"id":1}'
     IPTVon     = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":true},"id":1}'
     nulldemo   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.demo","enabled":false},"id":1}'
-    EPGurl   = base64.b64decode("JXM6JXMveG1sdHYucGhwP3VzZXJuYW1lPSVzJnBhc3N3b3JkPSVz")%(lehekylg,pordinumber,Username,Password)
+    EPGurl   = base64.b64decode("JXM6JXMveG1sdHYucGhwP3U9JXMmcD0lcw==")%(lehekylg,pordinumber,Username,Password)
     
     xbmc.executeJSONRPC(nullLiveTV)
     xbmc.executeJSONRPC(nulldemo)
@@ -102,7 +102,7 @@ def PVRbeta(self):
 
     f = open(BetaPVR, 'a')
 
-    UserList = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tM3U4")%(lehekylg,pordinumber,Username,Password)
+    UserList = base64.b64decode("JXM6JXMvcGxheS5waHA/dT0lcyZwPSVzJnR5cGU9bTN1X3BsdXMmb3V0cHV0PXRz")%(lehekylg,pordinumber,Username,Password)
     link = open_url(UserList).replace('\n','').replace('\r','&split&')
     a,b = link.split('&split&#EXTINF:-1 tvg-id="" tvg-name="Absolute 80')
     OutpuT = a.replace("&split&","\n").replace("#EXTM3U","#EXTM3U\n")
@@ -159,7 +159,7 @@ def correctPVR(self):
     jsonSetPVR = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":true},"id":1}'
     IPTVon     = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":true},"id":1}'
     nulldemo   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.demo","enabled":false},"id":1}'
-    EPGurl   = base64.b64decode("JXM6JXMveG1sdHYucGhwP3VzZXJuYW1lPSVzJnBhc3N3b3JkPSVz")%(lehekylg,pordinumber,Username,Password)
+    EPGurl   = base64.b64decode("JXM6JXMveG1sdHYucGhwP3U9JXMmcD0lcw==")%(lehekylg,pordinumber,Username,Password)
 
     xbmc.executeJSONRPC(nullPVR)
     xbmc.executeJSONRPC(nullLiveTV)

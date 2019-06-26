@@ -29,7 +29,7 @@ FANART = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id, 'f
 APKS = base64.b64decode("aHR0cDovL2ZhYmlwdHYuY29tL2Fwa3MvbmV3YXBrcy50eHQ=")
 HOME =  xbmc.translatePath('special://home/')
 buildfile = "version.txt"
-lehekylg= base64.b64decode("aHR0cDovL3dhdGNoLmdvdGRhcmsuY29t") #DM
+lehekylg= base64.b64decode("aHR0cDovL2dvdGRhcmsuY29t") #DM
 #lehekylg= base64.b64decode("aHR0cDovL2VwdHYuY28udWs=") #EPTV
 pordinumber="80"
 message = "VU5BVVRIT1JJWkVEIEVESVQgT0YgQURET04h"

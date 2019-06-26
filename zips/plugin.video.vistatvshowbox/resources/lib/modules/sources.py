@@ -383,8 +383,8 @@ class sources:
         debrid_list = debrid.debrid_resolvers
         debrid_status = debrid.status()
         
-        total_format = '[COLOR %s][B]%s[/B][/COLOR]'
-        pdiag_format = ' 4K: %s | 1080p: %s | 720p: %s | SD: %s | %s: %s'.split('|')
+        total_format = '[COLOR %s]%s[/COLOR]'
+        pdiag_format = ' 4K:%s |1080p:%s |720p:%s |SD:%s |%s:%s'.split('|')
         pdiag_bg_format = '4K:%s(%s)|1080p:%s(%s)|720p:%s(%s)|SD:%s(%s)|T:%s(%s)'.split('|')
         
         for i in range(0, 4 * timeout):

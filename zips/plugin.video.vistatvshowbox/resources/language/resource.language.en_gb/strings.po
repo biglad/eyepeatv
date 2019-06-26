@@ -936,7 +936,7 @@ msgid "[COLOR red]• [/COLOR]Preparing sources"
 msgstr ""
 
 msgctxt "#32601"
-msgid "[COLOR red]• [/COLOR]Total"
+msgid "Total"
 msgstr ""
 
 msgctxt "#32602"
@@ -956,11 +956,11 @@ msgid "[COLOR red]• [/COLOR][COLOR red]Click to clear search history[/COLOR]"
 msgstr ""
 
 msgctxt "#32606"
-msgid "[COLOR red]• [/COLOR]Paid"
+msgid "Paid"
 msgstr ""
 
 msgctxt "#32607"
-msgid "[COLOR red]• [/COLOR]Norm"
+msgid "Norm"
 msgstr ""
 
 msgctxt "#32608"

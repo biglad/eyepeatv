@@ -24,7 +24,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['tinydl.com', 'phazeddl.me']
-        self.base_link = 'http://phazeddl.me'
+        self.base_link = 'https://phazeddl.me'
         self.search_link = '/?s=%s'
 
 

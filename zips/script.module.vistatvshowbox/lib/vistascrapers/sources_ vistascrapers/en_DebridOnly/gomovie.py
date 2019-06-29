@@ -24,7 +24,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domain = 'go-movie.org'
-        self.base_link = 'https://go-movie.org'
+        self.base_link = 'https://mftwbb.com/'
         self.search_link = '/index.php?do=search&subaction=search&story=%s'
         self.search_options = '&search_start=0&full_search=1&result_from=1&titleonly=3&searchuser=&replyless=1' \
                               '&replylimit=0&searchdate=0&beforeafter=after&sortby=date&resorder=desc&showposts=0' \

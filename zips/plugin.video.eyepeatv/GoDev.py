@@ -93,7 +93,7 @@ def PVRbeta(self):
     xbmc.executeJSONRPC(nullPVR)
     xbmc.executeJSONRPC(nullRTMP)
     time.sleep(2)
-    
+    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "pvr.iptvsimple", "enabled": false }}')
     if not os.path.exists(PVRSimple):
         os.makedirs(PVRSimple)
     shutil.copyfile(AddonRes+'/PVRset.xml', PVRSimple+'settings.xml')
@@ -166,14 +166,20 @@ def correctPVR(self):
     time.sleep(10)
     xbmc.executeJSONRPC(jsonSetPVR)
     xbmc.executeJSONRPC(IPTVon)
-    #xbmc.executeJSONRPC(nulldemo)
+    xbmc.executeJSONRPC(nulldemo)
 
     time.sleep(10)    
-    moist = xbmcaddon.Addon('pvr.iptvsimple')
-    moist.setSetting(id='m3uUrl', value=loginurl)
-    moist.setSetting(id='epgUrl', value=EPGurl)
-    moist.setSetting(id='m3uCache', value="false")
-    moist.setSetting(id='epgCache', value="false")
+    try:
+        moist = xbmcaddon.Addon('pvr.iptvsimple')
+        moist.setSetting(id='m3uUrl', value=loginurl)
+        moist.setSetting(id='epgUrl', value=EPGurl)
+        moist.setSetting(id='m3uCache', value="false")
+        moist.setSetting(id='epgCache', value="false")
+    except:
+        xbmc.executebuiltin('InstallAddon(pvr.iptvsimple)')
+        time.sleep(1)
+        correctPVR()
+        exit()
     time.sleep(25)
     #xbmc.executebuiltin("Dialog.Close(busydialog)")
     dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]We\'ve copied your logins to the PVR Guide[/COLOR]',' ','[COLOR white]You [B]MUST[/B] allow time to load the EPG to avoid issues.[/COLOR]')  

@@ -18,7 +18,6 @@ xbmc.executebuiltin('xbmc.UpdateLocalAddons')
  
 xbmc.executebuiltin("XBMC.AlarmClock('MTVBCS',XBMC.RunAddon(script.eptv.core),5,silent)")
 
-Main()
 
 
     

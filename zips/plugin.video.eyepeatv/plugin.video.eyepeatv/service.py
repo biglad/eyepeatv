@@ -25,7 +25,7 @@ def Check():
 		time.sleep(1)
 		try:
 			f = open(NewPVR, 'a')
-			UserList = base64.b64decode("JXM6JXMvcGxheTIucGhwP3U9JXMmcD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tM3U4")%(lehekylg,pordinumber,Username,Password)
+			UserList = base64.b64decode("JXM6JXMvcGxheS5waHA/dT0lcyZwPSVzJnR5cGU9bTN1X3BsdXMmb3V0cHV0PW0zdTg=")%(lehekylg,pordinumber,Username,Password)
 			link = open_url(UserList).replace('\n','').replace('\r','&split&')
 			a,b = newlink = link.split('&split&#EXTINF:-1 tvg-id="" tvg-name="Absolute 80')
 			OutpuT = a.replace("&split&","\n").replace("#EXTM3U","#EXTM3U\n")

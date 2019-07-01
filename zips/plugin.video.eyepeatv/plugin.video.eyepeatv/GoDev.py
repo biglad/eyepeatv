@@ -166,7 +166,7 @@ def correctPVR(self):
     time.sleep(10)
     xbmc.executeJSONRPC(jsonSetPVR)
     xbmc.executeJSONRPC(IPTVon)
-    #xbmc.executeJSONRPC(nulldemo)
+    xbmc.executeJSONRPC(nulldemo)
 
     time.sleep(10)    
     moist = xbmcaddon.Addon('pvr.iptvsimple')

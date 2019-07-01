@@ -28,7 +28,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['series9.io', 'series9.co', 'seriesonline.io', 'series9.io', 'gomovies.pet']
-        self.base_link = 'https://www2.series9.io/'
+        self.base_link = 'https://www1.series9.to/'
         self.search_link = 'https://api.ocloud.stream/series/movie/search/%s'
         self.scraper = cfscrape.create_scraper()
 

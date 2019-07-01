@@ -39,7 +39,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['myvideolinks.net', 'iwantmyshow.tk']
-        self.base_link = 'http://myvideolinks.net'
+        self.base_link = 'https://myvideolinks.userboard.org/'
         self.search_link = '/?s=%s'
         self.scraper = cfscrape.create_scraper()
 

@@ -20,7 +20,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['ganol.si', 'ganool123.com']
-        self.base_link = 'https://ganool.ws/'
+        self.base_link = 'https://www3.ganool.ws/'
         self.search_link = '/search/?q=%s'
 
 

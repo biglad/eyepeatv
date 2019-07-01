@@ -26,7 +26,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['ultrahdindir.net']
-        self.base_link = 'https://www.ultrahdindir.net/'
+        self.base_link = 'http://ultrahdindir.com'
         self.post_link = '/index.php?do=search'
 
     def movie(self, imdb, title, localtitle, aliases, year):

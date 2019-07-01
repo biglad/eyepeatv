@@ -27,7 +27,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['mkvcage.ws']
-        self.base_link = 'https://www.mkvcage.ws/'
+        self.base_link = 'https://www.mkvcage.com/'
         self.search_link = '?s=%s'
         self.scraper = cfscrape.create_scraper()
 

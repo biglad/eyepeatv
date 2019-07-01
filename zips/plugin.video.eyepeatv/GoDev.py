@@ -89,9 +89,13 @@ def PVRbeta(self):
     EPGurl   = base64.b64decode("JXM6JXMveG1sdHYucGhwP3U9JXMmcD0lcw==")%(lehekylg,pordinumber,Username,Password)
     
     xbmc.executeJSONRPC(nullLiveTV)
+    xbmc.executebuiltin('SendClick(28)')
     xbmc.executeJSONRPC(nulldemo)
+    xbmc.executebuiltin('SendClick(28)')
     xbmc.executeJSONRPC(nullPVR)
+    xbmc.executebuiltin('SendClick(28)')
     xbmc.executeJSONRPC(nullRTMP)
+    xbmc.executebuiltin('SendClick(28)')
     time.sleep(2)
     xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "pvr.iptvsimple", "enabled": false }}')
     if not os.path.exists(PVRSimple):
@@ -162,11 +166,16 @@ def correctPVR(self):
     EPGurl   = base64.b64decode("JXM6JXMveG1sdHYucGhwP3U9JXMmcD0lcw==")%(lehekylg,pordinumber,Username,Password)
 
     xbmc.executeJSONRPC(nullPVR)
+    xbmc.executebuiltin('SendClick(28)')
     xbmc.executeJSONRPC(nullLiveTV)
+    xbmc.executebuiltin('SendClick(28)')
     time.sleep(10)
     xbmc.executeJSONRPC(jsonSetPVR)
+    xbmc.executebuiltin('SendClick(28)')
     xbmc.executeJSONRPC(IPTVon)
+    xbmc.executebuiltin('SendClick(28)')
     xbmc.executeJSONRPC(nulldemo)
+    xbmc.executebuiltin('SendClick(28)')
 
     time.sleep(10)    
     try:
@@ -177,8 +186,9 @@ def correctPVR(self):
         moist.setSetting(id='epgCache', value="false")
     except:
         xbmc.executebuiltin('InstallAddon(pvr.iptvsimple)')
+        xbmc.executebuiltin('SendClick(11)'), time.sleep(2), xbmcgui.Dialog().ok("Add-on Install", "The addon was not present. Please wait for installation to finish.")
         time.sleep(1)
-        correctPVR()
+        correctPVR(self)
         exit()
     time.sleep(25)
     #xbmc.executebuiltin("Dialog.Close(busydialog)")
@@ -186,8 +196,7 @@ def correctPVR(self):
     xbmc.executebuiltin("Container.Refresh")
     xbmc.executebuiltin("Dialog.Close(busydialog)")
     dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]Kodi Need Restart[/COLOR]',' ','[COLOR white][B]Please Restart Kodi[/B][/COLOR]')
-    exit()
-    #os._exit(1)
+    os._exit(1)
 
 def disablePVR(self):
     xbmc.executebuiltin("ActivateWindow(busydialog)")
@@ -204,7 +213,7 @@ def disablePVR(self):
     xbmc.executebuiltin("Dialog.Close(busydialog)")
     xbmc.executebuiltin('Notification(PVR Disabled,[COLOR white]PVR Guide is now disabled[/COLOR],2000,special://home/addons/'+AddonID+'/icon.png)')
     xbmc.executebuiltin("Container.Refresh")
-    dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]Kodi Need Restart[/COLOR]',' ','[COLOR white][B]Please Restart Kodi[/B][/COLOR]')
+    #dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]Kodi Need Restart[/COLOR]',' ','[COLOR white][B]Please Restart Kodi[/B][/COLOR]')
     exit()
     #os._exit(1)
 	

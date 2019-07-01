@@ -136,7 +136,7 @@ Fixed new JSON format for Highlights.
 </addon>
 
 <addon id="plugin.video.iptv.recorder"
-version="1.0.2"
+version="1.0.3"
 name="IPTV Recorder"
 provider-name="primaeval, Chychy,EyePeaTV">
 <requires>

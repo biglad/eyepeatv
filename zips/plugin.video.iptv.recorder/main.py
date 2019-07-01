@@ -524,7 +524,7 @@ def record_and_play(channelname):
     channelid = None
     threading.Thread(target=record_once_thread,args=[None, do_refresh, watch, remind, channelid, channelname, start, stop, True, None]).start()
     time.sleep(5)
-    xbmc.executebuiltin("Container.Refresh")
+    #xbmc.executebuiltin("Container.Refresh")
     return recordings()
 
 

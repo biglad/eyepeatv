@@ -15,8 +15,13 @@ if KODIV < 18.3:
 
 xbmc.executebuiltin('xbmc.UpdateAddonRepos')
 xbmc.executebuiltin('xbmc.UpdateLocalAddons')
- 
+xbmc.executebuiltin('ActivateWindow(10001,"plugin://script.module.aliunde.maintenance.wizard/?mode=systeminfo",return)')
 xbmc.executebuiltin("XBMC.AlarmClock('MTVBCS',XBMC.RunAddon(script.eptv.core),5,silent)")
+
+
+
+    
+
 
 
 

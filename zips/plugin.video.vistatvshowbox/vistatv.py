@@ -110,6 +110,8 @@ if action == None:
 
 elif action == "furkNavigator":
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().furk()
 
 elif action == "furkMetaSearch":
@@ -130,78 +132,116 @@ elif action == "furkSearchNew":
 
 elif action == 'movieNavigator':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().movies()
 
 elif action == 'movieliteNavigator':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().movies(lite=True)
 
 elif action == 'mymovieNavigator':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().mymovies()
 
 elif action == 'mymovieliteNavigator':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().mymovies(lite=True)
 
 elif action == 'tvNavigator':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().tvshows()
 
 elif action == 'tvliteNavigator':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().tvshows(lite=True)
 
 elif action == 'mytvNavigator':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().mytvshows()
 
 elif action == 'mytvliteNavigator':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().mytvshows(lite=True)
 
 elif action == 'customNavigator':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().custom()
 
 elif action == 'customliteNavigator':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().custom(lite=True)
 
 elif action == 'imdbLists':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().imdbLists()
 
 elif action == 'movieMosts':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().movieMosts()
 
 elif action == 'showMosts':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().showMosts()
 
 elif action == 'downloadNavigator':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().downloads()
 
 elif action == 'libraryNavigator':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().library()
 
 elif action == 'toolNavigator':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().tools()
 
 elif action == 'searchNavigator':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().search()
 
 elif action == 'viewsNavigator':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().views()
 
 elif action == 'clearCache':
     from resources.lib.indexers import navigator
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     navigator.navigator().clearCache()
 
 elif action == 'clearCacheProviders':
@@ -222,14 +262,20 @@ elif action == 'infoCheck':
 
 elif action == 'movies':
     from resources.lib.indexers import movies
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     movies.movies().get(url)
 
 elif action == 'moviePage':
     from resources.lib.indexers import movies
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     movies.movies().get(url)
 
 elif action == 'movieWidget':
     from resources.lib.indexers import movies
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     movies.movies().widget()
 
 elif action == 'movieSearch':
@@ -274,14 +320,20 @@ elif action == 'movieUserlists':
 
 elif action == 'channels':
     from resources.lib.indexers import channels
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     channels.channels().get()
 
 elif action == 'tvshows':
     from resources.lib.indexers import tvshows
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     tvshows.tvshows().get(url)
 
 elif action == 'tvshowPage':
     from resources.lib.indexers import tvshows
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     tvshows.tvshows().get(url)
 
 elif action == 'tvSearch':
@@ -306,6 +358,8 @@ elif action == 'tvGenres':
 
 elif action == 'tvNetworks':
     from resources.lib.indexers import tvshows
+    from resources.lib.modules import cache
+    cache.cache_version_check()
     tvshows.tvshows().networks()
 
 elif action == 'tvLanguages':

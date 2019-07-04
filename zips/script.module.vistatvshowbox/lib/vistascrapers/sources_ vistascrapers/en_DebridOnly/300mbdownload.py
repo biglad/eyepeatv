@@ -23,11 +23,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-
 import re
 import urllib
-import urlparse
 
+import urlparse
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
 from vistascrapers.modules import debrid
@@ -39,7 +38,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['300mbdownload']
-        self.base_link = 'https://www.300mbdownload.ws/'
+        self.base_link = 'https://www.300mbdownload.club'
         self.search_link = '/search/%s/feed/rss2/'
 
     def movie(self, imdb, title, localtitle, aliases, year):
@@ -86,7 +85,8 @@ class source:
             hdlr = 'S%02dE%02d' % (int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else data['year']
 
             query = '%s S%02dE%02d' % (
-                data['tvshowtitle'], int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else '%s %s' % (
+                data['tvshowtitle'], int(data['season']),
+                int(data['episode'])) if 'tvshowtitle' in data else '%s %s' % (
                 data['title'], data['year'])
             query = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', ' ', query)
 

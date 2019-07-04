@@ -18,7 +18,7 @@
 
 
 # Addon Name: OpenScrapers Module
-# Addon id: script.module.openscrapers
+# Addon id: script.module.vistatvshowbox
 
 
 def lang(i, lang):

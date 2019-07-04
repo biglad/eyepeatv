@@ -18,8 +18,8 @@
 import base64
 import json
 import re
-import urlparse
 
+import urlparse
 from vistascrapers.modules import cache
 from vistascrapers.modules import client
 from vistascrapers.modules import control

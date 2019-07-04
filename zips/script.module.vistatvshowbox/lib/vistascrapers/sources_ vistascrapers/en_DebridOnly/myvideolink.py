@@ -25,8 +25,8 @@
 
 import re
 import urllib
-import urlparse
 
+import urlparse
 from vistascrapers.modules import cfscrape
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
@@ -39,7 +39,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['myvideolinks.net', 'iwantmyshow.tk']
-        self.base_link = 'https://myvideolinks.userboard.org/'
+        self.base_link = 'http://myvideolinks.net'
         self.search_link = '/?s=%s'
         self.scraper = cfscrape.create_scraper()
 

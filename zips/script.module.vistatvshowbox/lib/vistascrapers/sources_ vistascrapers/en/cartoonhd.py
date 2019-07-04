@@ -16,8 +16,8 @@ import json
 import re
 import time
 import urllib
-import urlparse
 
+import urlparse
 from vistascrapers.modules import cfscrape
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client

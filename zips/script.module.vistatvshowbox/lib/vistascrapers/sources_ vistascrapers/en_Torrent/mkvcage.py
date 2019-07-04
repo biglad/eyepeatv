@@ -14,8 +14,8 @@
 
 import re
 import urllib
-import urlparse
 
+import urlparse
 from vistascrapers.modules import cfscrape
 from vistascrapers.modules import client
 from vistascrapers.modules import debrid
@@ -27,7 +27,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['mkvcage.ws']
-        self.base_link = 'https://www.mkvcage.com/'
+        self.base_link = 'https://www.mkvcage.ws/'
         self.search_link = '?s=%s'
         self.scraper = cfscrape.create_scraper()
 

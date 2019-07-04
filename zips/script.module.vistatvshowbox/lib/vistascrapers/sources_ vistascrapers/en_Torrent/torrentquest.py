@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# -Cleaned and Checked on 06-17-2019 by JewBMX in Scrubs.
 
 #  ..#######.########.#######.##....#..######..######.########....###...########.#######.########..######.
 #  .##.....#.##.....#.##......###...#.##....#.##....#.##.....#...##.##..##.....#.##......##.....#.##....##
@@ -8,7 +9,7 @@
 #  .##.....#.##.......##......##...##.##....#.##....#.##....##.##.....#.##.......##......##....##.##....##
 #  ..#######.##.......#######.##....#..######..######.##.....#.##.....#.##.......#######.##.....#..######.
 
-'''
+"""
     OpenScrapers Project
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,35 +23,24 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-'''
-
+"""
 import re
 import urllib
 
 import urlparse
-from vistascrapers.modules import cache
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
 from vistascrapers.modules import debrid
 from vistascrapers.modules import source_utils
-from vistascrapers.modules import workers
 
 
 class source:
     def __init__(self):
         self.priority = 1
         self.language = ['en', 'de', 'fr', 'ko', 'pl', 'pt', 'ru']
-        self.domains = ['kickass2.cc', 'kickass2.how', 'kickasst.org', 'kickasstorrents.id', 'thekat.cc', 'thekat.ch',
-                        'kickasstorrents.bz', 'kkickass.com', 'kkat.net', 'kickasst.net', 'kickasshydra.net',
-                        'kickasshydra.org', 'kickass-kat.com']
-        self._base_link = None
-        self.search = '/usearch/{0}'
-
-    @property
-    def base_link(self):
-        if not self._base_link:
-            self._base_link = cache.get(self.__get_base_url, 120, 'https://%s' % self.domains[0])
-        return self._base_link
+        self.domains = ['torrentquest.com']
+        self.base_link = 'https://torrentquest.com'
+        self.search_link = '/{0}/{1}'
 
     def movie(self, imdb, title, localtitle, aliases, year):
         try:
@@ -70,7 +60,7 @@ class source:
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
         try:
-            if url is None:
+            if url == None:
                 return
             url = urlparse.parse_qs(url)
             url = dict([(i, url[i][0]) if url[i] else (i, '') for i in url])
@@ -81,91 +71,56 @@ class source:
             return
 
     def sources(self, url, hostDict, hostprDict):
+        sources = []
         try:
-            self._sources = []
-            self.items = []
             if url == None:
-                return self._sources
+                return sources
             if debrid.status() is False:
                 raise Exception()
             data = urlparse.parse_qs(url)
             data = dict([(i, data[i][0]) if data[i] else (i, '') for i in data])
-            self.title = data['tvshowtitle'] if 'tvshowtitle' in data else data['title']
-            self.hdlr = 'S%02dE%02d' % (int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else data[
-                'year']
-            query = '%s S%02dE%02d' % (data['tvshowtitle'], int(data['season']), int(data['episode'])) \
+            title = data['tvshowtitle'] if 'tvshowtitle' in data else data['title']
+            hdlr = 'S%02dE%02d' % (int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else data['year']
+            query = '%s s%02de%02d' % (data['tvshowtitle'], int(data['season']), int(data['episode'])) \
                 if 'tvshowtitle' in data else '%s %s' % (data['title'], data['year'])
             query = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', ' ', query)
-            url = self.search.format(urllib.quote(query))
-            url = urlparse.urljoin(self.base_link, url)
-            self._get_items(url)
-            self.hostDict = hostDict + hostprDict
-            threads = []
-            for i in self.items:
-                threads.append(workers.Thread(self._get_sources, i))
-            [i.start() for i in threads]
-            [i.join() for i in threads]
-            return self._sources
-        except BaseException:
-            return self._sources
-
-    def _get_items(self, url):
-        try:
-            headers = {'User-Agent': client.agent()}
-            r = client.request(url, headers=headers)
-            posts = client.parseDOM(r, 'tr', attrs={'id': 'torrent_latest_torrents'})
+            url = urlparse.urljoin(self.base_link, self.search_link.format(query[0].lower(), cleantitle.geturl(query)))
+            r = client.request(url)
+            r = client.parseDOM(r, 'tbody')[0]
+            posts = client.parseDOM(r, 'tr')
+            posts = [i for i in posts if 'magnet:' in i]
             for post in posts:
-                data = client.parseDOM(post, 'a', attrs={'title': 'Torrent magnet link'}, ret='href')[0]
-                link = urllib.unquote(data).decode('utf8').replace('https://mylink.me.uk/?url=', '')
-                name = urllib.unquote_plus(re.search('dn=([^&]+)', link).groups()[0])
-                t = name.split(self.hdlr)[0]
-                if not cleantitle.get(re.sub('(|)', '', t)) == cleantitle.get(self.title):
+                post = post.replace('&nbsp;', ' ')
+                name = client.parseDOM(post, 'a', ret='title')[1]
+                t = name.split(hdlr)[0]
+                if not cleantitle.get(re.sub('(|)', '', t)) == cleantitle.get(title):
                     continue
                 try:
                     y = re.findall('[\.|\(|\[|\s|\_|\-](S\d+E\d+|S\d+)[\.|\)|\]|\s|\_|\-]', name, re.I)[-1].upper()
                 except BaseException:
                     y = re.findall('[\.|\(|\[|\s\_|\-](\d{4})[\.|\)|\]|\s\_|\-]', name, re.I)[-1].upper()
-                if not y == self.hdlr:
+                if not y == hdlr:
                     continue
+                links = client.parseDOM(post, 'a', ret='href')
+                magnet = [i.replace('&amp;', '&') for i in links if 'magnet:' in i][0]
+                url = magnet.split('&tr')[0]
+                if url in str(sources):
+                    continue
+                quality, info = source_utils.get_release_quality(name, name)
                 try:
                     size = re.findall('((?:\d+\,\d+\.\d+|\d+\.\d+|\d+\,\d+|\d+)\s*(?:GiB|MiB|GB|MB))', post)[0]
-                    div = 1 if size.endswith('GB') else 1024
+                    div = 1 if size.endswith(('GB', 'GiB')) else 1024
                     size = float(re.sub('[^0-9|/.|/,]', '', size.replace(',', '.'))) / div
                     size = '%.2f GB' % size
                 except BaseException:
                     size = '0'
-                self.items.append((name, link, size))
-            return self.items
+                info.append(size)
+                info = ' | '.join(info)
+                sources.append({'source': 'Torrent', 'quality': quality, 'language': 'en', 'url': url, 'info': info,
+                                'direct': False, 'debridonly': True})
+            return sources
         except BaseException:
-            return self.items
-
-    def _get_sources(self, item):
-        try:
-            name = item[0]
-            url = item[1]
-            quality, info = source_utils.get_release_quality(url, name)
-            info.append(item[2])
-            info = ' | '.join(info)
-            self._sources.append(
-                {'source': 'Torrent', 'quality': quality, 'language': 'en', 'url': url, 'info': info, 'direct': False,
-                 'debridonly': True})
-        except BaseException:
-            pass
+            return sources
 
     def resolve(self, url):
         return url
-
-    def __get_base_url(self, fallback):
-        try:
-            for domain in self.domains:
-                try:
-                    url = 'https://%s' % domain
-                    result = client.request(url, limit=1, timeout='5')
-                    result = re.findall('<title>(.+?)</title>', result, re.DOTALL)[0]
-                    if result and 'Kickass' in result:
-                        return url
-                except Exception:
-                    pass
-        except Exception:
-            pass
-        return fallback

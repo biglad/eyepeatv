@@ -778,7 +778,7 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 	</extension>
 </addon>
 
-<addon id="script.module.js2py" name="js2py" version="0.6.3" provider-name="Addons4Kodi">
+<addon id="script.module.js2py" name="js2py" version="0.6.6" provider-name="Addons4Kodi">
   <requires>
     <import addon="xbmc.python" version="2.25.0"/>
     <import addon="script.module.six" version="1.11.0"/>
@@ -920,7 +920,7 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 	</extension>
 </addon>
 
-<addon id="script.module.pyjsparser" name="pyjsparser" version="2.7.1" provider-name="Addons4Kodi">
+<addon id="script.module.pyjsparser" name="pyjsparser" version="2.7.2" provider-name="Addons4Kodi">
   <requires>
     <import addon="xbmc.python" version="2.25.0"/>
   </requires>
@@ -1068,7 +1068,7 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
     </extension>
 </addon>
 
-<addon id="script.module.tzlocal" name="tzlocal" version="1.5.1" provider-name="Addons4Kodi">
+<addon id="script.module.tzlocal" name="tzlocal" version="1.5.2" provider-name="Addons4Kodi">
   <requires>
     <import addon="xbmc.python" version="2.25.0"/>
     <import addon="script.module.pytz" version="2014.2"/>

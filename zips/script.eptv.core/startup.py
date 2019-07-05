@@ -2,6 +2,11 @@ import xbmc
 import xbmcgui
 AddonID = 'script.eptv.core'
 xbmc.executebuiltin('Notification(STARTING UP,[COLOR white]Please Wait.....[/COLOR],15000,special://home/addons/'+AddonID+'/icon.png)')
+xbmc.Player().play('special://home/addons/script.eptv.core/load.mp4')
+window = xbmcgui.Window(10000)
+label = xbmcgui.ControlLabel(10, 10, 1000, 50, 'EPTV www.eptv.co.uk')
+window.addControl(label)
+xbmc.executebuiltin("ActivateWindow(10000)")
 
 KODIV          = float(xbmc.getInfoLabel("System.BuildVersion")[:4])
 

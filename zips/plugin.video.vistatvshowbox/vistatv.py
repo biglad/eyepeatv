@@ -21,6 +21,8 @@
 import urlparse,sys,urllib
 from resources.lib.modules import control
 import xbmcgui
+import check4update
+check4update()
 
 params = dict(urlparse.parse_qsl(sys.argv[2].replace('?','')))
 

@@ -531,7 +531,7 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
-<addon id="plugin.video.vistatvshowbox" version="100.1.01" name="Requisition" provider-name="VistaTV">
+<addon id="plugin.video.vistatvshowbox" version="100.1.02" name="Requisition" provider-name="VistaTV">
 	<requires>
 		<import addon="xbmc.python" version="2.26.0" />
 		<import addon="script.module.vistatvshowbox" />

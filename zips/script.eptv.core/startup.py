@@ -1,10 +1,7 @@
-import time
 import xbmc
-import os
 import xbmcgui
-import urllib2
-
-import platform
+AddonID = 'script.eptv.core'
+xbmc.executebuiltin('Notification(STARTING UP,[COLOR white]Please Wait.....[/COLOR],15000,special://home/addons/'+AddonID+'/icon.png)')
 
 KODIV          = float(xbmc.getInfoLabel("System.BuildVersion")[:4])
 
@@ -15,12 +12,12 @@ if KODIV < 18.3:
 
 xbmc.executebuiltin('xbmc.UpdateAddonRepos')
 xbmc.executebuiltin('xbmc.UpdateLocalAddons')
-xbmc.executebuiltin('ActivateWindow(10001,"plugin://script.module.aliunde.maintenance.wizard/?mode=systeminfo",return)')
+#xbmc.executebuiltin('ActivateWindow(10001,"plugin://script.module.aliunde.maintenance.wizard/?mode=systeminfo",return)')
 xbmc.executebuiltin("XBMC.AlarmClock('MTVBCS',XBMC.RunAddon(script.eptv.core),5,silent)")
 
 
-
-    
+#xbmc.executebuiltin("Dialog.Close(busydialog)")
+xbmc.executebuiltin('Notification(STARTING UP,[COLOR white]Please Wait.....[/COLOR],15000,special://home/addons/'+AddonID+'/icon.png)')    
 
 
 

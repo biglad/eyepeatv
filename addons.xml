@@ -689,7 +689,7 @@ ffmpeg simply copies the stream into a transport stream container.
 
 <addon id="script.eptv.core"
   name="EPTV Core"
-  version="18.71"
+  version="18.72"
   provider-name="Biglad">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1400,7 +1400,7 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 </addon>
 
 
-<addon id="skin.metamorph" version="2.3" name="EPTV STB" provider-name="Biglad">
+<addon id="skin.metamorph" version="2.4" name="EPTV STB" provider-name="Biglad">
 
 
 	<requires>

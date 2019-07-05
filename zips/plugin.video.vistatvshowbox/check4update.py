@@ -1,5 +1,6 @@
 
 import os,xbmc
+xbmc.executebuiltin('xbmc.UpdateAddonRepos')
 logfile    = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.vistatvshowbox', 'log.txt'))
 
 

@@ -22,7 +22,7 @@ import urlparse,sys,urllib
 from resources.lib.modules import control
 import xbmcgui
 import check4update
-check4update()
+
 
 params = dict(urlparse.parse_qsl(sys.argv[2].replace('?','')))
 
@@ -105,6 +105,7 @@ def vistatvsync():
 
 
 if action == None:
+    check4update.check4update()
     from resources.lib.indexers import navigator
     from resources.lib.modules import cache
     cache.cache_version_check()

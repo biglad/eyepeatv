@@ -20,7 +20,8 @@
 
 import urlparse,sys,urllib
 from resources.lib.modules import control
-import xbmcguiwindow = xbmcgui.Window(10025)
+import xbmcgui
+window = xbmcgui.Window(10025)
 label = xbmcgui.ControlLabel(17, 17, 1000, 50, '[COLOR black]EPTV www.eptv.co.uk[/COLOR]')
 window.addControl(label)
 window = xbmcgui.Window(10025)

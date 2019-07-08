@@ -22,7 +22,9 @@ import urlparse,sys,urllib
 from resources.lib.modules import control
 import xbmcgui
 import check4update
-
+window = xbmcgui.Window(10025)
+label = xbmcgui.ControlLabel(15, 15, 1000, 50, 'EPTV www.eptv.co.uk')
+window.addControl(label)
 
 params = dict(urlparse.parse_qsl(sys.argv[2].replace('?','')))
 

@@ -6,6 +6,9 @@ import xml.etree.ElementTree as ElementTree
 import unicodedata
 import time
 import string
+window = xbmcgui.Window(10025)
+label = xbmcgui.ControlLabel(15, 15, 1000, 50, 'EPTV www.eptv.co.uk')
+window.addControl(label)
 reload(sys)
 dialog       =  xbmcgui.Dialog()
 sys.setdefaultencoding('utf8')

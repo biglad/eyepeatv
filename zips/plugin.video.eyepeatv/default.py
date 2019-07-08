@@ -89,7 +89,7 @@ RAMM = xbmc.getInfoLabel("System.Memory(total)")
 PSACE = xbmc.getInfoLabel("System.FreeSpace")
 
 
-	
+    
 
 def run():
     global pnimi
@@ -133,7 +133,7 @@ def run():
         action = params.get("action")
         exec action+"(params)"
     plugintools.close_item_list()
-	
+    
 def correctPVR():
     xbmc.executebuiltin("ActivateWindow(busydialog)")
     dp = xbmcgui.DialogProgress()
@@ -179,17 +179,27 @@ def correctPVR():
     xbmc.executebuiltin("ActivateWindow(busydialog)")
     xbmc.executeJSONRPC(nullPVR)
     xbmc.executeJSONRPC(nullLiveTV)
-    time.sleep(10)
+    time.sleep(5)
     xbmc.executeJSONRPC(jsonSetPVR)
     xbmc.executeJSONRPC(IPTVon)
     xbmc.executeJSONRPC(nulldemo)
     xbmc.executebuiltin("ActivateWindow(busydialog)")
-    dp.update(50)  
-    moist = xbmcaddon.Addon('pvr.iptvsimple')
-    moist.setSetting(id='m3uUrl', value=loginurl)
-    moist.setSetting(id='epgUrl', value=EPGurl)
-    moist.setSetting(id='m3uCache', value="false")
-    moist.setSetting(id='epgCache', value="false")
+    dp.update(50)
+    try:    
+        moist = xbmcaddon.Addon('pvr.iptvsimple')
+        moist.setSetting(id='m3uUrl', value=loginurl)
+        moist.setSetting(id='epgUrl', value=EPGurl)
+        moist.setSetting(id='m3uCache', value="false")
+        moist.setSetting(id='epgCache', value="false")
+    except:
+        xbmc.executebuiltin('InstallAddon(pvr.iptvsimple)')
+        xbmc.executebuiltin('SendClick(11)'), time.sleep(2), xbmcgui.Dialog().ok("Add-on Install", "The addon was not present. Please wait for installation to finish.")
+        time.sleep(1)
+        moist = xbmcaddon.Addon('pvr.iptvsimple')
+        moist.setSetting(id='m3uUrl', value=loginurl)
+        moist.setSetting(id='epgUrl', value=EPGurl)
+        moist.setSetting(id='m3uCache', value="false")
+        moist.setSetting(id='epgCache', value="false")
     dp.update(60)
     #xbmc.executebuiltin("Dialog.Close(busydialog)")
     dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]We\'ve copied your logins to the PVR Guide[/COLOR]',' ','[COLOR white]You [B]MUST[/B] allow time to load the EPG to avoid issues.[/COLOR]')  
@@ -358,7 +368,7 @@ def license_check2(params):
         FabAddon = xbmcaddon.Addon('plugin.video.eyepeatv')
         AddonID = 'plugin.video.eyepeatv'
         if not xbmc.getCondVisibility('System.HasPVRAddon'):
-		    xbmc.executebuiltin('RunAddon(pvr.iptvsimple)')
+            xbmc.executebuiltin('RunAddon(pvr.iptvsimple)')
         PVRon = plugintools.get_setting("PVRUpdater")
         xbmc.executebuiltin("ActivateWindow(busydialog)")
         nullPVR   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":false},"id":1}'

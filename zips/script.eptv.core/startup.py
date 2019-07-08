@@ -1,15 +1,26 @@
 import xbmc
 import xbmcgui
+window = xbmcgui.Window(10000)
+label = xbmcgui.ControlLabel(17, 17, 1000, 50, '[COLOR black]EPTV www.eptv.co.uk[/COLOR]')
+window.addControl(label)
+window = xbmcgui.Window(10000)
+label = xbmcgui.ControlLabel(15, 15, 1000, 50, 'EPTV www.eptv.co.uk')
+window.addControl(label)
+
+
 AddonID = 'script.eptv.core'
 xbmc.executebuiltin('Notification(STARTING UP,[COLOR white]Please Wait.....[/COLOR],15000,special://home/addons/'+AddonID+'/icon.png)')
 xbmc.Player().play('special://home/addons/script.eptv.core/load.mp4')
-window = xbmcgui.Window(10000)
-label = xbmcgui.ControlLabel(15, 15, 1000, 50, 'EPTV www.eptv.co.uk')
+
+
+
+window = xbmcgui.Window(10025)
+label = xbmcgui.ControlLabel(17, 17, 1000, 50, '[COLOR black]EPTV www.eptv.co.uk[/COLOR]')
 window.addControl(label)
 window = xbmcgui.Window(10025)
 label = xbmcgui.ControlLabel(15, 15, 1000, 50, 'EPTV www.eptv.co.uk')
 window.addControl(label)
-xbmc.executebuiltin("ActivateWindow(10000)")
+
 
 KODIV          = float(xbmc.getInfoLabel("System.BuildVersion")[:4])
 
@@ -26,7 +37,7 @@ xbmc.executebuiltin("XBMC.AlarmClock('MTVBCS',XBMC.RunAddon(script.eptv.core),5,
 
 #xbmc.executebuiltin("Dialog.Close(busydialog)")
 xbmc.executebuiltin('Notification(STARTING UP,[COLOR white]Please Wait.....[/COLOR],15000,special://home/addons/'+AddonID+'/icon.png)')    
-
+xbmc.executebuiltin("ActivateWindow(10000)")
 
 
 

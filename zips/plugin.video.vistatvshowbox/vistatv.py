@@ -20,11 +20,14 @@
 
 import urlparse,sys,urllib
 from resources.lib.modules import control
-import xbmcgui
-import check4update
+import xbmcguiwindow = xbmcgui.Window(10025)
+label = xbmcgui.ControlLabel(17, 17, 1000, 50, '[COLOR black]EPTV www.eptv.co.uk[/COLOR]')
+window.addControl(label)
 window = xbmcgui.Window(10025)
 label = xbmcgui.ControlLabel(15, 15, 1000, 50, 'EPTV www.eptv.co.uk')
 window.addControl(label)
+import check4update
+
 
 params = dict(urlparse.parse_qsl(sys.argv[2].replace('?','')))
 

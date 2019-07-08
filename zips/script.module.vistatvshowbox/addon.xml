@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.module.vistatvshowbox" name="Requisition Scraper" version="20.0.72" provider-name="VistaTV">
+<addon id="script.module.vistatvshowbox" name="Requisition Scraper" version="20.0.73" provider-name="Biglad">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.beautifulsoup4"/>
-		<import addon="pvr.iptvsimple"/>
 		<import addon="repository.jsergio"/>
-		<import addon="repository.addons4kodi"/>
         <import addon="script.module.js2py"/>
 
 
 		<!-- [ORION/] -->
-		<import addon="script.module.orion" version="2.0.1" />
+		<!--<import addon="script.module.orion" version="2.0.1" />-->
 		<!-- [/ORION] -->
 	</requires>
 	<extension point="xbmc.python.module" library="lib" />
@@ -18,7 +16,7 @@
 	<provides>executable</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary>Scrapers For VistaTV Requisition Addon</summary>
+		<summary>Scrapers For Requisition Addon</summary>
 		<description>...</description>
 		<platform>all</platform>
 	</extension>

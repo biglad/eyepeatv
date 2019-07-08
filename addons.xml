@@ -531,7 +531,7 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
-<addon id="plugin.video.vistatvshowbox" version="100.1.05" name="Requisition" provider-name="VistaTV">
+<addon id="plugin.video.vistatvshowbox" version="100.1.06" name="Requisition" provider-name="Biglad">
 	<requires>
 		<import addon="xbmc.python" version="2.26.0" />
 		<import addon="script.module.vistatvshowbox" />
@@ -543,14 +543,14 @@ ffmpeg simply copies the stream into a transport stream container.
 		<import addon="script.module.beautifulsoup4" />
 		<import addon="script.module.beautifulsoup" />
 		<import addon="script.module.openscrapers" />
-		<import addon="plugin.video.realdebrid" />
-		<import addon="plugin.video.premiumize" />
-		<import addon="plugin.video.link__tester2" />
+		<!--<import addon="plugin.video.realdebrid" />-->
+		<!--<import addon="plugin.video.premiumize" />-->
+		<!--<import addon="plugin.video.link__tester2" />-->
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="vistatv.py">
 		<provides>video</provides>
 	</extension>
-	<summary>VistaTV Requisition Addon</summary>
+	<summary>Requisition Addon</summary>
 	<description>Based of showboxarize.</description>
 	<extension point="xbmc.addon.metadata">
 	<platform>all</platform>
@@ -1109,18 +1109,16 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 	</extension>
 </addon>
 
-<addon id="script.module.vistatvshowbox" name="Requisition Scraper" version="20.0.72" provider-name="VistaTV">
+<addon id="script.module.vistatvshowbox" name="Requisition Scraper" version="20.0.73" provider-name="Biglad">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.beautifulsoup4"/>
-		<import addon="pvr.iptvsimple"/>
 		<import addon="repository.jsergio"/>
-		<import addon="repository.addons4kodi"/>
         <import addon="script.module.js2py"/>
 
 
 		<!-- [ORION/] -->
-		<import addon="script.module.orion" version="2.0.1" />
+		<!--<import addon="script.module.orion" version="2.0.1" />-->
 		<!-- [/ORION] -->
 	</requires>
 	<extension point="xbmc.python.module" library="lib" />
@@ -1128,7 +1126,7 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 	<provides>executable</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary>Scrapers For VistaTV Requisition Addon</summary>
+		<summary>Scrapers For Requisition Addon</summary>
 		<description>...</description>
 		<platform>all</platform>
 	</extension>

@@ -1459,6 +1459,15 @@ def broadcast(programmeid, channelname):
     etitle = title.encode("utf8")
 
     items = []
+	
+    items.append({
+        'label': _("Play Channel") + " - %s" % (channelname),
+        'path': plugin.url_for(play_channel, channelname=echannelname),
+        'thumbnail': thumbnail or get_icon_path('tv'),
+        'info_type': 'video',
+        'info':{"title": channelname},
+        'is_playable': True,
+    })
 
     items.append({
         'label': _("Record Once") + " - %s - %s %s[COLOR grey]%s - %s[/COLOR]" % (channelname, title, CR, utc2local(start), utc2local(stop)),
@@ -1532,14 +1541,6 @@ def broadcast(programmeid, channelname):
         'label': _("Remind Weekly") + " - %s - %s %s[COLOR grey]%s - %s[/COLOR]" % (channelname, title, CR, utc2local(start).time(), utc2local(stop).time()),
         'path': plugin.url_for(remind_weekly, channelid=echannelid, channelname=echannelname, title=etitle, start=start_ts, stop=stop_ts),
         'thumbnail': thumbnail or get_icon_path('recordings'),
-    })
-    items.append({
-        'label': _("Play Channel") + " - %s" % (channelname),
-        'path': plugin.url_for(play_channel, channelname=echannelname),
-        'thumbnail': thumbnail or get_icon_path('tv'),
-        'info_type': 'video',
-        'info':{"title": channelname},
-        'is_playable': True,
     })
 
     if plugin.get_setting('external.player'):
@@ -2049,6 +2050,11 @@ def listing(programmes, scroll=False, channelname=None):
         echannelname=pchannelname.encode("utf8")
         etitle=title.encode("utf8")
         ecategories=categories.encode("utf8")
+		
+        if url:
+            context_items.append((_("Play Channel"), 'XBMC.RunPlugin(%s)' % (plugin.url_for(play_channel, channelname=echannelname))))
+            if plugin.get_setting('external.player'):
+                context_items.append((_("Play Channel External"), 'XBMC.RunPlugin(%s)' % (plugin.url_for(play_channel_external, channelname=echannelname))))
 
         if recording:
             for uuid, type in jobs:
@@ -2068,10 +2074,7 @@ def listing(programmes, scroll=False, channelname=None):
                 context_items.append((_("Remind Once"), 'XBMC.RunPlugin(%s)' %
                 (plugin.url_for(remind_once, programmeid=uid, channelid=echannelid, channelname=echannelname))))
 
-        if url:
-            context_items.append((_("Play Channel"), 'XBMC.RunPlugin(%s)' % (plugin.url_for(play_channel, channelname=echannelname))))
-            if plugin.get_setting('external.player'):
-                context_items.append((_("Play Channel External"), 'XBMC.RunPlugin(%s)' % (plugin.url_for(play_channel_external, channelname=echannelname))))
+
 
         context_items.append((echannelname, 'ActivateWindow(%s,%s,return)' % (xbmcgui.getCurrentWindowId(), plugin.url_for('channel', channelid=echannelid, channelname=echannelname))))
         context_items.append((etitle, 'ActivateWindow(%s,%s,return)' % (xbmcgui.getCurrentWindowId(), plugin.url_for('search_title', title=etitle))))
@@ -2316,6 +2319,7 @@ def group(channelgroup=None,section=None):
             channelid =channelid.encode("utf8")
 
         if url:
+            context_items.append((_("Play Channel"), 'XBMC.RunPlugin(%s)' % (plugin.url_for(play_channel, channelname=channelname))))
             context_items.append((_("Add One Time Rule"), 'XBMC.RunPlugin(%s)' % (plugin.url_for(record_one_time, channelname=channelname))))
             context_items.append((_("Add Daily Time Rule"), 'XBMC.RunPlugin(%s)' % (plugin.url_for(record_daily_time, channelname=channelname))))
             context_items.append((_("Add Weekly Time Rule"), 'XBMC.RunPlugin(%s)' % (plugin.url_for(record_weekly_time, channelname=channelname))))
@@ -2323,7 +2327,7 @@ def group(channelgroup=None,section=None):
             if channelid:
                 context_items.append((_("Add Title Search Rule"), 'XBMC.RunPlugin(%s)' % (plugin.url_for(record_always_search, channelid=channelid, channelname=channelname))))
                 context_items.append((_("Add Plot Search Rule"), 'XBMC.RunPlugin(%s)' % (plugin.url_for(record_always_search_plot, channelid=channelid, channelname=channelname))))
-            context_items.append((_("Play Channel"), 'XBMC.RunPlugin(%s)' % (plugin.url_for(play_channel, channelname=channelname))))
+            
             if plugin.get_setting('external.player'):
                 context_items.append((_("Play Channel External"), 'XBMC.RunPlugin(%s)' % (plugin.url_for(play_channel_external, channelname=channelname))))
 
@@ -3331,24 +3335,24 @@ def estuary():
         text = f.read()
     text = text.replace('<control type="grouplist" id="9000">',
     '''<control type="grouplist" id="9000">
-					<include content="InfoDialogButton">
-						<param name="width" value="275" />
-						<param name="id" value="666" />
-						<param name="icon" value="icons/infodialogs/record.png" />
-						<param name="label" value="IPTV Recorder" />
-						<param name="onclick_1" value="Action(close)" />
-						<param name="onclick_2" value="RunScript(plugin.video.iptv.recorder,$ESCINFO[ListItem.ChannelName],$ESCINFO[ListItem.Title],$ESCINFO[ListItem.Date],$ESCINFO[ListItem.Duration],$ESCINFO[ListItem.Plot])" />
-						<param name="visible" value="System.hasAddon(plugin.video.iptv.recorder)" />
-					</include>
-					<include content="InfoDialogButton">
-						<param name="width" value="275" />
-						<param name="id" value="667" />
-						<param name="icon" value="icons/infodialogs/record.png" />
-						<param name="label" value="Recordings" />
-						<param name="onclick_1" value="Action(close)" />
-						<param name="onclick_2" value="ActivateWindow(10025,&quot;plugin://plugin.video.iptv.recorder/recordings&quot;,return)" />
-						<param name="visible" value="System.hasAddon(plugin.video.iptv.recorder)" />
-					</include>''')
+                    <include content="InfoDialogButton">
+                        <param name="width" value="275" />
+                        <param name="id" value="666" />
+                        <param name="icon" value="icons/infodialogs/record.png" />
+                        <param name="label" value="IPTV Recorder" />
+                        <param name="onclick_1" value="Action(close)" />
+                        <param name="onclick_2" value="RunScript(plugin.video.iptv.recorder,$ESCINFO[ListItem.ChannelName],$ESCINFO[ListItem.Title],$ESCINFO[ListItem.Date],$ESCINFO[ListItem.Duration],$ESCINFO[ListItem.Plot])" />
+                        <param name="visible" value="System.hasAddon(plugin.video.iptv.recorder)" />
+                    </include>
+                    <include content="InfoDialogButton">
+                        <param name="width" value="275" />
+                        <param name="id" value="667" />
+                        <param name="icon" value="icons/infodialogs/record.png" />
+                        <param name="label" value="Recordings" />
+                        <param name="onclick_1" value="Action(close)" />
+                        <param name="onclick_2" value="ActivateWindow(10025,&quot;plugin://plugin.video.iptv.recorder/recordings&quot;,return)" />
+                        <param name="visible" value="System.hasAddon(plugin.video.iptv.recorder)" />
+                    </include>''')
     with open(filename,'w') as f:
         f.write(text)
 

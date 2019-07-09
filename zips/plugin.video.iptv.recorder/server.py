@@ -7,6 +7,8 @@ import time, datetime
 servicing = False
 
 def Service():
+    if not xbmc.getCondVisibility('System.HasPVRAddon'):
+        exit()
     global servicing
     if servicing:
         return

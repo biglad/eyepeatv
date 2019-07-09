@@ -7,6 +7,9 @@ import tzlocal
 import re
 import urllib
 
+if not xbmc.getCondVisibility('System.HasPVRAddon'):
+    exit()
+
 def log(x):
     xbmc.log(repr(x),xbmc.LOGERROR)
 

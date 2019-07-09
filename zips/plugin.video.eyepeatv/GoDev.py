@@ -106,7 +106,7 @@ def PVRbeta(self):
 
     f = open(BetaPVR, 'a')
 
-    UserList = base64.b64decode("JXM6JXMvcGxheS5waHA/dT0lcyZwPSVzJnR5cGU9bTN1X3BsdXMmb3V0cHV0PW0zdTg=")%(lehekylg,pordinumber,Username,Password)
+    UserList = base64.b64decode("JXM6JXMvcGxheTIucGhwP3U9JXMmcD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD10cw==")%(lehekylg,pordinumber,Username,Password)
     link = open_url(UserList).replace('\n','').replace('\r','&split&')
     a,b = link.split('&split&#EXTINF:-1 tvg-id="" tvg-name="Absolute 80')
     OutpuT = a.replace("&split&","\n").replace("#EXTM3U","#EXTM3U\n")
@@ -735,6 +735,12 @@ elif mode == 4632:
 elif mode == 1234:
     try: os.remove(MZip)
     except: pass
+	
+elif mode == 7655:	
+    xbmc.executebuiltin((u'XBMC.Notification("Parental Lock", "Channels may contain adult content", 2000)'))
+    text = plugintools.keyboard_input(default_text="", title="Enter Adult Pass")
+    if text==plugintools.get_setting("vanemakood"):
+        xbmc.executebuiltin('ActivateWindow(10025,"plugin://plugin.video.live.streamspro/?fanart=C%3a%5cUsers%5ckhanb%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.video.live.streamspro%5cfanart.jpg&mode=1&name=a1&url=https%3a%2f%2feptv.co.uk%2fa1.m3u",return)')
 	
 elif mode == 3372:
     import news

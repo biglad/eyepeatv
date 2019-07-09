@@ -47,7 +47,7 @@ F1ICON = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id, 'F
 ##BASEURL = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tM3U4") #.m3u8
 BUILDUPDATE = "NO"
 
-BASEURL = base64.b64decode("JXM6JXMvcGxheS5waHA/dT0lcyZwPSVzJnR5cGU9bTN1X3BsdXMmb3V0cHV0PXRz") #.ts eptv
+BASEURL = base64.b64decode("JXM6JXMvcGxheTIucGhwP3U9JXMmcD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD10cw==") #.ts eptv
 
 
 
@@ -230,6 +230,7 @@ def peamenyy(params):
         plugintools.addItem('[COLOR orange][B]Click Here To Update now![/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
         plugintools.addItem('[COLOR orange][B]Your Version: '+str(buildv)+'[/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
         plugintools.addItem('[COLOR orange][B]New Version: '+str(webversion)+'[/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
+        
     channels = kontroll()
     if channels == 1 and GoDev.mode != 5 and GoDev.mode != 1:
         plugintools.log(pnimi+vod_channels("TG9naW4gU3VjY2Vzcw=="))
@@ -241,6 +242,7 @@ def peamenyy(params):
         #plugintools.add_item( action=vod_channels("VGhlRGV2"),   title="[COLOR orange][B]CATCHUP[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("dm9kLnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) , folder=True )
         #plugintools.add_item( action=vod_channels("R29EZXYuRmFiU3BvcnRz"),   title="Replays" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("c3BvcnRzLnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
         #plugintools.add_item( action=vod_channels("R29EZXYuTUxCUGFzcw=="),   title="MLB" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("TUxCLnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
+        
 
 
         if not xbmc.getCondVisibility('System.HasPVRAddon'):
@@ -253,6 +255,7 @@ def peamenyy(params):
             plugintools.addItem('[COLOR orange][B]Open IPTV Recoder[/B][/COLOR]','speed',7001,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
             plugintools.addItem('[COLOR orange][B]Reload EPG Data[/B][/COLOR]','speed',4632,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
         plugintools.addItem('[COLOR orange][B]24/7 Channels[/B][/COLOR]','speed',7010,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
+        plugintools.addItem('[COLOR red][B]ADULT CONTENT[/B][/COLOR] (SET PASSWORD IN SETTINGS)','speed',7655,'http://gotdark.com/logos/adult.png',GoDev.Images + 'background.png')
         common.addItem('[COLOR white][B]Auto Clean Device[/B][/COLOR]','url',19,GoDev.Images + 'logo.png',FANART,'')
         common.addItem('[COLOR white][B]Update Addons & Repos[/B][/COLOR]',BASEURL,26,GoDev.Images + 'logo.png',FANART,'')
         plugintools.add_item( action=vod_channels("bWFpbnRNZW51"),   title="[COLOR white][B]Maintenance Tools[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )

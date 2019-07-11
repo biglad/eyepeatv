@@ -17,8 +17,8 @@
 '''
 import json
 import urllib
-import urlparse
 
+import urlparse
 from vistascrapers.modules import client
 from vistascrapers.modules import directstream
 

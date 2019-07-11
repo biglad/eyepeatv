@@ -21,12 +21,12 @@
 
 import base64
 import re
-import urlparse
 
+import urlparse
 from vistascrapers.modules import cfscrape
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
-from vistascrapers.modules import dom_parser2
+from vistascrapers.modules import dom_parser
 
 
 class source:
@@ -44,8 +44,8 @@ class source:
             url = urlparse.urljoin(self.base_link, (self.movies_search_path % clean_title))
             r = self.scraper.get(url).content
 
-            r = dom_parser2.parse_dom(r, 'div', {'id': 'movie-featured'})
-            r = [dom_parser2.parse_dom(i, 'a', req=['href']) for i in r if i]
+            r = dom_parser.parse_dom(r, 'div', {'id': 'movie-featured'})
+            r = [dom_parser.parse_dom(i, 'a', req=['href']) for i in r if i]
             r = [(i[0].attrs['href'], re.search('Release:\s*(\d+)', i[0].content)) for i in r if i]
             r = [(i[0], i[1].groups()[0]) for i in r if i[0] and i[1]]
             r = [(i[0], i[1]) for i in r if i[1] == year]
@@ -67,8 +67,8 @@ class source:
         try:
             sources = []
             r = self.scraper.get(url).content
-            r = dom_parser2.parse_dom(r, 'p', {'class': 'server_play'})
-            r = [dom_parser2.parse_dom(i, 'a', req=['href']) for i in r if i]
+            r = dom_parser.parse_dom(r, 'p', {'class': 'server_play'})
+            r = [dom_parser.parse_dom(i, 'a', req=['href']) for i in r if i]
             r = [(i[0].attrs['href'], re.search('/(\w+).html', i[0].attrs['href'])) for i in r if i]
             r = [(i[0], i[1].groups()[0]) for i in r if i[0] and i[1]]
             for i in r:

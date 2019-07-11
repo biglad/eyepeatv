@@ -12,7 +12,8 @@
 import base64
 import re
 
-from vistascrapers.modules import cleantitle, cfscrape
+from vistascrapers.modules import cfscrape
+from vistascrapers.modules import cleantitle
 
 
 class source:

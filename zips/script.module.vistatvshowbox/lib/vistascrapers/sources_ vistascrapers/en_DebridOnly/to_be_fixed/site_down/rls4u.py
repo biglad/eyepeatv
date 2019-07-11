@@ -10,8 +10,8 @@
 
 import re
 import urllib
-import urlparse
 
+import urlparse
 from vistascrapers.modules import cfscrape
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
@@ -23,13 +23,12 @@ class source:
     def __init__(self):
         self.priority = 1
         self.language = ['en']
-        self.domain = 'go-movie.org'
-        self.base_link = 'https://go-movie.org'
+        self.domain = 'rls4u.net'
+        self.base_link = 'https://rls4u.net'
         self.search_link = '/index.php?do=search&subaction=search&story=%s'
         self.search_options = '&search_start=0&full_search=1&result_from=1&titleonly=3&searchuser=&replyless=1' \
                               '&replylimit=0&searchdate=0&beforeafter=after&sortby=date&resorder=desc&showposts=0' \
-                              '&catlist%5B%5D=1&catlist%5B%5D=23&catlist%5B%5D=16&catlist%5B%5D=22&catlist%5B%5D=15' \
-                              '&catlist%5B%5D=11&catlist%5B%5D=8 '
+                              '&catlist%5B%5D=26&catlist%5B%5D=27&catlist%5B%5D=10 '
         self.scraper = cfscrape.create_scraper()
 
     def movie(self, imdb, title, localtitle, aliases, year):
@@ -89,7 +88,7 @@ class source:
                     url = self.base_link + url + self.search_options
                     html = self.scraper.get(url)
                     if html.status_code == 200:
-                        posts = client.parseDOM(html.content, "div", attrs={"class": "dtitle"})
+                        posts = client.parseDOM(html.content, "div", attrs={"class": "kotx_1"})
                         for post in posts:
                             url = client.parseDOM(post, "a", ret='href')
                             if len(url) > 0:

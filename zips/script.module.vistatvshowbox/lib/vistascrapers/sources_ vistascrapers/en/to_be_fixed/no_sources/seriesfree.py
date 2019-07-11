@@ -17,8 +17,8 @@
 '''
 import re
 import urllib
-import urlparse
 
+import urlparse
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
 from vistascrapers.modules import dom_parser

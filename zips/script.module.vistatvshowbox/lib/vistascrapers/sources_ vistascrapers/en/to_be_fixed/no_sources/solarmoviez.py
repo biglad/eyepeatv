@@ -24,8 +24,8 @@ import json
 import re
 import time
 import urllib
-import urlparse
 
+import urlparse
 from vistascrapers.modules import cfscrape
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
@@ -235,9 +235,10 @@ class source:
                             length = 0
                             count = 0
                             while length == 0 and count < 11:
-                                r = self.scraper.get(u, headers=headers).text
+                                r = self.scraper.get(u, headers=headers).content
                                 length = len(r)
-                                if length == 0: count += 1
+                                if length == 0:
+                                    count += 1
                             uri = None
                             uri = json.loads(r)['playlist'][0]['sources']
                             try:
@@ -321,7 +322,7 @@ class source:
 
             vGlobals = {"__builtins__": None, '__name__': __name__, 'str': str, 'Exception': Exception}
             vLocals = {'param': None}
-            exec (CODE % script.replace('+', '|x|'), vGlobals, vLocals)
+            exec(CODE % script.replace('+', '|x|'), vGlobals, vLocals)
             data = vLocals['param'].decode('string_escape')
             x = re.search('''_x=['"]([^"']+)''', data).group(1)
             y = re.search('''_y=['"]([^"']+)''', data).group(1)

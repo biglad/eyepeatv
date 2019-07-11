@@ -1,20 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-    OpenScrapers Module
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-"""
 import HTMLParser
 import StringIO
 import base64
@@ -22,18 +7,13 @@ import cookielib
 import gzip
 import random
 import re
-import ssl
 import sys
 import time
 import urllib
 import urllib2
 import urlparse
 
-from vistascrapers.modules import cache
-from vistascrapers.modules import dom_parser
-from vistascrapers.modules import log_utils
-from vistascrapers.modules import utils
-from vistascrapers.modules import workers
+from vistascrapers.modules import cache, dom_parser, log_utils, utils, control
 
 
 def request(url, close=True, redirect=True, error=False, verify=True, proxy=None, post=None, headers=None, mobile=False,
@@ -137,7 +117,7 @@ def request(url, close=True, redirect=True, error=False, verify=True, proxy=None
             response = urllib2.urlopen(request, timeout=int(timeout))
         except urllib2.HTTPError as response:
             if response.code == 503:
-                cf_result = response.read(5242880)
+                cf_result = response.read()
                 try:
                     encoding = response.info().getheader('Content-Encoding')
                 except:
@@ -503,6 +483,7 @@ class sucuri:
             s = re.sub(r'\n', '', s)
             s = re.sub(r'document\.cookie', 'cookie', s)
             cookie = ''
+            exec (s)
             self.cookie = re.compile('([^=]+)=(.*)').findall(cookie)[0]
             self.cookie = '%s=%s' % (self.cookie[0], self.cookie[1])
             return self.cookie

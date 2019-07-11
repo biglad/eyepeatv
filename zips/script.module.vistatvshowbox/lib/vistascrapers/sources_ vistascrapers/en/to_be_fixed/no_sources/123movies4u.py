@@ -12,7 +12,9 @@
 
 import re
 
-from vistascrapers.modules import client, cleantitle, source_utils
+from vistascrapers.modules import cleantitle
+from vistascrapers.modules import client
+from vistascrapers.modules import source_utils
 
 
 class source:

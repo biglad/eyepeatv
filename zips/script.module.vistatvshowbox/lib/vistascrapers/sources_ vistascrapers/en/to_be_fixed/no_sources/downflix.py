@@ -26,7 +26,10 @@
 
 import re
 
-from vistascrapers.modules import cfscrape, cleantitle, directstream, source_utils
+from vistascrapers.modules import cfscrape
+from vistascrapers.modules import cleantitle
+from vistascrapers.modules import directstream
+from vistascrapers.modules import source_utils
 
 
 class source:

@@ -1,11 +1,39 @@
 import xbmc
 import xbmcgui
+import os
+import urllib2
+buildfile = "version.txt"
+buildv = xbmc.translatePath(os.path.join('special://home/', buildfile))
+
 window = xbmcgui.Window(10000)
 label = xbmcgui.ControlLabel(17, 17, 1000, 50, '[COLOR black]EPTV www.eptv.co.uk[/COLOR]')
 window.addControl(label)
 window = xbmcgui.Window(10000)
-label = xbmcgui.ControlLabel(15, 15, 1000, 50, 'EPTV www.eptv.co.uk')
+label = xbmcgui.ControlLabel(15, 15, 1000, 50, '[COLOR gold]EPTV[/COLOR] www.eptv.co.uk')
 window.addControl(label)
+
+
+
+
+import os.path
+if os.path.exists(buildv):
+    with open(buildv, 'r') as myfile:
+        data = myfile.read()
+        buildv = float(data)
+else:
+    try:
+        fo = open("0.0", "w")
+        fo.write(buildv);
+        fo.close()
+        buildv = "0.0"
+    except:
+        buildv = "0.0"
+        
+        
+        
+
+
+
 
 
 AddonID = 'script.eptv.core'
@@ -18,7 +46,7 @@ window = xbmcgui.Window(10025)
 label = xbmcgui.ControlLabel(17, 17, 1000, 50, '[COLOR black]EPTV www.eptv.co.uk[/COLOR]')
 window.addControl(label)
 window = xbmcgui.Window(10025)
-label = xbmcgui.ControlLabel(15, 15, 1000, 50, 'EPTV www.eptv.co.uk')
+label = xbmcgui.ControlLabel(15, 15, 1000, 50, '[COLOR gold]EPTV[/COLOR] www.eptv.co.uk')
 window.addControl(label)
 
 
@@ -38,6 +66,28 @@ xbmc.executebuiltin("XBMC.AlarmClock('MTVBCS',XBMC.RunAddon(script.eptv.core),5,
 #xbmc.executebuiltin("Dialog.Close(busydialog)")
 xbmc.executebuiltin('Notification(STARTING UP,[COLOR white]Please Wait.....[/COLOR],15000,special://home/addons/'+AddonID+'/icon.png)')    
 xbmc.executebuiltin("ActivateWindow(10000)")
+
+webversion = urllib2.urlopen('http://eptv.co.uk/version.txt').read()
+webversion = float(webversion)
+buildv = float(buildv)
+
+buildinfo1 = "[COLOR black]Your Build Version : "+str(buildv)+" - Latest Version : "+str(webversion)+"[/COLOR]"
+buildinfo2 = "[COLOR darkgrey]Your Build Version : "+str(buildv)+" - Latest Version : "+str(webversion)+"[/COLOR]"
+
+window = xbmcgui.Window(10000)
+label = xbmcgui.ControlLabel(50, 52, 1000, 50, buildinfo1)
+window.addControl(label)
+window = xbmcgui.Window(10000)
+label = xbmcgui.ControlLabel(48, 50, 1000, 50, buildinfo2)
+window.addControl(label)
+
+
+window = xbmcgui.Window(10000)
+label = xbmcgui.ControlLabel(50, 82, 1000, 50, "[COLOR black]Kodi Version : "+str(KODIV)+"[/COLOR]")
+window.addControl(label)
+window = xbmcgui.Window(10000)
+label = xbmcgui.ControlLabel(48, 80, 1000, 50, "[COLOR darkgrey]Kodi Version : "+str(KODIV)+"[/COLOR]")
+window.addControl(label)
 
 
 

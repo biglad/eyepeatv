@@ -195,6 +195,20 @@
 		</item>
 		<item id="13">
 			<property name="id">$NUMBER[13]</property>
+			<label>[COLOR white]Adult[/COLOR]</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb>special://skin/extras/icons/new/adult2.png</thumb>
+			<property name="background">special://skin/backgrounds/background11.png</property>
+			<property name="backgroundName">special://skin/backgrounds/background11.png</property>
+			<onclick>PlayMedia("plugin://plugin.video.eyepeatv/?url=speed&amp;mode=7655&amp;name=%5BCOLOR+red%5D%5BB%5DADULT+CONTENT%5B%2FB%5D%5B%2FCOLOR%5D+%28SET+PASSWORD+IN+SETTINGS%29&amp;fanart=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cbackground.png",return)</onclick>
+			<property name="path">PlayMedia("plugin://plugin.video.eyepeatv/?url=speed&amp;mode=7655&amp;name=%5BCOLOR+red%5D%5BB%5DADULT+CONTENT%5B%2FB%5D%5B%2FCOLOR%5D+%28SET+PASSWORD+IN+SETTINGS%29&amp;fanart=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cbackground.png",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">colorwhite-adult-color</property>
+			<property name="hasSubmenu">True</property>
+		</item>
+		<item id="14">
+			<property name="id">$NUMBER[14]</property>
 			<label>[COLOR white]Tools Menu[/COLOR]</label>
 			<label2>Program</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -208,9 +222,9 @@
 			<property name="submenuVisibility">script-module-aliunde-maintenance-wizard</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="14">
-			<property name="id">$NUMBER[14]</property>
-			<label>[COLOR white]24-7[/COLOR]</label>
+		<item id="15">
+			<property name="id">$NUMBER[15]</property>
+			<label>[COLOR white]24/7 Streams[/COLOR]</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
 			<thumb>special://skin/extras/icons/new/247.png</thumb>
@@ -219,7 +233,7 @@
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsd2473.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+TV+Shows+%5B%2FCOLOR%5D+90+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsd2473.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+TV+Shows+%5B%2FCOLOR%5D+90+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">colorwhite-24-7-color</property>
+			<property name="submenuVisibility">colorwhite-24-7streams-color</property>
 			<property name="hasSubmenu">True</property>
 		</item>
 	</include>
@@ -422,6 +436,18 @@
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">2</property>
+			<label>Basic TV Guide</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.iptv.recorder/epg",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.iptv.recorder/epg",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colororange-livetv-color)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">2</property>
 			<label>Recordings</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -432,8 +458,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colororange-livetv-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">2</property>
 			<label>Record Timers</label>
 			<label2>Custom item</label2>
@@ -444,8 +470,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colororange-livetv-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">2</property>
 			<label>EyePeaTV Main Menu</label>
 			<label2>Custom item</label2>
@@ -456,8 +482,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colororange-livetv-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">2</property>
 			<label>Live Movie / TV Show Search</label>
 			<label2>Custom item</label2>
@@ -468,8 +494,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colororange-livetv-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">2</property>
 			<label>EyePeaTV Tools</label>
 			<label2>Custom item</label2>
@@ -480,8 +506,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colororange-livetv-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">2</property>
 			<label>BBC iPlayer</label>
 			<label2>Video Add-On</label2>
@@ -490,42 +516,6 @@
 			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</property>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colororange-livetv-color)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
-			<property name="mainmenuid">2</property>
-			<label>24/7 TV Shows</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=6668&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5D24%2F7+TV+Shows%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=6668&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5D24%2F7+TV+Shows%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colororange-livetv-color)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="10">
-			<property name="id">$NUMBER[10]</property>
-			<property name="mainmenuid">2</property>
-			<label>24/7 Movies</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=6669&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5D24%2F7+Movies%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=6669&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5D24%2F7+Movies%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colororange-livetv-color)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="11">
-			<property name="id">$NUMBER[11]</property>
-			<property name="mainmenuid">2</property>
-			<label>CCTV &amp; Web Cams</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=5151&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5DCCTV+%26+WebCams%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=5151&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5DCCTV+%26+WebCams%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colororange-livetv-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -1051,7 +1041,43 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">14</property>
+			<property name="mainmenuid">13</property>
+			<label>ADULTS ONLY</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-adult-color)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">13</property>
+			<label>Set Password in</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-adult-color)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">13</property>
+			<label>EPTV Addon</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-adult-color)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">15</property>
 			<label>24/7 TV Shows</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1059,12 +1085,12 @@
 			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsd2473.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+TV+Shows+%5B%2FCOLOR%5D+90+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</property>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsd2473.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+TV+Shows+%5B%2FCOLOR%5D+90+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsd2473.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+TV+Shows+%5B%2FCOLOR%5D+90+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-24-7-color)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-24-7streams-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">14</property>
+			<property name="mainmenuid">15</property>
 			<label>24/7 Movies</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1072,12 +1098,12 @@
 			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsdmovies2.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+Movies+%5B%2FCOLOR%5D+17+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</property>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsdmovies2.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+Movies+%5B%2FCOLOR%5D+17+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsdmovies2.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+Movies+%5B%2FCOLOR%5D+17+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-24-7-color)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-24-7streams-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">14</property>
+			<property name="mainmenuid">15</property>
 			<label>24/7 Kids Shows</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1085,7 +1111,7 @@
 			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsd247kids.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+Kids+Shows+%5B%2FCOLOR%5D+15+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</property>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsd247kids.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+Kids+Shows+%5B%2FCOLOR%5D+15+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsd247kids.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+Kids+Shows+%5B%2FCOLOR%5D+15+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-24-7-color)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-24-7streams-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
@@ -1475,6 +1501,18 @@
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">2</property>
+			<label>Basic TV Guide</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.iptv.recorder/epg",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.iptv.recorder/epg",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">2</property>
 			<label>Recordings</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1485,8 +1523,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">2</property>
 			<label>Record Timers</label>
 			<label2>Custom item</label2>
@@ -1497,8 +1535,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">2</property>
 			<label>EyePeaTV Main Menu</label>
 			<label2>Custom item</label2>
@@ -1509,8 +1547,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">2</property>
 			<label>Live Movie / TV Show Search</label>
 			<label2>Custom item</label2>
@@ -1521,8 +1559,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">2</property>
 			<label>EyePeaTV Tools</label>
 			<label2>Custom item</label2>
@@ -1533,8 +1571,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">2</property>
 			<label>BBC iPlayer</label>
 			<label2>Video Add-On</label2>
@@ -1543,42 +1581,6 @@
 			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</property>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
-			<property name="mainmenuid">2</property>
-			<label>24/7 TV Shows</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=6668&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5D24%2F7+TV+Shows%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=6668&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5D24%2F7+TV+Shows%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="10">
-			<property name="id">$NUMBER[10]</property>
-			<property name="mainmenuid">2</property>
-			<label>24/7 Movies</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=6669&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5D24%2F7+Movies%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=6669&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5D24%2F7+Movies%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="11">
-			<property name="id">$NUMBER[11]</property>
-			<property name="mainmenuid">2</property>
-			<label>CCTV &amp; Web Cams</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=5151&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5DCCTV+%26+WebCams%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=5151&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5DCCTV+%26+WebCams%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -1613,6 +1615,18 @@
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">2</property>
+			<label>Basic TV Guide</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.iptv.recorder/epg",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.iptv.recorder/epg",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colororange-livetv-color)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">2</property>
 			<label>Recordings</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1623,8 +1637,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colororange-livetv-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">2</property>
 			<label>Record Timers</label>
 			<label2>Custom item</label2>
@@ -1635,8 +1649,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colororange-livetv-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">2</property>
 			<label>EyePeaTV Main Menu</label>
 			<label2>Custom item</label2>
@@ -1647,8 +1661,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colororange-livetv-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">2</property>
 			<label>Live Movie / TV Show Search</label>
 			<label2>Custom item</label2>
@@ -1659,8 +1673,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colororange-livetv-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">2</property>
 			<label>EyePeaTV Tools</label>
 			<label2>Custom item</label2>
@@ -1671,8 +1685,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colororange-livetv-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">2</property>
 			<label>BBC iPlayer</label>
 			<label2>Video Add-On</label2>
@@ -1681,42 +1695,6 @@
 			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</property>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.iplayerwww",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colororange-livetv-color)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
-			<property name="mainmenuid">2</property>
-			<label>24/7 TV Shows</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=6668&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5D24%2F7+TV+Shows%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=6668&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5D24%2F7+TV+Shows%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colororange-livetv-color)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="10">
-			<property name="id">$NUMBER[10]</property>
-			<property name="mainmenuid">2</property>
-			<label>24/7 Movies</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=6669&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5D24%2F7+Movies%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=6669&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5D24%2F7+Movies%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colororange-livetv-color)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="11">
-			<property name="id">$NUMBER[11]</property>
-			<property name="mainmenuid">2</property>
-			<label>CCTV &amp; Web Cams</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=5151&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5DCCTV+%26+WebCams%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.livehub2/?url=url&amp;mode=5151&amp;name=%5BB%5D%5BCOLOR+gold%5DNeeko%3A+%5B%2FCOLOR%5D%5BCOLOR+white%5DCCTV+%26+WebCams%5B%2FCOLOR%5D%5B%2FB%5D+%28IPTV%29&amp;iconimage=special://home/addons%5Cplugin.video.livehub2%5Cicon.png&amp;description=",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colororange-livetv-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -2939,6 +2917,94 @@
 	<include name="skinshortcuts-group-alt-colorwhite-myweather-color-2">
 		<description>No items</description>
 	</include>
+	<include name="skinshortcuts-group-colorwhite-adult-color">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">13</property>
+			<label>ADULTS ONLY</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">13</property>
+			<label>Set Password in</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">13</property>
+			<label>EPTV Addon</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-colorwhite-adult-color">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">13</property>
+			<label>ADULTS ONLY</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colorwhite-adult-color)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">13</property>
+			<label>Set Password in</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colorwhite-adult-color)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">13</property>
+			<label>EPTV Addon</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb />
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colorwhite-adult-color)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-colorwhite-adult-color-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-colorwhite-adult-color-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-colorwhite-adult-color-2">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-colorwhite-adult-color-2">
+		<description>No items</description>
+	</include>
 	<include name="skinshortcuts-group-script-module-aliunde-maintenance-wizard">
 		<description>No items</description>
 	</include>
@@ -2957,10 +3023,10 @@
 	<include name="skinshortcuts-group-alt-script-module-aliunde-maintenance-wizard-2">
 		<description>No items</description>
 	</include>
-	<include name="skinshortcuts-group-colorwhite-24-7-color">
+	<include name="skinshortcuts-group-colorwhite-24-7streams-color">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">14</property>
+			<property name="mainmenuid">15</property>
 			<label>24/7 TV Shows</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2973,7 +3039,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">14</property>
+			<property name="mainmenuid">15</property>
 			<label>24/7 Movies</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2986,7 +3052,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">14</property>
+			<property name="mainmenuid">15</property>
 			<label>24/7 Kids Shows</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2998,10 +3064,10 @@
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-alt-colorwhite-24-7-color">
+	<include name="skinshortcuts-group-alt-colorwhite-24-7streams-color">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">14</property>
+			<property name="mainmenuid">15</property>
 			<label>24/7 TV Shows</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -3009,12 +3075,12 @@
 			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsd2473.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+TV+Shows+%5B%2FCOLOR%5D+90+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</property>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsd2473.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+TV+Shows+%5B%2FCOLOR%5D+90+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsd2473.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+TV+Shows+%5B%2FCOLOR%5D+90+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colorwhite-24-7-color)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colorwhite-24-7streams-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">14</property>
+			<property name="mainmenuid">15</property>
 			<label>24/7 Movies</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -3022,12 +3088,12 @@
 			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsdmovies2.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+Movies+%5B%2FCOLOR%5D+17+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</property>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsdmovies2.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+Movies+%5B%2FCOLOR%5D+17+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsdmovies2.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+Movies+%5B%2FCOLOR%5D+17+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colorwhite-24-7-color)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colorwhite-24-7streams-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">14</property>
+			<property name="mainmenuid">15</property>
 			<label>24/7 Kids Shows</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -3035,20 +3101,20 @@
 			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsd247kids.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+Kids+Shows+%5B%2FCOLOR%5D+15+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</property>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsd247kids.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+Kids+Shows+%5B%2FCOLOR%5D+15+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsd247kids.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+Kids+Shows+%5B%2FCOLOR%5D+15+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colorwhite-24-7-color)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),colorwhite-24-7streams-color)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-colorwhite-24-7-color-1">
+	<include name="skinshortcuts-group-colorwhite-24-7streams-color-1">
 		<description>No items</description>
 	</include>
-	<include name="skinshortcuts-group-alt-colorwhite-24-7-color-1">
+	<include name="skinshortcuts-group-alt-colorwhite-24-7streams-color-1">
 		<description>No items</description>
 	</include>
-	<include name="skinshortcuts-group-colorwhite-24-7-color-2">
+	<include name="skinshortcuts-group-colorwhite-24-7streams-color-2">
 		<description>No items</description>
 	</include>
-	<include name="skinshortcuts-group-alt-colorwhite-24-7-color-2">
+	<include name="skinshortcuts-group-alt-colorwhite-24-7streams-color-2">
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-template-widget1">
@@ -4622,12 +4688,12 @@
 			<top>449</top>
 			<left>245</left>
 			<control type="group">
-				<visible>Integer.IsGreater(Container(801113).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(801114).NumItems,0)</visible>
 				<control type="group">
 					<visible>ControlGroup(90010).HasFocus + !Window.IsVisible(shutdownmenu) + !Window.IsVisible(favourites) + !Window.IsVisible(numericinput) + !Window.IsVisible(busydialog)</visible>
 					<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + ControlGroup(90010).HasFocus" easing="inout" effect="slide" end="-410,0" time="320" tween="cubic">Conditional</animation>
 					<include content="Info">
-						<param name="id">801113</param>
+						<param name="id">801114</param>
 						<param name="widgetSquare">false</param>
 						<param name="widthBack">1470</param>
 						<param name="Left1">226</param>
@@ -4642,7 +4708,7 @@
 					<control type="group">
 						<left>-21</left>
 						<top>-16</top>
-						<animation center="150" condition="Control.HasFocus(801113) + false" easing="inout" effect="rotatey" end="180" start="0" time="400" tween="sine">Conditional</animation>
+						<animation center="150" condition="Control.HasFocus(801114) + false" easing="inout" effect="rotatey" end="180" start="0" time="400" tween="sine">Conditional</animation>
 						<control type="image">
 							<width>342</width>
 							<height>342</height>
@@ -4661,11 +4727,11 @@
 					<control type="group">
 						<width>300</width>
 						<height>300</height>
-						<animation condition="Control.HasFocus(801113) + false" type="Conditional">
+						<animation condition="Control.HasFocus(801114) + false" type="Conditional">
 							<effect center="150" easing="inout" end="180" start="0" time="400" tween="sine" type="rotatey" />
 							<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
 						</animation>
-						<visible>String.IsEmpty(Container(801113).ListItem.Property(isSystemInfo))</visible>
+						<visible>String.IsEmpty(Container(801114).ListItem.Property(isSystemInfo))</visible>
 						<control type="label">
 							<width>300</width>
 							<top>9</top>
@@ -4685,12 +4751,12 @@
 							<textcolor>grey</textcolor>
 							<shadowcolor>shadow</shadowcolor>
 							<wrapmultiline>true</wrapmultiline>
-							<label>$VAR[HomeWidget801113TitleVar]</label>
+							<label>$VAR[HomeWidget801114TitleVar]</label>
 						</control>
 						<include content="ListSquareArt">
-							<param name="id">801113</param>
-							<param name="Texture">$VAR[HomeWidget801113PosterVar]</param>
-							<param name="Title2">$VAR[HomeWidget801113Title2Var]</param>
+							<param name="id">801114</param>
+							<param name="Texture">$VAR[HomeWidget801114PosterVar]</param>
+							<param name="Title2">$VAR[HomeWidget801114Title2Var]</param>
 							<param name="leftArt">50</param>
 							<param name="topArt">40</param>
 							<param name="widthArt">200</param>
@@ -4712,7 +4778,7 @@
 					</control>
 				</control>
 			</control>
-			<control id="801113" type="list">
+			<control id="801114" type="list">
 				<top>5</top>
 				<left>1130</left>
 				<width>300</width>
@@ -4730,19 +4796,19 @@
 				<orientation>vertical</orientation>
 				<preloaditems>2</preloaditems>
 				<scrolltime easing="out" tween="quadratic">300</scrolltime>
-				<autoscroll delay="10000" repeat="10000" time="10000">Control.IsVisible(801113) + Skin.HasSetting(Enable.ListWidgetAutoscroll) + !Control.HasFocus(801113)</autoscroll>
-				<animation condition="[!String.IsEqual(Skin.String(MainMenu.Layout),15) + !Control.HasFocus(801113) + false] | [String.IsEqual(Skin.String(MainMenu.Layout),15) + !String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801113) + false]" type="Conditional">
+				<autoscroll delay="10000" repeat="10000" time="10000">Control.IsVisible(801114) + Skin.HasSetting(Enable.ListWidgetAutoscroll) + !Control.HasFocus(801114)</autoscroll>
+				<animation condition="[!String.IsEqual(Skin.String(MainMenu.Layout),15) + !Control.HasFocus(801114) + false] | [String.IsEqual(Skin.String(MainMenu.Layout),15) + !String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801114) + false]" type="Conditional">
 					<effect center="1280" easing="inout" end="-180" start="0" time="400" tween="sine" type="rotatey" />
 					<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
 				</animation>
-				<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801113) + false" type="Conditional">
+				<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801114) + false" type="Conditional">
 					<effect center="1280" easing="inout" end="-180" start="0" time="400" tween="sine" type="rotatey" />
 					<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
 				</animation>
 				<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended)" effect="slide" end="-410,0">Conditional</animation>
 				<include content="ListSystem">
-					<param name="id">801113</param>
-					<param name="Texture">$VAR[HomeWidget801113PosterVar]</param>
+					<param name="id">801114</param>
+					<param name="Texture">$VAR[HomeWidget801114PosterVar]</param>
 					<param name="leftArt">0</param>
 					<param name="topArt">2.5</param>
 					<param name="widthArt">300</param>
@@ -4902,10 +4968,10 @@
 			<param name="imagePathMulti">$INFO[Container(801112).ListItem.Property(WeatherMultiFanart)]</param>
 		</include>
 		<include content="WidgetHomeFanart">
-			<param name="id">801113</param>
-			<param name="Visible">Control.HasFocus(801113)</param>
+			<param name="id">801114</param>
+			<param name="Visible">Control.HasFocus(801114)</param>
 			<param name="isWeather">False</param>
-			<param name="imagePath">$INFO[Container(801113).ListItem.Property(Fanart)]</param>
+			<param name="imagePath">$INFO[Container(801114).ListItem.Property(Fanart)]</param>
 			<param name="imagePathMulti" />
 		</include>
 	</include>
@@ -6438,144 +6504,144 @@
 		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Plot))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Plot)]</value>
 		<value>$INFO[Container(801112).ListItem.Plot]</value>
 	</variable>
-	<variable name="HomeWidget801113CaseVar">
-		<value condition="String.Contains(Container(801113).ListItem.Filename,4k)">4k.png</value>
-		<value condition="Container(801113).ListItem.IsStereoscopic | String.Contains(Container(801113).ListItem.Filename,3d) | String.Contains(Container(801113).ListItem.Filename,3dbd)">3d.png</value>
-		<value condition="String.Contains(Container(801113).ListItem.Filename,hddvd)">hddvd.png</value>
-		<value condition="String.Contains(Container(801113).ListItem.Filename,hdtv) | String.Contains(Container(801113).ListItem.Filename,hd tv)">hdtv.png</value>
-		<value condition="String.Contains(Container(801113).ListItem.Filename,webdl) | String.Contains(Container(801113).ListItem.Filename,web-dl) | String.Contains(Container(801113).ListItem.Filename,webtv) | String.Contains(Container(801113).ListItem.Filename,web-tv)">webdl.png</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.VideoResolution)">$INFO[Container(801113).ListItem.VideoResolution]p.png</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(VideoResolution))">$INFO[Container(801113).ListItem.Property(VideoResolution)]p.png</value>
-		<value condition="String.IsEmpty(Container(801113).ListItem.VideoResolution) + !String.IsEmpty(Container(801113).ListItem.TVShowTitle)">tvseries.png</value>
-		<value condition="String.IsEmpty(Container(801113).ListItem.Property(VideoResolution)) + String.IsEmpty(Container(801113).ListItem.TVShowTitle) + [!String.IsEmpty(Container(801113).ListItem.Trailer) | String.Contains(Container(801113).ListItem.FolderPath,extendedinfo)]">trailers.png</value>
+	<variable name="HomeWidget801114CaseVar">
+		<value condition="String.Contains(Container(801114).ListItem.Filename,4k)">4k.png</value>
+		<value condition="Container(801114).ListItem.IsStereoscopic | String.Contains(Container(801114).ListItem.Filename,3d) | String.Contains(Container(801114).ListItem.Filename,3dbd)">3d.png</value>
+		<value condition="String.Contains(Container(801114).ListItem.Filename,hddvd)">hddvd.png</value>
+		<value condition="String.Contains(Container(801114).ListItem.Filename,hdtv) | String.Contains(Container(801114).ListItem.Filename,hd tv)">hdtv.png</value>
+		<value condition="String.Contains(Container(801114).ListItem.Filename,webdl) | String.Contains(Container(801114).ListItem.Filename,web-dl) | String.Contains(Container(801114).ListItem.Filename,webtv) | String.Contains(Container(801114).ListItem.Filename,web-tv)">webdl.png</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.VideoResolution)">$INFO[Container(801114).ListItem.VideoResolution]p.png</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Property(VideoResolution))">$INFO[Container(801114).ListItem.Property(VideoResolution)]p.png</value>
+		<value condition="String.IsEmpty(Container(801114).ListItem.VideoResolution) + !String.IsEmpty(Container(801114).ListItem.TVShowTitle)">tvseries.png</value>
+		<value condition="String.IsEmpty(Container(801114).ListItem.Property(VideoResolution)) + String.IsEmpty(Container(801114).ListItem.TVShowTitle) + [!String.IsEmpty(Container(801114).ListItem.Trailer) | String.Contains(Container(801114).ListItem.FolderPath,extendedinfo)]">trailers.png</value>
 		<value>p.png</value>
 	</variable>
-	<variable name="HomeWidget801113OnInfoCaseVar">
-		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Glass) + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
+	<variable name="HomeWidget801114OnInfoCaseVar">
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Glass) + String.IsEmpty(Container(801114).ListItem.Property(Label3)) + String.IsEmpty(Container(801114).ListItem.ChannelName) + String.IsEmpty(Container(801114).ListItem.Artist) + String.IsEmpty(Container(801114).ListItem.AlbumArtist) + String.IsEmpty(Container(801114).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
 		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Glass)">homewidgets/glass/square.png</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Case) + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets/case/poster/$VAR[HomeWidget801113CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Case) + String.IsEmpty(Container(801114).ListItem.Property(Label3)) + String.IsEmpty(Container(801114).ListItem.ChannelName) + String.IsEmpty(Container(801114).ListItem.Artist) + String.IsEmpty(Container(801114).ListItem.AlbumArtist) + String.IsEmpty(Container(801114).ListItem.AddonName) + !false">homewidgets/case/poster/$VAR[HomeWidget801114CaseVar]</value>
 		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Case)">homewidgets/case/square/cd.png</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Clear Case) + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets/clearcase/poster/$VAR[HomeWidget801113CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Clear Case) + String.IsEmpty(Container(801114).ListItem.Property(Label3)) + String.IsEmpty(Container(801114).ListItem.ChannelName) + String.IsEmpty(Container(801114).ListItem.Artist) + String.IsEmpty(Container(801114).ListItem.AlbumArtist) + String.IsEmpty(Container(801114).ListItem.AddonName) + !false">homewidgets/clearcase/poster/$VAR[HomeWidget801114CaseVar]</value>
 		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Clear Case)">homewidgets/clearcase/square/cd.png</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + !false + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets//poster/$VAR[HomeWidget801113CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + !false + String.IsEmpty(Container(801114).ListItem.Property(Label3)) + String.IsEmpty(Container(801114).ListItem.ChannelName) + String.IsEmpty(Container(801114).ListItem.Artist) + String.IsEmpty(Container(801114).ListItem.AlbumArtist) + String.IsEmpty(Container(801114).ListItem.AddonName) + !false">homewidgets//poster/$VAR[HomeWidget801114CaseVar]</value>
 		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + !false">homewidgets//square/cd.png</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + false + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + false + String.IsEmpty(Container(801114).ListItem.Property(Label3)) + String.IsEmpty(Container(801114).ListItem.ChannelName) + String.IsEmpty(Container(801114).ListItem.Artist) + String.IsEmpty(Container(801114).ListItem.AlbumArtist) + String.IsEmpty(Container(801114).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
 		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + false">homewidgets/glass/square.png</value>
 		<value />
 	</variable>
-	<variable name="HomeWidget801113InfoCaseVar">
-		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Glass) + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
+	<variable name="HomeWidget801114InfoCaseVar">
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Glass) + String.IsEmpty(Container(801114).ListItem.Property(Label3)) + String.IsEmpty(Container(801114).ListItem.ChannelName) + String.IsEmpty(Container(801114).ListItem.Artist) + String.IsEmpty(Container(801114).ListItem.AlbumArtist) + String.IsEmpty(Container(801114).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
 		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Glass)">homewidgets/glass/square.png</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Case) + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets/case/poster/$VAR[HomeWidget801113CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Case) + String.IsEmpty(Container(801114).ListItem.Property(Label3)) + String.IsEmpty(Container(801114).ListItem.ChannelName) + String.IsEmpty(Container(801114).ListItem.Artist) + String.IsEmpty(Container(801114).ListItem.AlbumArtist) + String.IsEmpty(Container(801114).ListItem.AddonName) + !false">homewidgets/case/poster/$VAR[HomeWidget801114CaseVar]</value>
 		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Case)">homewidgets/case/square/cd.png</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Clear Case) + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets/clearcase/poster/$VAR[HomeWidget801113CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Clear Case) + String.IsEmpty(Container(801114).ListItem.Property(Label3)) + String.IsEmpty(Container(801114).ListItem.ChannelName) + String.IsEmpty(Container(801114).ListItem.Artist) + String.IsEmpty(Container(801114).ListItem.AlbumArtist) + String.IsEmpty(Container(801114).ListItem.AddonName) + !false">homewidgets/clearcase/poster/$VAR[HomeWidget801114CaseVar]</value>
 		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Clear Case)">homewidgets/clearcase/square/cd.png</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + !false + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets//poster/$VAR[HomeWidget801113CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + !false + String.IsEmpty(Container(801114).ListItem.Property(Label3)) + String.IsEmpty(Container(801114).ListItem.ChannelName) + String.IsEmpty(Container(801114).ListItem.Artist) + String.IsEmpty(Container(801114).ListItem.AlbumArtist) + String.IsEmpty(Container(801114).ListItem.AddonName) + !false">homewidgets//poster/$VAR[HomeWidget801114CaseVar]</value>
 		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + !false">homewidgets//square/cd.png</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + false + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + false + String.IsEmpty(Container(801114).ListItem.Property(Label3)) + String.IsEmpty(Container(801114).ListItem.ChannelName) + String.IsEmpty(Container(801114).ListItem.Artist) + String.IsEmpty(Container(801114).ListItem.AlbumArtist) + String.IsEmpty(Container(801114).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
 		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + false">homewidgets/glass/square.png</value>
 		<value />
 	</variable>
-	<variable name="HomeWidget801113PosterVar">
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(poster))">$INFO[Container(801113).ListItem.Art(poster)]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(tvshow.poster))">$INFO[Container(801113).ListItem.Art(tvshow.poster)]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Icon)">$INFO[Container(801113).ListItem.Icon]</value>
-		<value>$INFO[Container(801113).ListItem.Art(thumb)]</value>
+	<variable name="HomeWidget801114PosterVar">
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Art(poster))">$INFO[Container(801114).ListItem.Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Art(tvshow.poster))">$INFO[Container(801114).ListItem.Art(tvshow.poster)]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Icon)">$INFO[Container(801114).ListItem.Icon]</value>
+		<value>$INFO[Container(801114).ListItem.Art(thumb)]</value>
 	</variable>
-	<variable name="HomeWidget801113FanArtVar">
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(fanart))">$INFO[Container(801113).ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Fanart)) + !Skin.HasSetting(weatherfanart.multi)">$INFO[Container(801113).ListItem.Property(Fanart)]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(WeatherMultiFanart)) + Skin.HasSetting(weatherfanart.multi)">$INFO[Container(801113).ListItem.Property(WeatherMultiFanart)]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Fanart))">$INFO[Container(801113).ListItem.Property(Fanart)]</value>
-		<value>$INFO[Container(801113).ListItem.Art(thumb)]</value>
+	<variable name="HomeWidget801114FanArtVar">
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Art(fanart))">$INFO[Container(801114).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Property(Fanart)) + !Skin.HasSetting(weatherfanart.multi)">$INFO[Container(801114).ListItem.Property(Fanart)]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Property(WeatherMultiFanart)) + Skin.HasSetting(weatherfanart.multi)">$INFO[Container(801114).ListItem.Property(WeatherMultiFanart)]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Property(Fanart))">$INFO[Container(801114).ListItem.Property(Fanart)]</value>
+		<value>$INFO[Container(801114).ListItem.Art(thumb)]</value>
 	</variable>
-	<variable name="HomeWidget801113LandscapeVar">
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(landscape))">$INFO[Container(801113).ListItem.Art(landscape)]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(tvshow.landscape))">$INFO[Container(801113).ListItem.Art(tvshow.landscape)]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(fanart))">$INFO[Container(801113).ListItem.Art(fanart)]</value>
-		<value>$INFO[Container(801113).ListItem.Art(thumb)]</value>
+	<variable name="HomeWidget801114LandscapeVar">
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Art(landscape))">$INFO[Container(801114).ListItem.Art(landscape)]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Art(tvshow.landscape))">$INFO[Container(801114).ListItem.Art(tvshow.landscape)]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Art(fanart))">$INFO[Container(801114).ListItem.Art(fanart)]</value>
+		<value>$INFO[Container(801114).ListItem.Art(thumb)]</value>
 	</variable>
-	<variable name="HomeWidget801113ClearArtVar">
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(clearart))">$INFO[Container(801113).ListItem.Art(clearart)]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(tvshow.clearart))">$INFO[Container(801113).ListItem.Art(tvshow.clearart)]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(tvshow.clearlogo))">$INFO[Container(801113).ListItem.Art(tvshow.clearlogo)]</value>
-		<value>$INFO[Container(801113).ListItem.Art(clearlogo)]</value>
+	<variable name="HomeWidget801114ClearArtVar">
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Art(clearart))">$INFO[Container(801114).ListItem.Art(clearart)]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Art(tvshow.clearart))">$INFO[Container(801114).ListItem.Art(tvshow.clearart)]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Art(tvshow.clearlogo))">$INFO[Container(801114).ListItem.Art(tvshow.clearlogo)]</value>
+		<value>$INFO[Container(801114).ListItem.Art(clearlogo)]</value>
 	</variable>
-	<variable name="HomeWidget801113ClearLogoVar">
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(clearlogo))">$INFO[Container(801113).ListItem.Art(clearlogo)]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(tvshow.clearlogo))">$INFO[Container(801113).ListItem.Art(tvshow.clearlogo)]</value>
+	<variable name="HomeWidget801114ClearLogoVar">
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Art(clearlogo))">$INFO[Container(801114).ListItem.Art(clearlogo)]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Art(tvshow.clearlogo))">$INFO[Container(801114).ListItem.Art(tvshow.clearlogo)]</value>
 	</variable>
-	<variable name="HomeWidget801113ThumbVar">
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(thumb))">$INFO[Container(801113).ListItem.Art(thumb)]</value>
-		<value>$INFO[Container(801113).ListItem.Art(fanart)]</value>
+	<variable name="HomeWidget801114ThumbVar">
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Art(thumb))">$INFO[Container(801114).ListItem.Art(thumb)]</value>
+		<value>$INFO[Container(801114).ListItem.Art(fanart)]</value>
 	</variable>
-	<variable name="HomeWidget801113CharacterArtVar">
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(tvshow.characterart))">$INFO[Container(801113).ListItem.Art(tvshow.characterart)]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(tvshow.clearart))">$INFO[Container(801113).ListItem.Art(tvshow.clearart)]</value>
-		<value>$INFO[Container(801113).ListItem.Art(tvshow.clearlogo)]</value>
+	<variable name="HomeWidget801114CharacterArtVar">
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Art(tvshow.characterart))">$INFO[Container(801114).ListItem.Art(tvshow.characterart)]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Art(tvshow.clearart))">$INFO[Container(801114).ListItem.Art(tvshow.clearart)]</value>
+		<value>$INFO[Container(801114).ListItem.Art(tvshow.clearlogo)]</value>
 	</variable>
-	<variable name="HomeWidget801113BannerVar">
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(tvshow.banner))">$INFO[Container(801113).ListItem.Art(tvshow.banner)]</value>
-		<value>$INFO[Container(801113).ListItem.Art(banner)]</value>
+	<variable name="HomeWidget801114BannerVar">
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Art(tvshow.banner))">$INFO[Container(801114).ListItem.Art(tvshow.banner)]</value>
+		<value>$INFO[Container(801114).ListItem.Art(banner)]</value>
 	</variable>
-	<variable name="HomeWidget801113TitleVar">
-		<value condition="!String.IsEmpty(Container(801113).ListItem.AddonName)">$INFO[Container(801113).ListItem.AddonName]</value>
-		<value condition="[!Integer.IsGreater(Container(801113).ListItem.Season,9) + !Integer.IsGreater(Container(801113).ListItem.Episode,9)] + !String.StartsWith(Container(801113).ListItem.Episode,S) + !String.IsEmpty(Container(801113).ListItem.Episode) + !String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.TVShowTitle)">$INFO[Container(801113).ListItem.Season,S0]$INFO[Container(801113).ListItem.Episode,E0] $INFO[Container(801113).ListItem.Title]</value>
-		<value condition="[!Integer.IsGreater(Container(801113).ListItem.Season,9) + !Integer.IsGreater(Container(801113).ListItem.Episode,9)] + String.StartsWith(Container(801113).ListItem.Episode,S) + !String.IsEmpty(Container(801113).ListItem.Episode) + !String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.TVShowTitle)">$INFO[Container(801113).ListItem.Season,S0]$INFO[Container(801113).ListItem.Episode] $INFO[Container(801113).ListItem.Title]</value>
-		<value condition="[!Integer.IsGreater(Container(801113).ListItem.Season,9) + Integer.IsGreater(Container(801113).ListItem.Episode,9)] + !String.IsEmpty(Container(801113).ListItem.Episode) + !String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.TVShowTitle)">$INFO[Container(801113).ListItem.Season,S0]$INFO[Container(801113).ListItem.Episode,E] $INFO[Container(801113).ListItem.Title]</value>
-		<value condition="[Integer.IsGreater(Container(801113).ListItem.Season,9) + !Integer.IsGreater(Container(801113).ListItem.Episode,9)] + !String.IsEmpty(Container(801113).ListItem.Episode) + !String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.TVShowTitle)">$INFO[Container(801113).ListItem.Season,S]$INFO[Container(801113).ListItem.Episode,E0] $INFO[Container(801113).ListItem.Title]</value>
-		<value condition="[Integer.IsGreater(Container(801113).ListItem.Season,9) + Integer.IsGreater(Container(801113).ListItem.Episode,9)] + !String.IsEmpty(Container(801113).ListItem.Episode) + !String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.TVShowTitle)">$INFO[Container(801113).ListItem.Season,S]$INFO[Container(801113).ListItem.Episode,E] $INFO[Container(801113).ListItem.Title]</value>
-		<value>$INFO[Container(801113).ListItem.Label]</value>
+	<variable name="HomeWidget801114TitleVar">
+		<value condition="!String.IsEmpty(Container(801114).ListItem.AddonName)">$INFO[Container(801114).ListItem.AddonName]</value>
+		<value condition="[!Integer.IsGreater(Container(801114).ListItem.Season,9) + !Integer.IsGreater(Container(801114).ListItem.Episode,9)] + !String.StartsWith(Container(801114).ListItem.Episode,S) + !String.IsEmpty(Container(801114).ListItem.Episode) + !String.IsEqual(Container(801114).ListItem.Label,Container(801114).ListItem.TVShowTitle)">$INFO[Container(801114).ListItem.Season,S0]$INFO[Container(801114).ListItem.Episode,E0] $INFO[Container(801114).ListItem.Title]</value>
+		<value condition="[!Integer.IsGreater(Container(801114).ListItem.Season,9) + !Integer.IsGreater(Container(801114).ListItem.Episode,9)] + String.StartsWith(Container(801114).ListItem.Episode,S) + !String.IsEmpty(Container(801114).ListItem.Episode) + !String.IsEqual(Container(801114).ListItem.Label,Container(801114).ListItem.TVShowTitle)">$INFO[Container(801114).ListItem.Season,S0]$INFO[Container(801114).ListItem.Episode] $INFO[Container(801114).ListItem.Title]</value>
+		<value condition="[!Integer.IsGreater(Container(801114).ListItem.Season,9) + Integer.IsGreater(Container(801114).ListItem.Episode,9)] + !String.IsEmpty(Container(801114).ListItem.Episode) + !String.IsEqual(Container(801114).ListItem.Label,Container(801114).ListItem.TVShowTitle)">$INFO[Container(801114).ListItem.Season,S0]$INFO[Container(801114).ListItem.Episode,E] $INFO[Container(801114).ListItem.Title]</value>
+		<value condition="[Integer.IsGreater(Container(801114).ListItem.Season,9) + !Integer.IsGreater(Container(801114).ListItem.Episode,9)] + !String.IsEmpty(Container(801114).ListItem.Episode) + !String.IsEqual(Container(801114).ListItem.Label,Container(801114).ListItem.TVShowTitle)">$INFO[Container(801114).ListItem.Season,S]$INFO[Container(801114).ListItem.Episode,E0] $INFO[Container(801114).ListItem.Title]</value>
+		<value condition="[Integer.IsGreater(Container(801114).ListItem.Season,9) + Integer.IsGreater(Container(801114).ListItem.Episode,9)] + !String.IsEmpty(Container(801114).ListItem.Episode) + !String.IsEqual(Container(801114).ListItem.Label,Container(801114).ListItem.TVShowTitle)">$INFO[Container(801114).ListItem.Season,S]$INFO[Container(801114).ListItem.Episode,E] $INFO[Container(801114).ListItem.Title]</value>
+		<value>$INFO[Container(801114).ListItem.Label]</value>
 	</variable>
-	<variable name="HomeWidget801113Title2Var">
-		<value condition="!String.IsEmpty(Container(801113).ListItem.TVShowTitle)">$INFO[Container(801113).ListItem.TVShowTitle]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Artist)">$INFO[Container(801113).ListItem.Artist]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.AlbumArtist)">$INFO[Container(801113).ListItem.AlbumArtist]</value>
-		<value>$INFO[Container(801113).ListItem.Label]</value>
+	<variable name="HomeWidget801114Title2Var">
+		<value condition="!String.IsEmpty(Container(801114).ListItem.TVShowTitle)">$INFO[Container(801114).ListItem.TVShowTitle]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Artist)">$INFO[Container(801114).ListItem.Artist]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.AlbumArtist)">$INFO[Container(801114).ListItem.AlbumArtist]</value>
+		<value>$INFO[Container(801114).ListItem.Label]</value>
 	</variable>
-	<variable name="HomeWidget801113SubTitleVar">
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Tagline)">$INFO[Container(801113).ListItem.Tagline]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.TVShowTitle) + String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.TVShowTitle) + !String.IsEmpty(Container(801113).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(801113).ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[20360]]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.TVShowTitle) + !String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.TVShowTitle)">$INFO[Container(801113).ListItem.TVShowTitle]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Artist_Mood))">$INFO[Container(801113).ListItem.Property(Artist_Mood)]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Artist) + !String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.Artist)">$INFO[Container(801113).ListItem.Artist]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.AlbumArtist) + !String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.AlbumArtist)">$INFO[Container(801113).ListItem.AlbumArtist]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.AddonSummary)">$INFO[Container(801113).ListItem.AddonSummary]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Label3))">$INFO[Container(801113).ListItem.Label2]</value>
+	<variable name="HomeWidget801114SubTitleVar">
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Tagline)">$INFO[Container(801114).ListItem.Tagline]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.TVShowTitle) + String.IsEqual(Container(801114).ListItem.Label,Container(801114).ListItem.TVShowTitle) + !String.IsEmpty(Container(801114).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(801114).ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[20360]]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.TVShowTitle) + !String.IsEqual(Container(801114).ListItem.Label,Container(801114).ListItem.TVShowTitle)">$INFO[Container(801114).ListItem.TVShowTitle]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Property(Artist_Mood))">$INFO[Container(801114).ListItem.Property(Artist_Mood)]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Artist) + !String.IsEqual(Container(801114).ListItem.Label,Container(801114).ListItem.Artist)">$INFO[Container(801114).ListItem.Artist]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.AlbumArtist) + !String.IsEqual(Container(801114).ListItem.Label,Container(801114).ListItem.AlbumArtist)">$INFO[Container(801114).ListItem.AlbumArtist]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.AddonSummary)">$INFO[Container(801114).ListItem.AddonSummary]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Property(Label3))">$INFO[Container(801114).ListItem.Label2]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Count))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Count),, $LOCALIZE[342]]</value>
 		<value>130</value>
 	</variable>
-	<variable name="HomeWidget801113Info1Var">
-		<value condition="[!String.IsEmpty(Container(801113).ListItem.Artist) | !String.IsEmpty(Container(801113).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801113).ListItem.Duration)">$INFO[Container(801113).ListItem.Duration,, $LOCALIZE[12391]]</value>
-		<value condition="[!String.IsEmpty(Container(801113).ListItem.Artist) | !String.IsEmpty(Container(801113).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801113).ListItem.Property(Album_Mood))">$INFO[Container(801113).ListItem.Property(Album_Mood)]</value>
-		<value condition="[!String.IsEmpty(Container(801113).ListItem.Artist) | !String.IsEmpty(Container(801113).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801113).ListItem.Property(Album_Style))">$INFO[Container(801113).ListItem.Property(Album_Style)]</value>
-		<value condition="[!String.IsEmpty(Container(801113).ListItem.Artist) | !String.IsEmpty(Container(801113).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801113).ListItem.Property(Artist_Style))">$INFO[Container(801113).ListItem.Property(Artist_Style)]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.AddonName)">$INFO[Container(801113).ListItem.AddonCreator,$LOCALIZE[31001] ]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Label3))">$INFO[Container(801113).ListItem.Property(Label3)]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(ShortTime))">$INFO[Container(801113).ListItem.Property(ShortTime)]$INFO[Container(801113).ListItem.Property(NextDate),  •  ]$INFO[Container(801113).ListItem.RatingAndVotes,  •  $LOCALIZE[563] ]$INFO[Container(801113).ListItem.Property(RunTime),  •  , $LOCALIZE[12391]]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.TVShowTitle) + !String.IsEmpty(Container(801113).ListItem.Property(Runtime))">$INFO[Container(801113).ListItem.Premiered]$INFO[Container(801113).ListItem.RatingAndVotes,  •  $LOCALIZE[563] ]$INFO[Container(801113).ListItem.Property(Runtime),  •  , $LOCALIZE[12391]]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.TVShowTitle)">$INFO[Container(801113).ListItem.Premiered]$INFO[Container(801113).ListItem.RatingAndVotes,  •  $LOCALIZE[563] ]$INFO[Container(801113).ListItem.Duration,  •  , $LOCALIZE[12391]]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Runtime))">$INFO[Container(801113).ListItem.RatingAndVotes,$LOCALIZE[563] ]$INFO[Container(801113).ListItem.Property(Runtime),  •  , $LOCALIZE[12391]]</value>
-		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Runtime))">$INFO[Container(801113).ListItem.RatingAndVotes,$LOCALIZE[563] ]$INFO[Window(Home).Property(SkinHelper.MovieSet.Runtime),  •  , $LOCALIZE[12391]]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.RatingAndVotes)">$INFO[Container(801113).ListItem.RatingAndVotes,$LOCALIZE[563] ]$INFO[Container(801113).ListItem.Duration,  •  , $LOCALIZE[12391]]</value>
-		<value>$INFO[Container(801113).ListItem.Duration,, $LOCALIZE[12391]]</value>
+	<variable name="HomeWidget801114Info1Var">
+		<value condition="[!String.IsEmpty(Container(801114).ListItem.Artist) | !String.IsEmpty(Container(801114).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801114).ListItem.Duration)">$INFO[Container(801114).ListItem.Duration,, $LOCALIZE[12391]]</value>
+		<value condition="[!String.IsEmpty(Container(801114).ListItem.Artist) | !String.IsEmpty(Container(801114).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801114).ListItem.Property(Album_Mood))">$INFO[Container(801114).ListItem.Property(Album_Mood)]</value>
+		<value condition="[!String.IsEmpty(Container(801114).ListItem.Artist) | !String.IsEmpty(Container(801114).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801114).ListItem.Property(Album_Style))">$INFO[Container(801114).ListItem.Property(Album_Style)]</value>
+		<value condition="[!String.IsEmpty(Container(801114).ListItem.Artist) | !String.IsEmpty(Container(801114).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801114).ListItem.Property(Artist_Style))">$INFO[Container(801114).ListItem.Property(Artist_Style)]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.AddonName)">$INFO[Container(801114).ListItem.AddonCreator,$LOCALIZE[31001] ]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Property(Label3))">$INFO[Container(801114).ListItem.Property(Label3)]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Property(ShortTime))">$INFO[Container(801114).ListItem.Property(ShortTime)]$INFO[Container(801114).ListItem.Property(NextDate),  •  ]$INFO[Container(801114).ListItem.RatingAndVotes,  •  $LOCALIZE[563] ]$INFO[Container(801114).ListItem.Property(RunTime),  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.TVShowTitle) + !String.IsEmpty(Container(801114).ListItem.Property(Runtime))">$INFO[Container(801114).ListItem.Premiered]$INFO[Container(801114).ListItem.RatingAndVotes,  •  $LOCALIZE[563] ]$INFO[Container(801114).ListItem.Property(Runtime),  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.TVShowTitle)">$INFO[Container(801114).ListItem.Premiered]$INFO[Container(801114).ListItem.RatingAndVotes,  •  $LOCALIZE[563] ]$INFO[Container(801114).ListItem.Duration,  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Property(Runtime))">$INFO[Container(801114).ListItem.RatingAndVotes,$LOCALIZE[563] ]$INFO[Container(801114).ListItem.Property(Runtime),  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Runtime))">$INFO[Container(801114).ListItem.RatingAndVotes,$LOCALIZE[563] ]$INFO[Window(Home).Property(SkinHelper.MovieSet.Runtime),  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.RatingAndVotes)">$INFO[Container(801114).ListItem.RatingAndVotes,$LOCALIZE[563] ]$INFO[Container(801114).ListItem.Duration,  •  , $LOCALIZE[12391]]</value>
+		<value>$INFO[Container(801114).ListItem.Duration,, $LOCALIZE[12391]]</value>
 	</variable>
-	<variable name="HomeWidget801113Info2Var">
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Artist_Genre))">$INFO[Container(801113).ListItem.Property(Artist_Genre),[CAPITALIZE],[/CAPITALIZE]]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Label4))">$INFO[Container(801113).ListItem.Property(Label4)]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.AddonType)">$INFO[Container(801113).ListItem.AddonType]</value>
+	<variable name="HomeWidget801114Info2Var">
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Property(Artist_Genre))">$INFO[Container(801114).ListItem.Property(Artist_Genre),[CAPITALIZE],[/CAPITALIZE]]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Property(Label4))">$INFO[Container(801114).ListItem.Property(Label4)]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.AddonType)">$INFO[Container(801114).ListItem.AddonType]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Genre))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Genre),[CAPITALIZE],[/CAPITALIZE]]</value>
-		<value>$INFO[Container(801113).ListItem.Genre,[CAPITALIZE],[/CAPITALIZE]]</value>
+		<value>$INFO[Container(801114).ListItem.Genre,[CAPITALIZE],[/CAPITALIZE]]</value>
 	</variable>
-	<variable name="HomeWidget801113PlotVar">
-		<value condition="[!String.IsEmpty(Container(801113).ListItem.Artist) | !String.IsEmpty(Container(801113).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801113).ListItem.Plot)">$INFO[Container(801113).ListItem.Plot]</value>
-		<value condition="[!String.IsEmpty(Container(801113).ListItem.Artist) | !String.IsEmpty(Container(801113).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801113).ListItem.Property(Album_Description))">$INFO[Container(801113).ListItem.Property(Album_Description)]</value>
-		<value condition="[!String.IsEmpty(Container(801113).ListItem.Artist) | !String.IsEmpty(Container(801113).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801113).ListItem.Property(Artist_Description))">$INFO[Container(801113).ListItem.Property(Artist_Description)]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.AddonName)">$INFO[Container(801113).ListItem.AddonDescription]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Label3)) + !String.IsEmpty(Container(801113).ListItem.Property(WeatherMultiFanart))">[UPPERCASE]$LOCALIZE[33006][/UPPERCASE][CR]$INFO[Window(weather).Property(Current.Condition),,. ]$INFO[Window(weather).Property(Current.FeelsLike),$LOCALIZE[402] ]$INFO[System.TemperatureUnits,,. ]$INFO[Window(weather).Property(Current.Humidity),$LOCALIZE[406] ,. ]$INFO[Window(weather).Property(Current.Wind),$LOCALIZE[404] ,. ]$INFO[Window(weather).Property(Current.DewPoint),$LOCALIZE[405] ]$INFO[System.TemperatureUnits,,. ]$INFO[Window(weather).Property(Current.UVIndex),$LOCALIZE[403] ,. ]$INFO[Window(weather).Property(Today.Sunrise),$LOCALIZE[33027] ,. ]$INFO[Window(weather).Property(Today.Sunset),$LOCALIZE[33028] ,.]</value>
-		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Label3)) + !String.IsEmpty(Container(801113).ListItem.Property(isSystemInfo))">KODI: $INFO[System.BuildVersion][CR][UPPERCASE]$LOCALIZE[13283][/UPPERCASE] $INFO[System.KernelVersion][CR]$INFO[System.VideoEncoderInfo][CR][UPPERCASE]$LOCALIZE[13287][/UPPERCASE] $INFO[System.ScreenResolution][CR][UPPERCASE]$LOCALIZE[150]:[/UPPERCASE] $INFO[Network.IPAddress]</value>
+	<variable name="HomeWidget801114PlotVar">
+		<value condition="[!String.IsEmpty(Container(801114).ListItem.Artist) | !String.IsEmpty(Container(801114).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801114).ListItem.Plot)">$INFO[Container(801114).ListItem.Plot]</value>
+		<value condition="[!String.IsEmpty(Container(801114).ListItem.Artist) | !String.IsEmpty(Container(801114).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801114).ListItem.Property(Album_Description))">$INFO[Container(801114).ListItem.Property(Album_Description)]</value>
+		<value condition="[!String.IsEmpty(Container(801114).ListItem.Artist) | !String.IsEmpty(Container(801114).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801114).ListItem.Property(Artist_Description))">$INFO[Container(801114).ListItem.Property(Artist_Description)]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.AddonName)">$INFO[Container(801114).ListItem.AddonDescription]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Property(Label3)) + !String.IsEmpty(Container(801114).ListItem.Property(WeatherMultiFanart))">[UPPERCASE]$LOCALIZE[33006][/UPPERCASE][CR]$INFO[Window(weather).Property(Current.Condition),,. ]$INFO[Window(weather).Property(Current.FeelsLike),$LOCALIZE[402] ]$INFO[System.TemperatureUnits,,. ]$INFO[Window(weather).Property(Current.Humidity),$LOCALIZE[406] ,. ]$INFO[Window(weather).Property(Current.Wind),$LOCALIZE[404] ,. ]$INFO[Window(weather).Property(Current.DewPoint),$LOCALIZE[405] ]$INFO[System.TemperatureUnits,,. ]$INFO[Window(weather).Property(Current.UVIndex),$LOCALIZE[403] ,. ]$INFO[Window(weather).Property(Today.Sunrise),$LOCALIZE[33027] ,. ]$INFO[Window(weather).Property(Today.Sunset),$LOCALIZE[33028] ,.]</value>
+		<value condition="!String.IsEmpty(Container(801114).ListItem.Property(Label3)) + !String.IsEmpty(Container(801114).ListItem.Property(isSystemInfo))">KODI: $INFO[System.BuildVersion][CR][UPPERCASE]$LOCALIZE[13283][/UPPERCASE] $INFO[System.KernelVersion][CR]$INFO[System.VideoEncoderInfo][CR][UPPERCASE]$LOCALIZE[13287][/UPPERCASE] $INFO[System.ScreenResolution][CR][UPPERCASE]$LOCALIZE[150]:[/UPPERCASE] $INFO[Network.IPAddress]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Plot))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Plot)]</value>
-		<value>$INFO[Container(801113).ListItem.Plot]</value>
+		<value>$INFO[Container(801114).ListItem.Plot]</value>
 	</variable>
 	<include name="skinshortcuts-template-widget2">
 		<description>This include was built automatically as the template didn't match any menu items</description>

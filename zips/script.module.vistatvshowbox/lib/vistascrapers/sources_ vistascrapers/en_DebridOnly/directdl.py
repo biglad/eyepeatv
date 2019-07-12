@@ -12,8 +12,8 @@ import base64
 import json
 import re
 import urllib
-
 import urlparse
+
 from vistascrapers.modules import cfscrape
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import debrid

@@ -18,8 +18,8 @@
 import json
 import traceback
 import urllib
-
 import urlparse
+
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import control
 from vistascrapers.modules import log_utils

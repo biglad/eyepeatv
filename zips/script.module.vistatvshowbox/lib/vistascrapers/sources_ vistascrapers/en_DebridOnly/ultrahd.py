@@ -25,8 +25,8 @@
 
 import re
 import urllib
-
 import urlparse
+
 from vistascrapers.modules import cfscrape
 from vistascrapers.modules import client
 from vistascrapers.modules import debrid

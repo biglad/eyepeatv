@@ -10,6 +10,7 @@
 #  ..#######.##.......#######.##....#..######..######.##.....#.##.....#.##.......#######.##.....#..######.
 
 import urlparse
+
 from bs4 import BeautifulSoup
 from vistascrapers.modules import cfscrape
 from vistascrapers.modules import cleantitle

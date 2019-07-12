@@ -22,7 +22,6 @@ import cookielib
 import gzip
 import random
 import re
-import ssl
 import sys
 import time
 import urllib
@@ -33,7 +32,6 @@ from vistascrapers.modules import cache
 from vistascrapers.modules import dom_parser
 from vistascrapers.modules import log_utils
 from vistascrapers.modules import utils
-from vistascrapers.modules import workers
 
 
 def request(url, close=True, redirect=True, error=False, verify=True, proxy=None, post=None, headers=None, mobile=False,

@@ -24,8 +24,8 @@
 '''
 
 import re
-
 import urlparse
+
 from vistascrapers.modules import cfscrape
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import source_utils

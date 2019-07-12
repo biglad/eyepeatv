@@ -27,8 +27,8 @@ import base64
 import re
 import traceback
 import urllib
-
 import urlparse
+
 from vistascrapers.modules import cfscrape
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import log_utils

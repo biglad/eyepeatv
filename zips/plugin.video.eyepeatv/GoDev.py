@@ -741,7 +741,7 @@ elif mode == 7655:
     text = plugintools.keyboard_input(default_text="", title="Enter Adult Pass")
     if text==plugintools.get_setting("vanemakood"):
         xbmc.executebuiltin('ActivateWindow(10025,"plugin://plugin.video.live.streamspro/?fanart=C%3a%5cUsers%5ckhanb%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.video.live.streamspro%5cfanart.jpg&mode=1&name=a1&url=https%3a%2f%2feptv.co.uk%2fa1.m3u",return)')
-	
+    exit()	
 elif mode == 3372:
     import news
     TypeOfMessage="t"; (NewImage,NewMessage)=news.FetchNews();

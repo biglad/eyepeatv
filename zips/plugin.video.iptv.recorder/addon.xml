@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.iptv.recorder"
-version="1.0.7a"
+version="1.0.7b"
 name="EPTV player / Recorder"
 provider-name="primaeval, Chychy,EyePeaTV">
 <requires>
@@ -48,7 +48,7 @@ ffmpeg simply copies the stream into a transport stream container.
   <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
   <screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
 </assets>
-<platform>windows-x86_64</platform>
+<platform>all</platform>
 </extension>
 </addon>
 

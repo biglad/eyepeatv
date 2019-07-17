@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.xtream-codes1" name="EPTV Preview" version="4.5" provider-name="Biglad+MikkM">
+<addon id="plugin.video.xtream-codes1" name="EPTV Preview" version="4.6" provider-name="Biglad+MikkM">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.addon.common" />

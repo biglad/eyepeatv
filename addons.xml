@@ -67,7 +67,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.eyepeatv" version="11.0.42" name="[COLOR gold]Eye Pea TV[/COLOR] (EPTV) - Premium IPTV" provider-name="EyePeaTV">
+<addon id="plugin.video.eyepeatv" version="11.0.44" name="[COLOR gold]Eye Pea TV[/COLOR] (EPTV) - Premium IPTV" provider-name="EyePeaTV">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.addon.common" />
@@ -605,7 +605,7 @@ ffmpeg simply copies the stream into a transport stream container.
 	</extension>
 </addon>
 
-<addon id="plugin.video.xtream-codes1" name="EPTV Preview" version="4.5" provider-name="Biglad+MikkM">
+<addon id="plugin.video.xtream-codes1" name="EPTV Preview" version="4.6" provider-name="Biglad+MikkM">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.addon.common" />

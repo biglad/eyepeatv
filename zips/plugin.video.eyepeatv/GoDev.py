@@ -746,3 +746,7 @@ elif mode == 3372:
     import news
     TypeOfMessage="t"; (NewImage,NewMessage)=news.FetchNews();
     news.CheckNews(TypeOfMessage,NewImage,NewMessage,True);
+	
+elif mode == 9876:
+    xbmc.executebuiltin('ActivateWindow(10025,"plugin://plugin.video.xtream-codes1/?action=security_check&extra&page&plot&thumbnail&title=Live%20TV&url",return)')
+    exit()

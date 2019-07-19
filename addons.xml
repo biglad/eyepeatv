@@ -332,7 +332,7 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
-<addon id="plugin.video.playklub" version="5.2" name="[COLOR gold]EPTV Preview 2[/COLOR]" provider-name="Biglad">
+<addon id="plugin.video.playklub" version="5.4" name="EPTV Preview 2" provider-name="Biglad">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.addon.common" optional="true" />

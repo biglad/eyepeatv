@@ -125,8 +125,9 @@ def peamenyy(params):
         #    plugintools.addItem('[COLOR lime][B]Launch PVR[/B][/COLOR]','speed',11,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
         #    plugintools.add_item( action=vod_channels("R29EZXYuZGlzYWJsZVBWUg=="),   title="[COLOR red][B]Disable PVR[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
     elif channels != 1 and GoDev.mode != 1:
-        plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR gold][B]Step 1. Insert Login Credentials[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False )	
-        plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjazI="), title="[COLOR gold][B]Step 2. Click Once Login Is Input[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False )	
+        #plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR gold][B]Step 1. Insert Login Credentials[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False )	
+        #plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjazI="), title="[COLOR gold][B]Step 2. Click Once Login Is Input[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False )
+        plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="[COLOR gold][B][I]EPTV Preview 2[/I][/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )		
 
 
 def Tools(params):
@@ -393,7 +394,7 @@ def Print(OuT):
 	f.write(OuT)
 
 def detect_modification(params):
-    plugintools.add_item( action=vod_channels("Vk9Ec2VhcmNo"),   title="[COLOR red][B]Search for VOD/TV SHOWS[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("U2VhcmNoLWljb24ucG5n")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
+    #plugintools.add_item( action=vod_channels("Vk9Ec2VhcmNo"),   title="[COLOR red][B]Search for VOD/TV SHOWS[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("U2VhcmNoLWljb24ucG5n")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
     plugintools.log(pnimi+vod_channels("Vk9EIE1lbnUg")+repr(params))
     request = urllib2.Request(filmilink, headers={"Accept" : "application/xml","User-Agent": "VLC/2.2.4 LibVLC/2.2.4"})
     u = urllib2.urlopen(request)

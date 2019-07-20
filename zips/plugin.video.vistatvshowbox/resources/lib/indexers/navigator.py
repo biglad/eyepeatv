@@ -95,8 +95,8 @@ class navigator:
         self.addDirectoryItem(32021, 'movies&url=oscars', 'oscar-winners.png', 'DefaultMovies.png')
         self.addDirectoryItem(32022, 'movies&url=theaters', 'in-theaters.png', 'DefaultRecentlyAddedMovies.png')
         self.addDirectoryItem(32005, 'movieWidget', 'latest-movies.png', 'DefaultRecentlyAddedMovies.png')
-        self.addDirectoryItem('[COLOR red]• [/COLOR]Vista Playlists 1', 'customNavigator', 'icon.png', 'DefaultMovies.png')
-        self.addDirectoryItem('[COLOR red]• [/COLOR]Vista Playlists 2', 'imdbLists', 'icon.png', 'DefaultMovies.png')
+        self.addDirectoryItem('[COLOR red]• [/COLOR]Playlists 1', 'customNavigator', 'icon.png', 'DefaultMovies.png')
+        self.addDirectoryItem('[COLOR red]• [/COLOR]Playlists 2', 'imdbLists', 'icon.png', 'DefaultMovies.png')
         self.addDirectoryItem('[COLOR red]• [/COLOR]Movie Mosts', 'movieMosts', 'featured.png', 'playlist.jpg')
 
         if lite == False:

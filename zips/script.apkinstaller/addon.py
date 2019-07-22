@@ -156,7 +156,8 @@ def menuoptions():
 		function28,
 		function29,
 		function30,
-		function31
+		function31,
+		function32
 		)
         
     call = dialog.select('[B][COLOR=yellow]EPTV[/COLOR][COLOR=red] APP Installer[/COLOR][/B]', [
@@ -178,7 +179,7 @@ def menuoptions():
     '[B][COLOR=green]      Download[/COLOR] GooglePlay Update[/B]  - ([I]Android [/I])', #16
     '[B][COLOR=green]      Download[/COLOR] Connection Speed Tester[/B]  - ([I]Android [/I])', #17
     '[B][COLOR=green]      Download[/COLOR] Google Chrome Web Browser[/B] For Android 5+', #18
-	'[B][COLOR=green]      Download[/COLOR] BlueStacks[/B] For Windows 10', #19
+	'[B][COLOR=green]      Download[/COLOR] IPTV Smarters[/B] For Android 5+', #19
     '[B][COLOR=green]      Download[/COLOR] [COLOR=gold]BEST VPN GOING!!![/COLOR] IP Vanish[/B] For ALL', #20
 	'[B][COLOR=green]      Get[/COLOR] Real Debrid[/B] For ALL ([COLOR=gold]Guaranteed FULL HD and no need to pair for ondemand!!!!![/COLOR])', #21
 	'[B][COLOR=green]      Support Us[/COLOR] [COLOR=lightblue]CLICK HERE[/COLOR] and Click start mining [/B] This will help us pay for server costs can leave running all night :) thank you', #22
@@ -191,6 +192,7 @@ def menuoptions():
 	'[B][COLOR=green]      Download[/COLOR] ShowMac[/B]  - ([I]Android [/I])', #29
 	'[B][COLOR=green]      Download[/COLOR] AirPlay, Mirror/Chrome Casting[/B]  - ([I]Android [/I])', #30
 	'[B][COLOR=green]      Download[/COLOR] Quick Support (REMOTE ACCESS)[/B]  - ([I]Android [/I])', #31
+	'[B][COLOR=green]      Download[/COLOR] IPTV Pro[/B]  - ([I]Android [/I])', #32
     ])
     # dialog.selectreturns
     #   0 -> escape pressed
@@ -200,7 +202,7 @@ def menuoptions():
         # esc is not pressed
         if call < 0:
             return
-        func = funcs[call-31]
+        func = funcs[call-32]
         #if myplatform == 'windows':
         #    func = funcs[call-23]
         #dp = xbmcgui.DialogProgress()
@@ -224,7 +226,7 @@ def function1():
     xbmc.executebuiltin("Minimize")
     
 def function2():
-    DownloaderClass("http://vistatv.online/apks/kodi-18.0-Leia-armeabi-v7a.apk",file)
+    DownloaderClass("https://eptv.co.uk/apk/kodi-18.3-Leia-armeabi-v7a.apk",file)
     xbmc.executebuiltin("Notification(DOWNLOAD COMPLETE,Opening APK Installer,)")
     xbmc.sleep(1000)
     OpenAPKInstaller()
@@ -238,7 +240,7 @@ def function3():
     xbmc.executebuiltin("Minimize")
     
 def function4():
-    DownloaderClass("http://vistatv.online/apks/VistaTV-Launcher.apk",file)
+    DownloaderClass("https://eptv.co.uk/apk/EPTV-Launcher.apk",file)
     xbmc.sleep(1000)
     OpenAPKInstaller()
     xbmc.executebuiltin("Minimize")
@@ -330,7 +332,10 @@ def function18():
     xbmc.executebuiltin("Minimize")
 	
 def function19():
-    opensite = webbrowser . open('https://34.rdeb.io/d/NWWMJBW646QAA/BlueStacks%204%20%28v4.50.0.1043%29%20HD%20App%20Player%20%2B%20Premium%20%2B%20Root%20%7BB4tman%7D.rar')
+    DownloaderClass("https://eptv.co.uk/apk/IPTV%20Smarters%20Pro_v2.1.2.apk",file)
+    xbmc.sleep(1000)
+    OpenAPKInstaller()
+    xbmc.executebuiltin("Minimize")
 	
 def function20():
     opensite = webbrowser . open('https://www.ipvanish.com/?a_bid=48f95966&a_aid=5999daf16204b')
@@ -394,6 +399,12 @@ def function30():
 def function31():
     DownloaderClass("http://vistatv.online/tv.apk",file)
     DownloaderClass("http://vistatv.online/tv2.apk",file5)
+    xbmc.sleep(1000)
+    OpenAPKInstaller()
+    xbmc.executebuiltin("Minimize")
+	
+def function32():
+    DownloaderClass("https://eptv.co.uk/apk/iptv-pro%20mod.apk",file)
     xbmc.sleep(1000)
     OpenAPKInstaller()
     xbmc.executebuiltin("Minimize")

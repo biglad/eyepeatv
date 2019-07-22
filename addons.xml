@@ -757,6 +757,25 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
+<addon id="script.appinstaller"
+  name="APP Installer"
+  version="3.0.27"
+  provider-name="EPTV">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<!--<import addon="script.vistatvgameinstaller" />-->
+  </requires>
+  <extension point="xbmc.python.script" library="addon.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">EPTV Menu System</summary>
+    <description lang="en">EPTV Menu System</description>
+	<disclaimer>EPTV Menu System</disclaimer>
+  </extension>
+</addon>
+
 <addon id="script.cerebro.pairwith"
   name="EyePeaTV Pair With"
   version="3.0"

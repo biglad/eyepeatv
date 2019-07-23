@@ -142,7 +142,7 @@ def menuoptions():
         # esc is not pressed
         if call < 0:
             return
-        func = funcs[call-2]
+        func = funcs[call-1]
         #if myplatform == 'windows':
         #    func = funcs[call-23]
         #dp = xbmcgui.DialogProgress()
@@ -160,10 +160,11 @@ def menuoptions():
 
 def function1():
     xbmc.executebuiltin('RunAddon(script.apkinstaller)')
+    exit()
 	
 def function2():
     xbmc.executebuiltin('RunAddon(script.appinstaller)')
-	
+    exit()	
 	
 menuoptions()
 

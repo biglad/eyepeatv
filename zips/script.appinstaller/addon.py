@@ -128,15 +128,15 @@ def menuoptions():
     funcs = (
         function1,
         function2,
-        function3,
+		function3,
 		function4
 		)
         
-    call = dialog.select('[B][COLOR=yellow]EPTV[/COLOR][COLOR=red] APP Installer[/COLOR][/B]', [
-    '[B][COLOR=green]      Download[/COLOR] BlueStacks Android Emulator[/B] For Windows',#1
-    '[B][COLOR=gold]      Download[/COLOR] ProgDVB (64 Bit) (IPTV Player)[/B] For Windows', #2
-    '[B][COLOR=gold]      Download[/COLOR] ProgDVB (32 Bit) (IPTV Player)[/B] For Windows', #2
-    '[B][COLOR=green]      Download[/COLOR] Intel HD Driver Support (A MUST FOR WINDOWS BOX WITH INTEL HD[/B] For Windows', #3
+    call = dialog.select('[B][COLOR=yellow]EPTV[/COLOR][COLOR=red] APP Menu[/COLOR][/B]', [
+    "[B][COLOR=green]      Download[/COLOR]BlueStacks[/B]",#1
+    "[B][COLOR=green]      Download[/COLOR]ProgDVB (IPTV Player) x32[/B]", #2
+	"[B][COLOR=green]      Download[/COLOR]ProgDVB (IPTV Player) x64[/B]", #3
+	"[B][COLOR=green]      Download[/COLOR]Intel HD Driver Update[/B]", #3
     ])
     # dialog.selectreturns
     #   0 -> escape pressed
@@ -163,24 +163,18 @@ def menuoptions():
 
 
 def function1():
-    opensite = webbrowser . open('https://paola.openkek.cc/zl/838934391/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdXN0b21lcl9pZCI6IjgzODkzNDM5MSIsInppcHJlcXVlc3QiOiI1ZDM1ZmEzNTRhMmJkIn0.tlR3O8oNl9HfvkWCh5ea9gG6bE1Bd4XXXAuQ4X0nQj0/BlueStacks+4+%28v4.50.0.1043%29+HD+App+Player+%2B+Premium+%2B+Root+%7BB4tman%7D.zip')
+    opensite = webbrowser . open('https://saanvi.nokfile.com/zl/838934391/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdXN0b21lcl9pZCI6IjgzODkzNDM5MSIsInppcHJlcXVlc3QiOiI1ZDM3MDM3MjZjOTE1In0.dixw6suZ98jClyRla896wSR2baS20akHm_bQ6IMiyhg/BlueStacks+4+%28v4.50.0.1043%29+HD+App+Player+%2B+Premium+%2B+Root+%7BB4tman%7D.zip')
 	
 def function2():
-    opensite = webbrowser . open('https://eptv.co.uk/apps/ProgDVB7.28.4x64.exe')
+    opensite = webbrowser . open('https://eptv.co.uk/apps/ProgDVB7.28.4Std.exe')
 	
 def function3():
-    opensite = webbrowser . open('https://eptv.co.uk/apps/ProgDVB7.28.4Std.exe')
+    opensite = webbrowser . open('https://eptv.co.uk/apps/ProgDVB7.28.4x64.exe')
 	
 def function4():
     opensite = webbrowser . open('https://eptv.co.uk/apps/Intel-Driver-and-Support-Assistant-Installer.exe')
 	
+	
+menuoptions()
 
-if myplatform == 'windows':    
-    #dialog = xbmcgui.Dialog()
-    #dialog.ok("[COLOR=red][B]INFOMATION[/COLOR][/B]", "Firestick & nVida Shield devices", "Install App Manually after download","(needs es file explorer) Internal Storage / Download")
-    menuoptions()
-else:
-    dialog = xbmcgui.Dialog()
-    dialog.ok("[COLOR=red][B]INFOMATION[/COLOR][/B]", "Windows Only", "..........","Thanks.")
-    exit()
 

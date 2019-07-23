@@ -1543,7 +1543,7 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 </addon>
 
 
-<addon id="skin.metamorph" version="2.5" name="EPTV STB" provider-name="Biglad">
+<addon id="skin.metamorph" version="2.6" name="EPTV STB" provider-name="Biglad">
 
 
 	<requires>

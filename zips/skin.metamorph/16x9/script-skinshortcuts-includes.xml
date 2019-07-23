@@ -11,6 +11,7 @@
 			<property name="backgroundName">special://skin/backgrounds/background11.png</property>
 			<property name="widgetStyle">List</property>
 			<property name="widgetLiveTV">true</property>
+			<property name="InfoLine">130</property>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vistatvshowbox",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vistatvshowbox",return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
@@ -28,6 +29,7 @@
 			<property name="backgroundName">special://skin/backgrounds/background11.png</property>
 			<property name="widgetStyle">List</property>
 			<property name="widgetLiveTV">true</property>
+			<property name="InfoLine">130</property>
 			<visible>System.HasPVRAddon</visible>
 			<onclick>ActivateWindow(TVGuide)</onclick>
 			<property name="path">ActivateWindow(TVGuide)</property>
@@ -46,6 +48,7 @@
 			<property name="widgetLiveTV">true</property>
 			<property name="background">special://skin/backgrounds/background11.png</property>
 			<property name="backgroundName">special://skin/backgrounds/background11.png</property>
+			<property name="InfoLine">130</property>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.eyepeatv",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv",return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
@@ -54,6 +57,20 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
+			<label>[COLOR white]Sports/PPV[/COLOR]</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb>special://skin/extras/icons/new/sports.png</thumb>
+			<property name="widgetStyle">List</property>
+			<property name="InfoLine">130</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=stream_video&amp;title=%E2%9A%9C%EF%B8%8F+SPORTS+CENTER+%E2%9A%9C%EF%B8%8F&amp;url=341&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Csports.png&amp;plot=&amp;extra=&amp;page=",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.eyepeatv/?action=stream_video&amp;title=%E2%9A%9C%EF%B8%8F+SPORTS+CENTER+%E2%9A%9C%EF%B8%8F&amp;url=341&amp;thumbnail=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Csports.png&amp;plot=&amp;extra=&amp;page=",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">colorwhite-sports-ppv-color</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<label>[COLOR lightblue]Music[/COLOR]</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -62,14 +79,15 @@
 			<property name="backgroundName">special://skin/backgrounds/background11.png</property>
 			<property name="widgetStyle">List</property>
 			<property name="widgetLiveTV">true</property>
+			<property name="InfoLine">130</property>
 			<onclick>ActivateWindow(Music,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Music,Addons,return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">colorlightblue-music-color</property>
 			<property name="hasSubmenu">True</property>
 		</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<label>[COLOR white]Favourites[/COLOR]</label>
 			<label2>Common menu item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -77,14 +95,15 @@
 			<property name="translatedPath">ActivateWindow(Favourites)</property>
 			<property name="widgetStyle">List</property>
 			<property name="widgetLiveTV">true</property>
+			<property name="InfoLine">130</property>
 			<onclick>ActivateWindow(Favourites)</onclick>
 			<property name="path">ActivateWindow(Favourites)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">colorwhite-favourites-color</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<label>[COLOR white]My Files[/COLOR]</label>
 			<label2>item</label2>
 			<icon>special://skin/extras/icons/DefaultFolder.png</icon>
@@ -92,14 +111,15 @@
 			<property name="translatedPath">ActivateWindow(Videos,sources://video/,return)</property>
 			<property name="widgetStyle">List</property>
 			<property name="widgetLiveTV">true</property>
+			<property name="InfoLine">130</property>
 			<onclick>ActivateWindow(Videos,sources://video/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,sources://video/,return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">colorwhite-myfiles-color</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<label>[COLOR white]YouTube[/COLOR]</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -109,14 +129,15 @@
 			<property name="backgroundName">special://skin/backgrounds/background11.png</property>
 			<property name="widgetStyle">List</property>
 			<property name="widgetLiveTV">true</property>
+			<property name="InfoLine">130</property>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.youtube",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.youtube",return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">plugin-video-youtube</property>
 			<property name="hasSubmenu">True</property>
 		</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
 			<label>[COLOR white]Addons[/COLOR]</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddonVideo.png</icon>
@@ -126,14 +147,29 @@
 			<property name="backgroundName">special://skin/backgrounds/background11.png</property>
 			<property name="widgetStyle">List</property>
 			<property name="widgetLiveTV">true</property>
+			<property name="InfoLine">130</property>
 			<onclick>ActivateWindow(AddonBrowser)</onclick>
 			<property name="path">ActivateWindow(AddonBrowser)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">colorwhite-addons-color</property>
 			<property name="hasSubmenu">True</property>
 		</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
+		<item id="10">
+			<property name="id">$NUMBER[10]</property>
+			<label>[COLOR white]APK's / APP's[/COLOR]</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<thumb>special://skin/extras/icons/new/appinstaller.png</thumb>
+			<property name="widgetStyle">List</property>
+			<property name="InfoLine">130</property>
+			<onclick>RunAddOn(script.appapkmenu)</onclick>
+			<property name="path">RunAddOn(script.appapkmenu)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">script-appapkmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="11">
+			<property name="id">$NUMBER[11]</property>
 			<label>[COLOR white]System[/COLOR]</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddonService.png</icon>
@@ -142,14 +178,15 @@
 			<property name="backgroundName">special://skin/backgrounds/background11.png</property>
 			<property name="widgetStyle">List</property>
 			<property name="widgetLiveTV">true</property>
+			<property name="InfoLine">130</property>
 			<onclick>ActivateWindow(Settings)</onclick>
 			<property name="path">ActivateWindow(Settings)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">colorwhite-system-color</property>
 			<property name="hasSubmenu">True</property>
 		</item>
-		<item id="10">
-			<property name="id">$NUMBER[10]</property>
+		<item id="12">
+			<property name="id">$NUMBER[12]</property>
 			<label>[COLOR white]Exit EPTV[/COLOR]</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/power.png</icon>
@@ -157,26 +194,29 @@
 			<property name="background">special://skin/backgrounds/background11.png</property>
 			<property name="backgroundName">special://skin/backgrounds/background11.png</property>
 			<property name="widgetStyle">List</property>
+			<property name="InfoLine">130</property>
 			<onclick>RunAddOn(script.vista.exit)</onclick>
 			<property name="path">RunAddOn(script.vista.exit)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">script-vista-exit</property>
 			<property name="hasSubmenu">True</property>
 		</item>
-		<item id="11">
-			<property name="id">$NUMBER[11]</property>
+		<item id="13">
+			<property name="id">$NUMBER[13]</property>
 			<label>[COLOR white]CCTV[/COLOR]</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
 			<thumb>special://skin/extras/icons/new/power.png</thumb>
+			<property name="widgetStyle">List</property>
+			<property name="InfoLine">130</property>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.streamlink-earthcam",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.streamlink-earthcam",return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">plugin-video-streamlink-earthcam</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="12">
-			<property name="id">$NUMBER[12]</property>
+		<item id="14">
+			<property name="id">$NUMBER[14]</property>
 			<label>[COLOR white]My Weather[/COLOR]</label>
 			<label2>Common menu item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -186,6 +226,7 @@
 			<property name="background">special://skin/backgrounds/background11.png</property>
 			<property name="backgroundName">special://skin/backgrounds/background11.png</property>
 			<property name="widgetLiveTV">true</property>
+			<property name="InfoLine">20088</property>
 			<visible>!String.IsEmpty(Weather.Plugin)</visible>
 			<onclick>ActivateWindow(Weather)</onclick>
 			<property name="path">ActivateWindow(Weather)</property>
@@ -193,22 +234,23 @@
 			<property name="submenuVisibility">colorwhite-myweather-color</property>
 			<property name="hasSubmenu">True</property>
 		</item>
-		<item id="13">
-			<property name="id">$NUMBER[13]</property>
+		<item id="15">
+			<property name="id">$NUMBER[15]</property>
 			<label>[COLOR white]Adult[/COLOR]</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
 			<thumb>special://skin/extras/icons/new/adult2.png</thumb>
 			<property name="background">special://skin/backgrounds/background11.png</property>
 			<property name="backgroundName">special://skin/backgrounds/background11.png</property>
+			<property name="InfoLine">130</property>
 			<onclick>PlayMedia("plugin://plugin.video.eyepeatv/?url=speed&amp;mode=7655&amp;name=%5BCOLOR+red%5D%5BB%5DADULT+CONTENT%5B%2FB%5D%5B%2FCOLOR%5D+%28SET+PASSWORD+IN+SETTINGS%29&amp;fanart=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cbackground.png",return)</onclick>
 			<property name="path">PlayMedia("plugin://plugin.video.eyepeatv/?url=speed&amp;mode=7655&amp;name=%5BCOLOR+red%5D%5BB%5DADULT+CONTENT%5B%2FB%5D%5B%2FCOLOR%5D+%28SET+PASSWORD+IN+SETTINGS%29&amp;fanart=C%3A%5CUsers%5Ckhanb%5CAppData%5CRoaming%5CKodi%5Caddons%5Cplugin.video.eyepeatv%5Cresources%5Cart%5Cbackground.png",return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">colorwhite-adult-color</property>
 			<property name="hasSubmenu">True</property>
 		</item>
-		<item id="14">
-			<property name="id">$NUMBER[14]</property>
+		<item id="16">
+			<property name="id">$NUMBER[16]</property>
 			<label>[COLOR white]Tools Menu[/COLOR]</label>
 			<label2>Program</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -216,20 +258,22 @@
 			<property name="translatedPath">ActivateWindow(Programs,"plugin://script.module.aliunde.maintenance.wizard",return)</property>
 			<property name="widgetStyle">List</property>
 			<property name="widgetLiveTV">true</property>
+			<property name="InfoLine">130</property>
 			<onclick>ActivateWindow(Programs,"plugin://script.module.aliunde.maintenance.wizard",return)</onclick>
 			<property name="path">ActivateWindow(Programs,"plugin://script.module.aliunde.maintenance.wizard",return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">script-module-aliunde-maintenance-wizard</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="15">
-			<property name="id">$NUMBER[15]</property>
+		<item id="17">
+			<property name="id">$NUMBER[17]</property>
 			<label>[COLOR white]24/7 Streams[/COLOR]</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
 			<thumb>special://skin/extras/icons/new/247.png</thumb>
 			<property name="background">special://skin/backgrounds/background11.png</property>
 			<property name="backgroundName">special://skin/backgrounds/background11.png</property>
+			<property name="InfoLine">130</property>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsd2473.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+TV+Shows+%5B%2FCOLOR%5D+90+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vista-iptv-scraper/?url=http%3A%2F%2Fftp.mgawow.co.uk%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsd2473.xml&amp;mode=1&amp;name=%5BCOLOR+gold%5D24%2F7+TV+Shows+%5B%2FCOLOR%5D+90+Channels&amp;fanart=http%3A%2F%2Fvistatv.online%2Fbuildrepo-1%2Fzips%2Fplugin.video.vista-iptv-scraper%2Ffanart.jpg",return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
@@ -522,42 +566,6 @@
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">3</property>
-			<label>24/7 Movies</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Movies%20%5b%2fCOLOR%5d%2017%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsdmovies2.xml",return)</onclick>
-			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Movies%20%5b%2fCOLOR%5d%2017%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsdmovies2.xml",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="2">
-			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">3</property>
-			<label>24/7 TV Shows</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20TV%20Shows%20%5b%2fCOLOR%5d%2090%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd2473.xml",return)</onclick>
-			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20TV%20Shows%20%5b%2fCOLOR%5d%2090%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd2473.xml",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="3">
-			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">3</property>
-			<label>24/7 Kids</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Kids%20Shows%20%5b%2fCOLOR%5d%2015%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd247kids.xml",return)</onclick>
-			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Kids%20Shows%20%5b%2fCOLOR%5d%2015%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd247kids.xml",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">3</property>
 			<label>Eye Pea Tv Main Menu</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -567,8 +575,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">3</property>
 			<label>Live TV Search</label>
 			<label2>Custom item</label2>
@@ -579,8 +587,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">3</property>
 			<label>TV Channels</label>
 			<label2>Custom item</label2>
@@ -592,8 +600,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">3</property>
 			<label>TV Guide</label>
 			<label2>Custom item</label2>
@@ -605,8 +613,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">3</property>
 			<label>Tools</label>
 			<label2>Custom item</label2>
@@ -617,8 +625,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">3</property>
 			<label>My Info</label>
 			<label2>Custom item</label2>
@@ -629,8 +637,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="10">
-			<property name="id">$NUMBER[10]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">3</property>
 			<label>TV Guide Reload</label>
 			<label2>Custom item</label2>
@@ -641,8 +649,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="11">
-			<property name="id">$NUMBER[11]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">3</property>
 			<label>IPTV Recorder</label>
 			<label2>Custom item</label2>
@@ -653,8 +661,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="12">
-			<property name="id">$NUMBER[12]</property>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">3</property>
 			<label>Turn Off TV Guide</label>
 			<label2>Custom item</label2>
@@ -665,8 +673,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-eyepeatv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="13">
-			<property name="id">$NUMBER[13]</property>
+		<item id="10">
+			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">3</property>
 			<label>Set Up TV Guide</label>
 			<label2>Custom item</label2>
@@ -679,7 +687,7 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>MP3 Streams</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -691,7 +699,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>Radio</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -703,7 +711,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>$LOCALIZE[744]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -715,7 +723,7 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>$LOCALIZE[24001]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -727,7 +735,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>$LOCALIZE[14022]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -739,7 +747,7 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>Popular right now</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -752,7 +760,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>Search</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -765,7 +773,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>Completed Live</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -778,7 +786,7 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>Upcoming Live</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -791,7 +799,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>Live</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -804,7 +812,7 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>$LOCALIZE[10001]</label>
 			<label2>Programs</label2>
 			<icon>special://skin/extras/icons/DefaultAddonProgram.png</icon>
@@ -816,7 +824,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>Video</label>
 			<label2>Videos</label2>
 			<icon>special://skin/extras/icons/DefaultAddonVideo.png</icon>
@@ -828,7 +836,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>Browser</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -840,7 +848,7 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>Music</label>
 			<label2>Music</label2>
 			<icon>special://skin/extras/icons/DefaultAddonMusic.png</icon>
@@ -852,7 +860,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>Picture</label>
 			<label2>Pictures</label2>
 			<icon>special://skin/extras/icons/DefaultAddonPicture.png</icon>
@@ -864,7 +872,7 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[24001]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -876,7 +884,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[33060]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -888,7 +896,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[20077]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -900,7 +908,7 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[7]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -912,7 +920,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[13200]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -924,7 +932,7 @@
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[130]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -936,7 +944,7 @@
 		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[31159]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -949,7 +957,7 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13016]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -962,7 +970,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13013]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -975,7 +983,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13011]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -988,7 +996,7 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13010]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1001,7 +1009,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[20126]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1014,7 +1022,7 @@
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13009]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1027,7 +1035,7 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">12</property>
+			<property name="mainmenuid">14</property>
 			<label>Open Weather Info</label>
 			<label2>Common menu item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1041,7 +1049,7 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">13</property>
+			<property name="mainmenuid">15</property>
 			<label>ADULTS ONLY</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1053,7 +1061,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">13</property>
+			<property name="mainmenuid">15</property>
 			<label>Set Password in</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1065,7 +1073,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">13</property>
+			<property name="mainmenuid">15</property>
 			<label>EPTV Addon</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1077,7 +1085,7 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">15</property>
+			<property name="mainmenuid">17</property>
 			<label>24/7 TV Shows</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1090,7 +1098,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">15</property>
+			<property name="mainmenuid">17</property>
 			<label>24/7 Movies</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1103,7 +1111,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">15</property>
+			<property name="mainmenuid">17</property>
 			<label>24/7 Kids Shows</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1715,42 +1723,6 @@
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">3</property>
-			<label>24/7 Movies</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Movies%20%5b%2fCOLOR%5d%2017%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsdmovies2.xml",return)</onclick>
-			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Movies%20%5b%2fCOLOR%5d%2017%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsdmovies2.xml",return)</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="2">
-			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">3</property>
-			<label>24/7 TV Shows</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20TV%20Shows%20%5b%2fCOLOR%5d%2090%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd2473.xml",return)</onclick>
-			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20TV%20Shows%20%5b%2fCOLOR%5d%2090%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd2473.xml",return)</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="3">
-			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">3</property>
-			<label>24/7 Kids</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Kids%20Shows%20%5b%2fCOLOR%5d%2015%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd247kids.xml",return)</onclick>
-			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Kids%20Shows%20%5b%2fCOLOR%5d%2015%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd247kids.xml",return)</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">3</property>
 			<label>Eye Pea Tv Main Menu</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1760,8 +1732,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">3</property>
 			<label>Live TV Search</label>
 			<label2>Custom item</label2>
@@ -1772,8 +1744,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">3</property>
 			<label>TV Channels</label>
 			<label2>Custom item</label2>
@@ -1785,8 +1757,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">3</property>
 			<label>TV Guide</label>
 			<label2>Custom item</label2>
@@ -1798,8 +1770,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">3</property>
 			<label>Tools</label>
 			<label2>Custom item</label2>
@@ -1810,8 +1782,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">3</property>
 			<label>My Info</label>
 			<label2>Custom item</label2>
@@ -1822,8 +1794,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="10">
-			<property name="id">$NUMBER[10]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">3</property>
 			<label>TV Guide Reload</label>
 			<label2>Custom item</label2>
@@ -1834,8 +1806,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="11">
-			<property name="id">$NUMBER[11]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">3</property>
 			<label>IPTV Recorder</label>
 			<label2>Custom item</label2>
@@ -1846,8 +1818,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="12">
-			<property name="id">$NUMBER[12]</property>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">3</property>
 			<label>Turn Off TV Guide</label>
 			<label2>Custom item</label2>
@@ -1858,8 +1830,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="13">
-			<property name="id">$NUMBER[13]</property>
+		<item id="10">
+			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">3</property>
 			<label>Set Up TV Guide</label>
 			<label2>Custom item</label2>
@@ -1875,42 +1847,6 @@
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">3</property>
-			<label>24/7 Movies</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Movies%20%5b%2fCOLOR%5d%2017%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsdmovies2.xml",return)</onclick>
-			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Movies%20%5b%2fCOLOR%5d%2017%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsdmovies2.xml",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="2">
-			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">3</property>
-			<label>24/7 TV Shows</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20TV%20Shows%20%5b%2fCOLOR%5d%2090%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd2473.xml",return)</onclick>
-			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20TV%20Shows%20%5b%2fCOLOR%5d%2090%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd2473.xml",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="3">
-			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">3</property>
-			<label>24/7 Kids</label>
-			<label2>Custom item</label2>
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Kids%20Shows%20%5b%2fCOLOR%5d%2015%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd247kids.xml",return)</onclick>
-			<property name="path">ActivateWindow(10025,"plugin://plugin.video.vista-iptv-scraper/?fanart=http%3a%2f%2fvistatv.online%2fbuildrepo-1%2fzips%2fplugin.video.vista-iptv-scraper%2ffanart.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d24%2f7%20Kids%20Shows%20%5b%2fCOLOR%5d%2015%20Channels&amp;url=http%3a%2f%2fftp.mgawow.co.uk%2fbuildrepo-1%2fto-be-cleaned-up-ed%2fsuper%2520old%2520stuff%2f9534958459845345%2fsdfdsfdsfdsfsdfsfdsf%2f1%2f2%2flol%2fwtf%2fsd247kids.xml",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">3</property>
 			<label>Eye Pea Tv Main Menu</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -1920,8 +1856,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">3</property>
 			<label>Live TV Search</label>
 			<label2>Custom item</label2>
@@ -1932,8 +1868,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">3</property>
 			<label>TV Channels</label>
 			<label2>Custom item</label2>
@@ -1945,8 +1881,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">3</property>
 			<label>TV Guide</label>
 			<label2>Custom item</label2>
@@ -1958,8 +1894,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">3</property>
 			<label>Tools</label>
 			<label2>Custom item</label2>
@@ -1970,8 +1906,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">3</property>
 			<label>My Info</label>
 			<label2>Custom item</label2>
@@ -1982,8 +1918,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="10">
-			<property name="id">$NUMBER[10]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">3</property>
 			<label>TV Guide Reload</label>
 			<label2>Custom item</label2>
@@ -1994,8 +1930,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="11">
-			<property name="id">$NUMBER[11]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">3</property>
 			<label>IPTV Recorder</label>
 			<label2>Custom item</label2>
@@ -2006,8 +1942,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="12">
-			<property name="id">$NUMBER[12]</property>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">3</property>
 			<label>Turn Off TV Guide</label>
 			<label2>Custom item</label2>
@@ -2018,8 +1954,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),plugin-video-eyepeatv)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="13">
-			<property name="id">$NUMBER[13]</property>
+		<item id="10">
+			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">3</property>
 			<label>Set Up TV Guide</label>
 			<label2>Custom item</label2>
@@ -2043,10 +1979,28 @@
 	<include name="skinshortcuts-group-alt-plugin-video-eyepeatv-2">
 		<description>No items</description>
 	</include>
+	<include name="skinshortcuts-group-colorwhite-sports-ppv-color">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-colorwhite-sports-ppv-color">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-colorwhite-sports-ppv-color-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-colorwhite-sports-ppv-color-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-colorwhite-sports-ppv-color-2">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-colorwhite-sports-ppv-color-2">
+		<description>No items</description>
+	</include>
 	<include name="skinshortcuts-group-colorlightblue-music-color">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>MP3 Streams</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2058,7 +2012,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>Radio</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2070,7 +2024,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>$LOCALIZE[744]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2082,7 +2036,7 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>$LOCALIZE[24001]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2094,7 +2048,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>$LOCALIZE[14022]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2108,7 +2062,7 @@
 	<include name="skinshortcuts-group-alt-colorlightblue-music-color">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>MP3 Streams</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2120,7 +2074,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>Radio</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2132,7 +2086,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>$LOCALIZE[744]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2144,7 +2098,7 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>$LOCALIZE[24001]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2156,7 +2110,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>$LOCALIZE[14022]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2218,7 +2172,7 @@
 	<include name="skinshortcuts-group-plugin-video-youtube">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>Popular right now</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2231,7 +2185,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>Search</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2244,7 +2198,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>Completed Live</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2257,7 +2211,7 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>Upcoming Live</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2270,7 +2224,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>Live</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2285,7 +2239,7 @@
 	<include name="skinshortcuts-group-alt-plugin-video-youtube">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>Popular right now</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2298,7 +2252,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>Search</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2311,7 +2265,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>Completed Live</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2324,7 +2278,7 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>Upcoming Live</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2337,7 +2291,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>Live</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2364,7 +2318,7 @@
 	<include name="skinshortcuts-group-colorwhite-addons-color">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>$LOCALIZE[10001]</label>
 			<label2>Programs</label2>
 			<icon>special://skin/extras/icons/DefaultAddonProgram.png</icon>
@@ -2376,7 +2330,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>Video</label>
 			<label2>Videos</label2>
 			<icon>special://skin/extras/icons/DefaultAddonVideo.png</icon>
@@ -2388,7 +2342,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>Browser</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2400,7 +2354,7 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>Music</label>
 			<label2>Music</label2>
 			<icon>special://skin/extras/icons/DefaultAddonMusic.png</icon>
@@ -2412,7 +2366,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>Picture</label>
 			<label2>Pictures</label2>
 			<icon>special://skin/extras/icons/DefaultAddonPicture.png</icon>
@@ -2426,7 +2380,7 @@
 	<include name="skinshortcuts-group-alt-colorwhite-addons-color">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>$LOCALIZE[10001]</label>
 			<label2>Programs</label2>
 			<icon>special://skin/extras/icons/DefaultAddonProgram.png</icon>
@@ -2438,7 +2392,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>Video</label>
 			<label2>Videos</label2>
 			<icon>special://skin/extras/icons/DefaultAddonVideo.png</icon>
@@ -2450,7 +2404,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>Browser</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2462,7 +2416,7 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>Music</label>
 			<label2>Music</label2>
 			<icon>special://skin/extras/icons/DefaultAddonMusic.png</icon>
@@ -2474,7 +2428,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>Picture</label>
 			<label2>Pictures</label2>
 			<icon>special://skin/extras/icons/DefaultAddonPicture.png</icon>
@@ -2497,10 +2451,28 @@
 	<include name="skinshortcuts-group-alt-colorwhite-addons-color-2">
 		<description>No items</description>
 	</include>
+	<include name="skinshortcuts-group-script-appapkmenu">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-script-appapkmenu">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-script-appapkmenu-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-script-appapkmenu-1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-script-appapkmenu-2">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-script-appapkmenu-2">
+		<description>No items</description>
+	</include>
 	<include name="skinshortcuts-group-colorwhite-system-color">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[24001]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2512,7 +2484,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[33060]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2524,7 +2496,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[20077]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2536,7 +2508,7 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[7]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2548,7 +2520,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[13200]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2560,7 +2532,7 @@
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[130]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2572,7 +2544,7 @@
 		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[31159]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2587,7 +2559,7 @@
 	<include name="skinshortcuts-group-alt-colorwhite-system-color">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[24001]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2599,7 +2571,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[33060]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2611,7 +2583,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[20077]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2623,7 +2595,7 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[7]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2635,7 +2607,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[13200]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2647,7 +2619,7 @@
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[130]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2659,7 +2631,7 @@
 		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
-			<property name="mainmenuid">9</property>
+			<property name="mainmenuid">11</property>
 			<label>$LOCALIZE[31159]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2686,7 +2658,7 @@
 	<include name="skinshortcuts-group-script-vista-exit">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13016]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2699,7 +2671,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13013]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2712,7 +2684,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13011]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2725,7 +2697,7 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13010]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2738,7 +2710,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[20126]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2751,7 +2723,7 @@
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13009]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2766,7 +2738,7 @@
 	<include name="skinshortcuts-group-alt-script-vista-exit">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13016]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2779,7 +2751,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13013]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2792,7 +2764,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13011]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2805,7 +2777,7 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13010]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2818,7 +2790,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[20126]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2831,7 +2803,7 @@
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13009]</label>
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2876,7 +2848,7 @@
 	<include name="skinshortcuts-group-colorwhite-myweather-color">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">12</property>
+			<property name="mainmenuid">14</property>
 			<label>Open Weather Info</label>
 			<label2>Common menu item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2892,7 +2864,7 @@
 	<include name="skinshortcuts-group-alt-colorwhite-myweather-color">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">12</property>
+			<property name="mainmenuid">14</property>
 			<label>Open Weather Info</label>
 			<label2>Common menu item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2920,7 +2892,7 @@
 	<include name="skinshortcuts-group-colorwhite-adult-color">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">13</property>
+			<property name="mainmenuid">15</property>
 			<label>ADULTS ONLY</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2932,7 +2904,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">13</property>
+			<property name="mainmenuid">15</property>
 			<label>Set Password in</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2944,7 +2916,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">13</property>
+			<property name="mainmenuid">15</property>
 			<label>EPTV Addon</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2958,7 +2930,7 @@
 	<include name="skinshortcuts-group-alt-colorwhite-adult-color">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">13</property>
+			<property name="mainmenuid">15</property>
 			<label>ADULTS ONLY</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2970,7 +2942,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">13</property>
+			<property name="mainmenuid">15</property>
 			<label>Set Password in</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -2982,7 +2954,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">13</property>
+			<property name="mainmenuid">15</property>
 			<label>EPTV Addon</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -3026,7 +2998,7 @@
 	<include name="skinshortcuts-group-colorwhite-24-7streams-color">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">15</property>
+			<property name="mainmenuid">17</property>
 			<label>24/7 TV Shows</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -3039,7 +3011,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">15</property>
+			<property name="mainmenuid">17</property>
 			<label>24/7 Movies</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -3052,7 +3024,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">15</property>
+			<property name="mainmenuid">17</property>
 			<label>24/7 Kids Shows</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -3067,7 +3039,7 @@
 	<include name="skinshortcuts-group-alt-colorwhite-24-7streams-color">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">15</property>
+			<property name="mainmenuid">17</property>
 			<label>24/7 TV Shows</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -3080,7 +3052,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">15</property>
+			<property name="mainmenuid">17</property>
 			<label>24/7 Movies</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -3093,7 +3065,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">15</property>
+			<property name="mainmenuid">17</property>
 			<label>24/7 Kids Shows</label>
 			<label2>Video Add-On</label2>
 			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
@@ -3548,7 +3520,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorlightblue-music-color)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-sports-ppv-color)</visible>
 			<top>449</top>
 			<left>245</left>
 			<control type="group">
@@ -3690,7 +3662,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-favourites-color)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorlightblue-music-color)</visible>
 			<top>449</top>
 			<left>245</left>
 			<control type="group">
@@ -3785,10 +3757,10 @@
 				</control>
 			</control>
 			<control id="80115" type="list">
-				<top>2.5</top>
+				<top>5</top>
 				<left>1130</left>
 				<width>300</width>
-				<height>305</height>
+				<height>300</height>
 				<onleft condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + [System.HasMediaDVD | Control.IsVisible(9027)]">9020</onleft>
 				<onleft condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + ![System.HasMediaDVD | Control.IsVisible(9027)]">9000</onleft>
 				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + Skin.HasSetting(lowermainmenu) + Control.IsVisible(90020)">90020</onright>
@@ -3832,7 +3804,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-myfiles-color)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-favourites-color)</visible>
 			<top>449</top>
 			<left>245</left>
 			<control type="group">
@@ -3927,10 +3899,10 @@
 				</control>
 			</control>
 			<control id="80116" type="list">
-				<top>5</top>
+				<top>2.5</top>
 				<left>1130</left>
 				<width>300</width>
-				<height>300</height>
+				<height>305</height>
 				<onleft condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + [System.HasMediaDVD | Control.IsVisible(9027)]">9020</onleft>
 				<onleft condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + ![System.HasMediaDVD | Control.IsVisible(9027)]">9000</onleft>
 				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + Skin.HasSetting(lowermainmenu) + Control.IsVisible(90020)">90020</onright>
@@ -3974,7 +3946,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-youtube)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-myfiles-color)</visible>
 			<top>449</top>
 			<left>245</left>
 			<control type="group">
@@ -4116,7 +4088,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-addons-color)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-youtube)</visible>
 			<top>449</top>
 			<left>245</left>
 			<control type="group">
@@ -4258,7 +4230,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-system-color)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-addons-color)</visible>
 			<top>449</top>
 			<left>245</left>
 			<control type="group">
@@ -4400,7 +4372,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),script-vista-exit)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),script-appapkmenu)</visible>
 			<top>449</top>
 			<left>245</left>
 			<control type="group">
@@ -4542,7 +4514,149 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-myweather-color)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-system-color)</visible>
+			<top>449</top>
+			<left>245</left>
+			<control type="group">
+				<visible>Integer.IsGreater(Container(801111).NumItems,0)</visible>
+				<control type="group">
+					<visible>ControlGroup(90010).HasFocus + !Window.IsVisible(shutdownmenu) + !Window.IsVisible(favourites) + !Window.IsVisible(numericinput) + !Window.IsVisible(busydialog)</visible>
+					<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + ControlGroup(90010).HasFocus" easing="inout" effect="slide" end="-410,0" time="320" tween="cubic">Conditional</animation>
+					<include content="Info">
+						<param name="id">801111</param>
+						<param name="widgetSquare">false</param>
+						<param name="widthBack">1470</param>
+						<param name="Left1">226</param>
+						<param name="Left2">330</param>
+						<param name="Width1">879</param>
+						<param name="Width2">774</param>
+					</include>
+				</control>
+				<control type="group">
+					<left>1130</left>
+					<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended)" effect="slide" end="-410,0">Conditional</animation>
+					<control type="group">
+						<left>-21</left>
+						<top>-16</top>
+						<animation center="150" condition="Control.HasFocus(801111) + false" easing="inout" effect="rotatey" end="180" start="0" time="400" tween="sine">Conditional</animation>
+						<control type="image">
+							<width>342</width>
+							<height>342</height>
+							<visible>Skin.HasSetting(Enable.GlobalWidgetBack)</visible>
+							<texture border="40" colordiffuse="$VAR[HomeWidgetBackColor]">$VAR[HomeWidgetBackgroundVar]</texture>
+							<include>HomeWidgetTrans</include>
+						</control>
+						<control type="image">
+							<width>342</width>
+							<height>342</height>
+							<visible>!Skin.HasSetting(Enable.GlobalWidgetBack)</visible>
+							<texture border="40" colordiffuse="FF0B0B0B">homewidgets/bg_default.png</texture>
+							<include>HomeWidgetTrans</include>
+						</control>
+					</control>
+					<control type="group">
+						<width>300</width>
+						<height>300</height>
+						<animation condition="Control.HasFocus(801111) + false" type="Conditional">
+							<effect center="150" easing="inout" end="180" start="0" time="400" tween="sine" type="rotatey" />
+							<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
+						</animation>
+						<visible>String.IsEmpty(Container(801111).ListItem.Property(isSystemInfo))</visible>
+						<control type="label">
+							<width>300</width>
+							<top>9</top>
+							<height>20</height>
+							<align>center</align>
+							<font>font12_title</font>
+							<textcolor>grey</textcolor>
+							<shadowcolor>shadow</shadowcolor>
+							<label>130</label>
+						</control>
+						<control type="label">
+							<width>300</width>
+							<top>254</top>
+							<height>40</height>
+							<align>center</align>
+							<font>font12_title</font>
+							<textcolor>grey</textcolor>
+							<shadowcolor>shadow</shadowcolor>
+							<wrapmultiline>true</wrapmultiline>
+							<label>$VAR[HomeWidget801111TitleVar]</label>
+						</control>
+						<include content="ListSquareArt">
+							<param name="id">801111</param>
+							<param name="Texture">$VAR[HomeWidget801111PosterVar]</param>
+							<param name="Title2">$VAR[HomeWidget801111Title2Var]</param>
+							<param name="leftArt">50</param>
+							<param name="topArt">40</param>
+							<param name="widthArt">200</param>
+							<param name="heightArt">200</param>
+							<param name="topFakeDiscArt">40</param>
+							<param name="leftCase">50</param>
+							<param name="topCase">40</param>
+							<param name="widthCase">200</param>
+							<param name="heightCase">200</param>
+							<param name="caseVisible">false</param>
+							<param name="labelHeight" />
+							<param name="fallbackFont">fontCDalbum</param>
+							<param name="fallbackVisible">false</param>
+							<param name="Aspect">scale</param>
+							<param name="Aligny">top</param>
+							<param name="Diffuse" />
+							<param name="Case" />
+						</include>
+					</control>
+				</control>
+			</control>
+			<control id="801111" type="list">
+				<top>5</top>
+				<left>1130</left>
+				<width>300</width>
+				<height>300</height>
+				<onleft condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + [System.HasMediaDVD | Control.IsVisible(9027)]">9020</onleft>
+				<onleft condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + ![System.HasMediaDVD | Control.IsVisible(9027)]">9000</onleft>
+				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + Skin.HasSetting(lowermainmenu) + Control.IsVisible(90020)">90020</onright>
+				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + Skin.HasSetting(lowermainmenu) + !Control.IsVisible(90020)">9000</onright>
+				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + !Skin.HasSetting(lowermainmenu) + Control.IsVisible(90020)">90020</onright>
+				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + !Skin.HasSetting(lowermainmenu) + !Control.IsVisible(90020)">9000</onright>
+				<onleft condition="String.IsEqual(Skin.String(MainMenu.Layout),15)">9000</onleft>
+				<onright condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + Control.IsVisible(90020)">90020</onright>
+				<onright condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + !Control.IsVisible(90020) + [System.HasMediaDVD | Control.IsVisible(9027)]">9020</onright>
+				<onright condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + !Control.IsVisible(90020) + ![System.HasMediaDVD | Control.IsVisible(9027)]">9000</onright>
+				<orientation>vertical</orientation>
+				<preloaditems>2</preloaditems>
+				<scrolltime easing="out" tween="quadratic">300</scrolltime>
+				<autoscroll delay="10000" repeat="10000" time="10000">Control.IsVisible(801111) + Skin.HasSetting(Enable.ListWidgetAutoscroll) + !Control.HasFocus(801111)</autoscroll>
+				<animation condition="[!String.IsEqual(Skin.String(MainMenu.Layout),15) + !Control.HasFocus(801111) + false] | [String.IsEqual(Skin.String(MainMenu.Layout),15) + !String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801111) + false]" type="Conditional">
+					<effect center="1280" easing="inout" end="-180" start="0" time="400" tween="sine" type="rotatey" />
+					<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
+				</animation>
+				<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801111) + false" type="Conditional">
+					<effect center="1280" easing="inout" end="-180" start="0" time="400" tween="sine" type="rotatey" />
+					<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
+				</animation>
+				<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended)" effect="slide" end="-410,0">Conditional</animation>
+				<include content="ListSystem">
+					<param name="id">801111</param>
+					<param name="Texture">$VAR[HomeWidget801111PosterVar]</param>
+					<param name="leftArt">0</param>
+					<param name="topArt">2.5</param>
+					<param name="widthArt">300</param>
+					<param name="heightArt">56</param>
+					<param name="leftCase">0</param>
+					<param name="topCase">2.5</param>
+					<param name="widthCase">300</param>
+					<param name="heightCase">56</param>
+					<param name="fallbackFont">fontCDalbum</param>
+					<param name="Case" />
+				</include>
+				<content sortby="" sortorder="" target="">
+					<include>SystemContent</include>
+				</content>
+			</control>
+		</control>
+		<control type="group">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),script-vista-exit)</visible>
 			<top>449</top>
 			<left>245</left>
 			<control type="group">
@@ -4566,7 +4680,7 @@
 					<control type="group">
 						<left>-21</left>
 						<top>-16</top>
-						<animation center="150" condition="Control.HasFocus(801112) + true" easing="inout" effect="rotatey" end="180" start="0" time="400" tween="sine">Conditional</animation>
+						<animation center="150" condition="Control.HasFocus(801112) + false" easing="inout" effect="rotatey" end="180" start="0" time="400" tween="sine">Conditional</animation>
 						<control type="image">
 							<width>342</width>
 							<height>342</height>
@@ -4585,7 +4699,7 @@
 					<control type="group">
 						<width>300</width>
 						<height>300</height>
-						<animation condition="Control.HasFocus(801112) + true" type="Conditional">
+						<animation condition="Control.HasFocus(801112) + false" type="Conditional">
 							<effect center="150" easing="inout" end="180" start="0" time="400" tween="sine" type="rotatey" />
 							<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
 						</animation>
@@ -4598,7 +4712,7 @@
 							<font>font12_title</font>
 							<textcolor>grey</textcolor>
 							<shadowcolor>shadow</shadowcolor>
-							<label>10508</label>
+							<label>130</label>
 						</control>
 						<control type="label">
 							<width>300</width>
@@ -4655,16 +4769,16 @@
 				<preloaditems>2</preloaditems>
 				<scrolltime easing="out" tween="quadratic">300</scrolltime>
 				<autoscroll delay="10000" repeat="10000" time="10000">Control.IsVisible(801112) + Skin.HasSetting(Enable.ListWidgetAutoscroll) + !Control.HasFocus(801112)</autoscroll>
-				<animation condition="[!String.IsEqual(Skin.String(MainMenu.Layout),15) + !Control.HasFocus(801112) + true] | [String.IsEqual(Skin.String(MainMenu.Layout),15) + !String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801112) + true]" type="Conditional">
+				<animation condition="[!String.IsEqual(Skin.String(MainMenu.Layout),15) + !Control.HasFocus(801112) + false] | [String.IsEqual(Skin.String(MainMenu.Layout),15) + !String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801112) + false]" type="Conditional">
 					<effect center="1280" easing="inout" end="-180" start="0" time="400" tween="sine" type="rotatey" />
 					<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
 				</animation>
-				<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801112) + true" type="Conditional">
+				<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801112) + false" type="Conditional">
 					<effect center="1280" easing="inout" end="-180" start="0" time="400" tween="sine" type="rotatey" />
 					<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
 				</animation>
 				<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended)" effect="slide" end="-410,0">Conditional</animation>
-				<include content="List">
+				<include content="ListSystem">
 					<param name="id">801112</param>
 					<param name="Texture">$VAR[HomeWidget801112PosterVar]</param>
 					<param name="leftArt">0</param>
@@ -4679,12 +4793,154 @@
 					<param name="Case" />
 				</include>
 				<content sortby="" sortorder="" target="">
-					<include>WeatherContent</include>
+					<include>SystemContent</include>
 				</content>
 			</control>
 		</control>
 		<control type="group">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),script-module-aliunde-maintenance-wizard)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),plugin-video-streamlink-earthcam)</visible>
+			<top>449</top>
+			<left>245</left>
+			<control type="group">
+				<visible>Integer.IsGreater(Container(801113).NumItems,0)</visible>
+				<control type="group">
+					<visible>ControlGroup(90010).HasFocus + !Window.IsVisible(shutdownmenu) + !Window.IsVisible(favourites) + !Window.IsVisible(numericinput) + !Window.IsVisible(busydialog)</visible>
+					<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + ControlGroup(90010).HasFocus" easing="inout" effect="slide" end="-410,0" time="320" tween="cubic">Conditional</animation>
+					<include content="Info">
+						<param name="id">801113</param>
+						<param name="widgetSquare">false</param>
+						<param name="widthBack">1470</param>
+						<param name="Left1">226</param>
+						<param name="Left2">330</param>
+						<param name="Width1">879</param>
+						<param name="Width2">774</param>
+					</include>
+				</control>
+				<control type="group">
+					<left>1130</left>
+					<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended)" effect="slide" end="-410,0">Conditional</animation>
+					<control type="group">
+						<left>-21</left>
+						<top>-16</top>
+						<animation center="150" condition="Control.HasFocus(801113) + false" easing="inout" effect="rotatey" end="180" start="0" time="400" tween="sine">Conditional</animation>
+						<control type="image">
+							<width>342</width>
+							<height>342</height>
+							<visible>Skin.HasSetting(Enable.GlobalWidgetBack)</visible>
+							<texture border="40" colordiffuse="$VAR[HomeWidgetBackColor]">$VAR[HomeWidgetBackgroundVar]</texture>
+							<include>HomeWidgetTrans</include>
+						</control>
+						<control type="image">
+							<width>342</width>
+							<height>342</height>
+							<visible>!Skin.HasSetting(Enable.GlobalWidgetBack)</visible>
+							<texture border="40" colordiffuse="FF0B0B0B">homewidgets/bg_default.png</texture>
+							<include>HomeWidgetTrans</include>
+						</control>
+					</control>
+					<control type="group">
+						<width>300</width>
+						<height>300</height>
+						<animation condition="Control.HasFocus(801113) + false" type="Conditional">
+							<effect center="150" easing="inout" end="180" start="0" time="400" tween="sine" type="rotatey" />
+							<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
+						</animation>
+						<visible>String.IsEmpty(Container(801113).ListItem.Property(isSystemInfo))</visible>
+						<control type="label">
+							<width>300</width>
+							<top>9</top>
+							<height>20</height>
+							<align>center</align>
+							<font>font12_title</font>
+							<textcolor>grey</textcolor>
+							<shadowcolor>shadow</shadowcolor>
+							<label>130</label>
+						</control>
+						<control type="label">
+							<width>300</width>
+							<top>254</top>
+							<height>40</height>
+							<align>center</align>
+							<font>font12_title</font>
+							<textcolor>grey</textcolor>
+							<shadowcolor>shadow</shadowcolor>
+							<wrapmultiline>true</wrapmultiline>
+							<label>$VAR[HomeWidget801113TitleVar]</label>
+						</control>
+						<include content="ListSquareArt">
+							<param name="id">801113</param>
+							<param name="Texture">$VAR[HomeWidget801113PosterVar]</param>
+							<param name="Title2">$VAR[HomeWidget801113Title2Var]</param>
+							<param name="leftArt">50</param>
+							<param name="topArt">40</param>
+							<param name="widthArt">200</param>
+							<param name="heightArt">200</param>
+							<param name="topFakeDiscArt">40</param>
+							<param name="leftCase">50</param>
+							<param name="topCase">40</param>
+							<param name="widthCase">200</param>
+							<param name="heightCase">200</param>
+							<param name="caseVisible">false</param>
+							<param name="labelHeight" />
+							<param name="fallbackFont">fontCDalbum</param>
+							<param name="fallbackVisible">false</param>
+							<param name="Aspect">scale</param>
+							<param name="Aligny">top</param>
+							<param name="Diffuse" />
+							<param name="Case" />
+						</include>
+					</control>
+				</control>
+			</control>
+			<control id="801113" type="list">
+				<top>5</top>
+				<left>1130</left>
+				<width>300</width>
+				<height>300</height>
+				<onleft condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + [System.HasMediaDVD | Control.IsVisible(9027)]">9020</onleft>
+				<onleft condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + ![System.HasMediaDVD | Control.IsVisible(9027)]">9000</onleft>
+				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + Skin.HasSetting(lowermainmenu) + Control.IsVisible(90020)">90020</onright>
+				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + Skin.HasSetting(lowermainmenu) + !Control.IsVisible(90020)">9000</onright>
+				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + !Skin.HasSetting(lowermainmenu) + Control.IsVisible(90020)">90020</onright>
+				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + !Skin.HasSetting(lowermainmenu) + !Control.IsVisible(90020)">9000</onright>
+				<onleft condition="String.IsEqual(Skin.String(MainMenu.Layout),15)">9000</onleft>
+				<onright condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + Control.IsVisible(90020)">90020</onright>
+				<onright condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + !Control.IsVisible(90020) + [System.HasMediaDVD | Control.IsVisible(9027)]">9020</onright>
+				<onright condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + !Control.IsVisible(90020) + ![System.HasMediaDVD | Control.IsVisible(9027)]">9000</onright>
+				<orientation>vertical</orientation>
+				<preloaditems>2</preloaditems>
+				<scrolltime easing="out" tween="quadratic">300</scrolltime>
+				<autoscroll delay="10000" repeat="10000" time="10000">Control.IsVisible(801113) + Skin.HasSetting(Enable.ListWidgetAutoscroll) + !Control.HasFocus(801113)</autoscroll>
+				<animation condition="[!String.IsEqual(Skin.String(MainMenu.Layout),15) + !Control.HasFocus(801113) + false] | [String.IsEqual(Skin.String(MainMenu.Layout),15) + !String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801113) + false]" type="Conditional">
+					<effect center="1280" easing="inout" end="-180" start="0" time="400" tween="sine" type="rotatey" />
+					<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
+				</animation>
+				<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801113) + false" type="Conditional">
+					<effect center="1280" easing="inout" end="-180" start="0" time="400" tween="sine" type="rotatey" />
+					<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
+				</animation>
+				<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended)" effect="slide" end="-410,0">Conditional</animation>
+				<include content="ListSystem">
+					<param name="id">801113</param>
+					<param name="Texture">$VAR[HomeWidget801113PosterVar]</param>
+					<param name="leftArt">0</param>
+					<param name="topArt">2.5</param>
+					<param name="widthArt">300</param>
+					<param name="heightArt">56</param>
+					<param name="leftCase">0</param>
+					<param name="topCase">2.5</param>
+					<param name="widthCase">300</param>
+					<param name="heightCase">56</param>
+					<param name="fallbackFont">fontCDalbum</param>
+					<param name="Case" />
+				</include>
+				<content sortby="" sortorder="" target="">
+					<include>SystemContent</include>
+				</content>
+			</control>
+		</control>
+		<control type="group">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorwhite-myweather-color)</visible>
 			<top>449</top>
 			<left>245</left>
 			<control type="group">
@@ -4708,7 +4964,7 @@
 					<control type="group">
 						<left>-21</left>
 						<top>-16</top>
-						<animation center="150" condition="Control.HasFocus(801114) + false" easing="inout" effect="rotatey" end="180" start="0" time="400" tween="sine">Conditional</animation>
+						<animation center="150" condition="Control.HasFocus(801114) + true" easing="inout" effect="rotatey" end="180" start="0" time="400" tween="sine">Conditional</animation>
 						<control type="image">
 							<width>342</width>
 							<height>342</height>
@@ -4727,7 +4983,7 @@
 					<control type="group">
 						<width>300</width>
 						<height>300</height>
-						<animation condition="Control.HasFocus(801114) + false" type="Conditional">
+						<animation condition="Control.HasFocus(801114) + true" type="Conditional">
 							<effect center="150" easing="inout" end="180" start="0" time="400" tween="sine" type="rotatey" />
 							<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
 						</animation>
@@ -4740,7 +4996,7 @@
 							<font>font12_title</font>
 							<textcolor>grey</textcolor>
 							<shadowcolor>shadow</shadowcolor>
-							<label>130</label>
+							<label>10508</label>
 						</control>
 						<control type="label">
 							<width>300</width>
@@ -4797,18 +5053,160 @@
 				<preloaditems>2</preloaditems>
 				<scrolltime easing="out" tween="quadratic">300</scrolltime>
 				<autoscroll delay="10000" repeat="10000" time="10000">Control.IsVisible(801114) + Skin.HasSetting(Enable.ListWidgetAutoscroll) + !Control.HasFocus(801114)</autoscroll>
-				<animation condition="[!String.IsEqual(Skin.String(MainMenu.Layout),15) + !Control.HasFocus(801114) + false] | [String.IsEqual(Skin.String(MainMenu.Layout),15) + !String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801114) + false]" type="Conditional">
+				<animation condition="[!String.IsEqual(Skin.String(MainMenu.Layout),15) + !Control.HasFocus(801114) + true] | [String.IsEqual(Skin.String(MainMenu.Layout),15) + !String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801114) + true]" type="Conditional">
 					<effect center="1280" easing="inout" end="-180" start="0" time="400" tween="sine" type="rotatey" />
 					<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
 				</animation>
-				<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801114) + false" type="Conditional">
+				<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801114) + true" type="Conditional">
+					<effect center="1280" easing="inout" end="-180" start="0" time="400" tween="sine" type="rotatey" />
+					<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
+				</animation>
+				<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended)" effect="slide" end="-410,0">Conditional</animation>
+				<include content="List">
+					<param name="id">801114</param>
+					<param name="Texture">$VAR[HomeWidget801114PosterVar]</param>
+					<param name="leftArt">0</param>
+					<param name="topArt">2.5</param>
+					<param name="widthArt">300</param>
+					<param name="heightArt">56</param>
+					<param name="leftCase">0</param>
+					<param name="topCase">2.5</param>
+					<param name="widthCase">300</param>
+					<param name="heightCase">56</param>
+					<param name="fallbackFont">fontCDalbum</param>
+					<param name="Case" />
+				</include>
+				<content sortby="" sortorder="" target="">
+					<include>WeatherContent</include>
+				</content>
+			</control>
+		</control>
+		<control type="group">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),script-module-aliunde-maintenance-wizard)</visible>
+			<top>449</top>
+			<left>245</left>
+			<control type="group">
+				<visible>Integer.IsGreater(Container(801116).NumItems,0)</visible>
+				<control type="group">
+					<visible>ControlGroup(90010).HasFocus + !Window.IsVisible(shutdownmenu) + !Window.IsVisible(favourites) + !Window.IsVisible(numericinput) + !Window.IsVisible(busydialog)</visible>
+					<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + ControlGroup(90010).HasFocus" easing="inout" effect="slide" end="-410,0" time="320" tween="cubic">Conditional</animation>
+					<include content="Info">
+						<param name="id">801116</param>
+						<param name="widgetSquare">false</param>
+						<param name="widthBack">1470</param>
+						<param name="Left1">226</param>
+						<param name="Left2">330</param>
+						<param name="Width1">879</param>
+						<param name="Width2">774</param>
+					</include>
+				</control>
+				<control type="group">
+					<left>1130</left>
+					<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended)" effect="slide" end="-410,0">Conditional</animation>
+					<control type="group">
+						<left>-21</left>
+						<top>-16</top>
+						<animation center="150" condition="Control.HasFocus(801116) + false" easing="inout" effect="rotatey" end="180" start="0" time="400" tween="sine">Conditional</animation>
+						<control type="image">
+							<width>342</width>
+							<height>342</height>
+							<visible>Skin.HasSetting(Enable.GlobalWidgetBack)</visible>
+							<texture border="40" colordiffuse="$VAR[HomeWidgetBackColor]">$VAR[HomeWidgetBackgroundVar]</texture>
+							<include>HomeWidgetTrans</include>
+						</control>
+						<control type="image">
+							<width>342</width>
+							<height>342</height>
+							<visible>!Skin.HasSetting(Enable.GlobalWidgetBack)</visible>
+							<texture border="40" colordiffuse="FF0B0B0B">homewidgets/bg_default.png</texture>
+							<include>HomeWidgetTrans</include>
+						</control>
+					</control>
+					<control type="group">
+						<width>300</width>
+						<height>300</height>
+						<animation condition="Control.HasFocus(801116) + false" type="Conditional">
+							<effect center="150" easing="inout" end="180" start="0" time="400" tween="sine" type="rotatey" />
+							<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
+						</animation>
+						<visible>String.IsEmpty(Container(801116).ListItem.Property(isSystemInfo))</visible>
+						<control type="label">
+							<width>300</width>
+							<top>9</top>
+							<height>20</height>
+							<align>center</align>
+							<font>font12_title</font>
+							<textcolor>grey</textcolor>
+							<shadowcolor>shadow</shadowcolor>
+							<label>130</label>
+						</control>
+						<control type="label">
+							<width>300</width>
+							<top>254</top>
+							<height>40</height>
+							<align>center</align>
+							<font>font12_title</font>
+							<textcolor>grey</textcolor>
+							<shadowcolor>shadow</shadowcolor>
+							<wrapmultiline>true</wrapmultiline>
+							<label>$VAR[HomeWidget801116TitleVar]</label>
+						</control>
+						<include content="ListSquareArt">
+							<param name="id">801116</param>
+							<param name="Texture">$VAR[HomeWidget801116PosterVar]</param>
+							<param name="Title2">$VAR[HomeWidget801116Title2Var]</param>
+							<param name="leftArt">50</param>
+							<param name="topArt">40</param>
+							<param name="widthArt">200</param>
+							<param name="heightArt">200</param>
+							<param name="topFakeDiscArt">40</param>
+							<param name="leftCase">50</param>
+							<param name="topCase">40</param>
+							<param name="widthCase">200</param>
+							<param name="heightCase">200</param>
+							<param name="caseVisible">false</param>
+							<param name="labelHeight" />
+							<param name="fallbackFont">fontCDalbum</param>
+							<param name="fallbackVisible">false</param>
+							<param name="Aspect">scale</param>
+							<param name="Aligny">top</param>
+							<param name="Diffuse" />
+							<param name="Case" />
+						</include>
+					</control>
+				</control>
+			</control>
+			<control id="801116" type="list">
+				<top>5</top>
+				<left>1130</left>
+				<width>300</width>
+				<height>300</height>
+				<onleft condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + [System.HasMediaDVD | Control.IsVisible(9027)]">9020</onleft>
+				<onleft condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + ![System.HasMediaDVD | Control.IsVisible(9027)]">9000</onleft>
+				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + Skin.HasSetting(lowermainmenu) + Control.IsVisible(90020)">90020</onright>
+				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + Skin.HasSetting(lowermainmenu) + !Control.IsVisible(90020)">9000</onright>
+				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + !Skin.HasSetting(lowermainmenu) + Control.IsVisible(90020)">90020</onright>
+				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),15) + !Skin.HasSetting(lowermainmenu) + !Control.IsVisible(90020)">9000</onright>
+				<onleft condition="String.IsEqual(Skin.String(MainMenu.Layout),15)">9000</onleft>
+				<onright condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + Control.IsVisible(90020)">90020</onright>
+				<onright condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + !Control.IsVisible(90020) + [System.HasMediaDVD | Control.IsVisible(9027)]">9020</onright>
+				<onright condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + !Control.IsVisible(90020) + ![System.HasMediaDVD | Control.IsVisible(9027)]">9000</onright>
+				<orientation>vertical</orientation>
+				<preloaditems>2</preloaditems>
+				<scrolltime easing="out" tween="quadratic">300</scrolltime>
+				<autoscroll delay="10000" repeat="10000" time="10000">Control.IsVisible(801116) + Skin.HasSetting(Enable.ListWidgetAutoscroll) + !Control.HasFocus(801116)</autoscroll>
+				<animation condition="[!String.IsEqual(Skin.String(MainMenu.Layout),15) + !Control.HasFocus(801116) + false] | [String.IsEqual(Skin.String(MainMenu.Layout),15) + !String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801116) + false]" type="Conditional">
+					<effect center="1280" easing="inout" end="-180" start="0" time="400" tween="sine" type="rotatey" />
+					<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
+				</animation>
+				<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801116) + false" type="Conditional">
 					<effect center="1280" easing="inout" end="-180" start="0" time="400" tween="sine" type="rotatey" />
 					<effect easing="inout" end="0" start="100" time="300" tween="sine" type="fade" />
 				</animation>
 				<animation condition="String.IsEqual(Skin.String(MainMenu.Layout),15) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended)" effect="slide" end="-410,0">Conditional</animation>
 				<include content="ListSystem">
-					<param name="id">801114</param>
-					<param name="Texture">$VAR[HomeWidget801114PosterVar]</param>
+					<param name="id">801116</param>
+					<param name="Texture">$VAR[HomeWidget801116PosterVar]</param>
 					<param name="leftArt">0</param>
 					<param name="topArt">2.5</param>
 					<param name="widthArt">300</param>
@@ -4961,17 +5359,38 @@
 			<param name="imagePathMulti" />
 		</include>
 		<include content="WidgetHomeFanart">
+			<param name="id">801111</param>
+			<param name="Visible">Control.HasFocus(801111)</param>
+			<param name="isWeather">False</param>
+			<param name="imagePath">$INFO[Container(801111).ListItem.Property(Fanart)]</param>
+			<param name="imagePathMulti" />
+		</include>
+		<include content="WidgetHomeFanart">
 			<param name="id">801112</param>
 			<param name="Visible">Control.HasFocus(801112)</param>
-			<param name="isWeather">True</param>
+			<param name="isWeather">False</param>
 			<param name="imagePath">$INFO[Container(801112).ListItem.Property(Fanart)]</param>
-			<param name="imagePathMulti">$INFO[Container(801112).ListItem.Property(WeatherMultiFanart)]</param>
+			<param name="imagePathMulti" />
+		</include>
+		<include content="WidgetHomeFanart">
+			<param name="id">801113</param>
+			<param name="Visible">Control.HasFocus(801113)</param>
+			<param name="isWeather">False</param>
+			<param name="imagePath">$INFO[Container(801113).ListItem.Property(Fanart)]</param>
+			<param name="imagePathMulti" />
 		</include>
 		<include content="WidgetHomeFanart">
 			<param name="id">801114</param>
 			<param name="Visible">Control.HasFocus(801114)</param>
-			<param name="isWeather">False</param>
+			<param name="isWeather">True</param>
 			<param name="imagePath">$INFO[Container(801114).ListItem.Property(Fanart)]</param>
+			<param name="imagePathMulti">$INFO[Container(801114).ListItem.Property(WeatherMultiFanart)]</param>
+		</include>
+		<include content="WidgetHomeFanart">
+			<param name="id">801116</param>
+			<param name="Visible">Control.HasFocus(801116)</param>
+			<param name="isWeather">False</param>
+			<param name="imagePath">$INFO[Container(801116).ListItem.Property(Fanart)]</param>
 			<param name="imagePathMulti" />
 		</include>
 	</include>
@@ -6365,6 +6784,145 @@
 		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Plot))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Plot)]</value>
 		<value>$INFO[Container(801110).ListItem.Plot]</value>
 	</variable>
+	<variable name="HomeWidget801111CaseVar">
+		<value condition="String.Contains(Container(801111).ListItem.Filename,4k)">4k.png</value>
+		<value condition="Container(801111).ListItem.IsStereoscopic | String.Contains(Container(801111).ListItem.Filename,3d) | String.Contains(Container(801111).ListItem.Filename,3dbd)">3d.png</value>
+		<value condition="String.Contains(Container(801111).ListItem.Filename,hddvd)">hddvd.png</value>
+		<value condition="String.Contains(Container(801111).ListItem.Filename,hdtv) | String.Contains(Container(801111).ListItem.Filename,hd tv)">hdtv.png</value>
+		<value condition="String.Contains(Container(801111).ListItem.Filename,webdl) | String.Contains(Container(801111).ListItem.Filename,web-dl) | String.Contains(Container(801111).ListItem.Filename,webtv) | String.Contains(Container(801111).ListItem.Filename,web-tv)">webdl.png</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.VideoResolution)">$INFO[Container(801111).ListItem.VideoResolution]p.png</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Property(VideoResolution))">$INFO[Container(801111).ListItem.Property(VideoResolution)]p.png</value>
+		<value condition="String.IsEmpty(Container(801111).ListItem.VideoResolution) + !String.IsEmpty(Container(801111).ListItem.TVShowTitle)">tvseries.png</value>
+		<value condition="String.IsEmpty(Container(801111).ListItem.Property(VideoResolution)) + String.IsEmpty(Container(801111).ListItem.TVShowTitle) + [!String.IsEmpty(Container(801111).ListItem.Trailer) | String.Contains(Container(801111).ListItem.FolderPath,extendedinfo)]">trailers.png</value>
+		<value>p.png</value>
+	</variable>
+	<variable name="HomeWidget801111OnInfoCaseVar">
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Glass) + String.IsEmpty(Container(801111).ListItem.Property(Label3)) + String.IsEmpty(Container(801111).ListItem.ChannelName) + String.IsEmpty(Container(801111).ListItem.Artist) + String.IsEmpty(Container(801111).ListItem.AlbumArtist) + String.IsEmpty(Container(801111).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Glass)">homewidgets/glass/square.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Case) + String.IsEmpty(Container(801111).ListItem.Property(Label3)) + String.IsEmpty(Container(801111).ListItem.ChannelName) + String.IsEmpty(Container(801111).ListItem.Artist) + String.IsEmpty(Container(801111).ListItem.AlbumArtist) + String.IsEmpty(Container(801111).ListItem.AddonName) + !false">homewidgets/case/poster/$VAR[HomeWidget801111CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Case)">homewidgets/case/square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Clear Case) + String.IsEmpty(Container(801111).ListItem.Property(Label3)) + String.IsEmpty(Container(801111).ListItem.ChannelName) + String.IsEmpty(Container(801111).ListItem.Artist) + String.IsEmpty(Container(801111).ListItem.AlbumArtist) + String.IsEmpty(Container(801111).ListItem.AddonName) + !false">homewidgets/clearcase/poster/$VAR[HomeWidget801111CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Clear Case)">homewidgets/clearcase/square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + !false + String.IsEmpty(Container(801111).ListItem.Property(Label3)) + String.IsEmpty(Container(801111).ListItem.ChannelName) + String.IsEmpty(Container(801111).ListItem.Artist) + String.IsEmpty(Container(801111).ListItem.AlbumArtist) + String.IsEmpty(Container(801111).ListItem.AddonName) + !false">homewidgets//poster/$VAR[HomeWidget801111CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + !false">homewidgets//square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + false + String.IsEmpty(Container(801111).ListItem.Property(Label3)) + String.IsEmpty(Container(801111).ListItem.ChannelName) + String.IsEmpty(Container(801111).ListItem.Artist) + String.IsEmpty(Container(801111).ListItem.AlbumArtist) + String.IsEmpty(Container(801111).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + false">homewidgets/glass/square.png</value>
+		<value />
+	</variable>
+	<variable name="HomeWidget801111InfoCaseVar">
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Glass) + String.IsEmpty(Container(801111).ListItem.Property(Label3)) + String.IsEmpty(Container(801111).ListItem.ChannelName) + String.IsEmpty(Container(801111).ListItem.Artist) + String.IsEmpty(Container(801111).ListItem.AlbumArtist) + String.IsEmpty(Container(801111).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Glass)">homewidgets/glass/square.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Case) + String.IsEmpty(Container(801111).ListItem.Property(Label3)) + String.IsEmpty(Container(801111).ListItem.ChannelName) + String.IsEmpty(Container(801111).ListItem.Artist) + String.IsEmpty(Container(801111).ListItem.AlbumArtist) + String.IsEmpty(Container(801111).ListItem.AddonName) + !false">homewidgets/case/poster/$VAR[HomeWidget801111CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Case)">homewidgets/case/square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Clear Case) + String.IsEmpty(Container(801111).ListItem.Property(Label3)) + String.IsEmpty(Container(801111).ListItem.ChannelName) + String.IsEmpty(Container(801111).ListItem.Artist) + String.IsEmpty(Container(801111).ListItem.AlbumArtist) + String.IsEmpty(Container(801111).ListItem.AddonName) + !false">homewidgets/clearcase/poster/$VAR[HomeWidget801111CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Clear Case)">homewidgets/clearcase/square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + !false + String.IsEmpty(Container(801111).ListItem.Property(Label3)) + String.IsEmpty(Container(801111).ListItem.ChannelName) + String.IsEmpty(Container(801111).ListItem.Artist) + String.IsEmpty(Container(801111).ListItem.AlbumArtist) + String.IsEmpty(Container(801111).ListItem.AddonName) + !false">homewidgets//poster/$VAR[HomeWidget801111CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + !false">homewidgets//square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + false + String.IsEmpty(Container(801111).ListItem.Property(Label3)) + String.IsEmpty(Container(801111).ListItem.ChannelName) + String.IsEmpty(Container(801111).ListItem.Artist) + String.IsEmpty(Container(801111).ListItem.AlbumArtist) + String.IsEmpty(Container(801111).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + false">homewidgets/glass/square.png</value>
+		<value />
+	</variable>
+	<variable name="HomeWidget801111PosterVar">
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Art(poster))">$INFO[Container(801111).ListItem.Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Art(tvshow.poster))">$INFO[Container(801111).ListItem.Art(tvshow.poster)]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Icon)">$INFO[Container(801111).ListItem.Icon]</value>
+		<value>$INFO[Container(801111).ListItem.Art(thumb)]</value>
+	</variable>
+	<variable name="HomeWidget801111FanArtVar">
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Art(fanart))">$INFO[Container(801111).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Property(Fanart)) + !Skin.HasSetting(weatherfanart.multi)">$INFO[Container(801111).ListItem.Property(Fanart)]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Property(WeatherMultiFanart)) + Skin.HasSetting(weatherfanart.multi)">$INFO[Container(801111).ListItem.Property(WeatherMultiFanart)]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Property(Fanart))">$INFO[Container(801111).ListItem.Property(Fanart)]</value>
+		<value>$INFO[Container(801111).ListItem.Art(thumb)]</value>
+	</variable>
+	<variable name="HomeWidget801111LandscapeVar">
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Art(landscape))">$INFO[Container(801111).ListItem.Art(landscape)]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Art(tvshow.landscape))">$INFO[Container(801111).ListItem.Art(tvshow.landscape)]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Art(fanart))">$INFO[Container(801111).ListItem.Art(fanart)]</value>
+		<value>$INFO[Container(801111).ListItem.Art(thumb)]</value>
+	</variable>
+	<variable name="HomeWidget801111ClearArtVar">
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Art(clearart))">$INFO[Container(801111).ListItem.Art(clearart)]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Art(tvshow.clearart))">$INFO[Container(801111).ListItem.Art(tvshow.clearart)]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Art(tvshow.clearlogo))">$INFO[Container(801111).ListItem.Art(tvshow.clearlogo)]</value>
+		<value>$INFO[Container(801111).ListItem.Art(clearlogo)]</value>
+	</variable>
+	<variable name="HomeWidget801111ClearLogoVar">
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Art(clearlogo))">$INFO[Container(801111).ListItem.Art(clearlogo)]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Art(tvshow.clearlogo))">$INFO[Container(801111).ListItem.Art(tvshow.clearlogo)]</value>
+	</variable>
+	<variable name="HomeWidget801111ThumbVar">
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Art(thumb))">$INFO[Container(801111).ListItem.Art(thumb)]</value>
+		<value>$INFO[Container(801111).ListItem.Art(fanart)]</value>
+	</variable>
+	<variable name="HomeWidget801111CharacterArtVar">
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Art(tvshow.characterart))">$INFO[Container(801111).ListItem.Art(tvshow.characterart)]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Art(tvshow.clearart))">$INFO[Container(801111).ListItem.Art(tvshow.clearart)]</value>
+		<value>$INFO[Container(801111).ListItem.Art(tvshow.clearlogo)]</value>
+	</variable>
+	<variable name="HomeWidget801111BannerVar">
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Art(tvshow.banner))">$INFO[Container(801111).ListItem.Art(tvshow.banner)]</value>
+		<value>$INFO[Container(801111).ListItem.Art(banner)]</value>
+	</variable>
+	<variable name="HomeWidget801111TitleVar">
+		<value condition="!String.IsEmpty(Container(801111).ListItem.AddonName)">$INFO[Container(801111).ListItem.AddonName]</value>
+		<value condition="[!Integer.IsGreater(Container(801111).ListItem.Season,9) + !Integer.IsGreater(Container(801111).ListItem.Episode,9)] + !String.StartsWith(Container(801111).ListItem.Episode,S) + !String.IsEmpty(Container(801111).ListItem.Episode) + !String.IsEqual(Container(801111).ListItem.Label,Container(801111).ListItem.TVShowTitle)">$INFO[Container(801111).ListItem.Season,S0]$INFO[Container(801111).ListItem.Episode,E0] $INFO[Container(801111).ListItem.Title]</value>
+		<value condition="[!Integer.IsGreater(Container(801111).ListItem.Season,9) + !Integer.IsGreater(Container(801111).ListItem.Episode,9)] + String.StartsWith(Container(801111).ListItem.Episode,S) + !String.IsEmpty(Container(801111).ListItem.Episode) + !String.IsEqual(Container(801111).ListItem.Label,Container(801111).ListItem.TVShowTitle)">$INFO[Container(801111).ListItem.Season,S0]$INFO[Container(801111).ListItem.Episode] $INFO[Container(801111).ListItem.Title]</value>
+		<value condition="[!Integer.IsGreater(Container(801111).ListItem.Season,9) + Integer.IsGreater(Container(801111).ListItem.Episode,9)] + !String.IsEmpty(Container(801111).ListItem.Episode) + !String.IsEqual(Container(801111).ListItem.Label,Container(801111).ListItem.TVShowTitle)">$INFO[Container(801111).ListItem.Season,S0]$INFO[Container(801111).ListItem.Episode,E] $INFO[Container(801111).ListItem.Title]</value>
+		<value condition="[Integer.IsGreater(Container(801111).ListItem.Season,9) + !Integer.IsGreater(Container(801111).ListItem.Episode,9)] + !String.IsEmpty(Container(801111).ListItem.Episode) + !String.IsEqual(Container(801111).ListItem.Label,Container(801111).ListItem.TVShowTitle)">$INFO[Container(801111).ListItem.Season,S]$INFO[Container(801111).ListItem.Episode,E0] $INFO[Container(801111).ListItem.Title]</value>
+		<value condition="[Integer.IsGreater(Container(801111).ListItem.Season,9) + Integer.IsGreater(Container(801111).ListItem.Episode,9)] + !String.IsEmpty(Container(801111).ListItem.Episode) + !String.IsEqual(Container(801111).ListItem.Label,Container(801111).ListItem.TVShowTitle)">$INFO[Container(801111).ListItem.Season,S]$INFO[Container(801111).ListItem.Episode,E] $INFO[Container(801111).ListItem.Title]</value>
+		<value>$INFO[Container(801111).ListItem.Label]</value>
+	</variable>
+	<variable name="HomeWidget801111Title2Var">
+		<value condition="!String.IsEmpty(Container(801111).ListItem.TVShowTitle)">$INFO[Container(801111).ListItem.TVShowTitle]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Artist)">$INFO[Container(801111).ListItem.Artist]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.AlbumArtist)">$INFO[Container(801111).ListItem.AlbumArtist]</value>
+		<value>$INFO[Container(801111).ListItem.Label]</value>
+	</variable>
+	<variable name="HomeWidget801111SubTitleVar">
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Tagline)">$INFO[Container(801111).ListItem.Tagline]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.TVShowTitle) + String.IsEqual(Container(801111).ListItem.Label,Container(801111).ListItem.TVShowTitle) + !String.IsEmpty(Container(801111).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(801111).ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[20360]]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.TVShowTitle) + !String.IsEqual(Container(801111).ListItem.Label,Container(801111).ListItem.TVShowTitle)">$INFO[Container(801111).ListItem.TVShowTitle]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Property(Artist_Mood))">$INFO[Container(801111).ListItem.Property(Artist_Mood)]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Artist) + !String.IsEqual(Container(801111).ListItem.Label,Container(801111).ListItem.Artist)">$INFO[Container(801111).ListItem.Artist]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.AlbumArtist) + !String.IsEqual(Container(801111).ListItem.Label,Container(801111).ListItem.AlbumArtist)">$INFO[Container(801111).ListItem.AlbumArtist]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.AddonSummary)">$INFO[Container(801111).ListItem.AddonSummary]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Property(Label3))">$INFO[Container(801111).ListItem.Label2]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Count))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Count),, $LOCALIZE[342]]</value>
+		<value>130</value>
+	</variable>
+	<variable name="HomeWidget801111Info1Var">
+		<value condition="[!String.IsEmpty(Container(801111).ListItem.Artist) | !String.IsEmpty(Container(801111).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801111).ListItem.Duration)">$INFO[Container(801111).ListItem.Duration,, $LOCALIZE[12391]]</value>
+		<value condition="[!String.IsEmpty(Container(801111).ListItem.Artist) | !String.IsEmpty(Container(801111).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801111).ListItem.Property(Album_Mood))">$INFO[Container(801111).ListItem.Property(Album_Mood)]</value>
+		<value condition="[!String.IsEmpty(Container(801111).ListItem.Artist) | !String.IsEmpty(Container(801111).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801111).ListItem.Property(Album_Style))">$INFO[Container(801111).ListItem.Property(Album_Style)]</value>
+		<value condition="[!String.IsEmpty(Container(801111).ListItem.Artist) | !String.IsEmpty(Container(801111).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801111).ListItem.Property(Artist_Style))">$INFO[Container(801111).ListItem.Property(Artist_Style)]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.AddonName)">$INFO[Container(801111).ListItem.AddonCreator,$LOCALIZE[31001] ]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Property(Label3))">$INFO[Container(801111).ListItem.Property(Label3)]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Property(ShortTime))">$INFO[Container(801111).ListItem.Property(ShortTime)]$INFO[Container(801111).ListItem.Property(NextDate),  •  ]$INFO[Container(801111).ListItem.RatingAndVotes,  •  $LOCALIZE[563] ]$INFO[Container(801111).ListItem.Property(RunTime),  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.TVShowTitle) + !String.IsEmpty(Container(801111).ListItem.Property(Runtime))">$INFO[Container(801111).ListItem.Premiered]$INFO[Container(801111).ListItem.RatingAndVotes,  •  $LOCALIZE[563] ]$INFO[Container(801111).ListItem.Property(Runtime),  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.TVShowTitle)">$INFO[Container(801111).ListItem.Premiered]$INFO[Container(801111).ListItem.RatingAndVotes,  •  $LOCALIZE[563] ]$INFO[Container(801111).ListItem.Duration,  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Property(Runtime))">$INFO[Container(801111).ListItem.RatingAndVotes,$LOCALIZE[563] ]$INFO[Container(801111).ListItem.Property(Runtime),  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Runtime))">$INFO[Container(801111).ListItem.RatingAndVotes,$LOCALIZE[563] ]$INFO[Window(Home).Property(SkinHelper.MovieSet.Runtime),  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.RatingAndVotes)">$INFO[Container(801111).ListItem.RatingAndVotes,$LOCALIZE[563] ]$INFO[Container(801111).ListItem.Duration,  •  , $LOCALIZE[12391]]</value>
+		<value>$INFO[Container(801111).ListItem.Duration,, $LOCALIZE[12391]]</value>
+	</variable>
+	<variable name="HomeWidget801111Info2Var">
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Property(Artist_Genre))">$INFO[Container(801111).ListItem.Property(Artist_Genre),[CAPITALIZE],[/CAPITALIZE]]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Property(Label4))">$INFO[Container(801111).ListItem.Property(Label4)]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.AddonType)">$INFO[Container(801111).ListItem.AddonType]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Genre))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Genre),[CAPITALIZE],[/CAPITALIZE]]</value>
+		<value>$INFO[Container(801111).ListItem.Genre,[CAPITALIZE],[/CAPITALIZE]]</value>
+	</variable>
+	<variable name="HomeWidget801111PlotVar">
+		<value condition="[!String.IsEmpty(Container(801111).ListItem.Artist) | !String.IsEmpty(Container(801111).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801111).ListItem.Plot)">$INFO[Container(801111).ListItem.Plot]</value>
+		<value condition="[!String.IsEmpty(Container(801111).ListItem.Artist) | !String.IsEmpty(Container(801111).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801111).ListItem.Property(Album_Description))">$INFO[Container(801111).ListItem.Property(Album_Description)]</value>
+		<value condition="[!String.IsEmpty(Container(801111).ListItem.Artist) | !String.IsEmpty(Container(801111).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801111).ListItem.Property(Artist_Description))">$INFO[Container(801111).ListItem.Property(Artist_Description)]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.AddonName)">$INFO[Container(801111).ListItem.AddonDescription]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Property(Label3)) + !String.IsEmpty(Container(801111).ListItem.Property(WeatherMultiFanart))">[UPPERCASE]$LOCALIZE[33006][/UPPERCASE][CR]$INFO[Window(weather).Property(Current.Condition),,. ]$INFO[Window(weather).Property(Current.FeelsLike),$LOCALIZE[402] ]$INFO[System.TemperatureUnits,,. ]$INFO[Window(weather).Property(Current.Humidity),$LOCALIZE[406] ,. ]$INFO[Window(weather).Property(Current.Wind),$LOCALIZE[404] ,. ]$INFO[Window(weather).Property(Current.DewPoint),$LOCALIZE[405] ]$INFO[System.TemperatureUnits,,. ]$INFO[Window(weather).Property(Current.UVIndex),$LOCALIZE[403] ,. ]$INFO[Window(weather).Property(Today.Sunrise),$LOCALIZE[33027] ,. ]$INFO[Window(weather).Property(Today.Sunset),$LOCALIZE[33028] ,.]</value>
+		<value condition="!String.IsEmpty(Container(801111).ListItem.Property(Label3)) + !String.IsEmpty(Container(801111).ListItem.Property(isSystemInfo))">KODI: $INFO[System.BuildVersion][CR][UPPERCASE]$LOCALIZE[13283][/UPPERCASE] $INFO[System.KernelVersion][CR]$INFO[System.VideoEncoderInfo][CR][UPPERCASE]$LOCALIZE[13287][/UPPERCASE] $INFO[System.ScreenResolution][CR][UPPERCASE]$LOCALIZE[150]:[/UPPERCASE] $INFO[Network.IPAddress]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Plot))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Plot)]</value>
+		<value>$INFO[Container(801111).ListItem.Plot]</value>
+	</variable>
 	<variable name="HomeWidget801112CaseVar">
 		<value condition="String.Contains(Container(801112).ListItem.Filename,4k)">4k.png</value>
 		<value condition="Container(801112).ListItem.IsStereoscopic | String.Contains(Container(801112).ListItem.Filename,3d) | String.Contains(Container(801112).ListItem.Filename,3dbd)">3d.png</value>
@@ -6470,7 +7028,7 @@
 		<value condition="!String.IsEmpty(Container(801112).ListItem.AddonSummary)">$INFO[Container(801112).ListItem.AddonSummary]</value>
 		<value condition="!String.IsEmpty(Container(801112).ListItem.Property(Label3))">$INFO[Container(801112).ListItem.Label2]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Count))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Count),, $LOCALIZE[342]]</value>
-		<value>10508</value>
+		<value>130</value>
 	</variable>
 	<variable name="HomeWidget801112Info1Var">
 		<value condition="[!String.IsEmpty(Container(801112).ListItem.Artist) | !String.IsEmpty(Container(801112).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801112).ListItem.Duration)">$INFO[Container(801112).ListItem.Duration,, $LOCALIZE[12391]]</value>
@@ -6503,6 +7061,145 @@
 		<value condition="!String.IsEmpty(Container(801112).ListItem.Property(Label3)) + !String.IsEmpty(Container(801112).ListItem.Property(isSystemInfo))">KODI: $INFO[System.BuildVersion][CR][UPPERCASE]$LOCALIZE[13283][/UPPERCASE] $INFO[System.KernelVersion][CR]$INFO[System.VideoEncoderInfo][CR][UPPERCASE]$LOCALIZE[13287][/UPPERCASE] $INFO[System.ScreenResolution][CR][UPPERCASE]$LOCALIZE[150]:[/UPPERCASE] $INFO[Network.IPAddress]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Plot))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Plot)]</value>
 		<value>$INFO[Container(801112).ListItem.Plot]</value>
+	</variable>
+	<variable name="HomeWidget801113CaseVar">
+		<value condition="String.Contains(Container(801113).ListItem.Filename,4k)">4k.png</value>
+		<value condition="Container(801113).ListItem.IsStereoscopic | String.Contains(Container(801113).ListItem.Filename,3d) | String.Contains(Container(801113).ListItem.Filename,3dbd)">3d.png</value>
+		<value condition="String.Contains(Container(801113).ListItem.Filename,hddvd)">hddvd.png</value>
+		<value condition="String.Contains(Container(801113).ListItem.Filename,hdtv) | String.Contains(Container(801113).ListItem.Filename,hd tv)">hdtv.png</value>
+		<value condition="String.Contains(Container(801113).ListItem.Filename,webdl) | String.Contains(Container(801113).ListItem.Filename,web-dl) | String.Contains(Container(801113).ListItem.Filename,webtv) | String.Contains(Container(801113).ListItem.Filename,web-tv)">webdl.png</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.VideoResolution)">$INFO[Container(801113).ListItem.VideoResolution]p.png</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(VideoResolution))">$INFO[Container(801113).ListItem.Property(VideoResolution)]p.png</value>
+		<value condition="String.IsEmpty(Container(801113).ListItem.VideoResolution) + !String.IsEmpty(Container(801113).ListItem.TVShowTitle)">tvseries.png</value>
+		<value condition="String.IsEmpty(Container(801113).ListItem.Property(VideoResolution)) + String.IsEmpty(Container(801113).ListItem.TVShowTitle) + [!String.IsEmpty(Container(801113).ListItem.Trailer) | String.Contains(Container(801113).ListItem.FolderPath,extendedinfo)]">trailers.png</value>
+		<value>p.png</value>
+	</variable>
+	<variable name="HomeWidget801113OnInfoCaseVar">
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Glass) + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Glass)">homewidgets/glass/square.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Case) + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets/case/poster/$VAR[HomeWidget801113CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Case)">homewidgets/case/square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Clear Case) + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets/clearcase/poster/$VAR[HomeWidget801113CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Clear Case)">homewidgets/clearcase/square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + !false + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets//poster/$VAR[HomeWidget801113CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + !false">homewidgets//square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + false + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + false">homewidgets/glass/square.png</value>
+		<value />
+	</variable>
+	<variable name="HomeWidget801113InfoCaseVar">
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Glass) + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Glass)">homewidgets/glass/square.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Case) + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets/case/poster/$VAR[HomeWidget801113CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Case)">homewidgets/case/square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Clear Case) + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets/clearcase/poster/$VAR[HomeWidget801113CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Clear Case)">homewidgets/clearcase/square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + !false + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets//poster/$VAR[HomeWidget801113CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + !false">homewidgets//square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + false + String.IsEmpty(Container(801113).ListItem.Property(Label3)) + String.IsEmpty(Container(801113).ListItem.ChannelName) + String.IsEmpty(Container(801113).ListItem.Artist) + String.IsEmpty(Container(801113).ListItem.AlbumArtist) + String.IsEmpty(Container(801113).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + false">homewidgets/glass/square.png</value>
+		<value />
+	</variable>
+	<variable name="HomeWidget801113PosterVar">
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(poster))">$INFO[Container(801113).ListItem.Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(tvshow.poster))">$INFO[Container(801113).ListItem.Art(tvshow.poster)]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Icon)">$INFO[Container(801113).ListItem.Icon]</value>
+		<value>$INFO[Container(801113).ListItem.Art(thumb)]</value>
+	</variable>
+	<variable name="HomeWidget801113FanArtVar">
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(fanart))">$INFO[Container(801113).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Fanart)) + !Skin.HasSetting(weatherfanart.multi)">$INFO[Container(801113).ListItem.Property(Fanart)]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(WeatherMultiFanart)) + Skin.HasSetting(weatherfanart.multi)">$INFO[Container(801113).ListItem.Property(WeatherMultiFanart)]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Fanart))">$INFO[Container(801113).ListItem.Property(Fanart)]</value>
+		<value>$INFO[Container(801113).ListItem.Art(thumb)]</value>
+	</variable>
+	<variable name="HomeWidget801113LandscapeVar">
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(landscape))">$INFO[Container(801113).ListItem.Art(landscape)]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(tvshow.landscape))">$INFO[Container(801113).ListItem.Art(tvshow.landscape)]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(fanart))">$INFO[Container(801113).ListItem.Art(fanart)]</value>
+		<value>$INFO[Container(801113).ListItem.Art(thumb)]</value>
+	</variable>
+	<variable name="HomeWidget801113ClearArtVar">
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(clearart))">$INFO[Container(801113).ListItem.Art(clearart)]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(tvshow.clearart))">$INFO[Container(801113).ListItem.Art(tvshow.clearart)]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(tvshow.clearlogo))">$INFO[Container(801113).ListItem.Art(tvshow.clearlogo)]</value>
+		<value>$INFO[Container(801113).ListItem.Art(clearlogo)]</value>
+	</variable>
+	<variable name="HomeWidget801113ClearLogoVar">
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(clearlogo))">$INFO[Container(801113).ListItem.Art(clearlogo)]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(tvshow.clearlogo))">$INFO[Container(801113).ListItem.Art(tvshow.clearlogo)]</value>
+	</variable>
+	<variable name="HomeWidget801113ThumbVar">
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(thumb))">$INFO[Container(801113).ListItem.Art(thumb)]</value>
+		<value>$INFO[Container(801113).ListItem.Art(fanart)]</value>
+	</variable>
+	<variable name="HomeWidget801113CharacterArtVar">
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(tvshow.characterart))">$INFO[Container(801113).ListItem.Art(tvshow.characterart)]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(tvshow.clearart))">$INFO[Container(801113).ListItem.Art(tvshow.clearart)]</value>
+		<value>$INFO[Container(801113).ListItem.Art(tvshow.clearlogo)]</value>
+	</variable>
+	<variable name="HomeWidget801113BannerVar">
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Art(tvshow.banner))">$INFO[Container(801113).ListItem.Art(tvshow.banner)]</value>
+		<value>$INFO[Container(801113).ListItem.Art(banner)]</value>
+	</variable>
+	<variable name="HomeWidget801113TitleVar">
+		<value condition="!String.IsEmpty(Container(801113).ListItem.AddonName)">$INFO[Container(801113).ListItem.AddonName]</value>
+		<value condition="[!Integer.IsGreater(Container(801113).ListItem.Season,9) + !Integer.IsGreater(Container(801113).ListItem.Episode,9)] + !String.StartsWith(Container(801113).ListItem.Episode,S) + !String.IsEmpty(Container(801113).ListItem.Episode) + !String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.TVShowTitle)">$INFO[Container(801113).ListItem.Season,S0]$INFO[Container(801113).ListItem.Episode,E0] $INFO[Container(801113).ListItem.Title]</value>
+		<value condition="[!Integer.IsGreater(Container(801113).ListItem.Season,9) + !Integer.IsGreater(Container(801113).ListItem.Episode,9)] + String.StartsWith(Container(801113).ListItem.Episode,S) + !String.IsEmpty(Container(801113).ListItem.Episode) + !String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.TVShowTitle)">$INFO[Container(801113).ListItem.Season,S0]$INFO[Container(801113).ListItem.Episode] $INFO[Container(801113).ListItem.Title]</value>
+		<value condition="[!Integer.IsGreater(Container(801113).ListItem.Season,9) + Integer.IsGreater(Container(801113).ListItem.Episode,9)] + !String.IsEmpty(Container(801113).ListItem.Episode) + !String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.TVShowTitle)">$INFO[Container(801113).ListItem.Season,S0]$INFO[Container(801113).ListItem.Episode,E] $INFO[Container(801113).ListItem.Title]</value>
+		<value condition="[Integer.IsGreater(Container(801113).ListItem.Season,9) + !Integer.IsGreater(Container(801113).ListItem.Episode,9)] + !String.IsEmpty(Container(801113).ListItem.Episode) + !String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.TVShowTitle)">$INFO[Container(801113).ListItem.Season,S]$INFO[Container(801113).ListItem.Episode,E0] $INFO[Container(801113).ListItem.Title]</value>
+		<value condition="[Integer.IsGreater(Container(801113).ListItem.Season,9) + Integer.IsGreater(Container(801113).ListItem.Episode,9)] + !String.IsEmpty(Container(801113).ListItem.Episode) + !String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.TVShowTitle)">$INFO[Container(801113).ListItem.Season,S]$INFO[Container(801113).ListItem.Episode,E] $INFO[Container(801113).ListItem.Title]</value>
+		<value>$INFO[Container(801113).ListItem.Label]</value>
+	</variable>
+	<variable name="HomeWidget801113Title2Var">
+		<value condition="!String.IsEmpty(Container(801113).ListItem.TVShowTitle)">$INFO[Container(801113).ListItem.TVShowTitle]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Artist)">$INFO[Container(801113).ListItem.Artist]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.AlbumArtist)">$INFO[Container(801113).ListItem.AlbumArtist]</value>
+		<value>$INFO[Container(801113).ListItem.Label]</value>
+	</variable>
+	<variable name="HomeWidget801113SubTitleVar">
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Tagline)">$INFO[Container(801113).ListItem.Tagline]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.TVShowTitle) + String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.TVShowTitle) + !String.IsEmpty(Container(801113).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(801113).ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[20360]]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.TVShowTitle) + !String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.TVShowTitle)">$INFO[Container(801113).ListItem.TVShowTitle]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Artist_Mood))">$INFO[Container(801113).ListItem.Property(Artist_Mood)]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Artist) + !String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.Artist)">$INFO[Container(801113).ListItem.Artist]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.AlbumArtist) + !String.IsEqual(Container(801113).ListItem.Label,Container(801113).ListItem.AlbumArtist)">$INFO[Container(801113).ListItem.AlbumArtist]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.AddonSummary)">$INFO[Container(801113).ListItem.AddonSummary]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Label3))">$INFO[Container(801113).ListItem.Label2]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Count))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Count),, $LOCALIZE[342]]</value>
+		<value>130</value>
+	</variable>
+	<variable name="HomeWidget801113Info1Var">
+		<value condition="[!String.IsEmpty(Container(801113).ListItem.Artist) | !String.IsEmpty(Container(801113).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801113).ListItem.Duration)">$INFO[Container(801113).ListItem.Duration,, $LOCALIZE[12391]]</value>
+		<value condition="[!String.IsEmpty(Container(801113).ListItem.Artist) | !String.IsEmpty(Container(801113).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801113).ListItem.Property(Album_Mood))">$INFO[Container(801113).ListItem.Property(Album_Mood)]</value>
+		<value condition="[!String.IsEmpty(Container(801113).ListItem.Artist) | !String.IsEmpty(Container(801113).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801113).ListItem.Property(Album_Style))">$INFO[Container(801113).ListItem.Property(Album_Style)]</value>
+		<value condition="[!String.IsEmpty(Container(801113).ListItem.Artist) | !String.IsEmpty(Container(801113).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801113).ListItem.Property(Artist_Style))">$INFO[Container(801113).ListItem.Property(Artist_Style)]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.AddonName)">$INFO[Container(801113).ListItem.AddonCreator,$LOCALIZE[31001] ]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Label3))">$INFO[Container(801113).ListItem.Property(Label3)]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(ShortTime))">$INFO[Container(801113).ListItem.Property(ShortTime)]$INFO[Container(801113).ListItem.Property(NextDate),  •  ]$INFO[Container(801113).ListItem.RatingAndVotes,  •  $LOCALIZE[563] ]$INFO[Container(801113).ListItem.Property(RunTime),  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.TVShowTitle) + !String.IsEmpty(Container(801113).ListItem.Property(Runtime))">$INFO[Container(801113).ListItem.Premiered]$INFO[Container(801113).ListItem.RatingAndVotes,  •  $LOCALIZE[563] ]$INFO[Container(801113).ListItem.Property(Runtime),  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.TVShowTitle)">$INFO[Container(801113).ListItem.Premiered]$INFO[Container(801113).ListItem.RatingAndVotes,  •  $LOCALIZE[563] ]$INFO[Container(801113).ListItem.Duration,  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Runtime))">$INFO[Container(801113).ListItem.RatingAndVotes,$LOCALIZE[563] ]$INFO[Container(801113).ListItem.Property(Runtime),  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Runtime))">$INFO[Container(801113).ListItem.RatingAndVotes,$LOCALIZE[563] ]$INFO[Window(Home).Property(SkinHelper.MovieSet.Runtime),  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.RatingAndVotes)">$INFO[Container(801113).ListItem.RatingAndVotes,$LOCALIZE[563] ]$INFO[Container(801113).ListItem.Duration,  •  , $LOCALIZE[12391]]</value>
+		<value>$INFO[Container(801113).ListItem.Duration,, $LOCALIZE[12391]]</value>
+	</variable>
+	<variable name="HomeWidget801113Info2Var">
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Artist_Genre))">$INFO[Container(801113).ListItem.Property(Artist_Genre),[CAPITALIZE],[/CAPITALIZE]]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Label4))">$INFO[Container(801113).ListItem.Property(Label4)]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.AddonType)">$INFO[Container(801113).ListItem.AddonType]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Genre))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Genre),[CAPITALIZE],[/CAPITALIZE]]</value>
+		<value>$INFO[Container(801113).ListItem.Genre,[CAPITALIZE],[/CAPITALIZE]]</value>
+	</variable>
+	<variable name="HomeWidget801113PlotVar">
+		<value condition="[!String.IsEmpty(Container(801113).ListItem.Artist) | !String.IsEmpty(Container(801113).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801113).ListItem.Plot)">$INFO[Container(801113).ListItem.Plot]</value>
+		<value condition="[!String.IsEmpty(Container(801113).ListItem.Artist) | !String.IsEmpty(Container(801113).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801113).ListItem.Property(Album_Description))">$INFO[Container(801113).ListItem.Property(Album_Description)]</value>
+		<value condition="[!String.IsEmpty(Container(801113).ListItem.Artist) | !String.IsEmpty(Container(801113).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801113).ListItem.Property(Artist_Description))">$INFO[Container(801113).ListItem.Property(Artist_Description)]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.AddonName)">$INFO[Container(801113).ListItem.AddonDescription]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Label3)) + !String.IsEmpty(Container(801113).ListItem.Property(WeatherMultiFanart))">[UPPERCASE]$LOCALIZE[33006][/UPPERCASE][CR]$INFO[Window(weather).Property(Current.Condition),,. ]$INFO[Window(weather).Property(Current.FeelsLike),$LOCALIZE[402] ]$INFO[System.TemperatureUnits,,. ]$INFO[Window(weather).Property(Current.Humidity),$LOCALIZE[406] ,. ]$INFO[Window(weather).Property(Current.Wind),$LOCALIZE[404] ,. ]$INFO[Window(weather).Property(Current.DewPoint),$LOCALIZE[405] ]$INFO[System.TemperatureUnits,,. ]$INFO[Window(weather).Property(Current.UVIndex),$LOCALIZE[403] ,. ]$INFO[Window(weather).Property(Today.Sunrise),$LOCALIZE[33027] ,. ]$INFO[Window(weather).Property(Today.Sunset),$LOCALIZE[33028] ,.]</value>
+		<value condition="!String.IsEmpty(Container(801113).ListItem.Property(Label3)) + !String.IsEmpty(Container(801113).ListItem.Property(isSystemInfo))">KODI: $INFO[System.BuildVersion][CR][UPPERCASE]$LOCALIZE[13283][/UPPERCASE] $INFO[System.KernelVersion][CR]$INFO[System.VideoEncoderInfo][CR][UPPERCASE]$LOCALIZE[13287][/UPPERCASE] $INFO[System.ScreenResolution][CR][UPPERCASE]$LOCALIZE[150]:[/UPPERCASE] $INFO[Network.IPAddress]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Plot))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Plot)]</value>
+		<value>$INFO[Container(801113).ListItem.Plot]</value>
 	</variable>
 	<variable name="HomeWidget801114CaseVar">
 		<value condition="String.Contains(Container(801114).ListItem.Filename,4k)">4k.png</value>
@@ -6609,7 +7306,7 @@
 		<value condition="!String.IsEmpty(Container(801114).ListItem.AddonSummary)">$INFO[Container(801114).ListItem.AddonSummary]</value>
 		<value condition="!String.IsEmpty(Container(801114).ListItem.Property(Label3))">$INFO[Container(801114).ListItem.Label2]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Count))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Count),, $LOCALIZE[342]]</value>
-		<value>130</value>
+		<value>10508</value>
 	</variable>
 	<variable name="HomeWidget801114Info1Var">
 		<value condition="[!String.IsEmpty(Container(801114).ListItem.Artist) | !String.IsEmpty(Container(801114).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801114).ListItem.Duration)">$INFO[Container(801114).ListItem.Duration,, $LOCALIZE[12391]]</value>
@@ -6642,6 +7339,145 @@
 		<value condition="!String.IsEmpty(Container(801114).ListItem.Property(Label3)) + !String.IsEmpty(Container(801114).ListItem.Property(isSystemInfo))">KODI: $INFO[System.BuildVersion][CR][UPPERCASE]$LOCALIZE[13283][/UPPERCASE] $INFO[System.KernelVersion][CR]$INFO[System.VideoEncoderInfo][CR][UPPERCASE]$LOCALIZE[13287][/UPPERCASE] $INFO[System.ScreenResolution][CR][UPPERCASE]$LOCALIZE[150]:[/UPPERCASE] $INFO[Network.IPAddress]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Plot))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Plot)]</value>
 		<value>$INFO[Container(801114).ListItem.Plot]</value>
+	</variable>
+	<variable name="HomeWidget801116CaseVar">
+		<value condition="String.Contains(Container(801116).ListItem.Filename,4k)">4k.png</value>
+		<value condition="Container(801116).ListItem.IsStereoscopic | String.Contains(Container(801116).ListItem.Filename,3d) | String.Contains(Container(801116).ListItem.Filename,3dbd)">3d.png</value>
+		<value condition="String.Contains(Container(801116).ListItem.Filename,hddvd)">hddvd.png</value>
+		<value condition="String.Contains(Container(801116).ListItem.Filename,hdtv) | String.Contains(Container(801116).ListItem.Filename,hd tv)">hdtv.png</value>
+		<value condition="String.Contains(Container(801116).ListItem.Filename,webdl) | String.Contains(Container(801116).ListItem.Filename,web-dl) | String.Contains(Container(801116).ListItem.Filename,webtv) | String.Contains(Container(801116).ListItem.Filename,web-tv)">webdl.png</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.VideoResolution)">$INFO[Container(801116).ListItem.VideoResolution]p.png</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Property(VideoResolution))">$INFO[Container(801116).ListItem.Property(VideoResolution)]p.png</value>
+		<value condition="String.IsEmpty(Container(801116).ListItem.VideoResolution) + !String.IsEmpty(Container(801116).ListItem.TVShowTitle)">tvseries.png</value>
+		<value condition="String.IsEmpty(Container(801116).ListItem.Property(VideoResolution)) + String.IsEmpty(Container(801116).ListItem.TVShowTitle) + [!String.IsEmpty(Container(801116).ListItem.Trailer) | String.Contains(Container(801116).ListItem.FolderPath,extendedinfo)]">trailers.png</value>
+		<value>p.png</value>
+	</variable>
+	<variable name="HomeWidget801116OnInfoCaseVar">
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Glass) + String.IsEmpty(Container(801116).ListItem.Property(Label3)) + String.IsEmpty(Container(801116).ListItem.ChannelName) + String.IsEmpty(Container(801116).ListItem.Artist) + String.IsEmpty(Container(801116).ListItem.AlbumArtist) + String.IsEmpty(Container(801116).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Glass)">homewidgets/glass/square.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Case) + String.IsEmpty(Container(801116).ListItem.Property(Label3)) + String.IsEmpty(Container(801116).ListItem.ChannelName) + String.IsEmpty(Container(801116).ListItem.Artist) + String.IsEmpty(Container(801116).ListItem.AlbumArtist) + String.IsEmpty(Container(801116).ListItem.AddonName) + !false">homewidgets/case/poster/$VAR[HomeWidget801116CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Case)">homewidgets/case/square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Clear Case) + String.IsEmpty(Container(801116).ListItem.Property(Label3)) + String.IsEmpty(Container(801116).ListItem.ChannelName) + String.IsEmpty(Container(801116).ListItem.Artist) + String.IsEmpty(Container(801116).ListItem.AlbumArtist) + String.IsEmpty(Container(801116).ListItem.AddonName) + !false">homewidgets/clearcase/poster/$VAR[HomeWidget801116CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Clear Case)">homewidgets/clearcase/square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + !false + String.IsEmpty(Container(801116).ListItem.Property(Label3)) + String.IsEmpty(Container(801116).ListItem.ChannelName) + String.IsEmpty(Container(801116).ListItem.Artist) + String.IsEmpty(Container(801116).ListItem.AlbumArtist) + String.IsEmpty(Container(801116).ListItem.AddonName) + !false">homewidgets//poster/$VAR[HomeWidget801116CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + !false">homewidgets//square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + false + String.IsEmpty(Container(801116).ListItem.Property(Label3)) + String.IsEmpty(Container(801116).ListItem.ChannelName) + String.IsEmpty(Container(801116).ListItem.Artist) + String.IsEmpty(Container(801116).ListItem.AlbumArtist) + String.IsEmpty(Container(801116).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseOnInfo),Match widget panel) + false">homewidgets/glass/square.png</value>
+		<value />
+	</variable>
+	<variable name="HomeWidget801116InfoCaseVar">
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Glass) + String.IsEmpty(Container(801116).ListItem.Property(Label3)) + String.IsEmpty(Container(801116).ListItem.ChannelName) + String.IsEmpty(Container(801116).ListItem.Artist) + String.IsEmpty(Container(801116).ListItem.AlbumArtist) + String.IsEmpty(Container(801116).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Glass)">homewidgets/glass/square.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Case) + String.IsEmpty(Container(801116).ListItem.Property(Label3)) + String.IsEmpty(Container(801116).ListItem.ChannelName) + String.IsEmpty(Container(801116).ListItem.Artist) + String.IsEmpty(Container(801116).ListItem.AlbumArtist) + String.IsEmpty(Container(801116).ListItem.AddonName) + !false">homewidgets/case/poster/$VAR[HomeWidget801116CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Case)">homewidgets/case/square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Clear Case) + String.IsEmpty(Container(801116).ListItem.Property(Label3)) + String.IsEmpty(Container(801116).ListItem.ChannelName) + String.IsEmpty(Container(801116).ListItem.Artist) + String.IsEmpty(Container(801116).ListItem.AlbumArtist) + String.IsEmpty(Container(801116).ListItem.AddonName) + !false">homewidgets/clearcase/poster/$VAR[HomeWidget801116CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Clear Case)">homewidgets/clearcase/square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + !false + String.IsEmpty(Container(801116).ListItem.Property(Label3)) + String.IsEmpty(Container(801116).ListItem.ChannelName) + String.IsEmpty(Container(801116).ListItem.Artist) + String.IsEmpty(Container(801116).ListItem.AlbumArtist) + String.IsEmpty(Container(801116).ListItem.AddonName) + !false">homewidgets//poster/$VAR[HomeWidget801116CaseVar]</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + !false">homewidgets//square/cd.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + false + String.IsEmpty(Container(801116).ListItem.Property(Label3)) + String.IsEmpty(Container(801116).ListItem.ChannelName) + String.IsEmpty(Container(801116).ListItem.Artist) + String.IsEmpty(Container(801116).ListItem.AlbumArtist) + String.IsEmpty(Container(801116).ListItem.AddonName) + !false">homewidgets/glass/portrait.png</value>
+		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + false">homewidgets/glass/square.png</value>
+		<value />
+	</variable>
+	<variable name="HomeWidget801116PosterVar">
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Art(poster))">$INFO[Container(801116).ListItem.Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Art(tvshow.poster))">$INFO[Container(801116).ListItem.Art(tvshow.poster)]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Icon)">$INFO[Container(801116).ListItem.Icon]</value>
+		<value>$INFO[Container(801116).ListItem.Art(thumb)]</value>
+	</variable>
+	<variable name="HomeWidget801116FanArtVar">
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Art(fanart))">$INFO[Container(801116).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Property(Fanart)) + !Skin.HasSetting(weatherfanart.multi)">$INFO[Container(801116).ListItem.Property(Fanart)]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Property(WeatherMultiFanart)) + Skin.HasSetting(weatherfanart.multi)">$INFO[Container(801116).ListItem.Property(WeatherMultiFanart)]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Property(Fanart))">$INFO[Container(801116).ListItem.Property(Fanart)]</value>
+		<value>$INFO[Container(801116).ListItem.Art(thumb)]</value>
+	</variable>
+	<variable name="HomeWidget801116LandscapeVar">
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Art(landscape))">$INFO[Container(801116).ListItem.Art(landscape)]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Art(tvshow.landscape))">$INFO[Container(801116).ListItem.Art(tvshow.landscape)]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Art(fanart))">$INFO[Container(801116).ListItem.Art(fanart)]</value>
+		<value>$INFO[Container(801116).ListItem.Art(thumb)]</value>
+	</variable>
+	<variable name="HomeWidget801116ClearArtVar">
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Art(clearart))">$INFO[Container(801116).ListItem.Art(clearart)]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Art(tvshow.clearart))">$INFO[Container(801116).ListItem.Art(tvshow.clearart)]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Art(tvshow.clearlogo))">$INFO[Container(801116).ListItem.Art(tvshow.clearlogo)]</value>
+		<value>$INFO[Container(801116).ListItem.Art(clearlogo)]</value>
+	</variable>
+	<variable name="HomeWidget801116ClearLogoVar">
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Art(clearlogo))">$INFO[Container(801116).ListItem.Art(clearlogo)]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Art(tvshow.clearlogo))">$INFO[Container(801116).ListItem.Art(tvshow.clearlogo)]</value>
+	</variable>
+	<variable name="HomeWidget801116ThumbVar">
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Art(thumb))">$INFO[Container(801116).ListItem.Art(thumb)]</value>
+		<value>$INFO[Container(801116).ListItem.Art(fanart)]</value>
+	</variable>
+	<variable name="HomeWidget801116CharacterArtVar">
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Art(tvshow.characterart))">$INFO[Container(801116).ListItem.Art(tvshow.characterart)]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Art(tvshow.clearart))">$INFO[Container(801116).ListItem.Art(tvshow.clearart)]</value>
+		<value>$INFO[Container(801116).ListItem.Art(tvshow.clearlogo)]</value>
+	</variable>
+	<variable name="HomeWidget801116BannerVar">
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Art(tvshow.banner))">$INFO[Container(801116).ListItem.Art(tvshow.banner)]</value>
+		<value>$INFO[Container(801116).ListItem.Art(banner)]</value>
+	</variable>
+	<variable name="HomeWidget801116TitleVar">
+		<value condition="!String.IsEmpty(Container(801116).ListItem.AddonName)">$INFO[Container(801116).ListItem.AddonName]</value>
+		<value condition="[!Integer.IsGreater(Container(801116).ListItem.Season,9) + !Integer.IsGreater(Container(801116).ListItem.Episode,9)] + !String.StartsWith(Container(801116).ListItem.Episode,S) + !String.IsEmpty(Container(801116).ListItem.Episode) + !String.IsEqual(Container(801116).ListItem.Label,Container(801116).ListItem.TVShowTitle)">$INFO[Container(801116).ListItem.Season,S0]$INFO[Container(801116).ListItem.Episode,E0] $INFO[Container(801116).ListItem.Title]</value>
+		<value condition="[!Integer.IsGreater(Container(801116).ListItem.Season,9) + !Integer.IsGreater(Container(801116).ListItem.Episode,9)] + String.StartsWith(Container(801116).ListItem.Episode,S) + !String.IsEmpty(Container(801116).ListItem.Episode) + !String.IsEqual(Container(801116).ListItem.Label,Container(801116).ListItem.TVShowTitle)">$INFO[Container(801116).ListItem.Season,S0]$INFO[Container(801116).ListItem.Episode] $INFO[Container(801116).ListItem.Title]</value>
+		<value condition="[!Integer.IsGreater(Container(801116).ListItem.Season,9) + Integer.IsGreater(Container(801116).ListItem.Episode,9)] + !String.IsEmpty(Container(801116).ListItem.Episode) + !String.IsEqual(Container(801116).ListItem.Label,Container(801116).ListItem.TVShowTitle)">$INFO[Container(801116).ListItem.Season,S0]$INFO[Container(801116).ListItem.Episode,E] $INFO[Container(801116).ListItem.Title]</value>
+		<value condition="[Integer.IsGreater(Container(801116).ListItem.Season,9) + !Integer.IsGreater(Container(801116).ListItem.Episode,9)] + !String.IsEmpty(Container(801116).ListItem.Episode) + !String.IsEqual(Container(801116).ListItem.Label,Container(801116).ListItem.TVShowTitle)">$INFO[Container(801116).ListItem.Season,S]$INFO[Container(801116).ListItem.Episode,E0] $INFO[Container(801116).ListItem.Title]</value>
+		<value condition="[Integer.IsGreater(Container(801116).ListItem.Season,9) + Integer.IsGreater(Container(801116).ListItem.Episode,9)] + !String.IsEmpty(Container(801116).ListItem.Episode) + !String.IsEqual(Container(801116).ListItem.Label,Container(801116).ListItem.TVShowTitle)">$INFO[Container(801116).ListItem.Season,S]$INFO[Container(801116).ListItem.Episode,E] $INFO[Container(801116).ListItem.Title]</value>
+		<value>$INFO[Container(801116).ListItem.Label]</value>
+	</variable>
+	<variable name="HomeWidget801116Title2Var">
+		<value condition="!String.IsEmpty(Container(801116).ListItem.TVShowTitle)">$INFO[Container(801116).ListItem.TVShowTitle]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Artist)">$INFO[Container(801116).ListItem.Artist]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.AlbumArtist)">$INFO[Container(801116).ListItem.AlbumArtist]</value>
+		<value>$INFO[Container(801116).ListItem.Label]</value>
+	</variable>
+	<variable name="HomeWidget801116SubTitleVar">
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Tagline)">$INFO[Container(801116).ListItem.Tagline]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.TVShowTitle) + String.IsEqual(Container(801116).ListItem.Label,Container(801116).ListItem.TVShowTitle) + !String.IsEmpty(Container(801116).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(801116).ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[20360]]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.TVShowTitle) + !String.IsEqual(Container(801116).ListItem.Label,Container(801116).ListItem.TVShowTitle)">$INFO[Container(801116).ListItem.TVShowTitle]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Property(Artist_Mood))">$INFO[Container(801116).ListItem.Property(Artist_Mood)]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Artist) + !String.IsEqual(Container(801116).ListItem.Label,Container(801116).ListItem.Artist)">$INFO[Container(801116).ListItem.Artist]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.AlbumArtist) + !String.IsEqual(Container(801116).ListItem.Label,Container(801116).ListItem.AlbumArtist)">$INFO[Container(801116).ListItem.AlbumArtist]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.AddonSummary)">$INFO[Container(801116).ListItem.AddonSummary]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Property(Label3))">$INFO[Container(801116).ListItem.Label2]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Count))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Count),, $LOCALIZE[342]]</value>
+		<value>130</value>
+	</variable>
+	<variable name="HomeWidget801116Info1Var">
+		<value condition="[!String.IsEmpty(Container(801116).ListItem.Artist) | !String.IsEmpty(Container(801116).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801116).ListItem.Duration)">$INFO[Container(801116).ListItem.Duration,, $LOCALIZE[12391]]</value>
+		<value condition="[!String.IsEmpty(Container(801116).ListItem.Artist) | !String.IsEmpty(Container(801116).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801116).ListItem.Property(Album_Mood))">$INFO[Container(801116).ListItem.Property(Album_Mood)]</value>
+		<value condition="[!String.IsEmpty(Container(801116).ListItem.Artist) | !String.IsEmpty(Container(801116).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801116).ListItem.Property(Album_Style))">$INFO[Container(801116).ListItem.Property(Album_Style)]</value>
+		<value condition="[!String.IsEmpty(Container(801116).ListItem.Artist) | !String.IsEmpty(Container(801116).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801116).ListItem.Property(Artist_Style))">$INFO[Container(801116).ListItem.Property(Artist_Style)]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.AddonName)">$INFO[Container(801116).ListItem.AddonCreator,$LOCALIZE[31001] ]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Property(Label3))">$INFO[Container(801116).ListItem.Property(Label3)]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Property(ShortTime))">$INFO[Container(801116).ListItem.Property(ShortTime)]$INFO[Container(801116).ListItem.Property(NextDate),  •  ]$INFO[Container(801116).ListItem.RatingAndVotes,  •  $LOCALIZE[563] ]$INFO[Container(801116).ListItem.Property(RunTime),  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.TVShowTitle) + !String.IsEmpty(Container(801116).ListItem.Property(Runtime))">$INFO[Container(801116).ListItem.Premiered]$INFO[Container(801116).ListItem.RatingAndVotes,  •  $LOCALIZE[563] ]$INFO[Container(801116).ListItem.Property(Runtime),  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.TVShowTitle)">$INFO[Container(801116).ListItem.Premiered]$INFO[Container(801116).ListItem.RatingAndVotes,  •  $LOCALIZE[563] ]$INFO[Container(801116).ListItem.Duration,  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Property(Runtime))">$INFO[Container(801116).ListItem.RatingAndVotes,$LOCALIZE[563] ]$INFO[Container(801116).ListItem.Property(Runtime),  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Runtime))">$INFO[Container(801116).ListItem.RatingAndVotes,$LOCALIZE[563] ]$INFO[Window(Home).Property(SkinHelper.MovieSet.Runtime),  •  , $LOCALIZE[12391]]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.RatingAndVotes)">$INFO[Container(801116).ListItem.RatingAndVotes,$LOCALIZE[563] ]$INFO[Container(801116).ListItem.Duration,  •  , $LOCALIZE[12391]]</value>
+		<value>$INFO[Container(801116).ListItem.Duration,, $LOCALIZE[12391]]</value>
+	</variable>
+	<variable name="HomeWidget801116Info2Var">
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Property(Artist_Genre))">$INFO[Container(801116).ListItem.Property(Artist_Genre),[CAPITALIZE],[/CAPITALIZE]]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Property(Label4))">$INFO[Container(801116).ListItem.Property(Label4)]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.AddonType)">$INFO[Container(801116).ListItem.AddonType]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Genre))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Genre),[CAPITALIZE],[/CAPITALIZE]]</value>
+		<value>$INFO[Container(801116).ListItem.Genre,[CAPITALIZE],[/CAPITALIZE]]</value>
+	</variable>
+	<variable name="HomeWidget801116PlotVar">
+		<value condition="[!String.IsEmpty(Container(801116).ListItem.Artist) | !String.IsEmpty(Container(801116).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801116).ListItem.Plot)">$INFO[Container(801116).ListItem.Plot]</value>
+		<value condition="[!String.IsEmpty(Container(801116).ListItem.Artist) | !String.IsEmpty(Container(801116).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801116).ListItem.Property(Album_Description))">$INFO[Container(801116).ListItem.Property(Album_Description)]</value>
+		<value condition="[!String.IsEmpty(Container(801116).ListItem.Artist) | !String.IsEmpty(Container(801116).ListItem.AlbumArtist)] + !String.IsEmpty(Container(801116).ListItem.Property(Artist_Description))">$INFO[Container(801116).ListItem.Property(Artist_Description)]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.AddonName)">$INFO[Container(801116).ListItem.AddonDescription]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Property(Label3)) + !String.IsEmpty(Container(801116).ListItem.Property(WeatherMultiFanart))">[UPPERCASE]$LOCALIZE[33006][/UPPERCASE][CR]$INFO[Window(weather).Property(Current.Condition),,. ]$INFO[Window(weather).Property(Current.FeelsLike),$LOCALIZE[402] ]$INFO[System.TemperatureUnits,,. ]$INFO[Window(weather).Property(Current.Humidity),$LOCALIZE[406] ,. ]$INFO[Window(weather).Property(Current.Wind),$LOCALIZE[404] ,. ]$INFO[Window(weather).Property(Current.DewPoint),$LOCALIZE[405] ]$INFO[System.TemperatureUnits,,. ]$INFO[Window(weather).Property(Current.UVIndex),$LOCALIZE[403] ,. ]$INFO[Window(weather).Property(Today.Sunrise),$LOCALIZE[33027] ,. ]$INFO[Window(weather).Property(Today.Sunset),$LOCALIZE[33028] ,.]</value>
+		<value condition="!String.IsEmpty(Container(801116).ListItem.Property(Label3)) + !String.IsEmpty(Container(801116).ListItem.Property(isSystemInfo))">KODI: $INFO[System.BuildVersion][CR][UPPERCASE]$LOCALIZE[13283][/UPPERCASE] $INFO[System.KernelVersion][CR]$INFO[System.VideoEncoderInfo][CR][UPPERCASE]$LOCALIZE[13287][/UPPERCASE] $INFO[System.ScreenResolution][CR][UPPERCASE]$LOCALIZE[150]:[/UPPERCASE] $INFO[Network.IPAddress]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Plot))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Plot)]</value>
+		<value>$INFO[Container(801116).ListItem.Plot]</value>
 	</variable>
 	<include name="skinshortcuts-template-widget2">
 		<description>This include was built automatically as the template didn't match any menu items</description>

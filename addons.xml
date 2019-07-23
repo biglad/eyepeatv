@@ -740,7 +740,7 @@ ffmpeg simply copies the stream into a transport stream container.
 
 <addon id="script.apkinstaller"
   name="APK Installer"
-  version="3.0.27"
+  version="3.0.28"
   provider-name="EPTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -759,7 +759,7 @@ ffmpeg simply copies the stream into a transport stream container.
 
 <addon id="script.appapkmenu"
   name="APP/APK Menu"
-  version="3.0.29"
+  version="3.0.30"
   provider-name="EPTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -778,7 +778,7 @@ ffmpeg simply copies the stream into a transport stream container.
 
 <addon id="script.appinstaller"
   name="APP-Installer"
-  version="3.0.29"
+  version="3.0.30"
   provider-name="EPTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>

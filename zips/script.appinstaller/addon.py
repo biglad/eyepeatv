@@ -133,10 +133,10 @@ def menuoptions():
 		)
         
     call = dialog.select('[B][COLOR=yellow]EPTV[/COLOR][COLOR=red] APP Menu[/COLOR][/B]', [
-    "[B][COLOR=green]      Download[/COLOR]BlueStacks[/B]",#1
-    "[B][COLOR=green]      Download[/COLOR]ProgDVB (IPTV Player) x32[/B]", #2
-	"[B][COLOR=green]      Download[/COLOR]ProgDVB (IPTV Player) x64[/B]", #3
-	"[B][COLOR=green]      Download[/COLOR]Intel HD Driver Update[/B]", #3
+    "[B][COLOR=green]      Download[/COLOR] BlueStacks[/B]",#1
+    "[B][COLOR=green]      Download[/COLOR] ProgDVB (IPTV Player) x32[/B]", #2
+	"[B][COLOR=green]      Download[/COLOR] ProgDVB (IPTV Player) x64[/B]", #3
+	"[B][COLOR=green]      Download[/COLOR] Intel HD Driver Update[/B]", #3
     ])
     # dialog.selectreturns
     #   0 -> escape pressed

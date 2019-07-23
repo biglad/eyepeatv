@@ -131,8 +131,8 @@ def menuoptions():
 		)
         
     call = dialog.select('[B][COLOR=yellow]EPTV[/COLOR][COLOR=red] APP Menu[/COLOR][/B]', [
-    "[B][COLOR=green]      Download[/COLOR]Android APK's[/B]",#1
-    "[B][COLOR=green]      Download[/COLOR]Windows APP's[/B]", #2
+    "[B][COLOR=green]      Download[/COLOR] Android APK's[/B]",#1
+    "[B][COLOR=green]      Download[/COLOR] Windows APP's[/B]", #2
     ])
     # dialog.selectreturns
     #   0 -> escape pressed
@@ -142,7 +142,7 @@ def menuoptions():
         # esc is not pressed
         if call < 0:
             return
-        func = funcs[call-1]
+        func = funcs[call-2]
         #if myplatform == 'windows':
         #    func = funcs[call-23]
         #dp = xbmcgui.DialogProgress()

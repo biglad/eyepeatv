@@ -6,10 +6,10 @@ buildfile = "version.txt"
 buildv = xbmc.translatePath(os.path.join('special://home/', buildfile))
 
 window = xbmcgui.Window(10000)
-label = xbmcgui.ControlLabel(17, 17, 1000, 50, '[COLOR black]EPTV www.eptv.co.uk[/COLOR]')
+label = xbmcgui.ControlLabel(30, 30, 1000, 50, '[COLOR black]EPTV www.eptv.co.uk[/COLOR]')
 window.addControl(label)
 window = xbmcgui.Window(10000)
-label = xbmcgui.ControlLabel(15, 15, 1000, 50, '[COLOR gold]EPTV[/COLOR] www.eptv.co.uk')
+label = xbmcgui.ControlLabel(28, 28, 1000, 50, '[COLOR gold]EPTV[/COLOR] www.eptv.co.uk')
 window.addControl(label)
 
 
@@ -43,10 +43,10 @@ xbmc.Player().play('special://home/addons/script.eptv.core/load.mp4')
 
 
 window = xbmcgui.Window(10025)
-label = xbmcgui.ControlLabel(17, 17, 1000, 50, '[COLOR black]EPTV www.eptv.co.uk[/COLOR]')
+label = xbmcgui.ControlLabel(30, 30, 1000, 50, '[COLOR black]EPTV www.eptv.co.uk[/COLOR]')
 window.addControl(label)
 window = xbmcgui.Window(10025)
-label = xbmcgui.ControlLabel(15, 15, 1000, 50, '[COLOR gold]EPTV[/COLOR] www.eptv.co.uk')
+label = xbmcgui.ControlLabel(28, 28, 1000, 50, '[COLOR gold]EPTV[/COLOR] www.eptv.co.uk')
 window.addControl(label)
 
 
@@ -75,18 +75,18 @@ buildinfo1 = "[COLOR black]Your Build Version : "+str(buildv)+" - Latest Version
 buildinfo2 = "[COLOR darkgrey]Your Build Version : "+str(buildv)+" - Latest Version : "+str(webversion)+"[/COLOR]"
 
 window = xbmcgui.Window(10000)
-label = xbmcgui.ControlLabel(50, 52, 1000, 50, buildinfo1)
+label = xbmcgui.ControlLabel(55, 60, 1000, 50, buildinfo1)
 window.addControl(label)
 window = xbmcgui.Window(10000)
-label = xbmcgui.ControlLabel(48, 50, 1000, 50, buildinfo2)
+label = xbmcgui.ControlLabel(53, 58, 1000, 50, buildinfo2)
 window.addControl(label)
 
 
 window = xbmcgui.Window(10000)
-label = xbmcgui.ControlLabel(50, 82, 1000, 50, "[COLOR black]Kodi Version : "+str(KODIV)+"[/COLOR]")
+label = xbmcgui.ControlLabel(86, 86, 1000, 50, "[COLOR black]Kodi Version : "+str(KODIV)+"[/COLOR]")
 window.addControl(label)
 window = xbmcgui.Window(10000)
-label = xbmcgui.ControlLabel(48, 80, 1000, 50, "[COLOR darkgrey]Kodi Version : "+str(KODIV)+"[/COLOR]")
+label = xbmcgui.ControlLabel(84, 84, 1000, 50, "[COLOR darkgrey]Kodi Version : "+str(KODIV)+"[/COLOR]")
 window.addControl(label)
 
 

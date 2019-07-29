@@ -14,11 +14,11 @@
 
 import re, urlparse, urllib, base64
 
-from resources.lib.modules import cleantitle
-from resources.lib.modules import client
-from resources.lib.modules import cache
-from resources.lib.modules import dom_parser2
-from resources.lib.modules import debrid
+from vistascrapers.modules import cleantitle
+from vistascrapers.modules import client
+from vistascrapers.modules import cache
+from vistascrapers.modules import dom_parser2
+from vistascrapers.modules import debrid
 
 class source:
     def __init__(self):

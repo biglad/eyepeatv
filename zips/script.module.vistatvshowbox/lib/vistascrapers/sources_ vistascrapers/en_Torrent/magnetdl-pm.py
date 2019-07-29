@@ -5,8 +5,13 @@
 '''
 
 import re, requests, xbmc, xbmcaddon
+import urllib
+import urlparse
 #from resolveurl.plugins.premiumize_me import PremiumizeMeResolver
-from resources.lib.modules import source_utils
+from vistascrapers.modules import client
+from vistascrapers.modules import control
+from vistascrapers.modules import debrid
+from vistascrapers.modules import source_utils
 
 class source:
 

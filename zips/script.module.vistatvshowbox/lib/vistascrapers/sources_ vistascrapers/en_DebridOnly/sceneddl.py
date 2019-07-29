@@ -24,7 +24,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domain = 'sceneddl.online'
-        self.base_link = 'http://www.sceneddl.online'
+        self.base_link = 'https://www.sceneddl.online'
         self.search_link = '/?s=%s'
         self.scraper = cfscrape.create_scraper()
 

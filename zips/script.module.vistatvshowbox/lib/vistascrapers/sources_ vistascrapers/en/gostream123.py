@@ -21,7 +21,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['gostream-123.com']
-        self.base_link = 'http://gostream-123.com'
+        self.base_link = 'http://gomovies123.today/'
 
     def movie(self, imdb, title, localtitle, aliases, year):
         try:

@@ -38,7 +38,7 @@ class source:
     def __init__(self):
         self.priority = 1
         self.language = ['en']
-        self.domains = ['kickass2.cc', 'kickass2.how', 'kickasstorrents.bz', 'kkickass.com', 'kkat.net',
+        self.domains = ['kickasstorrents.bz', 'kickass2.cc', 'kickass2.how', 'kickasstorrents.bz', 'kkickass.com', 'kkat.net',
                         'kickass-kat.com', 'kickasst.net', 'kickasst.org', 'kickasstorrents.id', 'thekat.cc',
                         'thekat.ch']
         self._base_link = None

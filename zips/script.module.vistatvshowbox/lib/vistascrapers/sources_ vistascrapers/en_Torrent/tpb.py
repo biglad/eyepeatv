@@ -14,14 +14,19 @@ import traceback
 import urllib
 import urlparse
 
-from resources.lib.modules import cache, cleantitle, client, debrid, log_utils, source_utils
+#from resources.lib.modules import cache, cleantitle, client, debrid, log_utils, source_utils
+from vistascrapers.modules import cleantitle
+from vistascrapers.modules import client
+from vistascrapers.modules import debrid
+from vistascrapers.modules import log_utils
+from vistascrapers.modules import source_utils
 
 
 class source:
     def __init__(self):
         self.priority = 1
         self.language = ['en']
-        self.domains = ['thepiratebay.icu', 'tpb.cool', 'thepiratebay.fail', 'openpirate.org', 'piratebay.icu', 'thepiratebay.fyi', 'thepirate.fun', 'thepiratebay.press']
+        self.domains = ['openpirate.org', 'thepiratebay.icu', 'tpb.cool', 'thepiratebay.fail', 'openpirate.org', 'piratebay.icu', 'thepiratebay.fyi', 'thepirate.fun', 'thepiratebay.press']
         self._base_link = None
         self.search_link = '/search.php?q=%s&page=0&orderby=99'
 

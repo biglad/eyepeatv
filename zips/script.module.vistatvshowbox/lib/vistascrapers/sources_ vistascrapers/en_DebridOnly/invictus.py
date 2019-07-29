@@ -13,7 +13,11 @@
 #checked and verified in 13Clowns by Clownman 12.28.18
 '''
 import re,urllib,urlparse
-from resources.lib.modules import client,debrid,source_utils
+#from resources.lib.modules import client,debrid,source_utils
+
+from vistascrapers.modules import client
+from vistascrapers.modules import debrid
+from vistascrapers.modules import source_utils
 
 
 class source:

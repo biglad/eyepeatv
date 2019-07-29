@@ -35,7 +35,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['my-project-free.tv']
-        self.base_link = 'https://www8.project-free-tv.ag/'
+        self.base_link = 'https://www9.project-free-tv.ag/'
         self.search_link = '/episode/%s-season-%s-episode-%s'
         self.scraper = cfscrape.create_scraper()
 

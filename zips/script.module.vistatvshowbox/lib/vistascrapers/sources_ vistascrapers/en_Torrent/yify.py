@@ -40,7 +40,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['yts.am']
-        self.base_link = 'https://ytsag.rocks/'
+        self.base_link = 'https://yts.su/'
         self.search_link = '/browse-movies/%s/all/all/0/latest'
         self.min_seeders = int(control.setting('torrent.min.seeders'))
 

@@ -14,12 +14,13 @@
 
 import re,traceback,urllib,urlparse
 
-from resources.lib.modules import cleantitle
-from resources.lib.modules import client
-from resources.lib.modules import source_utils
-from resources.lib.modules import debrid
-from resources.lib.modules import dom_parser2
-from resources.lib.modules import log_utils
+from vistascrapers.modules import cleantitle
+from vistascrapers.modules import client
+from vistascrapers.modules import source_utils
+from vistascrapers.modules import debrid
+from vistascrapers.modules import dom_parser2
+from vistascrapers.modules import log_utils
+from vistascrapers.modules import cfscrape
 
 class source:
     def __init__(self):
@@ -28,7 +29,8 @@ class source:
         self.domains = ['seriescr.com']
         self.base_link = 'http://seriescr.com/'
         self.search_link = '/search/%s/feed/rss2/'
-
+        self.scraper = cfscrape.create_scraper()
+		
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
         try:
             url = {'imdb': imdb, 'tvdb': tvdb, 'tvshowtitle': tvshowtitle, 'year': year}

@@ -834,7 +834,7 @@ ffmpeg simply copies the stream into a transport stream container.
 
 <addon id="script.eptv.core"
   name="EPTV Core"
-  version="19.02"
+  version="19.03"
   provider-name="Biglad">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>

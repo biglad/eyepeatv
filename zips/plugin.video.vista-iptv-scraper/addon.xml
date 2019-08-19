@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.vista-iptv-scraper"
-       name="Cathode Ray Tube IPTV "
-       version="1.0.13"
-       provider-name="VistaTV">
+       name="Cathode Ray Tube"
+       version="1.0.14"
+       provider-name="biglad">
    <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>

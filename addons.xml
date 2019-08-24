@@ -1501,6 +1501,30 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 	</extension>
 </addon>
 
+<addon id="script.vistatvtools"
+  name="EPTV Tools"
+  version="18.9"
+  provider-name="biglad">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.vista.advset" />
+	<!--<import addon="repository.elementum" />-->
+	<import addon="script.kodi.loguploader" />
+	<!--<import addon="script.cachesystem" />-->
+	<!--<import addon="script.module.now_music2"  />-->
+
+  </requires>
+  <extension point="xbmc.python.script" library="addon.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">VistaTV Menu System</summary>
+    <description lang="en">VistaTV Menu System</description>
+	<disclaimer>VistaTV Menu System</disclaimer>
+  </extension>
+</addon>
+
 <addon id="skin.eminence.2" name="Vista Eminence" provider-name="jurialmunkey" version="3.0.4b">
     <requires>
         <import addon="xbmc.gui" version="5.14.0" />

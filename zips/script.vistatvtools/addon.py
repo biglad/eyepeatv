@@ -42,10 +42,10 @@ def menuoptions():
     '[B][COLOR=lightblue]Open VPN[/COLOR][/B] - ([I]Andriod [/I])',
     '[B][COLOR=green]Pairing System[/COLOR][/B]',
     '[B][COLOR=gold]Show Me My Wifi Signal[/COLOR][/B] - ([I]Andriod [/I])',
-    '[B][COLOR=gold]PLACE HOLDER[/COLOR][/B]',
+    '[B][COLOR=gold]Build Tools[/COLOR][/B]',
     '[B][COLOR=gold]EPTV House Keeper[/COLOR][/B] (clean up system and reboot)', 
     '[B][COLOR=gold]Test My Connection Speed[/COLOR][/B]', 
-    '[B][COLOR=gold]PLACE HOLDER[/COLOR][/B]', 
+    '[B][COLOR=gold]RE-INstall Build,Swap Skin[/COLOR][/B]', 
     '[B][COLOR=gold]Open Main Box Settings[/COLOR][/B] - ([I]Andriod [/I])', 
     '[B][COLOR=gold]Update Addons & Repos[/COLOR][/B] (make sure your upto date)',
     '[B][COLOR=gold]Easy Advanced Settings[/COLOR][/B]',
@@ -96,11 +96,7 @@ def function3():
     xbmc.executebuiltin('StartAndroidActivity("com.farproc.wifi.analyzer")')    
 
 def function4():
-    dp = xbmcgui.DialogProgress()
-    dp.create("[COLOR tomato]EPTV[/COLOR]","Collecting Data","Few Second.....")
-    dialog = xbmcgui.Dialog()
-    dialog.ok("[COLOR=red][B] ## MY BOX INFO ##[/COLOR][/B]", "[COLOR=red]My ID[/COLOR]: [COLOR=green]"+str(data300)+"[/COLOR]", "[COLOR=red]Build Version[/COLOR]: [COLOR=green]"+str(data)+"[/COLOR]","[COLOR=red]IP Address (public)[/COLOR]: [COLOR=green]"+str(getPublicIp())+"[/COLOR]")
-    xbmc.executebuiltin('RunAddon(script.EPTV.info)')
+    xbmc.executebuiltin('RunAddon(script.module.aliunde.maintenance.wizard)')
     
 def function5():
     xbmc.executebuiltin('ActivateWindow(10025,"plugin://script.vista.exit",return)')
@@ -109,7 +105,7 @@ def function6():
     xbmc.executebuiltin('ActivateWindow(10025,"plugin://script.speedtestnet",return)')
 
 def function7():
-    xbmc.executebuiltin('ActivateWindow(10025,"plugin://script.EPTV-wizard",return)')
+    xbmc.executebuiltin('RunAddon(script.vistatv-installer)')
 
 
 def function8():
@@ -133,7 +129,7 @@ def function9():
     dp.close()
     
 def function10():
-    xbmc.executebuiltin('RunAddon(script.vista.advset)')  
+    xbmc.executebuiltin('PlayMedia("plugin://script.module.aliunde.maintenance.wizard/?mode=autoadvanced")')  
    
     
 def function11():

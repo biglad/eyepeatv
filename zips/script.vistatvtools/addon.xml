@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.vistatvtools"
   name="EPTV Tools"
-  version="18.9" 
+  version="19.1" 
   provider-name="biglad">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>

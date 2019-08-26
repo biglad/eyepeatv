@@ -39,7 +39,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['seriesonline.io']
-        self.base_link = 'https://www3.seriesonline8.co/'
+        self.base_link = 'https://www2.seriesonline8.co'
         self.search_link = '/movie/search/%s'
         self.scraper = cfscrape.create_scraper()
 

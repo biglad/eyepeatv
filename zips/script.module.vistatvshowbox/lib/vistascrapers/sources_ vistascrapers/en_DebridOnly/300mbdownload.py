@@ -38,7 +38,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['300mbdownload']
-        self.base_link = 'https://www.300mbdownload.ws'
+        self.base_link = 'https://www.300mbdownload.club'
         self.search_link = '/search/%s/feed/rss2/'
 
     def movie(self, imdb, title, localtitle, aliases, year):

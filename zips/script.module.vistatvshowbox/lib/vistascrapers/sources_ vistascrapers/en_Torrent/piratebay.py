@@ -42,7 +42,7 @@ class source:
     def __init__(self):
         self.priority = 1
         self.language = ['en']
-        self.domains = ['piratebay.life','pirateproxy.live', 'thepiratebay.org', 'thepiratebay.fun', 'thepiratebay.asia', 'tpb.party',
+        self.domains = ['pirateproxy.live', 'thepiratebay.org', 'thepiratebay.fun', 'thepiratebay.asia', 'tpb.party',
                         'thepiratebay3.org', 'thepiratebayz.org', 'thehiddenbay.com', 'piratebay.live',
                         'thepiratebay.zone']
         self._base_link = None

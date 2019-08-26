@@ -38,9 +38,9 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['tvbox.ag']
-        self.base_link = 'https://tvbox.unblocked.lc/'
+        self.base_link = 'https://tvbox.ag/'
         self.search_link = 'search?q=%s'
-        self.search_link_movie = 'https://tvbox.unblocked.lc/movies'
+        self.search_link_movie = 'https://tvbox.ag/movies'
         self.scraper = cfscrape.create_scraper()
 
     def movie(self, imdb, title, localtitle, aliases, year):

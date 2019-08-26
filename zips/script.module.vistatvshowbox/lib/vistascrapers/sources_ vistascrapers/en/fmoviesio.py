@@ -24,7 +24,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['fmoviesto.to']
-        self.base_link = 'https://www3.fmoviesto.to'
+        self.base_link = 'https://fmoviesto.to'
         self.search_link = '/search.html?keyword=%s'
 
     def movie(self, imdb, title, localtitle, aliases, year):

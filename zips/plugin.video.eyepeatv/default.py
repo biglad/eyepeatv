@@ -19,7 +19,7 @@ SKIN_VIEW_FOR_MOVIES="515"
 addonDir = plugintools.get_runtime_path()
 global kontroll
 global EPGColour
-addon_id = "plugin.video.playklub"
+addon_id = "plugin.video.eyepeatv"
 background = "YmFja2dyb3VuZC5wbmc=" 
 defaultlogo = "ZGVmYXVsdGxvZ28ucG5n" 
 hometheater = "aG9tZXRoZWF0ZXIuanBn"
@@ -32,12 +32,13 @@ fanart = "ZmFuYXJ0LmpwZw=="
 supplier = "RXllUGVhVFY="
 ICON = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id, 'icon.png')) 
 FANART = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id, 'fanart.jpg')) 
+loginfile = xbmc.translatePath(os.path.join('special://home/eptv.txt'))
 APKS = base64.b64decode("aHR0cDovL2ZhYmlwdHYuY29tL2Fwa3MvbmV3YXBrcy50eHQ=")
 HOME =  xbmc.translatePath('special://home/')
 buildfile = "version.txt"
 lehekylg= base64.b64decode("aHR0cDovL2dvdGRhcmsuY29t") #DM
 #lehekylg= base64.b64decode("aHR0cDovL2VwdHYuY28udWs=") #EPTV
-pordinumber="80"
+pordinumber="8080"
 message = "VU5BVVRIT1JJWkVEIEVESVQgT0YgQURET04h"
 kasutajanimi=plugintools.get_setting("Username")
 salasona=plugintools.get_setting("Password")
@@ -47,14 +48,14 @@ F1ICON = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id, 'F
 ##BASEURL = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tM3U4") #.m3u8
 BUILDUPDATE = "NO"
 
-BASEURL = base64.b64decode("JXM6JXMvcGxheTIucGhwP3U9JXMmcD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD10cw==") #.ts eptv
+BASEURL = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tcGVndHM=") #.ts eptv
 
 
 
 LOAD_LIVEchan = os.path.join( plugintools.get_runtime_path() , "resources" , "art/arch" )
 #loginurl   = base64.b64decode("JXM6JXMvcGxheS5waHA/dT0lcyZwPSVzJnR5cGU9bTN1X3BsdXMmb3V0cHV0PXRz")%(lehekylg,pordinumber,kasutajanimi,salasona) #EPTV
-loginurl   = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD10cw==")%(lehekylg,pordinumber,kasutajanimi,salasona) #DM
-#xbmc.log(loginurl,2)
+loginurl   = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tcGVndHM=")%(lehekylg,pordinumber,kasutajanimi,salasona) #DM
+##xbmc.log(loginurl,2)
 webversion = urllib2.urlopen('http://eptv.co.uk/version.txt').read()
 
 
@@ -124,7 +125,7 @@ def run():
     PlayerAPI = get_live("JXM6JXMvcGxheWVyX2FwaS5waHA/dXNlcm5hbWU9JXMmcGFzc3dvcmQ9JXM=")%(lehekylg,pordinumber,kasutajanimi,salasona)
     filmilink2 = vod_channels("JXM6JXMvZW5pZ21hMi5waHA/dXNlcm5hbWU9JXMmcGFzc3dvcmQ9JXMmdHlwZT1nZXRfc2VyaWVz")%(lehekylg,pordinumber,kasutajanimi,salasona)
     filmilink = vod_channels("JXM6JXMvZW5pZ21hMi5waHA/dXNlcm5hbWU9JXMmcGFzc3dvcmQ9JXMmdHlwZT1nZXRfdm9kX2NhdGVnb3JpZXM=")%(lehekylg,pordinumber,kasutajanimi,salasona)
-    andmelink = vod_channels("JXM6JXMvcGFuZWxfYXBpLnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcw==")%(lehekylg,pordinumber,kasutajanimi,salasona)
+    andmelink = vod_channels("JXM6JXMvcGFuZWxfYXBpLnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tcGVndHM=")%(lehekylg,pordinumber,kasutajanimi,salasona)
     params = plugintools.get_params()
 
     if params.get("action") is None:
@@ -213,10 +214,11 @@ def correctPVR():
     xbmc.executebuiltin("Container.Refresh")
     time.sleep(5)
     dp.create("[COLOR tomato]EyePeaTV[/COLOR]","All Done Closing Kodi","Please Wait")
-    dp.update(100)
+    #dp.update(100)
     time.sleep(5)
     dp.close()
-    os._exit(1)
+    file = open(loginfile, 'w+')	
+    #os._exit(1)
 
 def peamenyy(params):
     plugintools.log(pnimi+vod_channels("TWFpbiBNZW51")+repr(params))
@@ -232,7 +234,8 @@ def peamenyy(params):
         plugintools.addItem('[COLOR orange][B]New Version: '+str(webversion)+'[/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
         
     channels = kontroll()
-    if channels == 1 and GoDev.mode != 5 and GoDev.mode != 1:
+    #if channels == 1 and GoDev.mode != 5 and GoDev.mode != 1:
+    if os.path.isfile(loginfile):
         plugintools.log(pnimi+vod_channels("TG9naW4gU3VjY2Vzcw=="))
         plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="),  title="[COLOR lightblue][B] Welcome [COLOR gold]"+kasutajanimi+"[/COLOR] [/B][/COLOR] eptv.co.uk", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
         plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="[COLOR orange][B] EyePeaTV LIVE Full List [/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
@@ -268,7 +271,8 @@ def peamenyy(params):
         #plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR orange][B]Addon Settings[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
         plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR orange][B]Step 2. Insert Login Credentials[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False )  
         plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjazI="), title="[COLOR orange][B]Step 3. Click Once Login Is Input[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False )
-        plugintools.addItem('[COLOR orange][B]Free Preview[/B][/COLOR](please note this is not as stable as the paid service!!!!)','speed',9876,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')        
+        #plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="),  title="[COLOR lightblue][B] Welcome [COLOR gold]"+kasutajanimi+"[/COLOR] [/B][/COLOR] eptv.co.uk", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True ) 
+        #plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="[COLOR orange][B] EyePeaTV LIVE Full List [/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )		
         ##quit()
     plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="Total Ram: "+str(RAMM)+ "", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
     plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="Free Ram: "+str(RAM)+ "MB", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
@@ -853,7 +857,7 @@ def restart_service(params):
 
 def grab_epg():
     req = urllib2.Request(andmelink)
-    req.add_header(sync_data("VXNlci1BZ2VudA==") , vod_channels("S29kaSBwbHVnaW4gYnkgTWlra00="))
+    req.add_header(sync_data("VXNlci1BZ2VudA==") , vod_channels("S29kaSBwbHVnaW4gYnkgQmlnbGFk"))
     response = urllib2.urlopen(req)
     link=response.read()
     try:

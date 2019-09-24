@@ -27,11 +27,12 @@ MZip     = xbmc.translatePath('special://home/userdata/Database/Epg12.db')
 Username=plugintools.get_setting("Username")
 Password=plugintools.get_setting("Password")
 PVRon = plugintools.get_setting("PVRUpdater")
-lehekylg= base64.b64decode("aHR0cHM6Ly9lcHR2LmNvLnVr") #####
-pordinumber="443"
+lehekylg= base64.b64decode("http://gotdark.com") #####
+pordinumber="8080"
 BASEURL = base64.b64decode("bmFkYQ==")
 AddonRes = xbmc.translatePath(os.path.join('special://home','addons',AddonID,'resources'))
-loginurl   = base64.b64decode("JXM6JXMvcGxheS5waHA/dT0lcyZwPSVzJnR5cGU9bTN1X3BsdXMmb3V0cHV0PW0zdTg=")%(lehekylg,pordinumber,Username,Password)
+loginfile = xbmc.translatePath(os.path.join('special://home/eptv.txt'))
+loginurl   = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tcGVndHM=")%(lehekylg,pordinumber,Username,Password)
 THE_DATE = time.strftime("%Y%m%d")
 now = datetime.now()
 
@@ -86,7 +87,7 @@ def PVRbeta(self):
     jsonSetPVR = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":true},"id":1}'
     IPTVon     = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":true},"id":1}'
     nulldemo   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.demo","enabled":false},"id":1}'
-    EPGurl   = base64.b64decode("JXM6JXMveG1sdHYucGhwP3U9JXMmcD0lcw==")%(lehekylg,pordinumber,Username,Password)
+    EPGurl   = base64.b64decode("JXM6JXMveG1sdHYucGhwP3VzZXJuYW1lPSVzJnBhc3N3b3JkPSVz")%(lehekylg,pordinumber,Username,Password)
     
     xbmc.executeJSONRPC(nullLiveTV)
     xbmc.executebuiltin('SendClick(28)')
@@ -106,7 +107,7 @@ def PVRbeta(self):
 
     f = open(BetaPVR, 'a')
 
-    UserList = base64.b64decode("JXM6JXMvcGxheTIucGhwP3U9JXMmcD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD10cw==")%(lehekylg,pordinumber,Username,Password)
+    UserList = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tcGVndHM=")%(lehekylg,pordinumber,Username,Password)
     link = open_url(UserList).replace('\n','').replace('\r','&split&')
     a,b = link.split('&split&#EXTINF:-1 tvg-id="" tvg-name="Absolute 80')
     OutpuT = a.replace("&split&","\n").replace("#EXTM3U","#EXTM3U\n")
@@ -143,8 +144,8 @@ def correctPVR(self):
     except urllib2.HTTPError, e:
         print e.getcode()
         dialog.ok("[COLOR white]Error[/COLOR]",'[COLOR white]This process will not run as your account has expired[/COLOR]',' ','[COLOR white]Please check your account information[/COLOR]')
-        sys.exit(1)
-        xbmc.executebuiltin("Dialog.Close(busydialog)")
+        #sys.exit(1)
+        #xbmc.executebuiltin("Dialog.Close(busydialog)")
         
 
     RAM = int(xbmc.getInfoLabel("System.Memory(total)")[:-2])
@@ -194,9 +195,10 @@ def correctPVR(self):
     #xbmc.executebuiltin("Dialog.Close(busydialog)")
     dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]We\'ve copied your logins to the PVR Guide[/COLOR]',' ','[COLOR white]You [B]MUST[/B] allow time to load the EPG to avoid issues.[/COLOR]')  
     xbmc.executebuiltin("Container.Refresh")
-    xbmc.executebuiltin("Dialog.Close(busydialog)")
+    ##xbmc.executebuiltin("Dialog.Close(busydialog)")
+    file = open(loginfile, 'w+')
     dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]Kodi Need Restart[/COLOR]',' ','[COLOR white][B]Please Restart Kodi[/B][/COLOR]')
-    os._exit(1)
+    #os._exit(1)
 
 def disablePVR(self):
     xbmc.executebuiltin("ActivateWindow(busydialog)")

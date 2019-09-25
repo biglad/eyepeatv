@@ -218,7 +218,9 @@ def correctPVR():
     time.sleep(5)
     dp.close()
     file = open(loginfile, 'w+')	
-    #os._exit(1)
+    time.sleep(5)
+    dp.close()
+    os._exit(1)
 
 def peamenyy(params):
     plugintools.log(pnimi+vod_channels("TWFpbiBNZW51")+repr(params))

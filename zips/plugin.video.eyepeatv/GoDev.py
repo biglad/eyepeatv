@@ -27,7 +27,7 @@ MZip     = xbmc.translatePath('special://home/userdata/Database/Epg12.db')
 Username=plugintools.get_setting("Username")
 Password=plugintools.get_setting("Password")
 PVRon = plugintools.get_setting("PVRUpdater")
-lehekylg= base64.b64decode("http://gotdark.com") #####
+lehekylg= base64.b64decode("aHR0cDovL2dvdGRhcmsuY29t") #####
 pordinumber="8080"
 BASEURL = base64.b64decode("bmFkYQ==")
 AddonRes = xbmc.translatePath(os.path.join('special://home','addons',AddonID,'resources'))

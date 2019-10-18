@@ -28,7 +28,7 @@ Username=plugintools.get_setting("Username")
 Password=plugintools.get_setting("Password")
 PVRon = plugintools.get_setting("PVRUpdater")
 lehekylg= base64.b64decode("aHR0cDovL2dvdGRhcmsuY29t") #####
-pordinumber="8080"
+pordinumber="80"
 BASEURL = base64.b64decode("bmFkYQ==")
 AddonRes = xbmc.translatePath(os.path.join('special://home','addons',AddonID,'resources'))
 loginfile = xbmc.translatePath(os.path.join('special://home/eptv.txt'))
@@ -198,7 +198,7 @@ def correctPVR(self):
     ##xbmc.executebuiltin("Dialog.Close(busydialog)")
     file = open(loginfile, 'w+')
     dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]Kodi Need Restart[/COLOR]',' ','[COLOR white][B]Please Restart Kodi[/B][/COLOR]')
-    #os._exit(1)
+    os._exit(1)
 
 def disablePVR(self):
     xbmc.executebuiltin("ActivateWindow(busydialog)")

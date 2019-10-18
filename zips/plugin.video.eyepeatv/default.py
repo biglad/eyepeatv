@@ -38,7 +38,7 @@ HOME =  xbmc.translatePath('special://home/')
 buildfile = "version.txt"
 lehekylg= base64.b64decode("aHR0cDovL2dvdGRhcmsuY29t") #DM
 #lehekylg= base64.b64decode("aHR0cDovL2VwdHYuY28udWs=") #EPTV
-pordinumber="8080"
+pordinumber="80"
 message = "VU5BVVRIT1JJWkVEIEVESVQgT0YgQURET04h"
 kasutajanimi=plugintools.get_setting("Username")
 salasona=plugintools.get_setting("Password")
@@ -215,11 +215,11 @@ def correctPVR():
     time.sleep(5)
     dp.create("[COLOR tomato]EyePeaTV[/COLOR]","All Done Closing Kodi","Please Wait")
     #dp.update(100)
-    time.sleep(5)
+    #time.sleep(5)
     dp.close()
-    file = open(loginfile, 'w+')	
-    time.sleep(5)
-    dp.close()
+    #file = open(loginfile, 'w+')	
+    #time.sleep(5)
+    #dp.close()
     os._exit(1)
 
 def peamenyy(params):
@@ -236,8 +236,8 @@ def peamenyy(params):
         plugintools.addItem('[COLOR orange][B]New Version: '+str(webversion)+'[/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
         
     channels = kontroll()
-    #if channels == 1 and GoDev.mode != 5 and GoDev.mode != 1:
-    if os.path.isfile(loginfile):
+    if channels == 1 and GoDev.mode != 5 and GoDev.mode != 1:
+    #if os.path.isfile(loginfile):
         plugintools.log(pnimi+vod_channels("TG9naW4gU3VjY2Vzcw=="))
         plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="),  title="[COLOR lightblue][B] Welcome [COLOR gold]"+kasutajanimi+"[/COLOR] [/B][/COLOR] eptv.co.uk", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
         plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="[COLOR orange][B] EyePeaTV LIVE Full List [/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )

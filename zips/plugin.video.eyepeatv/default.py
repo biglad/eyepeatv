@@ -370,7 +370,8 @@ def license_check(params):
 def license_check2(params):
     d = urllib.urlopen(loginurl)
     FileInfo = d.info()['Content-Type']
-    if not 'application/octet-stream' in FileInfo:
+    #xbmc.log(str(FileInfo),2)
+    if not 'text/html' in FileInfo:
         dialog.ok('[COLOR white]Invalid Login[/COLOR]','[COLOR white]Incorrect login details found![/COLOR]','[COLOR white]Please check your spelling and case sensitivity[/COLOR]','[COLOR white]Check your password with the team otherwise[/COLOR]')
         plugintools.open_settings_dialog()
     else:

@@ -33,7 +33,7 @@ BASEURL = base64.b64decode("bmFkYQ==")
 AddonRes = xbmc.translatePath(os.path.join('special://home','addons',AddonID,'resources'))
 loginfile = xbmc.translatePath(os.path.join('special://home/eptv.txt'))
 loginurl   = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tcGVndHM=")%(lehekylg,pordinumber,Username,Password)
-#xbmc.log(str(loginurl),2)
+xbmc.log(str(loginurl),2)
 THE_DATE = time.strftime("%Y%m%d")
 now = datetime.now()
 
@@ -136,11 +136,11 @@ def PVRbeta(self):
 def correctPVR(self):
     #thread.start_new_thread(self.dialogWatch, ())
     try:
-        connection = urllib2.urlopen(loginurl)
-        print connection.getcode()
-        connection.close()
-        #playlist found, user active & login correct, proceed to addon
-        pass
+        d = urllib.urlopen(loginurl)
+        FileInfo = d.info()['Content-Type']
+        #xbmc.log(str(FileInfo),2)
+        if 'text/html' in FileInfo:
+            pass
         
     except urllib2.HTTPError, e:
         print e.getcode()

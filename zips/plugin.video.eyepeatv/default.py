@@ -153,7 +153,7 @@ def correctPVR():
         
     except urllib2.HTTPError, e:
         print e.getcode()
-        dialog.ok("[COLOR white]Error[/COLOR]",'[COLOR white]This process will not run as your account has expired[/COLOR]',' ','[COLOR white]Please check your account information[/COLOR]')
+        dialog.ok("[COLOR white]Error[/COLOR]",'[COLOR white]PVR process will not run as your account has expired[/COLOR]',' ','[COLOR white]Please check your account information[/COLOR]')
         sys.exit(1)
         xbmc.executebuiltin("Dialog.Close(busydialog)")
         

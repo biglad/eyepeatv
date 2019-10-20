@@ -28,11 +28,12 @@ Username=plugintools.get_setting("Username")
 Password=plugintools.get_setting("Password")
 PVRon = plugintools.get_setting("PVRUpdater")
 lehekylg= base64.b64decode("aHR0cDovL2dvdGRhcmsuY29t") #####
-pordinumber="80"
+pordinumber=""
 BASEURL = base64.b64decode("bmFkYQ==")
 AddonRes = xbmc.translatePath(os.path.join('special://home','addons',AddonID,'resources'))
 loginfile = xbmc.translatePath(os.path.join('special://home/eptv.txt'))
 loginurl   = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tcGVndHM=")%(lehekylg,pordinumber,Username,Password)
+#xbmc.log(str(loginurl),2)
 THE_DATE = time.strftime("%Y%m%d")
 now = datetime.now()
 
@@ -143,7 +144,7 @@ def correctPVR(self):
         
     except urllib2.HTTPError, e:
         print e.getcode()
-        dialog.ok("[COLOR white]Error[/COLOR]",'[COLOR white]This process will not run as your account has expired[/COLOR]',' ','[COLOR white]Please check your account information[/COLOR]')
+        dialog.ok("[COLOR white]Error[/COLOR]",'[COLOR white]PVR Setup process will not run as your account has expired[/COLOR]',' ','[COLOR white]Please check your account information[/COLOR]')
         #sys.exit(1)
         #xbmc.executebuiltin("Dialog.Close(busydialog)")
         
@@ -164,7 +165,7 @@ def correctPVR(self):
     jsonSetPVR = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":true},"id":1}'
     IPTVon     = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":true},"id":1}'
     nulldemo   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.demo","enabled":false},"id":1}'
-    EPGurl   = base64.b64decode("JXM6JXMveG1sdHYucGhwP3U9JXMmcD0lcw==")%(lehekylg,pordinumber,Username,Password)
+    EPGurl   = base64.b64decode("JXM6JXMveG1sdHYucGhwP3VzZXJuYW1lPSVzJnBhc3N3b3JkPSVz")%(lehekylg,pordinumber,Username,Password)
 
     xbmc.executeJSONRPC(nullPVR)
     xbmc.executebuiltin('SendClick(28)')

@@ -28,7 +28,7 @@ Username=plugintools.get_setting("Username")
 Password=plugintools.get_setting("Password")
 PVRon = plugintools.get_setting("PVRUpdater")
 lehekylg= base64.b64decode("aHR0cDovL2dvdGRhcmsuY29t") #####
-pordinumber=""
+pordinumber="80"
 BASEURL = base64.b64decode("bmFkYQ==")
 AddonRes = xbmc.translatePath(os.path.join('special://home','addons',AddonID,'resources'))
 loginfile = xbmc.translatePath(os.path.join('special://home/eptv.txt'))

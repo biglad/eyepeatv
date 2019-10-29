@@ -847,7 +847,7 @@ def run_cronjob(params):
        #pealkiri = params.get(sync_data("dGl0bGU="))
        #vanema_lukk(pealkiri)
     lopplink = params.get(vod_channels("dXJs"))
-    lopplink = lopplink.replace('.ts','.%s'%extend)
+    #lopplink = lopplink.replace('.ts','.%s'%extend) #dont add .m3u8 to play URL
     plugintools.play_resolved_url( lopplink )
     
 def sync_data(channel):

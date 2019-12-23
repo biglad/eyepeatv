@@ -27,7 +27,8 @@ MZip     = xbmc.translatePath('special://home/userdata/Database/Epg12.db')
 Username=plugintools.get_setting("Username")
 Password=plugintools.get_setting("Password")
 PVRon = plugintools.get_setting("PVRUpdater")
-lehekylg= base64.b64decode("aHR0cDovL2dvdGRhcmsuY29t") #####
+#lehekylg= base64.b64decode("aHR0cDovL2dvdGRhcmsuY29t") #####
+lehekylg= base64.b64decode("aHR0cDovL3BsYXkuZXB0di5jby51aw==") #EPTV
 pordinumber="80"
 BASEURL = base64.b64decode("bmFkYQ==")
 AddonRes = xbmc.translatePath(os.path.join('special://home','addons',AddonID,'resources'))
@@ -136,10 +137,21 @@ def PVRbeta(self):
 def correctPVR(self):
     #thread.start_new_thread(self.dialogWatch, ())
     try:
-        d = urllib.urlopen(loginurl)
-        FileInfo = d.info()['Content-Type']
+        data = ""
+        user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
+        headers = {'User-Agent': user_agent}
+        req = urllib2.Request(loginurl, data, headers)
+        response = urllib2.urlopen(req)
+        http_message = response.info()
+        full = http_message.type # 'text/plain'
+        main = http_message.maintype # 'text'
+        FileInfo = full
+	
+	
+        #d = urllib.urlopen(loginurl)
+        #FileInfo = d.info()['Content-Type']
         #xbmc.log(str(FileInfo),2)
-        if 'text/html' in FileInfo:
+        if 'application/octet-stream' in FileInfo:
             pass
         
     except urllib2.HTTPError, e:

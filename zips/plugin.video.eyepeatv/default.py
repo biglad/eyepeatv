@@ -36,8 +36,8 @@ loginfile = xbmc.translatePath(os.path.join('special://home/eptv.txt'))
 APKS = base64.b64decode("aHR0cDovL2ZhYmlwdHYuY29tL2Fwa3MvbmV3YXBrcy50eHQ=")
 HOME =  xbmc.translatePath('special://home/')
 buildfile = "version.txt"
-lehekylg= base64.b64decode("aHR0cDovL2dvdGRhcmsuY29t") #DM
-#lehekylg= base64.b64decode("aHR0cDovL2VwdHYuY28udWs=") #EPTV
+#lehekylg= base64.b64decode("aHR0cDovL2dvdGRhcmsuY29t") #DM
+lehekylg= base64.b64decode("aHR0cDovL3BsYXkuZXB0di5jby51aw==") #EPTV
 pordinumber="80"
 message = "VU5BVVRIT1JJWkVEIEVESVQgT0YgQURET04h"
 kasutajanimi=plugintools.get_setting("Username")
@@ -56,7 +56,14 @@ LOAD_LIVEchan = os.path.join( plugintools.get_runtime_path() , "resources" , "ar
 #loginurl   = base64.b64decode("JXM6JXMvcGxheS5waHA/dT0lcyZwPSVzJnR5cGU9bTN1X3BsdXMmb3V0cHV0PXRz")%(lehekylg,pordinumber,kasutajanimi,salasona) #EPTV
 loginurl   = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tcGVndHM=")%(lehekylg,pordinumber,kasutajanimi,salasona) #DM
 ##xbmc.log(loginurl,2)
-webversion = urllib2.urlopen('http://eptv.co.uk/version.txt').read()
+url = "https://eptv.co.uk/version.txt"
+data = ""
+user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
+headers = {'User-Agent': user_agent}
+req = urllib2.Request(url, data, headers)
+response = urllib2.urlopen(req)
+webversion = response.read()
+#webversion = urllib2.urlopen('https://eptv.co.uk/version.txt').read()
 
 
 
@@ -145,7 +152,12 @@ def correctPVR():
     #thread.start_new_thread(self.dialogWatch, ())
     dp.update(10)
     try:
-        connection = urllib2.urlopen(loginurl)
+        data = ""
+        user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
+        headers = {'User-Agent': user_agent}
+        req = urllib2.Request(loginurl, data, headers)
+        response = urllib2.urlopen(req)
+        connection = response.read()
         print connection.getcode()
         connection.close()
         #playlist found, user active & login correct, proceed to addon
@@ -368,12 +380,24 @@ def license_check(params):
     exit()
 
 def license_check2(params):
-    d = urllib.urlopen(loginurl)
-    FileInfo = d.info()['Content-Type']
-    #xbmc.log(str(FileInfo),2)
-    if not 'text/html' in FileInfo:
+    data = ""
+    user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
+    headers = {'User-Agent': user_agent}
+    req = urllib2.Request(loginurl, data, headers)
+    response = urllib2.urlopen(req)
+    #d = response.read()
+    #d = urllib2.urlopen(req)
+    #d = urllib.urlopen(loginurl, data, headers)
+    #FileInfo = d.info()['Content-Type']
+    http_message = response.info()
+    full = http_message.type # 'text/plain'
+    main = http_message.maintype # 'text'
+    FileInfo = full
+    xbmc.log(str(full),2)
+    xbmc.log(str(FileInfo),2)
+    if not 'application/octet-stream' in FileInfo:
         dialog.ok('[COLOR white]Invalid Login[/COLOR]','[COLOR white]Incorrect login details found![/COLOR]','[COLOR white]Please check your spelling and case sensitivity[/COLOR]','[COLOR white]Check your password with the team otherwise[/COLOR]')
-        plugintools.open_settings_dialog()
+        exit()      #plugintools.open_settings_dialog()
     else:
         FabAddon = xbmcaddon.Addon('plugin.video.eyepeatv')
         AddonID = 'plugin.video.eyepeatv'

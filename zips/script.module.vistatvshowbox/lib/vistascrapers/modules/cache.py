@@ -17,7 +17,7 @@
 """
 
 # Addon Name: OpenScrapers Module
-# Addon id: script.module.vistatvshowbox
+# Addon id: script.module.openscrapers
 
 import ast
 import hashlib
@@ -277,7 +277,7 @@ def _find_cache_version():
     except Exception as e:
         import xbmc
         print('OpenScrapers Data Path Does not Exist. Creating Folder....')
-        ad_folder = xbmc.translatePath('special://home/userdata/addon_data/script.module.vistatvshowbox')
+        ad_folder = xbmc.translatePath('special://home/userdata/addon_data/script.module.openscrapers')
         os.makedirs(ad_folder)
     try:
         with open(versionFile, 'rb') as fh:
@@ -285,7 +285,7 @@ def _find_cache_version():
     except:
         oldVersion = '0'
     try:
-        curVersion = control.addon('script.module.vistatvshowbox').getAddonInfo('version')
+        curVersion = control.addon('script.module.openscrapers').getAddonInfo('version')
         if oldVersion != curVersion:
             with open(versionFile, 'wb') as fh:
                 fh.write(curVersion)

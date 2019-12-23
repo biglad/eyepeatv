@@ -1,35 +1,14 @@
-# -*- coding: utf-8 -*-
-
-#  ..#######.########.#######.##....#..######..######.########....###...########.#######.########..######.
-#  .##.....#.##.....#.##......###...#.##....#.##....#.##.....#...##.##..##.....#.##......##.....#.##....##
-#  .##.....#.##.....#.##......####..#.##......##......##.....#..##...##.##.....#.##......##.....#.##......
-#  .##.....#.########.######..##.##.#..######.##......########.##.....#.########.######..########..######.
-#  .##.....#.##.......##......##..###.......#.##......##...##..########.##.......##......##...##........##
-#  .##.....#.##.......##......##...##.##....#.##....#.##....##.##.....#.##.......##......##....##.##....##
-#  ..#######.##.......#######.##....#..######..######.##.....#.##.....#.##.......#######.##.....#..######.
-
-'''
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-'''
+# -*- coding: UTF-8 -*-
+# -Cleaned and Checked on 04-15-2019 by JewBMX in Scrubs.
+# Created by Tempest
 
 import re
 import urllib
 import urlparse
 
+from vistascrapers.modules import cfscrape
 from vistascrapers.modules import client
 from vistascrapers.modules import debrid
-from vistascrapers.modules import log_utils
 from vistascrapers.modules import source_utils
 
 
@@ -40,6 +19,7 @@ class source:
         self.domains = ['yifyddl.movie']
         self.base_link = 'https://yifyddl.movie/'
         self.search_link = '/movie/%s'
+        self.scraper = cfscrape.create_scraper()
 
     def movie(self, imdb, title, localtitle, aliases, year):
         try:
@@ -47,8 +27,6 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
-            failure = traceback.format_exc()
-            log_utils.log('YIFYDLL - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -61,12 +39,10 @@ class source:
             query = '%s %s' % (data['title'], data['year'])
             url = self.search_link % urllib.quote(query)
             url = urlparse.urljoin(self.base_link, url).replace('%20', '-')
-            html = client.request(url)
+            html = self.scraper(url).content
             try:
                 results = client.parseDOM(html, 'div', attrs={'class': 'ava1'})
             except:
-                failure = traceback.format_exc()
-                log_utils.log('YIFYDLL - Exception: \n' + str(failure))
                 return sources
             for torrent in results:
                 link = re.findall('a data-torrent-id=".+?" href="(magnet:.+?)" class=".+?" title="(.+?)"', torrent,
@@ -86,11 +62,8 @@ class source:
                     sources.append(
                         {'source': 'Torrent', 'quality': quality, 'language': 'en', 'url': link, 'info': info,
                          'direct': False, 'debridonly': True})
-
             return sources
         except:
-            failure = traceback.format_exc()
-            log_utils.log('YIFYDLL - Exception: \n' + str(failure))
             return
 
     def resolve(self, url):

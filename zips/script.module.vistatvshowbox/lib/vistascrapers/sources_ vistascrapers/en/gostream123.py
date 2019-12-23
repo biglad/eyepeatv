@@ -21,7 +21,8 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['gostream-123.com']
-        self.base_link = 'http://gomovies123.today/'
+        self.base_link = 'http://gostream-123.com'
+
 
     def movie(self, imdb, title, localtitle, aliases, year):
         try:
@@ -30,6 +31,7 @@ class source:
             return url
         except:
             return
+
 
     def sources(self, url, hostDict, hostprDict):
         try:
@@ -43,14 +45,14 @@ class source:
                     quality = source_utils.check_url(url)
                     valid, host = source_utils.is_host_valid(url, hostDict)
                     if valid:
-                        sources.append(
-                            {'source': host, 'quality': quality, 'language': 'en', 'url': url, 'direct': False,
-                             'debridonly': False})
+                        sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': url, 'direct': False, 'debridonly': False}) 
             except:
                 return
         except Exception:
             return
         return sources
 
+
     def resolve(self, url):
         return url
+

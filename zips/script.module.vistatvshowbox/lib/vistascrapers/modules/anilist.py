@@ -17,7 +17,7 @@
 """
 
 # Addon Name: OpenScrapers Module
-# Addon id: script.module.vistatvshowbox
+# Addon id: script.module.openscrapers
 
 import urllib
 import urlparse

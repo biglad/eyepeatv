@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 # -Cleaned and Checked on 05-06-2019 by JewBMX in Scrubs.
-# Created by Tempest
+#Created by Tempest
 
 #  ..#######.########.#######.##....#..######..######.########....###...########.#######.########..######.
 #  .##.....#.##.....#.##......###...#.##....#.##....#.##.....#...##.##..##.....#.##......##.....#.##....##
@@ -25,6 +25,7 @@ class source:
         self.base_link = 'https://www1.alluc.xyz'
         self.search_link = '/?s=%s+%s'
 
+
     def movie(self, imdb, title, localtitle, aliases, year):
         try:
             title = cleantitle.geturl(title).replace('-', '+')
@@ -32,6 +33,7 @@ class source:
             return url
         except:
             return
+
 
     def sources(self, url, hostDict, hostprDict):
         try:
@@ -48,12 +50,12 @@ class source:
                         quality, info = source_utils.get_release_quality(url, url)
                         valid, host = source_utils.is_host_valid(url, hostDict)
                         if valid:
-                            sources.append(
-                                {'source': host, 'quality': quality, 'language': 'en', 'url': url, 'info': info,
-                                 'direct': False, 'debridonly': False})
+                            sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': url, 'info': info, 'direct': False, 'debridonly': False})
                     return sources
         except Exception:
             return
 
+
     def resolve(self, url):
         return url
+

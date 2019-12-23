@@ -1,6 +1,15 @@
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
+
+#  ..#######.########.#######.##....#..######..######.########....###...########.#######.########..######.
+#  .##.....#.##.....#.##......###...#.##....#.##....#.##.....#...##.##..##.....#.##......##.....#.##....##
+#  .##.....#.##.....#.##......####..#.##......##......##.....#..##...##.##.....#.##......##.....#.##......
+#  .##.....#.########.######..##.##.#..######.##......########.##.....#.########.######..########..######.
+#  .##.....#.##.......##......##..###.......#.##......##...##..########.##.......##......##...##........##
+#  .##.....#.##.......##......##...##.##....#.##....#.##....##.##.....#.##.......##......##....##.##....##
+#  ..#######.##.......#######.##....#..######..######.##.....#.##.....#.##.......#######.##.....#..######.
 
 '''
+    OpenScrapers Project
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -17,8 +26,8 @@
 
 import re
 
+from vistascrapers.modules import cfscrape
 from vistascrapers.modules import cleantitle
-from vistascrapers.modules import client
 from vistascrapers.modules import source_utils
 
 
@@ -26,13 +35,14 @@ class source:
     def __init__(self):
         self.priority = 1
         self.language = ['en']
-        self.domains = ['coolmoviezone.io']
-        self.base_link = 'https://coolmoviezone.io'
+        self.domains = ['coolmoviezone.online']
+        self.base_link = 'https://coolmoviezone.online'
+        self.scraper = cfscrape.create_scraper()
 
     def movie(self, imdb, title, localtitle, aliases, year):
         try:
-            mtitle = cleantitle.geturl(title)
-            url = self.base_link + '/%s-%s' % (mtitle, year)
+            title = cleantitle.geturl(title)
+            url = self.base_link + '/%s-%s' % (title, year)
             return url
         except:
             return
@@ -40,18 +50,17 @@ class source:
     def sources(self, url, hostDict, hostprDict):
         try:
             sources = []
-            hostDict = hostprDict + hostDict
-            r = client.request(url)
+            r = self.scraper.get(url).content
             match = re.compile('<td align="center"><strong><a href="(.+?)"').findall(r)
             for url in match:
-                valid, host = source_utils.is_host_valid(url, hostDict)
-                if valid:
-                    quality, info = source_utils.get_release_quality(url, url)
-                    sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': url, 'info': info,
-                                    'direct': False, 'debridonly': False})
-            return sources
+                host = url.split('//')[1].replace('www.', '')
+                host = host.split('/')[0].split('.')[0].title()
+                quality = source_utils.check_sd_url(url)
+                sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': url, 'direct': False,
+                                'debridonly': False})
         except Exception:
-            return sources
+            return
+        return sources
 
     def resolve(self, url):
         return url

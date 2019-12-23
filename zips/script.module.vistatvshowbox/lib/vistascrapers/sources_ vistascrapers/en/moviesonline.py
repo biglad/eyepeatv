@@ -26,8 +26,8 @@
 import base64
 import re
 import urllib
-
 import urlparse
+
 from vistascrapers.modules import cfscrape
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
@@ -38,7 +38,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['moviesonline.gy', 'moviesonline.tl']
-        self.base_link = 'http://moviesonline.tl'
+        self.base_link = 'http://www1.moviesonline.gy'
         self.search_link = '/search-movies/%s.html'
         self.scraper = cfscrape.create_scraper()
 

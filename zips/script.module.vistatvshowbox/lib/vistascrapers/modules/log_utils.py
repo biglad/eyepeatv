@@ -2,7 +2,7 @@
 
 
 # Addon Name: OpenScrapers Module
-# Addon id: script.module.vistatvshowbox
+# Addon id: script.module.openscrapers
 
 import StringIO
 import cProfile

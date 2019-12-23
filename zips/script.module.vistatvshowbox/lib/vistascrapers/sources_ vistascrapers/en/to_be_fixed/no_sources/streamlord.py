@@ -11,8 +11,8 @@
 import re
 import traceback
 import urllib
-
 import urlparse
+
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
 from vistascrapers.modules import control

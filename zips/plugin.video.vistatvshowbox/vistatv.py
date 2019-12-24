@@ -21,12 +21,12 @@
 import urlparse,sys,urllib
 from resources.lib.modules import control
 import xbmcgui
-window = xbmcgui.Window(10025)
-label = xbmcgui.ControlLabel(30, 30, 1000, 50, '[COLOR black]EPTV www.eptv.co.uk[/COLOR]')
-window.addControl(label)
-window = xbmcgui.Window(10025)
-label = xbmcgui.ControlLabel(28, 28, 1000, 50, '[COLOR gold]EPTV[/COLOR] www.eptv.co.uk')
-window.addControl(label)
+#window = xbmcgui.Window(10025)
+#label = xbmcgui.ControlLabel(30, 30, 1000, 50, '[COLOR black]EPTV www.eptv.co.uk[/COLOR]')
+#window.addControl(label)
+#window = xbmcgui.Window(10025)
+#label = xbmcgui.ControlLabel(28, 28, 1000, 50, '[COLOR gold]EPTV[/COLOR] www.eptv.co.uk')
+#window.addControl(label)
 import check4update
 
 

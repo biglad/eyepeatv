@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.vista-iptv-scraper"
-       name="Cathode Ray Tube"
-       version="1.0.14"
+       name="EPTV 24/7"
+       version="1.0.15"
        provider-name="biglad">
    <requires>
     <import addon="xbmc.python" version="2.1.0"/>

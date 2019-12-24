@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.eptv.exit"
+  name="EyePeaTV Exit"
+  version="2.3" 
+  provider-name="EPTV">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.eptv.core" />
+  </requires>
+  <extension point="xbmc.python.script" library="addon.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">VistaTV Menu System</summary>
+    <description lang="en">VistaTV Menu System</description>
+	<disclaimer>VistaTV Menu System</disclaimer>
+  </extension>
+</addon>

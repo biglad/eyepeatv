@@ -6,12 +6,12 @@ import xml.etree.ElementTree as ElementTree
 import unicodedata
 import time
 import string
-window = xbmcgui.Window(10025)
-label = xbmcgui.ControlLabel(30, 30, 1000, 50, '[COLOR black]EPTV www.eptv.co.uk[/COLOR]')
-window.addControl(label)
-window = xbmcgui.Window(10025)
-label = xbmcgui.ControlLabel(28, 28, 1000, 50, '[COLOR gold]EPTV[/COLOR] www.eptv.co.uk')
-window.addControl(label)
+#window = xbmcgui.Window(10025)
+#label = xbmcgui.ControlLabel(30, 30, 1000, 50, '[COLOR black]EPTV www.eptv.co.uk[/COLOR]')
+#window.addControl(label)
+#window = xbmcgui.Window(10025)
+#label = xbmcgui.ControlLabel(28, 28, 1000, 50, '[COLOR gold]EPTV[/COLOR] www.eptv.co.uk')
+#window.addControl(label)
 reload(sys)
 dialog       =  xbmcgui.Dialog()
 sys.setdefaultencoding('utf8')
@@ -151,23 +151,18 @@ def correctPVR():
     AddonTitle = 'EyePeaTV'
     #thread.start_new_thread(self.dialogWatch, ())
     dp.update(10)
-    try:
-        data = ""
-        user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
-        headers = {'User-Agent': user_agent}
-        req = urllib2.Request(loginurl, data, headers)
-        response = urllib2.urlopen(req)
-        connection = response.read()
-        print connection.getcode()
-        connection.close()
-        #playlist found, user active & login correct, proceed to addon
-        pass
-        
-    except urllib2.HTTPError, e:
-        print e.getcode()
-        dialog.ok("[COLOR white]Error[/COLOR]",'[COLOR white]PVR process will not run as your account has expired[/COLOR]',' ','[COLOR white]Please check your account information[/COLOR]')
-        sys.exit(1)
-        xbmc.executebuiltin("Dialog.Close(busydialog)")
+#    try:
+#        connection = urllib2.urlopen(loginurl)
+#        print connection.getcode()
+#        connection.close()
+#        #playlist found, user active & login correct, proceed to addon
+#        pass
+#        
+#    except urllib2.HTTPError, e:
+#        print e.getcode()
+#        dialog.ok("[COLOR white]Error[/COLOR]",'[COLOR white]PVR process will not run as your account has expired[/COLOR]',' ','[COLOR white]Please check your account information[/COLOR]')
+#        sys.exit(1)
+#        xbmc.executebuiltin("Dialog.Close(busydialog)")
         
 
     RAM = int(xbmc.getInfoLabel("System.Memory(total)")[:-2])
@@ -220,15 +215,15 @@ def correctPVR():
     xbmc.executebuiltin("Dialog.Close(busydialog)")
     dp.update(90)
     dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]Kodi Need Restart[/COLOR]',' ','[COLOR white][B]Please Restart Kodi[/B][/COLOR]')
-    xbmc.executebuiltin("ActivateWindow(busydialog)")
-    time.sleep(5)
-    xbmc.executebuiltin("Dialog.Close(busydialog)")
-    xbmc.executebuiltin("Container.Refresh")
-    time.sleep(5)
-    dp.create("[COLOR tomato]EyePeaTV[/COLOR]","All Done Closing Kodi","Please Wait")
-    #dp.update(100)
+    #xbmc.executebuiltin("ActivateWindow(busydialog)")
     #time.sleep(5)
-    dp.close()
+    #xbmc.executebuiltin("Dialog.Close(busydialog)")
+    #xbmc.executebuiltin("Container.Refresh")
+    #time.sleep(5)
+    dp.create("[COLOR tomato]EyePeaTV[/COLOR]","All Done Closing Kodi","Please Wait")
+    dp.update(100)
+    #time.sleep(5)
+    #dp.close()
     #file = open(loginfile, 'w+')	
     #time.sleep(5)
     #dp.close()
@@ -282,11 +277,11 @@ def peamenyy(params):
 
     elif channels != 1 and GoDev.mode != 1:
         plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR orange][B]Step 1. Visit:[/B][/COLOR] [COLOR gold][B]eptv.co.uk[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False )
-        #plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR orange][B]Addon Settings[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
         plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR orange][B]Step 2. Insert Login Credentials[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False )  
         plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjazI="), title="[COLOR orange][B]Step 3. Click Once Login Is Input[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")), folder=False )
         #plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="),  title="[COLOR lightblue][B] Welcome [COLOR gold]"+kasutajanimi+"[/COLOR] [/B][/COLOR] eptv.co.uk", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True ) 
-        #plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="[COLOR orange][B] EyePeaTV LIVE Full List [/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )		
+        #plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="[COLOR orange][B] EyePeaTV LIVE Full List [/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )	
+        #plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR orange][B]Addon Settings[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )		
         ##quit()
     plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="Total Ram: "+str(RAMM)+ "", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
     plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="Free Ram: "+str(RAM)+ "MB", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
@@ -384,7 +379,12 @@ def license_check2(params):
     user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
     headers = {'User-Agent': user_agent}
     req = urllib2.Request(loginurl, data, headers)
-    response = urllib2.urlopen(req)
+    try:
+        response = urllib2.urlopen(req)
+    except:
+        dialog.ok("[COLOR white]Error[/COLOR]",'[COLOR white]Unable to login[/COLOR]','[COLOR white]Please check your account information[/COLOR]','[COLOR white]Support Chat -> https://t.me/eyepeatv[/COLOR]')
+        #xbmc.executebuiltin('ActivateWindow(10025,"plugin://plugin.video.eyepeatv/?action=GoDev.correctPVR",return)')
+        exit()        
     #d = response.read()
     #d = urllib2.urlopen(req)
     #d = urllib.urlopen(loginurl, data, headers)

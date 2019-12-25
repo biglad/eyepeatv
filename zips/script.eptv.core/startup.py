@@ -78,8 +78,8 @@ xbmc.executebuiltin("XBMC.AlarmClock('MTVBCS',XBMC.RunAddon(script.eptv.core),30
 
 
 #xbmc.executebuiltin("Dialog.Close(busydialog)")
-xbmc.executebuiltin('Notification(STARTING UP,[COLOR white]Please Wait.....[/COLOR],15000,special://home/addons/'+AddonID+'/icon.png)')    
-xbmc.executebuiltin("ActivateWindow(10000)")
+#xbmc.executebuiltin('Notification(STARTING UP,[COLOR white]Please Wait.....[/COLOR],15000,special://home/addons/'+AddonID+'/icon.png)')    
+#xbmc.executebuiltin("ActivateWindow(10000)")
 
 #webversion = urllib2.urlopen('http://eptv.co.uk/version.txt').read()
 #webversion = float(webversion)

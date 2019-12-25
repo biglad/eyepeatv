@@ -62,7 +62,7 @@ else: SOURCES = []
 
 def addon_log(string):
     if debug == 'true':
-        xbmc.log("[addon.live.CRT Lists-%s]: %s" %(addon_version, string))
+        xbmc.log("[addon.live.Eye Pea TV Web Scraper Lists-%s]: %s" %(addon_version, string))
 
 
 def makeRequest(url, headers=None):
@@ -78,11 +78,11 @@ def makeRequest(url, headers=None):
             addon_log('URL: '+url)
             if hasattr(e, 'code'):
                 addon_log('We failed with error code - %s.' % e.code)
-                xbmc.executebuiltin("XBMC.Notification(CRT,We failed with error code - "+str(e.code)+",10000,"+icon+")")
+                xbmc.executebuiltin("XBMC.Notification(Eye Pea TV Web Scraper,We failed with error code - "+str(e.code)+",10000,"+icon+")")
             elif hasattr(e, 'reason'):
                 addon_log('We failed to reach a server.')
                 addon_log('Reason: %s' %e.reason)
-                xbmc.executebuiltin("XBMC.Notification(CRT,We failed to reach a server. - "+str(e.reason)+",10000,"+icon+")")
+                xbmc.executebuiltin("XBMC.Notification(Eye Pea TV Web Scraper,We failed to reach a server. - "+str(e.reason)+",10000,"+icon+")")
 
                 
 def SKindex():
@@ -219,7 +219,7 @@ def addSource(url=None):
             b.close()
         addon.setSetting('new_url_source', "")
         addon.setSetting('new_file_source', "")
-        xbmc.executebuiltin("XBMC.Notification(CRT,New source added.,5000,"+icon+")")
+        xbmc.executebuiltin("XBMC.Notification(Eye Pea TV Web Scraper,New source added.,5000,"+icon+")")
         if not url is None:
             if 'xbmcplus.xb.funpic.de' in url:
                 xbmc.executebuiltin("XBMC.Container.Update(%s?mode=14,replace)" %sys.argv[0])
@@ -566,7 +566,7 @@ def SearchChannels():
     ReadChannel = 0
     FoundMatch = 0
     progress = xbmcgui.DialogProgress()
-    progress.create('CRT Searching Please wait',' ')
+    progress.create('Eye Pea TV Web Scraper Searching Please wait',' ')
     
     while FoundChannel <> ReadChannel:
         BaseSearch = List[ReadChannel].strip()
@@ -1949,12 +1949,12 @@ def urlsolver(url):
     try:
         import genesisresolvers
     except Exception:
-        xbmc.executebuiltin("XBMC.Notification(CRT,Please enable Update Commonresolvers to Play in Settings. - ,10000)")
+        xbmc.executebuiltin("XBMC.Notification(Eye Pea TV Web Scraper,Please enable Update Commonresolvers to Play in Settings. - ,10000)")
 
     resolved=genesisresolvers.get(url).result
     if url == resolved or resolved is None:
         #import
-        xbmc.executebuiltin("XBMC.Notification(CRT,Resolving Link ,5000)")
+        xbmc.executebuiltin("XBMC.Notification(Eye Pea TV Web Scraper,Resolving Link ,5000)")
         import urlresolver
         host = urlresolver.HostedMediaFile(url)
         if host:
@@ -2012,12 +2012,12 @@ def play_playlist(name, mu_playlist):
 
 def download_file(name, url):
         if addon.getSetting('save_location') == "":
-            xbmc.executebuiltin("XBMC.Notification('CRT','Choose a location to save files.',15000,"+icon+")")
+            xbmc.executebuiltin("XBMC.Notification('Eye Pea TV Web Scraper','Choose a location to save files.',15000,"+icon+")")
             addon.openSettings()
         params = {'url': url, 'download_path': addon.getSetting('save_location')}
         downloader.download(name, params)
         dialog = xbmcgui.Dialog()
-        ret = dialog.yesno('CRT', 'Do you want to add this file as a source?')
+        ret = dialog.yesno('Eye Pea TV Web Scraper', 'Do you want to add this file as a source?')
         if ret:
             addSource(os.path.join(addon.getSetting('save_location'), name))
 
@@ -2151,7 +2151,7 @@ def search(site_name,search_term=None):
                 SaveToFile(history,page_data,append=True)
                 return url
         else:
-            xbmc.executebuiltin("XBMC.Notification(CRT,No IMDB match found ,7000,"+icon+")")
+            xbmc.executebuiltin("XBMC.Notification(Eye Pea TV Web Scraper,No IMDB match found ,7000,"+icon+")")
 ## Lunatixz PseudoTV feature
 def ascii(string):
     if isinstance(string, basestring):
@@ -2379,7 +2379,7 @@ def opentimer():
     percent = 1
     dp = xbmcgui.DialogProgress()
     #if dp: dp.close()
-    dp.create("[B]CRT[/B]","   Please Wait","Connection to Stream Server","   Please Wait!!!!")
+    dp.create("[B]Eye Pea TV Web Scraper[/B]","Connecting to Arconaitv Servers","Connection Established","Getting Stream Info.......")
     dp.update(percent)        
     while counter < timer:
         if percent > 100: percent = percent-100
@@ -2396,7 +2396,7 @@ def opentimer():
             dp.close()
             break              
     #dp.close()
-    #exit()
+    exit()
 
 
 xbmcplugin.setContent(int(sys.argv[1]), 'movies')
@@ -2576,13 +2576,13 @@ elif mode==17:
     if url:
         playsetresolved(url,name,iconimage,setresolved)
     else:
-        xbmc.executebuiltin("XBMC.Notification(CRT ,Failed to extract regex. - "+"this"+",4000,"+icon+")")
+        xbmc.executebuiltin("XBMC.Notification(Eye Pea TV Web Scraper ,Failed to extract regex. - "+"this"+",4000,"+icon+")")
 elif mode==18:
     addon_log("youtubedl")
     try:
         import youtubedl
     except Exception:
-        xbmc.executebuiltin("XBMC.Notification(CRT,Please [COLOR yellow]install the Youtube Addon[/COLOR] module ,10000,"")")
+        xbmc.executebuiltin("XBMC.Notification(Eye Pea TV Web Scraper,Please [COLOR yellow]install the Youtube Addon[/COLOR] module ,10000,"")")
     stream_url=youtubedl.single_YD(url)
     playsetresolved(stream_url,name,iconimage)
 elif mode==19:

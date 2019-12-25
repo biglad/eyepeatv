@@ -28,7 +28,8 @@ def menuoptions():
 		function9,
 		function10,
 		function11,
-		function12
+		function12,
+		function13
 		)
         
     call = dialog.select('[B][COLOR=yellow]Eye Pea TV Main Menu[/COLOR][/B]', [
@@ -37,13 +38,14 @@ def menuoptions():
     "[B][COLOR=orange]      Eye Pea TV Addon[/COLOR][/B]", #3
     "[B][COLOR=orange]      On Demand[/COLOR][/B]", #4
 	"[B][COLOR=orange]      24/7 Streams[/COLOR][/B]", #5
-	"[B][COLOR=orange]      YouTube[/COLOR][/B]", #6
-	"[B][COLOR=lightblue]      Weather[/COLOR][/B]", #7
-	"[B][COLOR=lightblue]      Player Input Settings[/COLOR][/B]", #8
-	"[B][COLOR=lightblue]      Kodi Settings[/COLOR][/B]", #9
-	"[B][COLOR=lightblue]      File Manager[/COLOR][/B]", #10
-	"[B][COLOR=lightblue]      My Addons[/COLOR][/B]", #11
-	"[B][COLOR=yellow]      Exit Kodi[/COLOR][/B]", #12
+	"[B][COLOR=orange]      My Favourites[/COLOR][/B]", #6
+	"[B][COLOR=orange]      YouTube[/COLOR][/B]", #7
+	"[B][COLOR=lightblue]      Weather[/COLOR][/B]", #8
+	"[B][COLOR=lightblue]      Player Input Settings[/COLOR][/B]", #9
+	"[B][COLOR=lightblue]      Kodi Settings[/COLOR][/B]", #10
+	"[B][COLOR=lightblue]      File Manager[/COLOR][/B]", #11
+	"[B][COLOR=lightblue]      My Addons[/COLOR][/B]", #12
+	"[B][COLOR=yellow]      Exit Kodi[/COLOR][/B]", #13
     ])
     # dialog.selectreturns
     #   0 -> escape pressed
@@ -53,7 +55,7 @@ def menuoptions():
         # esc is not pressed
         if call < 0:
             return
-        func = funcs[call-12]
+        func = funcs[call-13]
         #if myplatform == 'windows':
         #    func = funcs[call-23]
         #dp = xbmcgui.DialogProgress()
@@ -92,31 +94,35 @@ def function5():
     exit()	
 	
 def function6():
-    xbmc.executebuiltin('ActivateWindow(10025,"plugin://plugin.video.youtube",return)')
+    xbmc.executebuiltin('ActivateWindow(10134,"DialogFavourites.xml",return)') #Favourites
     exit()	
 	
 def function7():
-    xbmc.executebuiltin('ActivateWindow(12600,"MyWeather.xml",return)') #Weather
+    xbmc.executebuiltin('ActivateWindow(10025,"plugin://plugin.video.youtube",return)')
     exit()	
 	
 def function8():
+    xbmc.executebuiltin('ActivateWindow(12600,"MyWeather.xml",return)') #Weather
+    exit()	
+	
+def function9():
     dialog.ok('[COLOR white]Eye Pea TV[/COLOR]','[COLOR white]Install/Enable the following addon(s)[/COLOR]','[COLOR white][/COLOR]','[COLOR white]This will improve stream quality[/COLOR]')
     xbmc.executebuiltin('ActivateWindow(10040,"addons://repository.xbmc.org/kodi.inputstream",return)')
     exit()	
 	
-def function9():
+def function10():
     xbmc.executebuiltin('ActivateWindow(10004,"Settings.xml",return)') #Main Settings
     exit()	
 	
-def function10():
+def function11():
     xbmc.executebuiltin('ActivateWindow(10003,"FileManager.xml",return)') #FileManager
     exit()
 	
-def function11():
+def function12():
     xbmc.executebuiltin('ActivateWindow(10040,"AddonBrowser.xml",return)') #Addons
     exit()
 	
-def function12():
+def function13():
     xbmc.executebuiltin('ActivateWindow(10111,"DialogButtonMenu.xml",return)') #Exit
     exit()
 	

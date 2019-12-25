@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.vista-iptv-scraper"
        name="EPTV 24/7"
-       version="1.0.16"
+       version="1.0.17"
        provider-name="biglad">
    <requires>
     <import addon="xbmc.python" version="2.1.0"/>

@@ -247,6 +247,7 @@ def peamenyy(params):
     #if os.path.isfile(loginfile):
         plugintools.log(pnimi+vod_channels("TG9naW4gU3VjY2Vzcw=="))
         plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="),  title="[COLOR lightblue][B] Welcome [COLOR gold]"+kasutajanimi+"[/COLOR] [/B][/COLOR] eptv.co.uk", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
+        plugintools.add_item( action=vod_channels("ZXhlY3V0ZV9haW5mbw=="),   title="[COLOR yellow][B]Show Account Information[/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bXlhY2MucG5n")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
         plugintools.add_item( action=vod_channels("c2VjdXJpdHlfY2hlY2s="),  title="[COLOR orange][B] EyePeaTV LIVE Full List [/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bGl2ZXR2LnBuZw==")) , fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
         plugintools.add_item( action=vod_channels("VFZzZWFyY2g="),   title="[COLOR gold][B]Live EyePeaTV Search[/B][/COLOR] (Enter tv show or movie name)" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("U2VhcmNoLWljb24ucG5n")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
         #plugintools.add_item( action=vod_channels("ZGV0ZWN0X21vZGlmaWNhdGlvbg=="),   title="[COLOR deepskyblue][B]MOVIES[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("dm9kLnBuZw==")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
@@ -272,6 +273,7 @@ def peamenyy(params):
         common.addItem('[COLOR white][B]Update Addons & Repos[/B][/COLOR]',BASEURL,26,GoDev.Images + 'logo.png',FANART,'')
         plugintools.add_item( action=vod_channels("bWFpbnRNZW51"),   title="[COLOR white][B]Maintenance Tools[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
         plugintools.add_item( action=vod_channels("VG9vbHM="),   title="[COLOR pink][B]Tools & Settings[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=True )
+        plugintools.add_item( action=vod_channels("bGljZW5zZV9jaGVjaw=="), title="[COLOR orange][B]Addon Settings[/B][/COLOR]" , thumbnail=os.path.join(LOAD_LIVE,vod_channels("aWNvbi5wbmc=")), fanart=os.path.join(LOAD_LIVE,vod_channels("YmFja2dyb3VuZC5wbmc=")) ,  folder=False )
         plugintools.addItem('[COLOR orange][B]Install or Re-Install EyePeaTV Build[/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
         #plugintools.addItem('[COLOR gold][B]EPTV News[/B][/COLOR]','speed',3372,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
 
@@ -792,8 +794,10 @@ def TVsearch(params):
         if searchterm in kava:
             if pilt:
                 plugintools.add_item( action=sync_data("cnVuX2Nyb25qb2I="), title=shou , url=pony, thumbnail=pilt, plot=kokku, fanart=os.path.join(LOAD_LIVE,sync_data("dGhlYXRlci5qcGc=")), extra="", isPlayable=True, folder=False )
+
             else:
                 plugintools.add_item( action=sync_data("cnVuX2Nyb25qb2I="), title=shou , url=pony, thumbnail=os.path.join(LOAD_LIVE,vod_channels("YWxsY2hhbm5lbHMucG5n")) , plot=kokku, fanart=os.path.join(LOAD_LIVE,sync_data("dGhlYXRlci5qcGc=")) , extra="", isPlayable=True, folder=False )
+    return    
 
 def get_myaccount(params):
     if vanemalukk == "true":
@@ -929,7 +933,15 @@ def execute_ainfo(params):
             host = i
     except:
         host = None
-    data = json.load(urllib2.urlopen(PlayerAPI))
+    url = PlayerAPI
+    data = ""
+    user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
+    headers = {'User-Agent': user_agent}
+    req = urllib2.Request(url, data, headers)
+    response = json.load(urllib2.urlopen(req))
+    #webversion = response.read()
+    data = response
+    #data = json.load(urllib2.urlopen(PlayerAPI))
     today = datetime.date.today()
     x=data['user_info']
     Username = x['username']
@@ -946,13 +958,14 @@ def execute_ainfo(params):
     plugintools.add_item( action="",   title="[COLOR white][B]User: "+Username+"[/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bXlhY2MucG5n")) , fanart=os.path.join(LOAD_LIVE,sync_data("dGhlYXRlci5qcGc=")) , folder=False )
     plugintools.add_item( action="",   title="[COLOR white][B]Status: "+Status+"[/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bXlhY2MucG5n")) , fanart=os.path.join(LOAD_LIVE,sync_data("dGhlYXRlci5qcGc=")) , folder=False )
     plugintools.add_item( action="",   title="[COLOR white][B]Created: "+Created+"[/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bXlhY2MucG5n")) , fanart=os.path.join(LOAD_LIVE,sync_data("dGhlYXRlci5qcGc=")) , folder=False )
+    plugintools.add_item( action="",   title="[COLOR white][B]Expires: "+Expired+"[/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bXlhY2MucG5n")) , fanart=os.path.join(LOAD_LIVE,sync_data("dGhlYXRlci5qcGc=")) , folder=False )
     plugintools.add_item( action="",   title="[COLOR white][B]Max connections: "+Max+"[/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bXlhY2MucG5n")) , fanart=os.path.join(LOAD_LIVE,sync_data("dGhlYXRlci5qcGc=")) , folder=False )
     plugintools.add_item( action="",   title="[COLOR white][B]Active connections: "+Current+"[/B][/COLOR]", thumbnail=os.path.join(LOAD_LIVE,vod_channels("bXlhY2MucG5n")) , fanart=os.path.join(LOAD_LIVE,sync_data("dGhlYXRlci5qcGc=")) , folder=False )
 
     plugintools.set_view( plugintools.LIST )
 def vanema_lukk(name):
         plugintools.log(pnimi+sync_data("UGFyZW50YWwgbG9jayA="))
-        a = 'XXX', 'Adult', 'Adults','ADULT','ADULTS','adult','adults','Porn','PORN','porn','Porn','xxx'
+        a = 'Adult XXX', 'XXX', 'Adult', 'Adults','ADULT','ADULTS','adult','adults','Porn','PORN','porn','Porn','xxx'
         if any(s in name for s in a):
            xbmc.executebuiltin((u'XBMC.Notification("Parental Lock", "Channels may contain adult content", 2000)'))
            text = plugintools.keyboard_input(default_text="", title=get_live("UGFyZW50YWwgbG9jaw=="))

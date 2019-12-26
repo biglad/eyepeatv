@@ -38,18 +38,18 @@ window.addControl(label)
 
 
 import os.path
-#if os.path.exists(buildv):
-#    with open(buildv, 'r') as myfile:
-#        data = myfile.read()
-#        buildv = float(data)
-#else:
-#    try:
-#        fo = open("0.0", "w")
-#        fo.write(buildv);
-#        fo.close()
-#        buildv = "0.0"
-#    except:
-#        buildv = "0.0"
+if os.path.exists(buildv):
+    with open(buildv, 'r') as myfile:
+        data = myfile.read()
+        buildv = float(data)
+else:
+    try:
+        fo = open("0.0", "w")
+        fo.write(buildv);
+        fo.close()
+        buildv = "0.0"
+    except:
+        buildv = "0.0"
         
         
         
@@ -66,10 +66,11 @@ AddonID = 'script.eptv.core'
 
 KODIV          = float(xbmc.getInfoLabel("System.BuildVersion")[:4])
 
-
+kupdatet = ""
 if KODIV < 18.5:
     dialog = xbmcgui.Dialog()
     dialog.ok("[COLOR=white][B]EPTV[/COLOR][/B]","Your Kodi is needs updating","Your Version = "+str(KODIV),"Press OK to Continue and udpate ASAP")
+    kupdatet = "[COLOR gold]  UPDATE KODI ASAP!!![/COLOR]"
 
 xbmc.executebuiltin('xbmc.UpdateAddonRepos')
 xbmc.executebuiltin('xbmc.UpdateLocalAddons')
@@ -92,7 +93,12 @@ req = urllib2.Request(url, data, headers)
 response = urllib2.urlopen(req)
 webversion = float(response.read())
 #webversion = float(webversion)
-buildv = webversion
+#buildv = webversion
+
+
+etext = ""
+if buildv < webversion:
+    etext = "[COLOR gold]  UPDATE BUILD ASAP!!![/COLOR]"
 
 #loaded = urllib2.urlopen('http://eptv.co.uk/loaded.php').read()
 url = "http://eptv.co.uk/loaded.php"
@@ -104,7 +110,7 @@ response = urllib2.urlopen(req)
 loaded = response.read()
 #loaded = int(loaded)
 
-buildinfo1 = "[COLOR black]Your Build Version : "+str(buildv)+" - Latest Version : "+str(webversion)+"[/COLOR]"
+buildinfo1 = "[COLOR black]Your Build Version : "+str(buildv)+" - Latest Version : "+str(webversion)+"[/COLOR]"+etext
 buildinfo2 = "[COLOR darkgrey]Your Build Version : "+str(buildv)+" - Latest Version : "+str(webversion)+"[/COLOR]"
 buildinfo3 = "[COLOR black]Total Build Loads : "+str(loaded)+"[/COLOR]"
 buildinfo4 = "[COLOR darkgrey]Total Build Loads : "+str(loaded)+"[/COLOR]"
@@ -118,7 +124,7 @@ window.addControl(label)
 
 
 window = xbmcgui.Window(10000)
-label = xbmcgui.ControlLabel(86, 630, 1000, 50, "[COLOR black]Kodi Version : "+str(KODIV)+"[/COLOR]")
+label = xbmcgui.ControlLabel(86, 630, 1000, 50, "[COLOR black]Kodi Version : "+str(KODIV)+"[/COLOR]"+kupdatet)
 window.addControl(label)
 window = xbmcgui.Window(10000)
 label = xbmcgui.ControlLabel(84, 628, 1000, 50, "[COLOR darkgrey]Kodi Version : "+str(KODIV)+"[/COLOR]")

@@ -834,10 +834,12 @@ ffmpeg simply copies the stream into a transport stream container.
 
 <addon id="script.eptvmenu"
   name="EPTV Menu"
-  version="1.0.05"
+  version="1.0.06"
   provider-name="EPTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="repository.eyepeatv" />
+	<import addon="script.eptv.core" />
   </requires>
   <extension point="xbmc.python.script" library="addon.py">
     <provides>executable</provides>

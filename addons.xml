@@ -223,22 +223,21 @@ ffmpeg simply copies the stream into a transport stream container.
 
 <addon id="plugin.video.live.streamspro"
        name="LiveStreamsPro"
-       version="2.8.1"
+       version="2.8.3"
        provider-name="Shani">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
     <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4" />
     <import addon="script.module.requests" />
     <import addon="script.module.httplib2" />
     <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
     <import addon="script.module.youtube.dl" optional="true"/>
     <import addon="plugin.video.youtube" optional="true" />
-    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.resolveurl" optional="true"/>
     <import addon="script.module.simplejson" />
-     <import addon="script.module.livestreamer" optional="true"/>
-     <import addon="script.module.pyamf" optional="true"/>
+    <import addon="script.module.livestreamer" optional="true"/>
+    <import addon="script.module.pyamf" optional="true"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>video</provides>
@@ -246,7 +245,7 @@ ffmpeg simply copies the stream into a transport stream container.
 
 
   <extension point="xbmc.addon.metadata">
-    <summary>livestreamspro- shamelessly forked from livestreams but added many thinks</summary>
+    <summary>livestreamspro- shamelessly forked from livestreams but added many things</summary>
     <description>
         In addition to what livestreams allowed you to do, you can now,
         1. call regex in regex,
@@ -329,6 +328,44 @@ ffmpeg simply copies the stream into a transport stream container.
     <description lang="en">IPTV and VoD Based of livehub</description>
 	<disclaimer lang="en"></disclaimer>
     <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.now_music" name="[COLOR blue]N[/COLOR]ow [COLOR red]M[/COLOR]usic"	version="2.1.8"	provider-name="Pulse Builds">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="plugin.video.youtube" version="5.0.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="pulse.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Now Thats What I Call Music Collection</summary>
+    <description lang="en">All Content In This Addon Is Freely Available On The Internet</description>
+    <disclaimer lang="en">Please Use Genuine PULSE Addons From Genuine Sources</disclaimer>
+    <platform>all</platform>
+    <forum>n/a</forum>
+    <website>n/a</website>
+  </extension>
+</addon>
+
+<addon id="plugin.video.now_music_usa" name="[COLOR blue]N[/COLOR]ow [COLOR red]M[/COLOR]usic [COLOR white]U[/COLOR]SA"	version="1.0.8"	provider-name="Pulse Builds">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="plugin.video.youtube" version="5.0.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="pulse.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Now Thats What I Call Music USA Collection</summary>
+    <description lang="en">All Content In This Addon Is Freely Available On The Internet</description>
+    <disclaimer lang="en">Please Use Genuine PULSE BUILDS And Addons From Genuine Sources</disclaimer>
+    <platform>all</platform>
+    <forum>n/a</forum>
+    <website>n/a</website>
   </extension>
 </addon>
 
@@ -908,6 +945,39 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 	</extension>
 </addon>
 
+<addon id="script.favourites" name="Favourites script" version="8.0.8" provider-name="ronie|`Black">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+	</requires>
+	<extension point="xbmc.python.library" library="default.py"/>
+	<extension point="xbmc.addon.metadata">
+		<language/>
+		<summary>Favourites script</summary>
+		<description>Fetches item from your xbmc favourites to populate Home menu/submenu with custom buttons.</description>
+		<disclaimer>Needs skin support for it to be used properly</disclaimer>
+		<platform>all</platform>
+		<forum>http://forum.xbmc.org/showthread.php?tid=114671</forum>
+		<source>https://code.google.com/p/ronie/source/</source>
+	</extension>
+</addon>
+
+<addon id="script.module.addon.signals"
+    name="Addon Signals"
+    version="0.0.5"
+    provider-name="Rick Phillips (ruuk)">
+    <requires>
+        <import addon="xbmc.python" version="2.14.0" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Inter-addon signalling</summary>
+        <description lang="en">Provides signal/slot mechanism for inter-addon communication</description>
+        <platform>all</platform>
+        <license>LGPL-2.1-only</license>
+        <source>https://github.com/ruuk/script.module.addon.signals</source>
+    </extension>
+</addon>
+
 <addon id="script.module.aliunde.maintenance.wizard" name="[COLOR aqua]EyePeaTV Maintenance Wizard[/COLOR]" version="18.0.10" provider-name="Aliunde+Biglad">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -924,6 +994,27 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
   </extension>
 </addon>
 
+<addon id="script.module.cherrypy"
+       name="CherryPy Kodi module"
+       version="11.0.1"
+       provider-name="marcelveldt, CherryPy Team">
+    <requires>
+        <import addon="xbmc.python" version="2.24.0"/>
+        <import addon="script.module.six" version="1.9.0"/>
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+        <summary>CherryPy webserver packaged as Kodi module</summary>
+        <description>CherryPy is a pythonic, object-oriented web framework
+            CherryPy allows developers to build web applications in much the same way they would build any other object-oriented Python program. This results in smaller source code developed in less time.
+            CherryPy is now more than ten years old and it is has proven to be very fast and stable. It is being used in production by many sites, from the simplest to the most demanding.
+        </description>
+        <license>BSD</license>
+        <source>https://github.com/marcelveldt/script.module.cherrypy</source>
+        <platform>all</platform>
+    </extension>
+</addon>
+
 <addon id="script.module.echo" name="Echo Libraries" version="1.00.003" provider-name="Echo Coder">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
@@ -934,6 +1025,25 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 		<platform>all</platform>
 		<summary lang="en">Forked from TK Norris Shared Module. Reusable Modules used by several of Echo's addons</summary>
 	</extension>
+</addon>
+
+<addon id="script.module.futures"
+       name="futures"
+       version="2.2.0"
+       provider-name="Brian Quinlan">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.module"
+             library="lib"/>
+  <extension point="xbmc.addon.metadata">
+    <summary>A futures implementation for Python</summary>
+    <description>Backport of the concurrent.futures package from Python 3.2</description>
+    <platform>all</platform>
+    <license>BSD</license>
+    <source>https://code.google.com/p/pythonfutures/source/browse</source>
+    <website>https://code.google.com/p/pythonfutures</website>
+  </extension>
 </addon>
 
 <addon id="script.module.js2py" name="js2py" version="0.6.6" provider-name="Addons4Kodi">
@@ -992,6 +1102,59 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
     <platform>all</platform>
     <summary lang="en">Resolve common live video host URL's to be playable in XBMC/Kodi + find links embeded in sites.</summary>
     <description lang="en"></description>
+  </extension>
+</addon>
+
+<addon id="script.module.metadatautils"
+       name="Metadata and Artwork module"
+       version="1.0.19"
+       provider-name="marcelveldt">
+    <requires>
+        <import addon="xbmc.python" version="2.24.0"/>
+        <import addon="script.module.requests" version="2.3.0"/>
+        <import addon="script.module.beautifulsoup" version="3.0.8" />
+        <import addon="script.module.thetvdb" version="0.0.1" />
+        <import addon="script.module.musicbrainz" version="0.0.1" />
+        <import addon="script.module.simplecache" version="1.0.0"/>
+        <import addon="script.module.arrow" version="0.6.0"/>
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+        <summary>Metadata and artwork from common sources like TMDB, IMDB, TADB and fanart.tv </summary>
+        <description>
+            The metadata and artwork module for Kodi provides rich metadata, including artwork for
+            various metatypes by scraping (and caching) this information from sites like TMDB, musicbrainz and fanart.tv.[CR][CR]
+            This product uses the TMDb API but is not endorsed or certified by TMDb
+        </description>
+        <license>Apache 2.0</license>
+        <source>https://github.com/marcelveldt/script.module.metadatautils</source>
+        <platform>all</platform>
+    </extension>
+</addon>
+
+<addon id="script.module.metahandler"
+     name="metahandler"
+     version="3.99.02"
+     provider-name="Eldorado">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0" />
+    <import addon="script.module.simplejson" version="3.3.0"/>
+    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="script.module.myconnpy" version="1.1.6"/>
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.python.pluginsource" library="lib/default.py" />
+  <extension point="xbmc.addon.metadata">
+      <platform>all</platform>
+      <summary lang="en">Downloads Artwork for TV shows, Movies and Music videos for addons and stores them in a local SQLITE database</summary>
+      <description lang="en">Queries, stores, and returns metadata for TV shows, Movies and Musicvideos. [CR]Sources:[CR]www.thetvdb.com[CR]www.themoviedb.org[CR]www.imdb.com[CR]www.omdbapi.com[CR]This product uses the TMDb API but is not endorsed or certified by TMDb.</description>
+      <disclaimer lang="en"></disclaimer>
+      <language></language>
+      <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+      <forum></forum>
+      <website></website>
+      <email></email>
+      <source></source>
   </extension>
 </addon>
 
@@ -1190,6 +1353,27 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
   </extension>
 </addon>
 
+<addon id="script.module.thetvdb"
+       name="The TVDB API v2"
+       version="1.0.27"
+       provider-name="marcelveldt">
+    <requires>
+        <import addon="xbmc.python" version="2.24.0"/>
+        <import addon="script.module.requests" version="2.3.0"/>
+        <import addon="script.module.simplejson" version="3.3.0"/>
+        <import addon="script.module.simplecache" version="1.0.0"/>
+        <import addon="script.module.arrow" version="0.6.0"/>
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+        <summary>TheTVDB API v2 python module for Kodi</summary>
+        <description>TheTVDB API v2 python module for Kodi</description>
+        <license>Apache 2.0</license>
+        <source>https://github.com/marcelveldt/script.module.thetvdb</source>
+        <platform>all</platform>
+    </extension>
+</addon>
+
 <addon id="script.module.tulip" name="Tulip Routine Libraries" version="2.3.5" provider-name="Twilight0">
     <requires>
         <import addon="xbmc.python" version="2.24.0"/>
@@ -1267,7 +1451,7 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 	</extension>
 </addon>
 
-<addon id="script.module.vistatvshowbox" name="Requisition Scraper" version="20.0.83" provider-name="Biglad">
+<addon id="script.module.vistatvshowbox" name="Requisition Scraper" version="20.0.84" provider-name="Biglad">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.beautifulsoup4"/>
@@ -1288,6 +1472,29 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 		<description>...</description>
 		<platform>all</platform>
 	</extension>
+</addon>
+
+<addon id="script.module.youtube.dl" name="youtube-dl Control" version="19.912.1" provider-name="Rick Phillips (ruuk)">
+    <requires>
+        <import addon="xbmc.python" version="2.14.0" />
+        <import addon="script.module.addon.signals" version="0.0.1"/>
+    </requires>
+    <extension point="xbmc.python.script" library="control.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en">Module providing access to youtube-dl video stream extraction</summary>
+        <description lang="en">Module providing access to youtube-dl video stream extraction for hundreds of sites. Version is based on youtube-dl date version: YY.MDD.V where V is the addon specific sub-version. Also provides downloading with the option for background downloading with a queue and queue manager.</description>
+        <summary lang="el">Βοηθητική μονάδα πρόσβασης στους επιλυτές youtube-dl για την εξαγωγή ροών βίντεο</summary>
+        <description lang="el">Βοηθητική μονάδα πρόσβασης στους επιλυτές youtube-dl για την εξαγωγή ροών βίντεο από εκατοντάδες ιστότοπους. Η έκδοση βασίζεται στην έκδοση ημερομηνίας του youtube-dl: EE.MHH.EK όπου ΕΚ η υπό-έκδοση συγκεκριμένα για το πρόσθετο. Επιπλέον δίνει δυνατότητα μεταφόρτωσης στο παρασκήνιο με ουρά και διαχειριστή αυτής.</description>
+        <summary lang="es">Módulo que proporciona acceso a YouTube-dl para la extracción de flujos de video</summary>
+        <description lang="es">Módulo que proporciona acceso a YouTube-dl para la extracción de flujos de video de cientos de sitios. La versión está basada en la versión de fecha youtube-dl: YY.MDD.V donde V es la subversión específica del complemento. También permite descargas con la opción de descarga en segundo plano con una cola y un administrador de colas.</description>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+        <forum>https://forum.kodi.tv/showthread.php?tid=200877</forum>
+        <source>https://github.com/ruuk/script.module.youtube.dl</source>
+    </extension>
 </addon>
 
 <addon id="script.program.v-wizard"
@@ -1325,6 +1532,72 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
     <description lang="en">VistaTV</description>
 	<disclaimer>VistaTV</disclaimer>
   </extension>
+</addon>
+
+<addon id="script.skinshortcuts" name="Skin Shortcuts" version="1.0.18" provider-name="BigNoid,marcelveldt">
+	<requires>
+		<import addon="xbmc.python" version="2.20.0"/>
+		<import addon="script.module.simplejson" version="3.3.0"/>
+		<import addon="script.module.unidecode" version="0.4.14"/>
+	</requires>
+	<extension point="xbmc.python.library" library="default.py"/>
+	<extension point="xbmc.addon.metadata">
+		<news>Template improvements and bug fixes</news>
+		<description lang="bg">Добавка за облици, която осигурява просто управление и списък с потребителски преки пътища (изисква поддръжка от облика)</description>
+		<description lang="de">Add-on für Skins für einfache Bearbeitung und Auflistung von benutzerdefinierten Verknüpfungen (erfordert Skin-Unterstützung)</description>
+		<description lang="el">Πρόσθετο για κελύφη, το οποίο παρέχει έναν απλό τρόπο διαχείρισης και κατηγοριοποίησης των συντομεύσεων του χρήστη (πρέπει να υποστηρίζεται από το κέλυφος)</description>
+		<description lang="en">Add-on for skins to provide simple managing and listing of user shortcuts (requires skin support)</description>
+		<description lang="en_NZ">Add-on for skins to provide simple managing and listing of user shortcuts (requires skin support)</description>
+		<description lang="en_US">Add-on for skins to provide simple managing and listing of user shortcuts (requires skin support)</description>
+		<description lang="es">Complemento para las pieles para proporcionar una gestión sencilla y lista de atajos de usuario (requiere que la piel lo soporte)</description>
+		<description lang="fr_CA">Addiciel pour habillages qui fournit une gestion simple et un listage des raccourcis utilisateurs (exige la prise en charge de l'habillage)</description>
+		<description lang="gl">Complemento que fornece aos temas dunha xestión sinxela dos atallos dos usuarios (require soporte do tema)</description>
+		<description lang="hr">Dodatak za presvlake koja omogućava jednostavno upravljanje i prikaz korisnikovih prečaca (zahtijeva podršku presvlake) </description>
+		<description lang="hu">Felszín kiegészítő amely könnyen kezelhetővé és listázhatóvá teszi a felhasználói parancsikonokat (Felszín támogatás szükséges)</description>
+		<description lang="is">Viðbót fyrir viðmót til að halda utan um flýtivísa og fá yfirlit yfir þá (þarfnast stuðnings frá viðmóti)</description>
+		<description lang="it">Add-on per gli skin per consentire un facile gestione ed elenco delle scorciatoie utente (richiede che lo skin lo supporti)</description>
+		<description lang="lt">Priedas teminėms išvaizdoms, kad jos turėtų galimybę paprastai tvarkyti ir atvaizduoti vartotojo  sukurtas nuorodas (reikalingas teminės išvaizdos palaikymas)</description>
+		<description lang="nl">Add-on voor skins om te voorzien in het eenvoudig beheren en sorteren van gebruikers snelkoppelingen (vereist skin ondersteuning)</description>
+		<description lang="no">Tillegg for enkel administrering og opplisting av bruker-snarveier i tema (krever støtte i tema)</description>
+		<description lang="pl">Wtyczka dla skór, która zapewnia proste zarządzanie i tworzenie list skrótów użytkownika (wymaga wsparcia skóry)</description>
+		<description lang="pt">Um add-on que permite que os temas tenham recursos simples para gerir e listar atalhos de utilizadores (é necessário suporte do tema)</description>
+		<description lang="pt_BR">Add-on para que as skins possam prover gerenciamento de lista de atalhos para o menu principal (requer suporte da skin)</description>
+		<description lang="ru">Дополнение для обложек, предоставляющее простой способ управления и список пользовательских ярлыков (требуется поддержка обложкой)</description>
+		<description lang="sv">Skinntillägg som tillhandahåller enkel hantering och översikt av användargenvägar (om skinnet stöder det)</description>
+		<description lang="zh">插件为皮肤提供了简单的管理和用户连接方式列表 (需要皮肤支持)</description>
+		<language></language>
+		<platform>all</platform>
+		<license>GNU General Public License, v2</license>
+		<forum>http://forum.xbmc.org/showthread.php?tid=178294</forum>
+		<website></website>
+		<email></email>
+		<source>https://github.com/BigNoid/script.skinshortcuts</source>
+	<assets>
+		<icon>icon.png</icon>
+		<fanart>fanart.jpg</fanart>
+	</assets>
+	</extension>
+</addon>
+
+<addon id="script.toolbox" name="ToolBox Script" version="1.1.2" provider-name="phil65">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+		<import addon="script.module.simplejson" version="2.0.10"/>
+		<import addon="script.module.pil" version="1.1.7"/>
+	</requires>
+	<extension point="xbmc.python.script" library="default.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<language/>
+		<summary lang="en">ToolBox Script</summary>
+		<description lang="en">This script exposes several python functions to the UI engine as well as some other stuff to make life for skinners a bit easier.</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE Version 2, June 1991</license>
+		<forum>http://forum.kodi.tv/showthread.php?tid=207618</forum>
+		<source>https://github.com/phil65/script.toolbox</source>
+		<email>phil65@kodi.tv</email>
+	</extension>
 </addon>
 
 <addon id="script.trakt" name="Trakt" version="3.2.4" provider-name="Trakt.tv, Razzeee">

@@ -1,3 +1,13 @@
+[B]Version 2.8.3[/B]
+changes by gujal
+Add <inputstream> tag to use with Inputstream addon on Kodi 17+
+Supports multibitrate hls, mpeg-dash and MS Smoothstream.
+
+[B]Version 2.8.2[/B]
+changes by gujal
+cloudflare function updated
+removed defunct hostile addons check
+
 [B]Version 2.8.1[/B]
 regex in title and thumbnail BUGFIX revised again
 [B]Version 2.8.0[/B]

@@ -9,6 +9,7 @@
 #  ..#######.##.......#######.##....#..######..######.##.....#.##.....#.##.......#######.##.....#..######.
 
 '''
+    OpenScrapers Project
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -40,6 +41,7 @@ class source:
         self.base_link = 'http://www.ddlspot.com/'
         self.search_link = 'search/?q=%s&m=1&x=0&y=0'
 
+
     def movie(self, imdb, title, localtitle, aliases, year):
         try:
             url = {'imdb': imdb, 'title': title, 'year': year}
@@ -48,6 +50,7 @@ class source:
         except:
             return
 
+
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
         try:
             url = {'imdb': imdb, 'tvdb': tvdb, 'tvshowtitle': tvshowtitle, 'year': year}
@@ -55,6 +58,7 @@ class source:
             return url
         except:
             return
+
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
         try:
@@ -68,27 +72,36 @@ class source:
         except:
             return
 
+
     def sources(self, url, hostDict, hostprDict):
         try:
             sources = []
 
-            if url is None: return sources
+            if url is None:
+                return sources
 
-            if debrid.status() is False: raise Exception()
+            if debrid.status() is False:
+                raise Exception()
+
+            hostDict = hostprDict + hostDict
 
             data = urlparse.parse_qs(url)
             data = dict([(i, data[i][0]) if data[i] else (i, '') for i in data])
+
             title = data['tvshowtitle'] if 'tvshowtitle' in data else data['title']
+            title = title.replace('&', 'and').replace('Special Victims Unit', 'SVU')
+
             hdlr = 'S%02dE%02d' % (int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else data['year']
 
-            query = '%s S%02dE%02d' % (
-                data['tvshowtitle'], int(data['season']), int(data['episode'])) \
-                if 'tvshowtitle' in data else '%s %s' % (data['title'], data['year'])
+            query = '%s %s' % (title, hdlr)
+            query = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', '', query)
 
             url = self.search_link % urllib.quote_plus(query)
             url = urlparse.urljoin(self.base_link, url).replace('-', '+')
+            # log_utils.log('url = %s' % url, log_utils.LOGDEBUG)
 
             r = client.request(url)
+
             if r is None and 'tvshowtitle' in data:
                 season = re.search('S(.*?)E', hdlr)
                 season = season.group(1)
@@ -96,13 +109,12 @@ class source:
 
                 r = client.request(url)
 
-            for loopCount in range(0,2):
+            for loopCount in range(0, 2):
                 if loopCount == 1 or (r is None and 'tvshowtitle' in data):
-
                     r = client.request(url)
 
                 posts = client.parseDOM(r, "table", attrs={"class": "download"})
-                hostDict = hostprDict + hostDict
+
                 items = []
                 for post in posts:
                     try:
@@ -114,6 +126,7 @@ class source:
                             except:
                                 pass
                     except:
+                        source_utils.scraper_error('DDLSPOT')
                         pass
 
                 if len(items) > 0:
@@ -127,22 +140,28 @@ class source:
                     i = self.base_link + i
                     r = client.request(i)
                     u = client.parseDOM(r, "div", attrs={"class": "dl-links"})
+
                     for t in u:
                         r = re.compile('a href=".+?" rel=".+?">(.+?)<').findall(t)
+
                         for url in r:
                             if any(x in url for x in ['.rar', '.zip', '.iso']):
-                                raise Exception()
+                                continue
+
                             quality, info = source_utils.get_release_quality(url)
+
                             valid, host = source_utils.is_host_valid(url, hostDict)
-                            sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': url, 'info': info, 'direct': False, 'debridonly': True})
+
+                            sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': url,
+                                                         'info': info, 'direct': False, 'debridonly': True})
 
                 except:
+                    source_utils.scraper_error('DDLSPOT')
                     pass
-            check = [i for i in sources if not i['quality'] == 'CAM']
-            if check: sources = check
 
             return sources
         except:
+            source_utils.scraper_error('DDLSPOT')
             return
 
     def resolve(self, url):

@@ -1,5 +1,5 @@
 import sys,traceback,urllib2,re, urllib,xbmc
-def createCookie(url,cj=None,agent='Mozilla/5.0 (Windows NT 6.1; rv:32.0) Gecko/20100101 Firefox/32.0'):
+def createCookie(url,cj=None,agent='Mozilla/5.0 (Windows NT 6.1; rv:14.0) Gecko/20100101 Firefox/14.0.1'):
     urlData=''
     try:
         import urlparse,cookielib,urllib2
@@ -23,26 +23,38 @@ def createCookie(url,cj=None,agent='Mozilla/5.0 (Windows NT 6.1; rv:32.0) Gecko/
         opener = urllib2.build_opener(NoRedirection, urllib2.HTTPCookieProcessor(cj))
         opener.addheaders = [('User-Agent', agent)]
         response = opener.open(url)
-        result=urlData = response.read()
+        urlData = response.read()
         response.close()
 #        print result
 #        print response.headers
+
+        response = opener.open(url)
+        result=urlData = response.read()
+        response.close()
+        
         jschl = re.compile('name="jschl_vc" value="(.+?)"/>').findall(result)[0]
 
         init = re.compile('setTimeout\(function\(\){\s*.*?.*:(.*?)};').findall(result)[0]
         builder = re.compile(r"challenge-form\'\);\s*(.*)a.v").findall(result)[0]
-        decryptVal = parseJSString(init)
+        if '/' in init:
+            init = init.split('/')
+            decryptVal = parseJSString(init[0]) / float(parseJSString(init[1]))
+        else:
+            decryptVal = parseJSString(init)
         lines = builder.split(';')
 
         for line in lines:
             if len(line)>0 and '=' in line:
                 sections=line.split('=')
-
-                line_val = parseJSString(sections[1])
-                decryptVal = int(eval(str(decryptVal)+sections[0][-1]+str(line_val)))
+                if '/' in sections[1]:
+                    subsecs = sections[1].split('/')
+                    line_val = parseJSString(subsecs[0]) / float(parseJSString(subsecs[1]))
+                else:
+                    line_val = parseJSString(sections[1])
+                decryptVal = float(eval('%.16f'%decryptVal+sections[0][-1]+'%.16f'%line_val))
 
 #        print urlparse.urlparse(url).netloc
-        answer = decryptVal + len(urlparse.urlparse(url).netloc)
+        answer = float('%.10f'%decryptVal) + len(urlparse.urlparse(url).netloc)
 
         u='/'.join(url.split('/')[:-1])  
         if '<form id="challenge-form" action="/cdn' in urlData:
@@ -57,7 +69,10 @@ def createCookie(url,cj=None,agent='Mozilla/5.0 (Windows NT 6.1; rv:32.0) Gecko/
  #       print query
 #        import urllib2
 #        opener = urllib2.build_opener(NoRedirection,urllib2.HTTPCookieProcessor(cj))
-#        opener.addheaders = [('User-Agent', agent)]
+        opener.addheaders = [('User-Agent', agent),
+                             ('Referer', url),
+                             ('Accept','text/html, application/xhtml+xml, application/xml, */*'),
+                             ('Accept-Encoding', 'gzip, deflate')]
         #print opener.headers
         response = opener.open(query)
         

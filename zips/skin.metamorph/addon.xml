@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<addon id="skin.metamorph" version="2.6" name="EPTV STB" provider-name="Biglad">
-
-
+<addon id="skin.metamorph" version="1.0" name="STB Skin for Kodi" provider-name="SiLVO Modded by Fanriffic">
 	<requires>
 	
 		<import addon="script.grab.fanart" version="0.12.8"/>

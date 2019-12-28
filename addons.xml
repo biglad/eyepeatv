@@ -2094,7 +2094,7 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 
 <addon id="script.vistatvtools"
   name="EPTV Tools"
-  version="19.1"
+  version="19.2"
   provider-name="biglad">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>

@@ -57,6 +57,9 @@ webversion = float(response.read())
 etext = ""
 if buildv < webversion:
     etext = "[COLOR gold]  UPDATE BUILD ASAP!!![/COLOR]"
+    update = xbmcgui.Dialog().yesno("[COLOR tomato]EyePeaTV Build Updater[/COLOR]","[COLOR yellow]New Build Version Detected[/COLOR]","[COLOR turquoise][/COLOR]" ,"[COLOR turquoise]Update Now?[/COLOR]")
+    if update:
+        xbmc.executebuiltin('XBMC.RunAddon(script.vistatv-installer)')
 
 username=get_setting("Username")
 password=get_setting("Password")

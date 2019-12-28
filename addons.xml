@@ -1007,6 +1007,44 @@ ffmpeg simply copies the stream into a transport stream container.
   </extension>
 </addon>
 
+<addon id="script.eptv.live.channels"
+  name="EPTV Live TV Channels Loader"
+  version="1.0.0"
+  provider-name="Biglad">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.script" library="addon.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+  <language></language>
+    <platform>all</platform>
+    <summary lang="en">EPTV Core</summary>
+    <description lang="en">EPTV Core</description>
+	<disclaimer>EPTV Core</disclaimer>
+  </extension>
+</addon>
+
+<addon id="script.eptv.live.guide"
+  name="EPTV Live TV Guide Loader"
+  version="1.0.0"
+  provider-name="Biglad">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.script" library="addon.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+  <language></language>
+    <platform>all</platform>
+    <summary lang="en">EPTV Core</summary>
+    <description lang="en">EPTV Core</description>
+	<disclaimer>EPTV Core</disclaimer>
+  </extension>
+</addon>
+
 <addon id="script.eptvmenu"
   name="EPTV Menu"
   version="1.0.07"

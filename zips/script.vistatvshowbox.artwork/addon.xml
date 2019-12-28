@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.vistatvshowbox.artwork" version="1.0.21" name="Requisition Artwork" provider-name="VistaTV">
+<addon id="script.vistatvshowbox.artwork" version="1.0.22" name="Requisition Artwork" provider-name="VistaTV">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0"/>
 	</requires>

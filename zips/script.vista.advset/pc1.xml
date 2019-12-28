@@ -1,0 +1,10 @@
+<!-- Created using Easy Advanced Settings addon -->
+<advancedsettings>
+    <network>
+        <buffermode>2</buffermode>
+        <cachemembuffersize>524288000</cachemembuffersize>
+        <curlclienttimeout>10</curlclienttimeout>
+        <curllowspeedtime>10</curllowspeedtime>
+        <readbufferfactor>1</readbufferfactor>
+    </network>
+</advancedsettings>

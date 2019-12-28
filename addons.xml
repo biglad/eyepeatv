@@ -1995,6 +1995,24 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
     </extension>
 </addon>
 
+<addon id="script.vista.advset"
+  name="EPTV Advanced Settings"
+  version="18.0.1"
+  provider-name="EPTV">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.script" library="addon.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">EPTV Menu System</summary>
+    <description lang="en">EPTV Menu System</description>
+	<disclaimer>EPTV Menu System</disclaimer>
+  </extension>
+</addon>
+
 <addon id="script.vista.exit"
   name="EyePeaTV Exit"
   version="2.2"

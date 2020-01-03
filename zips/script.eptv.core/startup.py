@@ -77,7 +77,7 @@ username=get_setting("Username")
 password=get_setting("Password")
 if username =="":
     dialog.ok('[COLOR white]Eye Pea TV[/COLOR]','[COLOR white]No Login Info Found[/COLOR]','[COLOR white][/COLOR]','[COLOR white]Please Follow the next steps to login[/COLOR]')
-    xbmc.executebuiltin('ActivateWindow(10025,"plugin://plugin.video.eyepeatv",return)')
+    xbmc.executebuiltin('RunAddon(script.eptv.livetv)')
     exit()
 	
 	

@@ -21,7 +21,8 @@ def menuoptions():
         function2,
 		function3,
 		function4,
-		function5
+		function5,
+		function6
 		)
         
     call = dialog.select('[B][COLOR=yellow]Eye Pea TV Tools Menu[/COLOR][/B]', [
@@ -29,7 +30,8 @@ def menuoptions():
 	"[B][COLOR=lightblue]      Kodi Settings[/COLOR][/B]", #2
 	"[B][COLOR=lightblue]      File Manager[/COLOR][/B]", #3
 	"[B][COLOR=lightblue]      My Addons[/COLOR][/B]", #4
-	"[B][COLOR=yellow]      Exit Kodi[/COLOR][/B]", #5
+	"[B][COLOR=orange]      Update Build[/COLOR][/B]", #5
+	"[B][COLOR=yellow]      Exit Kodi[/COLOR][/B]", #6
     ])
     # dialog.selectreturns
     #   0 -> escape pressed
@@ -39,7 +41,7 @@ def menuoptions():
         # esc is not pressed
         if call < 0:
             return
-        func = funcs[call-5]
+        func = funcs[call-6]
         #if myplatform == 'windows':
         #    func = funcs[call-23]
         #dp = xbmcgui.DialogProgress()
@@ -75,6 +77,10 @@ def function4():
     exit()
 	
 def function5():
+    xbmc.executebuiltin('XBMC.RunAddon(script.vistatv-installer)')
+    exit()
+	
+def function6():
     xbmc.executebuiltin('ActivateWindow(10111,"DialogButtonMenu.xml",return)') #Exit
     exit()
 	

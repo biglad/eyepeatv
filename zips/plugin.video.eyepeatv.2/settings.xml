@@ -1,0 +1,11 @@
+<settings version="2">
+    <setting id="EPGColour" default="true">gold</setting>
+    <setting id="extend" default="true"></setting>
+    <setting id="FinalDuration" default="true">Off</setting>
+    <setting id="Password">shedevil3!</setting>
+    <setting id="PVRUpdater" default="true">false</setting>
+    <setting id="showxxx" default="true">false</setting>
+    <setting id="Username">biglad2</setting>
+    <setting id="vanemakood" default="true">1234</setting>
+    <setting id="vanemalukk">true</setting>
+</settings>

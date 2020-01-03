@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.eptv.livetv"
+  name="EPTV LiveTV Launcher"
+  version="1.0.00" 
+  provider-name="EPTV">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="repository.eyepeatvinstall" />
+	<import addon="script.eptv.core" />
+  </requires>
+  <extension point="xbmc.python.script" library="addon.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">EPTV Menu System</summary>
+    <description lang="en">EPTV Menu System</description>
+	<disclaimer>EPTV Menu System</disclaimer>
+  </extension>
+</addon>

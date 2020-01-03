@@ -12,6 +12,18 @@ dialog = xbmcgui.Dialog()
 
 KODIV          = float(xbmc.getInfoLabel("System.BuildVersion")[:4])
 
+update = xbmcgui.Dialog().yesno("[COLOR tomato]EyePeaTV[/COLOR]","[COLOR yellow]Are you a Gold Service User[/COLOR]","[COLOR turquoise][/COLOR]" ,"[COLOR turquoise]If Unsure Select No[/COLOR]")
+if update:
+    addon_id = "plugin.video.eyepeatv.2"
+    servicehost = "http://teamtv.uk:2086/"
+else:
+    addon_id = "plugin.video.eyepeatv"
+    servicehost = "http://gotdark.com"
+
+
+__settings__=xbmcaddon.Addon(id=addon_id); __language__=__settings__.getLocalizedString
+def get_setting(name): dev=__settings__.getSetting(name); return dev
+
 kupdatet = ""
 if KODIV < 18.5:
     dialog = xbmcgui.Dialog()
@@ -36,7 +48,7 @@ else:
         buildv = "0.0"
 		
 		
-url = "http://eptv.co.uk/loaded.php"
+url = "http://ftp.mgawow.co.uk/loaded.php"
 data = ""
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 headers = {'User-Agent': user_agent}
@@ -44,7 +56,7 @@ req = urllib2.Request(url, data, headers)
 response = urllib2.urlopen(req)
 loaded = response.read()
 		
-url = "http://eptv.co.uk/version.txt"
+url = "http://ftp.mgawow.co.uk/version.txt"
 data = ""
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 headers = {'User-Agent': user_agent}
@@ -72,7 +84,7 @@ if username =="":
 skinname = xbmc.getSkinDir()
 #xbmc.log(skinname,2)
 
-url = "http://eptv.co.uk/buildnews.txt"
+url = "http://ftp.mgawow.co.uk/buildnews.txt"
 data = ""
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 headers = {'User-Agent': user_agent}
@@ -80,7 +92,7 @@ req = urllib2.Request(url, data, headers)
 response = urllib2.urlopen(req)
 newnews = response.read()
 
-PlayerAPI = "http://gotdark.com/player_api.php?username=%s&password=%s"%(username,password)
+PlayerAPI = "%s/player_api.php?username=%s&password=%s"%(servicehost,username,password)
 url = PlayerAPI
 data = ""
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
@@ -111,10 +123,10 @@ window.addControl(label)
 
 if skinname == "skin.aeon.nox.silvo":
     window = xbmcgui.Window(10000)
-    label = xbmcgui.ControlLabel(1300, 940, 2000, 50, "[COLOR black]"+expires+"[/COLOR]")
+    label = xbmcgui.ControlLabel(1200, 940, 2000, 50, "[COLOR black]"+expires+"[/COLOR]")
     window.addControl(label)
     window = xbmcgui.Window(10000)
-    label = xbmcgui.ControlLabel(1298, 938, 2000, 50, "[COLOR lightgrey]"+expires+"[/COLOR]")
+    label = xbmcgui.ControlLabel(1198, 938, 2000, 50, "[COLOR lightgrey]"+expires+"[/COLOR]")
     window.addControl(label)
 	
     window = xbmcgui.Window(10000)
@@ -215,7 +227,7 @@ xbmc.executebuiltin("XBMC.AlarmClock('MTVBCS',XBMC.RunAddon(script.eptv.core),30
 #webversion = urllib2.urlopen('http://eptv.co.uk/version.txt').read()
 #webversion = float(webversion)
 #buildv = float(buildv)
-url = "http://eptv.co.uk/version.txt"
+url = "http://ftp.mgawow.co.uk/version.txt"
 data = ""
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 headers = {'User-Agent': user_agent}
@@ -231,7 +243,7 @@ if buildv < webversion:
     etext = "[COLOR gold]  UPDATE BUILD ASAP!!![/COLOR]"
 
 #loaded = urllib2.urlopen('http://eptv.co.uk/loaded.php').read()
-url = "http://eptv.co.uk/loaded.php"
+url = "http://ftp.mgawow.co.uk/loaded.php"
 data = ""
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 headers = {'User-Agent': user_agent}
@@ -275,7 +287,7 @@ window = xbmcgui.Window(10000)
 label = xbmcgui.ControlLabel(60, 718, 1000, 50, "[COLOR lightgrey]Eye Pea TV News[/COLOR]")
 window.addControl(label)
 
-url = "http://eptv.co.uk/buildnews.txt"
+url = "http://ftp.mgawow.co.uk/buildnews.txt"
 data = ""
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 headers = {'User-Agent': user_agent}

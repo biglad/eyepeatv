@@ -28,12 +28,13 @@ Username=plugintools.get_setting("Username")
 Password=plugintools.get_setting("Password")
 PVRon = plugintools.get_setting("PVRUpdater")
 #lehekylg= base64.b64decode("aHR0cDovL2dvdGRhcmsuY29t") #####
-lehekylg= base64.b64decode("aHR0cDovL3BsYXkuZXB0di5jby51aw==") #EPTV
-pordinumber="80"
+#lehekylg= base64.b64decode("aHR0cDovL3BsYXkuZXB0di5jby51aw==") #EPTV
+lehekylg= base64.b64decode("aHR0cDovL3RlYW10di51aw==") #NEW
+pordinumber="2086"
 BASEURL = base64.b64decode("bmFkYQ==")
 AddonRes = xbmc.translatePath(os.path.join('special://home','addons',AddonID,'resources'))
 loginfile = xbmc.translatePath(os.path.join('special://home/eptv.txt'))
-loginurl   = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tcGVndHM=")%(lehekylg,pordinumber,Username,Password)
+loginurl   = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1obHM=")%(lehekylg,pordinumber,Username,Password)
 xbmc.log(str(loginurl),2)
 THE_DATE = time.strftime("%Y%m%d")
 now = datetime.now()
@@ -109,7 +110,7 @@ def PVRbeta(self):
 
     f = open(BetaPVR, 'a')
 
-    UserList = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tcGVndHM=")%(lehekylg,pordinumber,Username,Password)
+    UserList = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1obHM=")%(lehekylg,pordinumber,Username,Password)
     link = open_url(UserList).replace('\n','').replace('\r','&split&')
     a,b = link.split('&split&#EXTINF:-1 tvg-id="" tvg-name="Absolute 80')
     OutpuT = a.replace("&split&","\n").replace("#EXTM3U","#EXTM3U\n")
@@ -138,7 +139,7 @@ def correctPVR(self):
     #thread.start_new_thread(self.dialogWatch, ())
     try:
         data = ""
-        user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
+        user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
         headers = {'User-Agent': user_agent}
         req = urllib2.Request(loginurl, data, headers)
         response = urllib2.urlopen(req)
@@ -229,6 +230,7 @@ def disablePVR(self):
     xbmc.executebuiltin('Notification(PVR Disabled,[COLOR white]PVR Guide is now disabled[/COLOR],2000,special://home/addons/'+AddonID+'/icon.png)')
     xbmc.executebuiltin("Container.Refresh")
     #dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]Kodi Need Restart[/COLOR]',' ','[COLOR white][B]Please Restart Kodi[/B][/COLOR]')
+    xbmc.executebuiltin("Container.Refresh")
     exit()
     #os._exit(1)
 	

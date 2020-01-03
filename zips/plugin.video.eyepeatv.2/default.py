@@ -236,6 +236,8 @@ def peamenyy(params):
     if not lehekylg:
         plugintools.open_settings_dialog()
         exit()
+		
+    plugintools.addItem('[COLOR orange][B]Eye Pea TV [/COLOR][COLOR gold]GOLD[/COLOR] [COLOR orange]Service[/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')
 
     if BUILDUPDATE == "YES":
         plugintools.addItem('[COLOR orange][B]There as an EPTV Build Update![/B][/COLOR]','speed',7654,GoDev.Images + 'logo.png',GoDev.Images + 'background.png')

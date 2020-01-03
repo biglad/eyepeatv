@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.eptv.livetv"
   name="EPTV LiveTV Launcher"
-  version="1.0.00" 
+  version="1.0.01" 
   provider-name="EPTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>

@@ -33,7 +33,7 @@ def menuoptions():
         # esc is not pressed
         if call < 0:
             return
-        func = funcs[call-3]
+        func = funcs[call-2]
         #if myplatform == 'windows':
         #    func = funcs[call-23]
         #dp = xbmcgui.DialogProgress()

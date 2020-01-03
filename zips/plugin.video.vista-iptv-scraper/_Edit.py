@@ -4,7 +4,7 @@ import xbmc
 HOME     = xbmc.translatePath('special://userdata/')
 file     = os.path.join(HOME, '24-7.xml')
 
-MainBase = 'http://eptv.co.uk/987654321999999.xml'
+MainBase = 'http://ftp.mgawow.co.uk/987654321999999.xml'
 MainBase2 = file
 addon = xbmcaddon.Addon('plugin.video.vista-iptv-scraper')
 

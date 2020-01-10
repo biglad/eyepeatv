@@ -1072,7 +1072,7 @@ ffmpeg simply copies the stream into a transport stream container.
 
 <addon id="script.eptv.livetv"
   name="EPTV LiveTV Launcher"
-  version="1.0.01"
+  version="1.0.02"
   provider-name="EPTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>

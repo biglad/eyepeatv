@@ -21,7 +21,7 @@ def menuoptions():
         function2
 		)
         
-    call = dialog.select('[B][COLOR=yellow]Eye Pea Movies Menu[/COLOR][/B]', [
+    call = dialog.select('[B][COLOR=yellow]Eye Pea LiveTV Menu[/COLOR][/B]', [
     "[B][COLOR=orange]      Eye Pea TV Normal Service[/COLOR][/B]", #1
     "[B][COLOR=gold]      Eye Pea TV Gold Service[/COLOR][/B]",#2
     ])

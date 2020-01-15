@@ -64,6 +64,6 @@ def open_url(url):
         return link
     except:quit()
 
-TypeOfMessage="t"; (NewImage,NewMessage)=news.FetchNews();
-news.CheckNews(TypeOfMessage,NewImage,NewMessage,True);
+#TypeOfMessage="t"; (NewImage,NewMessage)=news.FetchNews();
+#news.CheckNews(TypeOfMessage,NewImage,NewMessage,True);
 Check()

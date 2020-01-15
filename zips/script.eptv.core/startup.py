@@ -15,7 +15,7 @@ KODIV          = float(xbmc.getInfoLabel("System.BuildVersion")[:4])
 update = xbmcgui.Dialog().yesno("[COLOR tomato]EyePeaTV[/COLOR]","[COLOR yellow]Are you a Gold Service User[/COLOR]","[COLOR turquoise][/COLOR]" ,"[COLOR turquoise]If Unsure Select No[/COLOR]")
 if update:
     addon_id = "plugin.video.eyepeatv.2"
-    servicehost = "http://teamtv.uk:2086/"
+    servicehost = "http://gold.eptv.co.uk:2086/"
 else:
     addon_id = "plugin.video.eyepeatv"
     servicehost = "http://gotdark.com"
@@ -77,7 +77,7 @@ username=get_setting("Username")
 password=get_setting("Password")
 if username =="":
     dialog.ok('[COLOR white]Eye Pea TV[/COLOR]','[COLOR white]No Login Info Found[/COLOR]','[COLOR white][/COLOR]','[COLOR white]Please Follow the next steps to login[/COLOR]')
-    xbmc.executebuiltin('RunAddon(script.eptv.livetv)')
+    xbmc.executebuiltin('RunAddon('+addon_id+')')
     exit()
 	
 	

@@ -37,12 +37,11 @@ from vistascrapers.modules import workers
 
 class source:
 	def __init__(self):
-		self.priority = 1
+		self.priority = 0
 		self.language = ['en']
-		self.domains = ['torrentdownloads.me', 'torrentsdl1.unblocked.lol']
-		self.base_link = 'https://torrentsdl1.unblocked.to/'
-		self.search = 'https://www.torrentdownloads.me/rss.xml?new=1&type=search&cid={0}&search={1}'
-		self.min_seeders = 1
+		self.domain = ['yourbittorrent2.com']
+		self.base_link = 'https://yourbittorrent2.com'
+		self.search_link = '/?v=&c=&q=%s'
 
 
 	def movie(self, imdb, title, localtitle, aliases, year):
@@ -77,14 +76,13 @@ class source:
 
 
 	def sources(self, url, hostDict, hostprDict):
+		self.sources = []
 		try:
-			self._sources = []
-
 			if url is None:
-				return self._sources
+				return self.sources
 
 			if debrid.status() is False:
-				return self._sources
+				return self.sources
 
 			data = urlparse.parse_qs(url)
 			data = dict([(i, data[i][0]) if data[i] else (i, '') for i in data])
@@ -98,40 +96,45 @@ class source:
 			query = '%s %s' % (self.title, self.hdlr)
 			query = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', '', query)
 
-			if 'tvshowtitle' in data:
-				url = self.search.format('8', urllib.quote(query))
-			else:
-				url = self.search.format('4', urllib.quote(query))
+			url = self.search_link % urllib.quote_plus(query)
+			url = urlparse.urljoin(self.base_link, url)
 			# log_utils.log('url = %s' % url, log_utils.LOGDEBUG)
 
-			headers = {'User-Agent': client.agent()}
+			try:
+				r = client.request(url)
+				links = re.findall('<a href="(/torrent/.+?)"', r, re.DOTALL)
 
-			_html = client.request(url, headers=headers)
-
-			threads = []
-			for i in re.findall(r'<item>(.+?)</item>', _html, re.DOTALL):
-				threads.append(workers.Thread(self._get_items, i))
-			[i.start() for i in threads]
-			[i.join() for i in threads]
-			return self._sources
+				threads = []
+				for link in links:
+					threads.append(workers.Thread(self.get_sources, link))
+				[i.start() for i in threads]
+				[i.join() for i in threads]
+				return self.sources
+			except:
+				source_utils.scraper_error('YOURBITTORRENT')
+				return self.sources
 
 		except:
-			source_utils.scraper_error('TORRENTDOWNLOADS')
-			return self._sources
+			source_utils.scraper_error('YOURBITTORRENT')
+			return self.sources
 
 
-	def _get_items(self, r):
+	def get_sources(self, link):
 		try:
-			size = re.search(r'<size>([\d]+)</size>', r).groups()[0]
-			seeders = re.search(r'<seeders>([\d]+)</seeders>', r).groups()[0]
+			url = '%s%s' % (self.base_link, link)
+			result = client.request(url)
 
-			_hash = re.search(r'<info_hash>([a-zA-Z0-9]+)</info_hash>', r).groups()[0]
-			name = re.search(r'<title>(.+?)</title>', r).groups()[0]
+			info_hash = re.findall('<kbd>(.+?)<', result, re.DOTALL)[0]
+			url = '%s%s' % ('magnet:?xt=urn:btih:', info_hash)
+			name = re.findall('<h3 class="card-title">(.+?)<', result, re.DOTALL)[0]
 			name = urllib.unquote_plus(name).replace(' ', '.')
+			url = '%s%s%s' % (url, '&dn=', str(name))
+
 			if source_utils.remove_lang(name):
 				return
 
-			url = 'magnet:?xt=urn:btih:%s&dn=%s' % (_hash.upper(), urllib.quote_plus(name))
+			if url in str(self.sources):
+				return
 
 			t = name.split(self.hdlr)[0].replace(self.year, '').replace('(', '').replace(')', '').replace('&', 'and').replace('.US.', '.').replace('.us.', '.')
 			if cleantitle.get(t) != cleantitle.get(self.title):
@@ -140,25 +143,27 @@ class source:
 			if self.hdlr not in name:
 				return
 
-			quality, info = source_utils.get_release_quality(name, name)
+			size = re.findall('<div class="col-3">File size:</div><div class="col">(.+?)<', result, re.DOTALL)[0]
+			quality, info = source_utils.get_release_quality(name, url)
 
 			try:
-				div = 1000 ** 3
-				size = float(size) / div
+				size = re.findall('((?:\d+\,\d+\.\d+|\d+\.\d+|\d+\,\d+|\d+)\s*(?:GiB|MiB|GB|MB))', size)[0]
+				div = 1 if size.endswith('GB') else 1024
+				size = float(re.sub('[^0-9|/.|/,]', '', size.replace(',', '.'))) / div
 				size = '%.2f GB' % size
 				info.insert(0, size)
 			except:
+				size = '0'
 				pass
 
 			info = ' | '.join(info)
 
-			if seeders > self.min_seeders:
-				self._sources.append({'source': 'torrent', 'quality': quality, 'language': 'en', 'url': url,
-													'info': info, 'direct': False, 'debridonly': True})
-		except:
-			source_utils.scraper_error('TORRENTDOWNLOADS')
-			pass
+			self.sources.append({'source': 'torrent', 'quality': quality, 'language': 'en', 'url': url,
+												'info': info, 'direct': False, 'debridonly': True})
 
+		except:
+			source_utils.scraper_error('YOURBITTORRENT')
+			pass
 
 	def resolve(self, url):
 		return url

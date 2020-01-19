@@ -32,6 +32,7 @@ import urlparse
 
 from vistascrapers.modules import cfscrape
 from vistascrapers.modules import cleantitle
+from vistascrapers.modules import log_utils
 from vistascrapers.modules import source_utils
 
 
@@ -41,7 +42,8 @@ class source:
 		self.language = ['en']
 		self.domains = ['extramovies.net.in', 'extramovies.trade', 'extramovies.guru',
 		                'extramovies.wiki']  # http://extramovies.ind.in/
-		self.base_link = 'http://extramovies.net.in'  # Dead  extramovies.host
+		# self.base_link = 'http://extramovies.net.in'  # Dead  extramovies.host
+		self.base_link = 'http://extramovies.pink'
 		self.search_link = '/?s=%s'
 		self.scraper = cfscrape.create_scraper()
 

@@ -27,21 +27,21 @@
 import re
 import urllib
 import urlparse
+import json
 
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
 from vistascrapers.modules import debrid
 from vistascrapers.modules import source_utils
-from vistascrapers.modules import workers
 
 
 class source:
 	def __init__(self):
-		self.priority = 1
+		self.priority = 0
 		self.language = ['en']
-		self.domains = ['btscene.today']
-		self.base_link = 'http://btscene.today/'
-		self.search_link = 'search?q=%s'
+		self.domain = ['moviemagnet.unblockit.biz']
+		self.base_link = 'https://moviemagnet.unblockit.biz'
+		self.search_link = '/movies/search_movies?term=%s'
 
 
 	def movie(self, imdb, title, localtitle, aliases, year):
@@ -53,114 +53,91 @@ class source:
 			return
 
 
-	def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
-		try:
-			url = {'imdb': imdb, 'tvdb': tvdb, 'tvshowtitle': tvshowtitle, 'year': year}
-			url = urllib.urlencode(url)
-			return url
-		except:
-			return
-
-
-	def episode(self, url, imdb, tvdb, title, premiered, season, episode):
-		try:
-			if url is None:
-				return
-			url = urlparse.parse_qs(url)
-			url = dict([(i, url[i][0]) if url[i] else (i, '') for i in url])
-			url['title'], url['premiered'], url['season'], url['episode'] = title, premiered, season, episode
-			url = urllib.urlencode(url)
-			return url
-		except:
-			return
-
-
 	def sources(self, url, hostDict, hostprDict):
+		sources = []
 		try:
-			self.sources = []
-
 			if url is None:
-				return self.sources
+				return sources
 
 			if debrid.status() is False:
-				return self.sources
+				return sources
 
 			data = urlparse.parse_qs(url)
 			data = dict([(i, data[i][0]) if data[i] else (i, '') for i in data])
 
-			self.title = data['tvshowtitle'] if 'tvshowtitle' in data else data['title']
-			self.title = self.title.replace('&', 'and').replace('Special Victims Unit', 'SVU')
+			title = data['title']
+			year = data['year']
 
-			self.hdlr = 'S%02dE%02d' % (int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else data['year']
-			self.year = data['year']
+			query = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', '', title)
 
-			query = '%s %s' % (self.title, self.hdlr)
-			query = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', '', query)
-
-			urls = []
 			url = self.search_link % urllib.quote_plus(query)
 			url = urlparse.urljoin(self.base_link, url)
-			urls.append(url)
-			urls.append(url + '&p=2')
-			# log_utils.log('urls = %s' % urls, log_utils.LOGDEBUG)
+			# log_utils.log('url = %s' % url, log_utils.LOGDEBUG)
 
-			threads = []
-			for url in urls:
-				threads.append(workers.Thread(self._get_sources, url))
-			[i.start() for i in threads]
-			[i.join() for i in threads]
-			return self.sources
+			try:
+				r = client.request(url)
+				if r == str([]):
+					return sources
+				r = json.loads(r)
 
-		except:
-			source_utils.scraper_error('BTSCENE')
-			return self.sources
+				id = ''
+				for i in r:
+					if i['original_title'] == title and i['release_date'] == year:
+						id = i['id']
+						break
 
+				if id == '':
+					return sources
+				link = 'http://moviemagnet.co/movies/torrents?id=%s' % id
+				result = client.request(link)
+				if 'magnet' not in result:
+					return sources
 
-	def _get_sources(self, url):
-		try:
-			r = client.request(url)
-			posts = client.parseDOM(r, 'tr')
+				result = re.sub(r'\n', '', result)
+				links = re.findall(r'<tr>.*?<a title="Download:\s*(.+?)"href="(magnet:.+?)">.*?title="File Size">\s*(.+?)\s*</td>', result)
 
-			for post in posts:
-				link = re.findall('a title="Download Torrent Magnet" href="(magnet:.+?)"', post, re.DOTALL)
-
-				if link == []:
-					continue
-
-				for url in link:
-					url = url.split('&tr')[0]
-
-					name = url.split('&dn=')[1]
+				for link in links:
+					name = link[0]
 					name = urllib.unquote_plus(name).replace(' ', '.')
 					if source_utils.remove_lang(name):
 						continue
 
-					t = name.split(self.hdlr)[0].replace(self.year, '').replace('(', '').replace(')', '').replace('&', 'and').replace('.US.', '.').replace('.us.', '.')
-					if cleantitle.get(t) != cleantitle.get(self.title):
+					t = name.split(year)[0].replace(year, '').replace('(', '').replace(')', '').replace('&', 'and').replace('.US.', '.').replace('.us.', '.')
+					if cleantitle.get(t) != cleantitle.get(title):
 						continue
 
-					if self.hdlr not in url:
+					if year not in name:
 						continue
+
+					url = link[1]
+					url = urllib.unquote(url).decode('utf8').replace('&amp;', '&')
+					url = url.split('&tr')[0]
 
 					quality, info = source_utils.get_release_quality(name, url)
 
 					try:
-						size = re.findall('((?:\d+\,\d+\.\d+|\d+\.\d+|\d+\,\d+|\d+)\s*(?:GiB|MiB|GB|MB))', post)[0]
+						size = link[2]
 						div = 1 if size.endswith(('GB', 'GiB')) else 1024
-						size = float(re.sub('[^0-9|/.|/,]', '', size)) / div
+						size = float(re.sub('[^0-9|/.|/,]', '', size.replace(',', '.'))) / div
 						size = '%.2f GB' % size
 						info.insert(0, size)
 					except:
+						size = '0'
 						pass
 
 					info = ' | '.join(info)
 
-					self.sources.append({'source': 'torrent', 'quality': quality, 'language': 'en', 'url': url,
+					sources.append({'source': 'torrent', 'quality': quality, 'language': 'en', 'url': url,
 														'info': info, 'direct': False, 'debridonly': True})
+				return sources
+
+			except:
+				source_utils.scraper_error('MOVIEMAGNET')
+				return sources
 
 		except:
-			source_utils.scraper_error('BTSCENE')
-			pass
+			source_utils.scraper_error('MOVIEMAGNET')
+			return sources
 
 
 	def resolve(self, url):

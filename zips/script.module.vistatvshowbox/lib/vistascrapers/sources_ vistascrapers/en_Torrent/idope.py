@@ -37,11 +37,12 @@ from vistascrapers.modules import workers
 
 class source:
 	def __init__(self):
-		self.priority = 0
+		self.priority = 1
 		self.language = ['en']
-		self.domain = ['torlock.cc']
-		self.base_link = 'https://torlock.cc'
-		self.search_link = '/all/torrents/%s/'
+		self.domains = ['idope.se, idope.today']
+		self.base_link = 'http://idope.se'
+		self.search_link = '/torrent-list/%s/'
+		self.min_seeders = 1
 
 
 	def movie(self, imdb, title, localtitle, aliases, year):
@@ -96,82 +97,77 @@ class source:
 			query = '%s %s' % (self.title, self.hdlr)
 			query = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', '', query)
 
+			urls = []
 			url = self.search_link % urllib.quote_plus(query)
 			url = urlparse.urljoin(self.base_link, url)
-			# log_utils.log('url = %s' % url, log_utils.LOGDEBUG)
+			urls.append(url)
+			urls.append(url + '?p=2')
+			# log_utils.log('urls = %s' % urls, log_utils.LOGDEBUG)
 
-			try:
-				r = client.request(url)
-				div = client.parseDOM(r, 'div', attrs={'class': 'panel panel-default'})[0]
-				table = client.parseDOM(div, 'table', attrs={'class': 'table table-striped table-bordered table-hover table-condensed'})[0]
-				links = re.findall('<a href="(.+?)">', table, re.DOTALL)
-				# log_utils.log('links = %s' % links, log_utils.LOGDEBUG)
-
-				threads = []
-				for link in links:
-					threads.append(workers.Thread(self.get_sources, link))
-				[i.start() for i in threads]
-				[i.join() for i in threads]
-				return self.sources
-			except:
-				source_utils.scraper_error('TORLOCK')
-				return self.sources
+			threads = []
+			for url in urls:
+				threads.append(workers.Thread(self._get_sources, url))
+			[i.start() for i in threads]
+			[i.join() for i in threads]
+			return self.sources
 
 		except:
-			source_utils.scraper_error('TORLOCK')
+			source_utils.scraper_error('IDOPE')
 			return self.sources
 
 
-	def get_sources(self, link):
+	def _get_sources(self, url):
 		try:
-			url = '%s%s' % (self.base_link, link)
-			result = client.request(url)
-			if 'magnet' not in result:
-				return
+			r = client.request(url)
+			div = client.parseDOM(r, 'div', attrs={'id': 'div2child'})
 
-			url = 'magnet:%s' % (re.findall('a href="magnet:(.+?)"', result, re.DOTALL)[0])
-			url = urllib.unquote(url).decode('utf8').replace('&amp;', '&')
-			url = url.split('&tr=')[0]
+			for row in div:
+				row = client.parseDOM(r, 'div', attrs={'class': 'resultdivbotton'})
 
-			if url in str(self.sources):
-				return
+				for post in row:
+					infohash = re.findall('<div id="hideinfohash.+?" class="hideinfohash">(.+?)<', post, re.DOTALL)[0]
+					name = re.findall('<div id="hidename.+?" class="hideinfohash">(.+?)<', post, re.DOTALL)[0]
+					name = urllib.unquote_plus(name).replace(' ', '.')
+					url = 'magnet:?xt=urn:btih:%s&dn=%s' % (infohash, name)
 
-			name = url.split('&dn=')[1]
-			name = urllib.unquote_plus(name).replace(' ', '.')
-			if source_utils.remove_lang(name):
-				return
+					if url in str(self.sources):
+						continue
 
-			t = name.split(self.hdlr)[0].replace(self.year, '').replace('(', '').replace(')', '').replace('&', 'and').replace('.US.', '.').replace('.us.', '.')
-			if cleantitle.get(t) != cleantitle.get(self.title):
-				return
+					seeders = re.findall('<div class="resultdivbottonseed">(.+?)<', post, re.DOTALL)[0]
+					if self.min_seeders > seeders:
+						continue
 
-			if self.hdlr not in name:
-				return
+					if source_utils.remove_lang(name):
+						continue
 
-			size_list = re.findall('<dt>SIZE</dt><dd>(.+?)<', result, re.DOTALL)
-			quality, info = source_utils.get_release_quality(name, url)
+					t = name.split(self.hdlr)[0].replace(self.year, '').replace('(', '').replace(')', '').replace('&', 'and').replace('.US.', '.').replace('.us.', '.')
+					if cleantitle.get(t) != cleantitle.get(self.title):
+						continue
 
-			for match in size_list:
-				try:
-					size = re.findall('((?:\d+\,\d+\.\d+|\d+\.\d+|\d+\,\d+|\d+)\s*(?:GiB|MiB|GB|MB))', match)[0]
-					div = 1 if size.endswith('GB') else 1024
-					size = float(re.sub('[^0-9|/.|/,]', '', size.replace(',', '.'))) / div
-					size = '%.2f GB' % size
-					info.insert(0, size)
-					if size:
-						break
-				except:
-					size = '0'
-					pass
+					if self.hdlr not in url:
+						continue
 
-			info = ' | '.join(info)
+					quality, info = source_utils.get_release_quality(name, url)
 
-			self.sources.append({'source': 'torrent', 'quality': quality, 'language': 'en', 'url': url,
-												'info': info, 'direct': False, 'debridonly': True})
+					try:
+						size = re.findall('<div class="resultdivbottonlength">(.+?)<', post)[0]
+						div = 1 if size.endswith(('GB', 'GiB', 'Gb')) else 1024
+						size = float(re.sub('[^0-9|/.|/,]', '', size.replace(',', '.'))) / div
+						size = '%.2f GB' % size
+						info.insert(0, size)
+					except:
+						size = '0'
+						pass
+
+					info = ' | '.join(info)
+
+					self.sources.append({'source': 'Torrent', 'quality': quality, 'language': 'en', 'url': url, 'info': info,
+													'direct': False, 'debridonly': True})
 
 		except:
-			source_utils.scraper_error('TORLOCK')
+			source_utils.scraper_error('IDOPE')
 			pass
+
 
 	def resolve(self, url):
 		return url

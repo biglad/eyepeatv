@@ -32,16 +32,15 @@ from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
 from vistascrapers.modules import debrid
 from vistascrapers.modules import source_utils
-from vistascrapers.modules import workers
 
 
 class source:
 	def __init__(self):
-		self.priority = 0
+		self.priority = 1
 		self.language = ['en']
-		self.domain = ['torlock.cc']
-		self.base_link = 'https://torlock.cc'
-		self.search_link = '/all/torrents/%s/'
+		self.domains = ['onceddl.net']
+		self.base_link = 'https://onceddl.net'
+		self.search_link = '/?s=%s'
 
 
 	def movie(self, imdb, title, localtitle, aliases, year):
@@ -76,102 +75,83 @@ class source:
 
 
 	def sources(self, url, hostDict, hostprDict):
-		self.sources = []
 		try:
+			sources = []
+
 			if url is None:
-				return self.sources
+				return sources
 
 			if debrid.status() is False:
-				return self.sources
+				return sources
+
+			hostDict = hostprDict + hostDict
 
 			data = urlparse.parse_qs(url)
 			data = dict([(i, data[i][0]) if data[i] else (i, '') for i in data])
 
-			self.title = data['tvshowtitle'] if 'tvshowtitle' in data else data['title']
-			self.title = self.title.replace('&', 'and').replace('Special Victims Unit', 'SVU')
+			title = data['tvshowtitle'] if 'tvshowtitle' in data else data['title']
+			title = title.replace('&', 'and').replace('Special Victims Unit', 'SVU')
 
-			self.hdlr = 'S%02dE%02d' % (int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else data['year']
-			self.year = data['year']
+			hdlr = 'S%02dE%02d' % (int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else data['year']
 
-			query = '%s %s' % (self.title, self.hdlr)
+			query = '%s %s' % (title, hdlr)
 			query = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', '', query)
 
 			url = self.search_link % urllib.quote_plus(query)
-			url = urlparse.urljoin(self.base_link, url)
+			url = urlparse.urljoin(self.base_link, url).replace('-', '+')
 			# log_utils.log('url = %s' % url, log_utils.LOGDEBUG)
 
-			try:
-				r = client.request(url)
-				div = client.parseDOM(r, 'div', attrs={'class': 'panel panel-default'})[0]
-				table = client.parseDOM(div, 'table', attrs={'class': 'table table-striped table-bordered table-hover table-condensed'})[0]
-				links = re.findall('<a href="(.+?)">', table, re.DOTALL)
-				# log_utils.log('links = %s' % links, log_utils.LOGDEBUG)
+			r = client.request(url)
+			posts = client.parseDOM(r, "div", attrs={"class": "item-post"})
+			posts = client.parseDOM(posts, "h3")
 
-				threads = []
-				for link in links:
-					threads.append(workers.Thread(self.get_sources, link))
-				[i.start() for i in threads]
-				[i.join() for i in threads]
-				return self.sources
-			except:
-				source_utils.scraper_error('TORLOCK')
-				return self.sources
-
-		except:
-			source_utils.scraper_error('TORLOCK')
-			return self.sources
-
-
-	def get_sources(self, link):
-		try:
-			url = '%s%s' % (self.base_link, link)
-			result = client.request(url)
-			if 'magnet' not in result:
-				return
-
-			url = 'magnet:%s' % (re.findall('a href="magnet:(.+?)"', result, re.DOTALL)[0])
-			url = urllib.unquote(url).decode('utf8').replace('&amp;', '&')
-			url = url.split('&tr=')[0]
-
-			if url in str(self.sources):
-				return
-
-			name = url.split('&dn=')[1]
-			name = urllib.unquote_plus(name).replace(' ', '.')
-			if source_utils.remove_lang(name):
-				return
-
-			t = name.split(self.hdlr)[0].replace(self.year, '').replace('(', '').replace(')', '').replace('&', 'and').replace('.US.', '.').replace('.us.', '.')
-			if cleantitle.get(t) != cleantitle.get(self.title):
-				return
-
-			if self.hdlr not in name:
-				return
-
-			size_list = re.findall('<dt>SIZE</dt><dd>(.+?)<', result, re.DOTALL)
-			quality, info = source_utils.get_release_quality(name, url)
-
-			for match in size_list:
+			items = []
+			for post in posts:
 				try:
-					size = re.findall('((?:\d+\,\d+\.\d+|\d+\.\d+|\d+\,\d+|\d+)\s*(?:GiB|MiB|GB|MB))', match)[0]
-					div = 1 if size.endswith('GB') else 1024
-					size = float(re.sub('[^0-9|/.|/,]', '', size.replace(',', '.'))) / div
-					size = '%.2f GB' % size
-					info.insert(0, size)
-					if size:
-						break
+					u = client.parseDOM(post, 'a', ret='href')[0]
+					r = client.request(u)
+					u = client.parseDOM(r, "div", attrs={"class": "single-link"})
+
+					for t in u:
+						r = client.parseDOM(t, 'a', ret='href')
+
+						for url in r:
+							if any(x in url for x in ['.rar', '.zip', '.iso', '.sample.']):
+								continue
+
+							valid, host = source_utils.is_host_valid(url, hostDict)
+
+							if valid:
+								name = url.split('OnceDDL_')[1]
+
+								if source_utils.remove_lang(name):
+									continue
+
+								t = name.split(hdlr)[0].replace(data['year'], '').replace('(', '').replace(')', '').replace('&', 'and')
+								if cleantitle.get(t) != cleantitle.get(title):
+									continue
+
+								if hdlr not in name:
+									continue
+
+								if url in str(sources):
+									continue
+
+								quality, info = source_utils.get_release_quality(name, url)
+
+								# size info not available on onceddl
+
+								sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': url, 'info': info, 'direct': False, 'debridonly': True})
 				except:
-					size = '0'
+					source_utils.scraper_error('ONCEDDL')
 					pass
 
-			info = ' | '.join(info)
-
-			self.sources.append({'source': 'torrent', 'quality': quality, 'language': 'en', 'url': url,
-												'info': info, 'direct': False, 'debridonly': True})
+			return sources
 
 		except:
-			source_utils.scraper_error('TORLOCK')
-			pass
+			source_utils.scraper_error('ONCEDDL')
+			return sources
+
 
 	def resolve(self, url):
 		return url

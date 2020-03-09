@@ -5,27 +5,27 @@ import urllib2
 import xbmcaddon
 import json
 import datetime
-addon_id = "plugin.video.eyepeatv"
+addon_id = "plugin.video.eyepeatv.2"
 __settings__=xbmcaddon.Addon(id=addon_id); __language__=__settings__.getLocalizedString
 def get_setting(name): dev=__settings__.getSetting(name); return dev
 dialog = xbmcgui.Dialog()
 
 KODIV          = float(xbmc.getInfoLabel("System.BuildVersion")[:4])
 
-update = xbmcgui.Dialog().yesno("[COLOR tomato]EyePeaTV[/COLOR]","[COLOR yellow]Are you a Gold Service User[/COLOR]","[COLOR turquoise][/COLOR]" ,"[COLOR turquoise]If Unsure Select No[/COLOR]")
-if update:
-    addon_id = "plugin.video.eyepeatv.2"
-    servicehost = "http://gold.eptv.co.uk:2086/"
-else:
-    addon_id = "plugin.video.eyepeatv"
-    servicehost = "http://gotdark.com"
+#update = xbmcgui.Dialog().yesno("[COLOR tomato]EyePeaTV[/COLOR]","[COLOR yellow]Are you a Gold Service User[/COLOR]","[COLOR turquoise][/COLOR]" ,"[COLOR turquoise]If Unsure Select No[/COLOR]")
+#if update:
+addon_id = "plugin.video.eyepeatv.2"
+servicehost = "http://gold.eptv.co.uk:2086/"
+#else:
+#    addon_id = "plugin.video.eyepeatv"
+#    servicehost = "http://gotdark.com"
 
 
 __settings__=xbmcaddon.Addon(id=addon_id); __language__=__settings__.getLocalizedString
 def get_setting(name): dev=__settings__.getSetting(name); return dev
 
 kupdatet = ""
-if KODIV < 18.5:
+if KODIV < 18.6:
     dialog = xbmcgui.Dialog()
     dialog.ok("[COLOR=white][B]EPTV[/COLOR][/B]","Your Kodi is needs updating","Your Version = "+str(KODIV),"Press OK to Continue and udpate ASAP")
     kupdatet = "[COLOR gold]  UPDATE KODI ASAP!!![/COLOR]"
@@ -75,10 +75,10 @@ if buildv < webversion:
 
 username=get_setting("Username")
 password=get_setting("Password")
-if username =="":
-    dialog.ok('[COLOR white]Eye Pea TV[/COLOR]','[COLOR white]No Login Info Found[/COLOR]','[COLOR white][/COLOR]','[COLOR white]Please Follow the next steps to login[/COLOR]')
-    xbmc.executebuiltin('RunAddon('+addon_id+')')
-    exit()
+#if username =="":
+#    dialog.ok('[COLOR white]Eye Pea TV[/COLOR]','[COLOR white]No Login Info Found[/COLOR]','[COLOR white][/COLOR]','[COLOR white]Please Follow the next steps to login[/COLOR]')
+#    xbmc.executebuiltin('RunAddon('+addon_id+')')
+#    exit()
 	
 	
 skinname = xbmc.getSkinDir()
@@ -105,6 +105,45 @@ Expiry = x['exp_date']
 Expired = datetime.datetime.fromtimestamp(int(Expiry)).strftime('%H:%M %d/%m/%Y')
 
 expires = "Loged in as: "+username+" Expires: "+Expired
+
+
+buildinfo1 = "[COLOR darkgrey]Your Build Version : "+str(buildv)+" - Latest Version : "+str(webversion)+"[/COLOR]"+etext
+buildinfo2 = "[COLOR black]Your Build Version : "+str(buildv)+" - Latest Version : "+str(webversion)+"[/COLOR]"
+buildinfo3 = "[COLOR black]Total Build Loads : "+str(loaded)+"[/COLOR]"
+buildinfo4 = "[COLOR darkgrey]Total Build Loads : "+str(loaded)+"[/COLOR]"
+
+if skinname == "skin.quartz":
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(60, 50, 2000, 50, "[COLOR black]Welcome to Eye Pea TV's Kodi Build[/COLOR]")
+    window.addControl(label)
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(58, 48, 2000, 50, "[COLOR lightgrey]Welcome to Eye Pea TV's Kodi Build[/COLOR]")
+    window.addControl(label)   
+
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(60, 80, 2000, 50, "[COLOR black]"+newnews+"[/COLOR]")
+    window.addControl(label)
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(58, 78, 2000, 50, "[COLOR lightgrey]"+newnews+"[/COLOR]")
+    window.addControl(label)    
+    
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(86, 980, 1000, 50, buildinfo1)
+    window.addControl(label)
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(84, 978, 1000, 50, buildinfo2)
+	
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(86, 1010, 1000, 50, buildinfo3)
+    window.addControl(label)
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(84, 1008, 1000, 50, buildinfo4)
+    window.addControl(label)
+    exit()
+
+
+
+
 
 window = xbmcgui.Window(10000)
 label = xbmcgui.ControlLabel(60, 220, 2000, 50, "[COLOR black]Welcome to Eye Pea TV's Kodi Build[/COLOR]")
@@ -136,10 +175,7 @@ if skinname == "skin.aeon.nox.silvo":
     label = xbmcgui.ControlLabel(84, 948, 1000, 50, "[COLOR darkgrey]Kodi Version : "+str(KODIV)+"[/COLOR]")
     window.addControl(label)
 	
-    buildinfo1 = "[COLOR darkgrey]Your Build Version : "+str(buildv)+" - Latest Version : "+str(webversion)+"[/COLOR]"+etext
-    buildinfo2 = "[COLOR black]Your Build Version : "+str(buildv)+" - Latest Version : "+str(webversion)+"[/COLOR]"
-    buildinfo3 = "[COLOR black]Total Build Loads : "+str(loaded)+"[/COLOR]"
-    buildinfo4 = "[COLOR darkgrey]Total Build Loads : "+str(loaded)+"[/COLOR]"
+
 
     window = xbmcgui.Window(10000)
     label = xbmcgui.ControlLabel(86, 980, 1000, 50, buildinfo1)
@@ -179,19 +215,19 @@ window.addControl(label)
 
 
 
-import os.path
-if os.path.exists(buildv):
-    with open(buildv, 'r') as myfile:
-        data = myfile.read()
-        buildv = float(data)
-else:
-    try:
-        fo = open("0.0", "w")
-        fo.write(buildv);
-        fo.close()
-        buildv = "0.0"
-    except:
-        buildv = "0.0"
+#import os.path
+#if os.path.exists(buildv):
+#    with open(buildv, 'r') as myfile:
+#        data = myfile.read()
+#        buildv = float(data)
+#else:
+#    try:
+#        fo = open("0.0", "w")
+#        fo.write(buildv);
+#        fo.close()
+#        buildv = "0.0"
+#    except:
+#        buildv = "0.0"
         
         
         

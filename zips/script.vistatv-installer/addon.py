@@ -207,5 +207,68 @@ def setplayermodes():
             xbmc.sleep(1000)        
     install()
     exit()  
-setplayermodes()
+
+
+
+dialog = xbmcgui.Dialog()
+
+
+install1 = "http://ftp.mgawow.co.uk/www/kodi18.zip"  
+install2 = "http://ftp.mgawow.co.uk/www/NEW-BUILD.zip"  
+
+def menuoptions():
+    dialog = xbmcgui.Dialog()
+    funcs = (
+        function1,
+        function2
+		)
+        
+    call = dialog.select('[B][COLOR=yellow]EPTV Kodi Build Installer[/COLOR][/B]', [
+    "[B][COLOR=orange]      Smarters For Kodi[/COLOR][/B] (Gold & Normal)", #1
+    "[B][COLOR=orange]      Simple For Kodi[/COLOR][/B] (Gold ONLY!)",#2
+    ])
+    # dialog.selectreturns
+    #   0 -> escape pressed
+    #   1 -> first item
+    #   2 -> second item
+    if call:
+        # esc is not pressed
+        if call < 0:
+            return
+        func = funcs[call-2]
+        #if myplatform == 'windows':
+        #    func = funcs[call-23]
+        #dp = xbmcgui.DialogProgress()
+        #dp.create("[COLOR tomato]VistaTV[/COLOR]",""+str(func)+" -3","PLEASE EXIT KODI OR PULL THE POWER LEAD")
+        #xbmc.sleep(1000)
+        return func()
+    else:
+        func = funcs[call]
+        #dp = xbmcgui.DialogProgress()
+        #dp.create("[COLOR tomato]VistaTV[/COLOR]",""+str(func)+" +0","PLEASE EXIT KODI OR PULL THE POWER LEAD")
+        #xbmc.sleep(1000)
+        return func()
+    return 
+
+
+
+def function1():
+    UPDATE = install1
+    setplayermodes()
+    exit()	
+	
+def function2():
+    UPDATE = install2
+    setplayermodes()
+    exit()
+		
+#addon_id = "plugin.video.eyepeatv.2"
+#__settings__=xbmcaddon.Addon(id=addon_id); __language__=__settings__.getLocalizedString
+#def get_setting(name): dev=__settings__.getSetting(name); return dev
+#username=get_setting("Username")
+#password=get_setting("Password")
+#if username =="":
+menuoptions()
+
+ 
  

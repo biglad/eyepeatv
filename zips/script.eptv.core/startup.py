@@ -75,10 +75,10 @@ if buildv < webversion:
 
 username=get_setting("Username")
 password=get_setting("Password")
-#if username =="":
+if username =="":
 #    dialog.ok('[COLOR white]Eye Pea TV[/COLOR]','[COLOR white]No Login Info Found[/COLOR]','[COLOR white][/COLOR]','[COLOR white]Please Follow the next steps to login[/COLOR]')
 #    xbmc.executebuiltin('RunAddon('+addon_id+')')
-#    exit()
+    exit()
 	
 	
 skinname = xbmc.getSkinDir()
@@ -111,6 +111,44 @@ buildinfo1 = "[COLOR darkgrey]Your Build Version : "+str(buildv)+" - Latest Vers
 buildinfo2 = "[COLOR black]Your Build Version : "+str(buildv)+" - Latest Version : "+str(webversion)+"[/COLOR]"
 buildinfo3 = "[COLOR black]Total Build Loads : "+str(loaded)+"[/COLOR]"
 buildinfo4 = "[COLOR darkgrey]Total Build Loads : "+str(loaded)+"[/COLOR]"
+
+
+
+if skinname == "skin.vmish":
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(500, 50, 2000, 50, "[COLOR black]Welcome to Eye Pea TV's Kodi Build[/COLOR]")
+    window.addControl(label)
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(498, 48, 2000, 50, "[COLOR lightgrey]Welcome to Eye Pea TV's Kodi Build[/COLOR]")
+    window.addControl(label)   
+
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(60, 74, 2000, 50, "[COLOR black]"+newnews+"[/COLOR]")
+    window.addControl(label)
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(58, 72, 2000, 50, "[COLOR lightgrey]"+newnews+"[/COLOR]")
+    window.addControl(label)    
+    
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(86, 980, 1000, 50, buildinfo1)
+    window.addControl(label)
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(84, 978, 1000, 50, buildinfo2)
+	
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(86, 1010, 1000, 50, buildinfo3)
+    window.addControl(label)
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(84, 1008, 1000, 50, buildinfo4)
+    window.addControl(label)
+    
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(1200, 1010, 2000, 50, "[COLOR black]"+expires+"[/COLOR]")
+    window.addControl(label)
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(1198, 1008, 2000, 50, "[COLOR lightgrey]"+expires+"[/COLOR]")
+    window.addControl(label)
+    exit()
 
 if skinname == "skin.quartz":
     window = xbmcgui.Window(10000)

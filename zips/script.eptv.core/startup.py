@@ -9,7 +9,8 @@ addon_id = "plugin.video.eyepeatv.2"
 __settings__=xbmcaddon.Addon(id=addon_id); __language__=__settings__.getLocalizedString
 def get_setting(name): dev=__settings__.getSetting(name); return dev
 dialog = xbmcgui.Dialog()
-
+xbmc.executebuiltin('InstallAddon(inputstream.rtmp)')
+xbmc.executebuiltin('SendClick(11)'), time.sleep(2), xbmcgui.Dialog().ok("Installing RTMP", "Supports Live TV playback")
 KODIV          = float(xbmc.getInfoLabel("System.BuildVersion")[:4])
 
 #update = xbmcgui.Dialog().yesno("[COLOR tomato]EyePeaTV[/COLOR]","[COLOR yellow]Are you a Gold Service User[/COLOR]","[COLOR turquoise][/COLOR]" ,"[COLOR turquoise]If Unsure Select No[/COLOR]")

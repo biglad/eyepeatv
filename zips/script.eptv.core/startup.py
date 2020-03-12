@@ -114,17 +114,17 @@ buildinfo4 = "[COLOR darkgrey]Total Build Loads : "+str(loaded)+"[/COLOR]"
 
 if skinname == "skin.quartz":
     window = xbmcgui.Window(10000)
-    label = xbmcgui.ControlLabel(60, 50, 2000, 50, "[COLOR black]Welcome to Eye Pea TV's Kodi Build[/COLOR]")
+    label = xbmcgui.ControlLabel(500, 50, 2000, 50, "[COLOR black]Welcome to Eye Pea TV's Kodi Build[/COLOR]")
     window.addControl(label)
     window = xbmcgui.Window(10000)
-    label = xbmcgui.ControlLabel(58, 48, 2000, 50, "[COLOR lightgrey]Welcome to Eye Pea TV's Kodi Build[/COLOR]")
+    label = xbmcgui.ControlLabel(498, 48, 2000, 50, "[COLOR lightgrey]Welcome to Eye Pea TV's Kodi Build[/COLOR]")
     window.addControl(label)   
 
     window = xbmcgui.Window(10000)
-    label = xbmcgui.ControlLabel(60, 80, 2000, 50, "[COLOR black]"+newnews+"[/COLOR]")
+    label = xbmcgui.ControlLabel(60, 74, 2000, 50, "[COLOR black]"+newnews+"[/COLOR]")
     window.addControl(label)
     window = xbmcgui.Window(10000)
-    label = xbmcgui.ControlLabel(58, 78, 2000, 50, "[COLOR lightgrey]"+newnews+"[/COLOR]")
+    label = xbmcgui.ControlLabel(58, 72, 2000, 50, "[COLOR lightgrey]"+newnews+"[/COLOR]")
     window.addControl(label)    
     
     window = xbmcgui.Window(10000)
@@ -138,6 +138,13 @@ if skinname == "skin.quartz":
     window.addControl(label)
     window = xbmcgui.Window(10000)
     label = xbmcgui.ControlLabel(84, 1008, 1000, 50, buildinfo4)
+    window.addControl(label)
+    
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(1200, 1010, 2000, 50, "[COLOR black]"+expires+"[/COLOR]")
+    window.addControl(label)
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(1198, 1008, 2000, 50, "[COLOR lightgrey]"+expires+"[/COLOR]")
     window.addControl(label)
     exit()
 

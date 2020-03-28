@@ -15,9 +15,6 @@ import shutil
 import base64
 import xbmcaddon
 import time
-from uuid import getnode as get_mac
-from resources.lib.kodion.impl import Context
-from resources.lib.kodion.constants import setting
 import subprocess
 import random
 import string
@@ -35,10 +32,10 @@ def menuoptions():
         function3
 		)
         
-    call = dialog.select('[B][COLOR=yellow]EPTV 24/7 Me nu[/COLOR][/B]', [
-    "[B][COLOR=orange]      24/7 TV Shows", #1
-    "[B][COLOR=orange]      24/7 Movies",#2
-    "[B][COLOR=orange]      24/7 Kids",#3
+    call = dialog.select('[B][COLOR=yellow]EPTV 24/7 Menu[/COLOR][/B]', [
+    "[B][COLOR=orange]      24/7 TV Shows[/B][/COLOR]", #1
+    "[B][COLOR=orange]      24/7 Movies[/B][/COLOR]",#2
+    "[B][COLOR=orange]      24/7 Kids[/B][/COLOR]",#3
     ])
     # dialog.selectreturns
     #   0 -> escape pressed

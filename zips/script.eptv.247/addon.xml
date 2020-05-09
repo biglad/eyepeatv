@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.eptv.247"
+    name="247 Menu" version="100.0.20" provider-name="Biglad">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.script" library="addon.py"> 
+     <provides>executable</provides> 
+  </extension> 
+  <extension point="xbmc.addon.metadata">
+<language></language>
+    <platform>all</platform>
+    <license>EPTV 2018</license>
+    <forum>EPTV 2018</forum>
+    <source></source>
+  </extension>
+</addon>

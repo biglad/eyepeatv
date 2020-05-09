@@ -38,7 +38,7 @@ HOME =  xbmc.translatePath('special://home/')
 buildfile = "version.txt"
 #lehekylg= base64.b64decode("aHR0cDovL2dvdGRhcmsuY29t") #DM
 #lehekylg= base64.b64decode("aHR0cDovL3BsYXkuZXB0di5jby51aw==") #EPTV
-lehekylg= base64.b64decode("aHR0cDovL3RlYW10di51aw==") #NEW
+lehekylg= base64.b64decode("aHR0cDovL2dvbGQuZXB0di5jby51aw==") #NEW
 pordinumber="2086"
 message = "VU5BVVRIT1JJWkVEIEVESVQgT0YgQURET04h"
 kasutajanimi=plugintools.get_setting("Username")

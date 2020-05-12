@@ -1,0 +1,1805 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<includes>
+	<include name="skinshortcuts-mainmenu">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<label>$LOCALIZE[427]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/dvd.png</icon>
+			<thumb />
+			<property name="labelID">427</property>
+			<property name="defaultID">disc</property>
+			<visible>System.HasMediaDVD</visible>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">PlayDisc</onclick>
+			<property name="path">PlayDisc</property>
+			<property name="list">PlayDisc</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">num-427</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<label>Search...</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/search.png</icon>
+			<thumb />
+			<property name="labelID">31001</property>
+			<property name="defaultID">search</property>
+			<visible>Skin.HasSetting(horizontaladvanced_menu)</visible>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(1107)</onclick>
+			<property name="path">ActivateWindow(1107)</property>
+			<property name="list">1107</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">num-31001</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<label>Live TV (EPG + IPTV)</label>
+			<label2>Custom item</label2>
+			<icon>resource://resource.images.skinicons.wide/livetv.png</icon>
+			<thumb>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180616160247.png</thumb>
+			<property name="labelID">livetv-epg-iptv</property>
+			<property name="defaultID" />
+			<property name="thumb.name">Custom single image</property>
+			<property name="thumbName">Custom single image</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">RunAddon(script.vista.livetvmenu,return)</onclick>
+			<property name="path">RunAddon(script.vista.livetvmenu,return)</property>
+			<property name="list">RunAddon(script.vista.livetvmenu,return)</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">livetv-epg-iptv</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<label>On Demand TV &amp; Movies</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180616174103.png</thumb>
+			<property name="labelID">script.vista.ondemanmenu</property>
+			<property name="defaultID" />
+			<property name="thumb.name">Custom single image</property>
+			<property name="thumbName">Custom single image</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">RunAddOn(script.vista.ondemanmenu)</onclick>
+			<property name="path">RunAddOn(script.vista.ondemanmenu)</property>
+			<property name="list">RunAddOn(script.vista.ondemanmenu)</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">script-vista-ondemanmenu</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<label>VistaTV 24/7 TV</label>
+			<label2>Video Add-On</label2>
+			<icon>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180806134317.png</icon>
+			<thumb>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180806134317.png</thumb>
+			<property name="labelID">vistatv24-7tv</property>
+			<property name="defaultID" />
+			<property name="thumb.name">Custom single image</property>
+			<property name="thumbName">Custom single image</property>
+			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.vistatv/?action=directory&amp;url=http%3A%2F%2Fftp.vistatv.online%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2F247menu.xml&amp;content=addons",return)</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(Videos,"plugin://plugin.video.vistatv/?action=directory&amp;url=http%3A%2F%2Fftp.vistatv.online%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2F247menu.xml&amp;content=addons",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vistatv/?action=directory&amp;url=http%3A%2F%2Fftp.vistatv.online%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2F247menu.xml&amp;content=addons",return)</property>
+			<property name="list">plugin://plugin.video.vistatv/?action=directory&amp;url=http%3A%2F%2Fftp.vistatv.online%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2F247menu.xml&amp;content=addons</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">vistatv24-7tv</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<label>VistaTV Sports/PPV</label>
+			<label2>Video Add-On</label2>
+			<icon>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180806134535.png</icon>
+			<thumb>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180806134535.png</thumb>
+			<property name="labelID">vistatvsports-ppv</property>
+			<property name="defaultID" />
+			<property name="thumb.name">Custom single image</property>
+			<property name="thumbName">Custom single image</property>
+			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.vistatv/?action=directory&amp;url=http%3A%2F%2Fftp.vistatv.online%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsports.xml&amp;content=addons",return)</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(Videos,"plugin://plugin.video.vistatv/?action=directory&amp;url=http%3A%2F%2Fftp.vistatv.online%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsports.xml&amp;content=addons",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vistatv/?action=directory&amp;url=http%3A%2F%2Fftp.vistatv.online%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsports.xml&amp;content=addons",return)</property>
+			<property name="list">plugin://plugin.video.vistatv/?action=directory&amp;url=http%3A%2F%2Fftp.vistatv.online%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fsports.xml&amp;content=addons</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">vistatvsports-ppv</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<label>VistaTV Kids Corner</label>
+			<label2>Video Add-On</label2>
+			<icon>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180806134619.png</icon>
+			<thumb>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180806134619.png</thumb>
+			<property name="labelID">vistatvkidscorner</property>
+			<property name="defaultID" />
+			<property name="thumb.name">Custom single image</property>
+			<property name="thumbName">Custom single image</property>
+			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.vistatv/?action=directory&amp;url=http%3A%2F%2Fftp.vistatv.online%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fkids.xml&amp;content=addons",return)</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(Videos,"plugin://plugin.video.vistatv/?action=directory&amp;url=http%3A%2F%2Fftp.vistatv.online%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fkids.xml&amp;content=addons",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vistatv/?action=directory&amp;url=http%3A%2F%2Fftp.vistatv.online%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fkids.xml&amp;content=addons",return)</property>
+			<property name="list">plugin://plugin.video.vistatv/?action=directory&amp;url=http%3A%2F%2Fftp.vistatv.online%2Fbuildrepo-1%2Fto-be-cleaned-up-ed%2Fsuper%2520old%2520stuff%2F9534958459845345%2Fsdfdsfdsfdsfsdfsfdsf%2F1%2F2%2Flol%2Fwtf%2Fkids.xml&amp;content=addons</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">vistatvkidscorner</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
+			<label>You Tube</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180616163025.png</thumb>
+			<property name="labelID">plugin.video.youtube</property>
+			<property name="defaultID" />
+			<property name="thumb.name">Custom single image</property>
+			<property name="thumbName">Custom single image</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(Videos,"plugin://plugin.video.youtube",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.youtube",return)</property>
+			<property name="list">plugin://plugin.video.youtube</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">plugin-video-youtube</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
+			<label>Music (Radio)</label>
+			<label2>Custom item</label2>
+			<icon>resource://resource.images.skinicons.wide/music.png</icon>
+			<thumb>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180616163923.png</thumb>
+			<property name="labelID">music-radio</property>
+			<property name="defaultID" />
+			<property name="thumb.name">Custom single image</property>
+			<property name="thumbName">Custom single image</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(Music,Addons,return)</onclick>
+			<property name="path">ActivateWindow(Music,Addons,return)</property>
+			<property name="list">Addons</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">music-radio</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="10">
+			<property name="id">$NUMBER[10]</property>
+			<label>APK Installer</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180616173330.png</thumb>
+			<property name="labelID">script.vistatvAPKinstaller</property>
+			<property name="defaultID" />
+			<property name="thumb.name">Custom single image</property>
+			<property name="thumbName">Custom single image</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">RunAddOn(script.vistatvAPKinstaller)</onclick>
+			<property name="path">RunAddOn(script.vistatvAPKinstaller)</property>
+			<property name="list">RunAddOn(script.vistatvAPKinstaller)</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">script-vistatvapkinstaller</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="11">
+			<property name="id">$NUMBER[11]</property>
+			<label>Retro Games</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180819161550.png</thumb>
+			<property name="labelID">script.vistatvgames</property>
+			<property name="defaultID" />
+			<property name="thumb.name">Custom single image</property>
+			<property name="thumbName">Custom single image</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">RunAddOn(script.vistatvgames)</onclick>
+			<property name="path">RunAddOn(script.vistatvgames)</property>
+			<property name="list">RunAddOn(script.vistatvgames)</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">script-vistatvgames</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="12">
+			<property name="id">$NUMBER[12]</property>
+			<label>APP Launcher</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180616165605.png</thumb>
+			<property name="labelID">applauncher</property>
+			<property name="defaultID" />
+			<property name="thumb.name">Custom single image</property>
+			<property name="thumbName">Custom single image</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(Programs,return)</onclick>
+			<property name="path">ActivateWindow(Programs,return)</property>
+			<property name="list">Programs</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">applauncher</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="13">
+			<property name="id">$NUMBER[13]</property>
+			<label>My Favourites</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>special://home/addons/resource.images.skinicons.wide/resources/favourites.png</thumb>
+			<property name="labelID">myfavourites</property>
+			<property name="defaultID" />
+			<property name="thumb.name">favourites.png</property>
+			<property name="thumbName">favourites.png</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(Favourites)</onclick>
+			<property name="path">ActivateWindow(Favourites)</property>
+			<property name="list">Favourites</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">myfavourites</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="14">
+			<property name="id">$NUMBER[14]</property>
+			<label>My Local Files</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>special://home/addons/resource.images.skinicons.wide/resources/videoaddons.png</thumb>
+			<property name="labelID">mylocalfiles</property>
+			<property name="defaultID" />
+			<property name="thumb.name">videoaddons.png</property>
+			<property name="thumbName">videoaddons.png</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(Videos,sources://video/,return)</onclick>
+			<property name="path">ActivateWindow(Videos,sources://video/,return)</property>
+			<property name="list">sources://video/</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">mylocalfiles</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="15">
+			<property name="id">$NUMBER[15]</property>
+			<label>VistaTV Tools</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180616172109.png</thumb>
+			<property name="labelID">script.vistatvtools</property>
+			<property name="defaultID" />
+			<property name="thumb.name">Custom single image</property>
+			<property name="thumbName">Custom single image</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">RunAddOn(script.vistatvtools)</onclick>
+			<property name="path">RunAddOn(script.vistatvtools)</property>
+			<property name="list">RunAddOn(script.vistatvtools)</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">script-vistatvtools</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="16">
+			<property name="id">$NUMBER[16]</property>
+			<label>Installed Video Addons</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180819161614.png</thumb>
+			<property name="labelID">installedvideoaddons</property>
+			<property name="defaultID" />
+			<property name="thumb.name">Custom single image</property>
+			<property name="thumbName">Custom single image</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(Videos,Addons,return)</onclick>
+			<property name="path">ActivateWindow(Videos,Addons,return)</property>
+			<property name="list">Addons</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">installedvideoaddons</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="17">
+			<property name="id">$NUMBER[17]</property>
+			<label>Kodi Settings</label>
+			<label2>Custom item</label2>
+			<icon>resource://resource.images.skinicons.wide/settings.png</icon>
+			<thumb>special://home/addons/resource.images.skinicons.wide/resources/settings.png</thumb>
+			<property name="labelID">kodisettings</property>
+			<property name="defaultID" />
+			<property name="thumb.name">settings.png</property>
+			<property name="thumbName">settings.png</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(Settings)</onclick>
+			<property name="path">ActivateWindow(Settings)</property>
+			<property name="list">Settings</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">kodisettings</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="18">
+			<property name="id">$NUMBER[18]</property>
+			<label>Exit / House Keeper</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180616170421.png</thumb>
+			<property name="labelID">script.vista.exit</property>
+			<property name="defaultID" />
+			<property name="thumb.name">Custom single image</property>
+			<property name="thumbName">Custom single image</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">RunAddOn(script.vista.exit)</onclick>
+			<property name="path">RunAddOn(script.vista.exit)</property>
+			<property name="list">RunAddOn(script.vista.exit)</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">script-vista-exit</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="19">
+			<property name="id">$NUMBER[19]</property>
+			<label>Adult (18+ Only)</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>special://profile/addon_data/skin.titan.kryptonbeta/custom_images/CustomBackgroundSetting20180616153754.png</thumb>
+			<property name="labelID">script.vistatvadult</property>
+			<property name="defaultID" />
+			<property name="thumb.name">Custom single image</property>
+			<property name="thumbName">Custom single image</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">RunAddOn(script.vistatvadult)</onclick>
+			<property name="path">RunAddOn(script.vistatvadult)</property>
+			<property name="list">RunAddOn(script.vistatvadult)</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">script-vistatvadult</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="20">
+			<property name="id">$NUMBER[20]</property>
+			<label>$LOCALIZE[7]</label>
+			<label2 />
+			<icon>resource://resource.images.skinicons.wide/filemanager.png</icon>
+			<thumb>special://home/addons/resource.images.skinicons.wide/resources/filemanager.png</thumb>
+			<property name="labelID">7</property>
+			<property name="defaultID">7</property>
+			<property name="translatedPath">ActivateWindow(filemanager)</property>
+			<property name="thumb.name">filemanager.png</property>
+			<property name="thumbName">filemanager.png</property>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(filemanager)</onclick>
+			<property name="path">ActivateWindow(filemanager)</property>
+			<property name="list">filemanager</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">num-7</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="21">
+			<property name="id">$NUMBER[21]</property>
+			<label>$LOCALIZE[8]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/sun.png</icon>
+			<thumb>special://home/addons/resource.images.skinicons.wide/resources/weather.png</thumb>
+			<property name="labelID">8</property>
+			<property name="defaultID">weather</property>
+			<property name="widget">weather</property>
+			<property name="widgetName">$LOCALIZE[8]</property>
+			<property name="widgetType">static</property>
+			<property name="widgetPath">$INCLUDE[WeatherWidget]</property>
+			<property name="widgetTarget">static</property>
+			<property name="background">$INFO[Skin.String(WeatherFanArtPack.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$VAR[WeatherFanArtExtension]</property>
+			<property name="thumb.name">weather.png</property>
+			<property name="thumbName">weather.png</property>
+			<visible>[!String.IsEmpty(Weather.Plugin)] + [!String.IsEmpty(Weather.Plugin)]</visible>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(Weather)</onclick>
+			<property name="path">ActivateWindow(Weather)</property>
+			<property name="list">Weather</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">num-8</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
+		</item>
+		<item id="22">
+			<property name="id">$NUMBER[22]</property>
+			<label>$LOCALIZE[1036]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/favourite.png</icon>
+			<thumb />
+			<property name="labelID">1036</property>
+			<property name="defaultID">favourite</property>
+			<visible>Skin.HasSetting(horizontaladvanced_menu)</visible>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(favourites)</onclick>
+			<property name="path">ActivateWindow(favourites)</property>
+			<property name="list">favourites</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">num-1036</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="23">
+			<property name="id">$NUMBER[23]</property>
+			<label>$LOCALIZE[7]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/filemanager.png</icon>
+			<thumb />
+			<property name="labelID">7--0</property>
+			<property name="defaultID">filemanager</property>
+			<visible>Skin.HasSetting(horizontaladvanced_menu)</visible>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(filemanager)</onclick>
+			<property name="path">ActivateWindow(filemanager)</property>
+			<property name="list">filemanager</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">7-0</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="24">
+			<property name="id">$NUMBER[24]</property>
+			<label>LibreELEC</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/libreelec.png</icon>
+			<thumb />
+			<property name="labelID">libreelec</property>
+			<property name="defaultID">libreelec</property>
+			<visible>System.HasAddon(service.libreelec.settings)</visible>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">RunAddon(service.libreelec.settings)</onclick>
+			<property name="path">RunAddon(service.libreelec.settings)</property>
+			<property name="list">RunAddon(service.libreelec.settings)</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">libreelec</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="25">
+			<property name="id">$NUMBER[25]</property>
+			<label>OpenELEC</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/openelec.png</icon>
+			<thumb />
+			<property name="labelID">openelec</property>
+			<property name="defaultID">openelec</property>
+			<visible>System.HasAddon(service.openelec.settings)</visible>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">RunAddon(service.openelec.settings)</onclick>
+			<property name="path">RunAddon(service.openelec.settings)</property>
+			<property name="list">RunAddon(service.openelec.settings)</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">openelec</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="26">
+			<property name="id">$NUMBER[26]</property>
+			<label>$LOCALIZE[5]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/settings.png</icon>
+			<thumb />
+			<property name="labelID">5</property>
+			<property name="defaultID">setting</property>
+			<visible>Skin.HasSetting(horizontaladvanced_menu)</visible>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(settings)</onclick>
+			<property name="path">ActivateWindow(settings)</property>
+			<property name="list">settings</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">num-5</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="27">
+			<property name="id">$NUMBER[27]</property>
+			<label>$LOCALIZE[33060]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
+			<thumb />
+			<property name="labelID">33060</property>
+			<property name="defaultID">power</property>
+			<visible>Skin.HasSetting(horizontaladvanced_menu)</visible>
+			<onclick condition="![Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0) + ![SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]]">ActivateWindow(shutdownmenu)</onclick>
+			<property name="path">ActivateWindow(shutdownmenu)</property>
+			<property name="list">shutdownmenu</property>
+			<onclick condition="[Skin.HasSetting(OpenSubMenuOnClick) + IntegerGreaterThan(Container(4445).NumItems,0)] | [SubString(Skin.String(HomeLayout), netflix) | SubString(Skin.String(HomeLayout), win10)]">SetFocus(4444,0)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">num-33060</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+	</include>
+	<include />
+	<include name="skinshortcuts-submenu">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">1</property>
+			<label>$LOCALIZE[208]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/play.png</icon>
+			<thumb />
+			<property name="labelID">208</property>
+			<property name="defaultID">208</property>
+			<onclick>PlayDisc</onclick>
+			<property name="path">PlayDisc</property>
+			<property name="list">PlayDisc</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-427)</visible>
+			<property name="group">427</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">1</property>
+			<label>$LOCALIZE[40293]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/eject.png</icon>
+			<thumb />
+			<property name="labelID">40293</property>
+			<property name="defaultID">40293</property>
+			<onclick>EjectTray()</onclick>
+			<property name="path">EjectTray()</property>
+			<property name="list">EjectTray()</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-427)</visible>
+			<property name="group">427</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">21</property>
+			<label>$LOCALIZE[184]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/update.png</icon>
+			<thumb />
+			<property name="labelID">184</property>
+			<property name="defaultID">184</property>
+			<onclick>Weather.Refresh</onclick>
+			<property name="path">Weather.Refresh</property>
+			<property name="list">Weather.Refresh</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<property name="group">8</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">21</property>
+			<label>$LOCALIZE[31077]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/location-previous.png</icon>
+			<thumb />
+			<property name="labelID">31077</property>
+			<property name="defaultID">31077</property>
+			<onclick>Weather.LocationPrevious</onclick>
+			<property name="path">Weather.LocationPrevious</property>
+			<property name="list">Weather.LocationPrevious</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<property name="group">8</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">21</property>
+			<label>$LOCALIZE[31078]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/location-next.png</icon>
+			<thumb />
+			<property name="labelID">31078</property>
+			<property name="defaultID">31078</property>
+			<onclick>Weather.LocationNext</onclick>
+			<property name="path">Weather.LocationNext</property>
+			<property name="list">Weather.LocationNext</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<property name="group">8</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">21</property>
+			<label>$LOCALIZE[1390]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/weather-settings.png</icon>
+			<thumb />
+			<property name="labelID">1390</property>
+			<property name="defaultID">1390</property>
+			<onclick>ActivateWindow(ServiceSettings,weather)</onclick>
+			<property name="path">ActivateWindow(ServiceSettings,weather)</property>
+			<property name="list">weather</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<property name="group">8</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">28</property>
+			<label>$VAR[SystemLogOffVar]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
+			<thumb />
+			<property name="labelID">var-systemlogoffvar</property>
+			<property name="defaultID">var-systemlogoffvar</property>
+			<visible>[System.HasLoginScreen | Integer.IsGreater(System.ProfileCount,1)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),powermenu)</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>dialog.close(all,true)</onclick>
+			<property name="path">dialog.close(all,true)</property>
+			<property name="list">dialog.close(all,true)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">28</property>
+			<label>$LOCALIZE[20046]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
+			<thumb />
+			<property name="labelID">20046</property>
+			<property name="defaultID">20046</property>
+			<visible>[[System.HasLocks] + [System.HasLocks]] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),powermenu)</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>mastermode</onclick>
+			<property name="path">mastermode</property>
+			<property name="list">mastermode</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">28</property>
+			<label>$LOCALIZE[13017]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
+			<thumb />
+			<property name="labelID">13017</property>
+			<property name="defaultID">13017</property>
+			<visible>[[System.HasShutdown +!System.IsInhibit] + [System.HasShutdown + !System.IsInhibit]] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),powermenu)</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>InhibitIdleShutdown(true)</onclick>
+			<property name="path">InhibitIdleShutdown(true)</property>
+			<property name="list">InhibitIdleShutdown(true)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">28</property>
+			<label>$LOCALIZE[13018]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
+			<thumb />
+			<property name="labelID">13018</property>
+			<property name="defaultID">13018</property>
+			<visible>[[System.HasShutdown + System.IsInhibit] + [System.HasShutdown + System.IsInhibit]] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),powermenu)</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>InhibitIdleShutdown(false)</onclick>
+			<property name="path">InhibitIdleShutdown(false)</property>
+			<property name="list">InhibitIdleShutdown(false)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">28</property>
+			<label>$VAR[CancelAlarmVar]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
+			<thumb />
+			<property name="labelID">var-cancelalarmvar</property>
+			<property name="defaultID">var-cancelalarmvar</property>
+			<visible>[[System.HasAlarm(shutdowntimer)] + [System.HasAlarm(shutdowntimer)]] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),powermenu)</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>CancelAlarm(shutdowntimer)</onclick>
+			<property name="path">CancelAlarm(shutdowntimer)</property>
+			<property name="list">CancelAlarm(shutdowntimer)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">28</property>
+			<label>Exit Fast</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">script.vista.exit</property>
+			<property name="defaultID" />
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>RunAddOn(script.vista.exit)</onclick>
+			<property name="path">RunAddOn(script.vista.exit)</property>
+			<property name="list">RunAddOn(script.vista.exit)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),powermenu)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">28</property>
+			<label>Exit Slow</label>
+			<label2>Custom item</label2>
+			<icon>common/exit1.png</icon>
+			<thumb />
+			<property name="labelID">exitslow</property>
+			<property name="defaultID">13012</property>
+			<property name="translatedPath">Quit</property>
+			<visible>[System.ShowExitButton] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),powermenu)</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>Quit</onclick>
+			<property name="path">Quit</property>
+			<property name="list">Quit</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-num-427">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">1</property>
+			<label>$LOCALIZE[208]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/play.png</icon>
+			<thumb />
+			<property name="labelID">208</property>
+			<property name="defaultID">208</property>
+			<onclick>PlayDisc</onclick>
+			<property name="path">PlayDisc</property>
+			<property name="list">PlayDisc</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">427</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">1</property>
+			<label>$LOCALIZE[40293]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/eject.png</icon>
+			<thumb />
+			<property name="labelID">40293</property>
+			<property name="defaultID">40293</property>
+			<onclick>EjectTray()</onclick>
+			<property name="path">EjectTray()</property>
+			<property name="list">EjectTray()</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">427</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-num-427">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">1</property>
+			<label>$LOCALIZE[208]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/play.png</icon>
+			<thumb />
+			<property name="labelID">208</property>
+			<property name="defaultID">208</property>
+			<onclick>PlayDisc</onclick>
+			<property name="path">PlayDisc</property>
+			<property name="list">PlayDisc</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),num-427)</visible>
+			<property name="group">427</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">1</property>
+			<label>$LOCALIZE[40293]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/eject.png</icon>
+			<thumb />
+			<property name="labelID">40293</property>
+			<property name="defaultID">40293</property>
+			<onclick>EjectTray()</onclick>
+			<property name="path">EjectTray()</property>
+			<property name="list">EjectTray()</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),num-427)</visible>
+			<property name="group">427</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-num-31001">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-31001">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-livetv-epg-iptv">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-livetv-epg-iptv">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-script-vista-ondemanmenu">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-script-vista-ondemanmenu">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-vistatv24-7tv">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-vistatv24-7tv">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-vistatvsports-ppv">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-vistatvsports-ppv">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-vistatvkidscorner">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-vistatvkidscorner">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-plugin-video-youtube">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-plugin-video-youtube">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-music-radio">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-music-radio">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-script-vistatvapkinstaller">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-script-vistatvapkinstaller">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-script-vistatvgames">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-script-vistatvgames">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-applauncher">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-applauncher">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-myfavourites">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-myfavourites">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-mylocalfiles">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-mylocalfiles">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-script-vistatvtools">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-script-vistatvtools">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-installedvideoaddons">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-installedvideoaddons">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-kodisettings">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-kodisettings">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-script-vista-exit">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-script-vista-exit">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-script-vistatvadult">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-script-vistatvadult">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-num-7">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-7">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-num-8">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">21</property>
+			<label>$LOCALIZE[184]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/update.png</icon>
+			<thumb />
+			<property name="labelID">184</property>
+			<property name="defaultID">184</property>
+			<onclick>Weather.Refresh</onclick>
+			<property name="path">Weather.Refresh</property>
+			<property name="list">Weather.Refresh</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">8</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">21</property>
+			<label>$LOCALIZE[31077]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/location-previous.png</icon>
+			<thumb />
+			<property name="labelID">31077</property>
+			<property name="defaultID">31077</property>
+			<onclick>Weather.LocationPrevious</onclick>
+			<property name="path">Weather.LocationPrevious</property>
+			<property name="list">Weather.LocationPrevious</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">8</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">21</property>
+			<label>$LOCALIZE[31078]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/location-next.png</icon>
+			<thumb />
+			<property name="labelID">31078</property>
+			<property name="defaultID">31078</property>
+			<onclick>Weather.LocationNext</onclick>
+			<property name="path">Weather.LocationNext</property>
+			<property name="list">Weather.LocationNext</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">8</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">21</property>
+			<label>$LOCALIZE[1390]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/weather-settings.png</icon>
+			<thumb />
+			<property name="labelID">1390</property>
+			<property name="defaultID">1390</property>
+			<onclick>ActivateWindow(ServiceSettings,weather)</onclick>
+			<property name="path">ActivateWindow(ServiceSettings,weather)</property>
+			<property name="list">weather</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">8</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-num-8">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">21</property>
+			<label>$LOCALIZE[184]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/update.png</icon>
+			<thumb />
+			<property name="labelID">184</property>
+			<property name="defaultID">184</property>
+			<onclick>Weather.Refresh</onclick>
+			<property name="path">Weather.Refresh</property>
+			<property name="list">Weather.Refresh</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),num-8)</visible>
+			<property name="group">8</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">21</property>
+			<label>$LOCALIZE[31077]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/location-previous.png</icon>
+			<thumb />
+			<property name="labelID">31077</property>
+			<property name="defaultID">31077</property>
+			<onclick>Weather.LocationPrevious</onclick>
+			<property name="path">Weather.LocationPrevious</property>
+			<property name="list">Weather.LocationPrevious</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),num-8)</visible>
+			<property name="group">8</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">21</property>
+			<label>$LOCALIZE[31078]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/location-next.png</icon>
+			<thumb />
+			<property name="labelID">31078</property>
+			<property name="defaultID">31078</property>
+			<onclick>Weather.LocationNext</onclick>
+			<property name="path">Weather.LocationNext</property>
+			<property name="list">Weather.LocationNext</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),num-8)</visible>
+			<property name="group">8</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">21</property>
+			<label>$LOCALIZE[1390]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/weather-settings.png</icon>
+			<thumb />
+			<property name="labelID">1390</property>
+			<property name="defaultID">1390</property>
+			<onclick>ActivateWindow(ServiceSettings,weather)</onclick>
+			<property name="path">ActivateWindow(ServiceSettings,weather)</property>
+			<property name="list">weather</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),num-8)</visible>
+			<property name="group">8</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-num-1036">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-1036">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-7-0">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-7-0">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-libreelec">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-libreelec">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-openelec">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-openelec">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-num-5">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-5">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-num-33060">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-33060">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-powermenu">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">28</property>
+			<label>$VAR[SystemLogOffVar]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
+			<thumb />
+			<property name="labelID">var-systemlogoffvar</property>
+			<property name="defaultID">var-systemlogoffvar</property>
+			<visible>System.HasLoginScreen | Integer.IsGreater(System.ProfileCount,1)</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>dialog.close(all,true)</onclick>
+			<property name="path">dialog.close(all,true)</property>
+			<property name="list">dialog.close(all,true)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">28</property>
+			<label>$LOCALIZE[20046]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
+			<thumb />
+			<property name="labelID">20046</property>
+			<property name="defaultID">20046</property>
+			<visible>[System.HasLocks] + [System.HasLocks]</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>mastermode</onclick>
+			<property name="path">mastermode</property>
+			<property name="list">mastermode</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">28</property>
+			<label>$LOCALIZE[13017]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
+			<thumb />
+			<property name="labelID">13017</property>
+			<property name="defaultID">13017</property>
+			<visible>[System.HasShutdown +!System.IsInhibit] + [System.HasShutdown + !System.IsInhibit]</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>InhibitIdleShutdown(true)</onclick>
+			<property name="path">InhibitIdleShutdown(true)</property>
+			<property name="list">InhibitIdleShutdown(true)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">28</property>
+			<label>$LOCALIZE[13018]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
+			<thumb />
+			<property name="labelID">13018</property>
+			<property name="defaultID">13018</property>
+			<visible>[System.HasShutdown + System.IsInhibit] + [System.HasShutdown + System.IsInhibit]</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>InhibitIdleShutdown(false)</onclick>
+			<property name="path">InhibitIdleShutdown(false)</property>
+			<property name="list">InhibitIdleShutdown(false)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">28</property>
+			<label>$VAR[CancelAlarmVar]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
+			<thumb />
+			<property name="labelID">var-cancelalarmvar</property>
+			<property name="defaultID">var-cancelalarmvar</property>
+			<visible>[System.HasAlarm(shutdowntimer)] + [System.HasAlarm(shutdowntimer)]</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>CancelAlarm(shutdowntimer)</onclick>
+			<property name="path">CancelAlarm(shutdowntimer)</property>
+			<property name="list">CancelAlarm(shutdowntimer)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">28</property>
+			<label>Exit Fast</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">script.vista.exit</property>
+			<property name="defaultID" />
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>RunAddOn(script.vista.exit)</onclick>
+			<property name="path">RunAddOn(script.vista.exit)</property>
+			<property name="list">RunAddOn(script.vista.exit)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">28</property>
+			<label>Exit Slow</label>
+			<label2>Custom item</label2>
+			<icon>common/exit1.png</icon>
+			<thumb />
+			<property name="labelID">exitslow</property>
+			<property name="defaultID">13012</property>
+			<property name="translatedPath">Quit</property>
+			<visible>System.ShowExitButton</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>Quit</onclick>
+			<property name="path">Quit</property>
+			<property name="list">Quit</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-powermenu">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">28</property>
+			<label>$VAR[SystemLogOffVar]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
+			<thumb />
+			<property name="labelID">var-systemlogoffvar</property>
+			<property name="defaultID">var-systemlogoffvar</property>
+			<visible>[System.HasLoginScreen | Integer.IsGreater(System.ProfileCount,1)] + String.IsEqual(Window(10000).Property(submenuVisibility),powermenu)</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>dialog.close(all,true)</onclick>
+			<property name="path">dialog.close(all,true)</property>
+			<property name="list">dialog.close(all,true)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">28</property>
+			<label>$LOCALIZE[20046]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
+			<thumb />
+			<property name="labelID">20046</property>
+			<property name="defaultID">20046</property>
+			<visible>[[System.HasLocks] + [System.HasLocks]] + String.IsEqual(Window(10000).Property(submenuVisibility),powermenu)</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>mastermode</onclick>
+			<property name="path">mastermode</property>
+			<property name="list">mastermode</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">28</property>
+			<label>$LOCALIZE[13017]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
+			<thumb />
+			<property name="labelID">13017</property>
+			<property name="defaultID">13017</property>
+			<visible>[[System.HasShutdown +!System.IsInhibit] + [System.HasShutdown + !System.IsInhibit]] + String.IsEqual(Window(10000).Property(submenuVisibility),powermenu)</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>InhibitIdleShutdown(true)</onclick>
+			<property name="path">InhibitIdleShutdown(true)</property>
+			<property name="list">InhibitIdleShutdown(true)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">28</property>
+			<label>$LOCALIZE[13018]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
+			<thumb />
+			<property name="labelID">13018</property>
+			<property name="defaultID">13018</property>
+			<visible>[[System.HasShutdown + System.IsInhibit] + [System.HasShutdown + System.IsInhibit]] + String.IsEqual(Window(10000).Property(submenuVisibility),powermenu)</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>InhibitIdleShutdown(false)</onclick>
+			<property name="path">InhibitIdleShutdown(false)</property>
+			<property name="list">InhibitIdleShutdown(false)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">28</property>
+			<label>$VAR[CancelAlarmVar]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
+			<thumb />
+			<property name="labelID">var-cancelalarmvar</property>
+			<property name="defaultID">var-cancelalarmvar</property>
+			<visible>[[System.HasAlarm(shutdowntimer)] + [System.HasAlarm(shutdowntimer)]] + String.IsEqual(Window(10000).Property(submenuVisibility),powermenu)</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>CancelAlarm(shutdowntimer)</onclick>
+			<property name="path">CancelAlarm(shutdowntimer)</property>
+			<property name="list">CancelAlarm(shutdowntimer)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">28</property>
+			<label>Exit Fast</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">script.vista.exit</property>
+			<property name="defaultID" />
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>RunAddOn(script.vista.exit)</onclick>
+			<property name="path">RunAddOn(script.vista.exit)</property>
+			<property name="list">RunAddOn(script.vista.exit)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),powermenu)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">28</property>
+			<label>Exit Slow</label>
+			<label2>Custom item</label2>
+			<icon>common/exit1.png</icon>
+			<thumb />
+			<property name="labelID">exitslow</property>
+			<property name="defaultID">13012</property>
+			<property name="translatedPath">Quit</property>
+			<visible>[System.ShowExitButton] + String.IsEqual(Window(10000).Property(submenuVisibility),powermenu)</visible>
+			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
+			<onclick>Quit</onclick>
+			<property name="path">Quit</property>
+			<property name="list">Quit</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">powermenu</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-template-widget">
+		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget-Master user</include>
+	</include>
+	<include name="skinshortcuts-template-widget-Master user">
+		<control id="600" type="label">
+			<label>widget-0</label>
+			<width>1</width>
+			<heigth>1</heigth>
+			<posx>-1</posx>
+			<posy>-1</posy>
+			<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<visible>Skin.String(widgetvalue-num-8,0) | !Skin.String(widgetvalue-num-8)</visible>
+		</control>
+		<control id="510" type="panel">
+			<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<visible>Skin.String(widgetvalue-num-8,0) | !Skin.String(widgetvalue-num-8)</visible>
+			<include condition="Skin.String(HomeLayout, enhanced)" content="EnhancedHomeWidgetLayout" name="EnhancedHomeWidgetLayout">
+				<param name="widgetid" value="510" />
+				<param name="widgetLabelVisibility" value="WidgetTagOverlayAuto" />
+			</include>
+			<include condition="!Skin.String(HomeLayout, enhanced)" content="widgetlayout" name="widgetlayout">
+				<param name="widgetid" value="510" />
+				<param name="widgetLabelVisibility" value="WidgetTagOverlayAuto" />
+			</include>
+			<content target="static">
+				<include>WeatherWidget</include>
+			</content>
+		</control>
+	</include>
+	<include name="skinshortcuts-template-win10widget.1">
+		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-win10widget.1-Master user</include>
+	</include>
+	<include name="skinshortcuts-template-win10widget.1-Master user">
+		<control id="510" type="panel">
+			<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<include>HomeWin10WidgetPosBottom</include>
+			<onleft condition="!Skin.HasSetting(Win10SubmenuRight)">4444</onleft>
+			<onleft condition="Skin.HasSetting(Win10SubmenuRight) + !Skin.HasSetting(EnhancedHome_Circular)">300</onleft>
+			<onleft condition="Skin.HasSetting(Win10SubmenuRight) + Skin.HasSetting(EnhancedHome_Circular)">Control.Move(300,-1)</onleft>
+			<onleft condition="Skin.HasSetting(Win10SubmenuRight) + Skin.HasSetting(EnhancedHome_Circular)">SetFocus(9000,0)</onleft>
+			<onright>SetFocus(520,0)</onright>
+			<onright condition="Skin.HasSetting(EnhancedHome_Circular) + IsEmpty(Container(300).ListItem.Property(widget.1)) + ![Skin.HasSetting(Win10SubmenuRight) + IntegerGreaterThan(Container(4445).NumItems,0)]">Control.Move(300,1)</onright>
+			<onright condition="IsEmpty(Container(300).ListItem.Property(widget.1))">SetFocus(4444,0)</onright>
+			<include>HomeWin10WidgetLayout</include>
+			<include content="HomeWin10WidgetLayoutSquare" name="HomeWin10WidgetLayoutSquare">
+				<param name="widgetid" value="510" />
+				<param name="widgetLabelVisibility" value="WidgetTagOverlayAuto" />
+			</include>
+			<content target="static">
+				<include>WeatherWidget</include>
+			</content>
+		</control>
+	</include>
+	<include name="skinshortcuts-template-VerticalHomeWidgets">
+		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-VerticalHomeWidgets-Master user</include>
+	</include>
+	<include name="skinshortcuts-template-VerticalHomeWidgets-Master user">
+		<control id="600" type="label">
+			<label>widget-0</label>
+			<width>1</width>
+			<heigth>1</heigth>
+			<posx>-1</posx>
+			<posy>-1</posy>
+			<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<visible>Skin.String(widgetvalue-num-8,0) | !Skin.String(widgetvalue-num-8)</visible>
+		</control>
+		<control id="600" type="label">
+			<label>widget-1</label>
+			<width>1</width>
+			<heigth>1</heigth>
+			<posx>-1</posx>
+			<posy>-1</posy>
+			<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<visible>Skin.String(widgetvalue-num-8,1)</visible>
+		</control>
+		<control id="600" type="label">
+			<label>widget-2</label>
+			<width>1</width>
+			<heigth>1</heigth>
+			<posx>-1</posx>
+			<posy>-1</posy>
+			<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<visible>Skin.String(widgetvalue-num-8,2)</visible>
+		</control>
+		<control id="600" type="label">
+			<label>widget-3</label>
+			<width>1</width>
+			<heigth>1</heigth>
+			<posx>-1</posx>
+			<posy>-1</posy>
+			<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<visible>Skin.String(widgetvalue-num-8,3)</visible>
+		</control>
+		<control id="77777" type="grouplist">
+			<right>0</right>
+			<width>100%</width>
+			<top>183</top>
+			<usecontrolcoords>true</usecontrolcoords>
+			<include condition="system.getbool(lookandfeel.enablerssfeeds)" content="height" name="height">
+				<param name="height" value="857" />
+			</include>
+			<include condition="false" content="height" name="height">
+				<param name="height" value="857" />
+			</include>
+			<height>897</height>
+			<width>1920</width>
+			<onleft>300</onleft>
+			<pagecontrol>68821</pagecontrol>
+			<include>animation_window_open_close</include>
+			<animation condition="!StringCompare(Container(300).ListItem.Property(submenuVisibility),num-8)" easing="inout" effect="fade" end="0" reversible="true" start="100" time="50">Conditional</animation>
+			<animation condition="StringCompare(Skin.AspectRatio,16:10)" effect="slide" end="0,120" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),poster) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,poster)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,380" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),small poster) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,small poster)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,506" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),square) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,square)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,490" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),minisquare) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,minisquare)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,655" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),landscape) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,landscape)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,570" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),landscapesmall) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,landscapesmall)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,592" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),banner) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,banner)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,584" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),single box) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,single box)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,400" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),wide box) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,wide box)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,500" start="0" time="0">Conditional</animation>
+			<animation condition="StringCompare(Container(300).ListItem.Property(squaresubmenu),enable) + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,-100" start="0" time="0">Conditional</animation>
+			<animation condition="StringCompare(Container(300).ListItem.Property(squaresubmenu),enable) + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,-100" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),small poster) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,small poster)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,127" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),square) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,square)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,135" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),minisquare) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,minisquare)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,249" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),landscape) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,landscape)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,190" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),landscapesmall) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,landscapesmall)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,225" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),banner) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,banner)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,225" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),single box) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,single box)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,40" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),wide box) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,wide box)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,125" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle.1),small poster) | [IsEmpty(Container(300).ListItem.Property(widgetstyle.1)) + Skin.String(widgetstyle,small poster)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,127" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle.1),square) | [IsEmpty(Container(300).ListItem.Property(widgetstyle.1)) + Skin.String(widgetstyle,square)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,135" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle.1),minisquare) | [IsEmpty(Container(300).ListItem.Property(widgetstyle.1)) + Skin.String(widgetstyle,minisquare)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,249" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle.1),landscape) | [IsEmpty(Container(300).ListItem.Property(widgetstyle.1)) + Skin.String(widgetstyle,landscape)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,190" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle.1),landscapesmall) | [IsEmpty(Container(300).ListItem.Property(widgetstyle.1)) + Skin.String(widgetstyle,landscapesmall)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,225" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle.1),banner) | [IsEmpty(Container(300).ListItem.Property(widgetstyle.1)) + Skin.String(widgetstyle,banner)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,225" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle.1),single box) | [IsEmpty(Container(300).ListItem.Property(widgetstyle.1)) + Skin.String(widgetstyle,single box)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,40" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle.1),wide box) | [IsEmpty(Container(300).ListItem.Property(widgetstyle.1)) + Skin.String(widgetstyle,wide box)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,125" start="0" time="0">Conditional</animation>
+			<control id="4446" type="panel">
+				<include>VerticalHomeSquareSubMenuLayout</include>
+				<visible>false</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			</control>
+			<control id="505" type="radiobutton">
+				<include condition="!Skin.HasSetting(AutoWidgetAlignDisabled)">VerticalHomeSimpleWidgetHeaderLayout</include>
+				<include condition="Skin.HasSetting(AutoWidgetAlignDisabled)">VerticalHomeSimpleWidgetHeaderLayoutAlt</include>
+				<visible>true</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+				<selected>Control.HasFocus(505)</selected>
+			</control>
+			<include condition="false" content="VerticalHomeAdvancedWidgetHeader" name="VerticalHomeAdvancedWidgetHeader">
+				<param name="id" value="509" />
+				<param name="containerid" value="510" />
+				<param name="widgetidprefix" value="" />
+				<param name="mainmenuid" value="num-8" />
+			</include>
+			<control id="510" type="panel">
+				<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+				<include>widgets_animation</include>
+				<visible>!IsEmpty(Container(300).Listitem.Property(widget))</visible>
+				<visible>SubString(Container(300).Listitem.Property(multiwidget),multi) | [!SubString(Container(300).Listitem.Property(multiwidget),multi) + [Skin.String(widgetvalue-num-8,0) | !Skin.String(widgetvalue-num-8)]]</visible>
+				<include content="widgetlayout" name="widgetlayout">
+					<param name="widgetid" value="510" />
+					<param name="multiprefix" value="" />
+					<param name="widgetLabelVisibility" value="WidgetTagOverlayAuto" />
+				</include>
+				<content target="static">
+					<include>WeatherWidget</include>
+				</content>
+			</control>
+			<include condition="false" content="VerticalHomeAdvancedWidgetHeader" name="VerticalHomeAdvancedWidgetHeader">
+				<param name="id" value="519" />
+				<param name="containerid" value="520" />
+				<param name="widgetidprefix" value=".1" />
+				<param name="mainmenuid" value="num-8" />
+			</include>
+			<control id="520" type="panel">
+				<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+				<include>widgets_animation</include>
+				<visible>!IsEmpty(Container(300).Listitem.Property(widget.1))</visible>
+				<visible>SubString(Container(300).Listitem.Property(multiwidget),multi) | [!SubString(Container(300).Listitem.Property(multiwidget),multi) + Skin.String(widgetvalue-num-8,1)]</visible>
+				<include content="widgetlayout" name="widgetlayout">
+					<param name="widgetid" value="520" />
+					<param name="multiprefix" value="" />
+					<param name="widgetLabelVisibility" value="WidgetTagOverlayAuto" />
+				</include>
+				<content target="" />
+			</control>
+			<include condition="false" content="VerticalHomeAdvancedWidgetHeader" name="VerticalHomeAdvancedWidgetHeader">
+				<param name="id" value="529" />
+				<param name="containerid" value="530" />
+				<param name="widgetidprefix" value=".2" />
+				<param name="mainmenuid" value="num-8" />
+			</include>
+			<control id="530" type="panel">
+				<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+				<include>widgets_animation</include>
+				<visible>!IsEmpty(Container(300).Listitem.Property(widget.2))</visible>
+				<visible>SubString(Container(300).Listitem.Property(multiwidget),multi) | [!SubString(Container(300).Listitem.Property(multiwidget),multi) + Skin.String(widgetvalue-num-8,2)]</visible>
+				<include content="widgetlayout" name="widgetlayout">
+					<param name="widgetid" value="530" />
+					<param name="multiprefix" value="" />
+					<param name="widgetLabelVisibility" value="WidgetTagOverlayAuto" />
+				</include>
+				<content target="" />
+			</control>
+			<include condition="false" content="VerticalHomeAdvancedWidgetHeader" name="VerticalHomeAdvancedWidgetHeader">
+				<param name="id" value="539" />
+				<param name="containerid" value="540" />
+				<param name="widgetidprefix" value=".3" />
+				<param name="mainmenuid" value="num-8" />
+			</include>
+			<control id="540" type="panel">
+				<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+				<include>widgets_animation</include>
+				<visible>!IsEmpty(Container(300).Listitem.Property(widget.3))</visible>
+				<visible>SubString(Container(300).Listitem.Property(multiwidget),multi) | [!SubString(Container(300).Listitem.Property(multiwidget),multi) + Skin.String(widgetvalue-num-8,3)]</visible>
+				<include content="widgetlayout" name="widgetlayout">
+					<param name="widgetid" value="540" />
+					<param name="multiprefix" value="" />
+					<param name="widgetLabelVisibility" value="WidgetTagOverlayAuto" />
+				</include>
+				<content target="" />
+			</control>
+			<control id="511" type="radiobutton">
+				<include condition="!Skin.HasSetting(AutoWidgetAlignDisabled)">VerticalHomeSimpleWidgetHeaderLayout</include>
+				<include condition="Skin.HasSetting(AutoWidgetAlignDisabled)">VerticalHomeSimpleWidgetHeaderLayoutAlt</include>
+				<visible>false</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+				<selected>Control.HasFocus(511)</selected>
+			</control>
+		</control>
+		<control id="68821" type="scrollbar">
+			<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<right>5</right>
+			<bottom>0</bottom>
+			<height>85%</height>
+			<onup>60</onup>
+			<ondown>60</ondown>
+			<onleft>54</onleft>
+			<animation condition="Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)" effect="fade" end="100" start="0" time="400">Conditional</animation>
+			<animation condition="![Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)]" effect="fade" end="0" start="100" time="400">Conditional</animation>
+		</control>
+	</include>
+	<include name="skinshortcuts-template-VerticalHomeWidgetsLarge">
+		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-VerticalHomeWidgetsLarge-Master user</include>
+	</include>
+	<include name="skinshortcuts-template-VerticalHomeWidgetsLarge-Master user">
+		<control id="600" type="label">
+			<label>widget-0</label>
+			<width>1</width>
+			<heigth>1</heigth>
+			<posx>-1</posx>
+			<posy>-1</posy>
+			<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<visible>Skin.String(widgetvalue-num-8,0) | !Skin.String(widgetvalue-num-8)</visible>
+		</control>
+		<control id="600" type="label">
+			<label>widget-1</label>
+			<width>1</width>
+			<heigth>1</heigth>
+			<posx>-1</posx>
+			<posy>-1</posy>
+			<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<visible>Skin.String(widgetvalue-num-8,1)</visible>
+		</control>
+		<control id="600" type="label">
+			<label>widget-2</label>
+			<width>1</width>
+			<heigth>1</heigth>
+			<posx>-1</posx>
+			<posy>-1</posy>
+			<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<visible>Skin.String(widgetvalue-num-8,2)</visible>
+		</control>
+		<control id="600" type="label">
+			<label>widget-3</label>
+			<width>1</width>
+			<heigth>1</heigth>
+			<posx>-1</posx>
+			<posy>-1</posy>
+			<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<visible>Skin.String(widgetvalue-num-8,3)</visible>
+		</control>
+		<control id="77777" type="grouplist">
+			<right>0</right>
+			<width>100%</width>
+			<top>10</top>
+			<height>1070</height>
+			<usecontrolcoords>true</usecontrolcoords>
+			<onleft>300</onleft>
+			<pagecontrol>68821</pagecontrol>
+			<include>animation_window_open_close</include>
+			<animation condition="Skin.String(HomeLayout,verticalbig)" effect="slide" end="25" start="0" time="0">Conditional</animation>
+			<animation condition="!StringCompare(Container(300).ListItem.Property(submenuVisibility),num-8)" easing="inout" effect="fade" end="0" reversible="true" start="100" time="50">Conditional</animation>
+			<animation condition="StringCompare(Skin.AspectRatio,16:10)" effect="slide" end="0,120" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),poster) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,poster)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,630" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),small poster) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,small poster)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,740" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),square) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,square)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,740" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),minisquare) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,minisquare)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,850" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),landscape) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,landscape)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,770" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),landscapesmall) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,landscapesmall)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,820" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),banner) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,banner)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,820" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),single box) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,single box)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,640" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),wide box) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,wide box)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,730" start="0" time="0">Conditional</animation>
+			<animation condition="StringCompare(Container(300).ListItem.Property(squaresubmenu),enable) + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),single)" effect="slide" end="0,-100" start="0" time="0">Conditional</animation>
+			<animation condition="StringCompare(Container(300).ListItem.Property(squaresubmenu),enable) + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,-100" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),poster) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,poster)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,125" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),small poster) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,small poster)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,214" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),square) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,square)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,218" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),minisquare) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,minisquare)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,325" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),landscape) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,landscape)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,255" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),landscapesmall) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,landscapesmall)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,288" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),banner) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,banner)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,293" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),single box) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,single box)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,120" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),wide box) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,wide box)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,203" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle),poster) | [IsEmpty(Container(300).ListItem.Property(widgetstyle)) + Skin.String(widgetstyle,poster)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,125" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle.1),small poster) | [IsEmpty(Container(300).ListItem.Property(widgetstyle.1)) + Skin.String(widgetstyle,small poster)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,214" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle.1),square) | [IsEmpty(Container(300).ListItem.Property(widgetstyle.1)) + Skin.String(widgetstyle,square)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,218" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle.1),minisquare) | [IsEmpty(Container(300).ListItem.Property(widgetstyle.1)) + Skin.String(widgetstyle,minisquare)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,325" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle.1),landscape) | [IsEmpty(Container(300).ListItem.Property(widgetstyle.1)) + Skin.String(widgetstyle,landscape)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,255" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle.1),landscapesmall) | [IsEmpty(Container(300).ListItem.Property(widgetstyle.1)) + Skin.String(widgetstyle,landscapesmall)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,288" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle.1),banner) | [IsEmpty(Container(300).ListItem.Property(widgetstyle.1)) + Skin.String(widgetstyle,banner)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,293" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle.1),single box) | [IsEmpty(Container(300).ListItem.Property(widgetstyle.1)) + Skin.String(widgetstyle,single box)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,120" start="0" time="0">Conditional</animation>
+			<animation condition="[StringCompare(Container(300).ListItem.Property(widgetstyle.1),wide box) | [IsEmpty(Container(300).ListItem.Property(widgetstyle.1)) + Skin.String(widgetstyle,wide box)]] + StringCompare(Container(300).ListItem.Property(lowerwidgets),enable) + StringCompare(Container(300).ListItem.Property(multiwidget),multi) + !IsEmpty(Container(300).ListItem.Property(widget.1)) + IsEmpty(Container(300).ListItem.Property(widget.2))" effect="slide" end="0,203" start="0" time="0">Conditional</animation>
+			<control id="4446" type="panel">
+				<include>VerticalHomeSquareSubMenuLayout</include>
+				<visible>false</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			</control>
+			<control id="505" type="radiobutton">
+				<include condition="!Skin.HasSetting(AutoWidgetAlignDisabled)">VerticalHomeSimpleWidgetHeaderLayout</include>
+				<include condition="Skin.HasSetting(AutoWidgetAlignDisabled)">VerticalHomeSimpleWidgetHeaderLayoutAlt</include>
+				<visible>true</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+				<selected>Control.HasFocus(505)</selected>
+			</control>
+			<include condition="false" content="VerticalHomeAdvancedWidgetHeader" name="VerticalHomeAdvancedWidgetHeader">
+				<param name="id" value="509" />
+				<param name="containerid" value="510" />
+				<param name="widgetidprefix" value="" />
+				<param name="mainmenuid" value="num-8" />
+			</include>
+			<control id="510" type="panel">
+				<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+				<ondown>510</ondown>
+				<include>widgets_animation</include>
+				<visible>!IsEmpty(Container(300).Listitem.Property(widget))</visible>
+				<visible>SubString(Container(300).Listitem.Property(multiwidget),multi) | [!SubString(Container(300).Listitem.Property(multiwidget),multi) + [Skin.String(widgetvalue-num-8,0) | !Skin.String(widgetvalue-num-8)]]</visible>
+				<include content="widgetlayout_large" name="widgetlayout_large">
+					<param name="widgetid" value="510" />
+					<param name="multiprefix" value="" />
+					<param name="widgetLabelVisibility" value="WidgetTagOverlayAuto" />
+				</include>
+				<content target="static">
+					<include>WeatherWidget</include>
+				</content>
+			</control>
+			<include condition="false" content="VerticalHomeAdvancedWidgetHeader" name="VerticalHomeAdvancedWidgetHeader">
+				<param name="id" value="519" />
+				<param name="containerid" value="520" />
+				<param name="widgetidprefix" value=".1" />
+				<param name="mainmenuid" value="num-8" />
+			</include>
+			<control id="520" type="panel">
+				<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+				<include>widgets_animation</include>
+				<visible>!IsEmpty(Container(300).Listitem.Property(widget.1))</visible>
+				<visible>SubString(Container(300).Listitem.Property(multiwidget),multi) | [!SubString(Container(300).Listitem.Property(multiwidget),multi) + Skin.String(widgetvalue-num-8,1)]</visible>
+				<include content="widgetlayout_large" name="widgetlayout_large">
+					<param name="widgetid" value="520" />
+					<param name="multiprefix" value="" />
+					<param name="widgetLabelVisibility" value="WidgetTagOverlayAuto" />
+				</include>
+				<content target="" />
+			</control>
+			<include condition="false" content="VerticalHomeAdvancedWidgetHeader" name="VerticalHomeAdvancedWidgetHeader">
+				<param name="id" value="529" />
+				<param name="containerid" value="530" />
+				<param name="widgetidprefix" value=".2" />
+				<param name="mainmenuid" value="num-8" />
+			</include>
+			<control id="530" type="panel">
+				<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+				<include>widgets_animation</include>
+				<visible>!IsEmpty(Container(300).Listitem.Property(widget.2))</visible>
+				<visible>SubString(Container(300).Listitem.Property(multiwidget),multi) | [!SubString(Container(300).Listitem.Property(multiwidget),multi) + Skin.String(widgetvalue-num-8,2)]</visible>
+				<include content="widgetlayout_large" name="widgetlayout_large">
+					<param name="widgetid" value="530" />
+					<param name="multiprefix" value="" />
+					<param name="widgetLabelVisibility" value="WidgetTagOverlayAuto" />
+				</include>
+				<content target="" />
+			</control>
+			<include condition="false" content="VerticalHomeAdvancedWidgetHeader" name="VerticalHomeAdvancedWidgetHeader">
+				<param name="id" value="539" />
+				<param name="containerid" value="540" />
+				<param name="widgetidprefix" value=".3" />
+				<param name="mainmenuid" value="num-8" />
+			</include>
+			<control id="540" type="panel">
+				<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+				<include>widgets_animation</include>
+				<visible>!IsEmpty(Container(300).Listitem.Property(widget.3))</visible>
+				<visible>SubString(Container(300).Listitem.Property(multiwidget),multi) | [!SubString(Container(300).Listitem.Property(multiwidget),multi) + Skin.String(widgetvalue-num-8,3)]</visible>
+				<include content="widgetlayout_large" name="widgetlayout_large">
+					<param name="widgetid" value="540" />
+					<param name="multiprefix" value="" />
+					<param name="widgetLabelVisibility" value="WidgetTagOverlayAuto" />
+				</include>
+				<content target="" />
+			</control>
+			<control id="511" type="radiobutton">
+				<include condition="!Skin.HasSetting(AutoWidgetAlignDisabled)">VerticalHomeSimpleWidgetHeaderLayout</include>
+				<include condition="Skin.HasSetting(AutoWidgetAlignDisabled)">VerticalHomeSimpleWidgetHeaderLayoutAlt</include>
+				<visible>false</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+				<selected>Control.HasFocus(511)</selected>
+			</control>
+		</control>
+		<control id="68821" type="scrollbar">
+			<visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),num-8)</visible>
+			<right>5</right>
+			<bottom>0</bottom>
+			<height>85%</height>
+			<onup>60</onup>
+			<ondown>60</ondown>
+			<onleft>54</onleft>
+			<animation condition="Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)" effect="fade" end="100" start="0" time="400">Conditional</animation>
+			<animation condition="![Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)]" effect="fade" end="0" start="100" time="400">Conditional</animation>
+		</control>
+	</include>
+	<include name="skinshortcuts-template-widget.1">
+		<description>This include was built automatically as the template didn't match any menu items</description>
+	</include>
+	<include name="skinshortcuts-template-widget.2">
+		<description>This include was built automatically as the template didn't match any menu items</description>
+	</include>
+	<include name="skinshortcuts-template-widget.3">
+		<description>This include was built automatically as the template didn't match any menu items</description>
+	</include>
+	<include name="skinshortcuts-template-spotlightwidget">
+		<description>This include was built automatically as the template didn't match any menu items</description>
+	</include>
+	<include name="skinshortcuts-template-win10widget.2">
+		<description>This include was built automatically as the template didn't match any menu items</description>
+	</include>
+	<include name="skinshortcuts-template-win10widget.3">
+		<description>This include was built automatically as the template didn't match any menu items</description>
+	</include>
+	<include name="skinshortcuts-template-win10widget.4">
+		<description>This include was built automatically as the template didn't match any menu items</description>
+	</include>
+</includes>

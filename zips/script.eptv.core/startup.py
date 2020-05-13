@@ -194,22 +194,26 @@ if skinname == "skin.quartz":
 
 
 
-window = xbmcgui.Window(10000)
-label = xbmcgui.ControlLabel(60, 220, 2000, 50, "[COLOR black]Welcome to Eye Pea TV's Kodi Build[/COLOR]")
-window.addControl(label)
-window = xbmcgui.Window(10000)
-label = xbmcgui.ControlLabel(58, 218, 2000, 50, "[COLOR lightgrey]Welcome to Eye Pea TV's Kodi Build[/COLOR]")
-window.addControl(label)
 
-
-window = xbmcgui.Window(10000)
-label = xbmcgui.ControlLabel(60, 255, 2000, 50, "[COLOR black]"+newnews+"[/COLOR]")
-window.addControl(label)
-window = xbmcgui.Window(10000)
-label = xbmcgui.ControlLabel(58, 253, 2000, 50, "[COLOR lightgrey]"+newnews+"[/COLOR]")
-window.addControl(label)
 
 if skinname == "skin.aeon.nox.silvo":
+
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(60, 220, 2000, 50, "[COLOR black]Welcome to Eye Pea TV's Kodi Build[/COLOR]")
+    window.addControl(label)
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(58, 218, 2000, 50, "[COLOR lightgrey]Welcome to Eye Pea TV's Kodi Build[/COLOR]")
+    window.addControl(label)
+
+
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(60, 255, 2000, 50, "[COLOR black]"+newnews+"[/COLOR]")
+    window.addControl(label)
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(58, 253, 2000, 50, "[COLOR lightgrey]"+newnews+"[/COLOR]")
+    window.addControl(label)
+
+
     window = xbmcgui.Window(10000)
     label = xbmcgui.ControlLabel(1200, 940, 2000, 50, "[COLOR black]"+expires+"[/COLOR]")
     window.addControl(label)

@@ -1375,8 +1375,8 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 
 <addon id="script.module.metadatautils"
        name="Metadata and Artwork module"
-       version="1.0.19"
-       provider-name="marcelveldt">
+       version="1.0.27"
+       provider-name="marcelveldt, finkleandeinhorn, cartmandos">
     <requires>
         <import addon="xbmc.python" version="2.24.0"/>
         <import addon="script.module.requests" version="2.3.0"/>
@@ -1395,7 +1395,7 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
             This product uses the TMDb API but is not endorsed or certified by TMDb
         </description>
         <license>Apache 2.0</license>
-        <source>https://github.com/marcelveldt/script.module.metadatautils</source>
+        <source>https://github.com/kodi-community-addons/script.module.metadatautils</source>
         <platform>all</platform>
     </extension>
 </addon>

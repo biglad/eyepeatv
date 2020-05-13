@@ -246,6 +246,52 @@ if skinname == "skin.aeon.nox.silvo":
     xbmc.executebuiltin("XBMC.AlarmClock('MTVBCS',XBMC.RunAddon(script.eptv.core),240,silent)")
 	
     exit()
+    
+    
+if skinname == "skin.titan.kryptonbeta":
+    buildinfo1 = "[COLOR black]Your Build Version : "+str(buildv)+" - Latest Version : "+str(webversion)+"[/COLOR]"+etext
+    buildinfo2 = "[COLOR darkgrey]Your Build Version : "+str(buildv)+" - Latest Version : "+str(webversion)+"[/COLOR]"
+    buildinfo3 = "[COLOR black]Total Build Loads : "+str(loaded)+"[/COLOR]"
+    buildinfo4 = "[COLOR darkgrey]Total Build Loads : "+str(loaded)+"[/COLOR]"
+
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(55, 980, 1000, 50, buildinfo1)
+    window.addControl(label)
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(53, 978, 1000, 50, buildinfo2)
+    window.addControl(label)
+    
+    #window = xbmcgui.Window(10000)
+    #label = xbmcgui.ControlLabel(55, 980, 1000, 50, buildinfo1)
+    #window.addControl(label)
+    #window = xbmcgui.Window(10000)
+    #label = xbmcgui.ControlLabel(53, 978, 1000, 50, buildinfo2)
+    
+    
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(60, 74, 2000, 50, "[COLOR black]"+newnews+"[/COLOR]")
+    window.addControl(label)
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(58, 72, 2000, 50, "[COLOR lightgrey]"+newnews+"[/COLOR]")
+    window.addControl(label)    
+    
+
+	
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(86, 1010, 1000, 50, buildinfo3)
+    window.addControl(label)
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(84, 1008, 1000, 50, buildinfo4)
+    window.addControl(label)
+    
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(1100, 1010, 2000, 50, "[COLOR black]"+expires+"[/COLOR]")
+    window.addControl(label)
+    window = xbmcgui.Window(10000)
+    label = xbmcgui.ControlLabel(1098, 1008, 2000, 50, "[COLOR lightgrey]"+expires+"[/COLOR]")
+    window.addControl(label)
+    
+    exit()
 
 window = xbmcgui.Window(10000)
 label = xbmcgui.ControlLabel(60, 460, 500, 50, "[COLOR black]For Latest News & Offers Join[/COLOR]")
@@ -328,13 +374,7 @@ if buildv < webversion:
     etext = "[COLOR gold]  UPDATE BUILD ASAP!!![/COLOR]"
 
 #loaded = urllib2.urlopen('http://eptv.co.uk/loaded.php').read()
-url = "http://ftp.mgawow.co.uk/loaded.php"
-data = ""
-user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
-headers = {'User-Agent': user_agent}
-req = urllib2.Request(url, data, headers)
-response = urllib2.urlopen(req)
-loaded = response.read()
+
 #loaded = int(loaded)
 
 buildinfo1 = "[COLOR black]Your Build Version : "+str(buildv)+" - Latest Version : "+str(webversion)+"[/COLOR]"+etext
@@ -372,13 +412,7 @@ window = xbmcgui.Window(10000)
 label = xbmcgui.ControlLabel(60, 718, 1000, 50, "[COLOR lightgrey]Eye Pea TV News[/COLOR]")
 window.addControl(label)
 
-url = "http://ftp.mgawow.co.uk/buildnews.txt"
-data = ""
-user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
-headers = {'User-Agent': user_agent}
-req = urllib2.Request(url, data, headers)
-response = urllib2.urlopen(req)
-newnews = response.read()
+
 
 window = xbmcgui.Window(10000)
 label = xbmcgui.ControlLabel(70, 755, 2000, 50, "[COLOR black]"+newnews+"[/COLOR]")

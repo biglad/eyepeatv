@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: UTF-8 -*-
 
 #  ..#######.########.#######.##....#..######..######.########....###...########.#######.########..######.
 #  .##.....#.##.....#.##......###...#.##....#.##....#.##.....#...##.##..##.....#.##......##.....#.##....##
@@ -8,81 +8,151 @@
 #  .##.....#.##.......##......##...##.##....#.##....#.##....##.##.....#.##.......##......##....##.##....##
 #  ..#######.##.......#######.##....#..######..######.##.....#.##.....#.##.......#######.##.....#..######.
 
-import urlparse
+'''
+    OpenScrapers Project
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-from bs4 import BeautifulSoup
-from vistascrapers.modules import cfscrape
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+'''
+
+import re
+import urllib
+import urlparse
+import requests
+import json
+
+from vistascrapers.modules import control
+from vistascrapers.modules import client
+from vistascrapers.modules import debrid
 from vistascrapers.modules import source_utils
 
 
 class source:
-    def __init__(self):
-        self.priority = 0
-        self.language = ['en']
-        self.domains = ['filepursuit.com']
-        self.base_link = 'https://filepursuit.com'
-        self.search_link = '/pursuit?q='
-        self.scraper = cfscrape.create_scraper()
+	def __init__(self):
+		self.priority = 35
+		self.language = ['en']
+		self.base_link = 'https://filepursuit.p.rapidapi.com'
+		# 'https://rapidapi.com/azharxes/api/filepursuit' to obtain key
+		self.search_link = '/?type=video&q=%s'
 
-    def movie(self, imdb, title, localtitle, aliases, year):
-        try:
-            url = {'imdb': imdb, 'title': title, 'year': year}
-            return url
-        except:
-            pass
 
-    def sources(self, url, hostDict, hostprDict):
-        try:
-            sources = []
-            # if no link returned in movie and tvshow searches, nothing to do here, return out.
-            if url == None or len(url) == 0:
-                return sources
+	def movie(self, imdb, title, localtitle, aliases, year):
+		try:
+			url = {'imdb': imdb, 'title': title, 'year': year}
+			url = urllib.urlencode(url)
+			return url
+		except:
+			source_utils.scraper_error('FILEPURSUIT')
+			return
 
-            # Time to get scraping
-            title = url['title']
-            year = url['title']
-            # Build up the search url
-            searchLink = self.search_link + title + ' ' + year
-            url = urlparse.urljoin(self.base_link, searchLink)
 
-            html = self.scraper.get(url).content
-            result_soup = BeautifulSoup(html, "html.parser")
+	def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
+		try:
+			url = {'imdb': imdb, 'tvdb': tvdb, 'tvshowtitle': tvshowtitle, 'year': year}
+			url = urllib.urlencode(url)
+			return url
+		except:
+			source_utils.scraper_error('FILEPURSUIT')
+			return
 
-            # Parse the table of results
-            table = result_soup.find("table")
-            table_body = table.find("tbody")
-            rows = table_body.findAll("tr")
-            fileLinks = []
-            for row in rows:
-                cols = row.findAll("td")
-                for col in cols:
-                    links = col.findAll("a", href=True)
-                    for link in links:
-                        if "/file/" in link['href']:
-                            # Use this onse
-                            fileLinks.append(link['href'])
-                            break
-            # Retrieve actual links from result pages
-            actualLinks = []
-            for fileLink in fileLinks:
-                actual_url = urlparse.urljoin(self.base_link, fileLink)
-                html = self.scraper.get(actual_url.encode('ascii')).content
-                linkSoup = BeautifulSoup(html, "html.parser")
-                link = str(linkSoup.find("button", {"title": "Copy Link"})['data-clipboard-text'])
-                # Exclude zip and rar files
-                if link.lower().endswith('rar') or link.lower().endswith('zip'):
-                    continue
-                else:
-                    actualLinks.append(link)
 
-            for link in actualLinks:
-                quality, info = source_utils.get_release_quality(link, url)
-                sources.append({'source': 'DIRECT', 'quality': quality, 'language': 'en', 'url': link, 'info': info,
-                                'direct': True, 'debridonly': False})
-            return sources
-        except Exception as e:
-            # log_utils.log('EXCEPTION MSG: '+str(e))
-            return sources
+	def episode(self, url, imdb, tvdb, title, premiered, season, episode):
+		try:
+			if url is None:
+				return
+			url = urlparse.parse_qs(url)
+			url = dict([(i, url[i][0]) if url[i] else (i, '') for i in url])
+			url['title'], url['premiered'], url['season'], url['episode'] = title, premiered, season, episode
+			url = urllib.urlencode(url)
+			return url
+		except:
+			source_utils.scraper_error('FILEPURSUIT')
+			return
 
-    def resolve(self, url):
-        return url
+
+	def sources(self, url, hostDict, hostprDict):
+		sources = []
+		try:
+			api_key = control.setting('filepursuit.api')
+			if api_key == '':
+				return sources
+			headers = {"x-rapidapi-host": "filepursuit.p.rapidapi.com",
+				"x-rapidapi-key": api_key}
+
+			if url is None:
+				return sources
+
+			data = urlparse.parse_qs(url)
+			data = dict([(i, data[i][0]) if data[i] else (i, '') for i in data])
+
+			self.title = data['tvshowtitle'] if 'tvshowtitle' in data else data['title']
+			self.title = self.title.replace('&', 'and').replace('Special Victims Unit', 'SVU')
+
+			self.hdlr = 'S%02dE%02d' % (int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else data['year']
+			self.year = data['year']
+
+			query = '%s %s' % (self.title, self.hdlr)
+			query = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', '', query)
+
+			url = self.search_link % urllib.quote_plus(query)
+			url = urlparse.urljoin(self.base_link, url)
+			# log_utils.log('url = %s' % url, log_utils.LOGDEBUG)
+
+			r = client.request(url, headers=headers)
+			r = json.loads(r)
+
+			if 'not_found' in r['status']:
+				return sources
+
+			results = r['files_found']
+			for item in results:
+				try:
+					size = int(item['file_size_bytes'])
+				except:
+					size = 0
+
+				try:
+					name = item['file_name']
+				except:
+					name = item['file_link'].split('/')[-1]
+
+				if source_utils.remove_lang(name):
+					continue
+
+				match = source_utils.check_title(self.title, name, self.hdlr, self.year)
+				if not match:
+					continue
+
+				url = item['file_link']
+
+				quality, info = source_utils.get_release_quality(name, url)
+				try:
+					dsize, isize = source_utils.convert_size(size, to='GB')
+					if isize:
+						info.insert(0, isize)
+				except:
+					source_utils.scraper_error('FILEPURSUIT')
+					dsize = 0
+					pass
+
+				info = ' | '.join(info)
+
+				sources.append({'source': 'direct', 'quality': quality, 'name': name, 'language': "en",
+							'url': url, 'info': info, 'direct': True, 'debridonly': False, 'size': dsize})
+			return sources
+		except:
+			source_utils.scraper_error('FILEPURSUIT')
+			return sources
+
+
+	def resolve(self, url):
+		return url

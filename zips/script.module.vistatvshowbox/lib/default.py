@@ -1,104 +1,193 @@
 # -*- coding: utf-8 -*-
 
-import urlparse
-from vistascrapers.modules import control
-from vistascrapers import providerSources, providerNames
+import sys
+try:
+	from urlparse import parse_qsl
+except:
+	from urllib.parse import parse_qsl
 
-params = dict(urlparse.parse_qsl(sys.argv[2].replace('?', '')))
+from openscrapers import sources_openscrapers
+from openscrapers.modules import control
+
+params = dict(parse_qsl(sys.argv[2].replace('?', '')))
+action = params.get('action')
 mode = params.get('mode')
+query = params.get('query')
+
 
 def ScraperChoice():
-    from vistascrapers import providerSources
-    sourceList = sorted(providerSources())
-    control.idle()
-    select = control.selectDialog([i for i in sourceList])
-    if select == -1: return
-    module_choice = sourceList[select]
-    control.setSetting('module.provider', module_choice)
-    control.openSettings('0.1')
-
-def ToggleProviderAll(enable):
-    from vistascrapers import providerNames
-    sourceList = providerNames()
-    (setting, open_id) = ('true', '0.3') if enable else ('false', '0.2')
-    for i in sourceList:
-        source_setting = 'provider.' + i
-        control.setSetting(source_setting, setting)
-    control.openSettings(open_id)
-
-def toggleAll(setting, open_id=None, sourceList=None):
-    from vistascrapers import getAllHosters
-    sourceList = getAllHosters() if not sourceList else sourceList
-    for i in sourceList:
-        source_setting = 'provider.' + i
-        control.setSetting(source_setting, setting)
-    control.openSettings(open_id)
+	from openscrapers import providerSources
+	sourceList = sorted(providerSources())
+	control.idle()
+	select = control.selectDialog([i for i in sourceList])
+	if select == -1: return
+	module_choice = sourceList[select]
+	control.setSetting('module.provider', module_choice)
+	control.openSettings('0.1')
 
 
+if action == "OpenscrapersSettings":
+	control.openSettings('0.0', 'script.module.openscrapers')
 
-if mode == "vistascrapersSettings":
-    control.openSettings('0.0', 'script.module.vistatvshowbox')
 
-if mode == "ScraperChoice":
-    ScraperChoice()
+elif mode == "OpenscrapersSettings":
+	control.openSettings('0.0', 'script.module.openscrapers')
 
-if mode == "ToggleProviderAll":
-    ToggleProviderAll(False if params['action'] == "DisableModuleAll" else True)
 
-if mode == "toggleAll":
-    open_id = params['open_id'] if 'open_id' in params else '0.0'
-    sourcelist = params['sourcelist'] if 'sourcelist' in params else None
-    toggleAll(params['setting'], open_id, sourceList=sourcelist)
+elif action == "ScraperChoice":
+	ScraperChoice()
 
-if mode == "toggleAllDebrid":
-    sourcelist = ['300mbfilms','bestmoviez','ddlspot','ddlvalley','directdl','invictus',
-    'iwantmyshow','moviesleak','myvideolink','playmovies','rlsbb','scenerls','scnsrc',
-    'ultrahdindir','wrzcraft']
-    toggleAll(params['setting'], params['open_id'], sourcelist)
 
-if mode == "toggleAllGerman":
-    sourcelist = ['allucde','animebase','animeloads','bs','cine','cinenator','ddl',
-    'filmpalast','foxx','hdfilme','hdstreams','horrorkino','iload','kinodogs',
-    'kinoking','kinow','kinox','lichtspielhaus','movie2k-ac','movie2k-ag','movie2z',
-    'movie4k','moviesever','movietown','netzkino','proxer','pureanime','serienstream',
-    'seriesever','stream-to','streamdream','streamflix','streamit','tata','video4k','view4u']
-    toggleAll(params['setting'], params['open_id'], sourcelist)
+elif action == "toggleAll":
+	sourceList = []
+	sourceList = sources_openscrapers.all_providers
+	for i in sourceList:
+		source_setting = 'provider.' + i
+		control.setSetting(source_setting, params['setting'])
+	#    xbmc.log('All providers = %s' % sourceList,2)
+	control.sleep(200)
+	control.openSettings(query, "script.module.openscrapers")
 
-if mode == "toggleAllPolish":
-    sourcelist = ['alltube','boxfilm','cdahd','cdax','ekinomaniak','ekinotv','filiser',
-    'filmwebbooster','iitv','movieneo','openkatalog','paczamy','segos','szukajkatv','trt']
-    toggleAll(params['setting'], params['open_id'], sourcelist)
 
-if mode == "toggleAllSpanish":
-    sourcelist = ['megapelistv','peliculasdk','pelisplustv','pepecine','seriespapaya']
-    toggleAll(params['setting'], params['open_id'], sourcelist)
+elif action == "toggleAllHosters":
+	sourceList = []
+	sourceList = sources_openscrapers.hoster_providers
+	for i in sourceList:
+		source_setting = 'provider.' + i
+		control.setSetting(source_setting, params['setting'])
+	#    xbmc.log('All Hoster providers = %s' % sourceList,2)
+	control.sleep(200)
+	control.openSettings(query, "script.module.openscrapers")
 
-if mode == "toggleAllGreek":
-    sourcelist = ['gamatotv','liomenoi','tainiesonline','tainiomania','xrysoi']
-    toggleAll(params['setting'], params['open_id'], sourcelist)
 
-if mode == "toggleAllForeign":
-    sourcelist = ['allucde','animebase','animeloads','bs','cine','cinenator','ddl',
-    'filmpalast','foxx','hdfilme','hdstreams','horrorkino','iload','kinodogs',
-    'kinoking','kinow','kinox','lichtspielhaus','movie2k-ac','movie2k-ag','movie2z',
-    'movie4k','moviesever','movietown','netzkino','proxer','pureanime','serienstream',
-    'seriesever','stream-to','streamdream','streamflix','streamit','tata','video4k','view4u',
-    'alltube','boxfilm','cdahd','cdax','ekinomaniak','ekinotv','filiser',
-    'filmwebbooster','iitv','movieneo','openkatalog','paczamy','segos','szukajkatv','trt',
-    'megapelistv','peliculasdk','pelisplustv','pepecine','seriespapaya',
-    'gamatotv','liomenoi','tainiesonline','tainiomania','xrysoi']
-    toggleAll(params['setting'], params['open_id'], sourcelist)
+elif action == "toggleAllForeign":
+	sourceList = []
+	sourceList = sources_openscrapers.all_foreign_providers
+	for i in sourceList:
+		source_setting = 'provider.' + i
+		control.setSetting(source_setting, params['setting'])
+	#    xbmc.log('All Foregin providers = %s' % sourceList,2)
+	control.sleep(200)
+	control.openSettings(query, "script.module.openscrapers")
 
-if mode == "toggleAllTorrent":
-    sourcelist = ['bitlord','eztv','glodls','limetorrents','kickass2','piratebay',
-    'torrentapi','torrentdownloads','yify','zoogle']
-    toggleAll(params['setting'], params['open_id'], sourcelist)
 
-if mode == "Defaults":
-    sourcelist = ['123fox','123hbo','123movieshubz','animetoon','azmovies','bnwmovies','cartoonhd',
-    'extramovies','fmovies','freefmovies','freeputlockers','gostream','hdmto','hdpopcorns',
-    'kattv','l23movies','iwaatch','openloadmovie','primewire','putlocker','reddit','rlsbb','scenerls',
-    'seehd','series9','seriesfree','seriesonline','solarmoviez','tvbox','vidics','watchseries',
-    'xwatchseries','vdonip','odb','downflix','ymovies','ddlspot','filmxy','kickass2','sezonlukdizi'
-    '123fox','123hbo','123movieshubz','animetoon','azmovies','bnwmovies','cartoonhd']
-    toggleAll(params['setting'], params['open_id'], sourcelist)
+elif action == "toggleAllGerman":
+	sourceList = []
+	sourceList = sources_openscrapers.german_providers
+	for i in sourceList:
+		source_setting = 'provider.' + i
+		control.setSetting(source_setting, params['setting'])
+	#    xbmc.log('All German providers = %s' % sourceList,2)
+	control.sleep(200)
+	control.openSettings(query, "script.module.openscrapers")
+
+
+elif action == "toggleAllSpanish":
+	sourceList = []
+	sourceList = sources_openscrapers.spanish_providers
+	for i in sourceList:
+		source_setting = 'provider.' + i
+		control.setSetting(source_setting, params['setting'])
+	#    xbmc.log('All Spanish providers = %s' % sourceList,2)
+	control.sleep(200)
+	control.openSettings(query, "script.module.openscrapers")
+
+
+elif action == "toggleAllFrench":
+	sourceList = []
+	sourceList = sources_openscrapers.french_providers
+	for i in sourceList:
+		source_setting = 'provider.' + i
+		control.setSetting(source_setting, params['setting'])
+	#    xbmc.log('All Spanish providers = %s' % sourceList,2)
+	control.sleep(200)
+	control.openSettings(query, "script.module.openscrapers")
+
+
+elif action == "toggleAllGreek":
+	sourceList = []
+	sourceList = sources_openscrapers.greek_providers
+	for i in sourceList:
+		source_setting = 'provider.' + i
+		control.setSetting(source_setting, params['setting'])
+	#    xbmc.log('All Greek providers = %s' % sourceList,2)
+	control.sleep(200)
+	control.openSettings(query, "script.module.openscrapers")
+
+
+elif action == "toggleAllKorean":
+	sourceList = []
+	sourceList = sources_openscrapers.korean_providers
+	for i in sourceList:
+		source_setting = 'provider.' + i
+		control.setSetting(source_setting, params['setting'])
+	#    xbmc.log('All Spanish providers = %s' % sourceList,2)
+	control.sleep(200)
+	control.openSettings(query, "script.module.openscrapers")
+
+
+elif action == "toggleAllPolish":
+	sourceList = []
+	sourceList = sources_openscrapers.polish_providers
+	for i in sourceList:
+		source_setting = 'provider.' + i
+		control.setSetting(source_setting, params['setting'])
+	#    xbmc.log('All Polish providers = %s' % sourceList,2)
+	control.sleep(200)
+	control.openSettings(query, "script.module.openscrapers")
+
+
+elif action == "toggleAllRussian":
+	sourceList = []
+	sourceList = sources_openscrapers.russian_providers
+	for i in sourceList:
+		source_setting = 'provider.' + i
+		control.setSetting(source_setting, params['setting'])
+	#    xbmc.log('All Polish providers = %s' % sourceList,2)
+	control.sleep(200)
+	control.openSettings(query, "script.module.openscrapers")
+
+
+elif action == "toggleAllPaid":
+	sourceList = []
+	sourceList = sources_openscrapers.all_paid_providers
+	for i in sourceList:
+		source_setting = 'provider.' + i
+		control.setSetting(source_setting, params['setting'])
+	#    xbmc.log('All Paid providers = %s' % sourceList,2)
+	control.sleep(200)
+	control.openSettings(query, "script.module.openscrapers")
+
+
+elif action == "toggleAllDebrid":
+	sourceList = []
+	sourceList = sources_openscrapers.debrid_providers
+	for i in sourceList:
+		source_setting = 'provider.' + i
+		control.setSetting(source_setting, params['setting'])
+	#    xbmc.log('All Debrid providers = %s' % sourceList,2)
+	control.sleep(200)
+	control.openSettings(query, "script.module.openscrapers")
+
+
+elif action == "toggleAllTorrent":
+	sourceList = []
+	sourceList = sources_openscrapers.torrent_providers
+	for i in sourceList:
+		source_setting = 'provider.' + i
+		control.setSetting(source_setting, params['setting'])
+	#    xbmc.log('All Torrent providers = %s' % sourceList,2)
+	control.sleep(200)
+	control.openSettings(query, "script.module.openscrapers")
+
+
+if action == "Defaults":
+	sourceList = []
+	sourceList = sources_openscrapers.all_providers
+	for i in sourceList:
+		source_setting = 'provider.' + i
+		value = control.getSettingDefault(source_setting)
+		control.setSetting(source_setting, value)
+		# xbmc.log('provider-default = %s-%s' % (source_setting, value), 2)
+	control.sleep(200)
+	control.openSettings(query, "script.module.openscrapers")

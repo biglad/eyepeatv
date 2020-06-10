@@ -34,9 +34,9 @@ from vistascrapers.modules import source_utils
 
 class source:
 	def __init__(self):
-		self.priority = 1
+		self.priority = 31
 		self.language = ['en']
-		self.domains = ['filmxy.nl', 'filmxy.me', 'filmxy.one', 'filmxy.ws']
+		self.domains = ['filmxy.nl', 'filmxy.me', 'filmxy.one', 'filmxy.ws', 'filmxy.live']
 		self.base_link = 'https://www.filmxy.nl'
 		self.search_link = '/%s-%s'
 		self.scraper = cfscrape.create_scraper()
@@ -46,7 +46,8 @@ class source:
 			title = cleantitle.geturl(title)
 			url = urlparse.urljoin(self.base_link, (self.search_link % (title, year)))
 			return url
-		except Exception:
+		except:
+			source_utils.scraper_error('FILEXY')
 			return
 
 	def sources(self, url, hostDict, hostprDict):
@@ -61,19 +62,20 @@ class source:
 				result)
 
 			for link in streams:
-				quality = source_utils.check_sd_url(link)
+				quality = source_utils.check_url(link)
 				host = link.split('//')[1].replace('www.', '')
 				host = host.split('/')[0].lower()
 
 				if quality == 'SD':
-					sources.append({'source': host, 'quality': '720p', 'language': 'en', 'url': link, 'direct': False,
+					sources.append({'source': host, 'quality': '720p', 'info': '', 'language': 'en', 'url': link, 'direct': False,
 					                'debridonly': False})
 				else:
-					sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': link, 'direct': False,
+					sources.append({'source': host, 'quality': quality, 'info': '', 'language': 'en', 'url': link, 'direct': False,
 					                'debridonly': False})
 
 			return sources
-		except Exception:
+		except:
+			source_utils.scraper_error('FILEXY')
 			return sources
 
 	def resolve(self, url):

@@ -37,12 +37,13 @@ from vistascrapers.modules import source_utils
 
 class source:
 	def __init__(self):
-		self.priority = 1
+		self.priority = 33
 		self.language = ['en']
 		self.domains = ['gowatchseries.video', 'gowatchseries.tv', 'gowatchseries.co', 'gowatchseries.io']
 		self.base_link = 'https://www6.gowatchseries.video'
 		self.search_link = '/ajax-search.html?keyword=%s&id=-1'
 		self.search_link2 = '/search.html?keyword=%s'
+
 
 	def movie(self, imdb, title, localtitle, aliases, year):
 		try:
@@ -50,7 +51,9 @@ class source:
 			url = urllib.urlencode(url)
 			return url
 		except:
+			source_utils.scraper_error('GOWATCHSERIES')
 			return
+
 
 	def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
 		try:
@@ -58,7 +61,9 @@ class source:
 			url = urllib.urlencode(url)
 			return url
 		except:
+			source_utils.scraper_error('GOWATCHSERIES')
 			return
+
 
 	def episode(self, url, imdb, tvdb, title, premiered, season, episode):
 		try:
@@ -70,7 +75,9 @@ class source:
 			url = urllib.urlencode(url)
 			return url
 		except:
+			source_utils.scraper_error('GOWATCHSERIES')
 			return
+
 
 	def sources(self, url, hostDict, hostprDict):
 		try:
@@ -127,13 +134,16 @@ class source:
 							quality = source_utils.check_url(slink)
 							valid, hoster = source_utils.is_host_valid(slink, hostDict)
 							if valid:
-								sources.append({'source': hoster, 'quality': quality, 'language': 'en', 'url': slink,
+								sources.append({'source': hoster, 'quality': quality, 'info': '', 'language': 'en', 'url': slink,
 								                'direct': False, 'debridonly': False})
 					except:
+						source_utils.scraper_error('GOWATCHSERIES')
 						pass
 			return sources
 		except:
+			source_utils.scraper_error('GOWATCHSERIES')
 			return sources
+
 
 	def resolve(self, url):
 		return url

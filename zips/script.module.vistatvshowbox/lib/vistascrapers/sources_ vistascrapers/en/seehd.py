@@ -33,57 +33,69 @@ from vistascrapers.modules import source_utils
 
 class source:
 	def __init__(self):
-		self.priority = 1
+		self.priority = 35
 		self.language = ['en']
 		self.domains = ['seehd.pl']
 		self.base_link = 'http://www.seehd.pl'
-		self.search_link = '/%s-%s-watch-online/'
+		# self.search_link = '/%s-%s-watch-online/' # most movie titles do not have year in link on seehd.pl then do have year
+		self.movie_link = '/%s-watch-online/'
+		self.episode_link = '/%s-%s/'
+		self.scraper = cfscrape.create_scraper()
+
 
 	def movie(self, imdb, title, localtitle, aliases, year):
 		try:
 			title = cleantitle.geturl(title)
-			url = self.base_link + self.search_link % (title, year)
+			url = self.base_link + self.movie_link % (title)
 			return url
 		except:
+			source_utils.scraper_error('SEEHD')
 			return
+
 
 	def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
 		try:
 			url = cleantitle.geturl(tvshowtitle)
 			return url
 		except:
+			source_utils.scraper_error('SEEHD')
 			return
+
 
 	def episode(self, url, imdb, tvdb, title, premiered, season, episode):
 		try:
 			if not url:
 				return
 			title = url
-			season = '%02d' % int(season)
-			episode = '%02d' % int(episode)
-			se = 's%se%s' % (season, episode)
-			url = self.base_link + self.search_link % (title, se)
+			season = '%01d' % int(season)
+			episode = '%01d' % int(episode)
+			se = 'season-%s-episode-%s' % (season, episode)
+			url = self.base_link + self.episode_link % (title, se)
 			return url
 		except:
+			source_utils.scraper_error('SEEHD')
 			return
+
 
 	def sources(self, url, hostDict, hostprDict):
 		try:
 			sources = []
 			hostDict = hostprDict + hostDict
-			scraper = cfscrape.create_scraper()
-			r = scraper.get(url).content
+			r = self.scraper.get(url).content
+
 			match = re.compile('<iframe.+?src="(.+?)://(.+?)/(.+?)"').findall(r)
 			for http, host, url in match:
 				host = host.replace('www.', '')
 				url = '%s://%s/%s' % (http, host, url)
 				valid, host = source_utils.is_host_valid(url, hostDict)
 				if valid:
-					sources.append({'source': host, 'quality': '720p', 'language': 'en', 'url': url, 'direct': False,
+					sources.append({'source': host, 'quality': '720p', 'info': '', 'language': 'en', 'url': url, 'direct': False,
 					                'debridonly': False})
 			return sources
 		except Exception:
+			source_utils.scraper_error('SEEHD')
 			return sources
+
 
 	def resolve(self, url):
 		return url

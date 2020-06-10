@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# modified by Venom for Openscrapers (updated url 4-20-2020)
 
 #  ..#######.########.#######.##....#..######..######.########....###...########.#######.########..######.
 #  .##.....#.##.....#.##......###...#.##....#.##....#.##.....#...##.##..##.....#.##......##.....#.##....##
@@ -28,7 +29,6 @@ import re
 import urllib
 import urlparse
 
-from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
 from vistascrapers.modules import debrid
 from vistascrapers.modules import source_utils
@@ -42,6 +42,7 @@ class source:
 		self.base_link = 'https://glodls.to/'
 		self.tvsearch = 'search_results.php?search={0}&cat=41&incldead=0&inclexternal=0&lang=1&sort=seeders&order=desc'
 		self.moviesearch = 'search_results.php?search={0}&cat=1&incldead=0&inclexternal=0&lang=1&sort=size&order=desc'
+		self.min_seeders = 0 # to many items with no value but cached links
 
 
 	def movie(self, imdb, title, localtitle, aliases, year):
@@ -110,22 +111,23 @@ class source:
 				try:
 					name = item[0]
 
-					url = item[1]
+					url = urllib.unquote_plus(item[1]).replace('&amp;', '&').replace(' ', '.')
 					url = url.split('&tr')[0]
 
+					hash = re.compile('btih:(.*?)&').findall(url)[0].lower()
 					quality, info = source_utils.get_release_quality(name, url)
 
-					info.insert(0, item[2]) # if item[2] != '0'
+					if item[2] != '0':
+						info.insert(0, item[2])
+
 					info = ' | '.join(info)
 
-					sources.append({'source': 'torrent', 'quality': quality, 'language': 'en', 'url': url,
-												'info': info, 'direct': False, 'debridonly': True})
+					sources.append({'source': 'torrent', 'seeders': item[4], 'hash': hash, 'name': name, 'quality': quality,
+											'language': 'en', 'url': url, 'info': info, 'direct': False, 'debridonly': True, 'size': item[3]})
 				except:
 					source_utils.scraper_error('GLODLS')
 					pass
-
 			return sources
-
 		except:
 			source_utils.scraper_error('GLODLS')
 			return sources
@@ -144,27 +146,32 @@ class source:
 				url = [i for i in ref if 'magnet:' in i][0]
 
 				name = client.parseDOM(post, 'a', ret='title')[0]
-				name = urllib.unquote_plus(name).replace(' ', '.')
+				name = urllib.unquote_plus(name)
+				name = re.sub('[^A-Za-z0-9]+', '.', name).lstrip('.')
 				if source_utils.remove_lang(name):
 					continue
 
-				t = name.split(self.hdlr)[0].replace(self.year, '').replace('(', '').replace(')', '').replace('&', 'and').replace('.US.', '.').replace('.us.', '.')
-				if cleantitle.get(t) != cleantitle.get(self.title):
-					continue
-
-				if self.hdlr not in name:
+				match = source_utils.check_title(self.title, name, self.hdlr, self.year)
+				if not match:
 					continue
 
 				try:
-					size = re.findall('((?:\d+\,\d+\.\d+|\d+\.\d+|\d+\,\d+|\d+)\s*(?:GiB|MiB|GB|MB))', post)[0]
-					div = 1 if size.endswith('GB') else 1024
-					size = float(re.sub('[^0-9|/.|/,]', '', size.replace(',', '.'))) / div
-					size = '%.2f GB' % size
+					seeders = int(re.findall("<td.*?<font color='green'><b>([0-9]+|[0-9]+,[0-9]+)</b>", post)[0].replace(',', ''))
+					if self.min_seeders > seeders:
+						continue
 				except:
-					size = '0'
+					seeders = 0
 					pass
 
-				items.append((name, url, size))
+				try:
+					size = re.findall('((?:\d+\,\d+\.\d+|\d+\.\d+|\d+\,\d+|\d+)\s*(?:GiB|MiB|GB|MB))', post)[0]
+					dsize, isize = source_utils._size(size)
+				except:
+					isize = '0'
+					dsize = 0
+					pass
+
+				items.append((name, url, isize, dsize, seeders))
 
 			return items
 		except:

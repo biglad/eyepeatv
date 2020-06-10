@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# modified by Venom for Openscrapers (4-3-2020)
 
 #  ..#######.########.#######.##....#..######..######.########....###...########.#######.########..######.
 #  .##.....#.##.....#.##......###...#.##....#.##....#.##.....#...##.##..##.....#.##......##.....#.##....##
@@ -26,7 +27,6 @@
 
 import base64
 import re
-import traceback
 import urllib
 import urlparse
 
@@ -38,14 +38,13 @@ from vistascrapers.modules import source_utils
 
 class source:
 	def __init__(self):
-		self.priority = 1
+		self.priority = 32
 		self.language = ['en']
-		self.domains = ['extramovies.net.in', 'extramovies.trade', 'extramovies.guru',
-		                'extramovies.wiki']  # http://extramovies.ind.in/
-		# self.base_link = 'http://extramovies.net.in'  # Dead  extramovies.host
-		self.base_link = 'http://extramovies.pink'
+		self.domains = ['extramovies.casa']
+		self.base_link = 'http://extramovies.casa'
 		self.search_link = '/?s=%s'
 		self.scraper = cfscrape.create_scraper()
+
 
 	def movie(self, imdb, title, localtitle, aliases, year):
 		try:
@@ -54,9 +53,9 @@ class source:
 			url = urllib.urlencode(url)
 			return url
 		except Exception:
-			failure = traceback.format_exc()
-			log_utils.log('ExtraMovies - Exception: \n' + str(failure))
+			source_utils.scraper_error('EXTRAMOVIES')
 			return
+
 
 	def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
 		try:
@@ -65,9 +64,9 @@ class source:
 			url = urllib.urlencode(url)
 			return url
 		except Exception:
-			failure = traceback.format_exc()
-			log_utils.log('ExtraMovies - Exception: \n' + str(failure))
+			source_utils.scraper_error('EXTRAMOVIES')
 			return
+
 
 	def episode(self, url, imdb, tvdb, title, premiered, season, episode):
 		try:
@@ -79,9 +78,9 @@ class source:
 			url = urllib.urlencode(url)
 			return url
 		except Exception:
-			failure = traceback.format_exc()
-			log_utils.log('ExtraMovies - Exception: \n' + str(failure))
+			source_utils.scraper_error('EXTRAMOVIES')
 			return
+
 
 	def sources(self, url, hostDict, hostprDict):
 		try:
@@ -126,17 +125,18 @@ class source:
 							if 'server=' not in link:
 								try:
 									link = base64.b64decode(link)
-								except Exception:
+								except:
+									source_utils.scraper_error('EXTRAMOVIES')
 									pass
 								valid, host = source_utils.is_host_valid(link, self.hostDict)
 								if valid:
 									sources.append({'source': host, 'quality': quality, 'language': 'en', 'info': info,
 									                'url': link, 'direct': False, 'debridonly': False})
 			return sources
-		except Exception:
-			failure = traceback.format_exc()
-			log_utils.log('ExtraMovies - Exception: \n' + str(failure))
+		except:
+			source_utils.scraper_error('EXTRAMOVIES')
 			return sources
+
 
 	def resolve(self, url):
 		return url

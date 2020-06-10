@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# created by Venom for Openscrapers (updated url 4-20-2020)
 
 #  ..#######.########.#######.##....#..######..######.########....###...########.#######.########..######.
 #  .##.....#.##.....#.##......###...#.##....#.##....#.##.....#...##.##..##.....#.##......##.....#.##....##
@@ -28,7 +29,6 @@ import re
 import urllib
 import urlparse
 
-from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
 from vistascrapers.modules import debrid
 from vistascrapers.modules import source_utils
@@ -37,11 +37,12 @@ from vistascrapers.modules import workers
 
 class source:
 	def __init__(self):
-		self.priority = 0
+		self.priority = 4
 		self.language = ['en']
-		self.domain = ['torlock.cc']
-		self.base_link = 'https://torlock.cc'
-		self.search_link = '/all/torrents/%s/'
+		self.domain = ['torlock.com', 'torlock.unblockit.pro', 'torlock.cc']
+		self.base_link = 'https://torlock.com'
+		self.search_link = '/all/torrents/%s.html?'
+		self.min_seeders = 0
 
 
 	def movie(self, imdb, title, localtitle, aliases, year):
@@ -101,11 +102,10 @@ class source:
 			# log_utils.log('url = %s' % url, log_utils.LOGDEBUG)
 
 			try:
-				r = client.request(url)
-				div = client.parseDOM(r, 'div', attrs={'class': 'panel panel-default'})[0]
-				table = client.parseDOM(div, 'table', attrs={'class': 'table table-striped table-bordered table-hover table-condensed'})[0]
-				links = re.findall('<a href="(.+?)">', table, re.DOTALL)
-				# log_utils.log('links = %s' % links, log_utils.LOGDEBUG)
+				r = client.request(url, timeout='5')
+				if r is None:
+					return self.sources
+				links = re.findall('<a href=(/torrent/.+?)>', r, re.DOTALL)
 
 				threads = []
 				for link in links:
@@ -116,7 +116,6 @@ class source:
 			except:
 				source_utils.scraper_error('TORLOCK')
 				return self.sources
-
 		except:
 			source_utils.scraper_error('TORLOCK')
 			return self.sources
@@ -125,50 +124,55 @@ class source:
 	def get_sources(self, link):
 		try:
 			url = '%s%s' % (self.base_link, link)
-			result = client.request(url)
+			result = client.request(url, timeout='5')
+			if result is None:
+				return
 			if 'magnet' not in result:
 				return
 
 			url = 'magnet:%s' % (re.findall('a href="magnet:(.+?)"', result, re.DOTALL)[0])
-			url = urllib.unquote(url).decode('utf8').replace('&amp;', '&')
-			url = url.split('&tr=')[0]
-
+			url = urllib.unquote_plus(url).decode('utf8').replace('&amp;', '&')
+			url = url.split('&tr=')[0].replace(' ', '.')
 			if url in str(self.sources):
 				return
+			hash = re.compile('btih:(.*?)&').findall(url)[0]
 
 			name = url.split('&dn=')[1]
-			name = urllib.unquote_plus(name).replace(' ', '.')
+			name = re.sub('[^A-Za-z0-9]+', '.', name).lstrip('.')
+			if name.startswith('www'):
+				try:
+					name = re.sub(r'www(.*?)\W{2,10}', '', name)
+				except:
+					name = name.split('-.', 1)[1].lstrip()
 			if source_utils.remove_lang(name):
 				return
 
-			t = name.split(self.hdlr)[0].replace(self.year, '').replace('(', '').replace(')', '').replace('&', 'and').replace('.US.', '.').replace('.us.', '.')
-			if cleantitle.get(t) != cleantitle.get(self.title):
+			match = source_utils.check_title(self.title, name, self.hdlr, self.year)
+			if not match:
 				return
 
-			if self.hdlr not in name:
-				return
+			try:
+				seeders = int(re.findall('<dt>SWARM</dt><dd>.*?>([0-9]+)</b>', result, re.DOTALL)[0].replace(',', ''))
+				if self.min_seeders > seeders:
+					return
+			except:
+				seeders = 0
+				pass
 
-			size_list = re.findall('<dt>SIZE</dt><dd>(.+?)<', result, re.DOTALL)
 			quality, info = source_utils.get_release_quality(name, url)
 
-			for match in size_list:
-				try:
-					size = re.findall('((?:\d+\,\d+\.\d+|\d+\.\d+|\d+\,\d+|\d+)\s*(?:GiB|MiB|GB|MB))', match)[0]
-					div = 1 if size.endswith('GB') else 1024
-					size = float(re.sub('[^0-9|/.|/,]', '', size.replace(',', '.'))) / div
-					size = '%.2f GB' % size
-					info.insert(0, size)
-					if size:
-						break
-				except:
-					size = '0'
-					pass
+			try:
+				size = re.findall('<dt>SIZE</dt><dd>(.*? [a-zA-Z]{2})', result, re.DOTALL)[0]
+				dsize, isize = source_utils._size(size)
+				info.insert(0, isize)
+			except:
+				dsize = 0
+				pass
 
 			info = ' | '.join(info)
 
-			self.sources.append({'source': 'torrent', 'quality': quality, 'language': 'en', 'url': url,
-												'info': info, 'direct': False, 'debridonly': True})
-
+			self.sources.append({'source': 'torrent', 'seeders': seeders, 'hash': hash, 'name': name, 'quality': quality,
+											'language': 'en', 'url': url, 'info': info, 'direct': False, 'debridonly': True, 'size': dsize})
 		except:
 			source_utils.scraper_error('TORLOCK')
 			pass

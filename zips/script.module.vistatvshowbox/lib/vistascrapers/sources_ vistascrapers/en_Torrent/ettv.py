@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# created by Venom for Openscrapers (updated url 5-14-2020)
 
 #  ..#######.########.#######.##....#..######..######.########....###...########.#######.########..######.
 #  .##.....#.##.....#.##......###...#.##....#.##....#.##.....#...##.##..##.....#.##......##.....#.##....##
@@ -28,7 +29,6 @@ import re
 import urllib
 import urlparse
 
-from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
 from vistascrapers.modules import debrid
 from vistascrapers.modules import source_utils
@@ -37,13 +37,12 @@ from vistascrapers.modules import workers
 
 class source:
 	def __init__(self):
-		self.priority = 0
+		self.priority = 8
 		self.language = ['en']
-		# self.domain = ['ettv.unblockit.biz']
-		self.domain = ['ettv.to']
-		# self.base_link = 'https://ettv.unblockit.biz'
-		self.base_link = 'https://ettv.to'
+		self.domain = ['ettvdl.com', 'ettv.to']
+		self.base_link = 'https://www.ettvdl.com'
 		self.search_link = '/torrents-search.php?search=%s'
+		self.min_seeders = 1
 
 
 	def movie(self, imdb, title, localtitle, aliases, year):
@@ -105,14 +104,12 @@ class source:
 			try:
 				r = client.request(url)
 				links = client.parseDOM(r, "td", attrs={"nowrap": "nowrap"})
-
 				threads = []
 				for link in links:
 					threads.append(workers.Thread(self.get_sources, link))
 				[i.start() for i in threads]
 				[i.join() for i in threads]
 				return self.sources
-
 			except:
 				source_utils.scraper_error('ETTV')
 				return self.sources
@@ -126,53 +123,60 @@ class source:
 			url = re.compile('href="(.+?)"').findall(link)[0]
 			url = '%s%s' % (self.base_link, url)
 			result = client.request(url)
+			if result is None:
+				return
 			if 'magnet' not in result:
 				return
 
 			url = 'magnet:%s' % (re.findall('a href="magnet:(.+?)"', result, re.DOTALL)[0])
-			url = urllib.unquote(url).decode('utf8').replace('&amp;', '&')
+			url = urllib.unquote_plus(url).decode('utf8').replace('&amp;', '&').replace(' ', '.')
 			url = url.split('&xl=')[0]
-
 			if url in str(self.sources):
 				return
 
-			size_list = client.parseDOM(result, "td", attrs={"class": "table_col2"})
+			hash = re.compile('btih:(.*?)&').findall(url)[0]
 
 			name = url.split('&dn=')[1]
-			name = urllib.unquote_plus(urllib.unquote_plus(name)).replace(' ', '.')
+			name = re.sub('[^A-Za-z0-9]+', '.', name).lstrip('.')
+			if name.startswith('www'):
+				try:
+					name = re.sub(r'www(.*?)\W{2,10}', '', name)
+				except:
+					name = name.split('-.', 1)[1].lstrip()
+
 			if source_utils.remove_lang(name):
 				return
 
-			t = name.split(self.hdlr)[0].replace(self.year, '').replace('(', '').replace(')', '').replace('&', 'and').replace('.US.', '.').replace('.us.', '.')
-			if cleantitle.get(t) != cleantitle.get(self.title):
+			match = source_utils.check_title(self.title, name, self.hdlr, self.year)
+			if not match:
 				return
 
-			if self.hdlr not in name:
-				return
+			try:
+				seeders = int(re.findall(r'<b>Seeds: </b>.*?>([0-9]+|[0-9]+,[0-9]+)</font>', result, re.DOTALL)[0].replace(',', ''))
+				if self.min_seeders > seeders:
+					return
+			except:
+				seeders = 0
+				pass
 
 			quality, info = source_utils.get_release_quality(name, url)
 
-			for match in size_list:
-				try:
-					size = re.findall('((?:\d+\,\d+\.\d+|\d+\.\d+|\d+\,\d+|\d+)\s*(?:GiB|MiB|GB|MB))', match)[0]
-					div = 1 if size.endswith('GB') else 1024
-					size = float(re.sub('[^0-9|/.|/,]', '', size.replace(',', '.'))) / div
-					size = '%.2f GB' % size
-					info.insert(0, size)
-					if size:
-						break
-				except:
-					size = '0'
-					pass
+			try:
+				size = re.findall(r'<b>Total Size:</b></td><td>(.*?)</td>', result, re.DOTALL)[0].strip()
+				dsize, isize = source_utils._size(size)
+				info.insert(0, isize)
+			except:
+				dsize = 0
+				pass
 
 			info = ' | '.join(info)
 
-			self.sources.append({'source': 'torrent', 'quality': quality, 'language': 'en', 'url': url,
-												'info': info, 'direct': False, 'debridonly': True})
-
+			self.sources.append({'source': 'torrent', 'seeders': seeders, 'hash': hash, 'name': name, 'quality': quality,
+											'language': 'en', 'url': url, 'info': info, 'direct': False, 'debridonly': True, 'size': dsize})
 		except:
 			source_utils.scraper_error('ETTV')
 			pass
+
 
 	def resolve(self, url):
 		return url

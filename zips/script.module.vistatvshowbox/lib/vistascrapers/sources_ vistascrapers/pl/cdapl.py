@@ -31,11 +31,6 @@ try:
 	import urlparse
 except:
 	import urllib.parse as urlparse
-try:
-	import HTMLParser
-	from HTMLParser import HTMLParser
-except:
-	from html.parser import HTMLParser
 
 from vistascrapers.modules import source_utils
 from vistascrapers.modules import cleantitle
@@ -175,7 +170,7 @@ class source:
 							{'source': host, 'quality': '1080p', 'language': lang, 'url': url + "?wersja=1080p",
 							 'info': info, 'direct': False, 'debridonly': False})
 					if "?wersja=720p" in result:
-						sources.append({'source': host, 'quality': 'HD', 'language': lang, 'url': url + "?wersja=720p",
+						sources.append({'source': host, 'quality': '720p', 'language': lang, 'url': url + "?wersja=720p",
 						                'info': info, 'direct': False, 'debridonly': False})
 					if "?wersja=480p" in result:
 						sources.append({'source': host, 'quality': 'SD', 'language': lang, 'url': url + "?wersja=480p",

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# created by Venom for Openscrapers (updated 4-20-2020)
 
 #  ..#######.########.#######.##....#..######..######.########....###...########.#######.########..######.
 #  .##.....#.##.....#.##......###...#.##....#.##....#.##.....#...##.##..##.....#.##......##.....#.##....##
@@ -36,12 +37,12 @@ from vistascrapers.modules import source_utils
 
 class source:
 	def __init__(self):
-		self.priority = 1
+		self.priority = 25
 		self.language = ['en']
-		self.domains = ['onceddl.net']
-		self.base_link = 'https://onceddl.net'
-		self.search_link = '/?s=%s'
-
+		self.domains = ['onceddl.org']
+		self.base_link = 'https://onceddl.org'
+		# self.search_link = '/search/keyword/%s'
+		self.search_link = '/find/keyword/%s'
 
 	def movie(self, imdb, title, localtitle, aliases, year):
 		try:
@@ -109,21 +110,25 @@ class source:
 			for post in posts:
 				try:
 					u = client.parseDOM(post, 'a', ret='href')[0]
+					name1 = u.split('https://onceddl.org/')[1].rstrip('/')
+					name1 = re.sub('[^A-Za-z0-9]+', '.', name1)
+
 					r = client.request(u)
 					u = client.parseDOM(r, "div", attrs={"class": "single-link"})
 
 					for t in u:
 						r = client.parseDOM(t, 'a', ret='href')
-
 						for url in r:
 							if any(x in url for x in ['.rar', '.zip', '.iso', '.sample.']):
 								continue
 
 							valid, host = source_utils.is_host_valid(url, hostDict)
-
 							if valid:
-								name = url.split('OnceDDL_')[1]
-
+								if 'OnceDDL_' in url:
+									name = url.split('OnceDDL_')[1]
+									name = re.sub('[^A-Za-z0-9]+', '.', name)
+								else:
+									name = name1
 								if source_utils.remove_lang(name):
 									continue
 
@@ -140,8 +145,9 @@ class source:
 								quality, info = source_utils.get_release_quality(name, url)
 
 								# size info not available on onceddl
+								dsize = 0
 
-								sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': url, 'info': info, 'direct': False, 'debridonly': True})
+								sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': url, 'info': info, 'direct': False, 'debridonly': True, 'size': dsize})
 				except:
 					source_utils.scraper_error('ONCEDDL')
 					pass

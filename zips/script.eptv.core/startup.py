@@ -29,7 +29,7 @@ __settings__=xbmcaddon.Addon(id=addon_id); __language__=__settings__.getLocalize
 def get_setting(name): dev=__settings__.getSetting(name); return dev
 
 kupdatet = ""
-if KODIV < 18.6:
+if KODIV < 18.7:
     dialog = xbmcgui.Dialog()
     dialog.ok("[COLOR=white][B]EPTV[/COLOR][/B]","Your Kodi is needs updating","Your Version = "+str(KODIV),"Press OK to Continue and udpate ASAP")
     kupdatet = "[COLOR gold]  UPDATE KODI ASAP!!![/COLOR]"
@@ -273,10 +273,10 @@ if skinname == "skin.titan.kryptonbeta":
     
     
     window = xbmcgui.Window(10000)
-    label = xbmcgui.ControlLabel(60, 74, 2000, 50, "[COLOR black]"+newnews+"[/COLOR]")
+    label = xbmcgui.ControlLabel(60, 174, 2000, 50, "[COLOR black]"+newnews+"[/COLOR]")
     window.addControl(label)
     window = xbmcgui.Window(10000)
-    label = xbmcgui.ControlLabel(58, 72, 2000, 50, "[COLOR lightgrey]"+newnews+"[/COLOR]")
+    label = xbmcgui.ControlLabel(58, 172, 2000, 50, "[COLOR lightgrey]"+newnews+"[/COLOR]")
     window.addControl(label)    
     
 

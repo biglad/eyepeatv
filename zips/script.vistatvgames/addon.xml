@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.EyePeaTVgames"
   name="EyePeaTV Play Retro Games"
-  version="3.0.14" 
+  version="3.0.15" 
   provider-name="EyePeaTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>

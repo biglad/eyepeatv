@@ -2299,7 +2299,7 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 
 <addon id="script.EyePeaTVgames"
   name="EyePeaTV Play Retro Games"
-  version="3.0.14"
+  version="3.0.15"
   provider-name="EyePeaTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>

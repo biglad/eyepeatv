@@ -532,6 +532,10 @@ msgctxt "#31548"
 msgid "Background options"
 msgstr "Arkaplan ayarları"
 
+msgctxt "#31562"
+msgid "Recommended Movies"
+msgstr "Önerilen Filmler"
+
 msgctxt "#31564"
 msgid "Widgets"
 msgstr "Bileşenler"
@@ -547,3 +551,11 @@ msgstr "Panel"
 msgctxt "#31749"
 msgid "Show info"
 msgstr "Bilgiyi göster"
+
+msgctxt "#31781"
+msgid "Video process information"
+msgstr "Video işlem bilgisi"
+
+msgctxt "#31784"
+msgid "Decoder"
+msgstr "Kod Çözücü"

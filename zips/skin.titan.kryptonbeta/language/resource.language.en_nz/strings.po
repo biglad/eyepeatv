@@ -464,6 +464,10 @@ msgctxt "#31118"
 msgid "User defined custom tiles (favorites)"
 msgstr "User defined custom tiles (favourites)"
 
+msgctxt "#31119"
+msgid "Tiles for 3th party applications"
+msgstr "Tiles for 3rd party applications"
+
 msgctxt "#31120"
 msgid "Tiles for default Kodi/Kodi features"
 msgstr "Tiles for default Kodi/Kodi features"
@@ -2209,8 +2213,8 @@ msgid "Allow transparent home tiles (alternate border)"
 msgstr "Allow transparent home tiles (alternate border)"
 
 msgctxt "#31639"
-msgid "Disable first row (large widget)"
-msgstr "Disable first row (large widget)"
+msgid "Disable Spotlight widget"
+msgstr "Disable Spotlight widget"
 
 msgctxt "#31640"
 msgid "Show artist biography on OSD while playing music"
@@ -2245,8 +2249,8 @@ msgid "Allow override of global background on per-shortcut base"
 msgstr "Allow override of global background on per-shortcut base"
 
 msgctxt "#31648"
-msgid "Display tags/labels for episodes on poster-style widgets"
-msgstr "Display tags/labels for episodes on poster-style widgets"
+msgid "Display tags/labels for episodes on posters"
+msgstr "Display tags/labels for episodes on posters"
 
 msgctxt "#31649"
 msgid "Titan tiles (1 row of small tiles)"
@@ -2497,8 +2501,8 @@ msgid "Enable skin helper artwork lookups for addons"
 msgstr "Enable skin helper artwork lookups for addons"
 
 msgctxt "#31712"
-msgid "Do not auto-align widgets to the right"
-msgstr "Do not auto-align widgets to the right"
+msgid "Auto-align widgets to the right"
+msgstr "Auto-align widgets to the right"
 
 msgctxt "#31713"
 msgid "Swap poster"
@@ -2729,8 +2733,8 @@ msgid "You can select which palette is displayed by default when the color picke
 msgstr "You can select which palette is displayed by default when the colour picker is called by the skin."
 
 msgctxt "#31770"
-msgid "Heigth of the menu tiles in the mainmenu"
-msgstr "Heigth of the menu tiles in the mainmenu"
+msgid "Height of the menu tiles in the mainmenu"
+msgstr "Height of the menu tiles in the mainmenu"
 
 msgctxt "#31771"
 msgid "Disable auto scroll for plots/descriptions"
@@ -2771,6 +2775,34 @@ msgstr "PVR Guide unfocused item textcolour"
 msgctxt "#31780"
 msgid "PVR Guide focused item textcolor"
 msgstr "PVR Guide focused item textcolour"
+
+msgctxt "#31781"
+msgid "Video process information"
+msgstr "Video process information"
+
+msgctxt "#31782"
+msgid "Hardware decoding"
+msgstr "Hardware decoding"
+
+msgctxt "#31783"
+msgid "Inactive"
+msgstr "Inactive"
+
+msgctxt "#31784"
+msgid "Decoder"
+msgstr "Decoder"
+
+msgctxt "#31785"
+msgid "Audio Process Information"
+msgstr "Audio Process Information"
+
+msgctxt "#31786"
+msgid "Player process info"
+msgstr "Player process info"
+
+msgctxt "#31787"
+msgid "Software"
+msgstr "Software"
 
 msgctxt "#31788"
 msgid "Focused/active color for radiobuttons and spin controls"
@@ -2863,3 +2895,67 @@ msgstr "Volume Display/Change Indicator Style"
 msgctxt "#31810"
 msgid "Don't use UPPERCASE font on the homemenu titles"
 msgstr "Don't use UPPERCASE font on the homemenu titles"
+
+msgctxt "#31811"
+msgid "Hide poster panel"
+msgstr "Hide poster panel"
+
+msgctxt "#31812"
+msgid "Enable automatic creation of wall backgrounds"
+msgstr "Enable automatic creation of wall backgrounds"
+
+msgctxt "#31813"
+msgid "Diffuse color for lyrics overlay"
+msgstr "Diffuse colour for lyrics overlay"
+
+msgctxt "#31814"
+msgid "Textcolor for unfocused lyrics"
+msgstr "Textcolour for unfocused lyrics"
+
+msgctxt "#31815"
+msgid "Textcolor for focused lyrics"
+msgstr "Textcolour for focused lyrics"
+
+msgctxt "#31816"
+msgid "Shadowcolor for unfocused lyrics text"
+msgstr "Shadowcolour for unfocused lyrics text"
+
+msgctxt "#31817"
+msgid "Shadowcolor for focused lyrics text"
+msgstr "Shadowcolour for focused lyrics text"
+
+msgctxt "#31818"
+msgid "Do not display clearlogo in Netflix views"
+msgstr "Do not display clearlogo in Netflix views"
+
+msgctxt "#31819"
+msgid "Hide default playback controls from the OSD"
+msgstr "Hide default playback controls from the OSD"
+
+msgctxt "#31820"
+msgid "Show all widgets (detach from main menu focus)"
+msgstr "Show all widgets (detach from main menu focus)"
+
+msgctxt "#31821"
+msgid "Pause rotating if widget is focused"
+msgstr "Pause rotating if widget is focused"
+
+msgctxt "#31822"
+msgid "No widget assigned [click to configure]"
+msgstr "No widget assigned [click to configure]"
+
+msgctxt "#31823"
+msgid "Use fixed focus"
+msgstr "Use fixed focus"
+
+msgctxt "#31824"
+msgid "Default music background (as fallback if no artist fanart or fanart disabled)"
+msgstr "Default music background (as fallback if no artist fanart or fanart disabled)"
+
+msgctxt "#31825"
+msgid "Don't use rich artwork on the OSD at livetv playback"
+msgstr "Don't use rich artwork on the OSD at livetv playback"
+
+msgctxt "#31826"
+msgid "Select country flags / icons"
+msgstr "Select country flags / icons"

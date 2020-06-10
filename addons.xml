@@ -847,16 +847,32 @@ ffmpeg simply copies the stream into a transport stream container.
 	</extension>
 </addon>
 
-<addon id="repository.marcelveldt" version="1.0.1" name="Marcelveldt's BETA repository" provider-name="marcelveldt">
+<addon id="repository.marcelveldt" version="1.0.2" name="Marcelveldt's BETA repository" provider-name="marcelveldt, finkleandeinhorn">
 
 	<extension point="xbmc.addon.repository" name="Marcelveldt's BETA repository">
-		<info compressed="false">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml</info>
-		<checksum>https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml.md5</checksum>
-		<datadir zip="true">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/</datadir>
+		<info compressed="false">https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">Kodi repository for beta/test versions of Marcelveldt's addons</summary>
 		<description lang="en">Kodi repository for beta/test versions of Marcelveldt's addons, for stable versions please just use the official Kodi repository. This repo is for test/beta versions of my work only</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="repository.openscrapers" name="OpenScrapers Repository" version="1.0" provider-name="A4K">
+	<extension point="xbmc.addon.repository" name="OpenScrapers Repository">
+		<dir>
+            <info compressed="false">https://raw.githubusercontent.com/a4k-openproject/repository.openscrapers/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/a4k-openproject/repository.openscrapers/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/a4k-openproject/repository.openscrapers/master/zips/</datadir>
+        </dir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>OpenScrapers Repository</summary>
+		<description>The official repo for OpenScrapers!.</description>
+		<disclaimer></disclaimer>
 		<platform>all</platform>
 	</extension>
 </addon>
@@ -1972,7 +1988,7 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 	</extension>
 </addon>
 
-<addon id="script.skinshortcuts" name="Skin Shortcuts" version="1.0.17" provider-name="BigNoid,marcelveldt">
+<addon id="script.skinshortcuts" name="Skin Shortcuts" version="1.0.19" provider-name="BigNoid,marcelveldt">
 	<requires>
 		<import addon="xbmc.python" version="2.20.0"/>
 		<import addon="script.module.simplejson" version="3.3.0"/>
@@ -2440,7 +2456,7 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 	</extension>
 </addon>
 
-<addon id="skin.titan.kryptonbeta" version="18.0.2" name="Vista Kodi 18 Skin" provider-name="Merlin+Biglad">
+<addon id="skin.titan.kryptonbeta" version="18.0.3" name="Vista Kodi 18 Skin" provider-name="Merlin+Biglad">
 	<requires>
 		<import version="5.14.0" addon="xbmc.gui"/>
 		<import addon="script.skinshortcuts" version="0.6.5"/>

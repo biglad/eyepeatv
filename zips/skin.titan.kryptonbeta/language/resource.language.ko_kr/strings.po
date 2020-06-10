@@ -320,6 +320,10 @@ msgctxt "#31548"
 msgid "Background options"
 msgstr "배경 옵션"
 
+msgctxt "#31562"
+msgid "Recommended Movies"
+msgstr "추천 영화"
+
 msgctxt "#31564"
 msgid "Widgets"
 msgstr "위젯"
@@ -331,3 +335,11 @@ msgstr "패널"
 msgctxt "#31749"
 msgid "Show info"
 msgstr "정보 보기"
+
+msgctxt "#31782"
+msgid "Hardware decoding"
+msgstr "하드웨어 디코딩"
+
+msgctxt "#31784"
+msgid "Decoder"
+msgstr "디코더"

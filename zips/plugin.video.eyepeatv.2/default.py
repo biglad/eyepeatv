@@ -1001,9 +1001,9 @@ def vod_channels(channel):
     return video
 
 
-FabAddon.setSetting(id='showxxx', value='true')
-FabAddon.setSetting(id='PVRUpdater', value='true')
-FabAddon.setSetting(id='logoFromEpg', value='1')
+#FabAddon.setSetting(id='showxxx', value='true')
+#FabAddon.setSetting(id='PVRUpdater', value='true')
+#FabAddon.setSetting(id='logoFromEpg', value='1')
 
 
 

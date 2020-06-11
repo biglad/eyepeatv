@@ -21,7 +21,7 @@ global kontroll
 global EPGColour
 addon_id = "plugin.video.eyepeatv.2"
 FabAddon = xbmcaddon.Addon('plugin.video.eyepeatv.2')
-ADDON=xbmcaddon.Addon(id='plugin.video.eyepeatv.2')
+ADDON2=xbmcaddon.Addon(id='pvr.iptvsimple')
 background = "YmFja2dyb3VuZC5wbmc=" 
 defaultlogo = "ZGVmYXVsdGxvZ28ucG5n" 
 hometheater = "aG9tZXRoZWF0ZXIuanBn"
@@ -1003,9 +1003,11 @@ def vod_channels(channel):
 
 FabAddon.setSetting(id='showxxx', value='true')
 FabAddon.setSetting(id='PVRUpdater', value='true')
-if xbmc.getCondVisibility('System.HasPVRAddon'):
-    moist = xbmcaddon.Addon('pvr.iptvsimple')
-    moist.setSetting(id='m3uCache', value="true")
-    moist.setSetting(id='epgCache', value="true")
+
+
+
+
+    
+
 run()
 exit()

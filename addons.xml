@@ -121,7 +121,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.eyepeatv.2" version="18.0.81" name="[COLOR gold]Eye Pea TV Gold[/COLOR] (EPTV) - Premium IPTV" provider-name="EyePeaTV">
+<addon id="plugin.video.eyepeatv.2" version="19.0.82" name="[COLOR gold]Eye Pea TV Gold[/COLOR] (EPTV) - Premium IPTV" provider-name="EyePeaTV">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.addon.common" />

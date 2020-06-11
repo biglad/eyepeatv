@@ -58,13 +58,15 @@ LOAD_LIVEchan = os.path.join( plugintools.get_runtime_path() , "resources" , "ar
 #loginurl   = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1obHM=")%(lehekylg,pordinumber,kasutajanimi,salasona) #DM
 loginurl   = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD10cw==")%(lehekylg,pordinumber,kasutajanimi,salasona) #RTMP
 ##xbmc.log(loginurl,2)
-url = "http://dl.mgawow.co.uk/version.txt"
-data = "nothing"
-user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'
-headers = {'User-Agent': user_agent}
-req = urllib2.Request(url, data, headers)
-response = urllib2.urlopen(req)
-webversion = response.read()
+def getver2():
+    url = "http://dl.mgawow.co.uk/version.txt"
+    data = "nothing"
+    user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'
+    headers = {'User-Agent': user_agent}
+    req = urllib2.Request(url, data, headers)
+    response = urllib2.urlopen(req)
+    webversion = response.read()
+    return webversion
 #webversion = urllib2.urlopen('https://eptv.co.uk/version.txt').read()
 
 
@@ -84,14 +86,14 @@ else:
         buildv = "0.0"
         
         
-        
-webversion = float(webversion)
-buildv = float(buildv)
+#webversion = getver2()        
+#webversion = float(webversion)
+#buildv = float(buildv)
 
 
 
-if webversion > buildv:
-    BUILDUPDATE = "YES"
+#if webversion > buildv:
+#    BUILDUPDATE = "YES"
 
 
 RAM = int(xbmc.getFreeMem())

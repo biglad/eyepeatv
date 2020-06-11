@@ -21,7 +21,6 @@ global kontroll
 global EPGColour
 addon_id = "plugin.video.eyepeatv.2"
 FabAddon = xbmcaddon.Addon('plugin.video.eyepeatv.2')
-ADDON2=xbmcaddon.Addon(id='pvr.iptvsimple')
 background = "YmFja2dyb3VuZC5wbmc=" 
 defaultlogo = "ZGVmYXVsdGxvZ28ucG5n" 
 hometheater = "aG9tZXRoZWF0ZXIuanBn"

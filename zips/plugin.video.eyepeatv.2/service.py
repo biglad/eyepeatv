@@ -20,6 +20,8 @@ if os.path.exists(iVueRepo):
     
 if os.path.exists(iVueRepo2):
 	shutil.rmtree(iVueRepo2)
+    
+
 
 def Check():
 	if PVRon == 'true':
@@ -42,6 +44,10 @@ def Check():
 			if PVRon == 'true':
 				FabAddon.setSetting(id='PVRUpdater', value='false')
 				xbmc.executebuiltin('Notification(PVR Update Failed,[COLOR white]PVR failed - now turned off[/COLOR],3000,special://home/addons/'+AddonID+'/icon.png)')
+                
+                
+	xbmc.executebuiltin('UpdateAddonRepos()')
+	xbmc.executebuiltin('UpdateLocalAddons()')
 
 def open_url(url):
     try:

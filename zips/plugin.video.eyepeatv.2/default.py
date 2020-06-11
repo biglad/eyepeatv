@@ -20,6 +20,8 @@ addonDir = plugintools.get_runtime_path()
 global kontroll
 global EPGColour
 addon_id = "plugin.video.eyepeatv.2"
+FabAddon = xbmcaddon.Addon('plugin.video.eyepeatv.2')
+ADDON=xbmcaddon.Addon(id='plugin.video.eyepeatv.2')
 background = "YmFja2dyb3VuZC5wbmc=" 
 defaultlogo = "ZGVmYXVsdGxvZ28ucG5n" 
 hometheater = "aG9tZXRoZWF0ZXIuanBn"
@@ -204,6 +206,7 @@ def correctPVR():
         moist.setSetting(id='m3uCache', value="true")
         moist.setSetting(id='epgCache', value="true")
         moist.setSetting(id='PVRUpdater', value="true")
+        FabAddon.setSetting(id='showxxx', value='true')
     except:
         xbmc.executebuiltin('InstallAddon(pvr.iptvsimple)')
         xbmc.executebuiltin('SendClick(11)'), time.sleep(2), xbmcgui.Dialog().ok("Add-on Install", "The addon was not present. Please wait for installation to finish.")
@@ -214,6 +217,7 @@ def correctPVR():
         moist.setSetting(id='m3uCache', value="true")
         moist.setSetting(id='epgCache', value="true")
         moist.setSetting(id='PVRUpdater', value="true")
+        FabAddon.setSetting(id='showxxx', value='true')
     dp.update(60)
     #xbmc.executebuiltin("Dialog.Close(busydialog)")
     dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]We\'ve copied your logins to the PVR Guide[/COLOR]',' ','[COLOR white]You [B]MUST[/B] allow time to load the EPG to avoid issues.[/COLOR]')  
@@ -996,5 +1000,8 @@ def vod_channels(channel):
     video = base64.b64decode(channel)
     return video
 
+
+FabAddon.setSetting(id='showxxx', value='true')
+FabAddon.setSetting(id='PVRUpdater', value='true')
 run()
 exit()

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.eyepeatv.2" version="31.11.85" name="[COLOR gold]Eye Pea TV Gold[/COLOR] (EPTV) - Premium IPTV" provider-name="EyePeaTV">
+<addon id="plugin.video.eyepeatv.2" version="33.12.86" name="[COLOR gold]Eye Pea TV Gold[/COLOR] (EPTV) - Premium IPTV" provider-name="EyePeaTV">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.addon.common" />
 		<!--<import addon="inputstream.rtmp" />-->
 		<!--<import addon="inputstream.adaptive" optional="true"/>-->
 		<!--<import addon="pvr.iptvsimple" />-->
-		<import addon="plugin.video.iptv.recorder" optional="true"/>
+		<!--<import addon="plugin.video.iptv.recorder" optional="true"/>
 		<import addon="plugin.video.SportsDevil" />
-		<import addon="plugin.video.live.streamspro" />
+		<import addon="plugin.video.live.streamspro" />-->
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>

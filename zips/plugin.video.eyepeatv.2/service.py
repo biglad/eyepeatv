@@ -4,9 +4,9 @@ FabAddon = xbmcaddon.Addon('plugin.video.eyepeatv.2')
 Username=plugintools.get_setting("Username")
 Password=plugintools.get_setting("Password")
 PVRon = FabAddon.getSetting("PVRUpdater")
-lehekylg= base64.b64decode("aHR0cDovL3RlYW10di51aw==") #NEW
+lehekylg= base64.b64decode("aHR0cDovL2dvbGQuZXB0di5jby51aw==") #NEW
 pordinumber = base64.b64decode("MjA4Ng==")
-EPGurl = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tcGVndHM=")%(lehekylg,pordinumber,Username,Password)
+EPGurl = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD10cw==")%(lehekylg,pordinumber,Username,Password)
 NewPVR = xbmc.translatePath('special://home/userdata/addon_data/pvr.iptvsimple/EyePeaTV.m3u8')
 iVueRepo = xbmc.translatePath('special://home/addons/xbmc.repo.ivueguide')
 dialog = xbmcgui.Dialog()
@@ -26,7 +26,7 @@ def Check():
 		try:
 			f = open(NewPVR, 'a')
 			data = ""
-			UserList = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD1tcGVndHM=")%(lehekylg,pordinumber,Username,Password)
+			UserList = base64.b64decode("JXM6JXMvZ2V0LnBocD91c2VybmFtZT0lcyZwYXNzd29yZD0lcyZ0eXBlPW0zdV9wbHVzJm91dHB1dD10cw==")%(lehekylg,pordinumber,Username,Password)
 			user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 			headers = {'User-Agent': user_agent}
 			req = urllib2.Request(UserList, data, headers)

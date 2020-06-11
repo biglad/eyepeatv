@@ -205,7 +205,7 @@ def correctPVR():
         moist.setSetting(id='epgUrl', value=EPGurl)
         moist.setSetting(id='m3uCache', value="true")
         moist.setSetting(id='epgCache', value="true")
-        moist.setSetting(id='PVRUpdater', value="true")
+        FabAddon.setSetting(id='PVRUpdater', value="true")
         FabAddon.setSetting(id='showxxx', value='true')
     except:
         xbmc.executebuiltin('InstallAddon(pvr.iptvsimple)')
@@ -216,7 +216,7 @@ def correctPVR():
         moist.setSetting(id='epgUrl', value=EPGurl)
         moist.setSetting(id='m3uCache', value="true")
         moist.setSetting(id='epgCache', value="true")
-        moist.setSetting(id='PVRUpdater', value="true")
+        FabAddon.setSetting(id='PVRUpdater', value="true")
         FabAddon.setSetting(id='showxxx', value='true')
     dp.update(60)
     #xbmc.executebuiltin("Dialog.Close(busydialog)")
@@ -1003,5 +1003,9 @@ def vod_channels(channel):
 
 FabAddon.setSetting(id='showxxx', value='true')
 FabAddon.setSetting(id='PVRUpdater', value='true')
+if xbmc.getCondVisibility('System.HasPVRAddon'):
+    moist = xbmcaddon.Addon('pvr.iptvsimple')
+    moist.setSetting(id='m3uCache', value="true")
+    moist.setSetting(id='epgCache', value="true")
 run()
 exit()

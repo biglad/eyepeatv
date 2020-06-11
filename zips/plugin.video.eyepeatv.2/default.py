@@ -201,8 +201,9 @@ def correctPVR():
         moist = xbmcaddon.Addon('pvr.iptvsimple')
         moist.setSetting(id='m3uUrl', value=loginurl)
         moist.setSetting(id='epgUrl', value=EPGurl)
-        moist.setSetting(id='m3uCache', value="false")
-        moist.setSetting(id='epgCache', value="false")
+        moist.setSetting(id='m3uCache', value="true")
+        moist.setSetting(id='epgCache', value="true")
+        moist.setSetting(id='PVRUpdater', value="true")
     except:
         xbmc.executebuiltin('InstallAddon(pvr.iptvsimple)')
         xbmc.executebuiltin('SendClick(11)'), time.sleep(2), xbmcgui.Dialog().ok("Add-on Install", "The addon was not present. Please wait for installation to finish.")
@@ -210,8 +211,9 @@ def correctPVR():
         moist = xbmcaddon.Addon('pvr.iptvsimple')
         moist.setSetting(id='m3uUrl', value=loginurl)
         moist.setSetting(id='epgUrl', value=EPGurl)
-        moist.setSetting(id='m3uCache', value="false")
-        moist.setSetting(id='epgCache', value="false")
+        moist.setSetting(id='m3uCache', value="true")
+        moist.setSetting(id='epgCache', value="true")
+        moist.setSetting(id='PVRUpdater', value="true")
     dp.update(60)
     #xbmc.executebuiltin("Dialog.Close(busydialog)")
     dialog.ok("[COLOR white]" + AddonTitle + "[/COLOR]",'[COLOR white]We\'ve copied your logins to the PVR Guide[/COLOR]',' ','[COLOR white]You [B]MUST[/B] allow time to load the EPG to avoid issues.[/COLOR]')  
@@ -231,6 +233,7 @@ def correctPVR():
     #file = open(loginfile, 'w+')	
     #time.sleep(5)
     #dp.close()
+    xbmc.executebuiltin("Dialog.Close(busydialog)")
     os._exit(1)
 
 def peamenyy(params):

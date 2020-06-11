@@ -172,7 +172,7 @@ def correctPVR():
     RAM = int(xbmc.getInfoLabel("System.Memory(total)")[:-2])
     RAMM = xbmc.getInfoLabel("System.Memory(total)")
     xbmc.executebuiltin("ActivateWindow(busydialog)")
-    if RAM < 1599:
+    if RAM < 1800:
         choice = xbmcgui.Dialog().yesno('[COLOR white]Low Power Device [COLOR lime]RAM: ' + RAMM + '[/COLOR][/COLOR]', '[COLOR white]Your device has been detected as a low end device[/COLOR]', '[COLOR white]We recommend avoiding PVR usage for this reason[/COLOR]', '[COLOR white]We cannnot support low end devices for PVR[/COLOR]', nolabel='[COLOR lime]OK, Cancel this[/COLOR]',yeslabel='[COLOR red]I know, proceed[/COLOR]')
         if choice == 0:
             sys.exit(1)

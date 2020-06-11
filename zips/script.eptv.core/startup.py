@@ -52,7 +52,7 @@ else:
         buildv = "0.0"
 		
 		
-url = "http://ftp.mgawow.co.uk/loaded.php"
+url = "http://dl.mgawow.co.uk/loaded.php"
 data = ""
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 headers = {'User-Agent': user_agent}
@@ -60,7 +60,7 @@ req = urllib2.Request(url, data, headers)
 response = urllib2.urlopen(req)
 loaded = response.read()
 		
-url = "http://ftp.mgawow.co.uk/version.txt"
+url = "http://dl.mgawow.co.uk/version.txt"
 data = ""
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 headers = {'User-Agent': user_agent}
@@ -88,7 +88,7 @@ if username =="":
 skinname = xbmc.getSkinDir()
 #xbmc.log(skinname,2)
 
-url = "http://ftp.mgawow.co.uk/buildnews.txt"
+url = "http://dl.mgawow.co.uk/buildnews.txt"
 data = ""
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 headers = {'User-Agent': user_agent}
@@ -362,7 +362,7 @@ xbmc.executebuiltin("XBMC.AlarmClock('MTVBCS',XBMC.RunAddon(script.eptv.core),30
 #webversion = urllib2.urlopen('http://eptv.co.uk/version.txt').read()
 #webversion = float(webversion)
 #buildv = float(buildv)
-url = "http://ftp.mgawow.co.uk/version.txt"
+url = "http://dl.mgawow.co.uk/version.txt"
 data = ""
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 headers = {'User-Agent': user_agent}

@@ -37,7 +37,7 @@ def Check():
 			f.write(OutpuT)
 			if PVRon == 'false':
 				FabAddon.setSetting(id='PVRUpdater', value='true')
-			xbmc.executebuiltin('Notification(PVR Updated,[COLOR white]PVR Playlist Updated[/COLOR],3000,special://home/addons/'+AddonID+'/icon.png)')
+				xbmc.executebuiltin('Notification(PVR Updated,[COLOR white]PVR Playlist Updated[/COLOR],3000,special://home/addons/'+AddonID+'/icon.png)')
 		except:
 			if PVRon == 'true':
 				FabAddon.setSetting(id='PVRUpdater', value='false')

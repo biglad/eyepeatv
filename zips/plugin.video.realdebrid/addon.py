@@ -201,11 +201,16 @@ def index():
         'is_playable': False,
     }
     ad = {
-        'label': 'EyePeaTV www.eyepeatv.co.uk',
+        'label': 'EyePeaTV (EPTV) eptv.co.uk',
         'path': 'plugin://plugin.video.realdebrid/',
         'is_playable': False,
     }
-    return [downloads, torrents, account, ad]
+    ad2 = {
+        'label': 'Create Real Debrid Account eptv.co.uk/real-debrid',
+        'path': 'plugin://plugin.video.realdebrid/',
+        'is_playable': False,
+    }
+    return [downloads, torrents, account, ad, ad2]
 
 
 def downloads():

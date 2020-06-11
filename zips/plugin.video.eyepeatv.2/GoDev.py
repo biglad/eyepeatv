@@ -123,12 +123,17 @@ def PVRbeta(self):
     moist = xbmcaddon.Addon('pvr.iptvsimple')
     moist.setSetting(id='epgUrl', value=EPGurl)
     moist.setSetting(id='m3uPath', value='special://home/userdata/addon_data/pvr.iptvsimple/EyePeaTV.m3u8')
+    moist.setSetting(id='m3uCache', value="true")
+    moist.setSetting(id='epgCache', value="true")
+    #moist.setSetting(id='showxxx', value="true")
+
     time.sleep(3)
     xbmc.executeJSONRPC(jsonSetPVR)
     time.sleep(3)
     xbmc.executeJSONRPC(IPTVon)
     if PVRon == 'false':
         FabAddon.setSetting(id='PVRUpdater', value='true')
+    FabAddon.setSetting(id='showxxx', value='true')
     xbmc.executebuiltin("Dialog.Close(busydialog)")
     xbmc.executebuiltin('Notification(PVR Setup,[COLOR white]PVR is now setup allow loading to finish[/COLOR],3000,special://home/addons/'+AddonID+'/icon.png)')
     time.sleep(5)

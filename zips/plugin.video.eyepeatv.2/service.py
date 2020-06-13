@@ -15,11 +15,11 @@ Duration=FabAddon.getSetting("FinalDuration")
 if Duration == '':
 	FabAddon.setSetting(id='FinalDuration', value='Off')
 
-if os.path.exists(iVueRepo):
-	shutil.rmtree(iVueRepo)
+#if os.path.exists(iVueRepo):
+#	shutil.rmtree(iVueRepo)
     
-if os.path.exists(iVueRepo2):
-	shutil.rmtree(iVueRepo2)
+#if os.path.exists(iVueRepo2):
+#	shutil.rmtree(iVueRepo2)
     
 
 

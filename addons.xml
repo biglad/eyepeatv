@@ -52,6 +52,38 @@
 	</extension>
 </addon>
 
+<addon id="plugin.program.dnsleaktest"
+       version="1.1"
+       name="DNS Leak-Test"
+       provider-name="Space2Walker">
+<requires>
+  <import addon="xbmc.python" version="2.19.0"/>
+  <import addon="script.module.requests" />
+</requires>
+<extension point="xbmc.python.pluginsource" library="main.py">
+  <provides>executable</provides>
+</extension>
+<extension point="xbmc.addon.metadata">
+  <summary lang="en">DNS Leak-Test Plugin for Kodi</summary>
+  <description lang="en_GB">This addon performs a DNS leak test on https://bash.ws/dnsleak!
+  The Basic Code comes from https://github.com/macvk/dnsleaktest.
+  </description>
+  <disclaimer lang="en_GB">Use add your own risk!!</disclaimer>
+  <platform>all</platform>
+  <license>GPL-3.0</license>
+  <website>https://bash.ws</website>
+  <source>https://github.com/Space2Walker/plugin.program.dnsleaktest</source>
+  <assets>
+    <icon>icon.png</icon>
+    <fanart>fanart.jpg</fanart>
+  </assets>
+  <news>v1.1 (03/22/2019)
+    - should now work on all Platforms
+    - cmd pop-ups on Windows gone
+  </news>
+</extension>
+</addon>
+
 <addon id="plugin.program.t2kthemes" name="T2K + Fanriffic Themes" version="1.0.2" provider-name="T2K">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
@@ -1953,6 +1985,27 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
     <description lang="en">VistaTV</description>
 	<disclaimer>VistaTV</disclaimer>
   </extension>
+</addon>
+
+<addon id="script.pystone.benchmark" name="CPU Benchmark" version="1.1.0" provider-name="Lunatixz">
+    <requires>
+        <import addon="xbmc.python" version="2.25.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Test your devices python performance.</summary>
+        <description lang="en_GB">How fast does your device run python code? Pystone evaluates CPU performance running in a python environment.</description>
+        <license>The MIT License (MIT)</license>
+        <platform>all</platform>
+        <source>https://github.com/Lunatixz/XBMC_Addons/tree/master/script.pystone.benchmark</source>
+        <news></news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
 </addon>
 
 	<addon id="script.skin.helper.backgrounds" name="Skin Helper Service Backgrounds" version="1.0.33" provider-name="marcelveldt">

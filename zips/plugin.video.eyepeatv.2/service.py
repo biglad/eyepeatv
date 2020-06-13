@@ -1,6 +1,6 @@
 import xbmc,xbmcplugin,xbmcgui,re,os,xbmcaddon,sys,base64,time,urllib2,string,logging,array,news,shutil,plugintools
 AddonID = 'plugin.video.eyepeatv'
-FabAddon = xbmcaddon.Addon('plugin.video.eyepeatv')
+FabAddon = xbmcaddon.Addon('plugin.video.eyepeatv.2')
 Username = FabAddon.getSetting("Username")
 Password = FabAddon.getSetting("Password")
 PVRon = FabAddon.getSetting("PVRUpdater")
@@ -45,9 +45,6 @@ def Check():
 				FabAddon.setSetting(id='PVRUpdater', value='false')
 				xbmc.executebuiltin('Notification(PVR Update Failed,[COLOR white]PVR failed - now turned off[/COLOR],3000,special://home/addons/'+AddonID+'/icon.png)')
                 
-                
-	xbmc.executebuiltin('UpdateAddonRepos()')
-	xbmc.executebuiltin('UpdateLocalAddons()')
 
 def open_url(url):
     try:

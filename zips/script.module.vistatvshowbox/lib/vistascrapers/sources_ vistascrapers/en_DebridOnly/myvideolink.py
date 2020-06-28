@@ -9,38 +9,23 @@
 #  .##.....#.##.......##......##...##.##....#.##....#.##....##.##.....#.##.......##......##....##.##....##
 #  ..#######.##.......#######.##....#..######..######.##.....#.##.....#.##.......#######.##.....#..######.
 
-'''
-    OpenScrapers Project
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-'''
-
 import re
 import urllib
 import urlparse
 
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import client
-from vistascrapers.modules import debrid
-from vistascrapers.modules import source_utils
+from openscrapers.modules import cleantitle
+from openscrapers.modules import client
+from openscrapers.modules import debrid
+from openscrapers.modules import source_utils
 
 
 class source:
 	def __init__(self):
 		self.priority = 22
 		self.language = ['en']
-		self.domains = ['go.myvideolinks.net', 'sag.myvideolinks.net', 'looka.myvideolinks.net', 'kita.myvideolinks.net', 'myvideolinks.69.mu', 'nothingcan.undo.it']
-		self.base_link = 'http://myvideolinks.69.mu'
+		self.domains = ['dls.myvideolinks.net', 'get.myvideolinks.net', 'go.myvideolinks.net', 'myvideolinks.69.mu',
+								'sag.myvideolinks.net', 'looka.myvideolinks.net', 'kita.myvideolinks.net']
+		self.base_link = 'https://dls.myvideolinks.net'
 		self.search_link = '/?s=%s'
 
 

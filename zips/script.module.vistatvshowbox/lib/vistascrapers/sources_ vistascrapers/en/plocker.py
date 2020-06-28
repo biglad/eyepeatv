@@ -23,7 +23,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['putlockertv.to', 'putlockertv.se']
-        self.base_link = 'https://www6.putlockertv.to'
+        self.base_link = 'https://putlockertv.to'
         self.search_path = '/ajax/film/search?ts=%s&_=%i&keyword=%s&sort=year%%3Adesc'
         self.episode_search_path = ('/filter?keyword=%s&sort=post_date:Adesc'
                                     '&type[]=series')

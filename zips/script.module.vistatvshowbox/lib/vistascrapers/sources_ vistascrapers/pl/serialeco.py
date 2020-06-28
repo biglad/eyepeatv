@@ -33,8 +33,8 @@ try:
 except:
 	from html.parser import HTMLParser
 
-from vistascrapers.modules import source_utils
-from vistascrapers.modules import client
+from openscrapers.modules import source_utils
+from openscrapers.modules import client
 
 
 class source:

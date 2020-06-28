@@ -30,10 +30,10 @@ import urllib
 import urlparse
 import json
 
-from vistascrapers.modules import client
-from vistascrapers.modules import debrid
-from vistascrapers.modules import source_utils
-from vistascrapers.modules import workers
+from openscrapers.modules import client
+from openscrapers.modules import debrid
+from openscrapers.modules import source_utils
+from openscrapers.modules import workers
 
 
 class source:

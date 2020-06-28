@@ -33,8 +33,8 @@ try:
 except:
 	import urllib.parse as urlparse
 
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import client
+from openscrapers.modules import cleantitle
+from openscrapers.modules import client
 
 
 class source:

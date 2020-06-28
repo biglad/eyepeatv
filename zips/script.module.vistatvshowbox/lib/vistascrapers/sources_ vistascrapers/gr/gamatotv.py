@@ -30,11 +30,11 @@ import re
 import urllib
 import urlparse
 
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import client
-from vistascrapers.modules import dom_parser
-from vistascrapers.modules import source_utils
-from vistascrapers.modules import trakt
+from openscrapers.modules import cleantitle
+from openscrapers.modules import client
+from openscrapers.modules import dom_parser
+from openscrapers.modules import source_utils
+from openscrapers.modules import trakt
 
 
 class source:
@@ -48,8 +48,7 @@ class source:
 	def movie(self, imdb, title, localtitle, aliases, year):
 		try:
 			url = self.__search([localtitle] + source_utils.aliases_to_array(aliases), year)
-			if not url and title != localtitle: url = self.__search([title] + source_utils.aliases_to_array(aliases),
-			                                                        year)
+			if not url and title != localtitle: url = self.__search([title] + source_utils.aliases_to_array(aliases), year)
 			if not url: url = self.__search(self.search_link + trakt.getMovieTranslation(imdb, 'el'), year)
 			return url
 		except:

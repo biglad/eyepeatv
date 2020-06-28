@@ -41,7 +41,7 @@ class source:
 		self.priority = 1
 		self.language = ['en']
 		self.domains = ['fmovies.sc']
-		self.base_link = 'http://fmovies.sc'
+		self.base_link = 'http://www6.fmovies.sc'
 		self.search_link = '/watch/%s-%s-online.html'
 		self.scraper = cfscrape.create_scraper()
 

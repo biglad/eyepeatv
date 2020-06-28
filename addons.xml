@@ -1904,7 +1904,7 @@ Major code changes is in the works for the next version of OpenInfo(v.7.0.0) whi
 	</extension>
 </addon>
 
-<addon id="script.module.vistatvshowbox" name="Requisition Scraper" version="20.0.88" provider-name="Biglad">
+<addon id="script.module.vistatvshowbox" name="Requisition Scraper" version="20.0.89" provider-name="Biglad">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.beautifulsoup4"/>

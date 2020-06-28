@@ -27,10 +27,10 @@
 
 import re
 
-from vistascrapers.modules import cfscrape
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import more_sources
-from vistascrapers.modules import source_utils
+from openscrapers.modules import cfscrape
+from openscrapers.modules import cleantitle
+from openscrapers.modules import more_sources
+from openscrapers.modules import source_utils
 
 
 class source:

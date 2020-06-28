@@ -56,7 +56,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['icefilms.info','icefilms.unblocked.vc','www6-icefilms6-info.unblocked.lol']
-        self.base_link = 'https://ice.unblocked.to/'
+        self.base_link = 'https://icefilms.unblockit.id/'
         self.search_link = urlparse.urljoin(self.base_link, 'search.php?q=%s+%s&x=0&y=0')
         self.list_url = urlparse.urljoin(self.base_link, 'membersonly/components/com_iceplayer/video.php?h=374&w=631&vid=%s&img=')
         self.post = 'id=%s&s=%s&iqs=&url=&m=%s&cap= &sec=%s&t=%s'

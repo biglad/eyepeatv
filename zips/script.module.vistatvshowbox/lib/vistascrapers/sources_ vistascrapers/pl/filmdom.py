@@ -25,8 +25,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
 
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import client
+from openscrapers.modules import cleantitle
+from openscrapers.modules import client
 
 
 class source:

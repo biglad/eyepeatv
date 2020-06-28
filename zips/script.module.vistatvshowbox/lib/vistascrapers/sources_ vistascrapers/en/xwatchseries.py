@@ -25,41 +25,55 @@
 '''
 
 import re
+import urllib
 import urlparse
 
-from vistascrapers.modules import cfscrape
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import client
-from vistascrapers.modules import proxy
-from vistascrapers.modules import source_utils
+from openscrapers.modules import cfscrape
+from openscrapers.modules import cleantitle
+from openscrapers.modules import client
+from openscrapers.modules import proxy
+from openscrapers.modules import source_utils
 
 class source:
 	def __init__(self):
 		self.priority = 39
 		self.language = ['en']
 		self.domains = ['on.mywatchseries.stream', 'xwatchseries.to', 'onwatchseries.to', 'itswatchseries.to']
-		self.base_link = 'https://on.mywatchseries.stream'
-		self.search_link = 'https://on.mywatchseries.stream/search/%s'
+		self.base_link = 'https://www5.mywatchseries.stream/'
+		self.search_link = 'https://www5.mywatchseries.stream/search/%s'
 		self.scraper = cfscrape.create_scraper()
+
 
 	def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
 		try:
-			q = cleantitle.query(tvshowtitle)
-			r = self.scraper.get(self.search_link % q, headers={'referer': self.base_link}).content
-			r = client.parseDOM(r, 'div', attrs={'valign': '.+?'})
-			r = [(client.parseDOM(i, 'a', ret='href'), client.parseDOM(i, 'a', ret='title'), client.parseDOM(i, 'a'))
-			     for i in r]
-			r = [(i[0][0], i[1][0], i[2][0]) for i in r if i[0] and i[1] and i[2]]
-			return r[0][0]
+			# q = cleantitle.query(tvshowtitle)
+			q = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', '', tvshowtitle)
+
+			# r = self.scraper.get(self.search_link % q, headers={'referer': self.base_link}).content
+			r = self.scraper.get(self.search_link % urllib.quote_plus(q), headers={'referer': self.base_link}).content
+			# log_utils.log('r = %s' % r, __name__, log_utils.LOGDEBUG)
+
+			# r = client.parseDOM(r, 'div', attrs={'valign': '.+?'})
+			# log_utils.log('r = %s' % r, __name__, log_utils.LOGDEBUG)
+
+			r = client.parseDOM(r, 'div', attrs={'id': 'result'})
+			r = [(client.parseDOM(i, 'a', ret='href'), client.parseDOM(i, 'a', ret='title'), client.parseDOM(i, 'a')) for i in r]
+			url = client.parseDOM(i, 'a', ret='href')[0]
+			# r = [(i[0][0], i[1][0], i[2][0]) for i in r if i[0] and i[1] and i[2]]
+			# log_utils.log('r = %s' % r, __name__, log_utils.LOGDEBUG)
+
+			# return r[0][0]
+			return url
+
 		except:
 			source_utils.scraper_error('XWATCHSERIES')
 			return
+
 
 	def episode(self, url, imdb, tvdb, title, premiered, season, episode):
 		try:
 			if url is None:
 				return
-
 			r = self.scraper.get(url, headers={'referer': self.base_link}).content
 			r = client.parseDOM(r, 'li', attrs={'itemprop': 'episode'})
 			t = cleantitle.get(title)
@@ -77,19 +91,18 @@ class source:
 			if len(url) > 1 or not url:
 				url = [i for i in r if premiered == i[2]]
 			if len(url) > 1 or not url:
-				raise Exception()
-
+				return
 			return url[0][0]
 		except:
 			source_utils.scraper_error('XWATCHSERIES')
 			return
+
 
 	def sources(self, url, hostDict, hostprDict):
 		try:
 			sources = []
 			if url is None:
 				return sources
-
 			r = self.scraper.get(url, headers={'referer': self.base_link}).content
 			links = client.parseDOM(r, 'a', ret='href', attrs={'target': '.+?'})
 			links = [x for y, x in enumerate(links) if x not in links[:y]]

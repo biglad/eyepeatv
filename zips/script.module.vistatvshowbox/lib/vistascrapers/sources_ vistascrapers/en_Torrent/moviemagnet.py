@@ -30,9 +30,9 @@ import urllib
 import urlparse
 import json
 
-from vistascrapers.modules import cfscrape
-from vistascrapers.modules import debrid
-from vistascrapers.modules import source_utils
+from openscrapers.modules import cfscrape
+from openscrapers.modules import debrid
+from openscrapers.modules import source_utils
 
 
 class source:

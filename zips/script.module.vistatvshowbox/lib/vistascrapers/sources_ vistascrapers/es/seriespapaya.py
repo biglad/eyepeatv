@@ -29,9 +29,9 @@
 import re
 import urllib
 
-from vistascrapers.modules import client
-from vistascrapers.modules import dom_parser
-from vistascrapers.modules import source_utils
+from openscrapers.modules import client
+from openscrapers.modules import dom_parser
+from openscrapers.modules import source_utils
 
 
 class source:

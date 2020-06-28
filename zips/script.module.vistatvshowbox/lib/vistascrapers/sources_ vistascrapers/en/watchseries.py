@@ -28,10 +28,10 @@ import re
 import urllib
 import urlparse
 
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import client
-from vistascrapers.modules import dom_parser
-from vistascrapers.modules import source_utils
+from openscrapers.modules import cleantitle
+from openscrapers.modules import client
+from openscrapers.modules import dom_parser
+from openscrapers.modules import source_utils
 
 
 class source:
@@ -39,7 +39,7 @@ class source:
 		self.priority = 31
 		self.language = ['en']
 		self.domains = ['watchseries.movie', 'watch-series.co']
-		self.base_link = 'https://www5.watchseries.movie'
+		self.base_link = 'https://www6.watchseries.movie'
 		self.search_link = '/series/%s-season-%s-episode-%s'
 
 

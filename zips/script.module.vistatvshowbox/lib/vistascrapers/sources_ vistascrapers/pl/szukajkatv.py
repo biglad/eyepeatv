@@ -33,9 +33,9 @@ try:
 	import urlparse
 except:
 	import urllib.parse as urlparse
-from vistascrapers.modules import cleantitle, cache
-from vistascrapers.modules import client
-from vistascrapers.modules import source_utils
+from openscrapers.modules import cleantitle, cache
+from openscrapers.modules import client
+from openscrapers.modules import source_utils
 
 
 class source:

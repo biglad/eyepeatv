@@ -20,7 +20,7 @@ class source:
 		self.priority = 1
 		self.language = ['en']
 		self.domains = ['0123putlocker.com']
-		self.base_link = 'http://www11.0123putlocker.com'
+		self.base_link = 'http://123putlocker.io'
 		self.search_link = '/search-movies/%s.html'
 		self.scraper = cfscrape.create_scraper()
 

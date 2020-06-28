@@ -28,7 +28,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['hackimdb.com']
-        self.base_link = 'https://hackimdb.com'
+        self.base_link = 'https://www.123movieswww.com'
         self.search_link = '/title/&%s'
         self.scraper = cfscrape.create_scraper()
 

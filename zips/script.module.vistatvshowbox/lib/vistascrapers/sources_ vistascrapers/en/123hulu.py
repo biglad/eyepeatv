@@ -24,7 +24,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['123hulu.com']
-        self.base_link = 'http://www0.123hulu.com'
+        self.base_link = 'http://123hulu.com'
         self.search_link = '/search-movies/%s.html'
         self.scraper = cfscrape.create_scraper()
 

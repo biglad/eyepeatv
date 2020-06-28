@@ -62,7 +62,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['yesmovies.to']
-        self.base_link = 'https://yesmovies.to'
+        self.base_link = 'https://www3.yesmovieshd.to/' #'https://yesmovies.to'
         self.search_link = '/search/%s.html'
         self.info_link = '/ajax/movie_info/%s.html?is_login=false'
         self.server_link = '/ajax/v4_movie_episodes/%s'

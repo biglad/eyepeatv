@@ -29,10 +29,10 @@ import json
 import urllib
 import urlparse
 
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import client
-from vistascrapers.modules import more_sources
-from vistascrapers.modules import source_utils
+from openscrapers.modules import cleantitle
+from openscrapers.modules import client
+from openscrapers.modules import more_sources
+from openscrapers.modules import source_utils
 
 
 class source:
@@ -40,7 +40,7 @@ class source:
 		self.priority = 33
 		self.language = ['en']
 		self.domains = ['gowatchseries.video', 'gowatchseries.tv', 'gowatchseries.co', 'gowatchseries.io']
-		self.base_link = 'https://www6.gowatchseries.video'
+		self.base_link = 'https://www2.series.movie'
 		self.search_link = '/ajax-search.html?keyword=%s&id=-1'
 		self.search_link2 = '/search.html?keyword=%s'
 

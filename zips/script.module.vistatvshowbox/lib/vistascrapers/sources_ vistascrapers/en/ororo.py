@@ -27,10 +27,10 @@ import json
 import re
 import urlparse
 
-from vistascrapers.modules import cache
-from vistascrapers.modules import client
-from vistascrapers.modules import control
-from vistascrapers.modules import source_utils
+from openscrapers.modules import cache
+from openscrapers.modules import client
+from openscrapers.modules import control
+from openscrapers.modules import source_utils
 
 
 class source:

@@ -39,7 +39,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['sezonlukdizi.net', 'sezonlukdizi.com']
-        self.base_link = 'https://sezonlukdizi.org'
+        self.base_link = 'https://sezonlukdizi.vip'
         self.search_link = '/js/series1.js'
         self.video_link = '/ajax/dataEmbed.asp'
 

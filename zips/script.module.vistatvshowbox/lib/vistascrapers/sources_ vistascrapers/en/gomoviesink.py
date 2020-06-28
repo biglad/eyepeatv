@@ -34,7 +34,7 @@ class source:
 		self.priority = 1
 		self.language = ['en']
 		self.domains = ['www.gomovies.ink']
-		self.base_link = 'https://www.gomovies.ink'
+		self.base_link = 'https://www.123movies.sale'
 		self.search_link = '/?s=%s'
 
 	def movie(self, imdb, title, localtitle, aliases, year):

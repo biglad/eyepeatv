@@ -35,7 +35,7 @@ class source:
 		self.priority = 1
 		self.language = ['en']
 		self.domains = ['putlockersonline.top']
-		self.base_link = 'https://putlockersonline.top'
+		self.base_link = 'http://putlocker.unblckd.buzz'
 		self.search_link = '/search_movies?s=%s'
 
 	def movie(self, imdb, title, localtitle, aliases, year):
@@ -43,10 +43,10 @@ class source:
 			mtitle = cleantitle.geturl(title).replace('-', '+')
 			theurl = self.base_link + self.search_link % mtitle
 			searchPage = getSum.get(theurl)
-			results = getSum.findEm(searchPage, '<a href="https://putlockersonline.top/watch(.+?)" title="(.+?)"><b>')
+			results = getSum.findEm(searchPage, '<a href="http://putlocker.unblckd.buzz/watch(.+?)" title="(.+?)"><b>')
 			if results:
 				for url, checkit in results:
-					url = "https://putlockersonline.top/watch" + url
+					url = "http://putlocker.unblckd.buzz/watch" + url
 					zcheck = '%s (%s)' % (title, year)
 					if zcheck in checkit:
 						return url

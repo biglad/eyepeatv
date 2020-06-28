@@ -30,11 +30,11 @@ import re
 import urllib
 import urlparse
 
-from vistascrapers.modules import cfscrape
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import client
-from vistascrapers.modules import directstream
-from vistascrapers.modules import source_utils
+from openscrapers.modules import cfscrape
+from openscrapers.modules import cleantitle
+from openscrapers.modules import client
+from openscrapers.modules import directstream
+from openscrapers.modules import source_utils
 
 
 class source:
@@ -42,7 +42,7 @@ class source:
 		self.priority = 39
 		self.language = ['en']
 		self.domains = ['series9.to']
-		self.base_link = 'https://www5.series9.to'
+		self.base_link = 'https://www8.series9.to'
 		self.search_link = '/movie/search/%s'
 		self.scraper = cfscrape.create_scraper()
 

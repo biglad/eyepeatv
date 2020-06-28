@@ -29,9 +29,9 @@ import sys
 
 import requests
 
-from vistascrapers.modules import control
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import source_utils
+from openscrapers.modules import control
+from openscrapers.modules import cleantitle
+from openscrapers.modules import source_utils
 
 class source:
 	def __init__(self):

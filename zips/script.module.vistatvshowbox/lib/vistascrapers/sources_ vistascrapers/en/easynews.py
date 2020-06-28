@@ -36,9 +36,9 @@ try:
 except ImportError:
 	from urllib.parse import quote # Python 3
 
-from vistascrapers.modules import control
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import source_utils
+from openscrapers.modules import control
+from openscrapers.modules import cleantitle
+from openscrapers.modules import source_utils
 
 SORT = {'s1': 'relevance', 's1d': '-', 's2': 'dsize', 's2d': '-', 's3': 'dtime', 's3d': '-'}
 SEARCH_PARAMS = {'st': 'adv', 'sb': 1, 'fex': 'mkv, mp4, avi, mpg, wemb', 'fty[]': 'VIDEO', 'spamf': 1, 'u': '1', 'gx': 1, 'pno': 1, 'sS': 3}

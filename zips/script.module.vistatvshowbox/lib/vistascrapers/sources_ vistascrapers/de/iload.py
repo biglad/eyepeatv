@@ -30,10 +30,10 @@ import re
 import urllib
 import urlparse
 
-from vistascrapers.modules import cfscrape
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import dom_parser
-from vistascrapers.modules import source_utils
+from openscrapers.modules import cfscrape
+from openscrapers.modules import cleantitle
+from openscrapers.modules import dom_parser
+from openscrapers.modules import source_utils
 
 
 class source:

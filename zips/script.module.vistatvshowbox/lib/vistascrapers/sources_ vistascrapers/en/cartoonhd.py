@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# modified by Venom for Openscrapers (updated url 6-22-2020)
 
 #  ..#######.########.#######.##....#..######..######.########....###...########.#######.########..######.
 #  .##.....#.##.....#.##......###...#.##....#.##....#.##.....#...##.##..##.....#.##......##.....#.##....##
@@ -31,18 +32,19 @@ import time
 import urllib
 import urlparse
 
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import client
-from vistascrapers.modules import directstream
-from vistascrapers.modules import source_utils
+from openscrapers.modules import cleantitle
+from openscrapers.modules import client
+from openscrapers.modules import directstream
+from openscrapers.modules import source_utils
 
 
 class source:
 	def __init__(self):
 		self.priority = 1
 		self.language = ['en']
-		self.domains = ['cartoonhd.com', 'cartoonhd.care']
-		self.base_link = 'https://cartoonhd.com'  # .care dont seem to work no more.
+		self.domains = ['cartoonhd.com']
+		self.base_link = 'https://cartoonhd.app'
+
 
 	def movie(self, imdb, title, localtitle, aliases, year):
 		try:
@@ -53,6 +55,7 @@ class source:
 		except:
 			return
 
+
 	def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
 		try:
 			aliases.append({'country': 'us', 'title': tvshowtitle})
@@ -61,6 +64,7 @@ class source:
 			return url
 		except:
 			return
+
 
 	def episode(self, url, imdb, tvdb, title, premiered, season, episode):
 		try:
@@ -74,17 +78,19 @@ class source:
 		except:
 			return
 
+
 	def searchShow(self, title, season, episode, aliases, headers):
 		try:
 			for alias in aliases:
-				url = '%s/show/%s/season/%01d/episode/%01d' % (
-				self.base_link, cleantitle.geturl(title), int(season), int(episode))
+				url = '%s/show/%s/season/%01d/episode/%01d' % (self.base_link, cleantitle.geturl(title), int(season), int(episode))
 				url = client.request(url, headers=headers, output='geturl', timeout='10')
 				if not url is None and url != self.base_link:
 					break
 			return url
 		except:
+			source_utils.scraper_error('CARTOONHD')
 			return
+
 
 	def searchMovie(self, title, year, aliases, headers):
 		try:
@@ -101,7 +107,9 @@ class source:
 						break
 			return url
 		except:
+			source_utils.scraper_error('CARTOONHD')
 			return
+
 
 	def sources(self, url, hostDict, hostprDict):
 		try:
@@ -119,21 +127,19 @@ class source:
 			else:
 				url = self.searchMovie(title, data['year'], aliases, headers)
 			r = client.request(url, headers=headers, output='extended', timeout='10')
+			if r is None:
+				return sources
 			if not imdb in r[0]:
-				raise Exception()
-			cookie = r[4];
-			headers = r[3];
+				return sources
+			cookie = r[4]
+			headers = r[3]
 			result = r[0]
 			try:
 				r = re.findall('(https:.*?redirector.*?)[\'\"]', result)
 				for i in r:
-					try:
-						sources.append(
-							{'source': 'gvideo', 'quality': directstream.googletag(i)[0]['quality'], 'language': 'en',
-							 'url': i, 'direct': True, 'debridonly': False})
-					except:
-						pass
+					sources.append({'source': 'gvideo', 'quality': directstream.googletag(i)[0]['quality'], 'language': 'en', 'url': i, 'direct': True, 'debridonly': False})
 			except:
+				source_utils.scraper_error('CARTOONHD')
 				pass
 			try:
 				auth = re.findall('__utmx=(.+)', cookie)[0].split(';')[0]
@@ -157,43 +163,27 @@ class source:
 			r = str(json.loads(r))
 			r = re.findall('\'(http.+?)\'', r) + re.findall('\"(http.+?)\"', r)
 			for i in r:
-				try:
-					if 'google' in i:
-						quality = 'SD'
-						if 'googleapis' in i:
-							try:
-								quality = source_utils.check_sd_url(i)
-							except:
-								pass
-						if 'googleusercontent' in i:
-							i = directstream.googleproxy(i)
-							try:
-								quality = directstream.googletag(i)[0]['quality']
-							except:
-								pass
-						sources.append(
-							{'source': 'gvideo', 'quality': quality, 'language': 'en', 'url': i, 'direct': True,
-							 'debridonly': False})
-					elif 'llnwi.net' in i or 'vidcdn.pro' in i:
-						try:
-							quality = source_utils.check_sd_url(i)
-							sources.append(
-								{'source': 'CDN', 'quality': quality, 'language': 'en', 'url': i, 'direct': True,
-								 'debridonly': False})
-						except:
-							pass
-					else:
-						valid, hoster = source_utils.is_host_valid(i, hostDict)
-						if not valid:
-							continue
-						sources.append(
-							{'source': hoster, 'quality': '720p', 'language': 'en', 'url': i, 'direct': False,
-							 'debridonly': False})
-				except:
-					pass
+				if 'google' in i:
+					quality = 'SD'
+					if 'googleapis' in i:
+						quality = source_utils.check_url(i)
+					elif 'googleusercontent' in i:
+						i = directstream.googleproxy(i)
+						quality = directstream.googletag(i)[0]['quality']
+					sources.append({'source': 'gvideo', 'quality': quality, 'language': 'en', 'url': i, 'direct': True, 'debridonly': False})
+				elif 'llnwi.net' in i or 'vidcdn.pro' in i:
+					quality = source_utils.check_url(i)
+					sources.append({'source': 'CDN', 'quality': quality, 'language': 'en', 'url': i, 'direct': True, 'debridonly': False})
+				else:
+					valid, hoster = source_utils.is_host_valid(i, hostDict)
+					if not valid:
+						continue
+					sources.append({'source': hoster, 'quality': '720p', 'language': 'en', 'url': i, 'direct': False, 'debridonly': False})
 			return sources
 		except:
+			source_utils.scraper_error('CARTOONHD')
 			return sources
+
 
 	def resolve(self, url):
 		if 'google' in url and 'googleapis' not in url:

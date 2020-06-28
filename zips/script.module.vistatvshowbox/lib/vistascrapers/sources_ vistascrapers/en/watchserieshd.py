@@ -28,10 +28,10 @@
 import re
 import requests
 
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import directstream
-from vistascrapers.modules import getSum
-from vistascrapers.modules import source_utils
+from openscrapers.modules import cleantitle
+from openscrapers.modules import directstream
+from openscrapers.modules import getSum
+from openscrapers.modules import source_utils
 
 
 class source:
@@ -39,7 +39,7 @@ class source:
 		self.priority = 33
 		self.language = ['en']
 		self.domains = ['watchserieshd.tv']
-		self.base_link = 'https://watchserieshd.tv'
+		self.base_link = 'https://www3.watchserieshd.tv'
 		self.search_link = '/series/%s-season-%s-episode-%s'
 
 

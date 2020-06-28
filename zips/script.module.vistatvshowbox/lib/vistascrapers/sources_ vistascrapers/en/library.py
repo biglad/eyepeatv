@@ -28,9 +28,9 @@ import urllib
 import urlparse
 
 
-from vistascrapers.modules import control
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import source_utils
+from openscrapers.modules import control
+from openscrapers.modules import cleantitle
+from openscrapers.modules import source_utils
 
 
 class source:
@@ -94,7 +94,10 @@ class source:
 				r = [i for i in r if str(i['imdbnumber']) in ids or title in [cleantitle.get_simple(i['title']), cleantitle.get_simple(i['originaltitle'])]]
 				if not r:
 					return sources
-				r = [i for i in r if not i['file'].encode('utf-8').endswith('.strm')][0]
+				r = [i for i in r if not i['file'].encode('utf-8').endswith('.strm')]
+				if not r:
+					return sources
+				r = r[0]
 				r = control.jsonrpc('{"jsonrpc": "2.0", "method": "VideoLibrary.GetMovieDetails", "params": {"properties": ["streamdetails", "file"], "movieid": %s }, "id": 1}' % str(r['movieid']))
 				r = unicode(r, 'utf-8', errors='ignore')
 				r = json.loads(r)['result']['moviedetails']
@@ -112,7 +115,8 @@ class source:
 				r = control.jsonrpc('{"jsonrpc": "2.0", "method": "VideoLibrary.GetEpisodes", "params": {"filter":{"and": [{"field": "season", "operator": "is", "value": "%s"}, {"field": "episode", "operator": "is", "value": "%s"}]}, "properties": ["file"], "tvshowid": %s }, "id": 1}' % (str(season), str(episode), str(r['tvshowid'])))
 				r = unicode(r, 'utf-8', errors='ignore')
 				r = json.loads(r)['result']['episodes']
-
+				if not r:
+					return sources
 				r = [i for i in r if not i['file'].encode('utf-8').endswith('.strm')][0]
 
 				r = control.jsonrpc('{"jsonrpc": "2.0", "method": "VideoLibrary.GetEpisodeDetails", "params": {"properties": ["streamdetails", "file"], "episodeid": %s }, "id": 1}' % str(r['episodeid']))

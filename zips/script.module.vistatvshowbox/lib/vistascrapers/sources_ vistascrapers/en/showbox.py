@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 # -Cleaned and Checked on 10-16-2019 by JewBMX in Scrubs.
-# modified by Venom for Openscrapers
+# modified by Venom for Openscrapers (updated url 6-22-2020)
 
 #  ..#######.########.#######.##....#..######..######.########....###...########.#######.########..######.
 #  .##.....#.##.....#.##......###...#.##....#.##....#.##.....#...##.##..##.....#.##......##.....#.##....##
@@ -33,10 +33,10 @@ import time
 import urllib
 import urlparse
 
-from vistascrapers.modules import client
-from vistascrapers.modules import cleantitle
-from vistascrapers.modules import directstream
-from vistascrapers.modules import source_utils
+from openscrapers.modules import client
+from openscrapers.modules import cleantitle
+from openscrapers.modules import directstream
+from openscrapers.modules import source_utils
 
 
 class source:
@@ -44,7 +44,7 @@ class source:
 		self.priority = 33
 		self.language = ['en']
 		self.domains = ['showbox.space']
-		self.base_link = 'https://ww2.showbox.space'
+		self.base_link = 'https://showbox.care/'
 
 
 	def movie(self, imdb, title, localtitle, aliases, year):
@@ -146,7 +146,6 @@ class source:
 			try:
 				auth = re.findall('__utmx=(.+)', cookie)[0].split(';')[0]
 			except:
-				source_utils.scraper_error('SHOWBOX')
 				auth = 'false'
 			auth = 'Bearer %s' % urllib.unquote_plus(auth)
 			headers['Authorization'] = auth
@@ -175,7 +174,7 @@ class source:
 						quality = directstream.googletag(i)[0]['quality']
 					sources.append({'source': 'gvideo', 'quality': quality, 'language': 'en', 'url': i, 'direct': True, 'debridonly': False})
 				elif 'llnwi.net' in i or 'vidcdn.pro' in i:
-					quality = source_utils.check_sd_url(i)
+					quality = source_utils.check_url(i)
 					sources.append({'source': 'CDN', 'quality': quality, 'language': 'en', 'url': i, 'direct': True, 'debridonly': False})
 				else:
 					valid, hoster = source_utils.is_host_valid(i, hostDict)

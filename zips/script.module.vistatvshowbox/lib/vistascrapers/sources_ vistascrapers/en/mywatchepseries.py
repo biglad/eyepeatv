@@ -26,7 +26,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['watchepisodeseries.com', 'watchepisodeseries.unblocked.cx']
-        self.base_link = 'http://www.watchepisodeseries.com/'
+        self.base_link = 'https://watchepisodeseries.unblockit.id'
         self.search_link = '/home/search?q=%s'
         self.scraper = cfscrape.create_scraper()
 

@@ -25,7 +25,7 @@ class source:
 		self.priority = 1
 		self.language = ['en']
 		self.domains = ['5movies.to']
-		self.base_link = 'https://5movies.to'
+		self.base_link = 'https://5movies.unblockit.id'
 		self.search_link = '/search.php?q=%s'
 		self.video_link = '/getlink.php?Action=get&lk=%s'
 

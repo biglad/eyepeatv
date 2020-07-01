@@ -39,7 +39,7 @@ class source:
 		self.priority = 1
 		self.language = ['en']
 		self.domains = ['eztv.io']
-		self.base_link = 'https://eztv.io'
+		self.base_link = 'https://eztv.g2g.bar'
 		self.search_link = '/search/%s'
 		self.min_seeders = 1
 

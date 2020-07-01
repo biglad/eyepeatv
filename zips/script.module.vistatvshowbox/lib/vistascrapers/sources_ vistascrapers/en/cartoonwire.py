@@ -34,7 +34,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['cartoonwire.to']
-        self.base_link = 'https://cartoonwire.to'
+        self.base_link = 'http://cartoonwire.to'
         self.search_link = '/episode/%s-season-%s-episode-%s/'
 
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):

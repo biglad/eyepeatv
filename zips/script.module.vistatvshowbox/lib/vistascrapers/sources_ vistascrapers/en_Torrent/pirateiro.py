@@ -39,7 +39,7 @@ class source:
 		self.priority = 1
 		self.language = ['en']
 		self.domains = ['pirateiro.unblockit.biz']
-		self.base_link = 'https://pirateiro.unblockit.biz'
+		self.base_link = 'https://pirateiro.unblockit.id'
 		self.search_link = '/torrents/?search=%s'
 		self.scraper = cfscrape.create_scraper()
 

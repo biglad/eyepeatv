@@ -40,9 +40,9 @@ class source:
 		self.priority = 5
 		self.language = ['en', 'de', 'fr', 'ko', 'pl', 'pt', 'ru']
 		self.domains = ['1337x.to', '1337x.st', '1337x.ws', '1337x.eu', '1337x.se', '1337x.is'] # all are behind cloudflare except .to
-		self.base_link = 'https://1337x.to/'
-		self.tvsearch = 'https://1337x.to/sort-category-search/%s/TV/size/desc/1/'
-		self.moviesearch = 'https://1337x.to/sort-category-search/%s/Movies/size/desc/1/'
+		self.base_link = 'https://1337x.g2g.bar/'
+		self.tvsearch = 'https://1337x.g2g.bar/sort-category-search/%s/TV/size/desc/1/'
+		self.moviesearch = 'https://1337x.g2g.bar/sort-category-search/%s/Movies/size/desc/1/'
 		self.min_seeders = 1
 
 

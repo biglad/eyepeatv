@@ -39,7 +39,7 @@ class source:
 		self.priority = 1
 		self.language = ['en', 'de', 'fr', 'ko', 'pl', 'pt', 'ru']
 		self.domains = ['yts.lt', 'yts.am']  # Old yts.ag
-		self.base_link = 'https://yts.lt'
+		self.base_link = 'https://yts.mx'
 		self.search_link = '/browse-movies/%s/all/all/0/latest'
 		# self.search_link = '/movie/%s'
 		self.min_seeders = 1

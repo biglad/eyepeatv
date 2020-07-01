@@ -28,8 +28,8 @@ import re
 import urllib
 import urlparse
 
-from openscrapers.modules import client
-from openscrapers.modules import source_utils
+from vistascrapers.modules import client
+from vistascrapers.modules import source_utils
 
 
 class source:

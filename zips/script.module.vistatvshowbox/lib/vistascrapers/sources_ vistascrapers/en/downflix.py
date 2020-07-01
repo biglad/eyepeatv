@@ -29,7 +29,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['en.downflix.win']
-        self.base_link = 'https://ara.gen.tf/'
+        self.base_link = 'http://downflix.net'
         self.search_link = '/search/%s'
 
     def movie(self, imdb, title, localtitle, aliases, year):

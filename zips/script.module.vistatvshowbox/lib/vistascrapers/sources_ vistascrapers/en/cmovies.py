@@ -22,7 +22,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['cmovies.cc']
-        self.base_link = 'https://cmovies.cc'
+        self.base_link = 'https://ww1.cmovies.co'
 
 
     def movie(self, imdb, title, localtitle, aliases, year):

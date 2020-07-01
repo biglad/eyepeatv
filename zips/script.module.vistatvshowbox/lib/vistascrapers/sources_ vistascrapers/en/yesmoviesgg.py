@@ -15,7 +15,7 @@
 from openscrapers.modules import cleantitle
 from openscrapers.modules import getSum
 from openscrapers.modules import source_utils
-
+from vistascrapers.modules import cfscrape
 
 class source:
 	def __init__(self):
@@ -25,6 +25,7 @@ class source:
 		self.base_link = 'https://yesmovieshd.to'
 		self.movie_link = '/film/%s/watching.html?ep=0'
 		self.tvshow_link = '/film/%s-season-%s/watching.html?ep=%s'
+		self.scraper = cfscrape.create_scraper(
 
 
 	def movie(self, imdb, title, localtitle, aliases, year):

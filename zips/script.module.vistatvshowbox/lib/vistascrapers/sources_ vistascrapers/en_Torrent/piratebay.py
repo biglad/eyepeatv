@@ -39,7 +39,7 @@ class source:
 	def __init__(self):
 		self.priority = 2
 		self.language = ['en']
-		self.domains = ['pirateproxy.live', 'thepiratebay.zone', 'piratebay1.live', 'thepiratebay10.org',
+		self.domains = ['tpb.johnedwarddoyle.co.uk', 'thepiratebay.g2g.bar', 'thepiratebay.zone', 'piratebay1.live', 'thepiratebay10.org',
 								'piratebay1.xyz', 'thepiratebay1.top', 'piratebay1.info', 'tpb.party']
 		self._base_link = None
 		self.search_link = '/search/%s/0/5/200'

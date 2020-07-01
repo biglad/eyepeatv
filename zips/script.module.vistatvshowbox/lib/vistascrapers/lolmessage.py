@@ -2,7 +2,7 @@ import xbmc
 import xbmcgui
 import xbmcaddon
 import random
-list  = ['Checking the black book.','Using the Force','Webcrawler is searching','Looking on the black market','Using Google, not really lol','Asking Donald Trump for advice....','Connecting to the matrix......','EPTV! EPTV!! You Cant Handle the EPTV!!........']
+list  = ['What did you ask for??','Accessing the DarkNET.','By The Power of Greyskull.','Putting on facemask.','Washing hands for 20 secs.','Checking the black book.','Using the Force','Webcrawler is searching','Looking on the black market','Using Google, not really lol','Asking Donald Trump for advice....','Connecting to the matrix......','EPTV! EPTV!! You Cant Handle the EPTV!!........']
 counter =0
 __addon__ = xbmcaddon.Addon(id='script.module.vistatvshowbox')
 dp = xbmcgui.DialogProgress()

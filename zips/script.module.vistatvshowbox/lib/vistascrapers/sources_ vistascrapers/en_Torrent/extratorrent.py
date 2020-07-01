@@ -41,7 +41,7 @@ class source:
 		self.priority = 2
 		self.language = ['en']
 		self.domains = ['extratorrent.ag']
-		self.base_link = 'https://extratorrent.ag'
+		self.base_link = 'https://extratorrent.g2g.bar'
 		self.search_link = '/search/?search=%s&new=1&x=53&y=11'
 		self.min_seeders = 1
 

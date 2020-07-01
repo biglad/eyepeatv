@@ -22,8 +22,8 @@ class source:
     def __init__(self):
         self.priority = 1
         self.language = ['en']
-        self.domains = ['ganol.si', 'ganool123.com']
-        self.base_link = 'https://idtube.ru'
+        self.domains = ['ganol.si', 'ganool123.com','idtube.ru'] # check for updated IP if needed idtube.ru
+        self.base_link = 'http://79.124.60.188'
         self.search_link = '/search/?q=%s'
         self.scraper = cfscrape.create_scraper()
 

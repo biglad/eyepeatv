@@ -30,7 +30,7 @@ class source:
         self.priority = 1
         self.language = ['en']
         self.domains = ['openloadmovie.org', 'openloadmovie.ws']
-        self.base_link = 'https://openloadmovie.org'
+        self.base_link = 'https://openloadmovies.ch'
         self.scraper = cfscrape.create_scraper()
 
     def movie(self, imdb, title, localtitle, aliases, year):

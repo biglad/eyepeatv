@@ -30,7 +30,7 @@ import urllib
 import urlparse
 
 import requests
-
+from vistascrapers.modules import cfscrape
 from vistascrapers.modules import cleantitle
 from vistascrapers.modules import client
 from vistascrapers.modules import directstream
@@ -45,6 +45,7 @@ class source:
 		self.domains = ['123movieshub.gg', 'seriesonline8.co']
 		self.base_link = 'https://www6.123movie.movie'
 		self.search_link = '/movie/search/%s'
+		self.scraper = cfscrape.create_scraper()
 
 	def matchAlias(self, title, aliases):
 		try:

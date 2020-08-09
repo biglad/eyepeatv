@@ -8,7 +8,8 @@ try:
 except ImportError:
 	from html.parser import HTMLParser
 
-from vistascrapers.modules import log_utils
+from openscrapers.modules.utils import byteify
+from openscrapers.modules import log_utils
 
 headers = {
 	'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3555.0 Safari/537.36"}
@@ -54,7 +55,7 @@ class GetSum(object):
 				links = re.compile(self._magnet_regex).findall(text)
 				if links:
 					for link in links:
-						link = str(replaceHTMLCodes(link).encode('utf-8').split('&tr')[0])
+						link = str(byteify(replaceHTMLCodes(link)).split('&tr')[0])
 						link = "magnet:" + link if not link.startswith('magnet') else link
 						if link in self.links:
 							continue
@@ -81,10 +82,10 @@ def get(url, Type=None):
 	if not url:
 		return
 	if Type == 'client' or Type is None:
-		from vistascrapers.modules import client
+		from openscrapers.modules import client
 		content = client.request(url, headers=headers)
 	if Type == 'cfscrape':
-		from vistascrapers.modules import cfscrape
+		from openscrapers.modules import cfscrape
 		cfscraper = cfscrape.create_scraper()
 		content = cfscraper.get(url, headers=headers).content
 	if Type == 'redirect':
@@ -177,7 +178,7 @@ def get_video(text):
 	match = re.compile(pattern).findall(text)
 	links = []
 	for url in match:
-		links.append(url.encode('utf-8'))
+		links.append(byteify(url))
 	return links
 
 
@@ -195,9 +196,9 @@ def replaceHTMLCodes(text):
 
 def unpacked(url):
 	try:
-		from vistascrapers.modules import client
-		from vistascrapers.modules import jsunpack
-		from vistascrapers.modules import log_utils
+		from openscrapers.modules import client
+		from openscrapers.modules import jsunpack
+		from openscrapers.modules import log_utils
 		unpacked = ''
 		html = client.request(url)
 		if jsunpack.detect(html):
@@ -211,8 +212,8 @@ def unpacked(url):
 
 
 def TEST_RUN():
-	from vistascrapers.modules import jsunpack
-	from vistascrapers.modules import log_utils
+	from openscrapers.modules import jsunpack
+	from openscrapers.modules import log_utils
 	log_utils.log('#####################################')
 	url = 'https://site.com'
 	data = get(url, Type='cfscrape')

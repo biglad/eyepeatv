@@ -35,7 +35,7 @@ class source:
 		self.priority = 37
 		self.language = ['en']
 		self.domains = ['cmovies.tv', 'cmovies.video', 'cmovieshd.bz']
-		self.base_link = 'https://cmovies.fm'
+		self.base_link = 'https://cmovies.tv'
 		self.search_link = '/film/%s/watching.html?ep=0'
 		self.scraper = cfscrape.create_scraper()
 

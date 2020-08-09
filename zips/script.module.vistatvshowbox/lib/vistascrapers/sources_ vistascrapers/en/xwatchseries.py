@@ -25,8 +25,11 @@
 '''
 
 import re
-import urllib
-import urlparse
+
+try: from urlparse import parse_qs, urlparse
+except ImportError: from urllib.parse import parse_qs, urlparse
+try: from urllib import quote_plus
+except ImportError: from urllib.parse import quote_plus
 
 from openscrapers.modules import cfscrape
 from openscrapers.modules import cleantitle
@@ -39,8 +42,8 @@ class source:
 		self.priority = 39
 		self.language = ['en']
 		self.domains = ['on.mywatchseries.stream', 'xwatchseries.to', 'onwatchseries.to', 'itswatchseries.to']
-		self.base_link = 'https://www5.mywatchseries.stream/'
-		self.search_link = 'https://www5.mywatchseries.stream/search/%s'
+		self.base_link = 'https://on.mywatchseries.stream'
+		self.search_link = 'https://on.mywatchseries.stream/search/%s'
 		self.scraper = cfscrape.create_scraper()
 
 
@@ -50,7 +53,7 @@ class source:
 			q = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', '', tvshowtitle)
 
 			# r = self.scraper.get(self.search_link % q, headers={'referer': self.base_link}).content
-			r = self.scraper.get(self.search_link % urllib.quote_plus(q), headers={'referer': self.base_link}).content
+			r = self.scraper.get(self.search_link % quote_plus(q), headers={'referer': self.base_link}).content
 			# log_utils.log('r = %s' % r, __name__, log_utils.LOGDEBUG)
 
 			# r = client.parseDOM(r, 'div', attrs={'valign': '.+?'})
@@ -111,15 +114,21 @@ class source:
 				try:
 					url = i
 					url = proxy.parse(url)
-					url = urlparse.parse_qs(urlparse.urlparse(url).query)['r'][0]
+					url = parse_qs(urlparse(url).query)['r'][0]
 					url = url.decode('base64')
 					url = client.replaceHTMLCodes(url)
-					url = url.encode('utf-8')
+					try:
+						url = url.encode('utf-8')
+					except:
+						pass
 
-					host = re.findall('([\w]+[.][\w]+)$', urlparse.urlparse(url.strip().lower()).netloc)[0]
+					host = re.findall('([\w]+[.][\w]+)$', urlparse(url.strip().lower()).netloc)[0]
 					if host not in hostDict:
 						continue;
-					host = host.encode('utf-8')
+					try:
+						host = host.encode('utf-8')
+					except:
+						pass
 					sources.append({'source': host, 'quality': 'SD', 'info': '', 'language': 'en', 'url': url, 'direct': False,
 					                'debridonly': False})
 				except:

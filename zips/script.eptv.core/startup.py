@@ -29,7 +29,7 @@ __settings__=xbmcaddon.Addon(id=addon_id); __language__=__settings__.getLocalize
 def get_setting(name): dev=__settings__.getSetting(name); return dev
 
 kupdatet = ""
-if KODIV < 18.7:
+if KODIV < 18.8:
     dialog = xbmcgui.Dialog()
     dialog.ok("[COLOR=white][B]EPTV[/COLOR][/B]","Your Kodi is needs updating","Your Version = "+str(KODIV),"Press OK to Continue and udpate ASAP")
     kupdatet = "[COLOR gold]  UPDATE KODI ASAP!!![/COLOR]"
